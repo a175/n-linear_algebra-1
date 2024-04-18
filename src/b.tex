@@ -1,0 +1,4198 @@
+% !TeX root =./x2.tex
+% !TeX program = pdfpLaTeX
+
+
+\chapter{章末問題の略解}
+
+ここでは, 章末問題に関し簡単な解説と略解を挙げる.
+答案には必要なことであっても省略しているものある.
+逆に答案には必要ではないことが書いてあったりする.
+ここで述べられているものは,
+解答例でも模範解答でもないことに注意すること.
+
+
+\section{実数の絶対値や平方根に関する問題}
+\begin{answerof}{quiz:0:1}
+  たとえば, $a=-2$のときには,
+  $\sqrt{(-2)^2}=\sqrt{4}=2\neq -2$である.
+  この例のように$\sqrt{a^2}\neq a$となる場合もある.  
+
+  一般には, $\sqrt{a^2}=|a|$である.
+\end{answerof}
+
+\begin{answerof}{quiz:0:2}
+  $5>2^2$であるから$\sqrt{5}>2$である.
+  したがって, $2-\sqrt{5}<0$である.
+  よって,
+  $|2-\sqrt{5}|=-2+\sqrt{5}$
+  である.
+
+  一般に実数$a$の絶対値$|a|$は,
+  $a>0$なら$|a|=a$であり,
+  $a<0$なら$|a|=-a$である.
+\end{answerof}
+
+\begin{answerof}{quiz:0:3}
+  判別式$D$を考える.
+  \begin{align*}
+    D=(-(s+u))^2-4su=s^2+2su+u^2-4su=s^2-2su+u^2=(s-u)^2
+  \end{align*}
+  である.  $D\geq 0$なので実数解をもつ.
+\end{answerof}
+
+\section{行列の定義と演算に関する問題}
+
+\begin{answerof}{quiz:1:1}
+  サイズ(型)は$(2,3)$.
+  $A$の$(1,2)$-成分は$2$.
+  $A$の$2$-行目は
+  \begin{align*}\begin{pmatrix}1&2&3\end{pmatrix}.\end{align*}
+  $A$の$2$-列目は
+  \begin{align*}\begin{pmatrix}2\\7\end{pmatrix}.\end{align*}
+  $A$の転置は
+  \begin{align*}\begin{pmatrix}1&6\\2&7\\3&8\end{pmatrix}.\end{align*}
+\end{answerof}
+
+\begin{answerof}{quiz:1:2}
+  具体的に成分を書き下せばわかる.
+  \begin{enumerate}
+  \item
+    $(i,j)=(1,1)$のとき, $5i+j-5=1$.
+    $(i,j)=(1,2)$のとき, $5i+j-5=2$.
+    $(i,j)=(2,1)$のとき, $5i+j-5=6$.
+    $(i,j)=(2,2)$のとき, $5i+j-5=7$.
+    したがって,
+    \begin{align*}A=\begin{pmatrix}1&2\\6&7\end{pmatrix}.\end{align*}
+  \item
+    $i\neq j$のとき, $2^i\delta_{i,j}=2^i\cdot 0=0$.
+    $i=j=1$のとき, $2^i\delta_{i,j}=2^1\cdot 1=2$.
+    $i=j=2$のとき, $2^i\delta_{i,j}=2^2\cdot 1=4$.
+    したがって,
+    \begin{align*}A=\begin{pmatrix}2&0\\0&4\end{pmatrix}.\end{align*}
+  \item
+    $i\neq 2$のとき, $\delta_{i,2}\delta_{j,1}=0\cdot \delta_{j,1}=0$.
+    $j\neq 1$のとき, $\delta_{i,2}\delta_{j,1}=\delta_{i,2}\cdot 0=0$.
+    $i=2, j=1$のとき, $\delta_{i,2}\delta_{j,1}=1\cdot 1=1$.
+    したがって,
+    \begin{align*}A=\begin{pmatrix}0&0\\1&0\end{pmatrix}.\end{align*}
+  \end{enumerate}
+\end{answerof}
+\begin{answerof}{quiz:1:3}
+  \begin{align*}A&=
+    \begin{pmatrix}
+      a+1& 3\\
+      4+c &5d-10
+    \end{pmatrix}\\
+    B&=
+    \begin{pmatrix}
+      7& 2b+5\\
+      6 &-4d+8
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  行列が等しいということは, 対応する各成分が等しいということなので,
+  $A=B$とすると
+  \begin{align*}
+    \begin{cases}
+      a+1=7\\
+      3=2b+5\\
+      4+c=6\\
+      5d-10=-4d+8
+    \end{cases}
+  \end{align*}
+  となる.
+  したがって,
+  \begin{align*}
+    \begin{cases}
+      a=6\\
+      b=-1\\
+      c=2\\
+      d=2
+    \end{cases}
+  \end{align*}
+  を得る.
+  実際, $(a,b,c,d)=(6,-1,2,2)$とすると,
+  \begin{align*}A&=
+    \begin{pmatrix}
+      a+1& 3\\
+      4+c &5d-10
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6+1& 3\\
+      4+2 &5\cdot 2-10
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      7& 3\\
+      6&0
+    \end{pmatrix}
+    \\
+    B&=
+    \begin{pmatrix}
+      7& 2b+5\\
+      6 &-4d+8
+    \end{pmatrix}
+=    \begin{pmatrix}
+      7& 2(-1)+5\\
+      6 &-4\cdot 2+8
+    \end{pmatrix}
+=    \begin{pmatrix}
+      7& 3\\
+      6 &0
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{answerof}
+
+\begin{answerof}{quiz:1:4}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}
+  \end{align*}
+  とする.  $A$が対称行列であるということは, $A=\transposed{A}$ということである.
+  \begin{align*}
+    \transposed{A}=
+    \begin{pmatrix}
+      1& 4+a\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  であるので, $A=\transposed{A}$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1& 4+a\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって, 
+  \begin{align*}
+    \begin{cases}
+      1=1\\
+      3=4+a\\
+      4+a=3\\
+      5=5
+    \end{cases}
+  \end{align*}
+  となり, $a=-1$を得る.
+  実際$a=-1$のとき,
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}=
+    \begin{pmatrix}
+      1& 3\\
+      3 &5
+    \end{pmatrix}\\
+    \transposed{A}&=
+    \begin{pmatrix}
+      1& 3\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  であるので対称行列である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:1:5}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1-a& 3+b\\
+      4  &0
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  $A$が交代行列であるということは, $-A=\transposed{A}$ということである.
+  \begin{align*}
+    -A&=
+    -\begin{pmatrix}
+      1-a& 3+b\\
+      4  &0
+    \end{pmatrix}
+=    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}\\    
+    \transposed{A}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+  \end{align*}
+  であるので, $-A=\transposed{A}$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって, 
+  \begin{align*}
+    \begin{cases}
+      -1+a=1-a\\
+      -3-b=4\\
+      -4=3+b\\
+      0=0
+    \end{cases}
+  \end{align*}
+  となり, $a=1$, $b=-7$を得る.
+  実際$(a,b)=(1,-7)$のとき,
+  \begin{align*}
+    -A&=
+    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -1+1& -3-(-7)\\
+      -4  &0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0& 4\\
+      -4  &0
+    \end{pmatrix}\\    
+    \transposed{A}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+    =
+      \begin{pmatrix}
+      1-1& 4\\
+      3+-7 &0
+    \end{pmatrix}
+    =
+      \begin{pmatrix}
+      0& 4\\
+      -4 &0
+    \end{pmatrix}
+\end{align*}
+となり$A$は交代行列である.  
+\end{answerof}
+
+\begin{answerof}{quiz:1:6}
+  \begin{align*}
+    \begin{pmatrix}
+      10\\4
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      -2\\-3
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      -3\\6
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      10-2-3\\4-3+6
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      5\\7
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      6&0\\0&4
+    \end{pmatrix}+
+    \begin{pmatrix}
+      0&3\\-7&0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6+0&0+3\\0-7&4+0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6&3\\-7&4
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2\\3&7
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&0\\-5&4
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -9\cdot 1+2\cdot (-5)&-9\cdot 0+2\cdot 4\\3\cdot 1+7\cdot (-5)&3\cdot 0 +7\cdot 4
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -19&8\\-32&28
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2\\3&7
+    \end{pmatrix}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -9\cdot 1+2\cdot (-5)\\3\cdot 1+7\cdot (-5)
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -19\\-32
+    \end{pmatrix}.
+  \end{align*}
+
+
+  
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      (-9)\cdot 1 + 2\cdot (-5)
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -19
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}
+    \begin{pmatrix}
+      -9&2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\cdot (-9)& 1\cdot 2\\-5\cdot 1&-5\cdot 2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -9& 2\\-5&-10
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}^2
+    &=
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}\\
+   & =
+    \begin{pmatrix}
+      1\cdot 1+(-3)\cdot 2&1\cdot(-3)+(-3)\cdot 5\\2\cdot1 +5\cdot2&2\cdot(-3) +5\cdot5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -5&-18\\12&19
+    \end{pmatrix}.
+  \end{align*}
+
+%%   $A^2$に関する結果は次の様に検算をすることができる:
+%%     \begin{align*}
+%%     A=
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}
+%%   \end{align*}
+%%     とおくと,
+%%   \cref{thm:cht:2dim}から,
+%%   \begin{align*}
+%%     A^2-(1+5)A+(1\cdot 5-(-3)\cdot2)E_2&=O_{2,2}\\
+%%     A^2-6A+11E_2&=O_{2,2}\\
+%%     A^2&=6A-11E_2.
+%%   \end{align*}
+%%   となる.
+%%   したがって,
+%%   \begin{align*}
+%%     A^2&=6A-11E_2=
+%%    6\begin{pmatrix}
+%%       1&-3\\2&5
+%%    \end{pmatrix}
+%%    -11
+%%   \begin{pmatrix}
+%%       1&0\\0&1
+%%   \end{pmatrix}
+%%   =
+%%   \begin{pmatrix}
+%%       6-11&-18\\12&30-11
+%%    \end{pmatrix}
+%%   =
+%%   \begin{pmatrix}
+%%       -5&-18\\12&19
+%%    \end{pmatrix}.
+%%   \end{align*}
+\end{answerof}
+
+\begin{answerof}{quiz:1:7}
+  \begin{align*}
+    A=\begin{pmatrix}
+      9&0\\0&5
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =A^n
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    &=A^{n+1}\\
+    &=AA^{n}\\
+    &=
+    \begin{pmatrix}
+      9&0\\0&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      9a_n+0c_n&9b_n+0d_n\\0a_n+5c_n&0b_n+5d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      9a_n&9b_n\\5c_n&5d_n
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      9a_n&9b_n\\5c_n&5d_n
+    \end{pmatrix}.
+  \end{align*}
+  よって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      9a_{n-1} &(n>1)\\
+      9&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      9b_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    c_n&=
+    \begin{cases}
+      5c_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    d_n&=
+    \begin{cases}
+      5d_{n-1}&(n>1)\\
+      5&(n=1)
+    \end{cases}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    a_n&=9^{n-1}\cdot 9=9^n,\\
+    b_n&=9^{n-1}\cdot 0=0,\\
+    c_n&=5^{n-1}\cdot 0=0,\\
+    d_n&=5^{n-1}\cdot 5=5^n.
+  \end{align*}
+  したがって,
+  \begin{align*}
+    A^n=\begin{pmatrix}9^n&0\\0&5^n\end{pmatrix}.
+  \end{align*}
+
+  この結果は次のように検算できる:
+  $n=1$のとき
+\begin{align*}
+  A&=\begin{pmatrix}9&0\\0&5\end{pmatrix}\\
+  \begin{pmatrix}9^n&0\\0&5^n\end{pmatrix}&=\begin{pmatrix}9&0\\0&5\end{pmatrix}.
+\end{align*}
+となり正しい.
+  $n=2$のとき
+\begin{align*}
+  A^2&=\begin{pmatrix}9&0\\0&5\end{pmatrix}\begin{pmatrix}9&0\\0&5\end{pmatrix}
+    =\begin{pmatrix}9\cdot 9+0\cdot 0&9\cdot 0+0\cdot5 \\0\cdot 9+5\cdot 0&0\cdot 0+5\cdot 5\end{pmatrix}
+    =\begin{pmatrix}81&0\\0&25\end{pmatrix}
+  \\
+  \begin{pmatrix}9^2&0\\0&5^2\end{pmatrix}&=\begin{pmatrix}81&0\\0&25\end{pmatrix}.
+\end{align*}
+となり正しい.  
+\end{answerof}
+
+
+\begin{answerof}{quiz:1:8}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =A^n
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    &=A^{n+1}\\
+    &=AA^{n}\\
+    &=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      1a_n+2c_n&1b_n+2d_n\\0a_n+3c_n&0b_n+3d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a_n+2c_n&b_n+2d_n\\3c_n&3d_n
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a_n+2c_n&b_n+2d_n\\3c_n&3d_n
+    \end{pmatrix}.
+  \end{align*}
+  よって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      a_{n-1}+2c_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      b_{n-1}+2d_{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}\\
+    c_n&=
+    \begin{cases}
+      3c_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    d_n&=
+    \begin{cases}
+      3d_{n-1}&(n>1)\\
+      3&(n=1)
+    \end{cases}
+  \end{align*}
+  となる. したがって,
+  \begin{align*}
+    c_n&=3^{n-1}\cdot 0\\
+    d_n&=3^{n-1}\cdot 3=3^n
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      a_{n-1}+2c_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    &=
+    \begin{cases}
+      a_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      b_{n-1}+2d_{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}\\
+  &=
+    \begin{cases}
+      b_{n-1}+2\cdot 3^{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}
+  \end{align*}
+  となる.
+  したがって,
+  \begin{align*}
+    a_n&=1^{n-1}\cdot 1=1
+  \end{align*}
+  となる. また,
+  \begin{align*}
+    b_n
+    &=2\cdot 3^{n-1}+b_{n-1}\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}\\
+    &=\cdots\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+b_2\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+2\cdot 3^1 +b_1\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+2\cdot 3^1 +2\\
+    &=2(3^{n-1}+3^{n-2}+\cdots+3+1)\\
+    &=2\frac{3^{n}-1}{3-1}\\
+    &=2\frac{3^{n}-1}{2}\\
+    &=3^{n}-1.
+  \end{align*}
+  したがって,
+  \begin{align*}
+    A^n=\begin{pmatrix}1&3^{n}-1\\0&3^n\end{pmatrix}.
+  \end{align*}
+
+
+  この結果は次のように検算できる:
+  $n=1$のとき,
+  \begin{align*}
+    A^n&=A^1=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}\\  
+    \begin{pmatrix}1&2\cdot 3^{n}-1\cdot 2^{n+1}\\0&3^n\end{pmatrix}
+      &=
+      \begin{pmatrix}1&2\cdot 3^{1}-1\cdot 2^{2}\\0&3^1\end{pmatrix}
+        =
+    \begin{pmatrix}1&2\\0&3\end{pmatrix}      .
+  \end{align*}
+  となり正しい.
+  \begin{align*}
+    AA^n&=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+    \begin{pmatrix}1&3^{n}-1\\0&3^n\end{pmatrix}\\
+      &=
+    \begin{pmatrix}1\cdot 1+2\cdot 0&1\cdot(3^{n}-1)+2\cdot 3^n\\0\cdot 1+3\cdot 0&0\cdot (3^{n}-1)+3\cdot 3^n\end{pmatrix}\\
+      &=
+    \begin{pmatrix}1\cdot 1+2\cdot 0&1\cdot(3^{n}-1)+2\cdot 3^n\\0\cdot 1+3\cdot 0&0\cdot (3^{n}-1)+3\cdot 3^n\end{pmatrix}\\
+      &=
+    \begin{pmatrix}1&3^{n}-1+ 2\cdot 3^n\\3^{n+1}\end{pmatrix}\\
+      &=
+    \begin{pmatrix}1&3\cdot 3^{n}-1\\3^{n+1}\end{pmatrix}\\
+      &=
+    \begin{pmatrix}1&3^{n+1}-1\\3^{n+1}\end{pmatrix}\\
+    A^{n+1}&=\begin{pmatrix}1&3^{n+1}-1\\0&3^{n+1}\end{pmatrix}.
+  \end{align*}
+  となり等しい.
+\end{answerof}
+
+%% \begin{answerof}{quiz:1:9}
+%%  \Cref{thm:cht:2dim}から,
+%%   \begin{align*}
+%%     A^2-(1+5)A+(1\cdot 5-(-3)\cdot2)E_2&=O_{2,2}\\
+%%     A^2-6A+11E_2&=O_{2,2}\\
+%%     A^2&=6A-11E_2.
+%%   \end{align*}
+%%   したがって
+%%   \begin{align*}
+%%     A^3=A(6A-11E_2)=6A^2-11A=6(6A-11E_2)-11A=25A-66E_2.
+%%   \end{align*}
+%%   よって
+%%   \begin{align*}
+%%     A^3+A^2+A&=(25A-66E_2)+(6A-11E_2)+A\\
+%%     &=32A-77E_2\\
+%%     &=32\begin{pmatrix}1&-3\\2&5\end{pmatrix}-77\begin{pmatrix}1&0\\0&1\end{pmatrix}\\
+%%     &=\begin{pmatrix}32-77&32\cdot(-3)\\32\cdot 2&32\cdot 5-77\end{pmatrix}\\
+%%     &=\begin{pmatrix}-45&-96\\64&83\end{pmatrix}
+%%   \end{align*}
+
+%%   また次のようにも計算できる:
+%%   \begin{align*}
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}^2
+%%     &=
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       1\cdot 1+(-3)\cdot 2&1\cdot(-3)+(-3)\cdot 5\\2\cdot1 +5\cdot2&2\cdot(-3) +5\cdot5
+%%     \end{pmatrix}
+%%     =
+%%     \begin{pmatrix}
+%%       -5&-18\\12&19
+%%     \end{pmatrix}.
+%%   \\%\end{align*}
+%%   %\begin{align*}
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}^3
+%%     &=
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}^2\\
+%%     &=
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}
+%%     \begin{pmatrix}
+%%       -5&-18\\12&19
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       1\cdot(-5)+(-3)\cdot 12&1\cdot(-18)+(-3)\cdot 19\\2\cdot(-5) +5\cdot12&2\cdot(-18) +5\cdot19
+%%     \end{pmatrix}
+%%     =
+%%     \begin{pmatrix}
+%%       -41&-75\\50&59
+%%     \end{pmatrix}.
+%%   \\%\end{align*}
+%%   %\begin{align*}
+%%     A^3+A^2+A&=
+%%     \begin{pmatrix}
+%%       -41&-75\\50&59
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       -5&-18\\12&19
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       -41-5+1&-75-18-3\\50+12+2&59+19+5
+%%     \end{pmatrix}
+%%     =
+%%     \begin{pmatrix}
+%%       -45&-96\\64&83
+%%     \end{pmatrix}.    
+%%   \end{align*}
+%% \end{answerof}
+
+
+\begin{answerof}{quiz:1:10}
+  \begin{align*}
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a-b\\a
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      -3\\1
+    \end{pmatrix}
+    =
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{cases}
+      a-b=-3\\a=1
+    \end{cases}
+  \end{align*}
+  を得る.
+  したがって
+  $a=1$, $b=4$を得る.
+  実際,
+  $(a,b)=(1,4)$とすると,
+  \begin{align*}
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +4\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -3\\1
+    \end{pmatrix}
+  \end{align*}
+  となる.
+\end{answerof}
+
+
+
+\endinput
+\section{行列式と逆行列に関する問題}
+
+\begin{answerof}{quiz:2:1}
+  \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7.
+\\
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+\end{align*}
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:2}
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=
+    (-4-x)\cdot (-x) -1\cdot 5=x^2+4x-5=(x+5)(x-1)
+  \end{align*}
+  であるので
+  \begin{align*}
+    \det(\begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=0
+  \end{align*}
+  とすると,
+  \begin{align*}
+    (x+5)(x-1)&=0
+  \end{align*}
+  である.
+  よって, $x\in \Set{-5,1}$.
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:3}
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}=
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+    =E_2
+  \end{align*}
+  であるので,
+  \begin{align*}
+      \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  の逆行列は
+  \begin{align*}
+      \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:reg:1}
+  \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+
+  これについては, 次のように検算をできる:
+  正則であるので逆行列が存在する.
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}
+     \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    & =
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}\\
+   & =
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
+    \end{pmatrix}
+    =
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
+  \end{align*}
+  
+  \begin{align*}
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+  \end{align*}
+  であるので
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+  \end{align*}
+  は正則ではない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:4}
+  \begin{align*}
+    A&=\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix},&
+    \bbb&=\begin{pmatrix}
+      4\\8
+    \end{pmatrix}.   
+  \end{align*}
+  とする.
+\begin{enumerate}
+\item
+  \begin{align*}
+    \det(A)=
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+  \end{align*}
+  であるので,
+  $A$は正則であり,
+  \begin{align*}
+     A^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+
+  
+  これは次のように検算できる.
+  もとの行列と求めた行列をかけると
+  \begin{align*}
+    A^{-1}A
+     &=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}\\
+    &=
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
+    \end{pmatrix}
+    =
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
+  \end{align*}
+  となり, $E_2$となる.
+
+\item
+  $A$が正則なので解は$A^{-1}\bbb$である.
+  したがって,
+  \begin{align*}
+    \frac{1}{7}\begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+    =
+    \frac{1}{7}\begin{pmatrix}
+      6\cdot 4 -1\cdot 8\\
+      -5\cdot 4 +2\cdot 8\\
+    \end{pmatrix}
+    =
+    \frac{1}{7}\begin{pmatrix}
+      16\\-4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+
+  これは次のように検算できる.
+  \begin{align*}
+    A\xx=
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      2\frac{16}{7}+1\frac{-4}{7}\\5\frac{16}{7}+6\frac{-4}{10}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{28}{7}\\\frac{56}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+  \end{align*}
+  となり$\bbb$となる.
+\end{enumerate}
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:11}
+  $A^3+A^2+A+E_2=O_{2,2}$を満たすとすると,
+  \begin{align*}
+    -A^3-A^2-A=E_2
+  \end{align*}
+  を満たす.
+  したがって, $B=-(A^2+A+E_2)$
+  とおくと,
+  \begin{align*}
+  AB&=A(-A^2-A-E_2)=-A^3-A^2-A=E_2\\
+  BA&=(-A^2-A-E_2)A=-A^3-A^2-A=E_2
+  \end{align*}
+  をみたすので,
+  $B$は$A$の逆行列である.
+  したがって, $A$は正則である.
+\end{answerof}
+
+\section{行列と連立方程式に関する問題}
+\begin{answerof}{quiz:3:1}
+  \begin{align*}
+    \begin{pmatrix}
+      1&3&1\\2&6&5
+    \end{pmatrix}
+  \end{align*}
+  の2行目に1行目の$-2$倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}
+      1&3&1\\0&0&3
+    \end{pmatrix}
+  \end{align*}
+  となる. さらに, 2行目を$\frac{1}{3}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&3&1\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となる. さらに, 1行目に2行目の$-1$倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}
+      1&3&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となる.  これは, 階数$2$の被約階段行列である.
+  したがって, 
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      1&3&1\\2&6&5
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
+
+
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\5&-1&-2
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  である. さらに$1$行目を$-\frac{1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&-\frac{1}{5}&-\frac{2}{5}\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$1$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      -5&1&2\\5&-1&-2
+    \end{pmatrix}
+    )=1
+  \end{align*}
+  である.
+
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\5&-1&2
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&4
+    \end{pmatrix}
+  \end{align*}
+  である. さらに, 
+  2行目を$\frac{1}{4}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-2$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目を$-\frac{1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&-\frac{1}{5}&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$2$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      -5&1&2\\5&-1&2
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
+
+
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-\frac{5}{2}$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&\frac{7}{2}&-2
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{7}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      2&0&\frac{32}{7}\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{1}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&\frac{16}{7}\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$2$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:3:2}
+  \begin{align*}
+    \begin{cases}
+      2x+y=4\\
+      5x+6y=8
+      \end{cases}
+  \end{align*}
+  は,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+  \end{align*}
+  とかける.
+  この連立一次方程式の係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}.
+  \end{align*}
+  この連立一次方程式の拡大係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}.
+  \end{align*}
+  また,
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cot 6-1\cdot 5=7
+  \end{align*}
+  となるので,
+  係数行列は正則である.
+  したがって解は,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+    \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+    \begin{pmatrix}
+      6\cdot 4-1\cdot 8\\-5\cdot 4+2\cdot 8
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+    \begin{pmatrix}
+      16\\-4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}.
+  \end{align*}
+
+
+  またこの連立方程式は次の方法でも解ける:
+  この連立方程式の拡大係数行列
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-\frac{5}{2}$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&\frac{7}{2}&-2
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{7}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      2&0&\frac{32}{7}\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{1}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&\frac{16}{7}\\0&1&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これを拡大係数行列にもつ連立方程式は,
+  \begin{align*}
+    \begin{cases}
+      x=\frac{16}{7}\\
+      y=-\frac{4}{7}
+    \end{cases}
+  \end{align*}
+  である. したがって,
+  解は
+  \begin{align*}
+        \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  いずれの方法で求めたにせよ,
+  解は, 次のように検算できる.
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{2\cdot 16-1\cdot 4}{7}\\\frac{5\cdot 16-6\cdot 4}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{28}{7}\\\frac{56}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}.
+  \end{align*}
+\end{answerof}
+
+
+\begin{answerof}{quiz:3:3}
+
+  \begin{align*}
+    \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
+  \end{align*}
+  であるので, 係数行列の逆行列を用いて解く方法は使えない.
+  拡大係数行列を行基本変形で階段行列に変形することでとくことにする.
+
+  拡大係数行列
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\5&-1&-2\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる. 1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&\frac{-2}{5}\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる. つまり,
+  \begin{align*}
+    \begin{cases}
+      x+\frac{-1}{5}y=\frac{-2}{5}\\
+      0=0
+    \end{cases}
+  \end{align*}
+  である.
+  つまり,
+  \begin{align*}
+    \begin{cases}
+      x=+\frac{1}{5}y+\frac{-2}{5}\\
+      0=0
+    \end{cases}
+  \end{align*}
+  である.
+  1つ目の式から, $y=t$のとき
+  $x=\frac{1}{5}t+\frac{-2}{5}$
+  となるので,
+  解は,
+  \begin{align*}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        &=\begin{pmatrix}\frac{1}{5}t+\frac{-2}{5}\\t\end{pmatrix}
+        &(t\in \RR)
+  \end{align*}
+  と表せられる.
+
+  これは次の様に検算できる.
+  $t=0$のとき,
+  \begin{align*}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        &=\begin{pmatrix}\frac{-2}{5}\\0\end{pmatrix}
+  \end{align*}
+  であるが,
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+      \begin{pmatrix}\frac{-2}{5}\\0\end{pmatrix}
+        =
+    \begin{pmatrix}-5\cdot(\frac{-2}{5})+1\cdot 0 \\5\cdot(\frac{-2}{5})-1\cdot 0\end{pmatrix}
+        =
+    \begin{pmatrix}2 \\-2\end{pmatrix}
+  \end{align*}
+  となる.
+  
+  $t=1$のとき,
+  \begin{align*}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        &=\begin{pmatrix}\frac{1}{5}1+\frac{-2}{5}\\1\end{pmatrix}
+        =\begin{pmatrix}\frac{-1}{5}\\1\end{pmatrix}
+  \end{align*}
+  であるが,
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+      \begin{pmatrix}\frac{-1}{5}\\1\end{pmatrix}
+        =
+    \begin{pmatrix}-5\cdot(\frac{-1}{5})+1\cdot 1 \\5 \frac{-1}{5}-1\cdot 1 \end{pmatrix}
+        =
+    \begin{pmatrix}2 \\-2\end{pmatrix}.
+  \end{align*}
+  
+\end{answerof}
+
+\begin{answerof}{quiz:3:3x}
+  \begin{align*}
+    \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
+  \end{align*}
+  であるので, 係数行列の逆行列を用いて解く方法は使えない.
+  拡大係数行列を行基本変形で階段行列に変形することでとくことにする.
+
+  拡大係数行列
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\5&-1&2\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&0&4\end{pmatrix}
+  \end{align*}
+  となる.
+  2行目を$\frac{1}{4}$倍すると
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&0&1\end{pmatrix}
+  \end{align*}
+  となる.
+  1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&\frac{-2}{5}\\0&0&1\end{pmatrix}
+  \end{align*}
+  となる.
+  1行目に2行目の$\frac{5}{2}$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&1\end{pmatrix}
+  \end{align*}
+  となる.
+  つまり,
+  \begin{align*}
+    \begin{cases}
+      x+\frac{-1}{5}y=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  である.
+  2つ目の式は$x$, $y$をどの様な値にしても成り立つことはないので,
+  この連立方程式は解を持たない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:3:4}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  であり,
+  拡大係数行列は
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \det(A)=\det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
+  \end{align*}
+  であるので, 係数行列の逆行列を用いて解く方法は使えない.
+  拡大係数行列を行基本変形で階段行列に変形することを考える.
+
+
+  拡大係数行列
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}-5&1&a\\0&0&a+b\end{pmatrix}
+  \end{align*}
+  となる. 1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&a+b\end{pmatrix}
+  \end{align*}
+  となる.
+  係数行列$A$の階数は1であるが,
+  拡大係数行列$B$の階数を求めるには,
+  $a+b$の値によって場合分けをする必要がある.
+
+  $a+b=0$のとき,
+  $C$は,
+  \begin{align*}
+    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&0\end{pmatrix}
+  \end{align*}
+  となるので, 拡大係数行列の階数は1となる.
+  係数行列の階数と拡大係数行列の階数が等しいので,
+  このとき, 考えている連立方程式は解をもつ.
+
+  $a+b\neq 0$のとき,
+    $C$の2行目を$\frac{1}{a+b}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&1\end{pmatrix}
+  \end{align*}
+  である.
+  1行目に2行目の$\frac{a}{5}$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&1\end{pmatrix}
+  \end{align*}
+  という被約階段行列を得ることができる.
+  したがって拡大係数行列の階数は2であり,
+  $\rank(A)<\rank(B)$であるので,
+  このときは解を持たない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:3:4x}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}2&1\\5&6\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \det(A)=\det(\begin{pmatrix}2&1\\5&6\end{pmatrix})=2\cdot6-1\cdot 5=7\neq 0
+  \end{align*}
+  であるので, $A$は正則である.
+  したがって,
+  \begin{align*}
+      A^{-1}\begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  は連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}2&1\\5&6\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  の階である.
+  したがって,
+  いつでも,
+  この連立方程式は解を持つ.
+\end{answerof}
+
+ 
+
+\begin{answerof}{quiz:3:5}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}-5&1\\5&a\end{pmatrix}
+  \end{align*}
+  であり,
+  拡大係数行列は
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
+  \end{align*}
+  である.
+
+  拡大係数行列
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
+  \end{align*}
+  となる.
+  $a+1$の値で場合分けをする必要がある.
+
+  $a+1\neq 0$のとき,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
+  \end{align*}
+  2行目に$\frac{1}{a+1}$をかけると,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&1&\frac{b+2}{a+1}\end{pmatrix}
+  \end{align*}
+  となる.
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}-5&0&2-\frac{b+2}{a+1}\\0&1&\frac{b+2}{a+1}\end{pmatrix}
+  \end{align*}
+  となる.
+  したがって, この場合は$\rank(A)=\rank(B)$であるので,
+  考えている方程式は解をもつ.
+
+
+  $a+1=0$のとき,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&0&b+2\end{pmatrix}
+  \end{align*}
+  であるので, $\rank(A)=1$である.
+  $\rank(B)$を求めるには, $b+2$の値で更に場合分けをする必要がある.
+  $b+2=0$であれば,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
+  \end{align*}
+  であるので, $\rank(B)=1$であり, $\rank(A)=\rank(B)$であるから,
+  考えている方程式は解をもつ.
+  $b+2\neq 0$であれば,
+  $C$の2行目を$\frac{1}{b+2}$倍することで,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&0&1\end{pmatrix}
+  \end{align*}
+  を得る. さらに1行目に2行目の$-1$倍を加え
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\0&0&1\end{pmatrix}
+  \end{align*}
+  という被約階段行列を得る.
+  したがって, $\rank(B)=2$である.
+  $\rank(A)<\rank(B)$であるので,
+  この場合は
+  考えている方程式は解を持たない.
+\end{answerof}
+
+\begin{answerof}{quiz:3:6}
+  \seealsoquiz{quiz:2:2}
+  
+  係数行列は,
+  \begin{align*}
+    A=    \begin{pmatrix}-4-a&1\\5&-a\end{pmatrix}
+  \end{align*}
+  である.
+  $A$が正則であれば,
+  解は
+  $A^{-1}\zzero=\zzero$
+  に限られる.
+  $A$が正則ではないことと$\det(A)=0$は同値であるので,
+  $\det(A)$を計算する.
+  \begin{align*}
+    \det(A)=\det(\begin{pmatrix}-4-a&1\\5&-a\end{pmatrix})
+     =-a(-4-a)-5=a^2+4a-5=(a+5)(a-1)
+  \end{align*}
+  であるので$\det(A)=0$となるのは$a\in\Set{1,-5}$のときである.
+
+  実際$a=1$のとき,
+  \begin{align*}
+    A=\begin{pmatrix}-4-1&1\\5&-1\end{pmatrix}
+    =\begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  であるので, 方程式$A\xx=\zzero$の拡大係数行列は,
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\5&-1&0\end{pmatrix}
+  \end{align*}
+  であるが, 2行目に1行目の$-1$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる. 1行目を$-\frac{1}{5}$倍することで,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる.  $x-\frac{1}{5}=0$であるので, $y=t$とすると, $x=\frac{t}{5}$である.
+  よって解は
+  \begin{align*}
+    \begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}
+  \end{align*}
+  とかける. 特に, $t=1$のとき,
+  \begin{align*}
+    \begin{pmatrix}\frac{1}{5}\\1\end{pmatrix}
+  \end{align*}
+  であり, これは第2成分が$0$ではないので, $\zzero$ではない.
+
+  一方
+  $a=-5$のとき,
+  \begin{align*}
+    A=\begin{pmatrix}-4-(-5)&1\\5&-(-5)\end{pmatrix}
+    =\begin{pmatrix}1&1\\5&5\end{pmatrix}
+  \end{align*}
+  であるので, 方程式$A\xx=\zzero$の拡大係数行列は,
+  \begin{align*}
+    \begin{pmatrix}1&1&0\\5&5&0\end{pmatrix}
+  \end{align*}
+  であるが, 2行目に1行目の$-5$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}1&1&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる.
+  $x+y=0$であるので, $y=t$とすると, $x=-t$である.
+  よって解は
+  \begin{align*}
+    \begin{pmatrix}-t\\t\end{pmatrix}
+  \end{align*}
+  とかける. 特に, $t=1$のとき,
+  \begin{align*}
+    \begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  であり, これは第2成分が$0$ではないので, $\zzero$ではない.  
+\end{answerof}
+
+
+
+
+
+\begin{answerof}{quiz:3:7} 
+\seealsoquiz{quiz:3:6}
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      a\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  は移項すると,
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        -
+        a\begin{pmatrix}x\\y\end{pmatrix}
+      =\zzero
+  \end{align*}
+  となるが,
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        -
+        a\begin{pmatrix}x\\y\end{pmatrix}
+        &=
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+        -
+        (aE_2)\begin{pmatrix}x\\y\end{pmatrix}\\
+        &=
+        (\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+        -
+        aE_2)\begin{pmatrix}x\\y\end{pmatrix}\\
+        &=
+        (\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+        -
+        \begin{pmatrix}a&0\\0&a\end{pmatrix}
+          )\begin{pmatrix}x\\y\end{pmatrix}\\
+        &=
+        \begin{pmatrix}-4-a&1\\5&0-a\end{pmatrix}
+          \begin{pmatrix}x\\y\end{pmatrix}        
+  \end{align*}
+  と変形できるので,
+  \begin{align*}
+    \begin{pmatrix}-4-a&1\\5&0-a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \zzero
+  \end{align*}
+  と書き直せる.
+  したがって,
+  求めるべきものは,
+  連立方程式
+  \begin{align*}
+    \begin{pmatrix}-4-a&1\\5&0-a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \zzero
+  \end{align*}
+  が$\zzero$
+  以外の
+  解を持つための$a$に対する条件である.
+  係数行列がが正則であれば,
+  解は
+  $\zzero$
+  に限られる.
+  係数行列が正則でなくなるための条件を調べるためにその行列式を計算する.
+  \begin{align*}
+    \det(\begin{pmatrix}-4-a&1\\5&0-a\end{pmatrix})
+     =-a(-4-a)-5=a^2+4a-5=(a+5)(a-1)
+  \end{align*}
+  であるので$\det(A)=0$となるのは$a\in\Set{1,-5}$のときである.
+
+  実際$a=1$のとき,
+  考えている方程式の拡大係数行列は,
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\5&-1&0\end{pmatrix}
+  \end{align*}
+  であるが, 2行目に1行目の$-1$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる. 1行目を$-\frac{1}{5}$倍することで,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる.  $x-\frac{1}{5}=0$であるので, $y=t$とすると, $x=\frac{t}{5}$である.
+  よって解は
+  \begin{align*}
+    \begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}
+  \end{align*}
+  とかける. 特に, $t=1$のとき,
+  \begin{align*}
+    \begin{pmatrix}\frac{1}{5}\\1\end{pmatrix}
+  \end{align*}
+  であり, これは第2成分が$0$ではないので, $\zzero$ではない.
+
+  一方
+  $a=-5$のとき,
+  考えている方程式の拡大係数行列は,
+  \begin{align*}
+    \begin{pmatrix}1&1&0\\5&5&0\end{pmatrix}
+  \end{align*}
+  であるが, 2行目に1行目の$-5$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}1&1&0\\0&0&0\end{pmatrix}
+  \end{align*}
+  となる.
+  $x+y=0$であるので, $y=t$とすると, $x=-t$である.
+  よって解は
+  \begin{align*}
+    \begin{pmatrix}-t\\t\end{pmatrix}
+  \end{align*}
+  とかける. 特に, $t=1$のとき,
+  \begin{align*}
+    \begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  であり, これは第2成分が$0$ではないので, $\zzero$ではない.  
+\end{answerof}
+
+\begin{answerof}{quiz:3:8} 
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+     \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx=
+      \begin{pmatrix}0&1\\0&0\end{pmatrix}
+        \begin{pmatrix}x\\y\end{pmatrix}
+      = \begin{pmatrix}y\\0\end{pmatrix}  
+  \end{align*}
+  したがって,
+  \begin{align*}
+     \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx&=\zzero\\
+     \begin{pmatrix}y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}  
+  \end{align*}
+  であるので, $y=0$であれば$x$はどのような値でも良い.
+  したがって,
+  実数解は
+  \begin{align*}
+    \xx=\begin{pmatrix}t\\0\end{pmatrix}=t\ee_1&&(t\in\RR)
+  \end{align*}
+  と書くことができる.
+\end{answerof}
+
+\begin{answerof}{quiz:3:9} 
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}-5&1\\0&0\end{pmatrix}.
+  \end{align*}
+ $1$行目を$\frac{-1}{5}$倍すると
+ \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
+    \xx=\zzero
+  \end{align*}
+  を解けば良い.
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
+      \xx
+      =
+    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく. $x-\frac{1}{5}y=0$であるので,
+  $x=\frac{1}{5}y$であるから,
+  $y=t$とすると, $x=\frac{t}{5}$である.
+  よって, 実数解は,
+  \begin{align*}
+    \xx=\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix} && (t\in\RR)
+  \end{align*}
+  と書くことができる.  
+\end{answerof}
+
+\begin{answerof}{quiz:3:10} 
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-5$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}
+    \xx=\zzero
+  \end{align*}
+  を解けば良い.
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}
+      \xx
+      =
+    \begin{pmatrix}x+y\\0\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}x+y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく. $x+y=0$であるので,
+  $x=-y$であるから,
+  $y=t$とすると, $x=-t$である.
+  よって, 実数解は,
+  \begin{align*}
+    \xx=\begin{pmatrix}-t\\t\end{pmatrix} && (t\in\RR)
+  \end{align*}
+  と書くことができる.  
+\end{answerof}
+
+\section{平面の線形変換に関する問題}
+\begin{answerof}{quiz:5:1}
+  \seealsoquiz{quiz:2:1}
+  2つの2項ベクトルの組が
+  一次独立かどうかは, 行列式を調べることでわかる.
+  
+ \begin{align*}
+     \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-5\cdot(-1)-1\cdot(5)=0
+ \end{align*}
+ であるので
+ \begin{align*}
+   (\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})
+ \end{align*}
+ は一次独立ではない.
+
+ \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+ \end{align*}
+ であるので,
+ \begin{align*}
+   (\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})
+ \end{align*}
+は一次独立である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:3}  
+  2つの2項ベクトルの組が
+  一次独立かどうかは, 行列式を調べることでわかる.
+  \begin{align*}
+    \det(\begin{pmatrix}-5&1\\a&b\end{pmatrix})
+    =-5b-1a=-5b-a
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    (\begin{pmatrix}-5\\a\end{pmatrix},
+    \begin{pmatrix}1\\b\end{pmatrix})
+  \end{align*}
+  は,
+  行列式が$0$でないとき,
+  つまり,
+  $a\neq -5b$であるとき
+  一次独立であり,
+  行列式が$0$のとき,
+  つまり,
+  $a= -5b$であるとき
+  一次独立ではない.
+\end{answerof}
+
+\begin{answerof}{quiz:5:2}
+  \begin{align*}
+    A&=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}\\
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}
+  \end{align*}
+  とする.
+  $(\aaa,\bbb)$が$\RR^2$の生成系であるということは,
+  どの$\pp\in\RR^2$に対しても,
+  $x\aaa+y\bbb=\pp$を満たす$x,y\in\RR$が存在するということであった.
+  \begin{align*}
+    x\aaa+y\bbb=
+    x\begin{pmatrix}a\\a'\end{pmatrix}+y\begin{pmatrix}b\\b'\end{pmatrix}
+    =\begin{pmatrix}xa+yb\\xa'+yb'\end{pmatrix}
+    =\begin{pmatrix}a&b\\a'&b'\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+    =A\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  と書き換えられるので,
+  $(\aaa,\bbb)$が$\RR^2$の生成系であるということは,
+  どの$\pp\in\RR^2$に対しても
+  $A\xx=\pp$が実数解を持つことと言い換えられる.
+  どの$\pp\in\RR^2$に対しても
+  $A\xx=\pp$が実数解を持つならば,
+  $(\aaa,\bbb)$が$\RR^2$の生成系である. 
+  $A\xx=\pp$が実数解を持たないような
+  $\pp\in\RR^2$が存在するなら,
+  $(\aaa,\bbb)$が$\RR^2$の生成系ではない.
+ 
+
+  \seealsoquiz{quiz:3:4x}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    \det(A)=
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+ \end{align*}
+  であるので, $A$は正則である.
+  したがって, $\pp\in\RR^2$とすると,
+  $A^{-1}\pp$は$A\xx=\pp$の解である.
+  したがって,
+  \begin{align*}
+   (\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})
+  \end{align*}
+  は$\RR^2$の生成系である.
+
+
+  \seealsoquiz{quiz:3:4}
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}
+      p\\q
+    \end{pmatrix}
+  \end{align*}
+  とする. この方程式の拡大係数行列は
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&p\\5&-1&q
+    \end{pmatrix}
+  \end{align*}
+  である.
+  2行目に1行目の$1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&p\\0&0&p+q
+    \end{pmatrix}
+  \end{align*}
+  1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&\frac{-p}{5}\\0&0&p+q
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  したがって考えている連立方程式は,
+  $p+q=0$なら解をもつ.
+  しかし
+  $p+q\neq 0$なら,
+  さらに2行目を$\frac{1}{p+q}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&\frac{-p}{5}\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となり,
+  さらに1行目に2行目の$\frac{p}{5}$倍を加えることで,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  考えている連立方程式は
+  解をもたない.
+  例えば,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  は実数解を持たないので,
+  \begin{align*}
+    (\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})
+  \end{align*}
+  は$\RR^2$の生成系ではない.
+\end{answerof}
+
+\begin{answerof}{quiz:5:5}
+  \begin{align*}
+    \aaa=\begin{pmatrix}-1\\-1\end{pmatrix},
+    \bbb=\begin{pmatrix}2\\-1\end{pmatrix}
+  \end{align*}
+  であるとき,
+
+  \begin{align*}
+    \Braket{\aaa,\bbb}
+    &=\Braket{\begin{pmatrix}-1\\-1\end{pmatrix},\begin{pmatrix}2\\-1\end{pmatrix}}
+    =-1\cdot2+(-1)(-1)=-2+1=-1.
+    \\
+    \Braket{\aaa,\aaa}
+    &=\Braket{\begin{pmatrix}-1\\-1\end{pmatrix},\begin{pmatrix}-1\\-1\end{pmatrix}}
+    =(-1)^2+(-1)^2=2.
+\\
+    \Braket{\bbb,\bbb}
+    &=\Braket{\begin{pmatrix}2\\-1\end{pmatrix},\begin{pmatrix}2\\-1\end{pmatrix}}
+    =(2)^2+(-1)^2=5.
+    \\
+    \|\aaa\|
+    =\sqrt{\Braket{\aaa,\aaa}}
+    =\sqrt{2}
+\\
+    \|\bbb\|
+    =\sqrt{\Braket{\bbb,\bbb}}
+    =\sqrt{5}
+  \end{align*}
+  $\Braket{\aaa,\bbb}=\left\|\aaa\right\|\left\|\bbb\right\|\cos(\theta)$であるので,
+  \begin{align*}
+    \cos(\theta)=\frac{\Braket{\aaa,\bbb}}{\left\|\aaa\right\|\left\|\bbb\right\|}
+=\frac{-1}{\sqrt{2}\sqrt{5}}
+=-\frac{1}{\sqrt{10}}.
+  \end{align*}
+\end{answerof}
+
+\begin{answerof}{quiz:5:7}
+  \begin{align*}
+    \|\aaa-2\bbb\|^2
+    &=\Braket{\aaa+2\bbb,\aaa+2\bbb}\\
+    &=\Braket{\aaa,\aaa+2\bbb}+\Braket{2\bbb,\aaa+2\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,2\bbb}+\Braket{2\bbb,\aaa}+\Braket{2\bbb,2\bbb}\\
+    &=\Braket{\aaa,\aaa}+2\Braket{\aaa,\bbb}+2\Braket{\bbb,\aaa}+4\Braket{\bbb,\bbb}\\
+    &=\|\aaa\|^2+2\Braket{\aaa,\bbb}+2\Braket{\aaa,\bbb}+4\|\bbb\|^2\\
+    &=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2
+  \end{align*}
+  であるので,
+  $\|\aaa-2\bbb\|^2=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2$
+  である.
+  $\|\aaa\|=2$,
+  $\|\bbb\|=3$,
+  $\|\aaa-2\bbb\|=\sqrt{3}$
+  であるから,
+  \begin{align*}
+    \|\aaa-2\bbb\|^2&=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2\\
+    \sqrt{3}^2&=2^2+4\Braket{\aaa,\bbb}+4\cdot 3^2\\
+    3&=4+4\Braket{\aaa,\bbb}+36\\
+    -4\Braket{\aaa,\bbb}&=4+36-3=37\\
+    \Braket{\aaa,\bbb}&=-\frac{37}{4}\\
+  \end{align*}
+  である.
+  $\Braket{\aaa,\bbb}=\left\|\aaa\right\|\left\|\bbb\right\|\cos(\theta)$であるので,
+  \begin{align*}
+    \cos(\theta)=\frac{\Braket{\aaa,\bbb}}{\left\|\aaa\right\|\left\|\bbb\right\|}
+=\frac{37}{4\cdot 2\cdot 3}
+=\frac{37}{\sqrt{24}}.
+  \end{align*}
+  
+\end{answerof}
+
+\begin{answerof}{quiz:5:6}
+  \begin{align*}
+    \|\aaa-2\bbb\|^2
+    &=\Braket{\aaa+2\bbb,\aaa+2\bbb}\\
+    &=\Braket{\aaa,\aaa+2\bbb}+\Braket{2\bbb,\aaa+2\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,2\bbb}+\Braket{2\bbb,\aaa}+\Braket{2\bbb,2\bbb}\\
+    &=\Braket{\aaa,\aaa}+2\Braket{\aaa,\bbb}+2\Braket{\bbb,\aaa}+4\Braket{\bbb,\bbb}\\
+    &=\|\aaa\|^2+2\Braket{\aaa,\bbb}+2\Braket{\aaa,\bbb}+4\|\bbb\|^2\\
+    &=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2
+  \end{align*}
+  であるので,
+  $\|\aaa-2\bbb\|^2=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2$
+  である.
+  $\|\aaa\|=2$,
+  $\|\bbb\|=3$,
+  $\|\aaa-2\bbb\|=\sqrt{3}$
+  であるから,
+  \begin{align*}
+    \|\aaa-2\bbb\|^2&=\|\aaa\|^2+4\Braket{\aaa,\bbb}+4\|\bbb\|^2\\
+    \sqrt{3}^2&=2^2+4\Braket{\aaa,\bbb}+4\cdot 3^2\\
+    3&=4+4\Braket{\aaa,\bbb}+36\\
+    -4\Braket{\aaa,\bbb}&=4+36-3=37\\
+    \Braket{\aaa,\bbb}&=-\frac{37}{4}\\
+  \end{align*}
+  である.
+
+  また,
+  \begin{align*}
+    \Braket{\aaa+t\bbb,\aaa+2\bbb}
+    &=\Braket{\aaa,\aaa+2\bbb}+\Braket{t\bbb,\aaa+2\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,2\bbb}+\Braket{t\bbb,\aaa}+\Braket{t\bbb,2\bbb}\\
+    &=\Braket{\aaa,\aaa}+2\Braket{\aaa,\bbb}+t\Braket{\bbb,\aaa}+2t\Braket{\bbb,\bbb}\\
+    &=\|\aaa\|^2+2\Braket{\aaa,\bbb}+t\Braket{\aaa,\bbb}+2t\|\bbb\|^2\\
+    &=\|\aaa\|^2+(2+t)\Braket{\aaa,\bbb}+2t\|\bbb\|^2
+  \end{align*}
+  である.
+  $\|\aaa\|=2$,
+  $\|\bbb\|=3$,
+  $\Braket{\aaa,\bbb}=-\frac{37}{4}$であるので,
+  \begin{align*}
+    \Braket{\aaa+t\bbb,\aaa+2\bbb}
+    &=\|\aaa\|^2+(2+t)\Braket{\aaa,\bbb}+2t\|\bbb\|^2\\
+    &=2^2+-\frac{37}{4}(2+t)+ 3^2\cdot2t\\
+    &=4-\frac{37}{2}-\frac{37}{4}t+18t\\
+    &=\frac{8-37}{2}+\frac{72-37}{4}t\\
+    &=\frac{-29}{2}+\frac{35}{4}t
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    \frac{-29}{2}+\frac{35}{4}t&=0\\
+    \frac{35}{4}t&=\frac{29}{2}\\
+    t&=\frac{29\cdot 2}{35}=\frac{58}{35}
+  \end{align*}
+  のとき,
+  $\Braket{\aaa+t\bbb,\aaa+2\bbb}=0$となる.
+\end{answerof}
+
+\begin{answerof}{quiz:5:9}
+  \begin{align*}
+    \aaa=\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},\\
+    \bbb=\begin{pmatrix}x\\y\end{pmatrix},
+  \end{align*}
+  とおく.
+  正規直交基底であるとすると,
+  \begin{align}
+    \|\aaa\|^2&=\left(\frac{3}{5}\right)^2+\left(\frac{4}{5}\right)^2=1\\
+    \|\bbb\|^2&=x^2+y^2=1     \label{orthonorm:eq1}\\
+    \Braket{\aaa,\bbb}&=\frac{3}{5}x+\frac{4}{5}y=0
+    \label{orthonorm:eq2}
+  \end{align}
+  である. したがって, \cref{orthonorm:eq2}から,
+  \begin{align*}
+    x=-\frac{4}{3}y
+  \end{align*}
+  がわかるので, \cref{orthonorm:eq1}に代入して,
+  \begin{align*}
+    \left(-\frac{4}{3}y\right)^2+y^2&=1\\
+    \frac{25}{9}y^2&=1\\
+    y^2&=\frac{9}{25}
+  \end{align*}
+  となるので, $y\in\Set{\frac{3}{5},-\frac{3}{5}}$である.
+
+  $y=\frac{3}{5}$のときには,
+  $x=-\frac{4}{5}$で,
+  \begin{align*}
+    (\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
+    \frac{1}{5}\begin{pmatrix}-4\\3\end{pmatrix})
+  \end{align*}
+  という正規直交基底が得られる.
+
+  $y=-\frac{3}{5}$のときには,
+  $x=\frac{4}{5}$で,
+  \begin{align*}
+    (\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
+    \frac{1}{5}\begin{pmatrix}4\\-3\end{pmatrix})
+  \end{align*}
+  という正規直交基底が得られる.
+\end{answerof}
+
+\begin{answerof}{quiz:5:10}
+  \begin{align*}
+    A=\frac{1}{5}\begin{pmatrix}3&x\\4&y\end{pmatrix}
+  \end{align*}
+  とする.
+  $A$が直交行列であるとすると,
+  \begin{align*}
+    \transposed{A}A=E_2
+  \end{align*}
+  である.
+  \begin{align*}
+    \transposed{A}A
+    &=\frac{1}{25}\begin{pmatrix}3&4\\x&y\end{pmatrix}\begin{pmatrix}3&x\\4&y\end{pmatrix}\\
+    &=\frac{1}{25}\begin{pmatrix}3^2+4^2&3x+4y\\3x+4y&x^2+\end{pmatrix}\\
+    &=\begin{pmatrix}25&3x+4y\\3x+4y&x^2+y^2\end{pmatrix}
+  \end{align*}
+  であるので
+  \begin{align}
+    \frac{x^2+y^2}{25}&=1\label{orthomat:eq1}\\
+    \frac{3}{25}x+\frac{4}{25}y&=0
+    \label{orthomat:eq2}
+  \end{align}
+  である.
+  \Cref{orthomat:eq2}より, 
+  \begin{align*}
+    y=-\frac{3}{4}x
+  \end{align*}
+  であるので, \cref{orthomat:eq1}に代入すると,
+  \begin{align*}
+    \frac{x^2+\left(-\frac{3}{4}x\right)^2}{25}&=1\\
+    x^2+\left(-\frac{3}{4}x\right)^2&=25\\
+    16x^2+9x^2&=400\\
+    25x^2&=400\\
+    x^2&=16
+  \end{align*}
+  であるので, $x\in\Set{4,-4}$である.
+
+  $x=4$のときには,
+  $y=-3$で,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+  $x=-4$のときには,
+  $y=3$で,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+
+  また, $A$が直交行列であることと, $A\transposed{A}=E_2$を満たすことは同値であったので, 次のように解くこともできる.
+  \begin{align*}
+    A\transposed{A}
+    &=\frac{1}{25}\begin{pmatrix}3&x\\4&y\end{pmatrix}\begin{pmatrix}3&4\\x&y\end{pmatrix}\\
+    &=\frac{1}{25}\begin{pmatrix}3^2+x^2&3x+xy\\4\cdot 3+xy&4^2+y^2\end{pmatrix}
+  \end{align*}
+  であるので
+  \begin{align}
+    \frac{1}{25}(3^2+x^2)&=1\label{orthomat:eq4}\\
+    \frac{1}{25}(3\cdot 4+xy)&=0\label{orthomat:eq5}\\
+    \frac{1}{25}(4^2+y^2)&=1\label{orthomat:eq6}
+  \end{align}
+  である.
+  \Cref{orthomat:eq4}より, 
+  \begin{align*}
+    9+x^2&=25\\
+    x^2&=16
+  \end{align*}
+  であるので, $x\in\Set{4,-4}$.
+    \Cref{orthomat:eq6}より, 
+  \begin{align*}
+    16+y^2&=25\\
+    y^2&=9
+  \end{align*}
+  であるので, $y\in\Set{3,-3}$.
+
+  $x=4$, $y=3$のとき,
+  $\frac{1}{25}(12+xy)=\frac{24}{25}\neq 0$
+  であり,
+  \Cref{orthomat:eq5} を満たさない.
+
+  $x=4$,
+  $y=-3$のときには,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+  $x=-4$,
+  $y=3$のときには,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+  
+  $x=-4$, $y=-3$のとき,
+  $\frac{1}{25}(12+xy)=\frac{24}{25}\neq 0$
+  であり,
+  \Cref{orthomat:eq5} を満たさない.
+\end{answerof}
+
+\begin{answerof}{quiz:5:p:1}
+\begin{align*}
+  \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}&
+  \bbb&=\begin{pmatrix}2\\-3\end{pmatrix}
+\end{align*}
+とする.
+$\aaa$から$L$への直交射影を$\pp$
+とすると,
+\begin{align*}
+  \pp&=t\bbb\\
+  \Braket{\aaa-\pp,\bbb}&=0
+\end{align*}
+を満たすものである.
+$\pp=t\bbb$であることから,
+\begin{align*}
+  \Braket{\aaa-\pp,\bbb}
+  &=\Braket{\aaa-t\bbb,\bbb}\\
+  &=\Braket{\aaa,\bbb}-\Braket{t\bbb,\bbb}\\
+  &=\Braket{\aaa,\bbb}-t\Braket{\bbb,\bbb}\\
+  &=\Braket{\begin{pmatrix}7\\-4\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}-t\Braket{\begin{pmatrix}2\\-3\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}\\
+  &=7\cdot 2+(-4)(-3)-t(2^2+(-3)^2)\\
+  &=26-13t
+\end{align*}
+である.
+$\Braket{\aaa-\pp,\bbb}=0$であるので,
+$26-13t=0$.
+つまり, $t=2$である.
+よって直交射影は
+\begin{align*}
+  \pp=2\begin{pmatrix}2&-3\end{pmatrix}=\begin{pmatrix}4&-6\end{pmatrix}
+\end{align*}
+である.
+垂直成分を$\qq$とすると,
+$\aaa=\pp+\qq$であるので,
+\begin{align*}
+  \qq=\aaa-\pp
+  =\begin{pmatrix}7\\-4\end{pmatrix}-\begin{pmatrix}4&-6\end{pmatrix}
+  =\begin{pmatrix}3\\2\end{pmatrix}
+\end{align*}
+である.
+
+これは次の様に考えることもできる:
+$\aaa$と$\bbb$のなす角を$\theta$とすると,
+$\aaa$から$L$への直交射影$\pp$は,
+$\bbb$のスカラー倍でそのノルムが$|\cos(\theta)|\|\aaa\|$
+であるものである.
+このようなベクトルは
+\begin{align*}
+  \vv=\frac{\cos(\theta)\|\aaa\|}{\|\bbb\|}\bbb,
+  \vv'=-\frac{\cos(\theta)\|\aaa\|}{\|\bbb\|}\bbb
+\end{align*}
+の2つがあるので,
+どちらが$\pp$である.
+一方, $\Braket{\aaa,\bbb}=\|\aaa\|\|\bbb\|\cos(\theta)$
+であるから,
+\begin{align*}
+  \cos(\theta)\|\aaa\|=\frac{\Braket{\aaa,\bbb}}{\|\bbb\|},
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  \vv=\frac{\cos(\theta)\|\aaa\|}{\|\bbb\|}\bbb=
+  \frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb
+\end{align*}
+である. 
+\begin{align*}
+  \Braket{\aaa-\vv,\bbb}
+  &=
+  \Braket{\aaa,\bbb}-\Braket{\vv,\bbb}\\
+  &=\Braket{\aaa,\bbb}-\left\langle\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb,\bbb\right\rangle\\
+  &=\Braket{\aaa,\bbb}-\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\Braket{\bbb,\bbb}\\
+  &=\Braket{\aaa,\bbb}-\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\|\bbb\|^2\\
+  &=\Braket{\aaa,\bbb}-\Braket{\aaa,\bbb}\\
+  &=0
+\end{align*}
+であるから, $\pp=\vv$である.
+
+$\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
+\begin{align*}
+\pp=\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb
+\end{align*}
+とかけるので,
+\begin{align*}
+  \pp&=\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb\\
+  &=\frac{\Braket{\begin{pmatrix}7\\-4\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}}{\|\begin{pmatrix}2\\-3\end{pmatrix}\|^2}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\frac{14+12}{4+9}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=2\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\begin{pmatrix}4\\-6\end{pmatrix}
+\end{align*}
+である.
+垂直成分$\qq$は,
+$\aaa=\pp+\qq$を満たすので
+\begin{align*}
+  \qq=\aaa-\pp
+  =\begin{pmatrix}7\\-4\end{pmatrix}-\begin{pmatrix}4&-6\end{pmatrix}
+  =\begin{pmatrix}3\\2\end{pmatrix}
+\end{align*}
+である.
+\end{answerof}
+
+\begin{answerof}{quiz:5:p:2}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}8\\-3\end{pmatrix}&
+    \bbb&=\begin{pmatrix}2\\-3\end{pmatrix}&
+    \ccc&=\begin{pmatrix}1\\1\end{pmatrix}
+  \end{align*}
+  とし, $\aaa$から$L$への直交射影を$\pp$とする.
+  
+  $L$は原点を通らないので, 原点を通るように平行移動して考える.
+  $L$は$\ccc$を通るので,
+  \begin{align*}
+    \aaa'&=\aaa-\ccc&
+    \pp'&=\pp-\ccc&
+    L'&=\Set{t\bbb|t\in\RR}
+  \end{align*}
+  について考える.
+  このとき, $\pp'$は$\aaa'$から原点を通る直線$L'$への直交射影になっている.
+  $\aaa'$から原点と$\bbb$を通る直線への直交射影$\pp'$は,
+  \begin{align*}
+    \pp'=\frac{\Braket{\aaa',\bbb}}{\|\bbb\|^2}\bbb
+  \end{align*}
+  とかけるので,
+  \begin{align*}
+    \aaa'&=\aaa-\ccc=\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}1\\1\end{pmatrix}
+    =\begin{pmatrix}8-1\\-3-1\end{pmatrix}=\begin{pmatrix}7\\-4\end{pmatrix}
+  \end{align*}
+  であることから,
+  \begin{align*}
+  \pp'&=\frac{\Braket{\aaa',\bbb}}{\|\bbb\|^2}\bbb\\
+  &=\frac{\Braket{\begin{pmatrix}7\\-4\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}}{\|\begin{pmatrix}2\\-3\end{pmatrix}\|^2}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\frac{14+12}{4+9}\begin{pmatrix}2\\-3\end{pmatrix}\\
+      &=2\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\begin{pmatrix}4\\-6\end{pmatrix}
+  \end{align*}
+  である.
+  いま, $\pp'=\pp-\ccc$
+  であるから,
+  \begin{align*}
+    \pp=\pp'+\ccc=\begin{pmatrix}4\\-6\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}5\\-5\end{pmatrix}
+  \end{align*}
+  である.  
+  垂直成分$\qq$は,
+  $\aaa=\pp+\qq$を満たすので
+  \begin{align*}
+    \qq=\aaa-\pp
+    =\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}5&-5\end{pmatrix}
+    =\begin{pmatrix}3\\2\end{pmatrix}
+  \end{align*}
+  である.
+
+
+  これは次の様に考えてもよい:
+  $\pp$は
+  \begin{align*}
+    \pp&=t\bbb+\ccc\\
+    \Braket{\aaa-\pp,\bbb}&=0
+  \end{align*}
+  を満たすものである.
+  \begin{align*}
+    \Braket{\aaa-\pp,\bbb}&=
+    \Braket{\aaa-(t\bbb+\ccc),\bbb}\\
+    &=\Braket{\aaa-\ccc-t\bbb,\bbb}\\
+    &=\Braket{\aaa,\bbb}-\Braket{\ccc,\bbb}-t\Braket{\bbb,\bbb}\\
+    &=\Braket{\begin{pmatrix}8\\-3\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}-\Braket{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}-t\Braket{\begin{pmatrix}2\\-3\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}\\
+    &=16+9-2+3-t(4+9)\\
+    &=26-13t
+  \end{align*}
+  となっているので, $26-13t=0$である.
+  つまり$t=2$であり,
+  \begin{align*}
+    \pp&=t\bbb+\ccc\\
+    &=2\begin{pmatrix}2\\-3\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}\\
+    &=\begin{pmatrix}5\\-5\end{pmatrix}
+  \end{align*}
+  である.
+  垂直成分$\qq$は,
+  $\aaa=\pp+\qq$を満たすので
+  \begin{align*}
+    \qq=\aaa-\pp
+    =\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}5&-5\end{pmatrix}
+    =\begin{pmatrix}3\\2\end{pmatrix}
+  \end{align*}
+  である.
+\end{answerof}
+
+\begin{answerof}{quiz:5:p:3}
+  点と直線の距離を求めるには,
+  直交射影を考えその垂直成分のノルムを求めればよかった.
+
+
+  \begin{align*}
+    \aaa&=\begin{pmatrix}8\\-3\end{pmatrix}&
+    \bbb&=\begin{pmatrix}2\\-3\end{pmatrix}&
+    \ccc&=\begin{pmatrix}1\\1\end{pmatrix}
+  \end{align*}
+  とし, $\aaa$から$L$への直交射影を$\pp$とする.
+  
+  $L$は原点を通らないので, 原点を通るように平行移動して考える.
+  $L$は$\ccc$を通るので,
+  \begin{align*}
+    \aaa'&=\aaa-\ccc&
+    \pp'&=\pp-\ccc&
+    L'&=\Set{t\bbb|t\in\RR}
+  \end{align*}
+  について考える.
+  このとき, $\pp'$は$\aaa'$から原点を通る直線$L'$への直交射影になっている.
+  $\aaa'$から原点と$\bbb$を通る直線への直交射影$\pp'$は,
+  \begin{align*}
+    \pp'=\frac{\Braket{\aaa',\bbb}}{\|\bbb\|^2}\bbb
+  \end{align*}
+  とかけるので,
+  \begin{align*}
+    \aaa'&=\aaa-\ccc=\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}1\\1\end{pmatrix}
+    =\begin{pmatrix}8-1\\-3-1\end{pmatrix}=\begin{pmatrix}7\\-4\end{pmatrix}
+  \end{align*}
+  であることから,
+  \begin{align*}
+  \pp'&=\frac{\Braket{\aaa',\bbb}}{\|\bbb\|^2}\bbb\\
+  &=\frac{\Braket{\begin{pmatrix}7\\-4\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}}{\|\begin{pmatrix}2\\-3\end{pmatrix}\|^2}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\frac{14+12}{4+9}\begin{pmatrix}2\\-3\end{pmatrix}\\
+      &=2\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\begin{pmatrix}4\\-6\end{pmatrix}
+  \end{align*}
+  である.
+  いま, $\pp'=\pp-\ccc$
+  であるから,
+  \begin{align*}
+    \pp=\pp'+\ccc=\begin{pmatrix}4\\-6\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}5\\-5\end{pmatrix}
+  \end{align*}
+  である.  
+  垂直成分$\qq$は,
+  $\aaa=\pp+\qq$を満たすので
+  \begin{align*}
+    \qq=\aaa-\pp
+    =\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}5&-5\end{pmatrix}
+    =\begin{pmatrix}3\\2\end{pmatrix}
+  \end{align*}
+  である.
+  よって, $\aaa$と$L$の距離は
+  \begin{align*}
+    \|\qq\|= \|\begin{pmatrix}3\\2\end{pmatrix}\|=\sqrt{3^2+2^2}=\sqrt{13}
+  \end{align*}
+  である.
+
+  これは次の様に考えてもよい:
+  $\pp$は
+  \begin{align*}
+    \pp&=t\bbb+\ccc\\
+    \Braket{\aaa-\pp,\bbb}&=0
+  \end{align*}
+  を満たすものである.
+  \begin{align*}
+    \Braket{\aaa-\pp,\bbb}&=
+    \Braket{\aaa-(t\bbb+\ccc),\bbb}\\
+    &=\Braket{\aaa-\ccc-t\bbb,\bbb}\\
+    &=\Braket{\aaa,\bbb}-\Braket{\ccc,\bbb}-t\Braket{\bbb,\bbb}\\
+    &=\Braket{\begin{pmatrix}8\\-3\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}-\Braket{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}-t\Braket{\begin{pmatrix}2\\-3\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}\\
+    &=16+9-2+3-t(4+9)\\
+    &=26-13t
+  \end{align*}
+  となっているので, $26-13t=0$である.
+  つまり$t=2$であり,
+  \begin{align*}
+    \pp&=t\bbb+\ccc\\
+    &=2\begin{pmatrix}2\\-3\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}\\
+    &=\begin{pmatrix}5\\-5\end{pmatrix}
+  \end{align*}
+  である.
+  垂直成分$\qq$は,
+  $\aaa=\pp+\qq$を満たすので
+  \begin{align*}
+    \qq=\aaa-\pp
+    =\begin{pmatrix}8\\-3\end{pmatrix}-\begin{pmatrix}5&-5\end{pmatrix}
+    =\begin{pmatrix}3\\2\end{pmatrix}
+  \end{align*}
+  である.
+
+  よって, $\aaa$と$L$の距離は
+  \begin{align*}
+    \|\qq\|= \|\begin{pmatrix}3\\2\end{pmatrix}\|=\sqrt{3^2+2^2}=\sqrt{13}
+  \end{align*}
+  である.
+\end{answerof}
+  
+\begin{answerof}{quiz:5:12}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}3\\4\end{pmatrix},&
+    \bbb&=\begin{pmatrix}1\\2\end{pmatrix}.
+  \end{align*}
+  \begin{align*}
+    \|\aaa\|
+    &=\left\|\begin{pmatrix}3\\4\end{pmatrix}\right\|
+    =\sqrt{3^2+4^2}=5
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \overline{\aaa}
+    &=\frac{1}{\|\aaa\|}\aaa
+    =\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix}
+  \end{align*}
+  とおく.
+
+  つぎに,
+  \begin{align*}
+    \Braket{\overline \aaa,\bbb}=\Braket{\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},\begin{pmatrix}1\\2\end{pmatrix}}
+    =\frac{1}{5}(3+8)=\frac{11}{5}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \bbb'
+    &=\bbb-\Braket{\overline{\aaa},\bbb}\overline{\aaa}\\
+    &=
+    \begin{pmatrix}1\\2\end{pmatrix}-\frac{11}{5}\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix}\\
+    &=
+    \begin{pmatrix}1\\2\end{pmatrix}-\frac{11}{25}\begin{pmatrix}3\\4\end{pmatrix}\\
+    &=
+    \frac{1}{25}\begin{pmatrix}25-33\\50-44\end{pmatrix}
+    &=
+    \frac{1}{25}\begin{pmatrix}-8\\6\end{pmatrix}
+  \end{align*}
+  とおく.
+
+  \begin{align*}
+    \|\bbb'\|
+    &=\left\|\frac{1}{25}\begin{pmatrix}-8\\6\end{pmatrix}\right\|
+    =\frac{1}{25}\left\|\begin{pmatrix}-8\\6\end{pmatrix}\right\|
+    =\frac{\sqrt{64+36}}{25}\\
+    &=\frac{10}{25}
+    =\frac{2}{5}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \overline{\bbb}
+    &=\frac{1}{\|\bbb'\|}\bbb'
+    =\frac{5}{2}\frac{1}{25}\begin{pmatrix}-8\\6\end{pmatrix}
+    =\frac{1}{5}\begin{pmatrix}-4\\3\end{pmatrix}
+  \end{align*}
+  とおく.
+
+  このとき, $\overline{\aaa}$, $\overline{\bbb}$
+  は,
+  \begin{align*}
+    \|\overline{\aaa}\|=\|\overline{\bbb}\|=1\\
+    \Braket{\overline{\aaa},\overline{\bbb}}=0
+  \end{align*}
+  を満たしている.
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:15}
+  \begin{align*}
+    f(\begin{pmatrix}x\\y\end{pmatrix})
+      =\begin{pmatrix}x+3y\\2x+7y\end{pmatrix}
+      =\begin{pmatrix}1&3\\2&7\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とかける.
+
+
+  次の様に考えることもできる:
+  \begin{align*}
+    f(\begin{pmatrix}\ee_1\end{pmatrix})
+    =f(\begin{pmatrix}1\\0\end{pmatrix})
+    =\begin{pmatrix}1\\2\end{pmatrix},
+    f(\begin{pmatrix}\ee_2\end{pmatrix})
+    =f(\begin{pmatrix}0\\1\end{pmatrix})
+    =\begin{pmatrix}3\\7\end{pmatrix}
+  \end{align*}
+  である.
+  $f(\ee_1)$と$f(\ee_2)$を並べてできる$2$次正方行列を$A$とおくと,
+  $f(\xx)=A\xx$となる.
+  したがって,
+  \begin{align*}
+    A=\begin{pmatrix}1&3\\2&7\end{pmatrix}
+  \end{align*}
+  とおけば$f(\xx)=A\xx$である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:16}
+  $f(\ee_1)$と$f(\ee_2)$を並べてできる$2$次正方行列を$A$とおくと,
+  $f(\xx)=A\xx$となる.
+  したがって,
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\-3&-9\end{pmatrix}
+  \end{align*}
+  とおけば$f(\xx)=A\xx$である.
+
+  次の様に考えることもできる:
+  \begin{align*}
+    f(\begin{pmatrix}x\\y\end{pmatrix})
+      &=f(x\ee_1+y\ee_2)\\
+      &=f(x\ee_1)+f(y\ee_2)\\
+      &=xf(\ee_1)+yf(\ee_2)\\
+      &=x\begin{pmatrix}1\\-3\end{pmatrix}+y\begin{pmatrix}2\\-9\end{pmatrix}\\
+      &=\begin{pmatrix}x\\-3x\end{pmatrix}+\begin{pmatrix}2y\\-9y\end{pmatrix}\\
+      &=\begin{pmatrix}x+2y\\-3x-9y\end{pmatrix}
+      =\begin{pmatrix}1&2\\-3&-9\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とかける.
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:17}
+  $f(\xx)=A\xx$, $g(\xx)=B\xx$
+  であるとき, $(f\circ g)(\xx)=AB\xx$
+  と書ける. よって
+  \begin{align*}
+    (f\circ g)(\xx)
+    &=AB\xx\\
+    &=\begin{pmatrix}1&3\\2&4\end{pmatrix}\begin{pmatrix}7&8\\-1&3\end{pmatrix}\xx\\
+    &=\begin{pmatrix}7-3&8+9\\14-4&16+12\end{pmatrix}\xx\\
+    &=\begin{pmatrix}4&17\\10&28\end{pmatrix}\xx.
+  \end{align*}
+  
+  次の様に考えることもできる:
+  \begin{align*}
+    (f\circ g)(\begin{pmatrix}x\\y\end{pmatrix})
+    &=f(g(\begin{pmatrix}x\\y\end{pmatrix}))\\
+    &=f(B\begin{pmatrix}x\\y\end{pmatrix})\\
+    &=f(\begin{pmatrix}7&8\\-1&3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix})\\
+    &=f(\begin{pmatrix}7x+8y\\-x+3y\end{pmatrix})\\
+    &=A\begin{pmatrix}7x+8y\\-x+3y\end{pmatrix}\\
+    &=\begin{pmatrix}1&3\\2&4\end{pmatrix}\begin{pmatrix}7x+8y\\-x+3y\end{pmatrix}\\
+    &=\begin{pmatrix}(7x+8y)+3(-x+3y)\\2(7x+8y)+4(-x+3y)\end{pmatrix})\\
+    &=\begin{pmatrix}4x+17y\\10x+28y\end{pmatrix}\\
+    &=\begin{pmatrix}4&17\\10&28\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}.
+  \end{align*}
+  とかける.
+\end{answerof}
+
+
+
+\begin{answerof}{quiz:5:18}
+  $f(\xx)=A\xx$, 
+  であるとき,
+  $f$が全単射であることと$A$が正則であることが同値であり,
+  $f$が全単射であるときに$f$の逆写像$f^{-1}$は
+  $f^{-1}(\xx)=A^{-1}\xx$という形で,
+  $A$の逆行列を用いて表すことができた.
+  今回の場合,
+  \begin{align*}
+    \det(A)=
+    \det(\begin{pmatrix}1&3\\2&4\end{pmatrix})
+      =1\cdot4-3\cdot 2=4-6=-2\neq 0
+  \end{align*}
+  であるので, $A$は正則である.
+  また$A$の逆行列は,
+  \begin{align*}
+    A^{-1}=\frac{1}{\det(A)}
+    \begin{pmatrix}4&-3\\-2&1\end{pmatrix}
+      =\frac{1}{-2}\begin{pmatrix}4&-3\\-2&1\end{pmatrix}\\
+      =\begin{pmatrix}-2&\frac{3}{2}\\1&frac{-1}{2}\end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    f^{-1}(\xx)=
+    A^{-1}\xx
+      =\begin{pmatrix}-2&\frac{3}{2}\\1&frac{-1}{2}\end{pmatrix}\xx
+  \end{align*}
+  と書ける.
+
+\end{answerof}
+
+\begin{answerof}{quiz:5:p:4}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}2\\-3\end{pmatrix}
+  \end{align*}
+  とする.
+  $\aaa$の$L$への直交射影を$\pp$とすると,
+  $\aaa$と$f(\aaa)$の中点が$\pp$である.
+  つまり$\pp=\frac{1}{2}\aaa+\frac{1}{2}f(\aaa)$である.
+  $f(\aaa)=2\pp-\aaa$
+  とかけるので,
+  まずは直交射影$\pp$を求める.
+$\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
+\begin{align*}
+\pp=\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb
+\end{align*}
+とかけるので,
+\begin{align*}
+  \pp&=\frac{\Braket{\aaa,\bbb}}{\|\bbb\|^2}\bbb\\
+  &=\frac{\Braket{\begin{pmatrix}7\\-4\end{pmatrix},\begin{pmatrix}2\\-3\end{pmatrix}}}{\|\begin{pmatrix}2\\-3\end{pmatrix}\|^2}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\frac{14+12}{4+9}\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=2\begin{pmatrix}2\\-3\end{pmatrix}\\
+  &=\begin{pmatrix}4\\-6\end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  f(\aaa)=2\pp-\aaa
+  =2\begin{pmatrix}4\\-6\end{pmatrix}-\begin{pmatrix}7\\-4\end{pmatrix}\\
+  =\begin{pmatrix}8-7\\-12+4\end{pmatrix}\\
+  =\begin{pmatrix}-3\\-8\end{pmatrix}\\
+\end{align*}
+\end{answerof}
+
+\begin{answerof}{quiz:5:19}
+  原点を中心に$\theta$だけ回転させるには,
+  \begin{align*}
+    \begin{pmatrix}
+      \cos(\theta)&-\sin(\theta)\\
+      \sin(\theta)&\cos(\theta)
+    \end{pmatrix}
+  \end{align*}
+  をかければよかった.
+  今は, $\theta=\frac{\pi}{2}$であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      \cos(\frac{\pi}{2})&-\sin(\frac{\pi}{2})\\
+      \sin(\frac{\pi}{2})&\cos(\frac{\pi}{2})
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0&-1\\
+      1&0
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    f(\xx)&=
+    \begin{pmatrix}
+      0&-1\\
+      1&0
+    \end{pmatrix}
+    \xx\\
+    f(\aaa)&=
+    \begin{pmatrix}
+      0&-1\\
+      1&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      7\\
+      -4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\7
+    \end{pmatrix}
+  \end{align*}
+  である.
+
+
+  もし複素平面の扱いの方が慣れているのであれば次のように考えても良い:
+  虚数単位を$\sqrt{-1}$と書くことにする.
+  絶対値が1で偏角が$\theta$である複素数$z$は,
+  $z=\cos(\theta)+\sin(\theta)\sqrt{-1}$
+  と書くことができる.
+  $x+y\sqrt{-1}$という複素平面上の点は,
+  $z$をかけることによって$\theta$だけ回転するから,
+  回転後の点は,
+  \begin{align*}
+    (x+y\sqrt{-1})z&=(x+y\sqrt{-1})(\cos(\theta)+\sin(\theta)\sqrt{-1})\\
+    &=x\cos(\theta)+y\cos(\theta)\sqrt{-1}+x\sin(\theta)\sqrt{-1}-y\sin(\theta)\\
+    &=(\cos(\theta)x-\sin(\theta)y)+(x\sin(\theta)+\cos(\theta))y\sqrt{-1}
+  \end{align*}
+  と表すことができる.
+  ベクトルを用いて表すと,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  を$\theta$だけ回転させた点は
+  \begin{align*}
+      \begin{pmatrix}
+        \cos(\theta)x-\sin(\theta)y\\x\sin(\theta)+\cos(\theta))y
+      \end{pmatrix}\\
+      &=
+      \begin{pmatrix}
+        \cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta))
+      \end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とかける.
+  今は, $\theta=\frac{\pi}{2}$であるので,
+  \begin{align*}
+    f(\xx)&=
+    \begin{pmatrix}
+      \cos(\frac{\pi}{2})&-\sin(\frac{\pi}{2})\\
+      \sin(\frac{\pi}{2})&\cos(\frac{\pi}{2})
+    \end{pmatrix}
+    \xx=
+    \begin{pmatrix}
+      0&-1\\
+      1&0
+    \end{pmatrix}
+    \xx
+  \end{align*}
+  とかける.  また,
+  \begin{align*}
+    f(\aaa)&=
+    \begin{pmatrix}
+      0&-1\\
+      1&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      7\\
+      -4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\7
+    \end{pmatrix}
+  \end{align*}
+  である.
+  
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:20}
+  $R$を回転行列とすると,
+  $\theta$をつかって
+  \begin{align*}
+    R&=\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}
+  \end{align*}
+  とかける.
+  また,
+  $B$を
+  上半三角行列とすると,
+  $a,b,c$を使って,
+  \begin{align*}
+    R&=\begin{pmatrix}a&b\\0&c\end{pmatrix}
+  \end{align*}
+  とかける.
+  $\theta,a,b,c$を求める.
+
+  \begin{align*}
+    RB=
+    \begin{pmatrix}a\cos(\theta)&b\cos(\theta)-c\sin(\theta)\\
+      a\sin(\theta)&b\sin(\theta)+c\cos(\theta)\end{pmatrix}
+  \end{align*}
+  である.
+  1列目のみを考えると
+  \begin{align*}
+    \begin{pmatrix}a\cos(\theta)\\a\sin(\theta)\end{pmatrix}
+    =a\begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+  \end{align*}
+  となる.
+  このベクトルのノルムは, $|a|$である.
+  $A=RB$を満たすという条件から,
+  \begin{align*}
+    a\begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+    =\begin{pmatrix}3\\4\end{pmatrix}    
+  \end{align*}
+  が得られるが, 
+ \begin{align*}
+     \left\|\begin{pmatrix}3\\4\end{pmatrix}\right\|=5
+  \end{align*}
+ であるので, $a\in\Set{5,-5}$ である.
+
+ まず$a=5$のときについて考える.
+ このとき,
+ \begin{align*}
+    \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+    =\frac{1}{a}\begin{pmatrix}3\\4\end{pmatrix}    
+    =\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix}    
+  \end{align*}
+ であるので,
+ \begin{align*}
+   \cos(\theta)&=\frac{3}{5}&
+   \sin(\theta)&=\frac{4}{5}
+ \end{align*}
+ となる.
+ このとき, 
+ \begin{align*}
+   R&=\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}\\
+   &\begin{pmatrix}\frac{3}{5}&-\frac{4}{5}\\\frac{4}{5}&\frac{3}{5}\end{pmatrix}
+   &\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+ \end{align*}
+ である.
+ 一方$RB$の2列目は,
+ \begin{align*}
+   R\begin{pmatrix}b\\c\end{pmatrix}
+   =\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}b\\c\end{pmatrix}
+\end{align*}
+ であるので, $A$の2列目と比較し,
+ \begin{align*}
+\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}b\\c\end{pmatrix}=\begin{pmatrix}5\\5\end{pmatrix}
+ \end{align*}
+ となる.  $R$の逆行列は,
+ \begin{align*}
+   R^{-1}=
+ \begin{pmatrix}\frac{3}{5}&\frac{4}{5}\\-\frac{4}{5}&\frac{3}{5}\end{pmatrix}
+=\frac{1}{5} \begin{pmatrix}3&4\\-4&3\end{pmatrix}
+ \end{align*}
+ であるので,
+\begin{align*}
+  \begin{pmatrix}b\\c\end{pmatrix}
+    &=R^{-1}\begin{pmatrix}5\\5\end{pmatrix}
+    &=\frac{1}{5} \begin{pmatrix}3&4\\-4&3\end{pmatrix}\begin{pmatrix}5\\5\end{pmatrix}\\
+    &=\begin{pmatrix}3+4\\-4+3\end{pmatrix}\\
+    &=\begin{pmatrix}7\\-1\end{pmatrix}
+ \end{align*}
+となる.
+よって,
+\begin{align*}
+  R&=\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\\
+  B&=\begin{pmatrix}5&7\\0&-1\end{pmatrix}
+\end{align*}
+ とすると$A=RB$を満たす.
+
+
+ 次に$a=-5$のときについて考える.
+ このとき,
+ \begin{align*}
+    \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+    =\frac{1}{a}\begin{pmatrix}3\\4\end{pmatrix}    
+    =\frac{1}{-5}\begin{pmatrix}3\\4\end{pmatrix}    
+  \end{align*}
+ であるので,
+ \begin{align*}
+   \cos(\theta)&=-\frac{3}{5}&
+   \sin(\theta)&=-\frac{4}{5}
+ \end{align*}
+ となる.
+ このとき, 
+ \begin{align*}
+   R&=\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}\\
+   &\begin{pmatrix}-\frac{3}{5}&\frac{4}{5}\\-\frac{4}{5}&-\frac{3}{5}\end{pmatrix}
+   &\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+ \end{align*}
+ である.
+ 一方$RB$の2列目は,
+ \begin{align*}
+   R\begin{pmatrix}b\\c\end{pmatrix}
+   =\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}b\\c\end{pmatrix}
+\end{align*}
+ であるので, $A$の2列目と比較し,
+ \begin{align*}
+\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}b\\c\end{pmatrix}=\begin{pmatrix}5\\5\end{pmatrix}
+ \end{align*}
+ となる.  $R$の逆行列は,
+ \begin{align*}
+   R^{-1}=
+ \begin{pmatrix}-\frac{3}{5}&-\frac{4}{5}\\\frac{4}{5}&-\frac{3}{5}\end{pmatrix}
+=\frac{-1}{5} \begin{pmatrix}3&4\\-4&3\end{pmatrix}
+ \end{align*}
+ であるので,
+\begin{align*}
+  \begin{pmatrix}b\\c\end{pmatrix}
+    &=R^{-1}\begin{pmatrix}5\\5\end{pmatrix}
+    &=\frac{-1}{5} \begin{pmatrix}3&4\\-4&3\end{pmatrix}\begin{pmatrix}5\\5\end{pmatrix}\\
+    &=-\begin{pmatrix}3+4\\-4+3\end{pmatrix}\\
+    &=\begin{pmatrix}-7\\1\end{pmatrix}
+ \end{align*}
+となる.
+よって,
+\begin{align*}
+  R&=\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\\
+  B&=-\begin{pmatrix}5&7\\0&-1\end{pmatrix}
+\end{align*}
+ とすると$A=RB$を満たす.
+\end{answerof}
+
+
+\section{固有値と固有ベクトルに関する問題}
+
+\begin{answerof}{quiz:6:1}
+固有多項式とは$\det(A-xE_2)$のことである.
+  \begin{align*}
+    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
+    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+  \end{align*}
+  であるので, $A$の固有多項式は$x^2+4x-5$である.
+
+  $A$の固有値とは, $A\xx=\lambda\xx$をみたす$\xx\neq\zzero$が存在するような$\lambda$のことである.
+  したがって, $\lambda$が$A$の固有値であることと, 
+  $\lambda$が$x$に関する方程式$\det(A-xE_2)=0$の解であることは同値である.
+  したがって, $\det(A-xE_2)=(x-1)(x+5)$であるので,
+  \begin{align*}
+    (x-1)(x+5)=0
+  \end{align*}
+  を解けばよい.  $A$の固有値は$1$, $5$である.  
+\end{answerof}
+
+
+\begin{answerof}{quiz:6:2}
+  $2$次正方行列$A$が対角化できることと,
+  一次独立な固有ベクトルの組が存在することは同値であった.
+  また, 相異なる固有値に属する固有ベクトルの組は一次独立であった.
+  
+  まず$A$の固有値を求める.
+  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  \begin{align*}
+    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
+    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+  \end{align*}
+  であるので, $(x-1)(x+5)=0$を解けばよく,
+  $1$と$-5$が固有値である.
+  したがって,
+  固有値$1$に属する固有ベクトル$\vv$と,
+  固有値$-5$に属する固有ベクトル$\ww$をとってくると,
+  $(\vv,\ww)$は一次独立である.
+  したがって, $A$は対角化できる.
+\end{answerof}
+
+\begin{answerof}{quiz:6:3}
+  $2$次正方行列$A$が対角化できることと,
+  一次独立な固有ベクトルの組が存在することは同値であった.
+
+  まず$A$の固有値を求める.
+  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  \begin{align*}
+    A-xE_2&=\begin{pmatrix}2-x&1\\0&2-x\end{pmatrix}\\
+    \det(A-xE_2)&=(2-x)^2-1\cdot 0=(2-x)^2
+  \end{align*}
+  であるので, $(2-x)^2=0$を解けばよく,
+  固有値は$2$のみであることがわかる.
+
+  次に固有値$2$に属する$A$の固有値を求める.
+  つまり$A\xx=2\xx$となる$\xx$について考える.
+  \begin{align*}
+    A\xx&=2\xx\\
+    A\xx-2\xx&=\zzero \\
+    (A-2E_2)\xx&=\zzero
+  \end{align*}
+  と変形できる.
+  \begin{align*}
+    A-2E_2=\begin{pmatrix}2-2&1\\0&2-2\end{pmatrix}
+    =\begin{pmatrix}0&1\\0&0\end{pmatrix}
+  \end{align*}
+  であるので, $\xx$に関する方程式
+  \begin{align*}
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}\xx&=\zzero
+  \end{align*}
+  を解けばよい.
+  \begin{align*}
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+      &=\zzero\\
+      \begin{pmatrix}y\\0\end{pmatrix}
+      &=\zzero\\
+  \end{align*}
+  であるから, 解は変数$t$を用いて
+  \begin{align*}
+    \xx&=\begin{pmatrix}t\\0\end{pmatrix} =t\ee_1
+  \end{align*}
+  と表せる.
+  $A$の固有値は$2$のみであるから,
+  $\vv$と$\ww$を$A$の固有ベクトルとすると,
+  $a\neq 0\neq b$を使って
+  \begin{align*}
+    \vv&=\begin{pmatrix}a\\0\end{pmatrix}=a\ee_1 \\
+    \ww&=\begin{pmatrix}b\\0\end{pmatrix}=b\ee_2
+  \end{align*}
+  と書ける. $(a,b)\neq(0,0)$であるにも関わらず
+  $b \vv-a\ww = ab\ee_1-ab\ee_1=\zzero$となるので
+  $(\vv,\ww)$は一次独立ではない.
+
+  どんな固有ベクトルを2つ選んできても一次独立にはならない.
+  つまり, 一次独立な固有ベクトルの組は存在しない.
+  したがって, $A$は対角化できない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:6:4}
+  まず$A$の固有値を求める.
+  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  \begin{align*}
+    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
+    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+  \end{align*}
+  であるので, $(x-1)(x+5)=0$を解けばよく,
+  $1$と$-5$が固有値である.
+
+  固有値$1$に属する固有ベクトルを求める.
+  つまり$A\xx=\xx$となる$\xx$について考える.
+  これは$(A-E_2)\xx=\zzero$
+  を解けばよい.
+  \begin{align*}
+    A-E_2=\begin{pmatrix}-4-1&1\\5&-1\end{pmatrix}
+    =\begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}=
+    \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく.
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}-5&1\\0&0\end{pmatrix}.
+  \end{align*}
+ $1$行目を$\frac{-1}{5}$倍すると
+ \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+=
+    \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  を解けば良い.
+  左辺を計算すると
+  \begin{align*}
+    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  となるので,
+   $x-\frac{1}{5}y=0$であるので,
+  $y=t$とすると, $x=\frac{t}{5}$である.
+  よって, 解は, 変数$t$を使って
+  \begin{align*}
+    \xx=\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix} 
+  \end{align*}
+  と書くことができる.
+  $t=0$のときには, $\zzero$になり固有ベクトルではないので,
+  固有値$1$に属する固有ベクトルは,
+  \begin{align*}
+    &\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}
+       &&(t\neq 0)
+  \end{align*}
+  と書くことができる.
+
+  固有値$-5$に属する固有ベクトルを求める.
+  つまり$A\xx=-5\xx$となる$\xx$について考える.
+  これは$(A+5E_2)\xx=\zzero$
+  を解けばよい.
+  \begin{align*}
+    A-E_2=\begin{pmatrix}-4+5&1\\5&5\end{pmatrix}
+    =\begin{pmatrix}1&1\\5&5\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}=
+    \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく.
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-5$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}
+=
+    \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  を解けば良い.
+  左辺を計算すると
+  \begin{align*}
+    \begin{pmatrix}x+y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  となるので,
+   $x+y=0$であるので,
+  $y=t$とすると, $x=-t$である.
+  よって, 解は, 変数$t$を使って
+  \begin{align*}
+    \xx=\begin{pmatrix}-t\\t\end{pmatrix} 
+  \end{align*}
+  と書くことができる.
+  $t=0$のときには, $\zzero$になり固有ベクトルではないので,
+  固有値$-5$に属する固有ベクトルは,
+  \begin{align*}
+    &\begin{pmatrix}-t\\t\end{pmatrix}
+       &&(t\neq 0)
+  \end{align*}
+  と書くことができる.
+
+  
+  次に$A$を対角化する.
+  \begin{align*}
+    &\begin{pmatrix}1\\5\end{pmatrix}
+  \end{align*}
+  は固有値$1$に属する固有ベクトルである.
+  また
+  \begin{align*}
+    &\begin{pmatrix}1\\-1\end{pmatrix}
+  \end{align*}
+  は固有値$-5$に属する固有ベクトルである.
+  これらを並べて得られる行列を$P$とすると
+  \begin{align*}
+    P=&\begin{pmatrix}1&1\\5&-1\end{pmatrix}
+  \end{align*}
+  である.
+  $\det(P)=-1-5=-6\neq 0$であるので$P$は正則であり
+  \begin{align*}
+    P^{-1}=\frac{1}{-6}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix}
+  \end{align*}
+  となる.
+  このとき,
+  \begin{align*}
+    P^{-1}AP=\begin{pmatrix}1&0\\0&-5\end{pmatrix}
+  \end{align*}
+  となる.
+
+
+  最後に$A^n$を求める.
+  \begin{align*}
+    (P^{-1}AP)^n=(P^{-1}AP)(P^{-1}AP)\cdot (P^{-1}AP)=P^{-1}A^nP
+  \end{align*}
+  であるが, 一方で,
+  \begin{align*}
+    (P^{-1}AP)^n=\begin{pmatrix}1&0\\0&-5\end{pmatrix}^n
+    =\begin{pmatrix}1^n&0\\0&(-5)^n\end{pmatrix}
+    =\begin{pmatrix}1&0\\0&(-5)^n\end{pmatrix}
+  \end{align*}
+  でもある.
+  したがって,
+  \begin{align*}
+    P^{-1}A^nP&=\begin{pmatrix}1&0\\0&(-5)^n\end{pmatrix}\\
+    A^n
+    &=P\begin{pmatrix}1&0\\0&(-5)^n\end{pmatrix}P^{-1}\\
+    &=\begin{pmatrix}1&1\\5&-1\end{pmatrix}\begin{pmatrix}1&0\\0&(-5)^n\end{pmatrix}(\frac{1}{-6}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix})\\
+    &=\frac{1}{-6}\begin{pmatrix}1&1\\5&-1\end{pmatrix}\begin{pmatrix}1&0\\0&(-5)^n\end{pmatrix}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix}\\
+    &=\frac{1}{-6}\begin{pmatrix}1&1\\5&-1\end{pmatrix}\begin{pmatrix}-1&-1\\(-5)^{n+1}&(-5)^n\end{pmatrix}\\
+    &=\frac{1}{-6}\begin{pmatrix}-1+(-5)^{n+1}&-1+(-5)^n\\-5-(-5)^{n+1}&-5-(-5)^n\end{pmatrix}
+  \end{align*}
+  となる.
+\end{answerof}
+
+
+\begin{answerof}{quiz:6:5}
+  \begin{align*}
+    \transposed{A}A&=
+    (\frac{1}{\sqrt 5}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix})
+    (\frac{1}{\sqrt 5}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      2\cdot 2+1\cdot 1&2\cdot (-1)+1\cdot 2\\
+      -1\cdot 2+2\cdot 1&(-1)(-1)+2\cdot 2
+    \end{pmatrix}\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      5&0\\
+      0&5
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      1&0\\
+      0&1
+    \end{pmatrix}
+  \end{align*}
+  
+\end{answerof}
+
+\begin{answerof}{quiz:6:6}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}
+  \end{align*}
+  とすると, $A$は対称行列であるので,
+  直交行列により必ず対角化できる.
+  基本的には通常と同様に対角化すればよいが,
+  直交化に使う正則行列$P$を決める際に注意が必要である.
+
+  まず固有値を求める.
+  そのために$\det(A-xE_2)=0$という$x$に関する方程式を解く.
+  \begin{align*}
+    \det(A-xE_2)
+    &=\det(
+    \begin{pmatrix}
+      2-x&2\\2&-1-x
+    \end{pmatrix})\\
+    &=(2-x)(-1-x)-2\cdot 2\\
+    &=x^2-x-6
+    =(x-3)(x+2)
+  \end{align*}
+  であるので, $(x-3)(x+2)=0$とすると, $x\in\Set{3,-2}$である.
+  よって, $A$の固有値は$3$, $-2$である.
+
+  次に, 固有ベクトルを求める.
+
+  固有値$3$に属する固有ベクトルは,
+  $\xx$に関する方程式$(A-3E_2)\xx=\zzero$を解けばよい:
+  \begin{align*}
+    A-3E_2=
+    \begin{pmatrix}
+      2-3&2\\2&-1-3
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -1&2\\2&-4
+    \end{pmatrix}
+  \end{align*}
+  である.  1行目を$-1$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-2\\2&-4
+    \end{pmatrix}.
+  \end{align*}
+  2行目に1行目の$-2$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-2\\0&0
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    \begin{pmatrix}
+      1&-2\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+  \end{align*}
+  とすると, $x-2y=0$である.
+  つまり$x=2y$であるので, 考えている方程式の実数解は,
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}
+      2t\\t
+    \end{pmatrix}&&(t\in\RR)
+  \end{align*}
+  である.
+  よって固有値$3$に属する固有ベクトルは,
+  \begin{align*}
+    \begin{pmatrix}
+      2t\\t
+    \end{pmatrix}&&(t\neq 0)
+  \end{align*}
+  と書ける.
+
+  
+  固有値$-2$に属する固有ベクトルは,
+  $\xx$に関する方程式$(A-(-2)E_2)\xx=\zzero$を解けばよい:
+  \begin{align*}
+    A-(-2)E_2=
+    \begin{pmatrix}
+      2+2&2\\2&-1+2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4&2\\2&1
+    \end{pmatrix}
+  \end{align*}
+  である.  1行目を$\frac{1}{4}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{1}{2}\\2&1
+    \end{pmatrix}.
+  \end{align*}
+  2行目に1行目の$-2$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{1}{2}\\0&0
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{1}{2}\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+  \end{align*}
+  とすると, $x+\frac{1}{2}y=0$である.
+  つまり$x=-\frac{1}{2}y$であるので, 考えている方程式の実数解は,
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}
+      -\frac{1}{2}t\\t
+    \end{pmatrix}&&(t\in\RR)
+  \end{align*}
+  である.
+  よって固有値$3$に属する固有ベクトルは,
+  \begin{align*}
+    \begin{pmatrix}
+      -\frac{1}{2}t\\t
+    \end{pmatrix}&&(t\neq 0)
+  \end{align*}
+  と書ける.
+
+  次に, 対角化するために必要となる正則行列$P$を考える.
+  これは, 固有ベクトルを2つ選んできて並べることで作る.
+  今回は$P$が直交行列であるようにしたいので,
+  ノルムが$1$である固有ベクトルを選ぶ必要がある.
+  固有ベクトルはスカラー倍をしても再び固有ベクトルとなるので,
+  固有ベクトルを選んできてそれをノルムの逆数によりスカラー倍すればよい.
+  
+
+  \begin{align*}
+    \vv=
+    \begin{pmatrix}
+      2\\1
+    \end{pmatrix}
+  \end{align*}
+  とすると,
+  固有値$3$に属する固有ベクトルである.
+  $\|\vv\|=\sqrt{2^2+1^2}=\sqrt{5}$であるので,
+  \begin{align*}
+    \vv'=
+    \frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2\\1
+    \end{pmatrix}
+  \end{align*}
+  とすれば, $\vv'$は
+  固有値$3$に属する固有ベクトルであり,
+  $\|\vv'\|=1$である.
+
+  
+  \begin{align*}
+    \ww=
+    \begin{pmatrix}
+      -\frac{1}{2}\\1
+    \end{pmatrix}
+  \end{align*}
+  とすると,
+  固有値$-2$に属する固有ベクトルである.
+  $\|\ww\|=\sqrt{\frac{1}{2^2}+1^2}=\frac{\sqrt{5}}{2}$であるので,
+  \begin{align*}
+    \vv'=
+    \frac{2}{\sqrt{5}}
+    \begin{pmatrix}
+      -\frac{1}{2}\\1
+    \end{pmatrix}
+    =
+    \frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      -1\\2
+    \end{pmatrix}
+  \end{align*}
+  とすれば, $\ww'$は
+  固有値$-2$に属する固有ベクトルであり,
+  $\|\ww'\|=1$である.
+
+  
+  $\vv'$と$\ww'$を並べた行列を$P$とすると,
+  \begin{align*}
+    P=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}
+  \end{align*}
+  である.  対称行列の相異なる固有値に属する固有ベクトルは直交するので,
+  $\Braket{\vv',\ww'}=0$である.
+  また, $\|\vv'\|=\|\ww'\|=1$であったから,
+  $P$は直交行列である.
+  $P^{-1}=\transposed{P}$
+  であるから,
+  \begin{align*}
+    P^{-1}=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この直交行列$P$に対し,
+  \begin{align*}
+    P^{-1}AP=
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix})
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})
+    =
+    \begin{pmatrix}
+      3&0\\0&-2
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  
+\end{answerof}
+
+
+
+
+
+
+\begin{answerof}{quiz:6:7}
+$a_{0}=0$として$0$項目を付け加えても, 漸化式をみたすので,
+問題ないから, $a_0$を付け加えて考える.
+
+\begin{align*}
+  \vv_n=\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
+\end{align*}
+とおく.
+このとき,
+\begin{align*}
+  \vv_0=\begin{pmatrix}a_{1}\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+\end{align*}
+である.
+また,
+\begin{align*}
+  \vv_{n+1}
+  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}a_{n+1}+a_n\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
+  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\vv_n
+\end{align*}
+とできる.
+\begin{align*}
+A=\begin{pmatrix}1&1\\1&0\end{pmatrix}
+\end{align*}
+とおくと,
+\begin{align*}
+  \vv_{n+1}
+  &=A\vv_{n}
+\end{align*}
+となる.
+この等式は$n>0$であればどの$n$でも成り立つので,
+\begin{align*}
+  \vv_{n}
+  &=A\vv_{n-1}.
+\end{align*}
+と書き直しても良い.
+繰り返しこの等式を使うことで,
+\begin{align*}
+  \vv_{n}&=A\vv_{n-1}=A^2\vv_{n-2}
+  =\cdots=A^{n}\vv_0
+\end{align*}
+となることがわかる.
+
+$\vv_0$はもうすでにわかっているので$A^n$を計算する.
+
+まず$A$の固有値を求める.
+\begin{align*}
+  A-xE_2=\begin{pmatrix}1&1\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
+=\begin{pmatrix}1-x&1\\1&-x\end{pmatrix}
+\end{align*}
+であるので,
+\begin{align*}
+  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&1\\1&-x\end{pmatrix})\\
+    &=-(1-x)x-1\\
+    &=x^2-x-1\\
+    &=\left(x-\frac{1}{2}\right)^2-\frac{1}{4}-1\\
+    &=\left(x-\frac{1}{2}\right)^2-\frac{5}{4}\\\
+    &=\left(x-\frac{1}{2}\right)^2-\left(\frac{\sqrt{5}}{2}\right)^2\\
+    &=\left(x-\frac{1}{2}+\frac{\sqrt{5}}{2}\right)\left(x-\frac{1}{2}-\frac{\sqrt{5}}{2}\right)\\
+    &=\left(x-\frac{1-\sqrt{5}}{2}\right)\left(x-\frac{1+\sqrt{5}}{2}\right)
+\end{align*}
+である.
+したがって, $x$に関する方程式
+\begin{align*}
+  \det(A-xE_2)&=0
+\end{align*}
+は,
+\begin{align*}
+\lambda&=\frac{1-\sqrt{5}}{2}&
+\mu&=\frac{1+\sqrt{5}}{2}
+\end{align*}
+とおけば,
+\begin{align*}
+  \left(x-\lambda\right)\left(x-\mu\right)&=0
+\end{align*}
+と書けるので,
+解は, $\lambda$と$\mu$
+の$2$つである.
+したがって,
+$A$の固有値も,
+$\lambda$と
+$\mu$
+の$2$つである.
+
+
+なお,
+$\lambda$と$\mu$は,
+$\lambda+\mu=1$,
+$\lambda\mu=-1$
+を満たしているので,
+\begin{align*}
+  1-\lambda&=\mu\\
+  1-\mu&=\lambda\\
+\frac{1}{\lambda}&=-\mu\\
+\frac{1}{\mu}&=-\lambda
+\end{align*}
+である.
+また,
+$\lambda-\mu=\frac{1-\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}=-\sqrt{5}$である.
+
+
+
+まず,
+固有値$\lambda$に属する固有ベクトルを求める.
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\lambda$に属する固有ベクトルである.
+\begin{align*}
+  A-\lambda E_2
+  & =
+  \begin{pmatrix}1-\lambda&1\\1&-\lambda\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}\mu&1\\1&-\lambda\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+   \mu&1&0\\
+   1&-\lambda&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{\mu}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&\frac{1}{\mu}&0\\
+    1&-\lambda&0
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    1&-\lambda&0\\
+    1&-\lambda&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&-\lambda&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}\lambda\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+したがって, 例えば
+\begin{align*}
+  \begin{pmatrix}\lambda\\1\end{pmatrix}
+\end{align*}
+は固有値$\lambda$に属する固有ベクトルである.
+
+
+次に,
+固有値$\mu$に属する固有ベクトルを求める.
+\begin{align*}
+  A-\mu E_2 \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\mu$に属する固有ベクトルである.
+\begin{align*}
+  A-\mu E_2
+  & =
+  \begin{pmatrix}1-\mu&1\\1&-\mu\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}\lambda&1\\1&-\mu\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+    \lambda&1&0\\
+    1&-\mu&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{\lambda}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&\frac{1}{\lambda}&0\\
+    1&-\mu&0
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&-\mu&0\\
+    1&-\mu&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&-\mu&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  A-\mu E_2 \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}\mu\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+例えば
+\begin{align*}
+  \begin{pmatrix}\mu\\1\end{pmatrix}
+\end{align*}
+は固有値$\mu$に属する固有ベクトルである.
+
+
+固有ベクトルが求められたので対角化をする.
+\begin{align*}
+  P=
+  \begin{pmatrix}
+    \lambda&\mu\\
+    1&1    
+  \end{pmatrix}
+\end{align*}
+とすると
+\begin{align*}
+  \det(P)=
+  \det(
+  \begin{pmatrix}
+    \lambda&\mu\\
+    1&1    
+  \end{pmatrix})
+  =\lambda-\mu=-\sqrt{5}\neq 0
+\end{align*}
+であるので$P$は正則であり,
+\begin{align*}
+  P^{-1}=
+  \frac{1}{-\sqrt{5}}
+  \begin{pmatrix}
+    1&-\mu\\
+    -1&\lambda    
+  \end{pmatrix}
+\end{align*}
+である.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+このとき,
+\begin{align*}
+  P^{-1}AP=
+  \begin{pmatrix}
+    \lambda&0\\
+    0&\mu
+  \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  (P^{-1}AP)^n=
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+\end{align*}
+である.
+一方, \cref{ex:diagonalizedpow}でみたように,
+\begin{align*}
+  (P^{-1}AP)^n
+  &=P^{-1}A^nP
+\end{align*}
+であるので,
+\begin{align*}
+P^{-1}A^nP&=
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+\\
+A^n&=
+P
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+  P^{-1}
+\end{align*}
+とできる.
+したがって,
+\begin{align*}
+  A^n
+  &=
+P
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+  P^{-1}\\
+&=
+  \begin{pmatrix}
+    \lambda&\mu\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+(  \frac{-1}{\sqrt{5}}
+  \begin{pmatrix}
+    1&-\mu\\
+    -1&\lambda    
+  \end{pmatrix}
+)\\
+&=\frac{-1}{\sqrt{5}}
+  \begin{pmatrix}
+    \lambda&\mu\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    \lambda^n&0\\
+    0&\mu^n
+  \end{pmatrix}
+  \begin{pmatrix}
+    1&-\mu\\
+    -1&\lambda    
+  \end{pmatrix}
+\\
+&=\frac{-1}{\sqrt{5}}
+  \begin{pmatrix}
+    \lambda&\mu\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    \lambda^n&-\lambda^n\mu\\
+    -\mu^n&\lambda\mu^n    
+  \end{pmatrix}
+\\
+&=\frac{-1}{\sqrt{5}}
+  \begin{pmatrix}
+    \lambda\lambda^n-\mu^n\mu&-\lambda^n\mu\lambda+\lambda\mu^n\mu\\
+    \lambda^n-\mu^n&-\lambda^n\mu+\lambda\mu^n        
+  \end{pmatrix}\\
+&=\frac{-1}{\sqrt{5}}
+  \begin{pmatrix}
+    \lambda^{n+1}-\mu^{n+1}&\lambda^n-\mu^n\\
+    \lambda^n-\mu^n&\lambda^{n-1}-\mu^{n-1}        
+  \end{pmatrix}
+\end{align*}
+となる.
+
+\begin{align*}
+  \begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
+    &=
+    \vv_n\\
+    &=
+    A^n\vv_0\\
+    &=
+    \frac{-1}{\sqrt{5}}
+    \begin{pmatrix}
+      \lambda^{n+1}-\mu^{n+1}&\lambda^n-\mu^n\\
+      \lambda^n-\mu^n&\lambda^{n-1}-\mu^{n-1}        
+    \end{pmatrix}
+    \begin{pmatrix}1\\0\end{pmatrix}\\
+    &=
+    \frac{-1}{\sqrt{5}}
+    \begin{pmatrix}
+      \lambda^{n+1}-\mu^{n+1}\\
+      \lambda^n-\mu^n
+    \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  a_n&=
+    \frac{-1}{\sqrt{5}}
+    (\lambda^n-\mu^n)\\
+    &=
+    \frac{\mu^n-\lambda^n}{\sqrt{5}}
+    \\
+    &=\frac{1}{\sqrt{5}}\left(\left(\frac{1+\sqrt{5}}{2}\right)^n
+    -\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\right)
+\end{align*}
+である.
+\end{answerof}

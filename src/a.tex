@@ -1,0 +1,2090 @@
+% !TeX root =./x2.tex
+% !TeX program = pdfpLaTeX
+
+
+\chapter{命題の証明}
+\label{chap:proof}
+\section{証明に必要となる基本的な事実}
+数とは体の元であったので,
+数の四則演算に関して以下の計算規則が成り立つ.
+%% これらの計算規則は既知であるとする.
+\begin{lemma}
+  $a,b,c$を数とすると以下が成り立つ:
+  \label{lem:numbers:field}
+  \begin{enumerate}
+  \item $(a+b)+c=a+(b+c)$.
+  \item $0+a=a+0=a$.
+  \item $a+(-a)=(-a)+a=0$.
+  \item $a+b=b+a$.
+  \item $(ab)c=a(bc)$.
+  \item $1a=a1=a$.
+  \item $a\neq 0$ならば, $\frac{1}{a}a=a\frac{1}{a}=1$.
+  \item $ab=ba$.
+  \item $a(b+c)=ab+ac$.
+  \item $(a+b)c=ac+bc$.
+  \end{enumerate}
+%  また, 次も成り立つ: $0a=0$
+\end{lemma}
+
+また, 実数に対して次の事実が成り立つ.
+これは既知とする.
+\begin{lemma}
+  $a$を実数とすると以下が成り立つ:
+  \label{lem:numbers:abs}
+  \begin{enumerate}
+  \item $a^2\leq 0$.
+  \item $\sqrt{a^2}=|a|$.
+  \end{enumerate}
+%  また, 次も成り立つ: $0a=0$
+\end{lemma}
+
+実二次関数に関する次の事実も既知とする.
+\begin{lemma}
+  \label{lem:numbers:quad}
+  $a,b,c$を実数とし, $a\neq 0$とする.
+  $t$に関する二次関数$f(t)=at^{2}+bt+c$を考える.
+  このとき次が同値:
+  \begin{enumerate}
+  \item
+    全ての$t\in \RR$において, $f(t)\geq 0$.
+  \item
+    $b^2-4ac \leq 0$
+  \end{enumerate}
+\end{lemma}
+
+\section{行列の演算に関する命題の証明}
+ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
+
+\begin{proofof*}{transpose}{involutive}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $T=\transposed{A}$とおくと,
+  $T$は$(n,m)$-行列である.
+  このとき, $\transposed{T}$の$(i,j)$-成分と$A$の$(i,j)$-成分が等しいことを示す.
+
+  $T$の$(i,j)$-成分を$t_{i,j}$とすると,
+  $t_{i,j}=a_{i,j}$である.
+  また,
+  $\transposed{T}$の$(i,j)$-成分は, $t_{j,i}$である.
+  したがって, $\transposed{T}$の$(i,j)$-成分は, $a_{i,j}$である.
+\end{proofof*}
+\begin{proofof*}{transpose}{sum}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $A'$を$(m,n)$-行列とし, 
+  $A'$の$(i,j)$-成分を$a'_{i,j}$とする.
+  このとき, $\transposed{(A+A')}$の$(i,j)$-成分と
+  $\transposed{A}+\transposed{A'}$の$(i,j)$-成分が等しいことを示す.
+
+  $A+A'$の$(i,j)$-成分は, $a_{i,j}+a'_{i,j}$である.
+  したがって,
+  $\transposed{(A+A')}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
+  一方,
+  $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$であり,
+  $\transposed{A'}$の$(i,j)$-成分は$a'_{j,i}$である.
+  したがって,
+  $\transposed{A}+\transposed{A'}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
+\end{proofof*}
+\begin{proofof*}{transpose}{scalar}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $\alpha$を数とする.
+  このとき, $\transposed{(\alpha A)}$の$(i,j)$-成分と
+  $\alpha\transposed{A}$の$(i,j)$-成分が等しいことを示す.
+
+  $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$である.
+  したがって,
+  $\transposed{(\alpha A)}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
+  一方,
+  $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$である.
+  したがって,
+  $\alpha \transposed{A}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
+\end{proofof*}
+
+\begin{proofof*}{transpose}{prod}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, 
+  $B$の$(i,j)$-成分を$b_{i,j}$とする.
+  $T=\transposed{A}$, $S=\transposed{B}$とする.
+  このとき, $\transposed{(AB)}$の$(i,j)$-成分と
+  $ST$の$(i,j)$-成分が等しいことを示す.
+
+  $AB$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{i,l}b_{l,j}$である.
+  したがって,
+  $\transposed{(AB)}$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{j,l}b_{l,i}$である.
+  一方,
+  $S$の$(i,j)$-成分を$s_{i,j}$とすると,
+  $S=\transposed{B}$であるので
+  $s_{i,j}=b_{j,i}$である.
+  また, 
+  $T$の$(i,j)$-成分を$t_{i,j}$とすると,
+  $T=\transposed{A}$であるので
+  $t_{i,j}=a_{j,i}$である.
+  $ST$の$(i,j)$-成分は,
+  $\sum_{l=1}^{n}s_{i,l}t_{l,j}$である.
+  $\sum_{l=1}^{n}s_{i,l}t_{l,j}=\sum_{l=1}^{n}b_{l,i}a_{j,l}=\sum_{l=1}^{n}a_{j,l}b_{l,i}$
+  であるので,
+  $ST$の$(i,j)$-成分は, $\transposed{(AB)}$の$(i,j)$-成分と等しい.
+\end{proofof*}
+
+
+\begin{proofof*}{matspace_is_vectorspace}{ass}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(m,n)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $C$を$(m,n)$-行列とし, $(i,j)$-成分を$c_{i,j}$とする.
+  このとき,
+  $(A+B)+C$の$(i,j)$-成分と
+  $A+(B+C)$の$(i,j)$-成分が等しいことを示す.
+
+  $A+B$の$(i,j)$成分は$a_{i,j}+b_{i,j}$であるので,
+  $(A+B)+C$の$(i,j)$-成分は$(a_{i,j}+b_{i,j})+c_{i,j}$である.
+  $B+C$の$(i,j)$成分は$b_{i,j}+c_{i,j}$であるので,
+  $A+(B+C)$の$(i,j)$-成分は$a_{i,j}+(b_{i,j}+c_{i,j})$である.
+  したがって, \cref{lem:numbers:field}より,
+  $(A+B)+C$の$(i,j)$-成分と
+  $A+(B+C)$の$(i,j)$-成分が等しい.
+  
+  
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{zero}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  このとき,
+  $A+O_{m,n}$の$(i,j)$-成分と
+  $A$の$(i,j)$-成分が等しいことを示す.
+
+  $A+O_{m,n}$の$(i,j)$-成分は, $a_{i,j}+0$であるが,
+  \cref{lem:numbers:field}より,
+  $a_{i,j}+0=a_{i,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{minus}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  このとき,
+  $A+(-A)$の$(i,j)$-成分が$0$であることを示す.
+
+  $-A$の$(i,j)$-成分は, $-a_{i,j}$である.
+  $A+(-A)$の$(i,j)$-成分は, $a_{i,j}-a_{i,j}$である.
+  \cref{lem:numbers:field}より,
+  $a_{i,j}-a_{i,j}=0$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{com}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(m,n)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  このとき,
+  $A+B$の$(i,j)$-成分と
+  $B+A$の$(i,j)$-成分が
+  等しいことを示す.
+  
+  $A+B$の$(i,j)$-成分は, $a_{i,j}+b_{i,j}$である.
+  $B+A$の$(i,j)$-成分は, $b_{i,j}+a_{i,j}$である.
+  \cref{lem:numbers:field}より,
+  $a_{i,j}+b_{i,j}=a_{i,j}+b_{i,j}$である.
+\end{proofof*}
+\begin{proofof*}{matspace_is_vectorspace}{action:ass}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $\alpha,\beta$を数とする.
+  このとき,
+  $(\alpha\beta)A$の$(i,j)$-成分と
+  $\alpha(\beta A)$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $(\alpha\beta)A$の$(i,j)$-成分は, $(\alpha\beta)a_{i,j}$である.
+  $\beta A$の$(i,j)$-成分は, $(\beta a_{i,j}$であるので,
+  $\alpha(\beta A)$の$(i,j)$-成分は, $\alpha(\beta a_{i,j})$である.
+  \cref{lem:numbers:field}より,
+  $(\alpha\beta)a_{i,j}=\alpha(\beta a_{i,j})$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{action:iden}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  このとき,
+  $1A$の$(i,j)$-成分と
+  $A$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $1A$の$(i,j)$-成分は, $1a_{i,j}$である.
+  \cref{lem:numbers:field}より,
+  $1a_{i,j}=a_{i,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{disttoscalarsum}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $\alpha$, $\beta$を数とする.
+  このとき,
+  $(\alpha+\beta)A$の$(i,j)$-成分と
+  $\alpha A+ \beta A$の$(i,j)$-成分が
+  等しいことを示す.
+  
+
+  $(\alpha+\beta)A$の$(i,j)$-成分は, $(\alpha+\beta)a_{i,j}$である.
+  \cref{lem:numbers:field}より,
+  $(\alpha+\beta)a_{i,j}=\alpha a_{i,j}+\beta a_{i,j}$である.
+  $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$であり,
+  $\beta A$の$(i,j)$-成分は, $\beta a_{i,j}$である.
+  したがって,
+  $\alpha A+\beta A$の$(i,j)$-成分は, $\alpha a_{i,j}+\beta a_{i,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_vectorspace}{disttomatsum}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(m,n)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $\alpha$を数とする.
+  このとき,
+  $\alpha(A+B)$の$(i,j)$-成分と
+  $\alpha A+ \alpha B$の$(i,j)$-成分が
+  等しいことを示す.
+  
+
+  $A+B$の$(i,j)$-成分は$a_{i,j}+b_{i,j}$であるので,
+  $\alpha(A+B)$の$(i,j)$-成分は$\alpha(a_{i,j}+b_{i,j})$である.
+  \cref{lem:numbers:field}より,
+  $\alpha(a_{i,j}+b_{i,j})=\alpha a_{i,j}+ \alpha b_{i,j}$である.
+  $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$であり,
+  $\alpha B$の$(i,j)$-成分は, $\alpha b_{i,j}$である.
+  したがって,
+  $\alpha A+\alpha B$の$(i,j)$-成分は, $\alpha a_{i,j}+\alpha b_{i,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{ass}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $C$を$(k,l)$-行列とし, $(i,j)$-成分を$c_{i,j}$とする.
+  $F=AB$, $S=BC$とする.
+  このとき,
+  $FC$の$(i,j)$-成分と
+  $AS$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $F$の$(i,j)$成分を$f_{i,j}$とおくと,
+  $f_{i,j}=\sum_{p=1}^{n}a_{i,p}b_{p,j}$である.
+  したがって, $FC$の$(i,j)$成分は
+  \begin{align*}
+    \sum_{q=1}^{k}f_{i,q}c_{q,j}
+    &=\sum_{q=1}^{k}\left(\sum_{p=1}^{n}a_{i,p}b_{p,q}\right)c_{q,j}\\
+    &=\sum_{q=1}^{k}\sum_{p=1}^{n}a_{i,p}b_{p,q}c_{q,j}\\
+    &=\sum_{p=1}^{n}\sum_{q=1}^{k}a_{i,p}b_{p,q}c_{q,j}
+  \end{align*}
+  である.
+  一方,
+  $S$の$(i,j)$成分を$s_{i,j}$とおくと,
+  $s_{i,j}=\sum_{u=1}^{k}b_{i,u}c_{u,j}$である.
+  したがって, $AS$の$(i,j)$成分は
+  \begin{align*}
+    \sum_{v=1}^{n}a_{i,v}s_{v,j}
+    &=\sum_{v=1}^{n}a_{i,v}\left(\sum_{u=1}^{k}b_{v,u}c_{u,j}\right)\\
+    &=\sum_{v=1}^{n}\sum_{u=1}^{k}a_{i,v}b_{v,u}c_{u,j}\\
+    &=\sum_{v=1}^{n}\sum_{u=1}^{k}a_{i,v}b_{v,u}c_{u,j}
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{rightidentity}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  このとき,
+  $AE_n$の$(i,j)$-成分と
+  $A$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $\delta_{i,j}$をクロネッカーの$\delta$とすると,
+  $E_n$の$(i,j)$-成分は$\delta_{i,j}$である.
+  $AE_n$の$(i,j)$-成分は,
+  $\sum_{k=1}^{n}a_{i,k}\delta_{k,j}$
+  である.
+  $\delta_{j,j}=1$であるが,
+  $k\neq j$に対して, $\delta_{k,j}=0$であるので,
+  \begin{align*}
+    \sum_{k=1}^{n}a_{i,k}\delta_{k,j}
+    &=\sum_{k\in \Set{1,2,\ldots,n}}a_{i,k}\delta_{k,j}\\
+    &=a_{i,j}\delta_{j,j} + \sum_{k\in \Set{1,2,\ldots,n}\setminus\Set{j}}a_{i,k}\delta_{k,j}\\
+    &=a_{i,j}\cdot 1 + \sum_{k\in \Set{1,2,\ldots,n}\setminus\Set{j}}a_{i,k}\cdot 0\\
+    &=a_{i,j}.
+  \end{align*}
+  
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{leftidentity}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  このとき,
+  $E_mA$の$(i,j)$-成分と
+  $A$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $\delta_{i,j}$をクロネッカーの$\delta$とすると,
+  $E_m$の$(i,j)$-成分は$\delta_{i,j}$である.
+  $E_mA$の$(i,j)$-成分は,
+  $\sum_{k=1}^{m}\delta_{i,k}a_{k,m}$
+  である.
+  $\delta_{i,i}=1$であるが,
+  $k\neq i$に対して, $\delta_{i,k}=0$であるので,
+  \begin{align*}
+    \sum_{k=1}^{m}\delta_{i,k}a_{k,j}
+    &=\sum_{k\in \Set{1,2,\ldots,m}}\delta_{i,k}a_{k,j}\\
+    &=\delta_{i,i}a_{i,j} + \sum_{k\in \Set{1,2,\ldots,m}\setminus\Set{i}}\delta_{i,k}a_{k,j}\\
+    &=1a_{i,j} + \sum_{k\in \Set{1,2,\ldots,m}\setminus\Set{i}}0a_{k,j}\\
+    &=a_{i,j}.
+  \end{align*}
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{rightdist}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $A'$を$(m,n)$-行列とし, $(i,j)$-成分を$a'_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $S=A+A'$とする.
+  このとき,
+  $SB$の$(i,j)$-成分と
+  $AB+A'B$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $S$の$(i,j)$-成分を$s_{i,j}$とすると,
+  $s_{i,j}=a_{i,j}+a'_{i,j}$である.
+  したがって
+  $SB$の$(i,j)$-成分は,
+  \begin{align*}
+    \sum_{t=1}^{n}s_{i,t}b_{t,j}
+    &=\sum_{t=1}^{n}(a_{i,t}+a'_{t,j})b_{t,j}\\
+    &=\sum_{t=1}^{n}(a_{i,t}b_{t,j}+a'_{t,j}b_{t,j})\\
+    &=\sum_{t=1}^{n}a_{i,t}b_{t,j}+\sum_{t=1}^{n}a'_{t,j}b_{t,j}
+  \end{align*}
+  である.
+  一方,
+  $AB$の$(i,j)$-成分は$\sum_{t=1}^{n}a_{i,t}b_{t,j}$,
+  $A'B$の$(i,j)$-成分は$\sum_{t=1}^{n}a'_{i,t}b_{t,j}$である.
+  したがって, $AB+A'B$の
+  $(i,j)$-成分は$\sum_{t=1}^{n}a_{i,t}b_{t,j}+\sum_{t=1}^{n}a'_{i,t}b_{t,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{leftdist}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $B'$を$(n,k)$-行列とし, $(i,j)$-成分を$b'_{i,j}$とする.
+  $S=B+B'$とする.
+  このとき,
+  $AS$の$(i,j)$-成分と
+  $AB+AB'$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $S$の$(i,j)$-成分を$s_{i,j}$とすると,
+  $s_{i,j}=b_{i,j}+b'_{i,j}$である.
+  したがって
+  $AS$の$(i,j)$-成分は,
+  \begin{align*}
+    \sum_{t=1}^{n}a_{i,t}s_{t,j}
+    &=\sum_{t=1}^{n}a_{i,t}(b_{t,j}+b'_{t,j})\\
+    &=\sum_{t=1}^{n}(a_{i,t}b_{t,j}+a_{i,t}b'_{t,j})\\
+    &=\sum_{t=1}^{n}a_{i,t}b_{t,j}+\sum_{t=1}^{n}a_{i,t}b'_{t,j}
+  \end{align*}
+  である.
+  一方,
+  $AB$の$(i,j)$-成分は$\sum_{t=1}^{n}a_{i,t}b_{t,j}$,
+  $AB'$の$(i,j)$-成分は$\sum_{t=1}^{n}a_{i,t}b'_{t,j}$である.
+  したがって, $AB+AB'$の
+  $(i,j)$-成分は$\sum_{t=1}^{n}a_{i,t}b_{t,j}+\sum_{t=1}^{n}a_{i,t}b'_{t,j}$である.
+\end{proofof*}
+
+\begin{proofof*}{matspace_is_algebra}{scalar:ass}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $\alpha$を数とする.
+  このとき,
+  $(\alpha A)B$の$(i,j)$-成分と
+  $\alpha(AB)$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $\alpha A$の$(i,j)$-成分は$\alpha a_{i,j}$である.
+  したがって,
+  $(\alpha A)B$の$(i,j)$-成分は$\sum_{t=1}^{n} \alpha a_{i,t}b_{t,j}$
+  である.
+  一方
+  $AB$の$(i,j)$-成分は$\sum_{t=1}^{n} a_{i,t}b_{t,j}$である.
+  したがって,
+  $\alpha(AB)$の$(i,j)$-成分は$\alpha\sum_{t=1}^{n} a_{i,t}b_{t,j}=\sum_{t=1}^{n} \alpha a_{i,t}b_{t,j}$である.
+\end{proofof*}
+  
+\begin{proofof*}{matspace_is_algebra}{scalar:center}
+  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, $(i,j)$-成分を$b_{i,j}$とする.
+  $\alpha$を数とする.
+  このとき,
+  $\alpha (AB)$の$(i,j)$-成分と
+  $A(\alpha B)$の$(i,j)$-成分が
+  等しいことを示す.
+
+  $AB$の$(i,j)$-成分は$\sum_{t=1}^{n} a_{i,t}b_{t,j}$である.
+  したがって,
+  $\alpha(AB)$の$(i,j)$-成分は$\alpha\sum_{t=1}^{n} a_{i,t}b_{t,j}=\sum_{t=1}^{n} \alpha a_{i,t}b_{t,j}$である.
+  一方
+  $\alpha B$の$(i,j)$-成分は$\alpha b_{i,j}$である.
+  したがって,
+  $A(\alpha B)$の$(i,j)$-成分は$\sum_{t=1}^{n}  a_{i,t}\alpha b_{t,j}=\sum_{t=1}^{n}  \alpha a_{i,t} b_{t,j}$
+  である.
+\end{proofof*}
+  
+\begin{proofof}{mat:zeroprod}
+  $A$を$(m,n)$行列とする.
+
+  $1+(-1)=0$であるので,
+  \begin{align*}
+    0A&=(1+(-1))A\\
+    &=1A+(-1)A\\
+    &=A-A\\
+    &=O_{m,n}\\
+  \end{align*}
+  である.
+
+  $O_{k,m}+(-1)O_{k,m}=O_{k,m}$であるので,
+  \begin{align*}
+    O_{k,m}A&=(O_{k,m}+(-1)O_{k,m})A\\
+    &=O_{k,m}A+((-1)O_{k,m})A\\
+    &=O_{k,m}A+(-1)(O_{k,m}A)\\
+    &=O_{k,m}\\
+  \end{align*}
+  である.
+
+  $O_{n,k}+(-1)O_{n,k}=O_{n,k}$であるので,
+  \begin{align*}
+    AO_{n,k}&=A(O_{n,k}+(-1)O_{n,k})\\
+    &=AO_{n,k}+A((-1)O_{n,k})\\
+    &=AO_{n,k}+(-1)(AO_{n,k})\\
+    &=O_{n,k}\\
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof*}{mat:posipower}{prod}
+  $A$を$n$次正方行列とする.
+  $k$に関する数学的帰納法により, $A^{k}A^{k'}=A^{k+k'}$を示す.
+  \paragraph{Base case}
+  $A^{k'+1}$の定義から$AA^{k'}=A^{k'+1}$
+  である.
+  
+  \paragraph{Induction Step}
+  $A^{k-1}A^{k'}=A^{k-1+k'}$を仮定し,
+  $A^{k}A^{k'}=A^{k+k'}$を示す.
+
+  $A^{k}$の定義から
+  \begin{align*}
+    A^{k}=AA^{k-1}
+  \end{align*}
+  である. したがって,
+  \begin{align*}
+    A^{k}A^{k'}=AA^{k-1}A^{k'}=AA^{k-1+k'}
+  \end{align*}
+  である.
+  一方 $A^{k+k'}$の定義から,
+  \begin{align*}
+    A^{k+k'}=AA^{k+k'-1}=AA^{k-1+k'}
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{mat:posipower}{power}
+  $A$を$n$次正方行列とする.
+  $k'$に関する数学的帰納法により, $(A^{k})^{k'}=A^{kk'}$を示す.
+  \paragraph{Base case}
+  $(A^{k})^1$の定義から$(A^{k})^1=A^{k}=A^{k\cdot 1}$
+  である.
+  
+  \paragraph{Induction Step}
+  $(A^{k})^{k'-1}=A^{k}(A^{k(k'-1)})$を仮定し,
+  $(A^{k})^{k'}=A^{k}(A^{kk'})$を示す.
+
+  $(A^{k})^{k'}$の定義から
+    $(A^{k})^{k'}=A^{k}(A^{k})^{k'-1}$
+  である. したがって,
+  \begin{align*}
+    (A^{k})^{k'}&=A^{k}(A^{k})^{k'-1}\\
+    &=A^{k}(A^{k(k'-1)})\\
+    &=A^{k}A^{k(k'-1)}\\
+    &=A^{k+k(k'-1)}\\
+    &=A^{k(1+k'-1)}\\
+    &=A^{kk'}
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof}{mat:posipower:scalar}
+  $A$を$n$次正方行列とする.
+  $\alpha$を数とする.
+  $k'$に関する数学的帰納法により, $(\alpha A)^{k}=(\alpha^k)(A^{k})$を示す.
+
+  \paragraph{Base case}
+  $(\alpha A)^1$の定義から$(\alpha A)^1=\alpha A=\alpha^1A^{1}$
+  である.
+  
+  \paragraph{Induction Step}
+  $(\alpha A)^{k-1}=\alpha^{k-1} A^{k-1}$を仮定し,
+  $(\alpha A)^{k}=\alpha^{k} A^{k}$を示す.
+  
+  $(\alpha A)^{k}$の定義から
+    $(\alpha A)^{k}=(\alpha A)(\alpha A)^{k-1}$
+  である. したがって,
+  \begin{align*}
+    (\alpha A)^{k}
+    &=(\alpha A)(\alpha A)^{k-1}\\
+    &=(\alpha A)(\alpha^{k-1} A^{k-1})\\
+    &=\alpha^{k-1}((\alpha A)(A^{k-1}))\\
+    &=\alpha^{k-1}\alpha AA^{k-1}\\
+    &=\alpha^{k-1+1} A^{k-1+1}\\
+    &=\alpha^{k} A^{k}\\
+  \end{align*}
+  である.
+  
+\end{proofof}
+
+
+%% \begin{proofof}{thm:cht:2dim}
+%%   \begin{align*}
+%%     A=
+%%     \begin{pmatrix}
+%%       a&b\\c&d
+%%     \end{pmatrix}
+%%   \end{align*}
+%%   とする.
+%%   このとき,
+%%   \begin{align*}
+%%     A^2=
+%%     \begin{pmatrix}
+%%       a^2+bc&ab+bd\\ca+dc&cb+d^2
+%%     \end{pmatrix}
+%%   \end{align*}
+%%   である. したがって,
+%%   \begin{align*}
+%%     &A^2-(a+d)A+(ad-bc)E_2\\
+%%     &=
+%%     \begin{pmatrix}
+%%       a^2+bc&ab+bd\\ca+dc&cb+d^2
+%%     \end{pmatrix}
+%%     -(a+d)
+%%     \begin{pmatrix}
+%%       a&b\\c&d
+%%     \end{pmatrix}
+%%     +(ad-bc)
+%%     \begin{pmatrix}
+%%       1&0\\0&1
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       a^2+bc&ab+bd\\ca+dc&cb+d^2
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       -(a+d)a&-(a+d)b\\-(a+d)c&-(a+d)d
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       ad-bc&0\\0&ad-bc
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       a^2+bc&ab+bd\\ac+cd&bc+d^2
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       -a^2-ad&-ab-bd\\-ac-dc&-ad-d^2
+%%     \end{pmatrix}
+%%     +
+%%     \begin{pmatrix}
+%%       ad-bc&0\\0&ad-bc
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       a^2+bc-a^2-ad+ad-bc&ab+bd-ab-bd+0\\ac+cd-ac-cd+0&bc+d^2-ad-d^2+ad-bc
+%%     \end{pmatrix}\\
+%%     &=
+%%     \begin{pmatrix}
+%%       0&0\\0&0
+%%     \end{pmatrix}\\
+%%   \end{align*}
+%% \end{proofof}
+
+\endinput
+\section{逆行列や正則に関する命題の証明}
+ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
+逆行列や正則行列に関する命題については,
+一般の正方行列の場合について証明をしているので,
+煩雑になっている部分がある.
+$2$-次正方行列の場合のみについて証明をするのであれば,
+直接計算をすることで示すほうが手っ取り早いものが多い.
+行列式に関する命題は,
+行列式を$2$次正方行列にしかここでは定義していないこともあり,
+$2$-次正方行列の場合のみについて証明をしている.
+
+
+
+\begin{proofof*}{inverse}{inverse}
+  $X$を$n$次正則行列とする.
+  $A=X^{-1}$とし,
+  $B=X$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=X^{-1}X=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    BA=XX^{-1}=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{inverse}{trans}
+  $X$を$n$次正則行列とする.
+  $A=\transposed{X}$とし,
+  $B=\transposed{X^{-1}}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=\transposed{X}\transposed{X^{-1}}=\transposed{(X^{-1}X)}=\transposed{E_n}=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    BA=\transposed{X^{-1}}\transposed{X}=\transposed{(XX^{-1})}=\transposed{E_n}=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+\begin{proofof*}{inverse}{scalar}
+  $X$を$n$次正則行列とする.
+  $r$を$0$でない数とする.
+  $A=rX$とし,
+  $B=\frac{1}{r}X^{-1}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=(rX)(\frac{1}{r}X^{-1})=\frac{1}{r}(rXX^{-1})=(\frac{1}{r}r)(XX^{-1})=1E_n=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=(\frac{1}{r}X^{-1})(rX)=r(\frac{1}{r}X^{-1}X)=(r\frac{1}{r})(X^{-1}X)=1E_n=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{inverse}{prod}
+  $X$, $Y$を$n$次正則行列とする.
+  $A=XY$とし,
+  $B=Y^{-1}X^{-1}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列,
+  $Y^{-1}$は$Y$の逆行列
+  であるので,
+  \begin{align*}
+    AB=(XY)(Y^{-1}X^{-1})=X(YY^{-1})X^{-1}=XE_nX^{-1}=XX^{-1}=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列,
+  $Y^{-1}$は$Y$の逆行列
+  であるので,
+  \begin{align*}
+    BA=(Y^{-1}X^{-1})(XY)=Y^{-1}(X^{-1}X)Y=Y^{-1}E_nY=Y^{-1}Y=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+
+\begin{proofof*}{inverse}{power}
+  $X$を$n$次正則行列とし,
+  $l$を正の整数とする.
+  このとき, $X^l$が正則であることを示す.
+  そのために$(X^{-1})^l$が$X^l$の逆行列であることを,
+  $l$に関する数学的帰納法により示す.
+
+  \paragraph{Base case}
+  $(X)^{1}=X$, $(X^{-1})^{1}=X^{-1}$であるから,
+  $(X^{-1})^{1}$が
+  $(X)^{1}$の逆行列である.
+
+  \paragraph{Induction Step}
+  $(X^-1)^{l-1}$が$(X)^{l-1}$の逆行列であることを仮定して,
+  $(X^-1)^{l}$が$(X)^{l}$の逆行列であることを示す.
+  
+  
+  まず, $(X^l)((X^{-1})^l)=E_n$となることを示す.
+  $X^l=X^{l-1}X$, 
+  $(X^{-1})^l=X^{-1}(X^{-1})^{l-1}$であるから,
+  \begin{align*}
+    (X^l)((X^{-1})^l)
+    &=(X^{l-1}X)(X^{-1}(X^{-1})^{l-1})\\
+    &=X^{l-1}(XX^{-1})(X^{-1})^{l-1}\\
+    &=X^{l-1}E_n(X^{-1})^{l-1}\\
+    &=X^{l-1}(X^{-1})^{l-1}\\
+    &=E_n
+  \end{align*}
+  である.
+
+  次に, $((X^{-1})^l)(X^l)=E_n$となることを示す.
+  $X^l=X^{l-1}X$, 
+  $(X^{-1})^l=X^{-1}(X^{-1})^{l-1}$であるから,
+  \begin{align*}
+    ((X^{-1})^l)(X^l)
+    &=(X^{-1}(X^{-1})^{l-1})(X^{l-1}X)\\
+    &=X^{-1}((X^{-1})^{l-1})X^{l-1})X\\
+    &=X^{-1}E_nX\\
+    &=X^{-1}X\\
+    &=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+
+  
+\begin{proofof*}{negpower}{prod}
+  $X$を$n$次正則行列とする.
+  このとき, 整数$k$, $k'$に対し, $X^{k}X^{k'}=X^{k+k'}$となることを示す.
+  
+  $X^{0}=E_n$であるので,
+  $X^{0}X^{k'}=E_nX^{k'}=X^{k'}$である.
+  また,
+  $X^{k}X^{0}=X^{k}E_n=X^{k}$でもある.
+
+  
+  $k$も$k'$も$0$ではない場合について考える.
+  $p$, $p'$を正の整数とする.
+  $k=p$も$k'=p'$である場合は,
+  \Cref{thm:mat:posipower}である.
+  $k=-p$も$k'=-p'$である場合は,
+  \begin{align*}
+    A^{-p}A^{-p'}&=(A^{-1})^{p}(A^{-1})^{p'}=(A^{-1})^{p+p'}=A^{-(p+p')}=A^{(-p)+(-p')}.
+  \end{align*}
+  であることがわかる.
+
+  ここまでの議論で,
+  $k\leq 0$かつ$k'\leq 0$の場合と,
+  $k\geq 0$かつ$k'\geq 0$の場合は証明できた.  
+  それら以外の場合について考える.
+
+  
+  $p$, $p'$を正の整数とし,
+  $k=-p$かつ$k'=p'$の場合と
+  $k=p$かつ$k'=-p'$の場合について示す.
+  $p=p'$なら
+  \begin{align*}
+    A^{-p}A^{p'}&=A^{-p}A^{p}=(A^{p})^{-1}A^{p}=E_n=A^{0}=A^{-p+p}=A^{-p+p'}\\
+    A^{p}A^{-p'}&=A^{p}A^{-p}=(A^{p})^{-1}A^{p}=E_n=A^{0}=A^{p-p}=A^{p-p'}
+  \end{align*}
+  である.
+  $p>p'$であるなら, $p=d+p'$とおくと,
+  \begin{align*}
+    A^{-p}A^{p'}=A^{-(d+p')}A^{p'}
+    &=(A^{-d}A^{-p'})A^{p'}\\
+    &=A^{-d}(A^{-p'}A^{p'})=A^{-d}A^{0}=A^{-d}=A^{-p+p'}\\
+    A^{p}A^{-p'}=A^{d+p'}A^{-p'}
+    &=(A^{d}A^{p'})A^{-p'}\\
+    &=A^{d}(A^{p'}A^{-p'})=A^{d}A^{0}=A^{d}=A^{p-p'}
+  \end{align*}
+  である.
+  $p<p'$であるなら, $p+d=p'$とおくと,
+  \begin{align*}
+    A^{-p}A^{p'}&=A^{-p}A^{p+d}
+    =A^{-p}A^{p}A^{d}=A^{-p+p}A^{d}=A^{0}A^{d}=A^{d}=A^{-p+p'},\\ 
+    A^{p}A^{-p'}&=A^{p}A^{-(p+d)}=A^{p}A^{-p-d)}=A^{p}A^{-p}A^{-d}=A^{0}A^{d}=A^{0+d}=A^{p-p'}
+ \end{align*}
+  である.
+
+\end{proofof*}
+
+
+
+  
+\begin{proofof*}{negpower}{power}
+  $X$を$n$次正則行列とする.
+  このとき, 整数$k$, $k'$に対し, $(X^{k})^{k'}=X^{kk'}$となることを示す.
+
+  定義から
+  $(X^{k})^{0}=E_n$である.
+  また,
+  $X^{k\cdot 0}=X^0=E_n$
+  であるので, $(X^{k})^{0}=X^{k\cdot0}$である.
+
+  定義から
+  $(X^{0})^{k'}=E_n^{k'}=E_n$である.
+  また,
+  $X^{0k'}=X^0=E_n$
+  であるので, $(X^{0})^{k'}=X^{0\cdot k'}$である.
+
+  
+  $X^{-k}X^{k}=X^0=E_n$かつ
+  $X^{k}X^{-k}=X^0=E_n$であるので,
+  $X^{-k}$は$X^k$の逆行列である.
+  したがって$(X^{k})^{-1}=X^{-k}=X^{k\cdot -1}$である.
+
+  $p'$を正の整数とすると,
+  \Cref{thm:inverse:operation}より,
+  $(X^{-1})^{p'}$は$X^{p'}$の逆行列である.
+  したがって$(X^{-1})^{p'}=(X^{p'})^{-1}=X^{-p'}=X^{-1\cdot p'}$である.
+
+  $p$, $p'$を正の整数とすると,
+  $k=p$, $k'=p'$のときは,
+  \Cref{thm:mat:posipower}より,
+  $(X^{k})^{k'}=X^{kk'}$である.
+
+  $k=p$, $k'=-p'$のときは,
+  \begin{align*}
+    (X^{p})^{-p'}&=((X^{p})^{p'})^{-1}=(X^{pp'})^{-1}=X^{-pp'}
+  \end{align*}
+  である.
+
+  $k=-p$, $k'=p'$のときは,
+  \begin{align*}
+    (X^{-p})^{p'}&=((X^{p})^{-1})^{p'}=(X^{p})^{-p'}=X^{-pp'}
+  \end{align*}
+  である.
+
+  $k=-p$, $k'=-p'$のときは,
+  \begin{align*}
+    (X^{-p})^{-p'}&=((X^{-p})^{p'})^{-1}=(X^{-pp'})^{-1}=X^{-(-pp')}=X^{(-p)(-p')}
+  \end{align*}
+  である.
+
+\end{proofof*}
+
+
+\begin{proofof}{det:hom}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix},&
+    B&=
+    \begin{pmatrix}
+      a'&b'\\c'&d'
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    AB=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      a'&b'\\c'&d'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    aa'+bc'&ab'+bd'\\ca'+dc'&db'+dd'
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \det(AB)&=(aa'+bc')(db'+dd')-(ab'+bd')(ca'+dc')\\
+    &=aa'(db'+dd')+bc'(db'+dd')-ab'(ca'+dc')-bd'(ca'+dc')\\
+    &=aa'db'+aa'dd'+bc'db'+bc'dd'-ab'ca'-ab'dc'-bd'ca'-bd'dc'\\
+    &=ada'b'+ada'd'+bdb'c'+bdc'd'-aca'b'-adb'c'-bca'd'-bdc'd'\\
+    &=ada'd'-adb'c'-bca'd'+bcb'c'
+  \end{align*}
+  である.
+  一方,
+  $\det(A)=ad-bc$,
+  $\det(B)=a'd'-b'c'$
+  であるので,
+  \begin{align*}
+    \det(A)\det(B)&=(ad-bc)(a'd'-b'c')\\
+    &=ad(a'd'-b'c')-bc(a'd'-b'c')\\
+    &=ada'd'-adb'c'-bca'd'+bcb'c'
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof}{det:transpose}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき, $\det(A)=ad-bc$である.
+  一方
+  \begin{align*}
+    \transposed{A}&=
+    \begin{pmatrix}
+      a&c\\b&d
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  $\det(A)=ad-cb=ad-bc$である.
+\end{proofof}
+
+\begin{proofof}{det:alt:row}
+  \begin{align*}
+    A&=\begin{pmatrix}a&b\\c&d\end{pmatrix},&
+    A'&=\begin{pmatrix}c&d\\a&b\end{pmatrix}
+  \end{align*}
+  とする.
+  このとき, $\det(A)=ad-bc$である.
+  一方$-\det(A')=-(cb-da)=-cb+da=ad-bc$である.
+\end{proofof}
+  
+  
+\begin{proofof}{multlin:row:add}
+      \begin{align*}
+        \det(\begin{pmatrix}a'+a''&b'+b''\\c&d\end{pmatrix})
+          &=(a'+a'')d-(b'+b'')c=a'd+a''d-b'c-b''c\\
+        \det(\begin{pmatrix}a'&b'\\c&d\end{pmatrix})
+          +
+          \det(\begin{pmatrix}a''&b''\\c&d\end{pmatrix})
+            &=(a'd-b'c)+(a''d-b''c)=a'd+a''d-b'c-b''c
+      \end{align*}
+      である.
+      また
+      \begin{align*}
+        \det(\begin{pmatrix}a&b\\c'+c''&d'+d''\end{pmatrix})&=
+          a(d'+d'')-b(c'+c'')=ad'+ad''-bc'-bc''\\
+        \det(\begin{pmatrix}a&b\\c'&d'\end{pmatrix})+
+          \det(\begin{pmatrix}a&b\\c''&d''\end{pmatrix})
+            &=(ad'-bc')+(ad''-bc'')=ad'+ad''-bc'-bc''
+      \end{align*}
+      である.
+\end{proofof}
+
+\begin{proofof}{multlin:row:prod}
+  \begin{align*}
+    \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+      &=\alpha(ad-bc)=\alpha ad-\alpha bc\\
+      \det(\begin{pmatrix}\alpha  a&\alpha b\\c&d\end{pmatrix})
+        &=\alpha a d-\alpha bc
+  \end{align*}
+  である.
+  また
+  \begin{align*}
+    \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+      &=\alpha(ad-bc)=\alpha ad-\alpha bc\\
+      \det(\begin{pmatrix}a&b\\\alpha   c&\alpha  d\end{pmatrix}).
+        &=a\alpha d-b\alpha c=\alpha ad-\alpha bc
+  \end{align*}
+  である.
+\end{proofof}
+
+\section{階数に関する命題の証明}
+ここでは, \Cref{chap:systemoflineq}に現れる命題の証明を行う.
+
+
+\begin{proofof*}{thm:ker:vec}{sum}
+  $\vv,\ww$を$A\xx=\zzero$の解とする.
+  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
+  したがって,
+  $A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:ker:vec}{scalar}
+  $\vv$を$A\xx=\zzero$の解とする.
+  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
+  $\alpha$を数とする.
+  このとき,
+  $A(\alpha\vv)=\alpha A\vv=\alpha\zzero=\zzero$である.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:fundamental}
+  $A$を$(m,n)$-行列とする.
+  $E_{i,j}$を$(i,j)$-成分のみ$1$で他は$0$の$n$次正方行列とする.
+  \begin{enumerate}
+  \item\label{lem:fundamental:item:sc}
+    $F(i;c)=E_n-E_{i,i}+cE_{i,i}$とする.
+    このとき, $F(i;c)A$は$A$の$i$行目を$c$倍した行列である.
+    $c$が逆数を持つとき, $F(i;c)$は正則で, $F(i;c)^{-1}=F(i;\frac{1}{c})$である.
+  \item\label{lem:fundamental:item:sum}
+    $i\neq j$とする. $G(i,j;c)=E_n+cE_{i,j}$とする.
+    このとき, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
+    $G(i,j;c)$は正則で, $G(i,j;c)^{-1}=G(i,j;-c)$である.
+  \item\label{lem:fundamental:item:trans}
+    $H(i,j)=E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{j,i}$とする.
+    このとき, $H(i,j)A$は$A$の$i$行目と$j$行目を入れ替えた行列である.
+    $H(i,j)$は正則で, $H(i,j)^{-1}=H(i,j)$である.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  定義から
+  \begin{align*}
+    E_{i,j}E_{k,l}=
+    \begin{cases}
+      E_{i,l}&(j=k)\\
+      O_{n,m}&(j\neq k)
+    \end{cases}
+  \end{align*}
+  であることが計算できる.
+  また,
+  $E_{i,j}A$は, $i$行目が$A$の$j$行目と等しく, それ以外の成分は$0$であることも
+  計算できる.
+  \paragraph{\Cref{lem:fundamental:item:sc}}
+  $F(i;c)$は$(i,i)$-成分のみ$c$で
+  他の対角成分は$c$である対角行列である.
+
+ 
+  $F(i;c)A=(E_n-E_{i,i}+cE_{i,i})A=A+(c-1)E_{i,i}A$である.
+  したがって, $F(i;c)A$の$i$行目は$A$の$i$行目に$A$の$i$行目の$c-1$倍を加えたものであるので,
+  $A$の$i$行目の$c$倍である.
+  また$i$行目以外は$F(i;c)A$と$A$は等しい.
+  つまり,
+  $F(i;c)A$は$A$の$i$行目を$c$倍した行列である.
+
+  また, $F(i;c)F(i;\frac{1}{c})$は$F(i;\frac{1}{c}$の$i$行目を$c$倍したものであるので,
+  $E_n$である.
+  $F(i;\frac{1}{c})F(i;c)$は$F(i;c$の$i$行目を$\frac{1}{c}$倍したものであるので,
+  $E_n$である.
+  よって$F(i;c)^{-1}=F(i;\frac{1}{c})$である.
+
+  \paragraph{\Cref{lem:fundamental:item:sum}}
+  $i\neq j$とする. $G(i,j;c)=E_n+cE_{i,j}$とする.
+  $G(i,j;c)$は, 対角成分は全て$1$, $(i,j)$-成分は$c$, 他の成分は全て$0$である.
+
+  $G(i,j;c)A=(E_n+cE_{i,j})A=A+cE_{i,j}A$である.
+  したがって, $G(i,j;c)A$の$i$行目は$A$の$i$行目に$A$の$j$行目の$c$倍を加えたものである.
+  また$i$行目以外は$G(i,j;c)A$と$A$は等しい.
+  つまり, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
+
+  また, $G(i,j;c)G(i,j;-c)$は, $G(i,j;-c)$の$i$行めに$G(i,j;-c)$の$j$行目の$c$倍を加えたものであるが, $G(i,j;-c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$c$が加えられることになる.
+  したがって, $G(i,j;c)G(i,j;-c)=E_n$である.
+  一方$G(i,j;-c)G(i,j;c)$は, $G(i,j;c)$の$i$行めに$G(i,j;c)$の$j$行目の$-c$倍を加えたものであるが, $G(i,j;c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$-c$が加えられることになる.
+  したがって, $G(i,j;-c)G(i,j;c)=E_n$である.
+  よって, $G(i,j;c)^{-1}=G(i,j;-c)$である.
+  
+  \paragraph{\Cref{lem:fundamental:item:trans}}
+  $H(i,j)$は$(i,i)$-成分と$(j,j)$-成分は$0$, それ以外の対角成分は$1$,
+  $(i,j)$-成分と$(j,i)$-成分は$1$, それ以外の成分は$0$である.
+
+  $H(i,j)A=(E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{i,j})A=A-E_{i,i}A+E_{i,j}A-E_{j,j}A+E_{j,i}A$
+  である.
+  したがって,
+  $H(i,j)A$の$i$行目は,
+  $A$の$i$行めに$A$の$i$行目の$-1$倍と$A$の$j$行目の$1$倍を加えたものであるので,
+  $A$の$j$行目である.
+  同様に, $H(i,j)A$の$j$行目は,
+  $A$の$j$行めに$A$の$j$行目の$-1$倍と$A$の$i$行目の$1$倍を加えたものであるので,
+  $A$の$i$行目である.
+  また$i$行目と$j$行目以外は$H(i,j)A$と$A$は等しい.
+  つまり$H(i,j)A$は$A$の$i$行目と$j$行目を入れ替えた行列である.
+  
+  また, $H(i,j)H(i,j)$は$H(i,j)$の$i$行目と$j$行目を入れ替えたものであるので$E_n$である.
+  したがって, $H(i,j)^{-1}=H(i,j)$である.
+\end{proof}
+
+\begin{remark}
+  \label{lem:fund:is:invertible}
+  \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
+  を基本行列と呼ぶ.
+  \Cref{lem:fundamental}から,
+  $A$に行基本変形を行うことは,
+  $A$に基本行列を左からかけることであり,
+  逆に
+  $A$に基本行列を左からかけることは,
+  $A$に行基本変形を行うことであることがわかる.
+
+  また, 基本行列は正則行列であり, その逆行列もまた基本行列である.
+  このことは, $A$に行基本変形を行って$B$が得られたときには,
+  $B$行基本変形を行って$A$にすることもできるということを意味する.
+\end{remark}
+
+\begin{proofof*}{thm:rank:prop}{fund}
+  $A$に行基本変形を行って被約階段行列$S$が得られたとする.
+  また, $A$に行基本変形を行って$A'$が得られたとする.
+  このとき,
+  \cref{lem:fund:is:invertible}から, 
+  $A'$行基本変形を行って$A$にできる.
+  したがって更に行基本変形を行って$S$にすることもできる.
+  つまり
+  $A'$に対し行基本変形を行って得られる被約階段行列も$S$である.
+  したがって, $\rank(A)=\rank(S)=\rank(A')$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{row}
+  被約階段行列$S$の階数は$0$以外の成分もある行の総数であるから$S$の行数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の行数と$A'$の行数は等しいので, $A$の階数は$A$の行数を超えることはない.
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{col}
+  被約階段行列$S$の階数はpivotの総数であるが,
+  pivotは各列に高々1つであるので, 階数は$S$の列数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の列数と$A'$の列数は等しいので, $A$の階数は$A$の列数を超えることはない.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerorows}
+  $(m,n)$-行列$A$の$r+1$行目から$m$行目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq r$である.
+\end{lemma}
+\begin{proof}
+  $A'$を$(r,n)$-行列とし,
+  $A'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:row}
+  より, $\rank(S')\leq r$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq r$である.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerocols}
+  $(m,n)$-行列$A$の$c+1$列目から$n$列目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq c$
+\end{lemma}
+\begin{proof}
+  $A'$を$(m,c)$-行列とし,
+  $A'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:col}
+  より, $\rank(S')\leq c$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq c$である.
+\end{proof}
+
+
+\begin{proofof*}{thm:rank:prop}{left}
+  $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
+  このとき,
+  \cref{lem:fundamental}
+  から,
+  $P_kP_{k-1}\cdots P_1A=S$をみたす
+  基本行列$P_1,\ldots, P_k$が存在する.
+  $P_kP_{k-1}\cdots P_1A=S$であるので
+  $P_kP_{k-1}\cdots P_1AB=SB$であるので
+  つまり$AB$に行基本変形を用いて$SB$に変形できることがわかる.
+  したがって,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:fund}
+  より, $\rank(AB)=\rank(SB)$である.
+  
+  一方$S$は階数が$r$の被約階段行列であるので,
+  $r+1$行目から$n$行目までの成分はすべて$0$である.
+  したがって,
+  $SB$を計算すると,
+  $SB$の$r+1$行目から$n$行目までの成分もすべて$0$であることがわかる.
+  したがって, \cref{lem:rank:rnonzerorows}より,
+  $\rank(SB)\leq r$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularright}
+   $\rank(A)=\rank(AQ)$
+  を示すために,
+   $\rank(A)\leq\rank(AQ)$
+  と
+   $\rank(A)\geq\rank(AQ)$
+  を示す.
+  
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(AQ)\leq \rank(A)$である.
+  
+  一方, 
+  $X=AQ$, $Y=Q^{-1}$とすると,
+  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(XY)\leq \rank(X)$である.
+  $XY=AQQ^{-1}=A$であるので,
+  $\rank(A)\leq\rank(AQ)$である.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:ineq:transrank}
+  $X$を$(m,n)$-行列とする.
+  このとき, $\rank(X)\leq \rank(\transposed{X})$.
+\end{lemma}
+\begin{proof}
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたとする.
+  このとき, $\rank(X)=r$である.
+  $\rank(X)\leq r$を示す.
+
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたので,
+  \cref{lem:fundamental}
+  から,
+  $PA=S$をみたす
+  正則行列$P$が存在する.
+  $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
+  である.
+  $\transposed{P}$は正則であるので,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
+  一方
+  $S$は階数$r$の被約階段行列であるので,
+  $r+1$行目から$m$行目までの成分は$0$である.
+  したがって,
+  $\transposed{S}$の
+  $r+1$列目から$m$列目までの成分は$0$である.
+  したがって,
+  \Cref{lem:rank:rnonzerocols}より,
+  $\transposed{S}\leq r$である.
+  まとめると,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})=\rank(\transposed{S})\leq r$である.
+\end{proof}
+\begin{proofof*}{thm:rank:prop}{trans}
+  $A$を$(m,n)$-行列とする.
+  $\rank(A)=\rank(\transposed{A})$を示すために,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  と
+  $\rank(\transposed{A})\leq \rank(A)$.
+  を示す.
+  
+  $X=A$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  である.
+
+  一方,
+  $X=\transposed{A}$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\transposed{X}=A$であるので,
+  $\rank(\transposed{A})\leq \rank(A)$.
+  である.
+  
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{right}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(AB)=\rank(\transposed{(AB)})$
+  であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
+  $\rank(AB)=\rank(\transposed{B}\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
+  より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
+  $\rank(AB)\leq\rank(\transposed{B})$.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{B})=\rank(B)$であるので,
+  $\rank(AB)\leq \rank(B)$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularleft}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(PA)=\rank(\transposed{(PA)})$
+  であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
+  $\rank(PA)=\rank(\transposed{A}\transposed{P})$
+  である.
+  $P$は正則であるので$\transposed{P}$も正則である.
+  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
+  $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
+  であるので,
+  $\rank(PA)=\rank(\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{A})=\rank(A)$であるので,
+  $\rank(PA)= \rank(A)$である.
+\end{proofof*}
+
+\begin{proofof}{thm:rank:regular}
+  $A$を$n$次正方行列であるとする.
+  \paragraph{\Cref{thm:rank:regular:reg}$\implies$\Cref{thm:rank:regular:rank}}
+  $A$を正則とする.
+  \Cref{thm:rank:prop}
+  より, 正則行列を左からかけても階数は変わらないので,
+  $\rank(AE_n)=\rank(E_n)$.
+  $E_n$は階数$n$の被約階段であるので,
+  $\rank(A)=n$である.
+  \paragraph{\Cref{thm:rank:regular:rank}$\implies$\Cref{thm:rank:regular:step}}
+  $\rank(A)=n$とする.
+  階数の定義から
+  $A$に行基本変形を行って階数$n$の被約階段に変形できる.
+  $A$が$n$次正方行列であるので得られる被約階段も$n$次正方行列である.
+  $n$次正方行列で被約階段であるものは$E_n$のみであるから,
+  得られる被約階段は$E_n$である.
+  \paragraph{\Cref{thm:rank:regular:step}$\implies$\Cref{thm:rank:regular:reg}}
+  $A$に行基本変形を行って$E_n$に変形できる.
+  \Cref{lem:fundamental}
+  より, 基本変形は基本行列を左からかけることに相当するので,
+  $F_kF_{k-1}\cdots F_1 A=E_n$を満たす
+  基本行列$F_i$がとれる.  $F_i$は正則であるから,
+  $P=F_kF_{k-1}\cdots F_1$
+  とおくと$P$も正則である.
+  $PA=E_n$であるので, $A=P^{-1}$であり, $AP=E_n$である.
+  $PA=E_n$かつ$AP=E_n$であるので, $A$は正則である.
+\end{proofof}
+
+\section{平面に関する命題の証明}
+ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
+
+\begin{proofof}{thm:linindep:coef}
+  $\aaa$, $\bbb$を$2$項実ベクトルとし,
+  $(\aaa,\bbb)$は一次独立であるとする.
+  $c\aaa + d\bbb = c'\aaa+d'\bbb$とする.
+  このとき,
+  \begin{align*}
+    c\aaa + d\bbb = c'\aaa+d'\bbb\\
+    c\aaa + d\bbb -c'\aaa-d'\bbb=\zzero \\
+    (c-c')\aaa + (d -d')\bbb=\zzero 
+  \end{align*}
+  となるが, 
+  $(\aaa,\bbb)$は一次独立であるので,
+  $c-c'=$, $d-d'=0$である.
+  したがって, $c=c'$, $d=d'$である.
+\end{proofof}
+\begin{proofof}{linindep:det}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}\\
+    A&=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}
+  \end{align*}
+  とする. このとき,
+  \begin{align*}
+    x\aaa+y\bbb=\begin{pmatrix}ax+by\\a'x+b'y\end{pmatrix}=A\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  である.
+
+  \paragraph{\Cref{thm:linindep:det:item:det}$\implies$\Cref{thm:linindep:det:item:linindep}}
+  $\det(A)\neq 0$を仮定する.
+  $x\aaa+y\bbb=\zzero$とする.
+  このとき, $x=y=0$となることを示す.
+
+  $x\aaa+y\bbb=\zzero$であるので,
+  \begin{align*}
+    A\begin{pmatrix}x\\y\end{pmatrix}=\zzero
+  \end{align*}
+  である.
+  $\det(A)\neq 0$であるので, $A$は正則である.
+  したがって,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}=A^{-1}\zzero=\zzero
+  \end{align*}
+  である.
+  
+  
+  \paragraph{\Cref{thm:linindep:det:item:linindep}$\implies$\Cref{thm:linindep:det:item:det}}
+  対偶を示す.
+  $\det A=0$を仮定する.
+  $x\aaa+y\bbb=\zzero$を満たす
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  が$\zzero$以外にもあることを示す.
+  
+    
+  $\det(A)\neq 0$であるので,
+  \cref{thm:rank:regular}より,
+  $\rank(A)<2$である.
+  したがって, \Cref{thm:solution:homoge}より, 
+  \begin{align*}
+    A\begin{pmatrix}x\\y\end{pmatrix}&=\zzero,
+    \begin{pmatrix}x\\y\end{pmatrix}&\neq\zzero
+  \end{align*}
+  を満たす
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  がとれる. この$x,y$に対し,
+  $x\aaa+y\bbb=\zzero$が成り立つ.
+\end{proofof}
+\begin{proofof*}{thm:innerprod:is:innerprod}{positive}
+  \begin{align*}
+        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$は実数とする.
+  $a_i$は実数であるから$a_i^2\geq 0$であるので,
+  \begin{align*}
+        \Braket{\aaa,\aaa}=\sum_{i=1}^2 a_i^2\geq 0
+  \end{align*}
+  となる. 
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{nondeg}
+  \begin{align*}
+        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$は実数とする.
+  また$n=2$とする.
+
+  \paragraph{$\langle{\aaa},{\aaa}\rangle=0 \implies \aaa=\zzero$.}
+  対偶を示す.
+  $\aaa\neq \zzero$とすると,
+  $a_{i_0}\neq 0$となる$i_0$が存在する.
+  $a_i$は実数であるから,
+  この$i_0$に対して,
+  $a_{i_0}>0$である.
+  また, どの$i$に対して, $a_i^2\leq 0$である.
+  したがって,
+  \begin{align*}
+    \Braket{\aaa,\aaa}=\sum_{i=1}^n a_i^2>0
+  \end{align*}
+  である.
+
+
+  \paragraph{$\aaa=\zzero\implies \langle\aaa,\aaa\rangle=0$.}
+  $\aaa=\zzero$とする. このとき, どの$i$に対しても$a_i=0$であるので,
+  \begin{align*}
+    \Braket{\aaa,\aaa}=\sum_{i=1}^n 0^2=0
+  \end{align*}
+  である.
+  
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{symmetric}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$, $b_i$は実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{\aaa,\bbb}&=\sum_{i=1}^n a_ib_i\\
+    \Braket{\bbb,\aaa}&=\sum_{i=1}^n b_ia_i=\sum_{i=1}^n a_ib_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{additive}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix},&
+    \ccc&=\begin{pmatrix}c_1\\c_2\end{pmatrix},&
+  \end{align*}
+  とし,   $a_i$, $b_i$, $c_i$は実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{\aaa+\bbb,\ccc}&=\sum_{i=1}^n (a_i+b_i)c_i=\sum_{i=1}^n (a_ic_i+b_ic_i)=\sum_{i=1}^n a_ic_i+\sum_{i=1}^nb_ic_i\\
+    \Braket{\aaa,\ccc}+\Braket{\bbb,\ccc}&=\sum_{i=1}^n a_ic_i+\sum_{i=1}^nb_ic_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{mult}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix},&
+  \end{align*}
+  とし,   $a_i$, $b_i$は実数とする.
+  $r$を実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{r\aaa,\bbb}&=\sum_{i=1}^n ra_ib_i\\
+    r\Braket{\aaa,\bbb}&=r\left(\sum_{i=1}^n a_ib_i\right)=\sum_{i=1}^n ra_ib_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{norm:is:norm}{positive}
+  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}\geq 0$である.
+  したがって,
+  $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}\geq 0$である.
+\end{proofof*}
+
+\begin{proofof*}{norm:is:norm}{nondeg}
+  \paragraph{$\|\aaa\|=0\implies\aaa=\zzero$.}
+  $\|\aaa\|=0$とする.
+  このとき, $\Braket{\aaa,\aaa}=\|\aaa\|^2=0$である.
+  \Cref{thm:innerprod:is:innerprod}より, $\aaa=\zzero$である.
+  \paragraph{$\aaa=\zzero\implies\|\aaa\|=0$.}
+  $\aaa=\zzero$とする.
+  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}=0$である.
+  よって, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt0=0$である.
+\end{proofof*}
+
+\begin{lemma}[コーシー--シュワルツの不等式.]
+  \label{lem:csi}
+  $\aaa$, $\bbb$を$n$項実ベクトルとする.
+  このとき, $|\Braket{\aaa,\bbb}|\leq \|\aaa\|\|\bbb\|$である.
+\end{lemma}
+
+\begin{proof}
+  $\|\aaa\|\|\bbb\|\leq 0$であるので,
+  $\Braket{\aaa,\bbb}^2\leq \|\aaa\|^2\|\bbb\|^2$
+  を示す.
+
+  $\bbb=\zzero$であれば,  $\Braket{\aaa,\bbb}^2=0=\|\aaa\|^2\|\bbb\|^2$である.
+
+  $\bbb\neq \zzero$とする.
+  $t$を実数とし,
+  $\vv=\aaa+t\bbb$とおくと,
+  \begin{align*}
+    &\|\vv\|^2\\
+    &=\|\aaa+t\bbb\|^2\\
+    &=\Braket{\aaa+t\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa+t\bbb}+\Braket{t\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa+t\bbb}+t\Braket{\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,t\bbb}+t\Braket{\bbb,\aaa}+t\Braket{\bbb,t\bbb}\\
+    &=\Braket{\aaa,\aaa}+t\Braket{\aaa,\bbb}+t\Braket{\aaa,\bbb}+t^2\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+2t\Braket{\aaa,\bbb}+t^2\Braket{\bbb,\bbb}
+  \end{align*}
+  である.
+  $a=\Braket{\bbb,\bbb}$,
+  $b=\Braket{\aaa,\bbb}$, 
+  $c=\Braket{\aaa,\aaa}$とおくと,
+  $\|\vv\|^2=at^2+bt+c$であるが,
+  $\|\vv\|^2\leq 0$であるので,
+  全ての$t$で
+  \begin{align*}
+    at^2+bt+c \geq 0
+  \end{align*}
+  が成り立っている.
+  $\bbb\neq\zzero$より$a\neq 0$であるので,
+  \cref{lem:numbers:quad}より,
+  判別式を考えるとその値は$0$以下である.
+  よって,
+  \begin{align*}
+    0&\geq b^2-4ac\\
+    &\Braket{\aaa,\bbb}^2-\Braket{\bbb,\bbb}\Braket{\aaa,\aaa}
+  \end{align*}
+  である. したがって,
+  \begin{align*}
+    \Braket{\aaa,\aaa}\Braket{\bbb,\bbb}&\geq\Braket{\aaa,\bbb}^2\\
+    \|\aaa\|^2\|\bbb\|^2&\geq\Braket{\aaa,\bbb}^2
+  \end{align*}
+  である.
+\end{proof}
+
+\begin{proofof*}{norm:is:norm}{triangle}
+  $\|\aaa\|+\|\bbb\|\leq 0$であるので,
+  $\|\aaa+\bbb\|^2 \leq (\|\aaa\|+\|\bbb\|)^2$
+  を示す.
+  \begin{align*}
+    \|\aaa+\bbb\|^2
+    &=\Braket{\aaa+\bbb,\aaa+\bbb}\\
+    &=\Braket{\aaa,\aaa+\bbb}+\Braket{\bbb,\aaa+\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,\bbb}+\Braket{\bbb,\aaa}+\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,\bbb}+\Braket{\aaa,\bbb}+\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+2\Braket{\aaa,\bbb}+\Braket{\bbb,\bbb}\\
+    &=\|\aaa\|^2+2\Braket{\aaa,\bbb}+\|\bbb\|^2\\
+    (\|\aaa\|+\|\bbb\|)^2
+    &=(\|\aaa\|^2+2\|\aaa\|\|\bbb\|+\|\bbb\|^2)\\
+  \end{align*}
+  である.
+  \Cref{lem:csi}より,
+  $\Braket{\aaa,\bbb}\leq \|\aaa\|\|\bbb\| $
+  であるので,
+  $\|\aaa+\bbb\|^2 \leq (\|\aaa\|+\|\bbb\|)^2$
+  である.
+\end{proofof*}
+
+
+\begin{proofof*}{norm:is:norm}{scalar}
+  \Cref{thm:innerprod:is:innerprod}より,
+  \begin{align*}
+    \Braket{r\aaa,r\aaa}=r\Braket{\aaa,r\aaa}=r\Braket{r\aaa,\aaa}=r^2\Braket{\aaa,\aaa}
+  \end{align*}
+  である. したがって, 
+  \begin{align*}
+    \|r\aaa\|=\sqrt{\Braket{r\aaa,r\aaa}}=\sqrt{r^2\Braket{\aaa,\aaa}}
+    =\sqrt{r^2}\sqrt{\Braket{\aaa,\aaa}}
+    =|r|\sqrt{\Braket{\aaa,\aaa}}
+    =|r|\|\aaa\|
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:ortho:det}
+  $A$を実数を成分とする2次正方行列であるとする.
+  $A$が直交行列なら, $\det(A)\in \Set{1,-1}$である.
+\end{lemma}
+\begin{proof}
+  $\transposed{A}A=E_n$であるとする.
+  このとき, $\det(\transposed{A}A)=\det(E_n)=1$である.
+  一方,  $\det(\transposed{A}A)=\det(\transposed{A})\det(A)=\det(A)\det(A)=\det(A)^2$である. よって$\det(A)\in\Set{1,-1}$である.
+\end{proof}
+
+\begin{proofof}{thm:ortho:char}
+  $A$は実数を成分とする$2$次正方行列であるとし,
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\
+      a'&b'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      a\\
+      a'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      b\\
+      b'
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  また, $n=2$とする.
+
+  このとき,
+  \begin{align*}
+    \transposed{A}A&=
+    \begin{pmatrix}
+      a&a'\\
+      b&b'
+    \end{pmatrix}
+    \begin{pmatrix}
+      a&b\\
+      a'&b'
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      a^2+(a')^2&ab+a'b'\\
+      ba+b'a'&b^2+(b')^2
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      \Braket{\aaa,\aaa}&\Braket{\aaa,\bbb}\\
+      \Braket{\bbb,\aaa}&\Braket{\bbb,\bbb}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  
+  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $A$が正則であり,
+  $A^{-1}=\transposed{A}$とする.
+  このとき,
+  $\transposed{A}A=A^{-1}A=E_n$
+
+  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho2}}
+  $A$が正則であり,
+  $A^{-1}=\transposed{A}$とする.
+  このとき,
+  $A\transposed{A}=AA^{-1}=E_n$
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  $\transposed{A}A=E_n$とする.
+  このとき, \cref{lem:ortho:det}より,
+  $\det(A)\neq 0$である.
+  したがって, $A$は正則である.
+  $\transposed{A}A=E_n$の
+  両辺に右から$A^{-1}$をかけることで
+  $\transposed{A}=A^{-1}$が得られる.
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho2}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  $A\transposed{A}=E_n$とする.
+  このとき, \cref{lem:ortho:det}より,
+  $\det(A)\neq 0$である.
+  したがって, $A$は正則である.
+  $A\transposed{A}=E_n$の
+  両辺に左から$A^{-1}$をかけることで
+  $\transposed{A}=A^{-1}$が得られる.
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:orthonormalbasis}}
+  $\transposed{A}A=E_n$とする.
+  \begin{align*}
+    \begin{pmatrix}
+      \Braket{\aaa,\aaa}&\Braket{\aaa,\bbb}\\
+      \Braket{\bbb,\aaa}&\Braket{\bbb,\bbb}
+    \end{pmatrix}=
+    \begin{pmatrix}
+      1&0\\
+      0&1
+    \end{pmatrix}
+  \end{align*}
+  であるので, 
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt{1}=1$,
+  $\|\bbb\|=\sqrt{\Braket{\bbb,\bbb}}=\sqrt{1}=1$である.
+  \paragraph{\Cref{thm:ortho:char:item:orthonormalbasis}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $(\aaa,\bbb)$が正規直交基底であるとする.
+  このとき,
+  $\Braket{\aaa,\bbb}=0$,
+  $\Braket{\aaa,\aaa}=\|\aaa\|^2=1^2=1$,
+  $\Braket{\bbb,\bbb}=\|\bbb\|^2=1^2=1$
+  である.
+  
+
+
+  \paragraph{\Cref{thm:ortho:char:item:preserve}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $\ee_i$を基本ベクトルとする.
+  $S$を正方行列に対し,
+  $\transposed{\ee_{i}}S\ee_{j}$は,
+  $(1,1)$-行列でその成分は
+  $S$の$(i,j)$である.
+  また, $\xx,\yy\in\RR^n$に対し,
+  $\transposed{\xx}\yy$は, $(1,1)$-行列でその成分は
+  $\Braket{\xx,\yy}$である.
+
+  仮定から,
+  $\transposed{\xx}\yy=\transposed{(A\xx)}(A\xx)=\transposed{\xx}\transposed{A}A\xx$
+  である.
+  $\xx=\ee_i$, $\yy=\ee_j$とすると,
+  \begin{align*}
+    \transposed{\ee_i}\transposed{A}A\ee_j=\transposed{\ee_i}\ee_j
+  \end{align*}
+  である. $\Braket{\ee_i,\ee_j}$は, $i=j$のとき$1$, $i\neq j$のとき$0$であるから,
+  $\transposed{A}A$の$(i,j)$-成分も, $i=j$のとき$1$, $i\neq j$のとき$0$である.
+  したがって,
+  
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:preserve}}
+
+  $\transposed{A}A=E_n$とする.
+  $\xx,\yy\in\RR^n$とする.
+  \begin{align*}
+    \transposed{(A\xx)}(A\yy)=\transposed{\xx}\transposed{A}A\yy=\transposed{\xx}E_n\yy=\transposed{\xx}\yy
+  \end{align*}
+  であるので,
+  $\braket{\xx,\yy}=\braket{A\xx,A\yy}$である.
+\end{proofof}
+
+
+\begin{proofof}{kernel:inj}
+$f$が線形変換であるとする.
+\paragraph{\Cref{thm:kernel:ing:item:inj}$\implies$\Cref{thm:kernel:ing:item:ker}}
+対偶を示す.
+$\ker(f)\neq \Set{\zzero}$とする.
+\Cref{thm:linmap:zero}から, $f(\zzero)=\zzero$であるので
+$\zzero\in \Ker(f)$である.
+よって, $\zzero\neq \aaa$かつ$ \aaa\in\Ker(f)$
+となる$\aaa$が存在する.
+$\aaa\neq\zzero$かつ$f(\aaa)=f(\zzero)$であるので, $f$は単射ではない.
+
+\paragraph{\Cref{thm:kernel:ing:item:ker}$\implies$\Cref{thm:kernel:ing:item:inj}}
+対偶を示す.
+$f$が単射ではないとする.
+このとき,
+$\aaa\neq\bbb$かつ$f(\aaa)=f(\bbb)$
+を満たす$\aaa$, $\bbb$が存在する.
+この$\aaa$, $\bbb$に対して
+$\vv=\aaa-\bbb$とおくと,
+$f(\vv)=\zzero$であるので,
+$\vv\in \Ker(f)$である.
+$\vv\neq \zzero$であるので,
+$\ker(f)\neq \Set{\zzero}$である.
+
+\end{proofof}
+
+
+\begin{proofof}{thm:repmat:inverse}
+  線形変換$f$は行列$A$を用いて
+  $f(\xx)=A\xx$と表せているとする.
+  線形変換$g$は行列$B$を用いて
+  $f(\xx)=B\xx$と表せているとする.
+  このとき
+  $g\circ f(\xx)=BA\xx$,
+  $f\circ g(\xx)=AB\xx$
+  である.
+
+  \paragraph{$f$が全単射$\implies$ $A$は正則.}
+  $f$が全単射であるとする.
+  $g=f^{-1}$とし, $g(\xx)=B\xx$とする.
+  このとき,
+  $g\circ f=\id_{\RR^2}$であるので,
+  $BA=E_2$である.
+  また,
+  $f\circ g=\id_{\RR^2}$であるので,
+  $AB=E_2$である.
+  したがって$B$は$A$の逆行列である.
+  
+  \paragraph{$A$は正則$\implies$ $f$が全単射.}
+  $A$が正則であるとする.
+  $B=A^{-1}$とし, $g(\xx)=B\xx$とする.
+  このとき,
+  $BA=E_2$であるので$g\circ f=\id_{\RR^2}$である.
+  また,
+  $AB=E_2$であるので
+  $f\circ g=\id_{\RR^2}$である.
+  したがって$g$は$f$の逆変換である.
+  
+\end{proofof}
+\section{固有値に関連する命題の証明}
+\begin{proofof}{thm:diagonizablity}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \paragraph{\Cref{thm:diagonizablity:item:diagonalizable}$\implies$\Cref{thm:diagonizablity:item:eigen}}
+  正則行列$P$で,
+  \begin{align*}
+    P^{-1}AP=
+    \begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  とできるとする.
+  このとき,
+  \begin{align*}
+    AP=
+    P\begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    P
+    \begin{pmatrix}
+      \lambda &0\\0&\mu
+    \end{pmatrix}=
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  また,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  である.
+  $P$が正則であるので\cref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトル,
+  である.
+  
+  \paragraph{\Cref{thm:diagonizablity:item:eigen}$\implies$\Cref{thm:diagonizablity:item:diagonalizable}}
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトルとし,
+  $(\aaa,\bbb)$は一次独立とする.
+  \begin{align*}
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}\\
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \cref{thm:det:reg}より,
+  $P$は正則である.
+
+  また,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  であるので,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p &\mu q\\\lambda p'&\mu q'
+    \end{pmatrix}
+    =
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}.
+  \end{align*}
+  $P$は正則なので, $P^{-1}$を左からかけると,
+  \begin{align*}
+    AP&=
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}\\
+    P^{-1}AP&=
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof}{thm:diferenteigen:linindep}
+  $A$を$2$次正方行列とする.
+  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
+  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
+  \begin{align*}
+    \vv&=
+    \begin{pmatrix}
+      v\\v' 
+    \end{pmatrix}\\
+    \ww&=
+    \begin{pmatrix}
+      w\\w' 
+    \end{pmatrix}
+  \end{align*}
+  とおく.
+  $x\vv+y\ww=\zzero$とする.
+  このとき, $x=y=0$を示す.
+
+  $x\vv+y\ww=\zzero$であるので,
+  \begin{align*}
+    x\vv+y\ww&=\zzero\\
+    A(x\vv+y\ww)&=A\zzero\\
+    xA\vv+yA\ww&=\zzero\\
+    x\lambda \vv+y\mu \ww&=\zzero
+  \end{align*}
+  である.
+  $x\vv+y\ww=\zzero$, $x\lambda \vv+y\mu \ww=\zzero$
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      xv+yw&\lambda xv+\mu yw\\xv'+xv'&\lambda xv'+\mu yw' 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix})
+    =\mu-\lambda\neq 0
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  よって,
+  \begin{align*}
+    x\vv&=
+    \begin{pmatrix}
+      xv\\xv' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero\\
+    y\ww&=
+    \begin{pmatrix}
+      yw\\yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero
+  \end{align*}
+  である. $\vv\neq\zzero$であるから, $x=0$である.
+  また, $\ww\neq\zzero$であるから, $y=0$である.
+\end{proofof}

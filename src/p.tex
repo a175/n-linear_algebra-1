@@ -1,0 +1,8336 @@
+% !TeX root =./x2.tex
+% !TeX program = pdfpLaTeX
+\chapter{注意など}
+\section{注意}
+このメモは随時追記, 修正する.
+必ずしも末尾に追記するとは限らない.
+
+講義で解説する順番と必ずしも一致しない.
+また, 講義で解説する内容をすべてここにまとめるわけでもなく,
+ここでまとめた内容をすべて講義で解説するわけでもない.
+
+忙しくなった場合には,
+このメモは,
+更新しない予定である.
+
+
+\section{Webworkについて}
+\url{https://webwork.sci.hokudai.ac.jp/webwork2/2024_Hokudai1_LA1_19_17/}
+%% の各ホームワークのキーワードは以下の通り:
+%% \begin{enumerate}
+%% \item
+%%   LAintro set01 matrices and vectors
+%%   \begin{itemize}
+%%   \item 行列に関する用語の定義(型, 成分, 行, 列, $=$)
+%%     (\cpageref{def:mat:type},\cpageref{def:mat:content,def:matrix:eq})
+%%   \item クロネッカー$\delta$ (\cpageref{def:ksdelta})
+%%   \item 単位行列 (\cpageref{def:mat:unit})
+%%   \item 零行列 (\cpageref{def:mat:zero})
+%%   \item 上半三角行列 (\cpageref{def:triangular})
+%%   \item 下半三角行列 (\cpageref{def:triangular})
+%%   \item 対角行列 (\cpageref{def:triangular})
+%%   \item スカラー行列 (\cpageref{def:mat:scalar})
+%%   \item 対称行列 (\cpageref{def:symmat})
+%%   \item 交代行列 (\cpageref{def:altmat})
+%%   \item 行列の転置 (\cpageref{def:op:transpose})
+%%   \end{itemize}
+%% \item
+%%   LAintro set02 sums and products
+%%   \begin{itemize}
+%%   \item 行列の和 (\cpageref{def:op:sum})
+%%   \item 行列の積 (\cpageref{def:op:prod})
+%%   \item 行列のスカラー倍 (\cpageref{def:op:scalar})
+%%   \item 正方行列の冪 (\cpageref{def:op:pow})
+%%   \item 対角行列の冪 (\cpageref{eg:diag:power})
+%%   \item 2次のケーリー--ハミルトンの定理 (\cpageref{thm:cht:2dim})
+%%   \end{itemize}
+%% \item
+%%   LAintro set03 determinants and inverse matrices of dimension 2
+%%   \begin{itemize}
+%%   \item (2次)行列式 (\cpageref{def:det:2})
+%%   \item 正則行列 (\cpageref{def:mat:reg})
+%%   \item 逆行列 (\cpageref{def:mat:reg})
+%%   \item 行列式と三角形の面積 (\cpageref{thm:det:geommeaning})
+%%   \item 逆行列を用いた連立方程式の解法 (\cpageref{ex:sle:regcase})
+%%   \item 逆行列と正則行列 (\cpageref{thm:det:reg})
+%%   \item 行列式が積を保存すること (\cpageref{thm:det:hom})
+%%   \end{itemize}
+%% \item
+%%   LAintro set04 systems of linear equations of dimension 2
+%%   \begin{itemize}
+%%   \item 行基本変形 (\cpageref{def:mat:fundtransformation})
+%%   \item 簡約行階段行列 (\cpageref{def:redechelonmat})
+%%   \item 階数 (\cpageref{def:rank})
+%%   \item 拡大係数行列 (\cpageref{def:eq:extededcoef})
+%%   \item 行基本変形と逆行列 (\cpageref{thm:fund:inverse})
+%%   \end{itemize}
+%% \item\label{item:webwork:3d-1}
+%%   LAintro set05 determinants and inverse matrices of dimension 3
+%%   \begin{itemize}
+%%   \item 3次の行列式. (\cpageref{def:det:generic})
+%%   \end{itemize}
+%% \item\label{item:webwork:3d-2}
+%%   LAintro set06 systems of linear equations of dimension 3
+%%   \begin{itemize}
+%%   \item 3元連立方程式のクラメールの公式による解法. (\cpageref{thm:cramer})
+%%   \end{itemize}  
+%% \item
+%%   LAintro set07 basis and inner products
+%%   \begin{itemize}
+%%   \item 一次独立 (\cpageref{def:linindep})
+%%   \item 基底 (\cpageref{def:basis})
+%%   \item 一次独立であることの言い換え (\cpageref{thm:linindep:det})
+%%   \item 内積 (\cpageref{def:innnerprod})
+%%   \item ベクトルのなす角と内積 (\cpageref{thm:innerprod:polar})
+%%   \item ノルム (\cpageref{def:norm})
+%%   \end{itemize}
+%% \item
+%%   LAintro set08 normality and orthogonality
+%%   \begin{itemize}
+%%   \item 正規直交基底 (\cpageref{def:orthonormal})
+%%   \item 直交射影と垂直成分 (\cpageref{def:projection})
+%%   \item (直線の表し方) (\cpageref{def:line})
+%%   \item 点から直線におろした垂線の長さ, 点と直線の距離 (\cpageref{prop:distance:point:line})
+%%   \item グラムシュミット直交化法 (\cpageref{thm:gramschmidt})
+%%   \end{itemize}
+%% \item
+%%   LAintro set09 linear transformations
+%%   \begin{itemize}
+%%   \item 斉次一次式 (\cpageref{def:homogepolynomial})
+%%   \item 一次変換 (\cpageref{def:lintransform})
+%%   \item 行列とベクトルの積(表現行列) (\cpageref{def:repmat})
+%%   \item 合成と積 (\cpageref{rem:comp:prod})
+%%   \item 鏡映 (\cpageref{ex:refl})
+%%   \item 回転 (\cpageref{ex:rotation})
+%%   \item 像, 核 (\cpageref{def:img,def:ker})
+%%   \item 全射, 単射 (\cpageref{def:suj,def:inj})
+%%   \end{itemize}
+%% \item
+%%   LAintro set10 characteristic polynomials and eigenvalues
+%%   \begin{itemize}
+%%   \item 特性多項式 (\cpageref{def:charpoly})
+%%   \item 固有値 (\cpageref{def:eigen})
+%%   \item 行列多項式 (\cpageref{def:mat:polynomial})
+%%   \end{itemize}
+%% \item
+%%   LAintro set11 diagonalizations
+%%   \begin{itemize}
+%%   \item 対角化可能性 (\cpageref{thm:diagonizablity})
+%%   \item 固有ベクトル (\cpageref{def:eigen,ex:diagonalization})
+%%   \item 対角化 (\cpageref{ex:diagonalization})
+%%   \item 冪 (\cpageref{ex:diagonalization})
+%%   \item 三項間漸化式への応用 (\cpageref{ex:diagonalization})
+%%   \end{itemize}
+%% \item
+%%   LAintro set12 diagonalizations of symmetric matrices
+%%   \begin{itemize}
+%%   \item 直交行列 (\cpageref{def:orthogonalmat})
+%%   \item 実対称行列の固有値, 固有ベクトル. (\cpageref{thm:symmat:eigen})
+%%   \item 実対称行列の直交行列による対角化. (\cpageref{thm:symmat:diag})
+%%   \end{itemize}
+%% \end{enumerate}
+
+
+
+
+
+\section{シラバス}
+シラバスに挙げた項目は以下の通り:
+\begin{enumerate}
+\item
+  行列：定義と演算（和・スカラ－倍・積），行列の転置
+\item
+  連立１次方程式の理論：消去法, 掃き出し法，基本変形と基本行列
+\item
+  行列の階数：基本変形と計算
+\item
+  逆行列, 掃き出し法
+\item
+  行列式：定義と基本的な性質
+\item
+  余因子行列と余因子展開，クラメ－ルの公式
+\item
+  2次正方行列の固有値，固有ベクトル，対角化
+\end{enumerate}
+
+\section{参考書}
+このノートの末尾に挙げた参考文献のうち,
+\cite{978-4-7806-0772-7}
+はシラバスに教科書として挙げたものである.
+\cite{978-4-7806-0164-0,978-4-535-78682-0}
+はシラバスに参考書として挙げたものである.
+
+\cite{978-4-535-78682-0}は大学の数学に関する講義全般について解説している本である.
+講義を受ける上での注意や,
+講義の前提となる集合や論理の知識についても解説がしてある.
+本講義とは直接関係はないが,
+図書館で借りるなどして一度最初の数章を読んでみることを勧める.
+
+\tableofcontents
+
+\chapter{線形代数以前の話}
+
+\section{講義で使われる見出し}
+講義に出てくる言明には大きく分けて二つあります:
+\begin{itemize}
+ \item 証明が必要ではないもの
+ \item 証明が必要なもの
+\end{itemize}
+また講義の板書では,
+言明に見出しをつけることがしばしばあります.
+以下では使われる見出しについて説明します.
+\subsection{証明が必要ではない言明}
+言葉の持つ意味を決めることが,
+`定義'です.
+つまり, ルールを決めるということです.
+ルールを設定するということですので,
+`定義'自身に証明は必要ではありません.
+
+数学書では定義される用語をイタリック/太文字/下線で
+書く習慣があります.
+重要だからという理由で強調されているわけではありません.
+
+Def/Definition/定義 などの見出しが使われます.
+
+\subsection{証明が必要な言明}
+証明をして真である確認する必要がある言明は,
+`命題'と呼ばれます.
+`主張' や `事実' と呼ぶこともあると思います.
+
+講義では, 
+気分や役割により次の様に分類することが多いと思います.
+これらのうち, どの見出しを使うかというのは, 
+かなり主観的です.
+\begin{description}
+\item[定理]
+重要なもの, まとめ的なもの など 比較的重いものに使われます.
+
+Thm/Theorem/定理  などの見出しを使います.
+
+\item[補題]
+他の命題を示すために使うものに使われます.
+
+Lem/Lemma/補題  などの見出しを使います.
+
+\item[系]
+他からすぐ示すことができるものに使われます.
+
+Cor/Corollary/系  などの見出しを使います.
+\item[その他の命題]
+
+Prop/Porposition/命題  などの見出しを使います.
+\end{description}
+
+\subsection{補足}
+また見出しとしては次のようなものも使こともあります:
+\begin{itemize}
+ \item 
+実例, 具体例 (`喩え'ではない) を述べる際に,
+例/Example/E.g.\   などの見出しを使います.
+\item
+補足的なことを述べる際に,
+注/Rem/Remark   などの見出しを使います.
+\end{itemize}
+
+\section{集合や論理について}
+
+集合や論理についての基本的なことについては,
+既知とします.
+もしそれらについて不安な人は,
+高校の教科書の該当箇所や,
+\cite{978-4-535-78682-0}
+を参考に復習をすること.
+
+
+以下の記号を用いる:
+\begin{itemize}
+\item 複素数全体のなす集合を$\CC$とおく.
+\item 実数全体のなす集合を$\RR$とおく.
+\item 有理数全体のなす集合を$\QQ$とおく.
+\item 整数全体のなす集合を$\ZZ$とおく.
+\item 非負整数全体のなす集合を$\NN$とおく.
+\end{itemize}
+つまり,
+`$x\in\CC$'は
+`$x$は複素数である'
+ということを意味する.
+
+\section{体}
+$K$を集合とする.
+$K$に四則演算(加減乗除)が定まっているとき,
+$K$は
+\defit{体}\footnote{タイと読む.}
+\Defit{field}
+であるという.
+ただし,
+``四則演算が定まっている''
+とは, 次を満たしていることとする:
+\begin{enumerate}
+\item
+  $s,t\in K$に対し$s+t$という$K$の元が定まる.
+  (この演算を加法と呼ぶ.)
+  さらに, $0$という(特別な)元がある.
+
+  $a,b,c\in K$なら, 次が成り立つ:
+  \begin{enumerate}
+  \item
+    $(a+b)+c=a+(b+c)$.
+  \item
+    $a+b=b+a$.
+  \item
+    $0+a=a$.
+  \item
+    $x$に関する方程式
+    \begin{align*}
+      a+x=0
+    \end{align*}
+    が($K$の元の)解を持つ.
+  \end{enumerate}
+\item
+  このとき, $a+x=0$の解は,
+  $a$が定まればただ一つに定まるので,
+  この解を$-a$と書く.
+
+  $b+(-a)$を$b-a$と略記する。
+  (この演算を加法と呼ぶ.)
+
+\item
+  $s,t\in K$に対し$st$という$K$の元が定まる.
+  (この演算を乗法と呼ぶ.)
+  さらに, $1$という(特別な)元がある.
+
+  $a,b,c\in K$なら, 次が成り立つ:
+  \begin{enumerate}
+  \item
+    $(ab)c=a(bc)$.
+  \item
+    $ab=ba$.
+  \item
+    $1a=a$.
+  \item
+    $a\neq 0$ならば,
+    $x$に関する方程式
+    \begin{align*}
+      ax=1
+    \end{align*}
+    が($K$の元の)解を持つ.
+  \end{enumerate}
+
+\item
+  $a\neq 0$とする.
+  このとき, $ax=1$の解は,
+  $a$が定まればただ一つに定まるので,
+  この解を$a^{-1}$とか$\frac{1}{a}$と書く.
+
+  $b(\frac{1}{a})$を$\frac{b}{a}$と略記する。
+  (この演算を除法と呼ぶ.)
+
+\item
+  $a,b,c\in K$なら, 以下が成り立つ:
+  \begin{enumerate}
+  \item $a(b+c)=ab+ac$.
+  \item $0\neq 1$.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{remark}
+  つまり体とは,
+  結合則, 分配則, 可換則などが成り立つ
+  四則演算が備わった数の集合のことである.
+\end{remark}
+
+
+\begin{example}
+  $\CC$は体である.
+\end{example}
+\begin{example}
+  $\RR$は体である.
+\end{example}
+\begin{example}
+  $\QQ$は体である.
+\end{example}
+\begin{remark}
+  証明は省略する.
+  以後これらは事実として使う.
+\end{remark}
+\begin{remark}
+  掛け算は$ab$または$a\cdot b$のように書き表す.
+  ($\times$は本原稿では別の意味で使うので,
+  掛け算の意味では用いない)
+\end{remark}
+
+
+\begin{example}
+  $2\in\ZZ$ではあるが$\frac{1}{2}\not\in \ZZ$である.
+  したがって$2x=1$は$\ZZ$の元の解を持たない.
+  $2\neq 0$であるが$2x=1$は$\ZZ$の元の解を持たないので,
+  $\ZZ$は体ではない.
+\end{example}
+
+本講義では,
+体$K$の元のことを数と呼ぶ.
+つまり,
+数に対しては四則演算ができる.
+特に断らない限り,
+体としては何を考えても構わない.
+
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:0:1}
+  $a$を実数とする.
+  $\sqrt{a^2}=a$は成り立つか答えよ.
+\end{quiz}
+
+
+\begin{quiz}
+    \solvelater{quiz:0:2}
+$|2-\sqrt{5}|$
+を絶対値を表す記号を使わずに書くとどうなるか答えよ.
+\end{quiz}
+
+\begin{quiz}
+    \solvelater{quiz:0:3}
+    $s,u$を実数とする.
+    $x$に関する方程式
+    $x^2-(s+u)x+su=0$
+    が実数解を持つことを示せ
+\end{quiz}
+
+
+\chapter{行列の定義と演算}
+\label{chap:mat}
+\cite{978-4-7806-0772-7}であれば,
+第2章が関連する.
+また, 1.1, 1.2, 1.3も参考になるかもしれない.
+\cite{978-4-7806-0164-0}であれば,
+1.3, 1.4が関連する.
+
+\section{行列に関する基本的な用語の定義}
+ここでは, 行列に関連する基本的な用語を定義し,
+その例をいくつか紹介する.
+
+\begin{definition}
+  \label{def:mat}
+  縦に$m$個ずつ, 横に$n$個ずつ, 全部で$mn$個の数を表のように長方形に並べた
+  次のものを
+  \defit{$(m,n)$-行列}
+  \Defit{$(m,n)$-matrix}
+  \Defit{$m$ by $n$ matrix}
+  \addindex{行列!$(m,n)$-@$(m,n)$---}%
+  \addindex{matrix!$(m,n)$-@$(m,n)$---}%
+  \addindex{matrix!$m$ by $n$@$m$ by $n$ ---}%
+  と呼ぶ:
+  \begin{align*}
+    \begin{pmatrix}
+      a_{1,1}&a_{1,2}&\cdots &a_{1,n}\\
+      a_{2,1}&a_{2,2}&\cdots &a_{2,n}\\
+      \vdots&\vdots&&\vdots\\
+      a_{m,1}&a_{m,2}&\cdots &a_{m,n}\\
+    \end{pmatrix}
+  \end{align*}
+  この行列を$A$とするとき,
+  $a_{i,j}$を
+  \defit{$A$の$(i,j)$-成分}
+  \Defit{$(i,j)$-entry of $A$}
+  \Defit{$(i,j)$-element of $A$}
+  \addindex{成分!行列の$(i,j)$---}%
+  \addindex{成分!行列の---}%
+  \addindex{$(i,j)$-成分!行列の---}%
+  \addindex{行列の!---$(i,j)$-成分}%
+  \addindex{行列の!---成分}%
+  \addindex{entry!$(i,j)$--- of a matrix}%
+  \addindex{entry!--- of a matrix}%
+  \addindex{$(i,j)$-entry!--- of a matrix}%
+  \addindex{of matrix!$(i,j)$-entry ---}%
+  \addindex{of matrix!entry ---}%
+  \addindex{element!$(i,j)$--- of a matrix}%
+  \addindex{element!--- of a matrix}%
+  \addindex{$(i,j)$-element!--- of a matrix}%
+  \addindex{of matrix!$(i,j)$-element ---}%
+  \addindex{of matrix!element ---}%
+  \addindex{entry!$(i,j)$--- of a matrix}%
+  \addindex{entry!--- of a matrix}%
+  \addindex{$(i,j)$-entry!--- of a matrix}%
+  \addindex{of matrix!$(i,j)$-entry ---}%
+  \addindex{of matrix!entry ---}%
+  \addindex{element!$(i,j)$--- of a matrix}%
+  \addindex{element!--- of a matrix}%
+  \addindex{$(i,j)$-element!--- of a matrix}%
+  \addindex{of matrix!$(i,j)$-element ---}%
+  \addindex{of matrix!element ---}%
+  と呼ぶ.
+  また,
+  \defit{$A$のサイズ}
+  \Defit{size of $A$}
+  \addindex{サイズ!行列の---}%
+  \addindex{行列の!---サイズ}%
+  \addindex{size!--- of a matrix}%
+  \addindex{of matrix!size ---}%
+  は$(m,n)$であるといったり,
+  \defit{$A$の型}
+  \Defit{type of $A$}
+  \addindex{型!行列の---}%
+  \addindex{行列の!---型}%
+  \addindex{type!--- of a matrix}%
+  \addindex{of matrix!type ---}%
+  は$(m,n)$であるという.
+  \begin{align*}
+    \begin{pmatrix}
+      a_{i,1}&a_{i,2}&\cdots &a_{i,n}
+    \end{pmatrix}
+  \end{align*}
+  という横のならびを,
+  \defit{$A$の$i$-行目}
+  \Defit{$i$-th row of $A$}
+  \addindex{$i$-行目!行列の---}%
+  \addindex{行!行列の---}%
+  \addindex{行!行列の$i$---目}%
+  \addindex{行列の!$i$-行目}%
+  \addindex{行列の!行}%
+  \addindex{row!$i$-th --- of a matrix}%
+  \addindex{row!--- of a matrix}%
+  \addindex{row!--- of a matrix}%
+  \addindex{of matrix!$i$-th row ---}%
+  \addindex{of matrix!row ---}%
+  と呼ぶ.
+  \begin{align*}
+    \begin{pmatrix}
+      a_{1,j}\\
+      a_{2,j}\\
+      \vdots\\
+      a_{m,j}
+    \end{pmatrix}
+  \end{align*}
+  という縦のならびを,
+  \defit{$A$の$j$-列目}
+  \Defit{$j$-th column of $A$}
+  \addindex{列!行列の$j$---目}%
+  \addindex{列!行列の---}%
+  \addindex{行列の!---$j$列目}%
+  \addindex{行列の!---列}%
+  \addindex{column!$j$-th --- of a matrix}%
+  \addindex{column!--- of a matrix}%
+  \addindex{$j$-th column!--- of a matrix}%
+  \addindex{of matrix!$j$-th column --- }%
+  \addindex{of matrix!column --- }%
+  と呼ぶ.
+\end{definition}
+\begin{remark}
+  数として複素数を考えているときは,
+  行列を複素行列と呼ぶ.
+\end{remark}
+\begin{remark}
+  数として実数を考えているときは,
+  行列を実行列と呼ぶ.
+\end{remark}
+
+\begin{definition}
+  \label{def:matrix:eq}
+  $A,B$を行列とする.
+  次の条件を満たすとき,
+  \defit{$A$と$B$は等しい}
+  \Defit{$A$ is equal to $B$}
+  \Defit{$A$ equals $B$}
+  \addindex{等しい!行列が---}%
+  \addindex{$=$!行列の---}%
+  \addindex{$A=B$}%
+  \addindex{行列が!---等しい}%
+  \addindex{行列の!---相等}%
+  \addindex{equal!two matrices are ---}%
+  といい, $A=B$とかく:
+  \begin{enumerate}
+  \item $A$と$B$の型が等しい.
+  \item $A$と$B$の対応する成分がそれぞれ等しい.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列を,
+  \begin{align*}
+    (a_{i,j})_{\substack{i=1,\ldots,m\\j=1,\ldots,n}}
+  \end{align*}
+  で表すこともある.
+\end{definition}
+
+\begin{definition}
+  すべての成分が$0$である$(m,n)$-行列を,
+  $O_{m,n}$で表し,
+  零行列と呼ぶ.
+  つまり,
+  \begin{align*}
+   O_{m,n}= (0)_{\substack{i=1,\ldots,m\\j=1,\ldots,n}}
+  \end{align*}
+  である.
+  文脈からサイズが明らかなときには,
+  $O$と略記することもある.
+\end{definition}
+
+\begin{definition}
+  \label{def:numerical:vec}
+  $(m,1)$-行列を,
+  \defit{$m$項数ベクトル}
+  \Defit{numerical vector}
+  とか
+  \defit{$m$項列ベクトル}
+  \Defit{column vector},
+  \defit{$m$項縦ベクトル}  
+  \addindex{ベクトル!$m$こうたて---@$m$項縦---}%%
+  \addindex{ベクトル!たて---@縦---}%%
+  \addindex{たてべくとる@縦ベクトル!$m$項---}%%
+  \addindex{ベクトル!$m$こうすう---@$m$項数---}%%
+  \addindex{ベクトル!すう---@数---}%%
+  \addindex{すうべくとる@数ベクトル!$m$項---}%%
+  \addindex{ベクトル!$m$項列---}%%
+  \addindex{ベクトル!列---}%%
+  \addindex{列ベクトル!$m$項---}%%
+  %\index{vector!numerical --- of size $m$|see {$m$項数ベクトル}}
+  \addindex{vector!numerical ---}%%
+  \addindex{numerical!--- vector}%%
+  %\index{numerical vector!--- of size $m$|see {$m$項数ベクトル}}
+  %\index{vector!column --- of size $m$|see {$m$項数ベクトル}}
+  \addindex{vector!column ---}%%
+  \addindex{column!--- vector}%%
+  %\index{column vector!--- of size $m$|see {$m$項数ベクトル}}
+  と呼ぶことがある.
+  %ベクトルについては, \cref{chap:lintrans}で扱う.
+\end{definition}
+
+\begin{definition}
+  $(m,1)$-行列を,
+  \defit{$m$項行ベクトル}
+  \Defit{row vector}
+  とか
+  \defit{$m$項横ベクトル}
+  \Defit{row vector}
+  \addindex{ベクトル!$m$こうよこ---@$m$項横---}%%
+  \addindex{ベクトル!よこ---@横---}%%
+  \addindex{よこべくとる@横ベクトル!$m$項---}%%
+  \addindex{ベクトル!$m$項行---}%%
+  \addindex{ベクトル!行---}%%
+  \addindex{行ベクトル!$m$項---}%%
+  \addindex{vector!row ---}%%
+  \addindex{row!--- vector}%%
+  と呼ぶことがある.
+  %ベクトルについては, \cref{chap:lintrans}で扱う.
+\end{definition}
+
+%\endinput
+\subsection{正方行列}
+ここでは, 正方行列に関連する基本的な用語を定義し,
+その例をいくつか紹介する.
+\begin{definition}  
+  $(n,n)$-行列を
+  \defit{$n$次正方行列}
+  \Defit{square matrix of order $n$}
+  \addindex{行列!正方---}%
+  \addindex{行列!$n$次正方---}%
+  \addindex{正方行列!$n$次---}%
+  \addindex{matrix!square ---}%
+  \addindex{matrix!square --- of order $n$}%
+  \addindex{square matrix!--- of order $n$}%
+  と呼ぶ.
+\end{definition}
+\begin{definition}
+  \label{def:mat:content}
+    $A$を
+  \begin{align*}
+    \begin{pmatrix}
+      a_{1,1}&a_{1,2}&\cdots &a_{1,n}\\
+      a_{2,1}&a_{2,2}&\cdots &a_{2,n}\\
+      \vdots&\vdots&&\vdots\\
+      a_{m,1}&a_{m,2}&\cdots &a_{m,n}\\
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  また, $A$の$(i,i)$-成分を
+  \defit{$A$の第$i$対角成分}
+  \Defit{$i$-th diagonal entry of $A$}
+  \Defit{$i$-th main diagonal entry of $A$}
+  \Defit{$i$-th diagonal element of $A$}
+  \Defit{$i$-th main diagonal element of $A$}
+  \addindex{成分!行列の第$i$対角---}%
+  \addindex{成分!行列の対角---}%
+  \addindex{成分!第$i$対角---}%
+  \addindex{成分!対角---}%
+  \addindex{対角!行列の第$i$---成分}%
+  \addindex{対角!第$i$---成分}%
+  \addindex{対角!行列の---成分}%
+  \addindex{対角成分!行列の第$i$---}%
+  \addindex{対角成分!第$i$---}%
+  \addindex{対角成分!行列の---}%
+  \addindex{行列の!---第$i$対角成分}%
+  \addindex{行列の!---対角成分}%
+  \addindex{element!$i$-th diagonal --- of a matrix}%
+  \addindex{element!diagonal --- of a matrix}%
+  \addindex{diagonal element!$i$-th --- of a matrix}%
+  \addindex{diagonal element!--- of a matrix}%
+  \addindex{diagonal element!$i$-th ---}%
+  \addindex{element!$i$-th diagonal ---}%
+  \addindex{element!diagonal ---}%
+  \addindex{of matrix!$i$-th diagonal element ---}%
+  \addindex{of matrix!diagonal element ---}%
+  \addindex{element!$i$-th main diagonal --- of a matrix}%
+  \addindex{element!main diagonal --- of a matrix}%
+  \addindex{diagonal element!$i$-th main --- of a matrix}%
+  \addindex{diagonal element!main --- of a matrix}%
+  \addindex{diagonal element!main ---}%
+  \addindex{element!$i$-th diagonal main ---}%
+  \addindex{element!diagonal main ---}%
+  \addindex{diagonal element!$i$-th main ---}%
+  \addindex{diagonal element!main ---}%
+  \addindex{main diagonal element!$i$-th ---}%
+  \addindex{of matrix!$i$-th main diagonal element ---}%
+  \addindex{of matrix!main diagonal element ---}%
+  \addindex{entry!$i$-th diagonal --- of a matrix}%
+  \addindex{entry!diagonal --- of a matrix}%
+  \addindex{diagonal entry!$i$-th --- of a matrix}%
+  \addindex{diagonal entry!--- of a matrix}%
+  \addindex{entry!$i$-th diagonal ---}%
+  \addindex{entry!diagonal ---}%
+  \addindex{diagonal entry!$i$-th ---}%
+  \addindex{of matrix!$i$-th diagonal entry ---}%
+  \addindex{of matrix!diagonal entry ---}%
+  \addindex{entry!$i$-th main diagonal --- of a matrix}%
+  \addindex{entry!main diagonal --- of a matrix}%
+  \addindex{diagonal entry!$i$-th main --- of a matrix}%
+  \addindex{diagonal entry!main --- of a matrix}%
+  \addindex{diagonal entry!main ---}%
+  \addindex{entry!$i$-th diagonal main ---}%
+  \addindex{entry!diagonal main ---}%
+  \addindex{diagonal entry!$i$-th main ---}%
+  \addindex{diagonal entry!main ---}%
+  \addindex{main diagonal entry!$i$-th ---}%
+  \addindex{of matrix!$i$-th main diagonal entry ---}%
+  \addindex{of matrix!main diagonal entry ---}%
+  \addindex{diagonal!$i$-th --- element of a matrix}%
+  \addindex{diagonal!---  element of a matrix}%
+  \addindex{diagonal!---  element}%
+  \addindex{diagonal!$i$-th ---  element}%
+  \addindex{diagonal!$i$-th --- entry of a matrix}%
+  \addindex{diagonal!$i$-th --- entry}%
+  \addindex{diagonal!---  entry of a matrix}%
+  \addindex{diagonal!$i$-th ---  entry}%
+  と呼ぶ.
+\end{definition}
+
+\begin{definition}
+  \label{def:triangular}
+  $A$を, $a_{i,j}$が$(i,j)$-成分である$n$次正方行列とする.
+  \begin{enumerate}
+  \item
+    次の条件を満たすとき$A$は
+    \defit{上半三角行列}
+    \Defit{upper triangular matrix}
+    \addindex{行列!上半三角---}%
+    \addindex{三角行列!上半---}%
+    \addindex{matrix!upper triangular ---}%
+    \addindex{triangular matrix!upper ---}%
+    であるという:
+    \begin{align*}
+      i>j\implies a_{i,j}=0
+    \end{align*}
+  \item
+    次の条件を満たすとき$A$は
+    \defit{下半三角行列}
+    \Defit{lower triangular matrix}
+    \addindex{行列!下半三角---}%
+    \addindex{三角行列!下半---}%
+    \addindex{matrix!lower triangular ---}%
+    \addindex{triangular matrix!lower ---}%
+    であるという:
+    \begin{align*}
+      i<j\implies a_{i,j}=0
+    \end{align*}
+  \item
+    次の条件を満たすとき$A$は
+    \defit{対角行列}
+    \Defit{diagonal matrix}
+    \addindex{行列!対角---}%
+    \addindex{対角!---行列}%
+    \addindex{diagonal!--- matrix}%
+    \addindex{matrix!--- diagonal}%
+    であるという:
+    \begin{align*}
+      i\neq j\implies a_{i,j}=0
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  次の行列は上半三角行列である:
+  \begin{align*}
+    \begin{pmatrix}
+      1&2\\
+      0&4
+    \end{pmatrix}
+  \end{align*}
+\end{example}
+\begin{example}
+  次の行列は下半三角行列である:
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\
+      3&4
+    \end{pmatrix}
+  \end{align*}
+\end{example}
+\begin{example}
+  次の行列は対角行列である:
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\
+      0&4
+    \end{pmatrix}
+  \end{align*}
+\end{example}
+
+\begin{definition}
+  \label{def:mat:scalar}
+  対角成分がすべて等しい値である対角行列を
+  \defit{スカラー行列}
+  \Defit{scalar matrix}
+  \addindex{スカラー!---行列}%
+  \addindex{行列!スカラー---}%
+  \addindex{scalar!--- matrix}%
+  \addindex{matrix!scalar ---}%
+  と呼ぶ.
+\end{definition}
+
+
+\begin{definition}
+  \label{def:ksdelta}
+  \begin{align*}
+    \delta_{i,j}=
+    \begin{cases}
+      1&(i=j)\\
+      0&(i\neq j)
+    \end{cases}
+  \end{align*}
+  とおく.  この関数$\delta$は
+  \defit{クロネッカのデルタ}
+  \Defit{Kronecker delta}
+  \addindex{デルタ!クロネッカの---}%
+  \addindex{delta!Kronecker ---}%
+  と呼ばれる.
+\end{definition}
+
+\begin{definition}
+  \label{def:mat:unit}
+  $(i,j)$-成分が$\delta_{i,j}$である
+  $n$次正方行列を
+  $E_{n}$とかき,
+  \defit{$n$次単位行列}
+  \Defit{$n$-th identity matrix}
+  \Defit{Einheitsmatrix}
+  \addindex{行列!$n$次単位---}%
+  \addindex{行列!単位---}%
+  \addindex{単位行列!$n$次---}%
+  \addindex{単位!$n$次---行列}%
+  \addindex{単位!---行列}%
+  \addindex{matrix!$n$-th identity ---}%
+  \addindex{matrix!identity ---}%
+  \addindex{identity matrix!$n$-th ---}%
+  \addindex{identity!$n$-th --- matrix}%
+  \addindex{identity!--- matrix}%
+  \addindex{$E_n$}%
+  と呼ぶ.
+  文脈から型が明らかなときには,
+  $E$と略記する.
+\end{definition}
+
+\begin{example}
+  $E_n$は対角成分がすべて$1$である対角行列である.
+  例えば,
+  \begin{align*}
+    E_2=
+    \begin{pmatrix}
+      1&0\\
+      0&1
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{example}
+
+\section{行列の演算}
+ここでは,
+行列に対する演算を定義し, その性質について紹介する.
+$2$次正方行列の場合について紹介したあと,
+一般の場合について定義するという形式で話を進める.
+
+\subsection{和}
+ここでは, 行列の和と呼ばれる演算について考える.
+サイズが同じもの同士ならば和が定義できる.
+より一般には次のように定義される.
+\begin{definition}
+  \label{def:op:sum}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $B$は, $(i,j)$-成分が$b_{i,j}$である$(m,n)$-行列とする.
+  このとき,
+  $(i,j)$-成分が$a_{i,j}+b_{i,j}$である$(m,n)$-行列を$A+B$とかき,
+  \defit{$A$と$B$の和}
+  \Defit{sum of $A$ and $B$}
+  \addindex{和!行列の---}%
+  \addindex{行列の!---和}%
+  \addindex{sum!--- of matrices}%
+  \addindex{of matrices!sum ---}%
+  と呼ぶ.  
+\end{definition}
+\begin{example}
+  \begin{align*}
+  \begin{pmatrix}
+    1&2\\3&4
+  \end{pmatrix}+
+  \begin{pmatrix}
+    5&6\\7&8
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    1+5&2+6\\3+7&4+8
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    6&8\\10&12
+  \end{pmatrix}.
+  \end{align*}  
+\end{example}
+\begin{example}
+  \begin{align*}
+  \begin{pmatrix}
+    1\\3
+  \end{pmatrix}+
+  \begin{pmatrix}
+    5\\7
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    1+5\\3+7
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    6\\10
+  \end{pmatrix}.
+  \end{align*}  
+\end{example}
+\begin{remark}
+  和によって行列のサイズは変化しない.
+\end{remark}
+
+
+
+\subsection{スカラー倍}
+ここでは, 行列のスカラー倍と呼ばれる演算について考える.
+\begin{definition}
+  \label{def:op:scalar}
+  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $\alpha$を数とする.
+  このとき,
+  $(i,j)$-成分が$\alpha a_{i,j}$である$(m,n)$-行列を,
+  $\alpha A$とかき,
+  \defit{$\alpha$による$A$のスカラー倍}
+  \Defit{scalar product of $\alpha$ and $A$}
+  \addindex{スカラー倍!行列の---}%
+  \addindex{行列の!---スカラー倍}%
+  \addindex{scalar product!--- of matrix}%
+  \addindex{of matrix!scalar product ---}%
+  と呼ぶ.
+\end{definition}
+\begin{example}
+  \begin{align*}
+  5
+  \begin{pmatrix}
+    1&2\\
+    3&4\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    5\cdot 1&5\cdot 2\\
+    5\cdot 3&5\cdot 4\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    5&10\\
+    15&20\\
+  \end{pmatrix}
+  \end{align*}
+\end{example}
+
+\begin{example}
+  \begin{align*}
+  5
+  \begin{pmatrix}
+    1\\
+    3\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    5\cdot 1\\
+    5\cdot 3
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    5\\
+    15
+  \end{pmatrix}
+  \end{align*}
+\end{example}
+\begin{remark}
+  スカラー倍によって行列のサイズは変化しない.
+\end{remark}
+\begin{definition}
+  $-1A$を$-A$と略記する.
+\end{definition}
+
+\begin{definition}
+  $A+(-B)$を$A-B$と略記する.
+\end{definition}
+
+\begin{remark}
+  対角成分が$\alpha$であるスカラー行列は, $\alpha E_n$と表せる.
+\end{remark}
+
+\begin{remark}
+  $k$個の
+  $(m,n)$-行列$A_1,\ldots,A_k$
+  と数$\alpha_1,\ldots,\alpha_k$
+  に対し, スカラー倍と和を使って
+  $(m,n)$-行列
+  \begin{align*}
+    \alpha_1A_1 + \cdots \alpha_kA_k
+  \end{align*}
+  を与えることができる.
+  これを
+  \defit{$\alpha_1,\ldots,\alpha_k$を係数とする$A_1,\ldots,A_k$の線型結合}
+  \defit{$\alpha_1,\ldots,\alpha_k$を係数とする$A_1,\ldots,A_k$の一次結合}
+  \Defit{linear combination of $A_1,\ldots,A_k$ with coeficients $\alpha_1,\ldots,\alpha_k$}
+  \addindex{線型結合!行列の---}%
+  \addindex{線型!行列の---結合}%
+  \addindex{線型!---結合}%
+  \addindex{結合!線型---}%
+  \addindex{結合!行列の線型---}%
+  \addindex{linear combination!--- of matrices}%
+  \addindex{combination!linear --- of matrices}%
+  \addindex{combination!linear ---}%
+  \addindex{linear!--- combination of matrices}%
+  \addindex{linear!--- combination}%
+  \addindex{一次結合!行列の---}%
+  \addindex{一次!行列の---結合}%
+  \addindex{一次!---結合}%
+  \addindex{結合!一次---}%
+  \addindex{結合!行列の一次---}%
+ と呼ぶことがある.
+\end{remark}
+
+\subsection{積}
+ここでは, 行列の積と呼ばれる演算について考える.
+定義が複雑なので,
+慣れないうちは注意してほしい.
+
+
+$A$の列数と$B$の行数が等しいときに,
+$A$と$B$の積を定義できる.
+\begin{definition}
+  \label{def:op:prod}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(m,k)$-行列とする.
+  $B$は, $(i,j)$-成分が$b_{i,j}$である$(k,n)$-行列とする.
+  このとき,
+  $(i,j)$-成分が$\sum_{t=1}^{k}a_{i,t}b_{t,j}$である$(m,n)$-行列を$AB$とかき,
+  \defit{$A$と$B$の積}
+  \Defit{product of $A$ and $B$}
+  \addindex{積!行列の---}%
+  \addindex{行列の!---積}%
+  \addindex{product!--- of matrices}%
+  \addindex{of matrices!product ---}%
+  と呼ぶ. 
+\end{definition}
+\begin{remark}
+  $AB$の$(i,j)$成分は$A$の$i$行目と$B$の$j$列目から計算できる.
+\end{remark}
+\begin{remark}
+  $AB$の行数は$A$の行数.
+\end{remark}
+\begin{remark}
+  $AB$の列数は$B$の列数.
+\end{remark}
+
+
+
+\begin{example}
+$2$次正方行列のときについて考える.
+  \begin{align*}
+  A&=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}\\
+  A'&=
+  \begin{pmatrix}
+    a'&b'\\c'&d'
+  \end{pmatrix}
+\end{align*}
+とする.
+このとき,
+\begin{align*}
+  AA'=
+  \begin{pmatrix}
+    aa'+bc'&ab'+bd'\\ca'+dc'&db'+dd'
+  \end{pmatrix}.
+\end{align*}
+積の各成分がどのように計算されているかは,
+次のような表を考えるとわかりやすいかもしれない:
+\begin{align*}
+  \begin{array}{cc|c:c}
+   && a'&b'\\
+    && c'&d'\\\hline
+    a&b&aa'+bc'&ab'+bd'\\\hdashline
+    c&d&ca'+dc'&db'+dd'
+  \end{array}
+\end{align*}
+\end{example}
+
+
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&2\\3&4\end{pmatrix}\\
+    B&=\begin{pmatrix}5&6\\7&8\end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    AB&=\begin{pmatrix}1&2\\3&4\end{pmatrix}\begin{pmatrix}5&6\\7&8\end{pmatrix}\\
+      &=\begin{pmatrix}1\cdot 5+2\cdot 7&1\cdot 6+2\cdot 8\\
+      3\cdot 5+4\cdot 7&3\cdot 6+4\cdot 8\end{pmatrix}\\
+      &=\begin{pmatrix}19&22\\43&50\end{pmatrix}
+  \end{align*}
+  一方
+  \begin{align*}
+    BA&=\begin{pmatrix}5&6\\7&8\end{pmatrix}\begin{pmatrix}1&2\\3&4\end{pmatrix}\\
+      &=\begin{pmatrix}
+      5\cdot 1+6\cdot 2&5\cdot 3+6\cdot 4\\
+      7\cdot 1+8\cdot 2&7\cdot 3+8\cdot 4
+      \end{pmatrix}\\
+      &=\begin{pmatrix}23&34\\31&46\end{pmatrix}
+  \end{align*}
+  である. $AB\neq BA$である.
+\end{example}
+\begin{remark}
+   $AB\neq BA$となることがある.
+\end{remark}
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&2\\3&4\end{pmatrix}\\
+    B&=\begin{pmatrix}5\\7\end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    AB&=\begin{pmatrix}1&2\\3&4\end{pmatrix}\begin{pmatrix}5\\7\end{pmatrix}\\
+      &=\begin{pmatrix}1\cdot 5+2\cdot 7\\
+      3\cdot 5+4\cdot 7\end{pmatrix}\\
+      &=\begin{pmatrix}19\\43\end{pmatrix}.
+  \end{align*}
+\end{example}
+
+\subsection{冪}
+ここでは, 行列の冪と呼ばれる演算について考える.
+
+正方行列に対し次のように定義する.
+\begin{definition}
+  \label{def:op:pow}
+  $A$を$n$次正方行列とする.
+  このとき, 正整数$k$に対し, $A^k$を次で定義する:
+  \begin{align*}
+    A^k=
+    \begin{cases}
+      AA^{k-1} &(k>1)\\
+      A&(k=1)
+    \end{cases}
+  \end{align*}
+\end{definition}
+
+\begin{definition}
+  \label{def:mat:polynomial}
+ $A$を$n$次正方行列とする.
+  変数(不定元) $t$に関する多項式
+  \begin{align*}
+    f(t)=a_0+a_1t+a_2t^2+\cdots +a_dt^d
+  \end{align*}
+  の$t$を$A$に置き換えたもの(ただし, $1=t^0$は$E_n$に置き換える),
+  つまり,
+  \begin{align*}
+    a_0E_n+a_1A+a_2A^2+\cdots +a_dA^d
+  \end{align*}
+  を$f(A)$とかく. このような式を
+  \defit{行列多項式}
+  \Defit{matrix polynomial}
+  \addindex{多項式!行列---}%
+  \addindex{行列!---多項式}%
+  \addindex{polynomial!matrix ---}%
+  \addindex{matrix!--- polynomial}%
+  と呼ぶことがある.
+\end{definition}
+
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\3&0\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    A^2&=\begin{pmatrix}1+6&2+0\\3+0&6+0\end{pmatrix}
+    =\begin{pmatrix}7&2\\3&6\end{pmatrix}\\
+    A^3&=\begin{pmatrix}7+6&2+12\\21+0&6+0\end{pmatrix}
+    =\begin{pmatrix}13&14\\21&6\end{pmatrix}
+  \end{align*}
+  である.
+\end{example}
+
+正方行列の冪は一般には複雑になるが,
+対角行列であれば簡単に書ける.
+\begin{example}
+  \label{eg:diag:power}
+  \begin{align*}
+    A=\begin{pmatrix}a&0\\0&b\end{pmatrix}
+  \end{align*}
+  とする. このとき, 正の整数$k$に対し,
+  \begin{align*}
+    A^k=\begin{pmatrix}a^k&0\\0&b^k\end{pmatrix}
+  \end{align*}
+  である.
+  実際, この等式は$k=1$のときには成り立つ.
+  また
+  \begin{align*}
+    A^l=\begin{pmatrix}a^{l}&0\\0&b^{l} \end{pmatrix}
+  \end{align*}
+  であるとすると
+  \begin{align*}
+    A^{l+1}
+    &=
+    \begin{pmatrix}a&0\\0&b\end{pmatrix}
+      \begin{pmatrix}a^{l}&0\\0&b^{l} \end{pmatrix}
+\\
+      &=
+\begin{pmatrix}aa^{l}+0\cdot 0&a\cdot 0+0\cdot b^l\\
+  0a^{l}+b\cdot 0&0\cdot 0+b\cdot b^l
+\end{pmatrix}    
+\\
+&=\begin{pmatrix}a^{l+1}&0\\0&b^{l+1} \end{pmatrix}
+\end{align*}
+\end{example}
+
+
+\subsection{転置}
+ここでは, 行列の転置と呼ばれる演算について考える.
+\begin{definition}
+  \label{def:op:transpose}
+  $A$は$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列であるとする.
+  $(i,j)$-成分が$a_{j,i}$である$(n,m)$-行列を
+  \defit{$A$の転置}
+  \Defit{transposed matrix of $A$}
+  \addindex{転置!行列の---}%
+  \addindex{行列の!---転置}%
+  \addindex{transpose!---d matix}%
+  \addindex{transposed!--- matix}%
+ \addindex{matrix!transposed ---}%
+ \addindex{$\transposed{A}$}%
+  とよび,
+  $\transposed{A}$で表す.
+\end{definition}
+\begin{example}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2&3\\
+      4&5&6\\
+    \end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&4\\
+      2&5\\
+      3&6\\
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{example}
+\begin{remark}
+  転置によって$(m,n)$-行列は$(n,m)$-行列になる.
+\end{remark}
+\begin{remark}
+  $A$の$i$行目から$\transposed{A}$の$i$列目が作られる.
+  また,
+  $A$の$j$列目から$\transposed{A}$の$j$行目が作られる.
+\end{remark}
+
+
+\begin{definition}
+  \label{def:symmat}
+  $A$を行列とする.
+  次の条件を満たすとき,
+  $A$は,
+  \defit{対称行列}
+  \Defit{symmetric matrix}
+  \addindex{行列!対称---}%
+  \addindex{対称!---行列}%
+  \addindex{symmetric!--- matrix}%
+  \addindex{matrix!symmetric ---}%
+  であるという:
+  \begin{align*}
+    A=\transposed{A}
+  \end{align*}
+\end{definition}
+
+\begin{definition}
+  \label{def:altmat}
+  $A$を行列とする.
+  次の条件を満たすとき,
+  $A$は
+  \defit{交代行列}
+  \defit{歪対称行列}
+  \Defit{skew-symmetric matrix}
+  \Defit{alternative matrix}
+  \addindex{行列!交代---}%
+  \addindex{交代!---行列}%
+  \addindex{行列!歪対称---}%
+  \addindex{歪対称!---行列}%
+  \addindex{対称!歪---行列}%
+  \addindex{対称!歪---}%
+  \addindex{matrix!skew-symmetric ---}%
+  \addindex{skew-symmetric!--- matrix}%
+  \addindex{matrix!alternative ---}%
+  \addindex{alternative!--- matrix}%
+  であるという:
+  \begin{align*}
+    -A=\transposed{A}.
+  \end{align*}
+\end{definition}
+
+\begin{example}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2\\
+      2&3\\
+    \end{pmatrix}
+  \end{align*}
+  とすると, これは対称行列である.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      0&-2\\
+      2&0\\
+    \end{pmatrix}
+  \end{align*}
+  とすると, これは交代行列である.
+\end{example}
+
+\begin{prop}
+  $1+1\neq 0$とする.
+  $A$が対称行列でありまた交代行列でもあるならば,
+  $A$は零行列である.
+\end{prop}
+\begin{prop}
+  $1+1\neq 0$とする.
+  $A$を正方行列とする.
+  \begin{align*}
+    A'&=\frac{1}{2}(A+\transposed{A})
+    A''&=\frac{1}{2}(A-\transposed{A})
+  \end{align*}
+  とすると, 次が成り立つ:
+  \begin{enumerate}
+  \item $A=A'+A''$.
+  \item $A'$は対称行列.
+  \item $A''$は交代行列.
+  \end{enumerate}
+\end{prop}
+
+\subsection{連結}
+行列を並べて得られる行列について考える.
+\begin{definition}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(m,k)$-行列とする.
+  $B$は, $(i,j)$-成分が$b_{i,j}$である$(m,n)$-行列とする.  
+  このとき,
+  \begin{align*}
+    c_{i,j}=
+    \begin{cases}
+      a_{i,j} &(j=1,2,\ldots,k)\\
+      b_{i,j-k}&(j=1+k,2+k,\ldots,n+k)
+    \end{cases}
+  \end{align*}
+  とする.
+  $(i,j)$-成分が$c_{i,j}$である$(m,k+n)$-行列を$\hconcat{A}{B}$と書く.
+  表の形式で書くと
+  \begin{align*}
+    \hconcat{A}{B}
+    &=
+    \begin{pmatrix}
+      a_{1,1}&a_{1,2}&\cdots&a_{1,k}&b_{1,1}&b_{1,2}&\cdots&b_{1,n}\\
+      a_{2,1}&a_{2,2}&\cdots&a_{2,k}&b_{2,1}&b_{2,2}&\cdots&b_{2,n}\\
+      \vdots&\vdots&&\vdots&\vdots&\vdots&&\vdots\\
+      a_{m,1}&a_{m,2}&\cdots&a_{m,k}&b_{m,1}&b_{m,2}&\cdots&b_{m,n}\\
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  $\hconcat{A}{B}$を,
+  \defit{$A$と$B$を横に並べた行列}
+  \Defit{$A$と$B$を横に連結した行列}
+  \Defit{horizontal concatination of $A$ and $B$}
+  \addindex{連結!行列の---}%
+  \addindex{行列の!---連結}%
+  \addindex{行列を!---並べる}%
+  \addindex{行列を!---横に並べる}%
+  \addindex{横に!---行列を並べる}% 
+  \addindex{並べる!行列を横に---}% 
+  \addindex{concatination!--- of matrices}%
+  \addindex{concatination!horizontal --- of matrices}%
+  \addindex{of matrices!concatination ---}%
+  \addindex{horizontal concatination!--- of matrices}%
+  \addindex{of matrices!horizontal concatination ---}%
+  \addindex{horizontal!--- concatination of matrices}%
+  と呼ぶ. 
+\end{definition}
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\3&4\end{pmatrix},
+    B=\begin{pmatrix}5&6\\7&8\end{pmatrix}
+  \end{align*}
+  に対し,
+  \begin{align*}
+    \hconcat{A}{B}=
+    \begin{pmatrix}1&2&5&6\\3&4&7&8\end{pmatrix}.
+  \end{align*}
+\end{example}
+
+
+\begin{definition}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(k,n)$-行列とする.
+  $B$は, $(i,j)$-成分が$b_{i,j}$である$(m,n)$-行列とする.  
+  このとき,
+  \begin{align*}
+    c_{i,j}=
+    \begin{cases}
+      a_{i,j} &(i=1,2,\ldots,k)\\
+      b_{i-k,j}&(i=1+k,2+k,\ldots,m+k)
+    \end{cases}
+  \end{align*}
+  とする.
+  $(i,j)$-成分が$c_{i,j}$である$(k+m,n)$-行列を$\vconcat{A}{B}$と書く.
+  表の形式で書くと
+  \begin{align*}
+    \vconcat{A}{B}
+    &=
+    \begin{pmatrix}
+      a_{1,1}&a_{1,2}&\cdots&a_{1,k}\\
+      a_{2,1}&a_{2,2}&\cdots&a_{2,k}\\
+      \vdots&\vdots&&\vdots\\
+      a_{m,1}&a_{m,2}&\cdots&a_{m,k}\\
+      b_{1,1}&b_{1,2}&\cdots&b_{1,n}\\
+      b_{2,1}&b_{2,2}&\cdots&b_{2,n}\\
+      \vdots&\vdots&&\vdots\\
+      b_{m,1}&b_{m,2}&\cdots&b_{m,n}
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  $\vconcat{A}{B}$を,
+  \defit{$A$と$B$を縦に並べた行列}
+  \Defit{$A$と$B$を縦に連結した行列}
+  \Defit{vertical concatination of $A$ and $B$}
+  \addindex{連結!行列の---}%
+  \addindex{行列の!---連結}%
+  \addindex{行列を!---並べる}%
+  \addindex{行列を!---縦に並べる}%
+  \addindex{縦に!---行列を並べる}% 
+  \addindex{並べる!行列を縦に---}% 
+  \addindex{concatination!--- of matrices}%
+  \addindex{concatination!vertical --- of matrices}%
+  \addindex{of matrices!concatination ---}%
+  \addindex{vertical concatination!--- of matrices}%
+  \addindex{of matrices!vertical concatination ---}%
+  \addindex{vertical!--- concatination of matrices}%
+  と呼ぶ. 
+\end{definition}
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\3&4\end{pmatrix},
+    B=\begin{pmatrix}5&6\\7&8\end{pmatrix}
+  \end{align*}
+  に対し,
+  \begin{align*}
+    \vconcat{A}{B}=
+    \begin{pmatrix}1&2\\3&4\\5&6\\7&8
+\end{pmatrix}.
+  \end{align*}
+\end{example}
+
+
+\begin{remark}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  このとき,
+  \begin{align*}
+    \aaa_j=\begin{pmatrix}a_{1,j}\\a_{2,j}\\\vdots\\a_{m,j}\end{pmatrix}
+  \end{align*}
+  という$m$項列ベクトル%
+  \footnote{\Cref{def:numerical:vec}で定義したように,
+  $m$項列ベクトルとは, $(m,1)$-行列のことであった.}
+  を考える.
+  行列$A$は列ベクトル$\aaa_{1},\aaa_2,\ldots,\aaa_{n}$
+  が横に並んだものであると思うことができる.
+  つまり
+  \begin{align*}
+    A=\left(\begin{array}{c|c|c|c}\aaa_{1}&\aaa_2&\cdots&\aaa_{n}\end{array}\right)
+  \end{align*}
+  である.
+  %これを
+  %\defit{$A$の列ベクトルによる表示}
+  %\Defit{}
+ % と呼ぶ.
+\end{remark}
+
+\begin{remark}
+  $A$は, $(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  このとき,
+  \begin{align*}
+    \aaa'_i=\begin{pmatrix}a_{i,1}&a_{i,2}&\cdots&a_{i,n}\end{pmatrix}
+  \end{align*}
+  という$m$項行ベクトルを考える.
+  行列$A$は行ベクトル$\aaa'_{1},\aaa'_2,\ldots,\aaa'_{n}$
+  が縦に並んだものであると思うことができる.
+  つまり
+  \begin{align*}
+    A=\left(\begin{array}{c}\aaa'_{1}\\\hline\aaa'_2\\\hline\vdots\\\hline\aaa'_{n}\end{array}\right)
+  \end{align*}
+  である.
+  %これを
+  %\defit{$A$の行ベクトルによる表示}
+  %\Defit{}
+  % と呼ぶ.
+\end{remark}
+%\endinput
+
+
+
+\subsection{演算の性質}
+ここでは, 今まで見てきた演算の性質について紹介する.
+
+
+まずに, 和とスカラー倍の性質について紹介する.
+\begin{prop}
+  \provelater**{matspace_is_vectorspace}
+  $A$, $B$, $C$はサイズの等しい行列とする.
+  $O$はそれらとサイズの等しい零行列とする.
+  $\alpha,\beta$は数とする.
+  このとき, 次が成り立つ:
+  \begin{enumerate}
+  \item 和に関するもの
+  \begin{enumerate}
+  \item \provelater*{ass}
+    \label{item:sum:c}
+    $(A+B)+C=A+(B+C)$
+  \item \provelater*{zero}
+    $O+A=A$
+  \item \provelater*{minus}
+    $A+(-A)=O$
+  \item \provelater*{com}
+    $A+B=B+A$
+  \end{enumerate}
+  \item スカラー倍に関するもの
+  \begin{enumerate}
+  \item \provelater*{action:ass}
+    \label{item:sc:c}
+    $(\alpha\beta)A=\alpha(\beta A)$
+  \item \provelater*{action:iden}
+    $1A=A$
+  \end{enumerate}  
+  \item 和とスカラー倍に関するもの
+  \begin{enumerate}
+  \item \provelater*{disttoscalarsum}
+    $(\alpha+\beta)A=\alpha A+\beta A$
+  \item \provelater*{disttomatsum}
+    $\alpha (A+B)=\alpha A+\alpha B$
+  \end{enumerate}  
+  \end{enumerate}
+\end{prop}
+\begin{remark}
+  \Cref{item:sum:c}
+  ($(A+B)+C=A+(B+C)$)があるので,
+  $A+B+C$を$(A+B)+C$と思っても$A+(B+C)$
+  と思っても等しいので差し支えない.
+  $(A+B)+C$を$A+B+C$と略記する.
+\end{remark}
+\begin{remark}
+  \Cref{item:sc:c}
+  ($(\alpha\beta)A=\alpha(\beta A)$)があるので,
+  $\alpha\beta A$を$(\alpha\beta)A$と思っても$\alpha(\beta A)$
+  と思っても等しいので差し支えない.
+  $\alpha(\beta A)$を$\alpha\beta A$と略記する.
+\end{remark}
+
+次に, 積の性質について紹介する.
+\begin{prop}
+  \provelater**{matspace_is_algebra}
+  $A,A'$を$(m,n)$-行列,
+  $B,B'$を$(n,k)$-行列,
+  $C$を$(k,l)$-行列,
+  $\alpha$を数とする.
+  このとき, 次が成り立つ:
+  \begin{enumerate}
+  \item 積に関するもの
+    \begin{enumerate}
+    \item \provelater*{ass}
+      \label{item:prod:c}
+      $(AB)C=A(BC)$
+    \item \provelater*{rightidentity}
+      $AE_n=A$
+    \item \provelater*{leftidentity}
+      $E_m A=A$
+    \end{enumerate}
+  \item 積と和に関するもの
+    \begin{enumerate}      
+    \item \provelater*{rightdist}
+      $(A+A')B=AB+A'B$
+    \item \provelater*{leftdist}
+      $A(B+B')=AB+AB'$
+    \end{enumerate}
+  \item 積とスカラー倍に関するもの
+    \begin{enumerate}      
+    \item
+      \provelater*{scalar:ass}
+      \label{item:act:c}
+      $(\alpha A)B=\alpha(AB)$
+    \item
+      \provelater*{scalar:center}
+      $\alpha (AB)=A(\alpha B)$
+    \end{enumerate}
+  \end{enumerate}
+\end{prop}
+
+\begin{remark}
+  \Cref{item:prod:c}があるので,
+  $ABC$を$A(BC)$と思っても$(AB)C$と思っても差し障りない.
+  $A(BC)$を$ABC$と略記する.
+\end{remark}
+\begin{remark}
+  \Cref{item:act:c}があるので,
+  $\alpha \beta A$を$(\alpha \beta) A$と思っても$\alpha (\beta A)$と思っても差し障りない.
+  $(\alpha \beta) A$を$\alpha \beta A$と略記する.
+\end{remark}
+
+\begin{remark}
+  $A$を$(m,n)$行列,
+  $B$を$(n,k)$行列,
+  $r$を数とする.
+  このとき,
+  $rB=(rE_n)B$である.
+  しがって,
+  \begin{align*}
+    AB+rB = (A+rE_n)B
+  \end{align*}
+  となる.
+  行列と数の和
+  $A+r$は定義されておらず,
+  右辺は, $(A+r)B$ではないことに注意すること.
+
+  同様に,
+  $rA=A(rE_n)$である.
+  しがって,
+  \begin{align*}
+    AB+rA = A(B+rE_n)
+  \end{align*}
+  となる.  
+\end{remark}
+
+零行列との積や$0$によるスカラー倍は次のようになる.
+\begin{prop}
+  \provelater{mat:zeroprod}
+  $A$を$(m,n)$-行列とする.
+  \begin{align*}
+    0A&=O_{m,n}\\
+    A O_{n,k}&=O_{m,k}\\
+    O_{k,m} A&=O_{k,n}.
+  \end{align*}
+\end{prop}
+
+冪に関しては
+指数法則が成り立つ.
+\begin{prop}
+  \provelater**{mat:posipower}
+  \label{thm:mat:posipower}
+  $A$を正方行列, $k$, $k'$を正の整数とする.
+  このとき,
+  \begin{enumerate}
+  \item \provelater*{prod}
+    $A^kA^{k'}=A^{k+k'}$
+  \item \provelater*{power}
+    $(A^k)^{k'}=A^{kk'}$
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  \provelater{mat:posipower:scalar}
+  $A$を正方行列, $\alpha$を数, $k$を正の整数とする.
+  このとき,
+  \begin{align*}
+    (\alpha A)^k&=\alpha^k A^{k}
+  \end{align*}
+\end{prop}
+
+\begin{remark}
+正方行列
+$A$, $B$によっては,
+\begin{align*}
+  AB\neq BA
+\end{align*}
+となることが起こる.  この場合には,
+\begin{align*}
+  (AB)^k \neq A^kB^k
+\end{align*}
+である.
+\end{remark}
+
+次に転置の性質について紹介する.
+\begin{prop}
+  \provelater**{transpose}
+  $A$, $A'$を$(m,n)$-行列
+  $B$を$(n,k)$-行列,
+  $\alpha$を数とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item \provelater*{involutive}
+    $\transposed{(\transposed{A})}=A$
+  \item \provelater*{sum}
+    $\transposed{(A+A')}=\transposed{A}+\transposed{A'}$
+  \item \provelater*{scalar}
+    $\transposed{(\alpha A)}=\alpha(\transposed{A})$
+  \item \provelater*{prod}
+    $\transposed{(AB)}=\transposed{B}\transposed{A}$
+  \end{enumerate}
+\end{prop}
+
+\begin{remark}
+  積の順序が入れ替わることに注意する.
+\end{remark}
+
+
+最後に連結と積の性質について紹介する.
+\begin{prop}
+  $A$を$(m,n)$行列,
+  $B$を$(n,k)$行列,
+  $B'$を$(n,k')$行列とする.
+  このとき,
+  \begin{align*}
+    A\hconcat{B}{B'}
+    =\hconcat{AB}{AB'}.
+  \end{align*}  
+\end{prop}
+\begin{prop}
+  $A$を$(m,n)$行列,
+  $A'$を$(m',n)$行列,
+  $B$を$(n,k)$行列
+  とする.
+  このとき,
+  \begin{align*}
+    \vconcat{A}{A'}B
+    =\vconcat{AB}{A'B}.
+  \end{align*}  
+\end{prop}
+
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:1:1}
+  行列 
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2&3\\6&7&8
+    \end{pmatrix}
+  \end{align*}
+  について, 次は何か:
+  \begin{enumerate}
+  \item $A$のサイズ.
+  \item $A$の$(1,2)$-成分.
+  \item $A$の$2$-行目.
+  \item $A$の$2$-列目.
+  \item $A$の転置$\transposed{A}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz} 
+  \solvelater{quiz:1:2}
+  以下の行列をそれぞれ具体的に書け.
+  ただし, $\delta$をKroneckerのデルタとする. 
+  \begin{enumerate}
+  \item $(i,j)$-成分が$5i+j-5$である$(2,2)$-行列$A$.
+  \item このとき
+    $(i,j)$-成分が$2^i\delta_{i,j}$である$(2,2)$-行列$A$.
+  \item
+    $(i,j)$-成分が$\delta_{i,2}\delta_{j,1}$である$(2,2)$-行列$A$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:1:3}
+  次の条件を満たす$a$, $b$, $c$, $d$を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      a+1& 3\\
+      4+c &5d-10
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      7& 2b+5\\
+      6 &-4d+8
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:1:4}
+  次の行列が対称行列となるような$a$を求めよ.
+  \begin{align*}
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:1:5}
+  次の行列が交代行列となるような$a$, $b$を求めよ.
+  \begin{align*}
+    \begin{pmatrix}
+      1-a& 3+b\\
+      4  &0
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:1:6}
+  次を求めよ:
+  \begin{enumerate}
+  \item
+    $\begin{pmatrix}10\\4\end{pmatrix}+\begin{pmatrix}-2\\-3\end{pmatrix}+\begin{pmatrix}-3\\6\end{pmatrix}$
+  \item
+    $\begin{pmatrix}6&0\\0&4\end{pmatrix}+\begin{pmatrix}0&3\\-7&0\end{pmatrix}$
+  \item
+    $\begin{pmatrix}-9&2\\3&7\end{pmatrix}\begin{pmatrix}1&0\\-5&4\end{pmatrix}$
+    \item
+    $\begin{pmatrix}-9&2\\3&7\end{pmatrix}\begin{pmatrix}1\\-5\end{pmatrix}$
+    \item
+      $\begin{pmatrix}-9&2\end{pmatrix}\begin{pmatrix}1\\-5\end{pmatrix}$
+      \item
+        $\begin{pmatrix}1\\-5\end{pmatrix}\begin{pmatrix}-9&2\end{pmatrix}$
+        \item
+          $\begin{pmatrix}1&-3\\2&5\end{pmatrix}^2$
+  \end{enumerate}
+\end{quiz}
+
+
+
+\begin{quiz}
+  \solvelater{quiz:1:7}
+  次を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      9&0\\0&5
+    \end{pmatrix}^n
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:1:8}
+  次を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}^n
+  \end{align*}
+\end{quiz}
+
+
+%% \begin{quiz}
+%%   \solvelater{quiz:1:9}
+%%   $A$を次の行列とするとき, $A^3+A^2+A$を求めよ:
+%%   \begin{align*}
+%%     A=
+%%     \begin{pmatrix}
+%%       1&-3\\2&5
+%%     \end{pmatrix}
+%%   \end{align*}
+%% \end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:1:10}
+  次を満たす$a,b$を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      -3\\1
+    \end{pmatrix}
+    =
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+
+\endinput
+\chapter{行列式と逆行列}
+\label{chap:inverse}
+ここでは,
+行列式および逆行列に関して説明をする.
+
+\cite{978-4-7806-0772-7}であれば,
+第6章, 第7章, 第8章が関連する.
+とくに, 6.1が関連する.
+\cite{978-4-7806-0164-0}であれば,
+1.4, 3.1が関連する.
+
+\section{逆行列の定義と性質}
+\label{sec:regular}
+ここでは, 正則行列やその逆行列について説明する.
+まず,
+$2$次正方行列の場合に関して考えたあと,
+一般の場合について定義をする.
+
+
+\begin{align*}
+  A=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+\end{align*}
+とし,
+\begin{align*}
+  \tilde A =
+  \begin{pmatrix}
+    d&-b\\-c&a
+  \end{pmatrix}
+\end{align*}
+とする.
+このとき,
+\begin{align*}
+  \tilde A A
+  &=
+  \begin{pmatrix}
+    d&-b\\-c&a
+  \end{pmatrix}
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}\\
+  &=
+  \begin{pmatrix}
+    da-bc&db-bd\\-ca+ac&-cb +ad
+  \end{pmatrix}\\
+  &=
+  \begin{pmatrix}
+    da-bc&0\\0&-cb +ad
+  \end{pmatrix}\\
+  &=(ad-bc)E_2\\  
+A  \tilde A 
+  &=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \begin{pmatrix}
+    d&-b\\-c&a
+  \end{pmatrix}\\
+  &=
+  \begin{pmatrix}
+    ad-bc&-ab+ba\\cd-dc&-cb +da
+  \end{pmatrix}\\
+  &=
+  \begin{pmatrix}
+    ad-bc&0\\0&-cb +da
+  \end{pmatrix}\\
+  &=(ad-bc)E_2\\  
+\end{align*}
+である.
+
+まず, $ad-bc\neq 0$のときについて考える.
+\begin{align*}
+  B=\frac{1}{ad-bc}
+  \begin{pmatrix}
+    d&-c\\-b&a
+  \end{pmatrix}
+\end{align*}
+とおくと,
+\begin{align*}
+  AB=BA=E_2
+\end{align*}
+となる.
+
+
+次に, $ad-bc= 0$のときについて考える.
+このとき, どんな$B$を考えても,
+\begin{align*}
+  AB=BA=E_2
+\end{align*}
+を満たすことはない.
+このことを簡単に証明する.
+$A=O_{2,2}$はこの条件をみたすので,
+まずはこの場合を考える.
+このときにはどんな$B$をとってきても
+\begin{align*}
+  AB=BA=O_{2,2}
+\end{align*}
+となるので, $E_2$にはなりえない.
+次に$ad-bc= 0$かつ$A\neq O_{2,2}$の場合について考える.
+$A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
+冒頭の計算から,
+\begin{align*}
+  A\tilde A=(ad-bc)E_2=0E_2=O_{2,2}
+\end{align*}
+である.
+\begin{align*}
+  BA=E_2
+\end{align*}
+を仮定すると,
+\begin{align*}
+  A\tilde A&=O_{2,2}\\
+  BA\tilde A&=BO_{2,2}\\
+  E_2\tilde A&=O_{2,2}\\
+  \tilde A&=O_{2,2}
+\end{align*}
+となり, $\tilde A\neq O_{2,2}$に矛盾する.
+
+
+これらを踏まえて,
+以下のように定義する:
+\begin{definition}
+  \label{def:mat:reg}
+  $A$を正方行列とする.
+  $AB=BA=E$となる$B$が存在するとき,
+  $A$は
+  \defit{正則}
+  \Defit{非退化}
+  \Defit{非特異}
+  \Defit{可逆}
+  \Defit{invertible}
+  \Defit{nondegenerate}
+  \Defit{nonsingular}
+  \Defit{regular}
+  \addindex{行列!正則---}%
+  \addindex{行列!非退化---}%
+  \addindex{行列!非特異---}%
+  \addindex{行列!可逆---}%
+  \addindex{matrix!invertible ---}%
+  \addindex{matrix!nondegenerate ---}%
+  \addindex{matrix!nonsingular ---}%
+  \addindex{matrix!regular ---}%
+  であるといい,
+  $B$を
+  \defit{$A$の逆行列}
+  \Defit{inverse matrix of $A$}
+  \addindex{逆行列!行列の---}%
+  \addindex{行列の!---逆行列}%
+  \addindex{inverse matrix!--- of matrix}%
+  \addindex{inverse!--- matrix of matrix}%
+  \addindex{of matrix!inverse matrix ---}%
+  \addindex{$A^{-1}$}%
+  \addindex{${\square}^{-1}$}%
+  と呼び$A^{-1}$で表す.
+  正則な$n$次正方行列を,
+  \defit{$n$次正則行列}
+  \Defit{$n$-th invertible matrix}
+  \addindex{行列!$n$次正則---}%
+  と呼ぶ.
+\end{definition}
+\begin{definition}
+  $A$を正方行列とする.
+  $AB=BA=E$となる$B$が存在しないとき,
+  $A$は
+  \defit{非正則}
+  \Defit{degenerate}
+  \Defit{singular}
+  \addindex{行列!非正則---}%
+  \addindex{matrix!degenerate ---}%
+  \addindex{matrix!singular ---}%
+  であるという.
+\end{definition}
+
+冒頭での議論から$2$次正方行列のときには次が言える.
+\begin{theorem}
+  %proved already
+  \begin{align*}
+    A=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \end{align*}
+  とする.  $A$が正則ならば,
+  \begin{align*}
+    A^{-1}=
+    \frac{1}{ad-bc}
+    \begin{pmatrix}
+      d&-c\\-b&a
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{theorem}
+
+つぎに,
+逆行列に関する性質を紹介する.
+\begin{proposition}
+  \provelater**{inverse}
+  \label{thm:inverse:operation}
+  $X$, $Y$を$n$次正則行列とする.
+  %$r\neq 0$とする.
+  $r$を逆数を持つ数(つまり $r\neq 0$)とする.
+  $l$を正の整数とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{inverse}
+    $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
+  \item\provelater*{trans}
+    $(\transposed X)^{-1}$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
+  \item\provelater*{scalar}
+    $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
+  \item\provelater*{prod}
+    $XY$も正則. $(XY)^{-1}=Y^{-1}X^{-1}$.
+  \item\provelater*{power}
+    $X^l$も正則. $(X^l)^{-1}=(X^{-1})^l$.
+  \end{enumerate}
+\end{proposition}
+
+
+正則行列に対しては,
+冪を整数全体に拡張する.
+\begin{definition}
+  $n$次正則行列$A$と$l>0$に対し,
+  $A^{-l}$で$(A^{-1})^l$を表す.
+  また$A^{0}=E_n$とする.
+\end{definition}
+このように拡張された冪に対しても,
+指数法則が成り立つ.
+\begin{prop}
+  \provelater**{negpower}
+  正則行列$A$と整数$l,k$に対し,
+  \begin{enumerate}
+  \item\provelater*{prod}
+    $A^{l+k}=A^lA^k$
+  \item\provelater*{power}
+    $A^{lk}=(A^l)^k$
+  \end{enumerate}
+が成り立つ.
+\end{prop}
+
+正方行列の冪は一般には複雑になるが,
+次のような場合には簡単に計算できる.
+\begin{example}
+  \label{ex:diagonalizedpow}
+  $A$を$2$次正方行列とする.
+  $P$を$2$次正則行列とする.
+  \begin{align*}
+    P^{-1}AP=
+    \begin{pmatrix}
+      a&0\\
+      0&b
+      \end{pmatrix}
+  \end{align*}
+  となっていることを仮定する.
+  このとき,
+  \cref{eg:diag:power}でみたように,
+  \begin{align*}
+    (P^{-1}AP)^k=
+    \begin{pmatrix}
+      a&0\\
+      0&b
+    \end{pmatrix}^k
+    =
+    \begin{pmatrix}
+      a^k&0\\
+      0&b^k
+      \end{pmatrix}
+  \end{align*}
+  である. 一方
+  \begin{align*}
+    (P^{-1}AP)^k
+    &= (P^{-1}AP)(P^{-1}AP)(P^{-1}AP)\cdots (P^{-1}AP)\\
+    &= P^{-1}A(PP^{-1})A(PP^{-1})AP\cdots P^{-1}AP\\
+    &= P^{-1}AE_2AE_2AE_2\cdots E_2AP\\
+    &= P^{-1}AAA\cdots AP\\
+    &= P^{-1}A^k P
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+   P^{-1}A^k P&=
+    \begin{pmatrix}
+      a^k&0\\
+      0&b^k
+    \end{pmatrix}
+    \\
+   PP^{-1}A^k PP^{-1}&=
+   P \begin{pmatrix}
+      a^k&0\\
+      0&b^k
+    \end{pmatrix}P^{-1}
+  \\
+   E_2A^k E_2&=
+   P \begin{pmatrix}
+      a^k&0\\
+      0&b^k
+    \end{pmatrix}P^{-1}
+  \\
+   A^k &=
+   P \begin{pmatrix}
+      a^k&0\\
+      0&b^k
+    \end{pmatrix}P^{-1}
+  \end{align*}
+  となる.
+\end{example}
+\section{行列式の定義と性質}
+ここでは, $2$次正方行列の行列式を定義し,
+その性質について説明をする.
+\begin{definition}
+  \label{def:det:2}
+  \begin{align*}
+    A=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \end{align*}
+  とする.  このとき,
+  \begin{align*}
+    \det(A)=ad-bc
+  \end{align*}
+  とおく.
+  $\det(A)$を
+  \defit{$A$の行列式}
+  \Defit{determinant of $A$}
+  \addindex{行列式!行列の---}%
+  \addindex{行列!---式}%
+  \addindex{行列の!---行列式}%
+  \addindex{determinant!--- of a matrix}%
+  \addindex{of matrix!determinant ---}%
+  と呼ぶ.
+\end{definition}
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\3&4\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \det(A)=1\cdot 4 -2\cdot 3=-2
+  \end{align*}
+  となる.
+  このように, 行列式は負の値も取りうる.
+\end{example}
+
+\begin{example}
+  $\alpha$を数とする.
+  \begin{align*}
+    A=\begin{pmatrix}\alpha &0\\0&\alpha\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \det(A)=\alpha\cdot\alpha-0\cdot0=\alpha^2
+  \end{align*}
+  となる. $A=\alpha E_2$であるから,
+  $\det(\alpha E_2)=\alpha^2$
+  である.
+\end{example}
+
+\Cref{sec:regular}の冒頭の議論から次がわかる.
+\begin{theorem}
+  \label{thm:det:reg}
+  %proved
+  $A$を$2$次正方行列とする.
+  このとき次は同値:
+  \begin{enumerate}
+  \item $A$が正則.
+  \item $\det(A)\neq 0$.
+  \end{enumerate}
+\end{theorem}
+
+行列式と積について,
+次が成り立つ.
+\begin{theorem}
+  \provelater{det:hom}
+  \label{thm:det:hom}
+  $A$, $B$を$2$次正方行列とする.
+  このとき,
+  \begin{align*}
+   \det(AB)=\det(A)\det(B)
+  \end{align*}
+  が成り立つ.
+\end{theorem}
+
+$A$が$2$次正則行列なら, $AA^{-1}=E_2$であり, $\det(E_2)=1$である.
+したがって$\det(A)\det(A^{-1})=\det(AA^{-1})=\det(E_2)=1$となるので,
+次が成り立つ.
+\begin{cor}
+  %proved
+  $A$を$2$次正方行列とし, $\det(A)\neq 0$とする.
+  このとき,
+  \begin{align*}
+   \det(A^{-1})=\frac{1}{\det(A)}
+  \end{align*}
+  が成り立つ.  
+\end{cor}
+
+また$\alpha A=(\alpha E_2) A$であるので, 次が成り立つ.
+\begin{cor}
+  \label{thm:det:scalar}
+  %proved
+  $A$を$2$次正方行列とする.
+  このとき,
+  \begin{align*}
+   \det(\alpha A)=\alpha^2 \det(A)
+  \end{align*}
+  が成り立つ.  
+\end{cor}
+
+
+
+行列式と転置に関して次が成り立つ.
+\begin{theorem}
+  \provelater{det:transpose}
+  \label{thm:det:transpose}
+  $A$を$2$次正方行列とする.
+  このとき,
+  \begin{align*}
+   \det(A)=\det(\transposed{A})
+  \end{align*}
+  が成り立つ.  
+\end{theorem}
+
+\Cref{thm:det:alt:row,thm:det:alt:col}は,
+行列式の交代性と呼ばれる性質である.
+\Cref{thm:det:alt:row}は,
+行に関する交代性,
+\cref{thm:det:alt:col}は,
+列に関する交代性呼ばれる.
+$2$次正方行列においては,
+直接計算することが多いので,
+この原稿では使う機会はほとんどないが,
+一応紹介する.
+\begin{theorem}
+  \provelater{det:alt:row}
+  \label{thm:det:alt:row}
+  $A$を
+  $2$次正方行列とする.
+  $A$の1行目と2行目を入れ替えて得られる行列を$A'$とすると,
+  $\det(A)=-\det(A')$が成り立つ.
+  つまり,
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+    A'=\begin{pmatrix}c&d\\a&b\end{pmatrix}
+    \implies \det(A)=-\det(A')
+  \end{align*}
+  が成り立つ.
+\end{theorem}
+\Cref{thm:det:transpose,thm:det:alt:row}
+を組み合わせることで次がわかる.
+\begin{theorem}
+%proved
+  \label{thm:det:alt:col}
+  $A$を$2$次正方行列とする.
+  $A$の1列目と2列目を入れ替えて得られる行列を$A'$とすると,
+  $\det(A)=-\det(A')$が成り立つ.
+  つまり,
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+    A'=\begin{pmatrix}b&a\\d&c\end{pmatrix}
+    \implies
+    \det(A)=-\det(A')
+  \end{align*}
+が成り立つ.
+\end{theorem}
+\Cref{thm:multlin:row:add,thm:multlin:row:prod}は,
+行列式の行に関する多重線型性と呼ばれる性質である.
+$2$次正方行列においては,
+直接計算することが多いので,
+この原稿では使う機会はほとんどないが,
+一応紹介する.
+\begin{theorem}
+  \provelater{multlin:row:add}
+  \label{thm:multlin:row:add}
+  $A$, $A'$, $A''$を$2$次正方行列とする.
+  $A$の$k$行目は, $A'$の$k$行目と$A''$は$k$行目の和となっているとする.
+  また$k$行目以外の行はそれぞれ等しいとする.
+  このとき, $\det(A)=\det(A')+\det(A'')$が成り立つ.
+  つまり次が成り立つ:
+  \begin{enumerate}
+    \item ($k=1$のとき)
+      \begin{align*}
+        \det(\begin{pmatrix}a'+a''&b'+b''\\c&d\end{pmatrix})=
+          \det(\begin{pmatrix}a'&b'\\c&d\end{pmatrix})
+            +
+            \det(\begin{pmatrix}a''&b''\\c&d\end{pmatrix}).
+      \end{align*}
+    \item ($k=2$のとき)
+      \begin{align*}
+        \det(\begin{pmatrix}a&b\\c'+c''&d'+d''\end{pmatrix})=
+        \det(\begin{pmatrix}a&b\\c'&d'\end{pmatrix})+
+        \det(\begin{pmatrix}a&b\\c''&d''\end{pmatrix}).
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  \provelater{multlin:row:prod}
+  \label{thm:multlin:row:prod}
+  $A$を$2$次正方行列とし,
+  $A$の$k$行目だけを$\alpha$倍することで得られる行列を$A'$とおく.
+  このとき, $\alpha\det(A)=\det(A')$が成り立つ.
+  つまり次が成り立つ:
+  \begin{enumerate}
+    \item ($k=1$のとき)
+      \begin{align*}
+        \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+          =
+       \det(\begin{pmatrix}\alpha  a&\alpha b\\c&d\end{pmatrix}).
+      \end{align*}
+    \item ($k=2$のとき)
+      \begin{align*}
+        \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+          =
+       \det(\begin{pmatrix}a&b\\\alpha   c&\alpha  d\end{pmatrix}).
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\Cref{thm:det:transpose,thm:multlin:row:add,thm:multlin:row:prod}
+を組み合わせることで
+\Cref{thm:multlin:col:add,thm:multlin:col:prod}
+がわかる.
+これらは, 行列式の列に関する多重線型性と呼ばれる性質である.
+$2$次正方行列においては,
+直接計算することが多いので,
+この原稿では使う機会はほとんどないが,
+一応紹介する.
+\begin{theorem}
+  %proved
+  \label{thm:multlin:col:add}
+  $A$, $A'$, $A''$を$2$次正方行列とする.
+  $A$の$k$列目は, $A'$の$k$列目と$A''$は$k$列目の和となっているとする.
+  また$k$列目以外の行はそれぞれ等しいとする.
+  このとき, $\det(A)=\det(A')+\det(A'')$が成り立つ.
+  つまり次が成り立つ:
+  \begin{enumerate}
+    \item ($k=1$のとき)
+      \begin{align*}
+        \det(\begin{pmatrix}a'+a''&b\\c'+c''&d\end{pmatrix})=
+          \det(\begin{pmatrix}a'&b\\c'&d\end{pmatrix})
+            +
+            \det(\begin{pmatrix}a''&b\\c''&d\end{pmatrix}).
+      \end{align*}
+    \item ($k=2$のとき)
+      \begin{align*}
+        \det(\begin{pmatrix}a&b'+b''\\c&d'+d''\end{pmatrix})=
+        \det(\begin{pmatrix}a&b'\\c&d'\end{pmatrix})+
+        \det(\begin{pmatrix}a&b''\\c&d''\end{pmatrix}).
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  %proved
+  \label{thm:multlin:col:prod}
+  $A$を$2$次正方行列とし,
+  $A$の$k$列目だけを$\alpha$倍することで得られる行列を$A'$とおく.
+  このとき, $\alpha\det(A)=\det(A')$が成り立つ.
+  つまり次が成り立つ:
+  \begin{enumerate}
+    \item ($k=1$のとき)
+      \begin{align*}
+        \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+          =
+       \det(\begin{pmatrix}\alpha  a&b\\\alpha c&d\end{pmatrix}).
+      \end{align*}
+    \item ($k=2$のとき)
+      \begin{align*}
+        \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+          =
+       \det(\begin{pmatrix}a&\alpha b\\c&\alpha  d\end{pmatrix}).
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+
+
+
+%% \begin{remark}
+%%   \label{thm:det:geommeaning}
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     0\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a\\c
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a+b\\c+d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     b\\d
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   の$4$点を頂点とする平行四辺形の面積を$S$とする.
+%%   つまり, 次のような状況を考えている:
+%%   \begin{align*}
+%%     \begin{picture}(100,100)
+%%       \put(30,0){\vector(0,1){100}}
+%%       \put(0,30){\vector(1,0){100}}
+%%       \put(30,30){\line(2,1){40}}
+%%       \put(30,30){\line(1,2){20}}
+%%       \put(90,90){\line(-2,-1){40}}
+%%       \put(90,90){\line(-1,-2){20}}
+%%       \put(90,90){\line(0,-1){60}}
+%%       \put(90,90){\line(-1,0){60}}
+%%       \put(90,30){\line(-1,1){20}}
+%%       \put(30,90){\line(1,-1){20}}
+%%       \qbezier[30](50,29)(50,63)(50,95)
+%%       \qbezier[30](70,29)(70,63)(70,95)
+%%       \qbezier[30](29,50)(63,50)(95,50)
+%%       \qbezier[30](29,70)(63,70)(95,70)
+%%       \put(50,21){\makebox(0,0)[b]{\small $b$}}
+%%       \put(70,21){\makebox(0,0)[b]{\small $a$}}
+%%       \put(90,20){\makebox(0,0)[b]{\small $a+b$}}
+%%       \put(24,50){\makebox(0,0)[r]{\small $c$}}
+%%       \put(24,70){\makebox(0,0)[r]{\small $d$}}
+%%       \put(24,90){\makebox(0,0)[r]{\small $c+d$}}
+%%       \put(60,60){\makebox(0,0){$S$}}
+%%     \end{picture}
+%%   \end{align*}
+%%   $S$は,
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     0\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a+b\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a+b\\c+d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     0\\c+d
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   を頂点とする長方形の面積から,
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     0\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a+b\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     0\\c
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   という三角形と  
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     a+b\\c+d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     b\\d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     0\\c+d
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   という三角形と  
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     0\\0
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     b\\d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     0\\c+d
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   という三角形と  
+%%   \begin{align*}
+%%   \begin{pmatrix}
+%%     a+b\\c+d
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a\\c
+%%   \end{pmatrix},
+%%   \begin{pmatrix}
+%%     a+b\\0
+%%   \end{pmatrix}
+%%   \end{align*}
+%%   という三角形の面積を引いたものなので,  
+%%   \begin{align*}
+%%     S=
+%%     |(a+b)(c+d)-d(c+d)-c(a+b)|=
+%%     |ad-bc|=
+%%     \left|\det(\begin{pmatrix}
+%%     a&b\\c&d
+%%     \end{pmatrix})\right|
+%%   \end{align*}
+%%  で与えられる.
+%% \end{remark}
+\begin{remark}
+  \label{thm:det:geommeaning}
+  \begin{align*}
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix},
+  \begin{pmatrix}
+    a\\a'
+  \end{pmatrix},
+  \begin{pmatrix}
+    a+b\\a'+b'
+  \end{pmatrix},
+  \begin{pmatrix}
+    b\\b'
+  \end{pmatrix}
+  \end{align*}
+  の$4$点を頂点とする平行四辺形の面積を$S$とする.
+  つまり, 次のような状況を考えている:
+  \begin{align*}
+    \begin{picture}(100,100)
+      \put(30,0){\vector(0,1){100}}
+      \put(0,10){\vector(1,0){100}}
+      \thicklines
+      \put(30,10){\line(2,1){40}}
+      \put(30,10){\line(1,3){20}}
+      \put(90,90){\line(-2,-1){40}}
+      \put(90,90){\line(-1,-3){20}}
+      %\put(90,90){\line(0,-1){60}}
+      %\put(90,90){\line(-1,0){60}}
+      %\put(90,30){\line(-1,1){20}}
+      %\put(30,90){\line(1,-1){20}}
+      \qbezier[30](50,9)(50,53)(50,95)
+      \qbezier[30](70,9)(70,53)(70,95)
+      \qbezier[30](90,9)(90,53)(90,95)
+      \qbezier[30](29,30)(63,30)(95,30)
+      \qbezier[30](29,70)(63,70)(95,70)
+      \qbezier[30](29,90)(63,90)(95,90)
+      \put(50,1){\makebox(0,0)[b]{\small $b$}}
+      \put(70,1){\makebox(0,0)[b]{\small $a$}}
+      \put(90,0){\makebox(0,0)[b]{\small $a+b$}}
+      \put(24,30){\makebox(0,0)[r]{\small $a'$}}
+      \put(24,70){\makebox(0,0)[r]{\small $b'$}}
+      \put(24,90){\makebox(0,0)[r]{\small $a'+b'$}}
+      \put(60,50){\makebox(0,0){$S$}}
+    \end{picture}
+  \end{align*}
+  $S$の面積を求めよう.
+
+  まず$b=0$の場合を考える.
+  このときは,
+  \begin{align*}
+    \begin{picture}(100,100)
+      \put(30,0){\vector(0,1){100}}
+      \put(0,10){\vector(1,0){100}}
+      \thicklines
+      \put(30,10){\line(3,1){60}}
+      \put(30,10){\line(0,1){60}}
+      \put(90,90){\line(-3,-1){60}}
+      \put(90,90){\line(0,-1){60}}
+      %\put(90,90){\line(0,-1){60}}
+      %\put(90,90){\line(-1,0){60}}
+      %\put(90,30){\line(-1,1){20}}
+      %\put(30,90){\line(1,-1){20}}
+%      \qbezier[30](50,9)(50,53)(50,95)
+%      \qbezier[30](70,9)(70,53)(70,95)
+      \qbezier[30](90,9)(90,53)(90,95)
+      \qbezier[30](29,30)(63,30)(95,30)
+      \qbezier[30](29,70)(63,70)(95,70)
+      \qbezier[30](29,90)(63,90)(95,90)
+      \put(0,1){\makebox(0,0)[b]{\small $b$}}
+%      \put(70,1){\makebox(0,0)[b]{\small $a$}}
+      \put(90,0){\makebox(0,0)[b]{\small $a=a+b$}}
+      \put(24,30){\makebox(0,0)[r]{\small $a'$}}
+      \put(24,70){\makebox(0,0)[r]{\small $b'$}}
+      \put(24,90){\makebox(0,0)[r]{\small $a'+b'$}}
+      \put(60,50){\makebox(0,0){$S$}}
+    \end{picture}
+  \end{align*}
+  となっており,
+  \begin{align*}
+    S=|a||b'|=|ab'|
+  \end{align*}
+  となる. $A$を
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \det(A)=ab'-ba'=ab'-0a'=ab'
+  \end{align*}
+  であるので, $S=|\det(A)|$である.
+
+  つぎに, $b\neq 0$のときを考える.
+  このままでは面積を計算するのは大変なので,
+  面積の計算しやすい形に変形する.
+  \begin{align*}
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix},
+    \begin{pmatrix}
+      b\\b'
+    \end{pmatrix},
+  \end{align*}
+  を底辺だと思って高さが変わらないように,
+  \begin{align*}
+  \begin{pmatrix}
+    a+b\\a'+b'
+  \end{pmatrix},
+  \begin{pmatrix}
+    a\\a'
+  \end{pmatrix},
+  \end{align*}
+  を平行移動して計算しやすい平行四辺形に変更する.
+  つまり, 底辺と平行な方向に移動するので,
+  移動した点は,   変数$t$を使って
+  \begin{align*}
+  \begin{pmatrix}
+    a+b\\a'+b'
+  \end{pmatrix}+t\begin{pmatrix}
+      b\\b'
+    \end{pmatrix}=\begin{pmatrix}
+    a+b+tb\\a'+b'+tb'
+    \end{pmatrix},
+  \begin{pmatrix}
+    a\\a'
+  \end{pmatrix}+t\begin{pmatrix}
+      b\\b'
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    a+tb\\a'+tb'
+  \end{pmatrix}
+  \end{align*}
+  とかける.
+  $a'+tb'=0$となれば, 軸と平行な辺できるので計算がしやすい.
+  \begin{align*}
+    \begin{picture}(100,100)
+      \put(30,0){\vector(0,1){100}}
+      \put(0,10){\vector(1,0){100}}
+      \put(92,96){\line(-1,-3){30}}
+      \thicklines
+      \put(30,10){\line(2,1){40}}
+      \put(30,10){\line(1,3){20}}
+      \put(90,90){\line(-2,-1){40}}
+      \put(90,90){\line(-1,-3){20}}
+      %\put(90,90){\line(0,-1){60}}
+      %\put(90,90){\line(-1,0){60}}
+      %\put(90,30){\line(-1,1){20}}
+      %\put(30,90){\line(1,-1){20}}
+      \qbezier[30](50,9)(50,53)(50,95)
+      \qbezier[30](70,9)(70,53)(70,95)
+      \qbezier[30](90,9)(90,53)(90,95)
+      \qbezier[30](29,30)(63,30)(95,30)
+      \qbezier[30](29,70)(63,70)(95,70)
+      \qbezier[30](29,90)(63,90)(95,90)
+      \put(50,1){\makebox(0,0)[b]{\small $b$}}
+      \put(70,1){\makebox(0,0)[b]{\small $a$}}
+      \put(90,0){\makebox(0,0)[b]{\small $a+b$}}
+      \put(24,30){\makebox(0,0)[r]{\small $a'$}}
+      \put(24,70){\makebox(0,0)[r]{\small $b'$}}
+      \put(24,90){\makebox(0,0)[r]{\small $a'+b'$}}
+      \put(60,50){\makebox(0,0){$S$}}
+    \end{picture}
+    \quad \leadsto \quad
+    \begin{picture}(100,100)
+      \put(30,0){\vector(0,1){100}}
+      \put(0,10){\vector(1,0){100}}
+      \put(92,96){\line(-1,-3){30}}
+      \thicklines
+      \put(30,10){\line(1,0){33.33}}
+      \put(30,10){\line(1,3){20}}
+      \put(83.33,70){\line(-1,0){33.33}}
+      \put(83.33,70){\line(-1,-3){20}}
+      %\put(90,90){\line(0,-1){60}}
+      %\put(90,90){\line(-1,0){60}}
+      %\put(90,30){\line(-1,1){20}}
+      %\put(30,90){\line(1,-1){20}}
+      \qbezier[30](50,9)(50,53)(50,95)
+      \qbezier[30](70,9)(70,53)(70,95)
+      \qbezier[30](90,9)(90,53)(90,95)
+      \qbezier[30](29,30)(63,30)(95,30)
+      \qbezier[30](29,70)(63,70)(95,70)
+      \qbezier[30](29,90)(63,90)(95,90)
+      \put(50,1){\makebox(0,0)[b]{\small $b$}}
+      \put(70,1){\makebox(0,0)[b]{\small $a$}}
+      \put(90,0){\makebox(0,0)[b]{\small $a+b$}}
+      \put(24,30){\makebox(0,0)[r]{\small $a'$}}
+      \put(24,70){\makebox(0,0)[r]{\small $b'$}}
+      \put(24,90){\makebox(0,0)[r]{\small $a'+b'$}}
+      \put(60,50){\makebox(0,0){$S$}}
+    \end{picture}
+  \end{align*}
+  $a'+tb'=0$, つまり,   $t=\frac{-a'}{b'}$のとき, 平行四辺形の$4$点は,
+  \begin{align*}
+    \begin{pmatrix}
+    0\\0
+    \end{pmatrix},
+    \begin{pmatrix}
+    b\\b'
+    \end{pmatrix},
+    \begin{pmatrix}
+    a+b+\frac{-a'}{b'}b\\a'+b'+\frac{-a'}{b'}b'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    a+\frac{b'-a'}{b'}b\\b'
+    \end{pmatrix},
+  \begin{pmatrix}
+    a+\frac{-a'}{b'}b\\a'+\frac{-a'}{b'}b'
+  \end{pmatrix}
+  =
+    \begin{pmatrix}
+    a+\frac{-a'}{b'}b\\0
+  \end{pmatrix}
+\end{align*}
+  となる. したがって
+  \begin{align*}
+    S&=\left|a+\frac{-a'}{b'}b\right|\left|b'\right|\\
+    &=\left|b'a+\frac{-a'}{b'}bb'\right|\\
+    &=\left|b'a-a'b'\right|\\
+  \end{align*}
+  となる.
+  $\det(A)=ab'-ba'$であるので,
+  $S=|\det(A)|$である.
+\end{remark}
+
+\begin{remark}
+  \label{ex:sle:regcase}
+  数$a,b,c,d,p,q$が与えられているとする.
+  \begin{align*}
+    A=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+      \bbb&=
+  \begin{pmatrix}
+    p\\q
+  \end{pmatrix}  
+  \end{align*}
+  とおく.
+  $x$, $y$を未知数とし,
+  \begin{align*}
+    \xx&=
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}
+  \end{align*}
+  とする.\footnote{$\bbb$や$\xx$はボールド体である.  通常のイタリック$b$や$x$とは区別して使っているので気をつけること.   $\bbb\neq b$であり$\xx\neq x$であるのでかき分けること.}
+  このとき,
+  \begin{align*}
+    A\xx=\bbb
+  \end{align*}
+  を満たす$\xx$を求めるというのは,
+  次の連立方程式を解くことと同値である.
+  \begin{align*}
+    \begin{cases}
+      ax+by=p\\
+      cx+dy=q
+    \end{cases}
+  \end{align*}
+  $A$が正則であるときには, $A^{-1}$を使って
+  \begin{align*}
+    A\xx&=\bbb\\
+    A^{-1}A\xx&=A^{-1}\bbb\\
+    E_2\xx&=A^{-1}\bbb\\
+    \xx&=A^{-1}\bbb
+  \end{align*}
+  とできる.
+  したがって,
+  $A$が正則のときには, 連立方程式の解はただ一つであり,
+  逆行列を使って求めることができる.
+\end{remark}
+\begin{remark}
+  \label{def:det:generic}
+  $A$を
+  $(i,j)$成分が
+  $a_{i,j}$である$n$次正方行列とする.
+  ただし, $n>2$とする.
+  $A$の$1$行目と$j$列目を削ってできる$n-1$次正方行列を$A^{(j)}$と書くことにする.
+  このとき, 
+  \begin{align*}
+    \det(A)=&a_{1,1}\det(A^{(1)})-a_{1,2}\det(A^{(2)})+a_{1,3}\det(A^{(3)})-a_{1,4}\det(A^{(4)})+\cdots\\
+    \\&\cdots +(-1)^n a_{1,n}\det(A^{(n)})
+  \end{align*}
+  で計算できる値を$A$の行列式と呼ぶ.
+  例えば,
+  $3$次正方行列のときには次のように計算する, 
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b&c\\
+      d&e&f\\
+      g&h&i      
+    \end{pmatrix}
+    )
+    &=a
+    \det(
+    \begin{pmatrix}
+      e&f\\
+      h&i      
+    \end{pmatrix}
+    )-b
+    \det(
+    \begin{pmatrix}
+      d&f\\
+      g&i      
+    \end{pmatrix}
+    )
+    +c
+    \det(
+    \begin{pmatrix}
+      d&e\\
+      g&h      
+    \end{pmatrix}
+    )\\
+    &=a(ei-fh)
+    -b(di-fg)
+    +c(dh-eg).
+  \end{align*}
+  $\det(A)$の定義の中にある
+  $\det(A^{(1)})$などは$(n-1)$次正方行列なので, $n-1>2$のときは,
+  同様にサイズが小さいときに帰着させて計算する.
+  このように定義された行列式に関しても\cref{thm:det:reg,thm:det:hom,thm:det:transpose,thm:det:alt:row,thm:det:alt:col,thm:multlin:row:add,thm:multlin:row:prod,thm:multlin:col:add,thm:multlin:col:prod}
+  が成り立つ.
+  また, \cref{thm:det:scalar}は$2$を$n$と読み替えることで同様の等式が成り立つ.
+\end{remark}
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:2:1}
+  \Seealsoquiz{quiz:2:reg:1,quiz:5:1}
+  \label{quiz:2:1}
+  以下の行列$A$に対し, $\det(A)$を求めよ:
+  \begin{enumerate}
+  \item
+    $A=\begin{pmatrix}2&1\\5&6\end{pmatrix}$
+  \item
+    $A=\begin{pmatrix}-5&1\\5&-1\end{pmatrix}$
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:2}
+  \Seealsoquiz{quiz:3:6}
+  \label{quiz:2:2}
+  
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=0
+  \end{align*}
+  を満たす$x$を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:3}
+  次の行列の逆行列を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:reg:1}
+  \label{quiz:2:reg:1}
+  \seealsoQuiz{quiz:2:1}
+  \Seealsoquiz{quiz:2:4,quiz:3:3,quiz:3:3x}
+  以下の行列$A$が正則かどうか判定せよ.
+  \begin{enumerate}
+  \item
+    $A=\begin{pmatrix}2&1\\5&6\end{pmatrix}$.
+  \item
+    $A=\begin{pmatrix}-5&1\\5&-1\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:4}
+  \seealsoQuiz{quiz:2:reg:1}
+  \Seealsoquiz{quiz:3:2}
+  \label{quiz:2:4}
+  $A$, $\bbb$を次で定義する:
+  \begin{align*}
+    A=\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix},
+    \bbb=\begin{pmatrix}
+      4\\8
+    \end{pmatrix}.   
+  \end{align*}
+  \begin{enumerate}
+  \item $A$の逆行列を求めよ.
+  \item $\xx$に関する方程式$A\xx=\bbb$を解け.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:11}
+  次の等式を満たす正方行列$A$は正則であることを示せ:
+  \begin{align*}
+    A^3+A^2+A+E_2=O_{2,2}
+  \end{align*}
+\end{quiz}
+
+
+
+\chapter{行列と連立一次方程式}
+\label{chap:systemoflineq}
+ここでは多元連立一次方程式と行列の階数について説明する.
+まず連立方程式に関連する用語を定義した後,
+行列の行基本変形について紹介する.
+また, 階段行列および階数について定義をし,
+その性質について紹介をする.
+
+\cite{978-4-7806-0772-7}であれば,
+第4章, 第5章, 第7章が関連する.
+\cite{978-4-7806-0164-0}であれば,
+第2章が関連する.
+
+
+\section{連立方程式に関する用語の定義}
+ここでは連立方程式に関連する用語を定義し,
+連立方程式の解の様子について具体例で説明をする.
+
+数$a,b,c,d,p,q$が与えられているとする.
+$x$, $y$を未知数とする.
+$x$と$y$に関する次の方程式
+を
+\defit{2元連立一次方程式}
+\Defit{system of linear equations for two unknowns}
+\Defit{simultaneous linear equations for two unknowns}
+\addindex{方程式!2元連立一次---}%
+\addindex{一次方程式!2元連立---}%
+\addindex{連立一次方程式!2元---}%
+\addindex{連立方程式!---}%
+\addindex{連立方程式!2元---}%
+\addindex{一次!2元連立---方程式}%
+\addindex{連立!2元---一次方程式}%
+\addindex{方程式!連立一次---}%
+\addindex{一次方程式!連立---}%
+\addindex{一次!連立---方程式}%
+\addindex{連立!---一次方程式}%
+\addindex{equation!system of linear ---s for two unknowns}%
+\addindex{linear equation!system of ---s for two unknowns}%
+\addindex{ststem!--- of linear equations for two unknowns}%
+\addindex{equation!system of linear ---s}%
+\addindex{linear equation!system of ---s}%
+\addindex{ststem!--- of linear equations}%
+\addindex{equation!simultaneous linear ---s for two unknowns}%
+\addindex{linear equation!simultaneous ---s for two unknowns}%
+\addindex{simultaneous!--- linear equations for two unknowns}%
+\addindex{simultaneous linear equations!--- for two unknowns}%
+\addindex{equation!simultaneous linear ---s}%
+\addindex{linear equation!simultaneous ---s}%
+\addindex{simultaneous!--- linear equations}%
+と呼ぶ:
+\begin{align*}
+      \begin{cases}
+      ax+by=p\\
+      cx+dy=q
+    \end{cases}
+\end{align*}
+$ax+by=p$と$cx+dy=q$の両方の条件を満たす$x$と$y$の組が,
+この連立方程式の解である.
+\begin{align*}
+  A&=\begin{pmatrix}a&b\\c&d\end{pmatrix}\\
+  \bbb&=\begin{pmatrix}p\\q\end{pmatrix}\\
+  \xx&=\begin{pmatrix}x\\y\end{pmatrix}
+\end{align*}
+とおく\footnote{$\bbb$や$\xx$はボールド体である.  通常のイタリック$b$や$x$とは区別して使っているので気をつけること.   $\bbb\neq b$であり$\xx\neq x$であるので読み間違えないこと.  また自分で書くとには書き分け, 読み間違えないようにすること.}と,
+この連立方程式は, 次のように書くこともできる:
+\begin{align*}
+  A\xx=\bbb
+\end{align*}
+\begin{definition}
+  \label{def:eq:extededcoef}
+数$a,b,c,d,p,q$が与えられているとする.
+$x$, $y$を未知数とする.
+\begin{align*}
+  A&=\begin{pmatrix}a&b\\c&d\end{pmatrix}\\
+  \bbb&=\begin{pmatrix}p\\q\end{pmatrix}\\
+  \xx&=\begin{pmatrix}x\\y\end{pmatrix}\\
+  C&=\begin{pmatrix}a&b&p\\c&d&q\end{pmatrix}\\
+\end{align*}
+とする.
+このとき,
+$A$を,
+\defit{$\xx$に関する方程式$A\xx=\bbb$の係数行列}
+\Defit{coefficient matrix of the system of equations $A\xx=\bbb$}
+\addindex{行列!方程式の係数---}%
+\addindex{行列!連立方程式の係数---}%
+\addindex{行列!係数---}%
+\addindex{係数行列!---}%
+\addindex{係数行列!方程式の---}%
+\addindex{係数行列!連立方程式の---}%
+\addindex{係数!---行列}%
+\addindex{係数!方程式の---行列}%
+\addindex{係数!連立方程式の---行列}%
+\addindex{方程式!---の係数行列}%
+\addindex{連立方程式!---の係数行列}%
+\addindex{方程式の!---係数行列}%
+\addindex{連立方程式の!---係数行列}%
+\addindex{matrix!coefficient ---}%
+\addindex{coefficient!--- matrix}%
+\addindex{coefficient matrix!--- of a system of equations}%
+\addindex{coefficient matrix!--- of simultaneous equations}%
+\addindex{of system of equations!coefficient matrix ---}%
+\addindex{of simultaneous equations!coefficient matrix ---}%
+と呼ぶ.
+$C$を,
+\defit{$\xx$に関する方程式$A\xx=\bbb$の拡大係数行列}
+\Defit{augmented matrix of the system of equations $A\xx=\bbb$}
+\addindex{行列!拡大係数---}%
+\addindex{行列!方程式の拡大係数---}%
+\addindex{行列!連立方程式の拡大係数---}%
+\addindex{係数行列!拡大---}%
+\addindex{係数行列!方程式の拡大---}%
+\addindex{係数行列!連立方程式の拡大---}%
+\addindex{拡大係数行列!---}%
+\addindex{拡大係数行列!方程式の---}%
+\addindex{拡大係数行列!連立方程式の---}%
+\addindex{係数!拡大---行列}%
+\addindex{係数!方程式の拡大---行列}%
+\addindex{係数!連立方程式の拡大---行列}%
+\addindex{拡大係数!---行列}%
+\addindex{拡大係数!方程式の---行列}%
+\addindex{拡大係数!連立方程式の---行列}%
+\addindex{拡大!---係数行列}%
+\addindex{拡大!方程式の---係数行列}%
+\addindex{拡大!連立方程式の---係数行列}%
+\addindex{方程式の!---拡大係数行列}%
+\addindex{連立方程式の!---拡大係数行列}%
+\addindex{方程式!---の拡大係数行列}%
+\addindex{連立方程式!---の拡大係数行列}%
+\addindex{augmented!--- matrix}%
+\addindex{matrix!augmented ---}%
+\addindex{augmented matrix!--- of a system of equations}%
+\addindex{augmented matrix!--- of simultaneous equations}%
+\addindex{of system of equations!augmented matrix ---}%
+\addindex{of simultaneous equations!augmented matrix ---}%
+と呼ぶ.  
+$A\xx=\bbb$を満たす$\xx$を集めた集合を
+\defit{$\xx$に関する方程式$A\xx=\bbb$の解の空間}
+\Defit{space of solutions of the system of equations $A\xx=\bbb$}
+\addindex{空間!解の---}%
+\addindex{空間!方程式の解の---}%
+\addindex{空間!連立方程式の解の---}%
+\addindex{解!---の空間}%
+\addindex{解!方程式の---の空間}%
+\addindex{解!連立方程式の---の空間}%
+\addindex{解の空間!---}%
+\addindex{解の空間!方程式の---}%
+\addindex{解の空間!連立方程式の---}%
+\addindex{方程式の!---解の空間}%
+\addindex{連立方程式の!---解の空間}%
+\addindex{方程式!---の解の空間}%
+\addindex{連立方程式!---の解の空間}%
+\addindex{space!--- of solutions}%
+\addindex{space!--- of solutions of a system of equations}%
+\addindex{space of solutions!--- of a system of equations}%
+\addindex{solution!space of ---s of a system of equations}%
+\addindex{of system of equations!space of solutions}%
+\addindex{space!--- of solutions of simultaneous equations}%
+\addindex{space of solutions!--- of simultaneous equations}%
+\addindex{solution!space of ---s of simultaneous equations}%
+\addindex{of simultaneous equations!space of solutions}%
+と呼ぶ.
+つまり,
+\begin{align*}
+  F=\Set{\vv|A\vv=\bbb}
+\end{align*}
+とおくと, $F$が
+$\xx$に関する方程式$A\xx=\bbb$の解の空間である.
+解の空間の元を
+\defit{$\xx$に関する方程式$A\xx=\bbb$の特殊解}
+\defit{$\xx$に関する方程式$A\xx=\bbb$の根}
+\Defit{particular solution of the system of equations $A\xx=\bbb$}と呼ぶ.
+\addindex{解!特殊---}%
+\addindex{解!方程式の特殊---}%
+\addindex{解!連立方程式の特殊---}%
+\addindex{特殊解!方程式の---}%
+\addindex{特殊解!連立方程式の---}%
+\addindex{根!方程式の---}%
+\addindex{根!連立方程式の---}%
+\addindex{方程式の!---根}%
+\addindex{連立方程式の!---根}%
+\addindex{方程式の!---特殊解}%
+\addindex{連立方程式の!---特殊解}%
+\addindex{solution!particular --- of a system of equations}%
+\addindex{particular solution!--- of a system of equations}%
+\addindex{particular!--- solution of a system of equations}%
+\addindex{of system of equations!particular solution ---}%
+\addindex{solution!particular --- of simultaneous equations}%
+\addindex{particular solution!--- of simultaneous equations}%
+\addindex{particular!--- solution of simultaneous equations}%
+\addindex{of simultaneous equations!particular solution ---}%
+解を考える際に数として実数のみを考えるときには,
+解の空間を
+\defit{実数解の空間}
+\Defit{space of real solutions}
+\addindex{空間!実数解の---}%
+\addindex{解の空間!実数---}%
+\addindex{実数解!---の空間}%
+\addindex{解!実数---の空間}%
+\addindex{実数!---解の空間}%
+\addindex{実数!---解}%
+\addindex{space!--- of real solutions}%
+\addindex{real solution!space of ---s}%
+\addindex{solution!space of real ---s}%
+と呼ぶ.
+解を考える際に数として複素数を考えるときには,
+解の空間を
+\defit{複素数解の空間}
+\Defit{space of complex solutions}
+\addindex{空間!複素数解の---}%
+\addindex{解の空間!複素数---}%
+\addindex{複素数解!---の空間}%
+\addindex{解!複素数---の空間}%
+\addindex{複素数!---解の空間}%
+\addindex{複素数!---解}%
+\addindex{space!--- of complex solutions}%
+\addindex{solution!space of complex ---s}%
+\addindex{complex solution!space of ---s}%
+と呼ぶ.
+\end{definition}
+
+
+
+\begin{remark}
+未知数が$2$個, 方程式の数が$2$本の場合について考えたが,
+より一般の場合も考えることができる.
+$(m,n)$-行列$A$と$(m,1)$-行列$\bbb$が与えられているとする.
+$x_1,\ldots,x_n$を$n$個の未知数とし,
+\begin{align*}
+  \xx=\begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
+\end{align*}
+とする.
+このとき, $\xx$に関する方程式
+\begin{align*}
+  A\xx=\bbb
+\end{align*}
+を,
+\defit{$n$元連立一次方程式}
+\Defit{system of linear equations for $n$ unknowns}
+\Defit{simultaneous linear equations for $n$ unknowns}
+\addindex{方程式!$n$元連立一次---}%
+\addindex{一次方程式!$n$元連立---}%
+\addindex{連立一次方程式!$n$元---}%
+\addindex{連立方程式!---}%
+\addindex{連立方程式!$n$元---}%
+\addindex{一次!$n$元連立---方程式}%
+\addindex{連立!$n$元---一次方程式}%
+\addindex{方程式!連立一次---}%
+\addindex{一次方程式!連立---}%
+\addindex{一次!連立---方程式}%
+\addindex{連立!---一次方程式}%
+\addindex{equation!system of linear ---s for $n$ unknowns}%
+\addindex{linear equation!system of ---s for $n$ unknowns}%
+\addindex{ststem!--- of linear equations for $n$ unknowns}%
+\addindex{equation!system of linear ---s}%
+\addindex{linear equation!system of ---s}%
+\addindex{ststem!--- of linear equations}%
+\addindex{equation!simultaneous linear ---s for $n$ unknowns}%
+\addindex{linear equation!simultaneous ---s for $n$ unknowns}%
+\addindex{simultaneous!--- linear equations for $n$ unknowns}%
+\addindex{simultaneous linear equations!--- for $n$ unknowns}%
+\addindex{equation!simultaneous linear ---s}%
+\addindex{linear equation!simultaneous ---s}%
+\addindex{simultaneous!--- linear equations}%
+と呼ぶ.
+$A$のことを, この連立方程式の係数行列と呼ぶ.
+$A$と$\bbb$をならべてできる$(m,n+1)$-行列を,
+この連立方程式の拡大係数行列と呼ぶ.
+$\Set{\vv|A\vv=\bbb}$を,
+この連立方程式の解の空間と呼び,
+解の空間の元を特殊解とか根などと呼ぶ.
+\end{remark}
+
+
+連立方程式の解の空間の例をいくつか見る.
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&1\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}5\\6\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}=&
+        \begin{pmatrix}5\\6\end{pmatrix}\\
+          \begin{pmatrix}x\\y\end{pmatrix}=&
+            \begin{pmatrix}5\\6\end{pmatrix}\\
+  \end{align*}
+  となるので,
+  \begin{align*}
+    F=\Set{\begin{pmatrix}5\\6\end{pmatrix}}
+  \end{align*}
+  と表せ, 解は
+  \begin{align*}
+    \xx=\begin{pmatrix}5\\6\end{pmatrix}\\
+  \end{align*}
+  で全てである.
+  この場合, 解は一通りしかない.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}5\\0\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}=&
+        \begin{pmatrix}5\\0\end{pmatrix}\\
+          \begin{pmatrix}x\\0\end{pmatrix}=&
+            \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  となる.
+  $x=5$を満たせば$y$の値は何でもよい.
+  \begin{align*}
+    F=\Set{\begin{pmatrix}5\\t\end{pmatrix} | t\in \RR}
+  \end{align*}
+  と表せる. 解は
+  \begin{align*}
+    \xx=\begin{pmatrix}5\\t\end{pmatrix}\quad (t\in\RR)
+  \end{align*}
+  という形で表すことができる. 
+  この場合, 解は無数にある.
+  \begin{align*}
+          \begin{pmatrix}x\\0\end{pmatrix}=&
+            \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  は通常の連立方程式の形で書き直すと以下のようになる:
+  \begin{align*}
+    \begin{cases}
+      x=5\\
+      0=0
+    \end{cases}
+  \end{align*}
+  $0=0$は常に成り立つので, 取り除いても連立方程式の解は変化しないので,
+  この連立方程式を次のように書き換えることができる:
+  \begin{align*}
+    \begin{cases}
+      x=5
+    \end{cases}
+  \end{align*}
+  この(連立)方程式には, $y$という未知数が現れていないが, もともとの設定を考えると, これは$x$と$y$に関する方程式である.
+  したがって, この方程式の解は, $x$のみに言及した
+  \begin{align*}
+    x=5
+  \end{align*}
+  ではなく
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}5\\t\end{pmatrix}\quad (t\in\RR)
+  \end{align*}
+  のように$y$の値も考えたものになる.
+\end{example}
+
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}0\\6\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&0\end{pmatrix}
+      \begin{pmatrix}x\\y\end{pmatrix}=&
+        \begin{pmatrix}0\\6\end{pmatrix}\\
+          \begin{pmatrix}x\\0\end{pmatrix}=&
+            \begin{pmatrix}0\\6\end{pmatrix}\\
+  \end{align*}
+  となる.
+  通常の連立方程式の形に書き直すと
+  \begin{align*}
+    \begin{cases}
+      x=0\\
+      0=6
+    \end{cases}
+  \end{align*}
+  となる.
+  $x,y$をどんな値にしても, $0=6$が成り立つことはないので,
+  \begin{align*}
+    F=\emptyset
+  \end{align*}
+  である. つまり, 解の空間は空集合である.
+  この場合, 解はない.
+\end{example}
+
+連立方程式の解は次の3つのケースが考えられる:
+\begin{enumerate}
+  \item 解がない場合.
+  \item ただ1つの解をもつ場合.
+  \item 解が無数にある場合.
+\end{enumerate}
+
+係数行列が正則であるときには,
+\cref{ex:sle:regcase}で見たように,
+$\xx$に関する方程式
+$A\xx=\bbb$は
+$\xx=A^{-1}\bbb$というただ一つの解をもつ.
+
+他の場合も含めて,
+一般に解の空間がどのケースに当てはまるのかについて,
+以下で見ていく.
+
+\section{行基本変形}
+ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
+また, 階段行列と呼ばれる行列を定義し,
+拡大係数行列が階段行列であるような連立一次方程式の解の様子を調べる.
+
+まず, 連立方程式をどのように解いていたかを復習する.
+\begin{align*}
+  \begin{cases}
+    3x+4y=1\\
+    x+2y=3
+  \end{cases}
+\end{align*}
+という連立方程式について考える.
+拡大係数行列も併記することにする.
+\begin{align*}
+  \begin{cases}
+    3x+4y=1\\
+    x+2y=3
+  \end{cases}&&
+  \begin{pmatrix}
+    3&4&1\\
+    1&2&3    
+  \end{pmatrix}
+\end{align*}
+の1行目と2行目を入れ替えると次を得る.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+    3x+4y=1
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    3&4&1
+  \end{pmatrix}
+\end{align*}
+さらに,
+1行目の-3倍を2行目に加えると次となる.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+     -2y=-8
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    0&-2&-8
+  \end{pmatrix}
+\end{align*}
+さらに,
+2行目を$-\frac{1}{2}$倍すると次となる.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+     y=4
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    0&1&4
+  \end{pmatrix}
+\end{align*}
+さらに,
+2行目の-2倍を1行目に加えると次となる.
+\begin{align*}
+  \begin{cases}
+    x=-5\\
+     y=4
+  \end{cases}&&
+  \begin{pmatrix}
+    1&0&-5\\    
+    0&1&4
+  \end{pmatrix}
+\end{align*}
+よって,
+この連立方程式の解は,
+\begin{align*}
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}  
+  =
+  \begin{pmatrix}
+    -5\\4
+  \end{pmatrix}  
+\end{align*}
+である.
+
+連立方程式を解くにあたり以下の操作を行った:
+\begin{enumerate}
+  \item ある行を$0$以外で定数倍する.
+  \item ある行に別の行の定数倍を加える.
+  \item ある行と別の行を入れ替える.
+\end{enumerate}
+これらの操作で連立一次方程式の解の空間は変化しない.
+これらの操作を行基本変形と呼ぶ.
+行基本形をすることで, 連立一次方程式を解くことができる.
+
+\begin{definition}
+  \label{def:mat:fundtransformation}
+  $A$を$(m,n)$-行列とする.
+  以下に挙げた$A$に対する操作を
+  \defit{行基本変形}
+  \Defit{elementary row operation}
+  \addindex{基本!行---変形}%
+  \addindex{基本変形!行---}%
+  \addindex{変形!行基本---}%
+  \addindex{行!---基本変形}%
+  \addindex{elementary!row operation}%
+  \addindex{operation!elementary row ---}%
+  \addindex{row operation!elementary ---}%
+  \addindex{row!elementary --- operation}%
+  と呼ぶ:
+  \begin{enumerate}
+  \item $1\leq k \leq m$とし, $a \neq 0$とする.
+    $A$の$k$行目を$a$倍する.
+  \item $k\neq l$とし, $c$を数とする.
+    $A$の$k$行目に, $l$行目を$c$倍したものを足す.
+  \item $1\leq k<l \leq m$とする.
+    $A$の$k$行目と$l$行目を入れ替える.
+  \end{enumerate}
+\end{definition}
+
+行基本変形を行うことで`$0$の多い行列'に変形できる.
+その端的なものとして,
+階段行列がある.
+\begin{definition}
+  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $0\leq r \leq m$とする.
+  $A$と$r$が次の条件を満たすとき, $A$は
+  \defit{階数$r$の階段行列}
+  \Defit{row echelon form of rank $r$}
+  \addindex{行列!階数$r$の階段---}%
+  \addindex{行列!階段---}%
+  \addindex{行列!行階段---}%
+  \addindex{階段行列!---}%
+  \addindex{階段行列!階数$r$の---}%
+  \addindex{階段!---行列}%
+  \addindex{階段!行---行列}%
+  \addindex{階段!階数$r$の---行列}%
+  \addindex{階段!階数$r$の行---行列}%
+  \addindex{階数!---$r$の階段行列}%
+  \addindex{階数!---$r$の行階段行列}%
+  \addindex{form!row echelon --- of rank $r$}%
+  \addindex{form!row echelon ---}%
+  \addindex{echelon form!row --- of rank $r$}%
+  \addindex{echelon form!row ---}%
+  \addindex{row echelon form!--- of rank $r$}%
+  \addindex{row echelon form!---}%
+  \addindex{of rank $r$!row echelon form ---}%
+  \addindex{rank!row echelon form of --- $r$}%
+  であるという:
+  \begin{enumerate}
+  \item $r< i \leq m$ならば, $a_{i,j}=0$.
+  \item $1\leq i \leq r$ならば, 次の条件を満たす$j_i$がとれる:
+    \begin{enumerate}
+      \item $1\leq j < j_i$ならば$a_{i,j}=0$.
+      \item $a_{i,j_i}\neq 0$.
+    \end{enumerate}
+  \item $j_1,\ldots,j_r$は次を満たす:
+    \begin{align*}
+      1\leq j_1<\cdots<j_r \leq n
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+階段行列の定義に現れる$j_i$は,
+\begin{align*}
+j_i = \min\Set{k|a_{i,k}\neq 0}
+\end{align*}
+と書くこともできる.
+これを
+\defit{$i$行目のピボット}
+\Defit{pivot in $i$-th row}
+\addindex{ピボット!$i$行目の---}%
+と呼ぶこともある.
+
+階段行列のうち特別な形のものを被約行階段行列と呼ぶ.
+\begin{definition}
+  \label{def:redechelonmat}
+  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $A$が次の条件を満たすとき, $A$は
+  \defit{階数$r$の被約行階段行列}
+  \Defit{階数$r$の簡約行階段行列}
+  \Defit{reduced row echelon form of rank $r$}
+  \addindex{階数!被約行階段行列の---}%
+  \addindex{階数!被約階段行列の---}%
+  \addindex{階数!---$r$の被約行階段行列}%
+  \addindex{階数!---$r$の被約階段行列}%
+  \addindex{行列!階数$r$の被約行階段---}%
+  \addindex{行列!階数$r$の被約階段---}%
+  \addindex{行列!被約行階段---}%
+  \addindex{行列!被約階段---}%
+  \addindex{階段行列!階数$r$の被約行---}%
+  \addindex{階段行列!階数$r$の被約---}%
+  \addindex{階段行列!被約行---}%
+  \addindex{階段行列!被約---}%
+  \addindex{階段!階数$r$の被約行---行列}%
+  \addindex{階段!階数$r$の被約---行列}%
+  \addindex{階段!被約行---行列}%
+  \addindex{階段!被約---行列}%
+  \addindex{被約!階数$r$の---行階段行列}%
+  \addindex{被約!階数$r$の---階段行列}%
+  \addindex{被約!---行階段行列}%
+  \addindex{被約!---階段行列}%
+  \addindex{被約行階段行列!階数$r$の---}%
+  \addindex{被約階段行列!階数$r$の---}%
+  \addindex{被約行階段行列!---}%
+  \addindex{被約階段行列!---}%
+  \addindex{階数!簡約行階段行列の---}%
+  \addindex{階数!簡約階段行列の---}%
+  \addindex{階数!---$r$の簡約行階段行列}%
+  \addindex{階数!---$r$の簡約階段行列}%
+  \addindex{行列!階数$r$の簡約行階段---}%
+  \addindex{行列!階数$r$の簡約階段---}%
+  \addindex{行列!簡約行階段---}%
+  \addindex{行列!簡約階段---}%
+  \addindex{階段行列!階数$r$の簡約行---}%
+  \addindex{階段行列!階数$r$の簡約---}%
+  \addindex{階段行列!簡約行---}%
+  \addindex{階段行列!簡約---}%
+  \addindex{階段!階数$r$の簡約行---行列}%
+  \addindex{階段!階数$r$の簡約---行列}%
+  \addindex{階段!簡約行---行列}%
+  \addindex{階段!簡約---行列}%
+  \addindex{簡約!階数$r$の---行階段行列}%
+  \addindex{簡約!階数$r$の---階段行列}%
+  \addindex{簡約!---行階段行列}%
+  \addindex{簡約!---階段行列}%
+  \addindex{簡約行階段行列!階数$r$の---}%
+  \addindex{簡約階段行列!階数$r$の---}%
+  \addindex{簡約行階段行列!---}%
+  \addindex{簡約階段行列!---}%
+  \addindex{form!reduced row echelon --- of rank $r$}%
+  \addindex{form!reduced row echelon ---}%
+  \addindex{echelon form!reduced row --- of rank $r$}%
+  \addindex{echelon form!reduced row ---}%
+  \addindex{row echelon form!reduced --- of rank $r$}%
+  \addindex{row echelon form!reduced ---}%
+  \addindex{reduced row echelon form!--- of rank $r$}%
+  \addindex{reduced row echelon form!---}%
+  \addindex{reduced!--- row echelon form of rank $r$}%
+  \addindex{reduced!--- row echelon form}%
+  \addindex{of rank $r$!reduced row echelon form ---}%
+  \addindex{rank!reduced row echelon form of --- $r$}%
+ であるという:
+  \begin{enumerate}
+  \item $A$は階数$r$の階段行列である.
+  \item $1\leq i \leq r$に対し$j_i = \min\Set{k|a_{i,k}\neq 0}$とおく.
+    このとき次が成り立つ.
+    \begin{enumerate}
+      \item $a_{i,j_i}=1$
+      \item $l\neq $ $a_{l,j_i}=0$
+    \end{enumerate}
+  \end{enumerate}
+  被約行階段行列のことを単に被約階段行列と呼ぶことにする.
+\end{definition}
+被約階段行列は,
+pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみたす
+階段行列である.
+
+サイズが小さいときに被約階段行列の例を見る.
+\begin{example}
+  $(2,2)$-行列の場合について考える.
+  
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$ということなので, すべて$0$である
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  階数が$1$の被約階段行列は,
+  $2$行目が$0$ということなので,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a$をつかって
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる行列の$2$種類があり,
+  これらで全てである.
+
+  階数が$2$の被約階段行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  
+\end{example}
+\begin{example}
+  $(2,3)$-行列の場合について考える.
+
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$でないといけないので,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&0\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+  
+  階数が$1$の被約階段行列は,
+  $2$行目の成分は$0$でないといけない.
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&1\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a$をつかって
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&a\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる行列と, 数$a,b$を使って
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&b\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる$3$種類の行列がある.
+  これらで全てである.
+
+  階数が$2$の被約階段行列は,
+  \begin{align*}
+    \begin{pmatrix}
+     0& 1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  と,
+  数$a$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a,b$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&a\\0&1&b
+    \end{pmatrix}
+  \end{align*}
+  の$3$種類がある. これらですべてである.
+\end{example}
+
+
+\begin{example}
+例えば
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  は階段行列ではない.
+  したがって被約階段行列でもない.
+
+例えば
+  \begin{align*}
+    \begin{pmatrix}
+      1&3\\0&1
+    \end{pmatrix}
+  \end{align*}
+  は階段行列ではあるが,
+  被約階段行列ではない.
+\end{example}
+
+\begin{theorem}
+  \label{thm:unique:reducedecheron}
+  $A$を行列とする.
+  $A$に行基本変形を(複数回)行って
+  被約階段行列にすることができる.
+  得られる
+  被約階段行列は$A$によって決まり,
+  変形の仕方には依らない.
+\end{theorem}
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&4\\2&2\end{pmatrix}
+  \end{align*}
+  とする.
+  例えば$A$の1行目を$-2$倍して2行目に足すと,
+  \begin{align*}
+    \begin{pmatrix}1&4\\0&-6\end{pmatrix}
+  \end{align*}
+  となる.
+  さらに, 2行目を$\frac{-1}{6}$倍すると
+  \begin{align*}
+    \begin{pmatrix}1&4\\0&1\end{pmatrix}
+  \end{align*}
+  となる.
+  さらに, 1行目に2行目の$-4$倍を加えることで,
+ \begin{align*}
+   \begin{pmatrix}1&0\\0&1\end{pmatrix}
+  \end{align*}
+ という被約階段行列が得られる.
+
+ 例えば,
+ $A$の1行目と2行目を入れ替えると,
+  \begin{align*}
+    \begin{pmatrix}2&2\\1&4\end{pmatrix}
+  \end{align*}
+  となる. 
+  さらに,
+  1行目を$\frac{1}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}1&1\\1&4\end{pmatrix}
+  \end{align*}
+  となる.
+  さらに
+  2行目に1行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&3\end{pmatrix}
+  \end{align*}
+  となる.
+  さらに
+  2行目を$\frac{1}{3}$倍すると
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&1\end{pmatrix}
+  \end{align*}
+  となる.
+  さらに
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+  \end{align*}
+  という被約階段行列が得られるが,
+  これは先程のものと同じである.
+\end{example}
+
+\begin{remark}
+  行基本変形を用いて行列を被約階段行列に変形することを,
+  \defit{ガウスの消去法}
+  \Defit{Gaussian elimination}
+  \addindex{消去法!ガウスの---}%
+  \addindex{ガウス!---の消去法}%
+  \addindex{elimination!Gaussian ---}%
+  \addindex{Gaussian!--- elimination}%
+  \addindex{Gauss!---ian elimination}%
+  とか
+  \defit{掃き出し法}
+  \Defit{row reduction}
+  \addindex{reduction!row ---}%
+  \addindex{row!--- reduction}%
+  と呼ぶこともある.
+\end{remark}
+拡大係数行列を
+被約階段行列に変形すると,
+解のすぐわかる形の連立方程式になる.
+係数行列が$(2,2)$-行列であるときに具体的に見ていく.
+
+以下の例は,
+拡大係数行列が階数$2$の被約階段行列であり,
+係数行列も階数$2$の被約階段行列である場合である.
+この場合は,
+解がただ一つに定まる.
+\begin{example}
+  \label{eg:eq:reduced:1}
+  $p,q$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&p\\0&1&q
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  であるので, この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\q
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x=p\\
+      y=q
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}p\\q\end{pmatrix}
+  \end{align*}
+  のみが解である.
+\end{example}
+
+拡大係数行列が階数$2$の被約階段行列であり,
+係数行列は階数$1$の被約階段行列である場合は,
+以下の2つの例である
+いずれの場合も解が存在しない.
+\begin{example}
+    \label{eg:eq:reduced:3}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\1
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      y=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解はない.
+\end{example}
+\begin{example}
+    \label{eg:eq:reduced:2}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\1
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x+ay=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解はない.
+\end{example}
+
+
+
+拡大係数行列が階数$1$の被約階段行列であり,
+係数行列も階数$1$の被約階段行列である場合は,
+以下の2つの例である.
+いずれの場合も解は無数に存在する.
+また, その解は一つの変数を使って書き表すことができる.
+\begin{example}
+  \label{eg:eq:reduced:4}
+  $a,p$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&p\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x+ay=p\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  これは
+  \begin{align*}
+    \begin{cases}
+      x=p-ay\\
+      0=0
+    \end{cases}
+  \end{align*}
+  と変形できる.
+  つまり, $y$の値が$t$であるときには,
+  $x$は$p-at$と自動的に値がきまる.
+  したがって, 実数解は
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}p-at\\t\end{pmatrix}
+        \quad (t\in\RR)
+  \end{align*}
+  と書ける.  また, 実数解は必ずこの形をしている.
+  すこし変形して,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}p\\0\end{pmatrix}
+        +
+        t\begin{pmatrix}-a\\1\end{pmatrix}
+        \quad (t\in\RR)
+  \end{align*}
+  のように解を書くこともできる.
+\end{example}
+
+\begin{example}
+      \label{eg:eq:reduced:5}
+  $p$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&p\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      y=p\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $y$の値が$p$であれば, $x$の値は何でも良い.
+  したがって, 実数解は
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}t\\p\end{pmatrix}
+        \quad (t\in\RR)
+  \end{align*}
+  と書ける.  また, 実数解は必ずこの形をしている.
+  すこし変形して,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}0\\p\end{pmatrix}
+        +
+        t\begin{pmatrix}1\\0\end{pmatrix}
+        \quad (t\in\RR)
+  \end{align*}
+  のように解を書くこともできる.
+\end{example}
+
+次の例は,
+拡大係数行列が階数$1$の被約階段行列であり,
+係数行列が階数$0$の被約階段行列である場合である.
+この場合は解がない.
+\begin{example}
+      \label{eg:eq:reduced:6}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&1\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      0=1\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解はない.
+\end{example}
+
+次の例は,
+拡大係数行列が階数$0$の被約階段行列であり,
+係数行列も階数$0$の被約階段行列である場合である.
+この場合は解が無数に存在する.
+解は$2$つの変数を用いることで書き表すことができる.
+\begin{example}
+      \label{eg:eq:reduced:7}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&0\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      0=0\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $x$と$y$の値が何であれ$0=0$は成り立つ.
+  したがって, 実数解は
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}t\\s\end{pmatrix}
+        \quad (t,s\in\RR)
+  \end{align*}
+  と書ける.  また, 実数解は必ずこの形をしている.
+  $x$の値とは独立に$y$の値を決められるので,
+  変数は$t,s$の2つが必要になる.
+  すこし変形して,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      t\begin{pmatrix}1\\0\end{pmatrix}
+        +
+        s\begin{pmatrix}0\\1\end{pmatrix}
+        \quad (t,s\in\RR)
+  \end{align*}
+  のように解を書くこともできる.
+\end{example}
+
+\section{階数の性質}
+ここでは,
+行列の階数というものを定義し,
+その性質について紹介する.
+
+\begin{definition}
+  \label{def:rank}
+  $A$を行列とする.
+  $A$に行基本変形をし,
+  階数$r$の被約階段行列が得られたとする.
+  このとき, 
+  \defit{$A$の階数}
+  \Defit{rank of $A$}
+  \addindex{階数!行列の---}%
+  \addindex{行列の!---階数}%
+  \addindex{rank!--- of matrix}%
+  \addindex{of matrix!rank ---}%
+  は$r$であるといい,
+  $\rank(A)=r$とする.
+\end{definition}
+階数を使って解がどのくらいあるか調べることができる.
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a&b\\
+    c&d
+  \end{pmatrix}\\
+  \bbb&=
+  \begin{pmatrix}
+    p\\
+    q
+  \end{pmatrix}\\
+  C&=
+  \begin{pmatrix}
+    a&b&p\\
+    c&d&q
+  \end{pmatrix}
+\end{align*}
+とする. 2個のの未知数
+\begin{align*}
+  \xx&=
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}
+\end{align*}
+に関する方程式 $A\xx=\bbb$について考える.
+つまり, $A$を係数行列, $C$を拡大係数行列とする,
+$2$個の未知数に関する方程式を考える.
+このとき, \cref{eg:eq:reduced:1,eg:eq:reduced:2,eg:eq:reduced:3,eg:eq:reduced:4,eg:eq:reduced:5,eg:eq:reduced:6,eg:eq:reduced:7}で計算したことから,
+次がわかる:
+\begin{enumerate}
+  \item $\rank(A)<\rank(C)$ならば,
+  $\xx$に関する方程式$A\xx=\bbb$は解を持たない
+  \item $\rank(A)=\rank(C)=2$ならば,
+  $\xx$に関する方程式$A\xx=\bbb$はただ一つの解をもつ.
+  \item $\rank(A)=\rank(C)=1$ならば,
+    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
+    また, その解を$1$個の変数を用いて表すことができる.
+  \item $\rank(A)=\rank(C)=0$ならば,
+    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
+    また, その解を$2$個の変数を用いて表すことができる.
+\end{enumerate}
+より一般には次が成り立つ:
+\begin{theorem}
+  \label{thm:solution:syslineq}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\bbb$という方程式について考える.
+  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
+  つまり拡大係数行列とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item $\rank(A)<\rank(C)$のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$は解を持たない
+    \end{enumerate}
+  \item $\rank(A)=\rank(C)=n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$の解はただ一つ存在する.
+    \end{enumerate}
+  \item $\rank(A)=\rank(C)<n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$の解は無数に存在する.
+    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+
+$\xx$に関する
+$A\xx=\bbb$という方程式を考えたが,
+\begin{align*}
+  \bbb&=\zzero
+\end{align*}
+のときには,
+拡大係数行列の
+最後の列には$0$しか現れない.\footnote{$A\xx=\zzero$という形の方程式を斉次(せいじ)1次方程式と呼ぶことがある. 方程式に現れる項がすべて未知数の一次式である (定数項がない) という意味である.}
+行基本変形を行っても, 
+最後の列には$0$しか現れないことは変わらないので,
+係数行列の階数と拡大係数行列の階数は常に一致する.
+したがって, 
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a&b\\
+    c&d
+  \end{pmatrix}
+\end{align*}
+とし, 2個のの未知数
+\begin{align*}
+  \xx&=
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}
+\end{align*}
+に関する方程式 $A\xx=\zzero$について考えると,
+この方程式は常に解をもつ.
+$A\zzero=\zzero$がなりたつので, $\zzero$はいつでも,
+$A\xx=\zzero$の解である.
+
+$A\vv=\zzero$とすると$c$による$\vv$のスカラー倍$c\vv$は,
+\begin{align*}
+A(c\vv)=cA\vv=c\zzero=\zzero
+\end{align*}
+となり,
+$c\vv$は$\xx$に関する方程式
+$A\xx=\zzero$の解である.
+また,
+$A\vv=\zzero$, $A\ww=\zzero$とすると
+\begin{align*}
+A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero
+\end{align*}
+となり,
+$\vv+\ww$も
+$\xx$に関する方程式
+$A\xx=\zzero$の解である.
+
+$\rank(A)=0$のときには, $A$から得られる被約階段行列は
+零行列$O_{2,2}$であるので,
+$A\xx=\zzero$の解の空間は, $O_{2,2}\xx=\zzero$の解の空間に一致する.
+どのような$\vv$をとっても
+$O_{2,2}\vv=\zzero$をみたすので,
+$A\xx=\zzero$の解は,
+\begin{align*}
+  \begin{pmatrix}
+    t\\s
+    \end{pmatrix} 
+\end{align*}
+のように$t$と$s$の2つの変数を使って表すことができる.
+また, これは, 
+\begin{align*}
+  t
+  \begin{pmatrix}
+    1\\0
+    \end{pmatrix} 
+  +
+    s
+  \begin{pmatrix}
+    0\\1
+    \end{pmatrix} 
+\end{align*}
+のように書くこともできる.
+
+$\rank(A)=1$のときには,
+$A\vv=\zzero$かつ$\vv\neq \zzero$をみたす$\vv$を見つけられれば,
+$\xx$に関する方程式$A\xx=\zzero$の解は
+変数$c$を使って$c\vv$と表すことができる.
+
+$\rank(A)=2$のときには,
+$A\xx=\zzero$は解をただ一つしかもたないが,
+$\zzero$がその解である.
+
+これらをまとめると,
+次のようになる:
+\begin{enumerate}
+  \item $\rank(A)=2$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$はただ一つの解をもつ.
+    解は$\Set{\zzero}$である.
+  \item $\rank(A)=1$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
+    また, その解を$1$個の変数を用いて表すことができる.
+    $\vv$が
+    $A\vv=\zzero$かつ$\vv\neq \zzero$をみたすとすると,
+    $\xx$に関する方程式$A\xx=\zzero$の解は,
+    変数$c$を用いて, $c\vv$と表すことができる.
+  \item $\rank(A)=0$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
+    また, その解を$2$個の変数$t,s$を用いて,
+    \begin{align*}
+      t
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+      +s
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+    \end{align*}
+    表すことができる.
+\end{enumerate}
+
+より一般には,
+$\bbb=\zzero$のときについて
+\Cref{thm:solution:syslineq}を考えることにより
+次がわかる:
+\begin{theorem}
+  %proved
+  \label{thm:solution:homoge}
+  
+$A$を$(m,n)$-行列とする.
+$n$個の未知数$\xx$に関する
+$A\xx=\zzero$という方程式について考える.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item $\rank(A)=n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\zzero$の解は$\zzero$のみである.
+    \end{enumerate}
+  \item $\rank(A)<n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\zzero$の解は無数に存在する.
+    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
+    \item $d=n-\rank(A)$とすると,
+      $d$個の$(n,1)$-行列
+      $\vv_1,\ldots,\vv_d$をうまく選ぶことで,
+      $A\xx=\zzero$の解は, $d$個の変数$c_1,\ldots,c_d$を使い
+      \begin{align*}
+        c_1\vv_1+\cdots+c_d\vv_d
+      \end{align*}
+      と表せる.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+
+\begin{prop}
+  \provelater**{thm:ker:vec}
+  \label{thm:ker:vec}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\zzero$という方程式について考える.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{sum}
+    $\vv,\ww$を$A\xx=\zzero$の解とすると $\vv+\ww$も$A\xx=\zzero$の解である.
+  \item\provelater*{scalar}
+    $c$を数とし, $\vv$を$A\xx=\zzero$の解とすると $c\vv$も$A\xx=\zzero$の解である.
+  \end{enumerate}
+\end{prop}
+
+
+
+階数について, 次の性質が知られている.
+\begin{theorem}
+  \provelater**{thm:rank:prop}
+  \label{thm:rank:prop}
+  $A$を$(m,n)$-行列とする.
+  $B$を$(n,k)$-行列とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item
+    \label{thm:rank:prop:trans}
+    \provelater*{trans}
+    $\rank(A)=\rank(\transposed{A})$.
+  \item
+    \label{thm:rank:prop:left}
+    \provelater*{left}
+    $\rank(AB)\leq\rank(A)$.
+  \item
+    \label{thm:rank:prop:right}
+    \provelater*{right}
+    $\rank(AB)\leq\rank(B)$.
+  \item
+    \label{thm:rank:prop:row}
+    \provelater*{row}
+    $\rank(A)\leq m$.
+  \item
+    \label{thm:rank:prop:col}
+    \provelater*{col}
+    $\rank(A)\leq n$.
+  \item
+    \provelater*{regularleft}
+    $P$が$m$次正則行列なら$\rank(PA)=\rank(A)$.
+  \item
+    \label{thm:rank:prop:regularright}
+    \provelater*{regularright}
+    $Q$が$n$次正則行列なら$\rank(AQ)=\rank(A)$.
+  \item
+    \provelater*{fund}
+    \label{thm:rank:prop:fund}
+    $A$に行基本変形を用いて$A'$が得られるなら$\rank(A)=\rank(A')$.
+  \end{enumerate}
+\end{theorem}
+
+正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
+\begin{theorem}
+  \provelater{thm:rank:regular}
+  \label{thm:rank:regular}
+  $A$が$n$次正方行列であるとする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item\label{thm:rank:regular:reg}
+    $A$が正則
+  \item\label{thm:rank:regular:rank}
+    $\rank(A)=n$
+  \item\label{thm:rank:regular:step}
+    $A$に行基本変形を行って単位行列に変形できる.
+  \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+  \label{thm:fund:inverse}
+  \Provelater
+  $A$を$n$次正方行列とする.
+  $B$を$A$と$E_n$を並べて得られる$(n,2n)$-行列とする.
+  このような場合に
+  \begin{align*}
+    B=(A|E_n)
+  \end{align*}
+  とかくことにする.
+  $B$に行基本変形を行って,
+  \begin{align*}
+    (A'|P)
+  \end{align*}
+  という形の行列が得られたとする.
+  ただし, $A'$も$P$も$n$次正方行列とする.
+  このとき,
+  $P$は正則行列であり,
+  \begin{align*}
+    PA=A'
+  \end{align*}
+  となることが知られている.
+  $B$に行基本変形を行って得られた
+  被約階段行列が
+  \begin{align*}
+    (E_n|P)
+  \end{align*}
+  という形なら,
+  $A$は正則であり,
+  $A^{-1}=P$である.
+  また, 得られた
+  被約階段行列の左半分が単位行列でないときには,
+  $A$は非正則である.
+  サイズの大きな正則行列の逆行列は,
+  この方法でもとめるとよい.
+\end{remark}
+
+\begin{remark}
+  \label{rem:syslineq:rank:gen}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\bbb$という方程式について考える.
+  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
+  つまり拡大係数行列とする.
+  このとき, $\rank(A)\leq \rank(C)\leq m$である.
+
+  $\rank(A)=m$であるとする.
+  このとき,
+  $\rank(A)=\rank(C)=m$となるので,  
+  \Cref{thm:solution:syslineq}から,
+  どんな$\bbb$に対しても, 
+  方程式$A\xx=\bbb$は解をもつ.
+
+  $\rank(A)=r<m$であるなら,
+  $A$に行基本変形をすることで階数$r$の被約階段行列$S$
+  が得られる.
+  \Cref{thm:fund:inverse}を認めると,
+  $PA=S$となる
+  正則行列$P$がとれる.
+  $\ee_{r+1}$を$r+1$行目が$1$で他は$0$ある$(m,1)$行列とし,
+  $\bbb=P^{-1}\ee_{r+1}$とする.
+  このとき,
+  $A\xx=\bbb$という連立方程式を考える.
+  この連立方程式の拡大係数行列は$A$と$\bbb$をならべた行列である.
+  この行列に行基本変形をすることで得られる被約階段行列は
+  $PA=S$と
+  $P\bbb=\ee_{r+1}$を並べた行列であり,
+  階数は$r+1$になる.  したがって,
+  \Cref{thm:solution:syslineq}から,
+  この場合は解を持たない.
+
+  まとめると, 以下の様になる:
+$\rank(A)=m$なら,
+  どんな$\bbb$に対しても, 
+  方程式$A\xx=\bbb$は解をもつ.
+$\rank(A)<m$なら,
+  方程式$A\xx=\bbb$が解をもたないような
+  $\bbb$が存在する.
+  
+  
+\end{remark}
+
+\section{係数行列が正則行列であるときの解の公式}
+\label{thm:cramer}
+係数行列$A$が正則であるとき,
+未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
+$\xx=A^{-1}\bbb$のみであった.
+$A$が$2$次正則行列であるときに,
+もう少し詳しくしらべる.
+\begin{align*}
+  A=\begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
+\end{align*}
+とすると, $A$が正則であることと,
+\begin{align*}
+  a_1b_2-b_1a_2\neq 0
+\end{align*}
+は同値であった.
+さらに, $A$の逆行列は,
+\begin{align*}
+  A^{-1}=\frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
+\end{align*}
+と具体的に書き下すことができる.
+したがって,
+\begin{align*}
+  \begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+    =\begin{pmatrix}p_1\\p_2\end{pmatrix}
+\end{align*}
+の解は
+\begin{align*}
+  \begin{pmatrix}x\\y\end{pmatrix}
+    &=
+    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
+      \begin{pmatrix}p_1\\p_2\end{pmatrix}
+        \\
+    &=
+    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2p_1-a_1p_2\\-b_1p_1+a_1p_2\end{pmatrix}
+\end{align*}
+とかける.
+\begin{align*}
+  \det(\begin{pmatrix}a&b\\c&d\end{pmatrix})=ad-bc
+\end{align*}
+であるので,
+\begin{align*}
+  A^{(1)}&=\begin{pmatrix}p_1&b_1\\p_2&b_2\end{pmatrix}\\
+  A^{(2)}&=\begin{pmatrix}a_1&p_1\\a_2&p_2\end{pmatrix}
+\end{align*}
+とおくと,
+\begin{align*}
+  \det(A^{(1)})&=p_1b_2-b_1p_2\\
+  \det(A^{(2)})&=a_1p_2-a_2p_1\\
+  \det(A)&=a_1b_2-b_1a_2
+\end{align*}
+となるので, 方程式の解を
+\begin{align*}
+  \begin{pmatrix}x\\y\end{pmatrix}
+    &=
+  \begin{pmatrix}\frac{\det(A^{(1)})}{\det(A)}\\\frac{\det(A^{(2)})}{\det(A)}\end{pmatrix}.
+\end{align*}
+と書くこともできる.
+
+もっと一般に,
+$n$次正則行列が係数行列である場合の方程式の解の公式が
+知られている.
+例えば, $3$次正則行列の場合には,
+次のように計算する.
+\begin{align*}
+  A&=
+  \begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}\\
+    \bbb&=
+  \begin{pmatrix}p_1\\p_2\\p_3\end{pmatrix}
+\end{align*}
+の場合について考える.
+ただし$A$は正則であることを仮定する.
+このとき, $\det(A)\neq 0$である.
+\begin{align*}
+  A^{(1)}&=
+  \begin{pmatrix}p_1&b_1&c_1\\p_2&b_2&c_2\\p_3&b_3&c_3\end{pmatrix}\\
+  A^{(2)}&=
+  \begin{pmatrix}a_1&p_1&c_1\\a_2&p_2&c_2\\a_3&p_3&c_3\end{pmatrix}\\
+  A^{(3)}&=
+  \begin{pmatrix}a_1&b_1&p_1\\a_2&b_2&p_2\\a_3&b_3&p_3\end{pmatrix}
+\end{align*}
+とする. つまり$A^{(k)}$は$A$の$k$列目を$\bbb$に置き換えた行列である.
+\begin{align*}
+  t_1&=\frac{\det(A^{(1)})}{\det(A)}\\
+  t_2&=\frac{\det(A^{(2)})}{\det(A)}\\
+  t_3&=\frac{\det(A^{(3)})}{\det(A)}
+\end{align*}
+とおくと, 未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
+\begin{align*}
+  \xx=
+  \begin{pmatrix}
+    t_1\\t_2\\t_3
+  \end{pmatrix}
+\end{align*}
+と書ける.
+
+この解の公式は
+\addindex{クラメルの公式}%
+\index{Cramer's rule}
+クラメルの公式(Cramer's rule)と呼ばれる.
+閉じた公式を与えるという意味では意味があるが,
+係数行列が正則でないと使えないことや,
+そもそも行列式の計算が大変であることから,
+具体的な問題にはこの公式よりも,
+行基本変形を用いて解くほうが有効な場合が多い.
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:3:1}
+  \label{quiz:3:1}
+  \Seealsoquiz{quiz:3:2,quiz:3:3,quiz:3:3x}
+
+  以下の行列$A$に対し,
+   $A$から行基本変形で得られる被約階段行列を求めよ.
+  また, $A$の階数を求めよ.
+  \begin{enumerate}
+    \item
+      $A=\begin{pmatrix}1&3&1\\2&6&5\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}-5&1&2\\5&-1&-2\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}-5&1&2\\5&-1&2\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}2&1&4\\5&6&8\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:2}
+  \label{quiz:3:2}
+  \seealsoQuiz{quiz:2:4,quiz:3:1}
+  \Seealsoquiz{quiz:3:4x}
+  次の連立一次方程式
+  \begin{align*}
+    \begin{cases}
+      2x+y=4\\
+      5x+6y=8
+      \end{cases}
+  \end{align*}
+  について考える.
+  \begin{enumerate}
+    \item この連立一次方程式の係数行列を答えよ.
+    \item この連立一次方程式の拡大係数行列を答えよ.
+    \item この連立一次方程式を解け.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:3}
+  \label{quiz:3:3}
+  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
+  \Seealsoquiz{quiz:3:4}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\-2\end{pmatrix}
+  \end{align*}
+  の実数解を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:3x}
+  \label{quiz:3:3x}
+  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
+  \Seealsoquiz{quiz:3:4}
+
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\2\end{pmatrix}
+  \end{align*}
+  の実数解を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:4}
+  \seealsoQuiz{quiz:3:3,quiz:3:3x}
+  \Seealsoquiz{quiz:5:2}
+  \label{quiz:3:4}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:4x}
+  \seealsoQuiz{quiz:3:2}
+  \Seealsoquiz{quiz:5:2}
+  \label{quiz:3:4x}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}2&1\\5&6\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:5}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:6}
+  \seealsoQuiz{quiz:2:2}
+  \Seealsoquiz{quiz:3:7}
+  \label{quiz:3:6}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-4-a&1\\5&-a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \zzero
+  \end{align*}
+  が$\zzero$
+  以外の
+  解を持つための$a$に対する条件を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:7}
+  \label{quiz:3:7}
+  \seealsoQuiz{quiz:3:6}
+  \Seealsoquiz{quiz:6:1}
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      a\begin{pmatrix}x\\y\end{pmatrix}\\
+      \begin{pmatrix}x\\y\end{pmatrix}\neq \zzero
+  \end{align*}
+  を満たす$x,y$が存在するための
+  $a$に対する条件を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:8}
+  \label{quiz:3:8}
+  \Seealsoquiz{quiz:6:3}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:9}
+  \label{quiz:3:9}
+  \Seealsoquiz{quiz:6:4}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:10}
+  \label{quiz:3:10}
+  \Seealsoquiz{quiz:6:4}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+
+
+  
+\chapter{平面の線形変換}
+\label{chap:lintrans}
+この章では,
+ベクトルについて考える.
+2項実ベクトルの内積やノルムについて説明した後,
+と平面上の線形変換について説明する.
+
+\cite{978-4-7806-0772-7}であれば,
+関連する内容について,
+難しいことも含めて, 詳しく第13--17章に書かれている.
+\cite{978-4-7806-0164-0}であれば,
+1.1, 1.2が関連する.
+また, 第4章, 第5章に, 
+ 関連する内容について, 難しいことも含めて, 詳しく書かれている.
+
+\section{ベクトル}
+ここでは, ベクトルに関連する用語を紹介する.
+
+$a$, $b$を実数とする.
+\begin{align*}
+  \begin{pmatrix}
+    a\\b
+    \end{pmatrix}
+\end{align*}
+を
+\defit{2項実ベクトル}
+\Defit{real numerical vector in $\RR^2$}
+\index{数ベクトル!2項---}
+\addindex{ベクトル!2項---}%
+\addindex{数ベクトル!---}%
+\addindex{数ベクトル!2項実---}%
+\addindex{ベクトル!2項実---}%
+\addindex{実ベクトル!2項---}%
+\addindex{数ベクトル!実---}%
+\addindex{ベクトル!実---}%
+\addindex{実ベクトル!---}%
+\addindex{vector!real numerical ---}%
+\addindex{numerical vector!real ---}%
+\addindex{real numerical vector!---}%
+と呼ぶ.
+つまり, 2項実ベクトルとは,
+$(2,1)$-行列のことである.
+2項実ベクトルを全て集めてきた集合を
+$\RR^2$と書く.
+$\RR^2$を
+\defit{2次元実ベクトル空間}
+\Defit{2-dimensional real numerical vector space}
+\addindex{空間!2次元実ベクトル---}%
+\addindex{ベクトル空間!2次元実---}%
+\addindex{ベクトル!2次元実---空間}%
+\addindex{実ベクトル!2次元---空間}%
+\addindex{次元!2---実ベクトル空間}%
+\addindex{2次元!---実ベクトル空間}%
+\addindex{数ベクトル空間!2次元実---}%
+\addindex{数ベクトル!2次元実---空間}%
+\addindex{空間!実ベクトル---}%
+\addindex{ベクトル空間!実---}%
+\addindex{ベクトル!実---空間}%
+\addindex{実ベクトル!---空間}%
+\addindex{数ベクトル空間!実---}%
+\addindex{数ベクトル!実---空間}%
+\addindex{数ベクトル空間!---}%
+\addindex{数ベクトル!---空間}%
+\addindex{space!2-dimensional real numerical vector ---}%
+\addindex{vector space!2-dimensional real numerical ---}%
+\addindex{numerical vector space!2-dimensional real ---}%
+\addindex{real numerical vector space!2-dimensional ---}%
+\addindex{vector!2-dimensional real numerical --- space}%
+\addindex{numerical vector!2-dimensional real --- space}%
+\addindex{real numerical vector!2-dimensional --- space}%
+\addindex{space!real numerical vector ---}%
+\addindex{vector space!real numerical ---}%
+\addindex{numerical vector space!real ---}%
+\addindex{real numerical vector space!---}%
+\addindex{vector!real numerical --- space}%
+\addindex{numerical vector!real --- space}%
+\addindex{real numerical vector!--- space}%
+\addindex{dimension!2-{}---alreal numerical vector space}%
+と呼ぶ.
+\begin{align*}
+  \zzero=
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+\end{align*}
+とおく. $\zzero$を
+\defit{$\RR^2$の零ベクトル}
+\Defit{zero vector of $\RR^2$}
+\addindex{零ベクトル!---}%
+\addindex{零!---ベクトル}%
+\addindex{ベクトル!---零}%
+\addindex{zero!--- vector}%
+\addindex{vector!zero ---}%
+\addindex{$\zzero$}%
+と呼ぶ.
+\begin{align*}
+  \ee_1&=
+  \begin{pmatrix}
+    1\\0
+  \end{pmatrix}
+&  \ee_2&=
+  \begin{pmatrix}
+    0\\1
+  \end{pmatrix}
+\end{align*}
+とおく.  $\ee_1,\ee_2$を
+\defit{基本ベクトル}
+\Defit{fundamental unit vector}
+\addindex{ベクトル!基本---}%
+\addindex{基本!---ベクトル}%
+\addindex{vector!fundamental unit ---}%
+\addindex{unit vector!fundamental ---}%
+\addindex{fundamental!--- unit vector}%
+\addindex{unit!fundamental --- vector}%
+\addindex{$\ee_i$}%
+と呼ぶ.
+
+\begin{remark}
+  一般に$(n,1)$-行列のことを,
+  \defit{$n$項数ベクトル}
+  \Defit{numerical vector}
+  \addindex{ベクトル!$n$項数---}%
+  \addindex{数ベクトル!$n$項---}%
+  \addindex{ベクトル!すう---@数---}%
+  \addindex{数ベクトル!---}%
+  \addindex{vector!numerical ---}%
+  \addindex{numerical!--- vector}%
+  と呼ぶ.
+  数として実数のみを考えているときには,
+  \defit{実ベクトル}
+  \Defit{real numerical vector}
+  \addindex{数ベクトル!---}%
+  \addindex{数ベクトル!実---}%
+  \addindex{ベクトル!実---}%
+  \addindex{実ベクトル!---}%
+  \addindex{vector!real numerical ---}%
+  \addindex{numerical vector!real ---}%
+  \addindex{real numerical vector!---}%
+  と呼ぶ.
+  数として複素数を考えているときには,
+  \defit{複素ベクトル}
+  \Defit{complex numerical vector}
+  \addindex{数ベクトル!---}%
+  \addindex{数ベクトル!複素---}%
+  \addindex{ベクトル!複素---}%
+  \addindex{複素ベクトル!---}%
+  \addindex{vector!complex numerical ---}%
+  \addindex{numerical vector!complex ---}%
+  \addindex{complex numerical vector!---}%
+  と呼ぶ.
+  この章では, $2$項実ベクトルについて考える.
+\end{remark}
+
+
+$\RR^2$を平面だと思い, \Cref{fig:vectoraspoint}の様に,
+\begin{align*}
+  \begin{pmatrix}
+    a\\b
+  \end{pmatrix}
+\end{align*}
+を平面上の
+横軸の座標が$a$縦軸の座標が$b$である
+点だと思う.
+$\zzero$が原点である.
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(20,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(60,10){\makebox(0,0)[b]{$a$}}
+    \put(10,70){\makebox(0,0)[r]{$b$}}
+    \put(60,70){\makebox(0,0){$\bullet$}}
+    \put(62,68){\makebox(0,0)[tl]{\small$\begin{pmatrix}a\\b\end{pmatrix}$}}
+    \qbezier[30](14,70)(52,70)(90,70)
+    \qbezier[30](60,18)(60,54)(60,90)
+  \end{picture}
+  \caption{ベクトルの表す点}
+  \label{fig:vectoraspoint}
+\end{figure}
+また, 平面上の図形は$\RR^2$の部分集合として捉える.
+例えば, \Cref{fig:ptonline}のように,
+$\aaa$と$\bbb$を通る直線上の点は
+\begin{align*}
+  t\aaa + (1-t) \bbb &&(t\in \RR) 
+\end{align*}
+と表すことができるので,
+$\aaa$と$\bbb$を通る直線は
+それらを集めた
+\begin{align*}
+ \Set{ t\aaa + (1-t) \bbb |t\in \RR }
+\end{align*}
+という$\RR^2$の部分集合である.\footnote{直線を表すには, この方法以外にも, $\aaa$を通り方向ベクトルが$\vv$であるという指定もできるが, この場合は $\Set{\aaa+t\vv|t\in\RR}$となる}
+\label{def:line}
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(5,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(80,40){\makebox(0,0){$\bullet$}}
+    \put(30,65){\makebox(0,0){$\bullet$}}
+    \put(85,45){\makebox(0,0)[b]{\small$\aaa$}}
+    \put(30,70){\makebox(0,0)[b]{\small$\bbb$}}
+    \put(50,55){\makebox(0,0){$\times$}}
+    \put(8,50){\makebox(0,0)[tl]{\small$t\aaa+(1-t)\bbb$}}
+    \put(8,40){\makebox(0,0)[tl]{\small$=\bbb+t(\aaa-\bbb)$}}
+    \put(45,75){\makebox(0,0)[b]{\small$t$}}
+    \put(75,60){\makebox(0,0)[b]{\small$1-t$}}
+    \put(30,65){\line(2,-1){60}}
+    \put(30,65){\line(-2,1){30}}
+    \qbezier[30](30,65)(45,75)(50,55)
+    \qbezier[30](50,55)(75,60)(80,40)
+  \end{picture}
+  \caption{直線の上の点}\label{fig:ptonline}
+\end{figure}
+
+
+\begin{definition}
+  \label{def:linindep}
+  $\aaa^{(1)}, \aaa^{(2)},\ldots, \aaa^{(k)}$を$k$個の$2$項実ベクトルとする.
+  
+  次の条件を満たすとき,
+  $(\aaa^{(1)}, \aaa^{(2)},\ldots, \aaa^{(k)})$は
+  \defit{一次独立}
+  \Defit{linearly independent}
+  \addindex{独立!一次---}%
+  \addindex{一次!---独立}%
+  \addindex{independent!linearly ---}%
+  \addindex{linearly!--- independent}%
+  \addindex{linear!---ly independent}%
+  であるという:
+  \begin{itemize}
+  \item
+    $x_1,x_2,\ldots, x_k\in\RR$かつ
+    $x_1\aaa^{(1)}+x_2\aaa^{(2)}+\cdots+x_k\aaa^{(k)}=\zzero$
+    ならば, $x_1=x_2=\cdots=0$.
+  \end{itemize}
+
+  $(\aaa^{(1)}, \aaa^{(2)},\ldots, \aaa^{(k)})$
+  が一次独立でないとき,
+  $(\aaa^{(1)}, \aaa^{(2)},\ldots, \aaa^{(k)})$
+  は
+  \defit{一次従属}
+  \Defit{linearly dependent}
+  \addindex{従属!一次---}%
+  \addindex{一次!---従属}%
+  \addindex{dependent!linearly ---}%
+  \addindex{linearly!--- dependent}%
+  \addindex{linear!---ly dependent}%
+  であるという.
+\end{definition}
+
+
+特に, $k=2$のとき, つまり2つのベクトルの組を考えるときには,
+一次独立であることの定義や
+一次従属であることの定義は以下の様に言い換えることができる
+\begin{definition}
+  $\aaa$, $\bbb$を$2$項実ベクトルとする.
+  
+  次の条件を満たすとき,
+  $(\aaa,\bbb)$は
+  \defit{一次独立}
+  \Defit{linearly independent}
+  であるという:
+  \begin{itemize}
+  \item
+    $x,y\in\RR$かつ
+    $x\aaa+y\bbb=\zzero$
+    ならば, $x=y=0$.
+  \end{itemize}
+
+  $(\aaa,\bbb)$が一次独立でないとき,
+  $(\aaa,\bbb)$は
+  \defit{一次従属}
+  \Defit{linearly dependent}
+  であるという
+\end{definition}
+\begin{remark}
+  $(\aaa,\bbb)$が一次独立であるための条件は,
+  次のように言い換えることもできる:
+  \begin{itemize}
+  \item
+    $\aaa$と$\bbb$の線型結合が零ベクトルならばその係数はすべて$0$である.
+  \end{itemize}
+\end{remark}
+
+一次独立であるベクトルの組や一次独立でないベクトルの組をいくつ挙げる.
+\begin{example}
+  \label{ex:linindep:std}
+  $(\ee_1,\ee_2)$は一次独立である.
+  実際,
+  \begin{align*}
+    x\ee_1+y\ee_2=
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  であるので, $x\ee_1+y\ee_2=\zzero$とすると, $x=y=0$である.
+\end{example}
+
+\begin{example}
+  \label{ex:linindep:2}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は一次独立である.
+  そのことを確かめる.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      3x+y\\5x+2y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}
+=3\cdot 2-1\cdot 5=1\neq0
+  \end{align*}
+  であるので, この行列は正則で逆行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}^{-1}
+=    
+    \begin{pmatrix}
+      2&-1\\-5&3
+    \end{pmatrix}
+  \end{align*}
+  である. したがって,
+  $x\ee_1+y\ee_2=\zzero$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}^{-1}\zzero=\zzero
+  \end{align*}
+  となる. 
+  したがって, 
+  $(\aaa,\bbb)$ は一次独立である.
+\end{example}
+
+
+\begin{example}
+  \label{ex:linindep:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は一次独立である.
+  そのことを確かめる.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      x-y\\x+y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+=1\cdot 1-(-1)\cdot 1=2\neq0
+  \end{align*}
+  であり正則であるので,
+  $x\ee_1+y\ee_2=\zzero$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}\zzero=\zzero
+  \end{align*}
+  となる. 
+  したがって, 
+  $(\aaa,\bbb)$ は一次独立である.
+\end{example}
+
+\begin{example}
+  \label{ex:nonlinindep}
+  \begin{align*}
+  \aaa&=\begin{pmatrix}1\\2\end{pmatrix}\\
+  \bbb&=\begin{pmatrix}2\\4\end{pmatrix}
+  \end{align*}
+  とすると,
+  $(\aaa,\bbb)$は一次独立ではない.
+  たとえば, $x=2$, $y=-1$とすると,
+  \begin{align*}
+    x\aaa+y\bbb=
+    2\begin{pmatrix}1\\2\end{pmatrix}-\begin{pmatrix}2\\4\end{pmatrix}=
+    \zzero
+  \end{align*}
+  となる.
+  したがって,
+  $(\aaa,\bbb)$が一次独立であるための条件
+  \begin{align*}
+    x,y\in\RR,\quad
+    x\aaa+y\bbb=\zzero
+    \implies x=y=0
+  \end{align*}
+  の反例に,  $x=2$, $y=-1$がなっている.
+\end{example}
+
+
+
+
+\begin{prop}
+  \provelater{thm:linindep:coef}
+  \label{thm:linindep:coef}
+  $\aaa$, $\bbb$を$2$項実ベクトルとし,
+  $(\aaa,\bbb)$は一次独立であるとする.
+  このとき, 次が成り立つ:
+  \begin{align*}
+    c\aaa + d\bbb = c'\aaa+d'\bbb\implies c=c', d=d'.
+  \end{align*}
+\end{prop}
+\Cref{thm:linindep:coef}の結論である
+\begin{align*}
+    c\aaa + d\bbb = c'\aaa+d'\bbb\implies c=c', d=d'
+\end{align*}
+の対偶は
+\begin{align*}
+  \begin{pmatrix}c\\d\end{pmatrix}
+    \neq
+  \begin{pmatrix}c'\\d'\end{pmatrix}
+  \implies 
+    c\aaa + d\bbb \neq c'\aaa+d'\bbb
+\end{align*}
+であるので次も成り立つ.
+\begin{cor}
+  \label{thm:linindep:diffcoef}
+  $\aaa$, $\bbb$を$2$項実ベクトルとし,
+  $(\aaa,\bbb)$は一次独立であるとする.
+    このとき, 次が成り立つ:
+\begin{align*}
+  \begin{pmatrix}c\\d\end{pmatrix}
+    \neq
+  \begin{pmatrix}c'\\d'\end{pmatrix}
+  \implies 
+    c\aaa + d\bbb \neq c'\aaa+d'\bbb.
+\end{align*}
+\end{cor}
+\begin{remark}
+  \Cref{thm:linindep:diffcoef}があるので,
+  $\aaa$, $\bbb$を$2$項実ベクトルとし,
+  $(\aaa,\bbb)$は一次独立であるとすると,
+  \begin{align*}
+    c\neq c', d\neq d' \implies c\aaa + d\bbb\neq c'\aaa+d'\bbb
+  \end{align*}
+  が成り立つ.
+  つまり, $(\aaa,\bbb)$が一次独立であるなら,
+  係数の異なる線形結合は異なるベクトルになる.
+  
+  もし$(\aaa,\bbb)$が一次独立でないならこのようなことは成り立たない.
+  つまり, 2つの線型結合が係数が異なるにも関わらず等しくなることがある.
+  例えば, \cref{ex:nonlinindep}でみたように,
+  \begin{align*}
+  \aaa&=\begin{pmatrix}1\\2\end{pmatrix}\\
+  \bbb&=\begin{pmatrix}2\\4\end{pmatrix}
+  \end{align*}
+  とすると,
+  $(\aaa,\bbb)$は一次独立ではない.
+  例えば,
+  \begin{align*}
+  2\aaa+3\bbb&=\begin{pmatrix}8\\16\end{pmatrix}\\
+  4\aaa+2\bbb&=\begin{pmatrix}8\\16\end{pmatrix}
+  \end{align*}
+  となり,
+  $2\aaa+3\bbb$と$4\aaa+2\bbb$という2つの線型結合は,
+  係数が異なるが
+  $2\aaa+3\bbb=4\aaa+2\bbb$である.
+\end{remark}
+
+また, 一次独立かどうかを行列を使って調べることもできる.
+\begin{theorem}
+  \provelater{linindep:det}
+  \label{thm:linindep:det}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}\\
+    A&=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}
+  \end{align*}
+  とする.  このとき, 次は同値である:
+  \begin{enumerate}
+  \item \label{thm:linindep:det:item:linindep}
+    $(\aaa,\bbb)$が一次独立である.
+  \item\label{thm:linindep:det:item:det}
+    $\det(A)\neq 0$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+  ここでは, $(\aaa,\bbb)$という2項ベクトルの組に対して,
+  この組が一次独立であるということを定義した.
+  より一般に, $\aaa_1,\ldots, \aaa_k$という$k$個の$m$項ベクトルに対して,
+  一次独立であるということを定義することができる.
+  具体的には, 次のように定義する.
+  次の条件を満たすとき,
+  $k$個の$m$項ベクトルの組
+  $(\aaa_1,\ldots, \aaa_k)$
+  は
+  \defit{一次独立}
+  \Defit{linearly independent}
+  であるという:
+  \begin{itemize}
+  \item
+    数$x_i$は
+    $x_1\aaa_1+\cdots+x_k\aaa_k=\zzero$
+    を満たす
+    ならば$x_1=\cdots=x_k=0$.
+  \end{itemize}
+  この条件は以下のように考えることができる.
+  \begin{align*}
+    \aaa_1=\begin{pmatrix}a_{1,1}\\a_{2,1}\\\vdots\\a_{m,1}\end{pmatrix},
+    \aaa_2=\begin{pmatrix}a_{1,2}\\a_{2,2}\\\vdots\\a_{m,2}\end{pmatrix},
+    \ldots,
+    \aaa_k=\begin{pmatrix}a_{1,k}\\a_{2,k}\\\vdots\\a_{m,k}\end{pmatrix},
+  \end{align*}
+  とするとき,
+  \begin{align*}
+    A
+    =\begin{pmatrix}a_{1,1}&a_{1,2}&\cdots+&a_{1,k}\\a_{2,1}&a_{2,2}&\cdots&x_ka_{2,k}\\\vdots&\vdots&&\vdots\\a_{m,1}&a_{m,2}&\cdots&a_{m,k}\end{pmatrix}
+  \end{align*}
+  とおけば,
+  \begin{align*}
+    x_1\aaa_1+x_2\aaa_2+\cdots+x_n\aaa_k
+    =\begin{pmatrix}x_1a_{1,1}+x_2a_{1,2}+\cdots+x_ka_{1,k}\\x_2a_{2,1}+x_2a_{2,2}+\cdots+x_ka_{2,k}\\\vdots\\x_ma_{m,1}+x_2a_{m,2}+\cdots+x_ka_{m,k}\end{pmatrix}
+    =A\xx
+  \end{align*}
+  となるので,
+  $(\aaa_1,\ldots, \aaa_k)$
+  が一次独立であるということの条件は, 次の様に言い換えることができる:
+  \begin{itemize}
+  \item $A\xx=\zzero$ならば$\xx=\zzero$である.
+  \end{itemize}
+  $A\xx=\zzero$という方程式は$k$個の未知数に関する方程式であるから,
+  \Cref{thm:solution:homoge}から,
+  次が同値であることがわかる:
+  \begin{enumerate}
+  \item
+    $(\aaa_1,\ldots, \aaa_k)$
+    が一次独立である.
+  \item
+    $\rank(A)=k$.
+  \end{enumerate}
+\end{remark}
+
+\begin{definition}
+  $\aaa^{(1)},\aaa^{(2)},\ldots,\aaa^{(k)}$を
+  $k$個の
+  $2$項実ベクトルとする.
+  次の条件を満たすとき,
+  $(\aaa^{(1)},\aaa^{(2)},\ldots,\aaa^{(k)})$
+  は
+  \defit{$\RR^2$の生成系}
+  \Defit{system of generators for $\RR^2$}
+  \addindex{生成系!---}%
+  \addindex{生成系!$\RR^2$の---}%
+  \addindex{system!--- of generators for $\RR^2$}%
+  \addindex{system of generators!--- for $\RR^2$}%
+  \addindex{system!--- of generators}%
+  \addindex{system of generators!---}%
+  であるという:
+  \begin{itemize}
+  \item
+    $\vv\in\RR^2$ならば,
+    $\vv=x_1\aaa^{(1)}+x_2\aaa^{(2)}+\cdots+x_k\aaa^{(k)}$をみたす$x_1,x_2,\ldots,x_k\in\RR$が存在する.
+  \end{itemize}
+\end{definition}
+
+特に, $k=2$の場合, つまり, 2つの実ベクトルの組を考えるときには,
+生成系であることの定義は以下のように言い換えることができる.
+\begin{definition}
+  $\aaa$, $\bbb$を$2$項実ベクトルとする.
+  次の条件を満たすとき,
+  $(\aaa,\bbb)$は
+  \defit{$\RR^2$の生成系}
+  \Defit{system of generators for $\RR^2$}
+  であるという:
+  \begin{itemize}
+  \item
+    $\vv\in\RR^2$ならば,
+    $\vv=x\aaa+y\bbb$をみたす$x,y\in\RR$が存在する.
+  \end{itemize}
+\end{definition}
+\begin{remark}
+  $(\aaa,\bbb)$が$R^2$の生成系であるための条件は,
+  次のように言い換えることもできる:
+  \begin{itemize}
+  \item
+    どの2項実ベクトルも$\aaa$と$\bbb$の線型結合として表すことができる.
+  \end{itemize}
+\end{remark}
+\begin{example}
+  \label{ex:gens:std}
+  $(\ee_1,\ee_2)$ は$\RR^2$の生成系である.
+  実際,
+  \begin{align*}
+    \xx=
+   \begin{pmatrix}
+      x\\y
+    \end{pmatrix}\in\RR^2
+  \end{align*}
+  とすると,  $\xx=x\ee_1+y\ee_2$と書ける.
+\end{example}
+
+\begin{example}
+  \label{ex:gens:2}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は$\RR^2$の生成系である.
+  この$(\aaa,\bbb)$は\cref{ex:linindep:2}のものと同じである.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      3x+y\\5x+2y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  であり,
+  \begin{align*}
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}
+  \end{align*}
+  は正則で逆行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}^{-1}
+=    
+    \begin{pmatrix}
+      2&-1\\-5&3
+    \end{pmatrix}
+  \end{align*}
+  であった.
+  \begin{align*}
+    \xx=
+   \begin{pmatrix}
+      x\\y
+    \end{pmatrix}\in\RR^2
+  \end{align*}
+  とする.
+  このとき, $a,b$を
+  \begin{align*}
+    \begin{pmatrix}
+      \alpha\\\beta
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      3&1\\5&2
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      2&-1\\-5&3
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      2x-y\\-5x+3y
+    \end{pmatrix}
+  \end{align*}
+  で定義すると,
+  $\xx=\alpha\aaa+\beta\bbb$と書ける.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の生成系である.
+\end{example}
+
+
+\begin{example}
+  \label{ex:gens:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は$\RR^2$の生成系である.
+  この$(\aaa,\bbb)$は\cref{ex:linindep:3}のものと同じである.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      x-y\\x+y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  であり,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+  \end{align*}
+  は正則で逆行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}
+=    \frac{1}{2}
+    \begin{pmatrix}
+      1&1\\-1&1
+    \end{pmatrix}
+  \end{align*}
+  であった.
+  \begin{align*}
+    \xx=
+   \begin{pmatrix}
+      x\\y
+    \end{pmatrix}\in\RR^2
+  \end{align*}
+  とする.
+  このとき, $a,b$を
+  \begin{align*}
+    \begin{pmatrix}
+      \alpha\\\beta
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+= \frac{1}{2}
+    \begin{pmatrix}
+      1&1\\-1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=\frac{1}{2}
+    \begin{pmatrix}
+      x+y\\-x+y
+    \end{pmatrix}
+  \end{align*}
+  で定義すると,
+  $\xx=\alpha\aaa+\beta\bbb$と書ける.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の生成系である.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}1\\0\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}2\\0\end{pmatrix}
+  \end{align*}
+  とする.  このとき$(\aaa,\bbb)$は$\RR^2$の生成系ではない.
+  実際,
+  \begin{align*}
+    x\aaa+y\bbb&=\begin{pmatrix}x+2y\\0\end{pmatrix}
+  \end{align*}
+  であり, $\aaa$と$\bbb$の線形結合の第2成分は常に0である.
+  したがって, 例えば,
+  \begin{align*}
+    \vv=\begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  とすると$\vv\in\RR^2$であるが,
+  $\aaa$と$\bbb$の線形結合としては表せない.
+\end{example}
+
+\begin{remark}
+  ここでは, $(\aaa,\bbb)$という2個の2項実ベクトルの組に対して,
+  この組が$\RR^2$の生成系であるということを定義した.
+  $\RR^m$を$m$項実ベクトルをすべて集めてできる集合とする.
+  $\aaa_1,\ldots, \aaa_k$という$k$個の$m$項ベクトルの組に対して,
+  この組が$\RR^m$の生成系であるということを定義することができる.
+  次の条件を満たすとき,
+  $(\aaa_1,\ldots, \aaa_k)$
+  は
+  \defit{$\RR^m$の生成系}
+  \Defit{system of generators for $\RR^m$}
+  \addindex{生成系!---}%
+  \addindex{生成系!$\RR^m$の---}%
+  \addindex{system!--- of generators for $\RR^m$}%
+  \addindex{system of generators!--- for $\RR^m$}%
+  \addindex{system!--- of generators}%
+  \addindex{system of generators!---}%
+  であるという:
+  \begin{itemize}
+    \item
+      $\vv\in\RR^m$
+      ならば, 
+      $x_1\aaa_1+\cdots+x_k\aaa_k=\vv$
+      を満たす$x_i\in\RR$が存在する.
+  \end{itemize}
+  この条件は以下のように考えることができる.
+  \begin{align*}
+    \aaa_1=\begin{pmatrix}a_{1,1}\\a_{2,1}\\\vdots\\a_{m,1}\end{pmatrix},
+    \aaa_2=\begin{pmatrix}a_{1,2}\\a_{2,2}\\\vdots\\a_{m,2}\end{pmatrix},
+    \ldots,
+    \aaa_k=\begin{pmatrix}a_{1,k}\\a_{2,k}\\\vdots\\a_{m,k}\end{pmatrix},
+  \end{align*}
+  とするとき,
+  \begin{align*}
+    A
+    =\begin{pmatrix}a_{1,1}&a_{1,2}&\cdots+&a_{1,k}\\a_{2,1}&a_{2,2}&\cdots&x_ka_{2,k}\\\vdots&\vdots&&\vdots\\a_{m,1}&a_{m,2}&\cdots&a_{m,k}\end{pmatrix}
+  \end{align*}
+  とおけば,
+  \begin{align*}
+    x_1\aaa_1+x_2\aaa_2+\cdots+x_k\aaa_k
+    =\begin{pmatrix}x_1a_{1,1}+x_2a_{1,2}+\cdots+x_ka_{1,k}\\x_2a_{2,1}+x_2a_{2,2}+\cdots+x_ka_{2,k}\\\vdots\\x_ma_{m,1}+x_2a_{m,2}+\cdots+x_ka_{m,k}\end{pmatrix}
+    =A\xx
+  \end{align*}
+  となるので,
+  $(\aaa_1,\ldots, \aaa_k)$
+  が$\RR^m$の生成系であるということの条件は, 次の様に言い換えることができる:
+  \begin{itemize}
+  \item $\bbb\in\RR^m$ならば$A\xx=\bbb$を満たす$\xx\in \RR^m$が存在する.
+  \end{itemize}
+  つまり,
+  どんな$\bbb\in\RR^m$に対しても
+  方程式$A\xx=\bbb$が実数解を持つなら, 
+    $(\aaa_1,\ldots, \aaa_k)$
+  は$\RR^m$の生成系である.
+  方程式$A\xx=\bbb$が実数解を持たないような
+  $\bbb\in\RR^m$が存在するなら,
+    $(\aaa_1,\ldots, \aaa_k)$
+  は$\RR^m$の生成系ではない.
+  
+  $A\xx=\bbb$という方程式は$k$個の未知数に関する方程式であるから,
+  \Cref{thm:solution:syslineq}から,
+  $\rank(A)=m$ならば, どんな$\bbb\in\RR^m$に対しても,
+  $A\xx=\bbb$が解を持つことがわかる.
+  つまり, $\RR^m$の生成系である.
+  一方,
+  $\rank(A)<m$ならば, 
+  \cref{rem:syslineq:rank:gen}から,
+  $A\xx=\bbb$が解を持たないような$\bbb\in\RR^m$が存在する.
+  つまり, $\RR^m$の生成系ではない.
+\end{remark}
+
+\begin{definition}
+  \label{def:basis}
+  $\aaa$, $\bbb$を$2$項実ベクトルとする.
+  次の条件を満たすとき,
+  $(\aaa,\bbb)$は
+  \defit{$\RR^2$の基底}
+  \Defit{basis for $\RR^2$}
+  \addindex{基底!$\RR^2$の---}%
+  \addindex{basis!--- for $\RR^2$}%
+  \addindex{基底!---}%
+  \addindex{basis!---}%
+  であるという:
+  \begin{enumerate}
+  \item
+    $(\aaa,\bbb)$は一次独立である.
+  \item
+    $(\aaa,\bbb)$は$R^2$の生成系である.
+  \end{enumerate}
+\end{definition}
+
+
+\begin{example}
+  \label{ex:stdbasis}
+  \Cref{ex:linindep:std,ex:gens:std}から,
+  $(\ee_1,\ee_2)$は一次独立であり$\RR^2$の生成系でもあった.
+  したがって,
+  $(\ee_1,\ee_2)$は$\RR^2$の基底である.
+  この基底を
+  \defit{$\RR^2$の標準基底}
+  \Defit{standard basis for $\RR^2$}
+  \addindex{基底!$\RR^2$の標準---}%
+  \addindex{標準基底!$\RR^2$の---}%
+  \addindex{標準!$\RR^2$の---基底}%
+  \addindex{基底!標準---}%
+  \addindex{標準基底!---}%
+  \addindex{標準!---基底}%
+  \addindex{basis!standard --- for $\RR^2$}%
+  \addindex{standard basis!--- for $\RR^2$}%
+  \addindex{standard!--- basis for $\RR^2$}%
+  \addindex{basis!standard ---}%
+  \addindex{standard basis!---}%
+  \addindex{standard!--- basis}%
+  と呼ぶことがある.
+\end{example}
+
+
+\begin{example}
+  \label{ex:basis:2}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおくと
+  \Cref{ex:linindep:2,ex:gens:2}から,
+  $(\aaa,\bbb)$は一次独立であり$\RR^2$の生成系でもあった.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の基底である.
+\end{example}
+
+\begin{example}
+  \label{ex:basis:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  \Cref{ex:linindep:3,ex:gens:3}から,
+  $(\aaa,\bbb)$は一次独立であり$\RR^2$の生成系でもあった.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の基底である.
+\end{example}
+
+
+
+
+
+\section{内積とノルム}
+ここでは, $2$項実ベクトルの内積とノルムについて紹介する.
+
+$\aaa$, $\bbb$を2項実ベクトルとし,
+\begin{definition}
+  \label{def:innnerprod}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}    
+  \end{align*}
+  とあらわせるとする.
+  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb}&=ab+a'b'
+  \end{align*}
+  とおき, これを
+  \defit{$\aaa$と$\bbb$の内積}
+  \Defit{inner product of $\aaa$ and $\bbb$}
+  \addindex{積!べくとるのない@ベクトルの内---}%
+  \addindex{内積!ベクトルの---}%
+  \addindex{ベクトルの!---内積}%
+  \addindex{ベクトル!---の内積}%
+  \addindex{product!inner --- of vectors}%
+  \addindex{inner product!--- of vectors}%
+  \addindex{inner!--- product of vectors}%
+  \addindex{of vectors!inner product ---}%
+  \addindex{$\langle\aaa,\bbb\rangle$}%
+  と呼ぶ.
+\end{definition}
+\begin{remark}
+  $\Braket{\aaa,\bbb}$は,
+  $\transposed{\aaa}\bbb$の$(1,1)$-成分である.
+\end{remark}
+
+\begin{definition}
+  \label{def:norm}
+  $\aaa$を2項実ベクトルとする.
+  このとき,
+  \begin{align*}
+   \|\aaa\| =\sqrt{\Braket{\aaa,\aaa}}
+  \end{align*}
+  とおき, これを
+  \defit{$\aaa$のノルム}
+  \Defit{norm of $\aaa$}
+  \addindex{ノルム!ベクトルの---}%
+  \addindex{ベクトルの!---ノルム}%
+  \addindex{ベクトル!---のノルム}%
+  \addindex{norm!---of a vector}%
+  \addindex{of vector!norm ---}%
+  呼ぶ.
+\end{definition}
+\begin{remark}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  に対し,
+  \begin{align*}
+    \|\aaa\| &=\sqrt{\Braket{\aaa,\aaa}}\\
+    &=\sqrt{a^2+b^2}
+  \end{align*}
+  である.
+  $\aaa$を平面上の点と思うと,
+  $\|\aaa\|$は原点$\zzero$から$\aaa$までの距離に相当する.
+\end{remark}
+
+
+\begin{prop}
+  \provelater**{thm:innerprod:is:innerprod}
+  \label{thm:innerprod:is:innerprod}
+  $r$を実数とする, $\aaa,\bbb,\ccc$を二項実ベクトルとする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{positive}
+    $\Braket{\aaa,\aaa}\geq 0$.
+  \item\provelater*{nondeg}
+    $\Braket{\aaa,\aaa}=0\iff \aaa=\zzero$.
+  \item\provelater*{symmetric}
+    \label{item:inner:c}
+    $\Braket{\aaa,\bbb}=\Braket{\bbb,\aaa}$.
+  \item\provelater*{additive}
+    \label{item:inner:a}
+    $\Braket{\aaa+\bbb,\ccc}=\Braket{\aaa,\ccc}+\Braket{\bbb,\ccc}$.
+  \item\provelater*{mult}
+    \label{item:inner:m}
+    $\Braket{r\aaa,\bbb}=r\Braket{\aaa,\bbb}$.
+  \end{enumerate}
+\end{prop}
+\begin{remark}
+  \Cref{item:inner:c,item:inner:a}から,
+    $\Braket{\ccc,\aaa+\bbb}=\Braket{\ccc,\aaa}+\Braket{\ccc,\bbb}$
+    が得られる.
+
+    \Cref{item:inner:c,item:inner:m}から,
+    $\Braket{\aaa,r\bbb}=r\Braket{\aaa,\bbb}$
+    が得られる.
+\end{remark}
+\begin{prop}
+  \provelater**{norm:is:norm}
+  $r$を実数とする, $\aaa,\bbb$を二項実ベクトルとする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{positive}
+    $\|\aaa\|\geq 0$.
+  \item\provelater*{nondeg}
+    $\|\aaa\|=0\iff \aaa=\zzero$.
+  \item\provelater*{triangle}
+    $\|\aaa+\bbb\|\leq \|\aaa\|+\|\bbb\|$.
+  \item\provelater*{scalar}
+    $\|r\aaa\|=|r| \|\aaa\|$.
+  \end{enumerate}
+\end{prop}
+
+
+$\aaa$を2項実ベクトルとし,
+$\aaa\neq \zzero$とする.
+このとき,
+\begin{align*}
+  \aaa = r \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+\end{align*}
+となる$r>0$, $\theta\in\RR$がとれる.
+$r=\|\aaa\|$である.
+
+\begin{definition}
+\begin{align*}
+  \aaa = r \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}
+\end{align*}
+を $\aaa$の極座標表示と呼ぶ.
+$\theta$を
+\defit{$\aaa$の偏角}
+\Defit{angle of $\aaa$}
+\addindex{偏角!ベクトルの---}%
+\addindex{偏角!極座標表示の---}%
+\addindex{angle!--- of a vector}%
+\addindex{of vector!angle ---}%
+と呼ぶ.
+\end{definition}
+\begin{prop}
+  %proved
+  \label{thm:innerprod:polar}
+\begin{align*}
+  \aaa &= r \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix}\\
+  \aaa &= s \begin{pmatrix}\cos(\tau)\\\sin(\tau)\end{pmatrix}
+\end{align*}
+であるとき,
+\begin{align*}
+  \Braket{\aaa,\bbb}=rs\cos(\tau-\theta)
+\end{align*}
+である.
+\end{prop}
+\begin{proof}
+\begin{align*}
+  \Braket{\aaa,\bbb}
+  &=
+  \braket{r \begin{pmatrix}\cos(\theta)\\\sin(\theta)\end{pmatrix},
+  s \begin{pmatrix}\cos(\tau)\\\sin(\tau)\end{pmatrix}}\\
+  &=
+  rs \cos(\theta)\cos(\tau)+rs \sin(\theta)\sin(\tau).\\
+  rs\cos(\tau-\theta)
+  &=rs(\cos(\theta)\cos(\tau)+rs \sin(\theta)\sin(\tau))\\
+  &=rs \cos(\theta)\cos(\tau)+rs \sin(\theta)\sin(\tau).
+\end{align*}
+\end{proof}
+
+\begin{definition}
+  $\aaa,\bbb$を二項実ベクトルとする.
+  $\aaa\neq\zzero\neq \bbb$とする.
+  次の条件を満たすとき,
+  \defit{$\aaa$と$\bbb$が直交する}
+  \Defit{$\aaa$ and $\bbb$ are orthogonal to each other}
+  \addindex{ベクトルの!---直交性}%
+  \addindex{ベクトルが!---直交する}%
+  \addindex{直交!ベクトルが---する}%
+  \addindex{直交!---する}%
+  \addindex{直交性!ベクトルの---}%
+  \addindex{orthogonal!vectors are --- to each other}%
+  \addindex{orthogonal!--- vectors}%
+  \addindex{orthogonal vectors!---}%
+  \addindex{$\aaa\perp\bbb$}%
+ という:
+  \begin{align*}
+    \braket{\aaa,\bbb}=0.
+  \end{align*}
+  $\aaa$と$\bbb$が直交することを次で表す:
+  \begin{align*}
+    \aaa\perp\bbb
+  \end{align*}
+\end{definition}
+\begin{example}
+  \label{ex:std:orthoeachother}
+  \begin{align*}
+    \Braket{\ee_1,\ee_2}&=\Braket{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}}=1\cdot 0+0\cdot 1=0
+  \end{align*}
+  であるので, $\ee_1$と$\ee_2$は直交している.
+\end{example}
+\begin{example}
+  \label{ex:nonstd:orth}
+  \begin{align*}
+    \aaa=
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix},
+    \bbb=
+    \begin{pmatrix}
+      -1\\1
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb}&=\Braket{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}-1\\1\end{pmatrix}}=1\cdot(-1)+1\cdot 1=0
+  \end{align*}
+  であるこので, $\aaa$と$\bbb$は直交している.
+\end{example}
+\begin{example}
+  \label{ex:vecs:nonortho}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおく.
+  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb}=\Braket{\begin{pmatrix}3\\5\end{pmatrix},\begin{pmatrix}1\\2\end{pmatrix}}
+    =3\cdot1+5\cdot 2=13\neq 0
+  \end{align*}
+  であるので,
+  $\aaa$と$\bbb$は直交しない.
+
+  $\Braket{\aaa,\bbb}=13$,
+  $\|\aaa\|=\sqrt{34}$であるので,
+  \begin{align*}
+    \bbb'=\bbb-\frac{13}{\sqrt{34}}\aaa
+  \end{align*}
+  とおく.  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb'}
+    =\Braket{\aaa,\bbb-\frac{13}{\sqrt{34}}\aaa}
+    =\Braket{\aaa,\bbb}-\frac{13}{\sqrt{34}}\Braket{\aaa,\aaa}
+    =13-\frac{13}{\sqrt{34}}\sqrt{34}
+    =0
+  \end{align*}
+  となり,
+  $\aaa$と$\bbb'$は直交する.
+  このように, 直交しないベクトルの組から, 直交するベクトルの組を作ることができる.
+\end{example}
+
+\begin{definition}
+  \label{def:orthonormal}
+  次の条件を満たすとき,
+  $(\aaa,\bbb)$は
+  \defit{$\RR^2$の正規直交基底}
+  \Defit{orthonormal basis for $\RR^2$}
+  \addindex{基底!$\RR^2$の正規直交---}%
+  \addindex{直交基底!$\RR^2$の正規---}%
+  \addindex{正規直交基底!$\RR^2$の---}%
+  \addindex{直交!$\RR^2$の正規---基底}%
+  \addindex{正規直交!$\RR^2$の---基底}%
+  \addindex{正規!$\RR^2$の---直交基底}%
+  \addindex{基底!正規直交---}%
+  \addindex{直交基底!正規---}%
+  \addindex{正規直交基底!---}%
+  \addindex{直交!正規---基底}%
+  \addindex{正規直交!---基底}%
+  \addindex{正規!---直交基底}%
+  \addindex{basis!orthonormal --- for $\RR^2$}%
+  \addindex{orthonormal basis!--- for $\RR^2$}%
+  \addindex{orthonormal!--- basis for $\RR^2$}%
+  \addindex{basis!orthonormal ---}%
+  \addindex{orthonormal basis!---}%
+  \addindex{orthonormal!--- basis}%
+ であるという:
+  \begin{enumerate}
+  \item   $(\aaa,\bbb)$は$\RR^2$の基底である.
+  \item $\Braket{\aaa,\bbb}=0$.
+  \item $\|\aaa\|=\|\bbb\|=1$.
+  \end{enumerate}
+\end{definition}
+\begin{example}
+  \Cref{ex:stdbasis}で
+  $(\ee_1,\ee_2)$が基底であることは見た.
+  また, \Cref{ex:std:orthoeachother}で見たように,
+  内積の定義に従い直接計算することで,
+  $\Braket{\ee_1,\ee_2}=0$つまり
+  $\ee_1$と$\ee_2$が直交していることがわかる.
+  ノルムの定義に従い直接計算することで,
+  \begin{align*}
+    \|\ee_1\|&=0\\
+    \|\ee_2\|&=0
+  \end{align*}
+  がわかる.
+  よって, 
+  $(\ee_1,\ee_2)$は正規直交基底である.
+\end{example}
+\begin{example}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおくと,
+  $(\aaa,\bbb)$ は$\RR^2$の基底であることは,
+  \Cref{ex:basis:2}で見た.
+  しかし,
+  \Cref{ex:vecs:nonortho}で見たように,
+  \begin{align*}
+    \Braket{\aaa,\bbb}=13\neq 0
+  \end{align*}
+  であるので,
+  $\aaa$と$\bbb$は直交しない.
+  したがって, $(\aaa,\bbb)$は正規直交基底ではない.
+\end{example}
+
+\begin{example}
+  \label{ex:orth:nonnormal:basis}
+  \begin{align*}
+    \aaa=
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix},
+    \bbb=
+    \begin{pmatrix}
+      -1\\1
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき,
+  \Cref{ex:basis:3,ex:nonstd:orth}で見たように,
+  $(\aaa,\bbb)$は基底であり,
+  $\Braket{\aaa,\bbb}=0$である.
+  しかし,
+  \begin{align*}
+    \|\aaa\|&=\sqrt{2}\\
+    \|\bbb\|&=\sqrt{2}
+  \end{align*}
+  であるこので, $(\aaa,\bbb)$は正規直交基底ではない.
+
+  $\|\aaa\|=\|\bbb\|=\sqrt{2}$
+  であるので,  
+  \begin{align*}
+    \overline\aaa&=\frac{1}{\sqrt{2}}\aaa,
+    \overline\bbb&=\frac{1}{\sqrt{2}}\bbb
+  \end{align*}
+  とおく.
+  このとき,
+  \begin{align*}
+    \Braket{\overline\aaa,\overline\bbb}&=
+    \Braket{\frac{1}{\sqrt{2}}\aaa,\frac{1}{\sqrt{2}}\bbb}
+    =\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}\Braket{\aaa,\bbb}
+    =\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}0=0
+  \end{align*}
+  であるので$\overline\aaa$と$\overline\bbb$は直交する.
+  さらに,
+  \begin{align*}
+    \|\overline\aaa\|&=
+    \|\frac{1}{\sqrt{2}}\aaa\|
+    =\left|\frac{1}{\sqrt{2}}\right|\|\aaa\|
+    =\frac{1}{\sqrt{2}}\cdot \sqrt{2}=1\\
+    \|\overline\bbb\|&=
+    \|\frac{1}{\sqrt{2}}\bbb\|
+    =\left|\frac{1}{\sqrt{2}}\right|\|\bbb\|
+    =\frac{1}{\sqrt{2}}\cdot \sqrt{2}=1
+  \end{align*}
+  であるので, $(\overline{\aaa},\overline{\bbb})$は正規直交基底である.
+  このように, 直交するベクトルの組があれば, 正規直交基底を作ることができる.
+\end{example}
+
+\begin{remark}
+  \label{thm:gramschmidt}
+  \Cref{ex:vecs:nonortho,}で見た方法と,
+  \cref{ex:orth:nonnormal:basis}で見た方法を組み合わせることで,
+  一次独立なベクトルの組から正規直交基底を作ることができる.
+  この方法を
+  \defit{グラム--シュミットの直交化法}
+  \Defit{Gram--Schmidt orthonormalization}
+  \addindex{直交化法!グラム--シュミットの}%
+  \addindex{グラム--シュミット!---の直交化法}%
+  \addindex{Gram--Schmidt!--- orthonormalization}%
+  \addindex{orthonormalization!Gram--Schmidt ---}%
+  と呼ぶ.
+  
+  $\aaa$, $\bbb$を二項実ベクトルとする.
+  $\aaa,\bbb$が一次独立であるとする.
+  このとき,
+  \begin{align*}
+    \bar\aaa=\frac{1}{\|\aaa\|}\aaa
+  \end{align*}
+  とおく. このとき,
+  \begin{align*}
+    \|\bar\aaa\|
+    &=\|\frac{1}{\|\aaa\|}\aaa\|\\
+    &=\left|\frac{1}{\|\aaa\|}\right|\|\aaa\|\\
+    &=\frac{1}{\|\aaa\|}\|\aaa\|\\
+    &=1
+  \end{align*}
+  となる.
+  \begin{align*}
+    \bbb'=\bbb-\Braket{\bbb,\bar\aaa}\bar\aaa
+  \end{align*}
+  とおく. このとき,
+  \begin{align*}
+    \Braket{\bar\aaa,\bbb'}
+    &=\Braket{\bar\aaa,\bbb-\Braket{\bbb,\bar\aaa}\bar\aaa}\\
+    &=\Braket{\bar\aaa,\bbb}+\Braket{\bar\aaa,-\Braket{\bbb,\bar\aaa}\bar\aaa}\\
+    &=\Braket{\bar\aaa,\bbb}-\Braket{\bbb,\bar\aaa}\Braket{\bar\aaa,\bar\aaa}\\
+    &=\Braket{\bar\aaa,\bbb}-\Braket{\bbb,\bar\aaa}\|\bar\aaa\|^2\\
+    &=\Braket{\bar\aaa,\bbb}-\Braket{\bbb,\bar\aaa}\\
+    &=0
+  \end{align*}
+  となる.  そこで,
+  \begin{align*}
+    \bar\bbb=\frac{1}{\|\bbb'\|}\bbb'
+  \end{align*}
+  とおく.  このとき,
+  \begin{align*}
+    \|\bar\bbb\|&=\frac{1}{\|\bbb'\|}\|\bbb'\|=1\\
+    \Braket{\bar\aaa,\bar\bbb}&=\frac{1}{\|\bbb'\|}\Braket{\bar\aaa,\bbb'}=0
+  \end{align*}
+  となる.
+  $(\bar\aaa,\bar\bbb)$は$\RR^2$の正規直交基底である.
+\end{remark}
+
+\begin{remark}
+  $(\aaa,\bbb)$を正規直交基底とする.
+  $(\aaa,\bbb)$は基底であるので,
+  $2$項実ベクトル
+  $\xx,\yy\in\RR^2$が与えられると,
+  \begin{align*}
+    \xx=x\aaa+x'\bbb\\
+    \yy=y\aaa+y'\bbb
+  \end{align*}
+  を満たす実数$x,x',y,y'$がとれる.
+  $\xx$と$\yy$の内積は, 
+  $x,x',y,y'$を使って,
+  \begin{align*}
+    \Braket{\xx,\yy}
+    &=\Braket{x\aaa+x'\bbb,y\aaa+y'\bbb}\\
+    &=\Braket{x\aaa,y\aaa+y'\bbb}+\Braket{x'\bbb,y\aaa+y'\bbb}\\
+    &=\Braket{x\aaa,y\aaa}+\Braket{x\aaa,y'\bbb}+\Braket{x'\bbb,y\aaa}+\Braket{x'\bbb,y'\bbb}\\
+    &=xy\Braket{\aaa,\aaa}+xy'\Braket{\aaa,\bbb}+x'y\Braket{\bbb,\aaa}+x'y'\Braket{\bbb,\bbb}\\
+    &=xy\|\aaa\|^2+(xy'+x'y)\Braket{\bbb,\aaa}+x'y'\|\bbb\|^2
+  \end{align*}
+  と書ける.
+  $(\aaa,\bbb)$を正規直交基底であるので,
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\|\bbb\|=1$であるので,
+  \begin{align*}
+    \Braket{\xx,\yy}
+    &=xy+x'y'
+  \end{align*}
+  と, 対応する係数の積の和として, 書くことができる.
+
+  また, 同様に, 一般には,  $\xx$のノルムは, $x,x'$を使って,
+  \begin{align*}
+    \|\xx\|^2
+    &=\Braket{\xx,\xx}\\
+    &=\Braket{x\aaa+x'\bbb,x\aaa+x'\bbb}\\
+    &=x^2\|\aaa\|^2+2xx'\Braket{\bbb,\aaa}+(x')^2\|\bbb\|^2\\
+    \|\xx\|
+    &=\sqrt{x^2\|\aaa\|^2+2xx'\Braket{\bbb,\aaa}+(x')^2\|\bbb\|^2}
+  \end{align*}
+  と書くことができる.
+  $(\aaa,\bbb)$を正規直交基底であるので,
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\|\bbb\|=1$を使うと,
+  \begin{align*}
+    \|\xx\|
+    &=\sqrt{x^2+(x')^2}
+  \end{align*}
+  と書くことができる.  
+\end{remark}
+
+
+\begin{definition}
+  \label{prop:distance:point:line}
+  $L$を直線とする.
+点$\xx$に対し,
+$\xx$を通り$L$と垂直に交わる直線はただ$1$つに定まる.
+この直線を
+\defit{$\xx$から$L$へ下ろした垂線}
+\Defit{perpendicular to the line $L$ from the point $\xx$}
+\addindex{垂線!点から直線へ下ろした---}%
+\addindex{perpendicular!--- to a line from a point}%
+呼ぶ.
+$\xx$から$L$へ下ろした垂線と直線$L$の交点を$\yy$とする.
+このとき, $\yy$を
+\defit{$\xx$から$L$へ下ろした垂線の足}
+\Defit{foot of the perpendicular to the line $L$ from the point $\xx$}
+\addindex{足!点から直線へ下ろした垂線の---}%
+\addindex{垂線の足!点から直線へ下ろした---}%
+\addindex{垂線!点から直線へ下ろした---の足}%
+\addindex{foot!--- of the perpendicular to a line from a point}%
+\addindex{foot of perpendicular!--- to a line from a point}%
+\addindex{perpendicular!foot of a --- to a line from a point}%
+と呼ぶ.
+$\xx$と$\yy$を結ぶ線分の長さ,
+つまり, $\|\yy-\xx\|$を,
+\defit{$\xx$から$L$へ下ろした垂線の長さ}
+\Defit{length of the perpendicular to the line $L$ from the point $\xx$}
+\addindex{長さ!点から直線へ下ろした垂線の---}%
+\addindex{垂線の長さ!点から直線へ下ろした---}%
+\addindex{垂線!点から直線へ下ろした---の長さ}%
+\addindex{length!--- of a perpendicular to a line from a point}%
+\addindex{length of a perpendicular!--- to a line from a point}%
+\addindex{perpendicular!length of a --- to a line from a point}%
+と呼ぶこともある.
+直線$L$上の点$\aaa$と$\xx$の距離を考えると,
+$\aaa=\yy$であるときに最小値をとる.
+つまり,
+\begin{align*}
+  \|\yy-\xx\|=\min\Set{\|\aaa-\xx\| \ |\ \aaa\in L }
+\end{align*}
+である.
+$\|\yy-\xx\|$を
+\defit{点$\xx$と直線$L$の距離}
+\Defit{distance between the point $\xx$ and the line $L$}
+\addindex{距離!点と直線の---}%
+\addindex{distance!--- between a line and a point}%
+と呼ぶこともある.
+\end{definition}
+
+\begin{definition}
+  \label{def:projection}
+直線$L$を固定して考える.
+点$\xx$に対し,
+$\xx$から$L$へ下ろした垂線の足はただ一つ定まる.
+点$\xx$に対し,
+$\xx$から$L$へ下ろした垂線の足を対応させる対応のことを,
+\text{直線$L$への直交射影}と呼ぶ.
+$\xx$から$L$へ下ろした垂線の足$\yy$を,
+\text{点$\xx$の直線$L$への直交射影}と呼ぶ.
+また, ベクトル$\xx-\yy$, つまり垂線の足$\yy$から点$\xx$へ向かうベクトル,
+を
+\text{点$\xx$の直線$L$への直交射影の垂直成分}とか
+\text{反射影}
+と呼ぶ.
+定義から,
+点$\xx$の直線$L$への直交射影の垂直成分のノルムが,
+点$\xx$と直線$L$の距離である.
+\end{definition}
+
+$\aaa\neq \zzero$とし,
+$L$を$\aaa$と
+原点を通る直線とする.
+このとき
+\begin{align*}
+  L=\Set{t\aaa|t\in \RR}
+\end{align*}
+と書くことができる.
+$\xx\in\RR^2$とし,
+$\xx$の$L$への直交射影や垂直成分について考える.
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(20,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(70,75){\makebox(0,0){$\bullet$}}
+    \put(60,30){\makebox(0,0){$\bullet$}}
+    \put(70,80){\makebox(0,0)[b]{\small$\xx$}}
+    \put(60,33){\makebox(0,0)[b]{\small$\aaa$}}
+    \put(35,30){\makebox(0,0){\small$\theta$}}
+    \qbezier[30](20,20)(30,60)(70,75)
+    \put(30,60){\makebox(0,0)[b]{\small$\|\xx\|$}}
+    \qbezier[25](80,35)(90,60)(70,75)
+    \put(85,60){\makebox(0,0)[l]{\small$\|\xx\|\sin(\theta)$}}
+    \qbezier[25](20,20)(70,10)(80,35)
+    \put(70,15){\makebox(0,0)[t]{\small$\|\xx\|\cos(\theta)$}}
+    \thicklines
+    \put(20,20){\line(4,1){75}}
+    \put(20,20){\line(-4,-1){15}}
+    \qbezier[35](20,20)(45,47.5)(70,75)
+    \qbezier[25](70,75)(75,55)(80,35)
+    %\qbezier[30](60,18)(60,54)(60,90)
+  \end{picture}
+  \caption{原点を通る直線への射影}
+  \label{fig:vector:proj:origin}
+\end{figure}
+\Cref{fig:vector:proj:origin}にあるように,
+$\aaa$と$\xx$のなす角を$\theta$とすると,
+$\xx$の$L$への直交射影は, ノルムが$\|\xx\|\cos(\theta)$である$L$上の点である.
+したがって, $\aaa$をスカラー倍しノルムが$\|\xx\|\cos(\theta)$となるように調整することで直交射影を得ることができる.
+ノルムを調整する必要があるので,
+議論を簡単にするため,
+$L$上の点でノルムが1の点$\bar\aaa$を用意する.
+\begin{align*}
+  \bar\aaa=\frac{1}{\|\aaa\|}\aaa
+\end{align*}
+とおくと, $\|\bar\aaa\|=1$となる.
+このとき,
+$\xx$と$\bar\aaa$の内積は,
+$\xx$と$\aaa$のなす角$\theta$を使って
+次のように書ける:
+\begin{align*}
+  \Braket{\xx,\bar\aaa}=\|\xx\|\|\bar\aaa\|\cos(\theta)=\|\xx\|\cos(\theta).
+\end{align*}
+したがって,
+\begin{align*}
+ \Braket{\xx,\bar\aaa}\bar\aaa
+\end{align*}
+が
+$\xx$の$L$への直交射影である.
+$\bar\aaa$ではなく$\aaa$を使えば,
+\begin{align*}
+  \Braket{\xx,\bar\aaa}\bar\aaa=
+  \left\langle\xx,\frac{1}{\|\aaa\|}\aaa\right\rangle\frac{1}{\|\aaa\|}\aaa=
+  \frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa
+\end{align*}
+と書くこともできる.
+
+$\xx$の$L$への直交射影がわかったので,
+今度は垂直成分について考える.
+垂直成分は$\xx$と垂直成分の差であるので,
+\begin{align*}
+\xx-\Braket{\xx,\bar\aaa}\bar\aaa
+\end{align*}
+である.
+これは,
+\begin{align*}
+\xx-\frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa
+\end{align*}
+とも書ける.
+したがって, $\xx$と$L$の距離は,
+\begin{align*}
+\|\xx-\Braket{\xx,\bar\aaa}\bar\aaa\|
+\end{align*}
+と表すことができる.
+$\bar\aaa$ではなく$\aaa$を使えば,
+\begin{align*}
+\left\|\xx-\frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa\right\|
+\end{align*}
+とも書ける.
+
+
+
+  原点を通らない直線$L$と点$\xx$の距離について考える.
+  $\aaa$, $\bbb$を通る直線
+  \begin{align*}
+    L=\Set{t\aaa+(1-t)\bbb|t\in \RR}
+  \end{align*}
+  と点$\xx$について考える.
+  このときは, $L$と$\xx$の距離を考えるのであれば,
+  両方とも$-\bbb$だけ平行移動して考えればよい.
+  つまり
+  \begin{align*}
+    L'&=\Set{t\aaa+(1-t)\bbb-\bbb|t\in \RR}\\
+    &=\Set{t(\aaa-\bbb)|t\in \RR}
+  \end{align*}
+  と, $\xx-\bbb$
+  の距離を求めれば良い.
+  $L'$は原点を通るので,
+  内積を使って求めることができる.
+  
+
+\begin{definition}
+  \label{def:orthogonalmat}
+  $A$を実数を成分とする2次正方行列であるとする.
+  次の条件をみたすとき$A$は
+  \defit{直交行列}
+  \Defit{orthogonal matrix}
+  \addindex{行列!直交---}%
+  \addindex{直交!---行列}%
+  \addindex{orthogonal!--- matrix}%
+  \addindex{matrix!orthogonal ---}%
+  であるという:
+  \begin{align*}
+    \transposed{A}A=E_2
+  \end{align*}
+\end{definition}
+
+\begin{prop}
+  \provelater{thm:ortho:char}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\
+      a'&b'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      a\\
+      a'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      b\\
+      b'
+    \end{pmatrix}
+  \end{align*}
+  とする.  このとき次は同値:
+  \begin{enumerate}
+  \item\label{thm:ortho:char:item:ortho}
+    $A$は直交行列である.
+  \item\label{thm:ortho:char:item:ortho2}
+    $A$は正則であり, $A\transposed{A}=E_2$.
+  \item\label{thm:ortho:char:item:transposeisinverse}
+    $A$は正則であり, $A^{-1}=\transposed{A}$.
+  \item\label{thm:ortho:char:item:orthonormalbasis}
+    $(\aaa,\bbb)$が$\RR^2$の正規直交基底である.
+  \item\label{thm:ortho:char:item:preserve}
+    $\xx,\yy\in \RR^2\implies \braket{\xx,\yy}=\braket{A\xx,A\yy}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{remark}
+  $n$項実ベクトル
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b_1\\\vdots\\b_n\end{pmatrix}
+  \end{align*}
+  に対して, $2$項実ベクトルと同様に,
+  \begin{align*}
+    \Braket{\aaa,\bbb}=\sum_{i=1}^{n}a_ib_i
+  \end{align*}
+  と内積を定義でき,
+  \cref{thm:innerprod:is:innerprod}
+  が成り立ち, 
+  この節で紹介したことが$n$項実ベクトルでも同様に成り立つ.
+  しかしながら,
+  複素ベクトルに対してこのように定義しても\cref{thm:innerprod:is:innerprod}
+  は成り立たず,
+  複素ベクトルに対してはここでの方法で内積を定義することはできない.
+\end{remark}
+
+\section{平面上の線形変換}
+ここでは, 平面上の線形変換を定義しその性質について紹介する.
+\begin{definition}
+  \label{def:homogepolynomial}
+  $x_1,\ldots,x_n$を変数とする.
+  $\alpha_1,\ldots,\alpha_n$を$0$以上の整数とする.
+  \begin{align*}
+    x_1^{\alpha_1}\cdots x_n^{\alpha_n}
+  \end{align*}
+  を全次数が$\alpha_1+\cdots+\alpha_n$である単項式と呼ぶ.
+  $k$を$0$以上の整数とする.
+  $f(x_1,\ldots, x_n)$を多項式とする.
+  $f(x_1,\ldots, x_n)$の各項が全次数が$k$の単項式に係数をかけたもの
+  を
+  \defit{斉次$k$-次多項式}
+  \Defit{homogeneous polynomial of degree $k$}
+  \addindex{多項式!斉次$k$-次---}%
+  \addindex{$k$-次多項式!斉次---}%
+  \addindex{斉次!---$k$-次多項式}%
+  \addindex{斉次!---多項式}%
+  \addindex{多項式!斉次---}%
+  \addindex{斉次多項式!---}%
+  \addindex{polynomial!homogeneous --- of degree $k$}%
+  \addindex{homogeneous polynomial!--- of degree $k$}%
+  \addindex{homogeneous!--- polynomial of degree $k$}%
+  \addindex{polynomial!homogeneous ---}%
+  \addindex{homogeneous polynomial!---}%
+  \addindex{homogeneous!--- polynomial}%
+  と呼ぶ.
+\end{definition}
+\begin{example}
+  実数係数斉次$k$-次多項式$f(x_1,\ldots,x_n)$とは,
+  実数$a_1,\ldots,a_n$を用いて,
+  \begin{align*}
+    a_1x_1+\cdots+a_nx_n
+  \end{align*}
+  と書ける多項式のことである.
+\end{example}
+
+\begin{definition}
+  \label{def:lintransform}
+  $f$は,
+  $2$項ベクトルを代入すると$2$項ベクトルが得られる関数%
+\footnote{`数'以外のものを代入して`数'以外のものが得られるので, 関`数'と呼ぶのは少し変な印象を受けるかもしれない.  通常は, 何かを代入することで何かが得られるもののことを`写像'と呼ぶ.  (写像については例えば\cite[トレーニング26]{978-4-535-78682-0}を見ると良い.) しかし, 用語が異なるだけで, 基本的には同じものなので, ここでは, ベクトルを代入してベクトルが得られるものも, 関数と呼ぶことにする.}
+  であるとする.
+  次の条件を満たすとき, $f$は
+  \defit{$\RR^2$上の線形変換}
+  \Defit{$\RR^2$上の一次変換}
+  \Defit{linear transformation on $\RR^2$}
+  \addindex{変換!$\RR^2$上の線形---}%
+  \addindex{線形変換!$\RR^2$上の---}%
+  \addindex{線形!$\RR^2$上の---変換}%
+  \addindex{変換!線形---}%
+  \addindex{線形変換!---}%
+  \addindex{線形!---変換}%
+  \addindex{変換!$\RR^2$上の一次---}%
+  \addindex{一次変換!$\RR^2$上の---}%
+  \addindex{一次!$\RR^2$上の---変換}%
+  \addindex{変換!一次---}%
+  \addindex{一次変換!---}%
+  \addindex{一次!---変換}%
+  \addindex{transformation!linear --- on $\RR^2$}%
+  \addindex{linear transformation!--- on $\RR^2$}%
+  \addindex{linear!--- transformation on $\RR^2$}%
+  \addindex{transformation!linear ---}%
+  \addindex{linear transformation!---}%
+  \addindex{linear!--- transformation}%
+  であるという.
+  \begin{enumerate}
+  \item $\aaa,\bbb\in\RR^2\implies f(\aaa+\bbb)=f(\aaa)+f(\bbb)$.
+  \item $\aaa\in\RR^2,c\in \RR \implies f(c\aaa)=cf(\aaa)$.
+  \end{enumerate}
+\end{definition}
+\begin{prop}
+  %proved
+  $f$, $g$を$\RR^2$上の線形変換であるとする.
+  このとき, $f$と$g$の合成$f\circ g$も線形変換である.
+  ただし$f\circ g$は$(f\circ g)(\xx)=f(g(\xx))$で定義される関数である.
+\end{prop}
+\begin{proof}
+  $\aaa,\bbb\in\RR^2$とする.
+  このとき,
+  \begin{align*}
+    (f\circ g)(\aaa)+(f\circ g)(\bbb)
+    &=f(g(\aaa))+f(g(\bbb)),\\
+    (f\circ g)(\aaa+\bbb)&=f(g(\aaa+\bbb))\\
+    &=f(g(\aaa)+g(\bbb))\\
+    &=f(g(\aaa))+f(g(\bbb))
+  \end{align*}
+  である.
+  また, $\aaa\in\RR^2$, $c\in \RR$とすると,
+  \begin{align*}
+    c(f\circ g)(\aaa)
+    &=cf(g(\aaa)),\\
+    (f\circ g)(c\aaa)
+    &=f(g(c\aaa))\\
+    &=f(cg(\aaa))\\
+    &=cf(g(\aaa))
+  \end{align*}
+  である.
+\end{proof}
+\begin{remark}
+  \label{thm:linmap:zero}
+  $f$が線形変換であるとすると,
+  \begin{align*}
+    f(\zzero)=f(0\zzero)=0f(\zzero)=\zzero
+  \end{align*}
+   であるので,   $f(\zzero)=\zzero$である.
+\end{remark}
+\begin{remark}
+  $f$が線形変換であるとする.
+  $\aaa=f(\ee_1)$,
+  $\bbb=f(\ee_2)$とおく.
+  \begin{align*}
+    \xx=\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  は$\xx=x\ee_1+y\ee_2$と書けるので,
+  \begin{align*}
+    f(\xx)
+    &=f(x\ee_1+y\ee_2)\\
+    &=f(x\ee_1)+f(y\ee_2)\\
+    &=xf(\ee_1)+yf(\ee_2)\\
+    &=x\aaa+y\bbb
+  \end{align*}
+  となるので, $\aaa$と$\bbb$と$\xx$がわかれば,
+  $f(\xx)$は計算できる.
+\end{remark}
+
+
+$2$項ベクトルを代入すると$2$項ベクトルが得られる関数$f$を与えることは,
+  \begin{align*}
+    \xx=\begin{pmatrix}x,y\end{pmatrix}
+  \end{align*}
+  に対し,
+  \begin{align*}
+    f(\xx)=
+    \begin{pmatrix}
+      f_1(x,y)\\
+      f_2(x,y)
+    \end{pmatrix}
+  \end{align*}
+  を満たす$2$変数関数$f_1$, $f_2$を与えることと同じである.
+  この同一視の下,
+  $f$が線形変換であることと, $f_1$, $f_2$がどちらも斉次$1$次多項式であることは,
+  同値である.
+  つまり, 数$a,b,c,d$を使って 
+  \begin{align*}
+    f_1(x,y)&=ax+by\\
+    f_2(x,y)&=cx+dy
+  \end{align*}
+  とかける.  このとき,
+  \begin{align*}
+    f(\begin{pmatrix}x\\y\end{pmatrix})
+      =
+      \begin{pmatrix}f_1(x,y)\\f_2(x,y)\end{pmatrix}
+      =\begin{pmatrix}ax+by\\cx+dy\end{pmatrix}
+    =\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  という形で行列の積として書くことができる.
+
+\begin{remark}
+  \label{def:repmat}
+  $f$が線形変換であるとする.
+  \begin{align*}
+    \begin{pmatrix}
+      a\\a'
+    \end{pmatrix}
+    &=f(\ee_1)\\
+     \begin{pmatrix}
+      b\\b'
+    \end{pmatrix}
+    &=f(\ee_2)
+  \end{align*}
+  とおく.  このとき,
+  \begin{align*}
+    f(\xx)=
+    \begin{pmatrix}
+      a&b\\a'&b'
+    \end{pmatrix}\xx
+  \end{align*}
+  と表せる.
+\end{remark}
+
+\begin{remark}
+  \label{rem:comp:prod}
+  $f$, $g$を線形変換とし,
+  \begin{align*}
+    f(\xx)&=\begin{pmatrix}a&b\\c&d\end{pmatrix}\xx \\
+    g(\xx)&=\begin{pmatrix}a'&b'\\c'&d'\end{pmatrix}\xx 
+  \end{align*}
+  となっているとする.
+  このとき,
+  \begin{align*}
+    (f\circ g)(\begin{pmatrix}x\\y\end{pmatrix})
+      &=f(g(\begin{pmatrix}x\\y\end{pmatrix}))\\
+    &=f(\begin{pmatrix}a'&b'\\c'&d'\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix})\\
+    &=f(\begin{pmatrix}a'x+b'y\\c'x+d'y\end{pmatrix})\\
+    &=\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}a'x+b'y\\c'x+d'y\end{pmatrix}\\
+    &=\begin{pmatrix}a(a'x+b'y)+b(c'x+d'y)\\c(a'x+b'y)+d(c'x+d'y)\end{pmatrix}\\
+    &=\begin{pmatrix}aa'x+ab'y+bc'x+bd'y\\ca'x+cb'y+dc'x+dd'y\end{pmatrix}\\
+    &=\begin{pmatrix}aa'x+bc'x+ab'y+bd'y\\ca'x+dc'x+cb'y+dd'y\end{pmatrix}\\
+    &=\begin{pmatrix}(aa'+bc')x+(ab'+bd')y\\(ca'+dc')x+(cb'+dd')y\end{pmatrix}\\
+                &=\begin{pmatrix}aa'+bc'&ab'+bd'\\ca'+dc'&cb'+dd'\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  と書ける.  つまり,
+  \begin{align*}
+    (f\circ g)(\xx)=\begin{pmatrix}aa'+bc'&ab'+bd'\\ca'+dc'&cb'+dd'\end{pmatrix}\xx
+  \end{align*}
+  と表せるが,
+  \begin{align*}
+    \begin{pmatrix}a&b\\c&d\end{pmatrix}
+      \begin{pmatrix}a'&b'\\c'&d'\end{pmatrix}
+        =
+        \begin{pmatrix}aa'+bc'&ab'+bd'\\ca'+dc'&cb'+dd'\end{pmatrix}
+  \end{align*}
+  である.
+  行列の積は, 線形変換の合成と思えるように定義されている.
+\end{remark}
+
+
+\begin{definition}
+  \label{def:img}
+  \label{def:suj}
+  $f$を線形変換とする.
+  $\vv\in\RR^2$を動かしたとき, $f(\vv)$として表される点を集めた集合を,
+  $\Img(f)$で表し,
+  \defit{$f$の像}
+  \Defit{image of $f$}
+  \addindex{像!線形変換の---}%
+  \addindex{線形変換の!---像}%
+  \addindex{線形変換!---の像}%
+  \addindex{像!一次変換の---}%
+  \addindex{一次変換の!---像}%
+  \addindex{一次変換!---の像}%
+  \addindex{image!--- of linear transformation}%
+  \addindex{of linear transformation!image ---}%
+  と呼ぶ.
+  $\Img(f)=\RR^2$となるとき, $f$は$\RR^2$への全射\footnote{全射という用語の本来の定義は\cite[トレーニング26]{978-4-535-78682-0}などを見ると良い.}であるという.
+\end{definition}
+\begin{remark}
+  \begin{align*}
+    \Img(f)=\Set{f(\xx)|\xx\in\RR^2}
+  \end{align*}
+  である.  $f(\xx)=A\xx$のように書けているときには,
+    \begin{align*}
+    \Img(f)=\Set{A\xx|\xx\in\RR^2}
+    \end{align*}
+    である
+\end{remark}
+
+\begin{definition}
+  \label{def:ker}
+  $f$を線形変換とする.
+  $f(\vv)=\zzero$を満たす$\vv\in\RR^2$を集めた集合を,
+  $\Ker(f)$で表し,
+  \defit{$f$の核}
+  \Defit{kernel of $f$}
+  \addindex{核!線形変換の---}%
+  \addindex{線形変換の!---核}%
+  \addindex{線形変換!---の核}%
+  \addindex{核!一次変換の---}%
+  \addindex{一次変換の!---核}%
+  \addindex{一次変換!---の核}%
+  \addindex{kernel!--- of linear transformation}%
+  \addindex{of linear transformation!kernel ---}%
+  と呼ぶ.
+\end{definition}
+\begin{remark}
+  \begin{align*}
+    \Ker(f)=\Set{\xx\in\RR^2|f(\xx)=\zzero}
+  \end{align*}
+  である.  $f(\xx)=A\xx$のように書けているときには,
+  \begin{align*}
+    \Ker(f)=\Set{\xx\in\RR^2|A\xx=\zzero}
+  \end{align*}
+  であるので,
+  $\xx$に関する方程式$A\xx=\zzero$の解の空間である.  
+\end{remark}
+\begin{remark}
+  $f$を線形変換とすると, $f(\zzero)=\zzero$であったので,
+  $\zzero\in\Ker(f)$である.
+\end{remark}
+\begin{definition}
+  \label{def:inj}
+  $f$を関数とする.
+  つぎの条件を満たすとき,
+  $f$は単射であるという:
+  \begin{align*}
+    f(\xx)=f(\yy)\implies \xx=\yy
+  \end{align*}
+\end{definition}
+定義にある条件の対偶を取ることで次が得られる.
+\begin{cor}
+  %proved
+  $f$を関数とする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item $f$は単射である.
+  \item $\xx\neq\yy \implies f(\xx)\neq f(\yy)$
+  \end{enumerate}
+\end{cor}
+核を調べることで単射かどうかがわかる.
+\begin{prop}
+  \provelater{kernel:inj}
+  $f$を線形変換とする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item\label{thm:kernel:ing:item:inj}
+    $f$は単射である.
+  \item\label{thm:kernel:ing:item:ker}
+    $\ker(f)=\Set{\zzero}$.
+  \end{enumerate}
+\end{prop}
+\begin{definition}
+  次の条件を満たす線形変換$f$を$\RR^2$上の恒等変換と呼ぶ:
+  \begin{itemize}
+  \item  $\xx\in\RR^2\implies f(\xx)=\xx$.
+  \end{itemize}
+  $\RR^2$上の恒等変換を$\id_{\RR^2}$で表す.
+  つまり$\id_{\RR^2}(\xx)=\xx$である.
+\end{definition}
+\begin{remark}
+  $\id_{\RR^2}$も線形変換であるので, 行列とベクトルの積として表すことができるはずである.
+  実際
+  $\id_{\RR^2}(\xx)=E_2\xx$
+  という形で表すことができる.
+\end{remark}
+\begin{definition}
+  $f$を線形変換とする.
+  $g\circ f=f\circ g=\id_{\RR^2}$となる
+  線形変換$g$が存在するとき,
+  線形変換$f$は
+  \defit{全単射}
+  \Defit{bijective}
+  であるといい,
+  $g$を
+  \defit{$f$の逆変換}
+  \Defit{inverse of $f$}
+  \addindex{逆変換!線形変換の---}%
+  \addindex{線形変換の!---逆変換}%
+  \addindex{線形変換!---の逆変換}%
+  \addindex{逆変換!一次変換の---}%
+  \addindex{一次変換の!---逆変換}%
+  \addindex{一次変換!---の逆変換}%
+  \addindex{inverse!--- of linear transformation}%
+  \addindex{of linear transformation!inverse ---}%
+  \addindex{$f^{-1}$}%
+  \addindex{${\square}^{-1}$}%
+  と呼び$f^{-1}$で表す.
+\end{definition}
+\begin{remark}
+  \provelater{thm:repmat:inverse}
+  線形変換$f$は行列$A$を用いて
+  $f(\xx)=A\xx$と表せているとする.
+   
+  もし$f$が全単射であれば,
+  $A$は正則であり,
+  $f^{-1}$は$f^{-1}(\xx)=A^{-1}\xx$とかける.
+
+  また, 逆に$A$が正則なら$f$は全単射であり,
+  $f^{-1}$は$f^{-1}(\xx)=A^{-1}\xx$とかける.
+\end{remark}
+
+\begin{definition}
+  $f$を線形変換とする.
+  次の条件を満たすとき,
+  $f$は
+  \defit{直交変換}
+  \Defit{orthogonal transformation}
+  \addindex{変換!直交---}%
+  \addindex{直交!---変換}%
+  \addindex{transformation!orthogonal ---}%
+  \addindex{orthogonal!--- transformation}%
+  であるという:
+  \begin{enumerate}
+    \item $\aaa,\bbb\in\RR^2\implies \Braket{\aaa,\bbb}=\Braket{f(\aaa),f(\bbb)}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  \Provelater
+  $f$を線形変換とし, 行列$A$を使って
+  $f(\xx)=A\xx$と書けているとする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item $f$は直交変換である.
+  \item $A$は直交行列である.
+  \end{enumerate}
+\end{remark}
+
+\begin{example}
+  \label{ex:rotation}
+  \begin{align*}
+    A=\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    f(\xx)=A\xx
+  \end{align*}
+  で定義される線形変換について考える.
+  \begin{align*}
+    \xx=r\begin{pmatrix}\cos(\tau)\\\sin(\tau)\end{pmatrix}
+  \end{align*}
+  と極座標表示をすると,
+  \begin{align*}
+    A\xx
+    &=
+    \begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}
+    (r\begin{pmatrix}\cos(\tau)\\\sin(\tau)\end{pmatrix})\\
+    &=
+    r\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}
+    \begin{pmatrix}\cos(\tau)\\\sin(\tau)\end{pmatrix}\\
+    &=
+    r\begin{pmatrix}\cos(\theta)\cos(\tau)-\sin(\theta)\sin(\tau)\\\sin(\theta)\cos(\tau)+\cos(\theta)\sin(\tau)\end{pmatrix}\\
+    &=
+    r\begin{pmatrix}\cos(\theta+\tau)\\\sin(\theta+\tau)\end{pmatrix}
+  \end{align*}
+  となるので, $f$は偏角を$\theta$増やす操作であることがわかる.
+  つまり, 原点を中心に$\theta$だけ回転する
+  操作である.
+  この行列を回転行列と呼ぶ.
+  \begin{align*}
+    \transposed{A}A
+    &=
+    \begin{pmatrix}\cos(\theta)&\sin(\theta)\\-\sin(\theta)&\cos(\theta)\end{pmatrix}
+    \begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}\\
+    &=
+    \begin{pmatrix}(\cos(\theta))^2+(\sin(\theta))^2&-\cos(\theta)\sin(\theta)+\sin(\theta)\cos(\theta)\\-\sin(\theta)\cos(\theta)+\cos(\theta)\sin(\theta)&(-\sin(\theta))^2+(\cos(\theta))^2\end{pmatrix}\\
+    &=
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+  \end{align*}
+  であるので, $A$は直交行列である.
+  したがって, $f$は直交変換である.
+\end{example}
+\begin{example}
+  \label{ex:refl}
+  $\aaa\neq\zzero$とする.
+  $\aaa$と直交するベクトル$\bbb$を1つ選ぶ.
+  このとき, $H$を$\Braket{\xx|\bbb}=0$を満たす点$\xx$を集めた集合とする.
+  いまは平面で考えているので, $H$は原点と$\aaa$を通る直線となる.\footnote{$H=\Set{t\aaa|t\in\RR}$とかけるが, この表示は, ここでの議論では本質的ではない.}
+
+  $H$を軸に点$\xx\in\RR^2$を反転させた点を$f(\xx)$とおく.
+  この$f$について考える.
+  \begin{align*}
+    \bar\aaa&=\frac{1}{\|\aaa\|}\aaa\\
+    \bar\bbb&=\frac{1}{\|\bbb\|}\bbb
+  \end{align*}
+  とおけば, $\xx$の$\aaa$への射影に関し,
+  直交射影は$\Braket{\bar\aaa,\xx}\bar\aaa$,
+  垂直成分は$\Braket{\bar\bbb,\xx}\bar\bbb$
+  と書ける. したがって,
+  \begin{align*}
+    \xx=\Braket{\bar\aaa,\xx}\bar\aaa+\Braket{\bar\bbb,\xx}\bar\bbb
+  \end{align*}
+  であるので, $H$に関して折り返した点は,
+  \begin{align*}
+    f(\xx)&=\Braket{\bar\aaa,\xx}\bar\aaa-\Braket{\bar\bbb,\xx}\bar\bbb\\
+    &=\Braket{\bar\aaa,\xx}\bar\aaa+\Braket{\bar\bbb,\xx}\bar\bbb-2\Braket{\bar\bbb,\xx}\bar\bbb\\
+    &=\xx-2\Braket{\bar\bbb,\xx}\bar\bbb
+  \end{align*}
+  となる.
+  \begin{align*}
+    f(\xx+\yy)&=(\xx+\yy)-2\Braket{\bar\bbb,(\xx+\yy)}\bar\bbb\\
+    &=\xx+\yy-2\Braket{\bar\bbb,\xx}\bar\bbb-2\Braket{\bar\bbb,\yy}\bar\bbb,\\
+    f(\xx)+f(\yy)&=\xx-2\Braket{\bar\bbb,\xx}\bar\bbb+\yy-2\Braket{\bar\bbb,\yy}\bar\bbb\\
+    &=\xx+\yy-2\Braket{\bar\bbb,\xx}\bar\bbb-2\Braket{\bar\bbb,\yy}\bar\bbb\\
+  \end{align*}
+  であり,
+  \begin{align*}
+    f(c\xx)&=c\xx-2\Braket{\bar\bbb,c\xx}\bar\bbb\\
+    &=c\xx-2c\Braket{\bar\bbb,\xx}\bar\bbb,\\
+    cf(\xx)&=c\xx-2c\Braket{\bar\bbb,\xx}\bar\bbb
+  \end{align*}
+  であるので$f$は線形変換である.  さらに,
+  \begin{align*}
+    \Braket{f(\xx),f(\yy)}
+    &=\Braket{\xx-2\Braket{\bar\bbb,\xx}\bar\bbb,\yy-2\Braket{\bar\bbb,\yy}\bar\bbb}\\
+    &=
+    \Braket{\xx,\yy-2\Braket{\bar\bbb,\yy}\bar\bbb}
+    +\Braket{-2\Braket{\bar\bbb,\xx}\bar\bbb,\yy-2\Braket{\bar\bbb,\yy}\bar\bbb}\\
+    &=
+    \Braket{\xx,\yy-2\Braket{\bar\bbb,\yy}\bar\bbb}
+    -2\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy-2\Braket{\bar\bbb,\yy}\bar\bbb}\\
+    &=
+    (\Braket{\xx,\yy}
+    +\Braket{\xx,-2\Braket{\bar\bbb,\yy}\bar\bbb})
+    -2\Braket{\bar\bbb,\xx}(
+    \Braket{\bar\bbb,\yy}
+    +\Braket{\bar\bbb,-2\Braket{\bar\bbb,\yy}\bar\bbb}
+    )\\
+    &=
+    (\Braket{\xx,\yy}
+    -2\Braket{\bar\bbb,\yy}\Braket{\xx,\bar\bbb})
+    -2\Braket{\bar\bbb,\xx}(
+    \Braket{\bar\bbb,\yy}
+    -2\Braket{\bar\bbb,\yy}\Braket{\bar\bbb,\bar\bbb}
+    )\\
+    &=
+    \Braket{\xx,\yy}
+    -2\Braket{\bar\bbb,\yy}\Braket{\xx,\bar\bbb}
+    -2\Braket{\bar\bbb,\xx}
+    \Braket{\bar\bbb,\yy}
+    +4\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}\Braket{\bar\bbb,\bar\bbb}
+    \\
+    &=
+    \Braket{\xx,\yy}
+    -2\Braket{\bar\bbb,\yy}\Braket{\xx,\bar\bbb}
+    -2\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    +4\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}\|\bar\bbb\|^2
+    \\
+    &=
+    \Braket{\xx,\yy}
+    -2\Braket{\bar\bbb,\yy}\Braket{\xx,\bar\bbb}
+    -2\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    +4\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    \\
+    &=
+    \Braket{\xx,\yy}
+    -2\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    -2\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    +4\Braket{\bar\bbb,\xx}\Braket{\bar\bbb,\yy}
+    \\
+    &=
+    \Braket{\xx,\yy}
+  \end{align*}
+  となるので, $f$は直交変換でもある.
+  この$f$を$H$に関する鏡映と呼ぶ.
+\end{example}
+
+\begin{remark}
+  $f$を直交変換とする.
+  このとき, ベクトル$\xx$に対し,
+  \begin{align*}
+    \|\xx\|&=\sqrt{\Braket{\xx,\xx}}\\
+    \|f(\xx)\|&=\sqrt{\Braket{f(\xx),f(\xx)}}=\sqrt{\Braket{\xx,\xx}}
+  \end{align*}
+  となるので, $\|\xx\|=\|f(\xx)\|$である.
+  つまり, ベクトルのノルムは直交変換$f$によって変化しない.
+  したがって, 2点$\xx$, $\yy$の距離$\|\xx-\yy\|$も$f$では変化しない.
+  したがって, 3点$\xx,\yy,\zz$を頂点とする三角形$S$は,
+  $f$によって, $f(\xx),f(\yy),f(\zz)$を頂点とする三角形$T$にうつるが,
+  $S$と$T$は合同である.
+  つまり, 直交変換$f$は, 三角形をそれと合同な三角形にうつす.
+
+  また, $r$を$0$でない実数とし, $f$は引き続き直交変換であるとする.
+  このとき, $f'(\xx)=rf(\xx)$で線形変換$f'$を定義する.
+  ベクトル$\xx$に対し,
+  \begin{align*}
+    \|f'(\xx)\|&=\|rf(\xx)\|=|r|\|f(\xx)\|=|r|\|\xx\|
+  \end{align*}
+  となる.
+  つまり, ベクトルのノルムは$f'$によって$|r|$倍となる.
+  したがって, 2点$\xx$, $\yy$の距離$\|\xx-\yy\|$も$f'$で$|r|$倍となる.
+  したがって, 3点$\xx,\yy,\zz$を頂点とする三角形$S$は,
+  $f'$によって, $f'(\xx),f'(\yy),f'(\zz)$を頂点とする三角形$T'$にうつるが,
+  対応する辺の長さの比は, どれも$1:|r|$である.
+  よって$S$と$T'$は相似である.
+  つまり$f'$は三角形をそれと相似比$1:|r|$で相似な三角形にうつす.
+\end{remark}
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:5:1}
+  \seealsoQuiz{quiz:2:1}
+  \label{quiz:5:1}
+  次が一次独立か判定せよ:
+  \begin{enumerate}
+  \item $(\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})$.
+  \item $(\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:3}
+次が一次独立となるための$a$, $b$に関する条件を求めよ.
+  \begin{align*}
+    (\begin{pmatrix}-5\\a\end{pmatrix},
+    \begin{pmatrix}1\\b\end{pmatrix})
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:2}
+  \seealsoQuiz{quiz:3:4x,quiz:3:4}
+  \label{quiz:5:2}
+  次が$\RR^2$の生成系か判定せよ
+  \begin{enumerate}
+  \item $(\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})$.
+  \item $(\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})$.
+  \end{enumerate}
+\end{quiz}
+
+
+
+\begin{quiz}
+  \solvelater{quiz:5:5}
+  \label{quiz:5:5}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}-1\\-1\end{pmatrix},&
+    \bbb&=\begin{pmatrix}2\\-1\end{pmatrix}
+  \end{align*}
+  であるとき,
+  以下に答えよ:
+  \begin{enumerate}
+  \item ノルム$\|\aaa\|$, $\|\bbb\|$を求めよ.
+  \item 内積$\Braket{\aaa,\bbb}$を求めよ.
+  \item $\aaa$と$\bbb$のなす角を$\theta$とする. $\cos(\theta)$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:7}
+  \label{quiz:5:7}
+  \seealsoQuiz{quiz:5:6}
+  $\|\aaa\|=2$,
+  $\|\bbb\|=3$,
+  $\|\aaa-2\bbb\|=\sqrt{3}$
+  であるとき, 以下に答えよ:
+  \begin{enumerate}
+  \item $\Braket{\aaa,\bbb}$を求めよ.
+  \item $\aaa$と$\bbb$のなす角を$\theta$とするとき, $\cos(\theta)$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:6}
+  \label{quiz:5:6}
+  \seealsoQuiz{quiz:5:7}
+  $\|\aaa\|=2$,
+  $\|\bbb\|=3$,
+  $\|\aaa-2\bbb\|=\sqrt{3}$
+  であるとき,
+  $\Braket{\aaa+t\bbb,\aaa+2\bbb}=0$となる$t$を求めよ.
+\end{quiz}
+
+
+
+
+
+\begin{quiz}
+  \solvelater{quiz:5:9}  
+  \begin{align*}
+    \aaa=\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
+  \end{align*}
+  であるとき,
+  $(\aaa,\bbb)$が$\RR^2$の正規直交基底となるような$\bbb$をすべて求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:10}  
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&x\\4&y\end{pmatrix},
+  \end{align*}
+  が直交行列となる$x,y$を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:p:1}
+  \label{quiz:5:p:1}
+  \Seealsoquiz{quiz:5:p:2,quiz:5:p:4}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}\\
+    L&=\Set{t\begin{pmatrix}2\\-3\end{pmatrix}|t\in\RR}
+  \end{align*}
+  であるとき,
+$\aaa$から$L$への直交射影を求めよ.
+また, 垂直成分を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:p:2}
+  \label{quiz:5:p:2}
+  \seealsoQuiz{quiz:5:p:1}
+  \Seealsoquiz{quiz:5:p:3}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}8\\-3\end{pmatrix}\\
+    L&=\Set{t\begin{pmatrix}2\\-3\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}|t\in\RR}
+  \end{align*}
+  であるとき,
+$\aaa$から$L$への直交射影を求めよ.
+垂直成分を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:5:p:3}
+  \label{quiz:5:p:3}
+  \seealsoQuiz{quiz:5:p:2}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}8\\-3\end{pmatrix}\\
+    L&=\Set{t\begin{pmatrix}2\\-3\end{pmatrix}+\begin{pmatrix}1\\1\end{pmatrix}|t\in\RR}
+  \end{align*}
+  であるとき,
+$\aaa$と$L$の距離を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:12}
+  以下のベクトルから, シュミットの正規直交化法を用いて,
+  互いに直交するノルムが1のベクトルの組を得よ:
+  \begin{align*}
+    \aaa&=\begin{pmatrix}3\\4\end{pmatrix},&
+    \bbb&=\begin{pmatrix}1\\2\end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:15}
+  \begin{align*}
+    f(\begin{pmatrix}x\\y\end{pmatrix})
+      =\begin{pmatrix}x+3y\\2x+7y\end{pmatrix}
+  \end{align*}
+  を行列とベクトルの積で表せ.
+\end{quiz}
+\begin{quiz}
+  \solvelater{quiz:5:16}
+  \begin{align*}
+    f(\begin{pmatrix}1\\0\end{pmatrix})=\begin{pmatrix}1\\-3\end{pmatrix}\\
+    f(\begin{pmatrix}0\\1\end{pmatrix})=\begin{pmatrix}2\\-9\end{pmatrix}
+  \end{align*}
+  となる線形変換を
+  行列とベクトルの積で表せ.
+\end{quiz}
+\begin{quiz}
+  \solvelater{quiz:5:17}
+  \begin{align*}
+    A&=\begin{pmatrix}1&3\\2&4\end{pmatrix},
+    &f(\xx)&=A\xx,\\
+    B&=\begin{pmatrix}7&8\\-1&3\end{pmatrix},
+        &g(\xx)&=B\xx
+  \end{align*}
+  とする,
+  $(f\circ g)(\xx)$を行列とベクトルの積で表せ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:18}
+  \begin{align*}
+    A&=\begin{pmatrix}1&3\\2&4\end{pmatrix}&
+    f(\xx)&=A\xx
+  \end{align*}
+  とすると,
+  $f$は全単射であり, 逆写像をもつ.  
+  $f^{-1}(\xx)$を行列とベクトルの積で表せ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:5:p:4}
+  \label{quiz:5:p:4}
+  \seealsoQuiz{quiz:5:p:1}
+  \begin{align*}
+    L&=\Set{t\begin{pmatrix}2\\-3\end{pmatrix}|t\in\RR}
+  \end{align*}
+  とする.
+  $L$に関する
+  鏡映を$f$とする.
+  \begin{align*}
+    \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}
+  \end{align*}
+  に対し,
+  $f(\aaa)$を求めよ.
+\end{quiz}
+
+\begin{quiz} 
+  \solvelater{quiz:5:19}
+  各点を原点を中心に$\frac{\pi}{2}$だけ回転させる線形変換を$f$とする.
+  $f(\xx)$を行列とベクトルの積として表せ.
+  また, 
+  \begin{align*}
+    \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}
+  \end{align*}
+  に対し,
+  $f(\aaa)$を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:20}
+  \begin{align*}
+    A=\begin{pmatrix}3&5\\4&5\end{pmatrix}
+  \end{align*}
+  とする.
+  $A=RB$となる回転行列$R$と上半三角行列$B$を求めよ.
+\end{quiz}
+
+
+
+\chapter{固有値と固有ベクトル}
+\label{chap:eigen}
+
+この章では, 固有値と固有ベクトルについて定義し,
+行列の対角化について説明する.
+
+\cite{978-4-7806-0772-7}であれば,
+第3章が関連する.
+また, 第18--21章には,
+関連する内容について, 難しいことも含めて, 詳しく書かれている.
+\cite{978-4-7806-0164-0}であれば,
+第6章が関連する.
+特に, 6.1, 6.2, 6.3 が関連する.
+
+\section{固有値と固有ベクトルの定義}
+ここでは, 固有値や固有ベクトルに関連する用語を定義し,
+その性質について紹介する.
+\begin{definition}
+  \label{def:eigen}
+  $A$を$2$次正方行列とする.
+  $\lambda$を数とする.
+  $\vv$を$\zzero$ではない$2$項ベクトルとする.
+  次の条件を満たすとき$\vv$は
+  \defit{固有値$\lambda$に属する$A$の固有ベクトル}
+  \Defit{eigenvector belonging to the eigenvalue $\lambda$}
+  \addindex{固有値!---に属する固有ベクトル}%
+  \addindex{固有ベクトル!固有値に属する---}%
+  \addindex{属する!固有値に---固有ベクトル}%
+  \addindex{eigenvector!--- belonging to an eigenvalue}%
+  \addindex{eigenvalue!eigenvector belonging to ---}%
+  であるという:
+  \begin{align*}
+    A\vv=\lambda\vv.
+  \end{align*}
+  固有値$\lambda$に属する$A$の固有ベクトルが存在するとき,
+  $\lambda$は
+  \defit{$A$の固有値}
+  \Defit{eigenvlue of $A$}
+  \addindex{固有値!行列の---}%
+  \addindex{of matrix!eigenvalue ---}%
+  \addindex{eigenvalue!--- of a matrix}%
+  であるという.
+\end{definition}
+
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}5\\0\end{pmatrix}=\begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  であるから,
+  \begin{align*}
+    \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  は固有値$1$に属する$A$の固有ベクトル.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}=0\begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  であるから,
+  \begin{align*}
+    \begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  は固有値$0$に属する$A$の固有ベクトル.
+\end{example}
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \lambda\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}\lambda\\\lambda\end{pmatrix}
+  \end{align*}
+  となるが,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  は第1成分と第2成分の値が異なるので等しくなることはない.
+  したがって,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  は$A$の固有ベクトルにはなりえない.
+\end{example}
+
+$\vv$が固有値$\lambda$に属する$A$の固有ベクトルであるための条件は
+\begin{align*}
+  A\vv=\lambda\vv
+\end{align*}
+であるが,
+これを書き換えると,
+\begin{align*}
+  A\vv-\lambda\vv&=\zzero\\
+  A\vv-\lambda E_2 \vv&=\zzero\\
+  (A-\lambda E_2) \vv&=\zzero
+\end{align*}
+である.
+どのような$\lambda$が$A$の固有値になるかがわかれば,
+その$\lambda$に対し,
+$\xx$に関する方程式
+$(A-\lambda E_2) \xx=\zzero$
+の解の空間を求めることで,
+$A$の固有ベクトルがすべてわかる.
+したがって,
+どのような$\lambda$が$A$の固有値になるかがわかれば固有ベクトルがすべて求められることになる.
+$\lambda$が$A$の固有値として現れるということは,
+$(A-\lambda E_2) \xx=\zzero$
+が$\zzero$以外の解をもつということであるので,
+これは, $(A-\lambda E_2)$が正則であるかそうでないかを調べればわかる.
+このことは以下のようにまとめることができる.
+\begin{definition}
+  \label{def:charpoly}
+  $A$を$2$次正方行列とする.
+  $x$に関する多項式
+  \begin{align*}
+  \det(A-xE_2)
+  \end{align*}
+  を
+  \defit{$A$の固有多項式}
+  \Defit{$A$の特性多項式}
+  \Defit{characteristic polynomial of $A$}
+  \addindex{多項式!行列の固有---}%
+  \addindex{固有多項式!行列の---}%
+  \addindex{行列の!---固有多項式}%
+  \addindex{行列の!---特性多項式}%
+  \addindex{多項式!行列の特性---}%
+  \addindex{特性多項式!行列の---}%
+  \addindex{特性!行列の---多項式}%
+  \addindex{polynomial!characteristic --- of a matrix}%
+  \addindex{characteristic polynomial!--- of a matrix}%
+  \addindex{of matrix!characteristic polynomial ---}%
+  と呼ぶ.
+\end{definition}
+\begin{prop}
+  %proved
+  $A$を$2$次正方行列とする.
+  $f(x)$を$A$の固有多項式とする.
+  つまり $f(x)=\det(A-xE_2)$とする.
+  このとき 次は同値:
+  \begin{enumerate}
+  \item $\lambda$が$A$の固有値.
+  \item $\lambda$は$f(x)=0$の根 (つまり$f(\lambda)$=0を満たす).
+  \end{enumerate}
+\end{prop}
+
+\begin{remark}
+  $A$を$2$次正方行列とすると, $A$の固有多項式$f(x)$は$2$次式である.
+  よって$f(x)=0$は$2$次方程式である.
+  したがって, $A$の成分が実数であっても,
+  $A$の固有値が実数になるとは限らない.
+\end{remark}
+
+\begin{definition}
+  $\lambda$を$A$の固有値であるとする.
+  このとき,
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$の解の空間
+  \begin{align*}
+    \Set{\vv | (A-\lambda E_2)\vv=\zzero}
+  \end{align*}
+  を
+  \defit{固有値$\lambda$に属する$A$の固有空間}
+  \Defit{eigenspace associated with $\lambda$}
+  \addindex{固有空間!固有値に属する---}%
+  \addindex{属する!固有値に---固有空間}%
+  \addindex{固有空間!固有値に属する---}%
+  \addindex{空間!固有値に属する固有---}%
+  \addindex{空間!固有---}%
+  \addindex{eigenspace!---}%
+  \addindex{space!eigen---}%
+ と呼ぶ.
+\end{definition}
+\begin{remark}
+  $\lambda$を$A$の固有値であるとし,
+  $V$を固有値$\lambda$に属する$A$の固有空間とする.
+  $V$は,
+  $\zzero$と固有値$\lambda$に属する$A$の固有ベクトル全体からなる集合である.
+\end{remark}
+固有空間は
+$\xx$に関する方程式
+$(A-\lambda E_2)\xx=\zzero$の解空間であるので,
+\Cref{thm:ker:vec}から次がわかる.
+\begin{prop}
+  %proved
+  $A$を$2$次正方行列とし,
+  $\lambda$を$A$の固有値とする.
+  $V$を固有値$\lambda$に属する$A$の固有空間とする.
+  このとき, 次が成り立つ:
+  \begin{enumerate}
+  \item $\vv\in V$とし, $c$を数とするとすると, $c\vv\in V$.
+  \item $\vv,\ww\in V$とすると, $\vv+\ww\in V$.
+  \end{enumerate}
+\end{prop}
+また, $\vv\neq\zzero$に対し, $\bar\vv=\frac{1}{\|\vv\|}\vv$とおけば,
+$\|\bar\vv\|=1$であるので次がわかる.
+\begin{cor}
+  %proved
+  $A$を$2$次正方行列とし,
+  $\lambda$を$A$の固有値とする.
+  このとき, 
+  固有値$\lambda$に属する$A$の固有ベクトル$\vv$で$\|\vv\|=1$となるものが存在する.
+\end{cor}
+
+\begin{remark}
+  \label{thm:cht:general}
+  $A$を$n$次正方行列とする.
+  このとき,
+  $x$に関する多項式
+  $\det(A-xE_n)$
+  のことを$A$の固有多項式と呼ぶ.
+  $f(x)$を$A$の固有多項式とする.
+  つまり $f(x)=\det(A-xE_n)$とする.
+  このとき,
+  \begin{align*}
+    f(A)=O_{n,n}
+  \end{align*}
+  が成り立つ.
+  この定理はケーリー--ハミルトンの定理と呼ばれる.
+\end{remark}
+\begin{remark}
+    2次正方行列の場合は次の様にかける:
+  \provelater{thm:cht:2dim}
+  \label{thm:cht:2dim}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    f_A(t)=t^2-(a+d)t+(ad-bc)
+  \end{align*}
+  とおく. このとき,
+  \begin{align*}
+    f_A(A)=O_{2,2}
+  \end{align*}
+  である. つまり
+  \begin{align*}
+    A^2-(a+d)A+(ad-bc)E_2=O_{2,2}
+  \end{align*}
+\end{remark}
+
+\section{行列の対角化}
+ここでは,
+行列の対角化に関連する用語を定義し,
+対角化可能性に関する必要十分条件を紹介する.
+
+$A$を$2$次正方行列とする.
+  \begin{align*}
+    \vv&=\begin{pmatrix}v\\v'\end{pmatrix}
+  \end{align*}
+  を固有値$\lambda$に属する$A$の固有ベクトルとする.
+  \begin{align*}
+    \ww&=\begin{pmatrix}w\\w'\end{pmatrix}
+  \end{align*}
+  を固有値$\mu$に属する$A$の固有ベクトルとする.
+  $\vv$と$\ww$が一次独立であるとする.
+  このとき,
+  \begin{align*}
+    P&=\begin{pmatrix}v&w\\v'&w'\end{pmatrix}
+  \end{align*}
+  とおくと, $P$は正則である.
+  さらに,
+  \begin{align*}
+    P^{-1}AP&=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}
+  \end{align*}
+  となる.
+\begin{remark}
+  正方行列$A$に対し,
+  $P^{-1}AP$が対角行列になるような正則行列$P$が存在するとき,
+  \defit{$A$は$P$によって対角化できる}
+  \Defit{$A$ is diagonalizable with $P$}
+  \addindex{対角化!---}%
+  \addindex{対角化!---可能}%
+  \addindex{diagonalizable!---}%
+  という.
+  $P$および$P^{-1}AP$を求めることを,
+  $A$を対角化するという.
+\end{remark}
+\begin{remark}
+  正方行列がいつでも対角化できるわけではない.
+  例えば
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&1\end{pmatrix}
+  \end{align*}
+  は対角化できない. 対角化出来ない理由は\Cref{rem:jordan}で述べる.
+\end{remark}
+
+
+\begin{theorem}
+  \provelater{thm:diagonizablity}
+  \label{thm:diagonizablity}
+  $A$を$2$次正方行列とする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item\label{thm:diagonizablity:item:diagonalizable}
+    $A$が対角化可能である.
+  \item\label{thm:diagonizablity:item:eigen}
+    次を満たす$\vv_1,\vv_2$がとれる:
+    \begin{enumerate}
+      \item $(\vv_1,\vv_2)$は一次独立.
+      \item $\vv_i$は固有値$\lambda_i$に属する$A$の固有ベクトル.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+また, 次が知られている.
+\begin{theorem}
+  \provelater{thm:diferenteigen:linindep}
+  \label{thm:diferenteigen:linindep}
+  $A$を$2$次正方行列とする.
+  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
+  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
+  $\lambda\neq\mu$ならば$(\vv,\ww)$は一次独立.
+\end{theorem}
+
+\begin{remark}
+  \label{rem:jordan}
+  $A$を$2$次正方行列とする.
+  $x$に関する方程式
+  $\det(A-xE_2)=0$
+  は, $2$次方程式である.
+  
+  $\det(A-xE_2)=0$
+  が異なる解を持つときには,
+  異なる固有値$2$つ取れる.
+  それぞれの固有値に属する固有ベクトルを一つずつ選んでくれば,
+  \cref{thm:diferenteigen:linindep}から,
+  それらは一次独立であることがわかる.
+  したがって,
+  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
+
+  $\det(A-xE_2)=0$
+  が重根を持つときには,
+  固有値は一つしかない.
+  $\lambda$をその固有値とする.
+  $\xx$に関する方程式
+  $(A-\lambda E_2)\xx=\zzero$
+  の解の空間を$V$とおく.
+  つまり$V$は$\lambda$に属する$A$の固有空間である.
+
+  $\det(A-xE_2)=0$
+  が重根$\lambda$をもっても,
+  $\rank(A-\lambda E_2)=0$ならば
+  $V$から一次独立な$2$つのベクトル$\vv$, $\ww$が取れる.
+  したがって,
+  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
+
+  $\det(A-xE_2)=0$
+  が重根$\lambda$をもっているときに,
+  $\rank(A-\lambda E_2)=1$である場合を考える.
+  $\vv$を固有値$\lambda$に属する$A$の固有ベクトルとする.
+  このとき, $\vv$は
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
+  の解であり, $\vv\neq \zzero$である.
+  $\rank(A-\lambda E_2)=1$が$1$であるので,
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
+  の解は, 変数$c$を使って, $c\vv$と書くことができる.
+  つまり, $\ww$も固有値$\lambda$に属する$A$の固有ベクトルとすると,
+  $\vv$のスカラー倍として書ける.
+  よって, $(\vv,\ww)$は一次独立ではない.
+  したがって,
+  一次独立である2つの固有ベクトルが取れないことがわかる.
+  したがって,
+  \cref{thm:diagonizablity}から
+  $A$は対角化可能ではないことがわかる.
+  実は, この場合には, 対角化はできないものの,
+  \begin{align*}
+    P^{-1}AP=\begin{pmatrix}\lambda&1\\0&\lambda \end{pmatrix}
+  \end{align*}
+  のように上三角行列に変形できる正則行列$P$が取れることが知られている.
+\end{remark}
+
+
+\section{対角化の計算例}
+\label{ex:diagonalization}
+行列の対角化の応用の一つに, 冪の計算がある.
+一般の正方行列の冪の計算は複雑であるが,
+対角行列の冪の計算は簡単であるため,
+そこに帰着するというものである.
+以下では,
+その計算方法
+\begin{align*}
+A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
+\end{align*}
+の場合で説明する.
+
+まず$A$の固有値を求める.
+\begin{align*}
+  A-xE_2=\begin{pmatrix}1&6\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
+=\begin{pmatrix}1-x&6\\1&-x\end{pmatrix}
+\end{align*}
+であるので,
+\begin{align*}
+  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&6\\1&-x\end{pmatrix})\\
+    &=-(1-x)x-6
+    =x^2-x-6
+    =(x-3)(x+2)
+\end{align*}
+である.
+したがって, $x$に関する方程式
+\begin{align*}
+  \det(A-xE_2)&=0
+\end{align*}
+は,
+\begin{align*}
+  (x-3)(x+2)=0
+\end{align*}
+と書けるので,
+解は,
+$3$と
+$-2$
+の$2$つである.
+したがって,
+$A$の固有値も,
+$3$と
+$-2$
+の$2$つである.
+
+
+まず,
+固有値$3$に属する固有ベクトルを求める.
+$\lambda=3$とするとき
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\lambda=3$に属する固有ベクトルである.
+\begin{align*}
+  A-\lambda E_2
+  & =
+  \begin{pmatrix}1-\lambda&6\\1&-\lambda\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}1-3&6\\1&-3\end{pmatrix}\\
+    & =
+  \begin{pmatrix}-2&6\\1&-3\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+    -2&6&0\\
+    1&-3&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{-2}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&-3&0\\
+    1&-3&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&-3&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}3\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+したがって, 例えば
+\begin{align*}
+  \begin{pmatrix}3\\1\end{pmatrix}
+\end{align*}
+は固有値$3$に属する固有ベクトルである.
+
+
+次に,
+固有値$-2$に属する固有ベクトルを求める.
+$\lambda=-2$とするとき
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\lambda=-2$に属する固有ベクトルである.
+\begin{align*}
+  A-\lambda E_2
+  & =
+  \begin{pmatrix}1-\lambda&1\\6&-\lambda\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}1+2&6\\1&2\end{pmatrix}\\
+    & =
+  \begin{pmatrix}3&6\\1&2\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+    3&6&0\\
+    1&2&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{3}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&2&0\\
+    1&2&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&2&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}-2\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+例えば
+\begin{align*}
+  \begin{pmatrix}-2\\1\end{pmatrix}
+\end{align*}
+は固有値$-2$に属する固有ベクトルである.
+
+
+固有ベクトルが求められたので対角化をする.
+\begin{align*}
+  P=
+  \begin{pmatrix}
+    3&-2\\
+    1&1    
+  \end{pmatrix}
+\end{align*}
+とすると
+\begin{align*}
+  \det(P)=
+  \det(
+  \begin{pmatrix}
+    3&-2\\
+    1&1    
+  \end{pmatrix})
+  =3-(-2)=5\neq 0
+\end{align*}
+であるので$P$は正則であり,
+\begin{align*}
+  P^{-1}=
+  \frac{1}{5}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+\end{align*}
+である.
+
+このとき,
+\begin{align*}
+  P^{-1}AP=
+  \begin{pmatrix}
+    3&0\\
+    0&-2
+  \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  (P^{-1}AP)^n=
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+\end{align*}
+である. 一方, \cref{ex:diagonalizedpow}でみたように,
+\begin{align*}
+  (P^{-1}AP)^n
+  &=P^{-1}A^nP
+\end{align*}
+であるので,
+\begin{align*}
+P^{-1}A^nP&=
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+\\
+A^n&=
+P
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  P^{-1}
+\end{align*}
+とできる.
+したがって,
+\begin{align*}
+  A^n
+  &=
+P
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  P^{-1}\\
+&=
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+(  \frac{1}{5}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+)\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&3^n2\\
+    -(-2)^n&(-2)^n3
+  \end{pmatrix}
+\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n+1}-(-2)^{n+1}&3^{n+1}2+(-2)^{n+1}3\\
+    3^n-(-2)^n&3^n2+(-2)^n3    
+  \end{pmatrix}
+\end{align*}
+
+このような行列の冪の一つの応用として, 数列の一般項の計算について見てみる.
+\begin{example}
+\begin{align*}
+  \begin{cases}
+    a_{n+2}=a_{n+1}+6a_n&(n=0,1,2,\ldots)\\
+    a_{1}=1\\
+    a_{0}=0
+ \end{cases}
+\end{align*}
+で定義される数列を考え,
+その一般項を求める.
+この数列の一般項を求める.
+\begin{align*}
+  \vv_n=\begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
+\end{align*}
+とおく.
+このとき,
+\begin{align*}
+  \vv_{n+2}
+  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}a_{n+1}6+a_n\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\vv_{n+1}
+\end{align*}
+とできる.
+\begin{align*}
+A
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}
+\end{align*}
+であったから,
+\begin{align*}
+  \vv_{n+2}
+  &=A\vv_{n+1}
+\end{align*}
+となる.
+この式は$n\leq 0$であれば成り立つ. つまり,
+\begin{align*}
+  \vv_{k}
+  &=A\vv_{k-1} &(k=2,3,\ldots)
+\end{align*}
+である.
+よって
+\begin{align*}
+  &\vv_{n}\\
+  &=A\vv_{n-1}\\
+  &=A(A\vv_{n-2})=A^2\vv_{n-2}\\
+  &=A^2(A\vv_{n-3})=A^3\vv_{n-3}\\
+  &=A^3(A\vv_{n-4})=A^4\vv_{n-4}\\
+  &=\cdots=A^{n-1}\vv_1
+\end{align*}
+である.
+先ほど求めた$A^n$の計算結果を使うと,
+\begin{align*}
+  A^{n-1}
+    &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
+  \end{pmatrix}
+\end{align*}
+であり,
+\begin{align*}
+  \vv_1=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+\end{align*}
+であるから,
+\begin{align*}
+  \begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
+    &=
+    \vv_n\\
+    &=
+    A^{n-1}\vv_0\\
+    &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
+  \end{pmatrix}
+  \begin{pmatrix}1\\0\end{pmatrix}\\
+    &=
+    \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}\\
+    3^{n-1}-(-2)^{n-1}
+  \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  a_n=
+  \frac{3^{n}-(-2)^{n}}{5}
+\end{align*}
+である.
+\end{example}
+
+
+\section{実対称行列の固有値}
+
+ここでは, 実数を成分とする対称行列を考え, その固有値について調べる.
+\begin{align*}
+  A=\begin{pmatrix}s&t\\t&u\end{pmatrix}
+\end{align*}
+とする.
+このとき,
+\begin{align*}
+  \det(A-xE_2)
+  &=\det(\begin{pmatrix}s-x&t\\t&u-x\end{pmatrix})\\
+  &=(s-x)(u-x)-t^2\\
+  &=x^2-(s+u)x+su-t^2
+\end{align*}
+となる. $x$に関する方程式
+\begin{align*}
+  \det(A-xE_2)=0
+\end{align*}
+の解を調べたいので判別式$D$を計算すると,
+\begin{align*}
+  D&=(-(s+u))^2-4(su-t^2)\\
+  &=s^2+2us+u^2-4su+4t^2\\
+  &=s^2-2us+u^2+4t^2\\
+  &=(s-u)^2+4t^2.
+\end{align*}
+となる.  $D\geq 0$なので,
+複素数解を持つことはなく, 常に実数解をもつ.
+
+$D>0$のときについて考える.
+このときには, 実数解が2つ存在するので,
+$\lambda,\mu$とする.
+$\lambda\neq\mu$である.
+$\vv$を$\|\vv\|=1$である固有値$\lambda$に属する$A$の固有ベクトルでとする.
+$\ww$を$\|\ww\|=1$である固有値$\mu$に属する$A$の固有ベクトルとする.
+このとき,
+\begin{align*}
+  \Braket{A\vv,\ww}&=\Braket{\lambda\vv,\ww}=\lambda\Braket{\vv,\ww}
+\end{align*}
+であるが, $\Braket{A\vv,\ww}$は$\transposed{(A\vv)}\ww$の$(1,1)$-成分と等しい.
+また,
+\begin{align*}
+  \Braket{\vv,A\ww}&=\Braket{\vv,\mu\ww}=\mu\Braket{\vv,\ww}
+\end{align*}
+であるが, $\Braket{\vv,A\ww}$は$\transposed{\vv}A\ww$の$(1,1)$-成分と等しい.
+いま$A$は対称行列であるので$\transposed{A}=A$であるから,
+\begin{align*}
+  \transposed{(A\vv)}\ww=\transposed{\vv}\transposed{A}\ww=
+  \transposed{\vv}A\ww
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  \lambda\Braket{\vv,\ww}=\mu\Braket{\vv,\ww}
+\end{align*}
+となるが,
+\begin{align*}
+  (\lambda-\mu)\Braket{\vv,\ww}=0
+\end{align*}
+となる. $\lambda\neq\mu$であるので,
+\begin{align*}
+  \Braket{\vv,\ww}=0
+\end{align*}
+であり, $\vv$と$\ww$は直交する.
+したがって, $\vv$と$\ww$を並べてできる行列は直交行列であるから,
+$A$は対角化可能であることがわかる.
+
+
+
+また,
+重根となるのは,
+$t=0$かつ$s=u$のときであるので,
+\begin{align*}
+  A=\begin{pmatrix}s&0\\0&s\end{pmatrix}=sE_2
+\end{align*}
+のときである.
+$A=sE_2$のときは,
+すでに対角行列である.
+つまり単位行列$E_2$により$A$は対角化できるが,
+$E_2$も直交行列である.
+
+これらの事実をまとめると以下のようになる.
+\begin{theorem}
+  %proved
+  \label{thm:symmat:eigen}
+  $A$を実対称行列とする.
+  このとき, $A$の固有値は実数である.
+  また, $\lambda,\mu$が相異なる$A$の固有値ならば,
+  $\lambda$に属する$A$の固有ベクトルと,
+  $\mu$に属する$A$の固有ベクトルとは直交する.
+\end{theorem}
+\begin{theorem}
+  %proved
+  \label{thm:symmat:diag}
+  $A$を実対称行列とする.
+  このとき, $P^{-1}AP$が対角行列となる直交行列$P$が存在する.
+\end{theorem}
+
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:6:1}
+  \label{quiz:6:1}
+\seealsoQuiz{quiz:3:7}
+\Seealsoquiz{quiz:6:2,quiz:6:4}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  とする.
+  $A$の固有多項式を求めよ. また, $A$の固有値をすべて求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:2}
+  \label{quiz:6:2}
+  \seealsoQuiz{quiz:6:1}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  は対角化可能か判定せよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:3}
+  \label{quiz:6:3}
+  \seealsoQuiz{quiz:3:8}
+  \begin{align*}
+    A=\begin{pmatrix}2&1\\0&2\end{pmatrix}
+  \end{align*}
+  は対角化可能か判定せよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:4}
+  \label{quiz:6:4}
+  \seealsoQuiz{quiz:3:9,quiz:3:10,quiz:6:1}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  とする.
+  このとき次に答えよ:
+  \begin{enumerate}
+  \item 固有ベクトルをすべて求めよ.
+  \item $A$を対角化せよ.
+  \item $A^n$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:5}
+  \label{quiz:6:5}
+  \Seealsoquiz{quiz:6:6}
+  次の行列$A$は直交行列か判定せよ. 
+  \begin{align*}
+   A=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:6}
+  \label{quiz:6:6}
+  \seealsoQuiz{quiz:6:5}
+  次の行列を
+  直交行列により対角化せよ:
+  \begin{align*}
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:6:7}
+  次で定義される数列(Fibonacci数列)の一般項を求めよ:
+  \begin{align*}
+    \begin{cases}
+      a_{n+2}=a_{n+1}+a_n&(n=1,2,3,\ldots)\\
+      a_{2}=a_{1}=1
+    \end{cases}
+  \end{align*}
+\end{quiz}
