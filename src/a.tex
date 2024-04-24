@@ -600,18 +600,17 @@
 %%   \end{align*}
 %% \end{proofof}
 
-\endinput
-\section{逆行列や正則に関する命題の証明}
-ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
-逆行列や正則行列に関する命題については,
-一般の正方行列の場合について証明をしているので,
-煩雑になっている部分がある.
-$2$-次正方行列の場合のみについて証明をするのであれば,
-直接計算をすることで示すほうが手っ取り早いものが多い.
-行列式に関する命題は,
-行列式を$2$次正方行列にしかここでは定義していないこともあり,
-$2$-次正方行列の場合のみについて証明をしている.
+%\endinput
 
+\section{正則行列に関する命題の証明}
+\begin{proofof}{porp:inverse:unique}
+  $CAB$について考える.
+  \begin{align*}
+    (CA)B=E_nB=B,\\
+    C(AB)=CE_n=C
+  \end{align*}
+  であるので, $B=C$.
+\end{proofof}
 
 
 \begin{proofof*}{inverse}{inverse}
@@ -866,6 +865,185 @@ $2$-次正方行列の場合のみについて証明をしている.
   である.
 
 \end{proofof*}
+
+\begin{proofof*}{zerodivisor}{left}
+  背理法により示す.
+  $A$を正則とすると,
+  $AX=O_{n,m}$の両辺に左から$A^{-1}$をかけることにより,
+  \begin{align*}
+    A^{-1}AX&=A^{-1}O_{n,m}\\
+    X&=O_{n,m}
+  \end{align*}
+  となり, $X$が零行列でないことに反する.
+\end{proofof*}
+
+\begin{proofof*}{zerodivisor}{right}
+  背理法により示す.
+  $A$を正則とすると,
+  $YA=O_{m,n}$の両辺に右から$A^{-1}$をかけることにより,
+  \begin{align*}
+    YAA^{-1}&=O_{m,n}A^{-1}\\
+    Y&=O_{m,n}
+  \end{align*}
+  となり, $Y$が零行列でないことに反する.
+\end{proofof*}
+
+
+\begin{proofof}{prop:zerodivsquare}
+  \Cref{prop:zerodiv:left}から,
+  $A$が正則でないことがわかる.
+  また, \Cref{prop:zerodiv:left}から,
+  $B$が正則でないことがわかる.
+\end{proofof}
+
+\begin{proofof}{prop:matwithzerovec}
+  例えば, $Y=\begin{pmatrix}0&\cdots0&1\end{pmatrix}$とすると,
+  $YA=O_{1,n}$であるので,
+  \Cref{prop:zerodiv}から,
+  $A$が正則ではないことがわかる.
+\end{proofof}
+
+
+ある成分だけ$1$であり他は$0$である行列を行列単位と呼ぶことがある.
+どの行列も行列単位の線型結合として表すことができる.
+また, 行列単位の積は,
+定義に従って計算すると次のようになる.
+\begin{lemma}
+  $B_{i,j}$を$(i,j)$-成分のみ$1$で他は$0$の$n$次正方行列とする.
+  \begin{align*}
+    B_{i,j}B_{k,l}=
+    \begin{cases}
+      B_{i,l}&(j=k)\\
+      O_{n,m}&(j\neq k)
+    \end{cases}
+  \end{align*}
+\end{lemma}
+したがって, 次がわかる.
+\begin{lemma}
+  \label{lemma:matrixunit:rightprod}
+  $B_{i,j}$を$(i,j)$-成分のみ$1$で他は$0$の$n$次正方行列とする.
+  また, $A$を$(n,m)$行列とする.
+  このとき,
+  $B_{i,j}A$は,
+  $i$行目が$A$の$j$行目と等しく, それ以外の成分は$0$である.  
+\end{lemma}
+
+\begin{proofof*}{fundamentalmat:rowtrans}{F}
+  $F(i;c)A=(E_n-E_{i,i}+cE_{i,i})A=A+(c-1)E_{i,i}A$である.
+  したがって,
+  \Cref{lemma:matrixunit:rightprod}から,
+  $F(i;c)A$の$i$行目は$A$の$i$行目に$A$の$i$行目の$c-1$倍を加えたものであるので,
+  $A$の$i$行目の$c$倍である.
+  また$i$行目以外は$F(i;c)A$と$A$は等しい.
+  つまり,
+  $F(i;c)A$は$A$の$i$行目を$c$倍した行列である.
+\end{proofof*}
+\begin{proofof*}{fundamentalmat:rowtrans}{G}
+  $G(i,j;c)A=(E_n+cE_{i,j})A=A+cE_{i,j}A$である.
+  したがって,
+  \Cref{lemma:matrixunit:rightprod}から,
+  $G(i,j;c)A$の$i$行目は$A$の$i$行目に$A$の$j$行目の$c$倍を加えたものである.
+  また$i$行目以外は$G(i,j;c)A$と$A$は等しい.
+  つまり, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
+\end{proofof*}
+\begin{proofof*}{fundamentalmat:rowtrans}{H}
+  $H(i,j)A=(E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{i,j})A=A-E_{i,i}A+E_{i,j}A-E_{j,j}A+E_{j,i}A$
+  である.
+  したがって,
+  \Cref{lemma:matrixunit:rightprod}から,
+  $H(i,j)A$の$i$行目は,
+  $A$の$i$行めに$A$の$i$行目の$-1$倍と$A$の$j$行目の$1$倍を加えたものであるので,
+  $A$の$j$行目である.
+  同様に, $H(i,j)A$の$j$行目は,
+  $A$の$j$行めに$A$の$j$行目の$-1$倍と$A$の$i$行目の$1$倍を加えたものであるので,
+  $A$の$i$行目である.
+  また$i$行目と$j$行目以外は$H(i,j)A$と$A$は等しい.
+  つまり$H(i,j)A$は$A$の$i$行目と$j$行目を入れ替えた行列である.
+\end{proofof*}
+
+\begin{proofof*}{fundamentalmat:coltrans}{F}
+  $\transposed{(AF(i;c))}=\transposed{F(i;c)}\transposed{A}=F(i;c)\transposed{A}$
+  である.
+  \Cref{lem:fundamental}
+  をつかうと,
+  $\transposed{(AF(i;c))}$は,
+  $\transposed{A}$の$i$行目を$c$倍した行列であることがわかる.
+  $AF(i;c)=\transposed{(\transposed{(AF(i;c))})}$
+  であるので,
+  $AF(i;c)$は$A$の$i$列目を$c$倍した行列であることがわかる.
+\end{proofof*}
+
+\begin{proofof*}{fundamentalmat:coltrans}{G}
+  $\transposed{(AG(i,j;c))}=\transposed{G(i,j;c)}\transposed{A}=G(j,i;c)\transposed{A}$
+  である.
+  \Cref{lem:fundamental}
+  をつかうと,
+  $\transposed{(AG(i,j;c))}$は,
+  $\transposed{A}$の$j$行目に$i$行目の$c$倍を加えた行列であることがわかる.
+  $AG(i,j;c)=\transposed{(\transposed{(AG(i,j;c))})}$
+  であるので,
+  $AG(i,j;c)$は$A$の$j$列目に$i$列目の$c$倍を加えた行列であることがわかる.
+\end{proofof*}
+
+\begin{proofof*}{fundamentalmat:coltrans}{H}
+  $\transposed{(AH(i,j))}=\transposed{H(i,j)}\transposed{A}=H(j,i)\transposed{A}$
+  である.
+  \Cref{lem:fundamental}
+  をつかうと,
+  $\transposed{(AH(i,j))}$は,
+  $\transposed{A}$の$j$行目と$i$行目を入れ替えた行列であることがわかる.
+  $AH(i,j)=\transposed{(\transposed{(AH(i,j))})}$
+  であるので,
+  $AH(i,j)$は$A$の$i$列目と$j$列目を入れ替えた行列であることがわかる.
+\end{proofof*}
+
+\begin{proofof*}{fundamentalmat:invertible}{F}
+  $F(i;c)$は$(i,i)$-成分のみ$c$で
+  他の対角成分は$c$である対角行列である.
+
+  $F(i;c)F(i;\frac{1}{c})$は$F(i;\frac{1}{c}$の$i$行目を$c$倍したものであるので,
+  $E_n$である.
+  $F(i;\frac{1}{c})F(i;c)$は$F(i;c$の$i$行目を$\frac{1}{c}$倍したものであるので,
+  $E_n$である.
+  よって$F(i;c)^{-1}=F(i;\frac{1}{c})$である.
+\end{proofof*}
+\begin{proofof*}{fundamentalmat:invertible}{G}
+  $G(i,j;c)$は, 対角成分は全て$1$, $(i,j)$-成分は$c$, 他の成分は全て$0$である.
+
+  $G(i,j;c)G(i,j;-c)$は, $G(i,j;-c)$の$i$行目に$G(i,j;-c)$の$j$行目の$c$倍を加えたものであるが, $G(i,j;-c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$c$が加えられることになる.
+  したがって, $G(i,j;c)G(i,j;-c)=E_n$である.
+  一方$G(i,j;-c)G(i,j;c)$は, $G(i,j;c)$の$i$行目に$G(i,j;c)$の$j$行目の$-c$倍を加えたものであるが, $G(i,j;c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$-c$が加えられることになる.
+  したがって, $G(i,j;-c)G(i,j;c)=E_n$である.
+  よって, $G(i,j;c)^{-1}=G(i,j;-c)$である.
+\end{proofof*}
+\begin{proofof*}{fundamentalmat:invertible}{H}
+  $H(i,j)$は$(i,i)$-成分と$(j,j)$-成分は$0$, それ以外の対角成分は$1$,
+  $(i,j)$-成分と$(j,i)$-成分は$1$, それ以外の成分は$0$である.
+
+  $H(i,j)H(i,j)$は$H(i,j)$の$i$行目と$j$行目を入れ替えたものであるので,
+  $E_n$である.
+  したがって, $H(i,j)^{-1}=H(i,j)$である.
+\end{proofof*}
+
+
+
+\endinput
+
+\section{逆行列や正則に関する命題の証明}
+ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
+逆行列や正則行列に関する命題については,
+一般の正方行列の場合について証明をしているので,
+煩雑になっている部分がある.
+$2$-次正方行列の場合のみについて証明をするのであれば,
+直接計算をすることで示すほうが手っ取り早いものが多い.
+行列式に関する命題は,
+行列式を$2$次正方行列にしかここでは定義していないこともあり,
+$2$-次正方行列の場合のみについて証明をしている.
+
+
+
 
 
 \begin{proofof}{det:hom}

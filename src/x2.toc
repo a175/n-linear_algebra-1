@@ -23,17 +23,24 @@
 \contentsline {subsection}{\numberline {3.2.6}連結}{18}{subsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.2.7}演算の性質}{20}{subsection.3.2.7}%
 \contentsline {section}{章末問題}{23}{section*.3}%
-\contentsline {chapter}{参考文献}{25}{chapter*.4}%
-\contentsline {chapter}{\numberline {付録A}命題の証明}{27}{appendix.A}%
-\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{27}{section.A.1}%
-\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{28}{section.A.2}%
-\contentsline {paragraph}{Base case}{32}{section*.5}%
-\contentsline {paragraph}{Induction Step}{32}{section*.6}%
-\contentsline {paragraph}{Base case}{32}{section*.7}%
-\contentsline {paragraph}{Induction Step}{33}{section*.8}%
-\contentsline {paragraph}{Base case}{33}{section*.9}%
-\contentsline {paragraph}{Induction Step}{33}{section*.10}%
-\contentsline {chapter}{\numberline {付録B}章末問題の略解}{35}{appendix.B}%
-\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{35}{section.B.1}%
-\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{35}{section.B.2}%
-\contentsline {chapter}{索引}{96}{appendix*.11}%
+\contentsline {chapter}{\numberline {第4章}正則行列と行基本変形}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}正則行列}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}基本変形と基本行列}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}階段行列}{29}{section.4.3}%
+\contentsline {chapter}{参考文献}{33}{chapter*.4}%
+\contentsline {chapter}{\numberline {付録A}命題の証明}{35}{appendix.A}%
+\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{35}{section.A.1}%
+\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{36}{section.A.2}%
+\contentsline {paragraph}{Base case}{40}{section*.5}%
+\contentsline {paragraph}{Induction Step}{40}{section*.6}%
+\contentsline {paragraph}{Base case}{40}{section*.7}%
+\contentsline {paragraph}{Induction Step}{41}{section*.8}%
+\contentsline {paragraph}{Base case}{41}{section*.9}%
+\contentsline {paragraph}{Induction Step}{41}{section*.10}%
+\contentsline {section}{\numberline {A.3}正則行列に関する命題の証明}{41}{section.A.3}%
+\contentsline {paragraph}{Base case}{43}{section*.11}%
+\contentsline {paragraph}{Induction Step}{43}{section*.12}%
+\contentsline {chapter}{\numberline {付録B}章末問題の略解}{47}{appendix.B}%
+\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{47}{section.B.1}%
+\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{47}{section.B.2}%
+\contentsline {chapter}{索引}{129}{appendix*.13}%

@@ -69,17 +69,17 @@
 %\newtheorem*{numberedanswer}{解説}
 
 \newcommand{\announceProveLater}[1]{%
-  \marginpar{証明は\cref{#1}.}%
+  \marginpar{\footnotesize 証明は\cref{#1}.}%
 }
 \newcommand{\announceProveEachItemLater}[1]{%
-  \marginpar{\Cref{#1}.}%
+  \marginpar{\footnotesize \Cref{#1}.}%
 }
 \newprovelater{\provelater}{\announceProveLater}{\announceProveEachItemLater}{\announceProveLater}
 \newcommand{\announceSolveLater}[1]{%
-  \marginpar{略解は\cref{#1}.}%
+  \marginpar{\footnotesize 略解は\cref{#1}.}%
 }
 \newcommand{\announceSolveEachItemLater}[1]{%
-  \marginpar{\Cref{#1}.}%
+  \marginpar{\footnotesize \Cref{#1}.}%
 }
 \newprovelater{\solvelater}{\announceSolveLater}{\announceSolveEachItemLater}{\announceSolveLater}
 

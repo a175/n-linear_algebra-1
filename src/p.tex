@@ -1488,10 +1488,10 @@ $2$次正方行列のときについて考える.
     A=\left(\begin{array}{c|c|c|c}\aaa_{1}&\aaa_2&\cdots&\aaa_{n}\end{array}\right)
   \end{align*}
   である.
-  %これを
-  %\defit{$A$の列ベクトルによる表示}
+  これを
+  \defit{$A$の列ベクトルによる表示}
   %\Defit{}
- % と呼ぶ.
+  と呼ぶ.
 \end{remark}
 
 \begin{remark}
@@ -1508,10 +1508,10 @@ $2$次正方行列のときについて考える.
     A=\left(\begin{array}{c}\aaa'_{1}\\\hline\aaa'_2\\\hline\vdots\\\hline\aaa'_{n}\end{array}\right)
   \end{align*}
   である.
-  %これを
-  %\defit{$A$の行ベクトルによる表示}
+  これを
+  \defit{$A$の行ベクトルによる表示}
   %\Defit{}
-  % と呼ぶ.
+   と呼ぶ.
 \end{remark}
 %\endinput
 
@@ -1888,11 +1888,648 @@ $A$, $B$によっては,
 \end{quiz}
 
 
+
+\chapter{正則行列と行基本変形}
+ここでは正則行列に関連する事項について説明をする.
+
+\section{正則行列}
+ここでは, 正則行列やその逆行列について説明する.
+
+以下のように定義する:
+
+\begin{definition}
+  \label{def:mat:reg}
+  $A$を正方行列とする.
+  $AB=BA=E$となる$B$が存在するとき,
+  $A$は
+  \defit{正則}
+  \Defit{非退化}
+  \Defit{非特異}
+  \Defit{可逆}
+  \Defit{invertible}
+  \Defit{nondegenerate}
+  \Defit{nonsingular}
+  \Defit{regular}
+  \addindex{行列!正則---}%
+  \addindex{行列!非退化---}%
+  \addindex{行列!非特異---}%
+  \addindex{行列!可逆---}%
+  \addindex{matrix!invertible ---}%
+  \addindex{matrix!nondegenerate ---}%
+  \addindex{matrix!nonsingular ---}%
+  \addindex{matrix!regular ---}%
+  であるといい,
+  $B$を
+  \defit{$A$の逆行列}
+  \Defit{inverse matrix of $A$}
+  \addindex{逆行列!行列の---}%
+  \addindex{行列の!---逆行列}%
+  \addindex{inverse matrix!--- of matrix}%
+  \addindex{inverse!--- matrix of matrix}%
+  \addindex{of matrix!inverse matrix ---}%
+  \addindex{$A^{-1}$}%
+  \addindex{${\square}^{-1}$}%
+  と呼ぶ.
+  %び$A^{-1}$で表す.
+  正則な$n$次正方行列を,
+  \defit{$n$次正則行列}
+  \Defit{$n$-th invertible matrix}
+  \addindex{行列!$n$次正則---}%
+  と呼ぶ.
+\end{definition}
+\begin{definition}
+  $A$を正方行列とする.
+  $AB=BA=E$となる$B$が存在しないとき,
+  $A$は
+  \defit{非正則}
+  \Defit{degenerate}
+  \Defit{singular}
+  \addindex{行列!非正則---}%
+  \addindex{matrix!degenerate ---}%
+  \addindex{matrix!singular ---}%
+  であるという.
+\end{definition}
+\begin{definition}
+  $A$を正方行列とする.
+  $AB=BA=E$となる$B$が存在しないとき,
+  $A$は
+  \defit{非正則}
+  \Defit{degenerate}
+  \Defit{singular}
+  \addindex{行列!非正則---}%
+  \addindex{matrix!degenerate ---}%
+  \addindex{matrix!singular ---}%
+  であるという.
+\end{definition}
+
+\begin{proof}
+  どんな正方行列$B$に対しても,
+  $O_{n,n}B=O_{n,n}\neq E_n$.
+\end{proof}
+
+\begin{prop}
+  \provelater{porp:inverse:unique}
+  $A$を$n$次正則行列とする.
+  このとき, $A$の逆行列は唯一つ存在する.
+  つまり,
+  $B$と$C$が,
+  \begin{align*}
+    AB&=BA=E_n,\\
+    AC&=CA=E_n\\    
+  \end{align*}
+  を満たすなら, $B=C$.
+\end{prop}
+
+
+\begin{remark}
+  正則行列$A$に対し,
+  逆行列は唯一つに定まるので,
+  この行列を$A^{-1}$と書く.
+  \index{$A$の逆行列}
+\end{remark}
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&1\\0&1\end{pmatrix}
+  \end{align*}
+  は正則であり,
+  \begin{align*}
+    A^{-1}&=\begin{pmatrix}1&-1\\0&1\end{pmatrix}
+  \end{align*}
+  である.
+\end{example}
+\begin{proof}
+  \begin{align*}
+    A&=\begin{pmatrix}1&1\\0&1\end{pmatrix}\\
+    B&=\begin{pmatrix}1&-1\\0&1\end{pmatrix}
+  \end{align*}
+  とすれば,
+  \begin{align*}
+    AB&=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}1&-1\\0&1\end{pmatrix}
+      =\begin{pmatrix}1\cdot 1+1\cdot 0&1\cdot(-1)+1\cdot 1\\0\cdot 1+1\cdot 0&0\cdot(-1)+1\cdot 1\end{pmatrix}
+      =\begin{pmatrix}1&0\\0&1\end{pmatrix},\\
+      BA&=\begin{pmatrix}1&-1\\0&1\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix}
+        =\begin{pmatrix}1\cdot 1+(-1)\cdot 0&1\cdot 1+(-1)\cdot 1\\0\cdot 1+1\cdot 0&0\cdot 1+1\cdot 1\end{pmatrix}
+        =\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+  \end{align*}
+\end{proof}
+\begin{example}
+  単位行列$E_n$は
+  正則であり,
+  $E_n^{-1}=E_n$.
+\end{example}
+\begin{proof}
+  $A=E_n$, $B=E_n$とすれば,
+  $AB=E_nE_n=E_n$, $BA=E_nE_n=E_n$.
+\end{proof}
+
+\begin{example}
+  零行列$O_{n,n}$は
+  非正則.
+\end{example}
+
+
+つぎに,
+逆行列に関する性質を紹介する.
+\begin{proposition}
+  \provelater**{inverse}
+  \label{thm:inverse:operation}
+  $X$, $Y$を$n$次正則行列とする.
+  %$r\neq 0$とする.
+  $r$を逆数を持つ数(つまり $r\neq 0$)とする.
+  $l$を正の整数とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{inverse}
+    $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
+  \item\provelater*{trans}
+    \label{prop:item:iverse-transpose}
+    $\transposed X$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
+  \item\provelater*{scalar}
+    $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
+  \item\provelater*{prod}
+    $XY$も正則. $(XY)^{-1}=Y^{-1}X^{-1}$.
+  \item\provelater*{power}
+    $X^l$も正則. $(X^l)^{-1}=(X^{-1})^l$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+\Cref{prop:item:iverse-transpose}
+があるので,
+$(\transposed X)^{-1}$
+を
+$\transposed X^{-1}$
+と略記する.
+\end{remark}
+
+正則行列に対しては,
+冪を整数全体に拡張する.
+\begin{definition}
+  $n$次正則行列$A$と$l>0$に対し,
+  $A^{-l}$で$(A^{-1})^l$を表す.
+  また$A^{0}=E_n$とする.
+\end{definition}
+このように拡張された冪に対しても,
+指数法則が成り立つ.
+\begin{prop}
+  \provelater**{negpower}
+  正則行列$A$と整数$l,k$に対し,
+  \begin{enumerate}
+  \item\provelater*{prod}
+    $A^{l+k}=A^lA^k$
+  \item\provelater*{power}
+    $A^{lk}=(A^l)^k$
+  \end{enumerate}
+が成り立つ.
+\end{prop}
+
+
+\begin{prop}
+  \provelater**{zerodivisor}
+  \label{prop:zerodiv}
+  $A$を$n$次正方行列とする.
+  $X$を零行列ではない$(n,m)$行列とする.
+  $Y$を零行列ではない$(m,n)$行列とする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{left}
+    \label{prop:zerodiv:left}
+    $AX=O_{n,m}$ならば, $A$は正則ではない.
+  \item\provelater*{right}
+    \label{prop:zerodiv:right}
+    $YA=O_{m,n}$ならば, $A$は正則ではない.
+  \end{enumerate}
+\end{prop}
+
+\Cref{prop:zerodiv}から, 以下がすぐわかる.
+\begin{cor}
+  \provelater{prop:zerodivsquare}
+  零行列ではない$n$次正方行列$A$, $B$が
+  $AB=O_{n,n}$を満たすならば,
+  $A$も$B$も正則ではない.
+\end{cor}
+
+\begin{cor}
+  \provelater{prop:matwithzerovec}
+  $a_{i,j}$を$(i,j)$-成分とする
+  $n$次正方行列$A$が
+  $a_{n,1}=a_{n,2}=\cdots=a_{n,n}=0$を満たすならば,
+  $A$は非正則である.
+\end{cor}
+
+\section{基本変形と基本行列}
+
+行に関する以下の操作を行基本変形と呼ぶ.
+\begin{definition}
+  \label{def:mat:fundtransformation}
+  $A$を$(m,n)$-行列とする.
+  以下に挙げた$A$に対する操作を
+  \defit{行基本変形}
+  \Defit{elementary row operation}
+  \addindex{基本!行---変形}%
+  \addindex{基本変形!行---}%
+  \addindex{変形!行基本---}%
+  \addindex{行!---基本変形}%
+  \addindex{elementary!row operation}%
+  \addindex{operation!elementary row ---}%
+  \addindex{row operation!elementary ---}%
+  \addindex{row!elementary --- operation}%
+  と呼ぶ:
+  \begin{enumerate}
+  \item $1\leq k \leq m$とし, 数$a$は逆数をもつとする (つまり$a\neq 0$とする).
+    $A$の$k$行目を$a$倍する.
+  \item $k\neq l$とし, $c$を数とする.
+    $A$の$k$行目に, $l$行目を$c$倍したものを足す.
+  \item $1\leq k<l \leq m$とする.
+    $A$の$k$行目と$l$行目を入れ替える.
+  \end{enumerate}
+\end{definition}
+列に関する以下の操作を列基本変形と呼ぶ.
+\begin{definition}
+  \label{def:mat:fundtransformation}
+  $A$を$(m,n)$-行列とする.
+  以下に挙げた$A$に対する操作を
+  \defit{列基本変形}
+  \Defit{elementary colomn operation}
+  \addindex{基本!列---変形}%
+  \addindex{基本変形!列---}%
+  \addindex{変形!列基本---}%
+  \addindex{列!---基本変形}%
+  \addindex{elementary!colomn operation}%
+  \addindex{operation!elementary colomn ---}%
+  \addindex{colomn operation!elementary ---}%
+  \addindex{colomn!elementary --- operation}%
+  と呼ぶ:
+  \begin{enumerate}
+  \item $1\leq k \leq m$とし, 数$a$は逆数をもつとする (つまり$a\neq 0$とする).
+    $A$の$k$列目を$a$倍する.
+  \item $k\neq l$とし, $c$を数とする.
+    $A$の$l$列目に, $k$列目を$c$倍したものを足す.
+  \item $1\leq k<l \leq m$とする.
+    $A$の$k$列目と$l$列目を入れ替える.
+  \end{enumerate}
+\end{definition}
+以下の正方行列を基本行列と呼ぶ.
+\begin{definition}
+  $B_{k,l}$を$(k,l)$-成分のみ$1$で他は$0$の$n$次正方行列とする.
+  $n$次正方行列
+  $F_n(k;c)$
+  $G_n(k,l;c)$
+  $H_n(k,l)$を以下で定義する.
+  \begin{enumerate}
+  \item
+    $k\in\Set{1,\ldots,n}$とし,
+    数$a$は逆数を持つとする (つまり$a\neq 0$とする).
+    $F_n(k;a)=E_n-B_{k,k}+cB_{k,k}$と定義する.
+  \item
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    数$c$に対し,
+    $G_n(k,l;c)=E_n+cB_{k,l}$と定義する.
+  \item
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    $H_n(k,l)=E_n-B_{k,k}-B_{l,l}+B_{k,l}+B_{l,k}$と定義する.
+  \end{enumerate}
+  ここで定義された,
+  $F_n(k;c)$, $G_n(k,l;c)$, $H_n(k,l)$
+  を基本行列と呼ぶ.
+\end{definition}
+基本行列を左からかける操作と行基本変形が以下の様に対応している.
+\begin{lemma}
+  \provelater**{fundamentalmat:rowtrans}
+  \label{lem:fundamental}
+  $A$を$(m,n)$-行列とする.
+  \begin{enumerate}
+  \item\provelater*{F}
+    $k\in\Set{1,\ldots,n}$とし,
+    $a$を数とする.
+    $F(k;a)A$は$A$の$k$行目を$a$倍した行列である.
+  \item\provelater*{G}
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    数$c$に対し,
+    $G(k,l;c)A$は$A$の$k$行目に$l$行目の$c$倍を加えた行列である.
+  \item\provelater*{H}
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    このとき, $H(k,l)A$は$A$の$k$行目と$l$行目を入れ替えた行列である.
+  \end{enumerate}
+\end{lemma}
+
+
+基本行列を右からかける操作と列基本変形が以下の様に対応している.
+\begin{lemma}
+  \provelater**{fundamentalmat:coltrans}
+  $A$を$(m,n)$-行列とする.
+  \begin{enumerate}
+  \item\provelater*{F}
+    $k\in\Set{1,\ldots,n}$とし,
+    $a$を数とする.
+    $AF(k;a)$は$A$の$k$列目を$a$倍した行列である.
+  \item\provelater*{G}
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    数$c$に対し,
+    $AG(k,l;c)$は$A$の$l$列目に$k$列目の$c$倍を加えた行列である.
+  \item\provelater*{H}
+    $k,l\in\Set{1,\ldots,n}$とし,
+    $k\neq l$とする.
+    このとき, $AH(k,l)$は$A$の$k$列目と$l$列目を入れ替えた行列である.
+  \end{enumerate}
+\end{lemma}
+
+
+\begin{prop}
+  \provelater**{fundamentalmat:invertible}
+  基本行列は正則である.
+  \begin{enumerate}
+  \item\provelater*{F}
+    $F(i;c)^{-1}=F(i;\frac{1}{c})$.
+  \item\provelater*{G}
+    $G(i,j;c)^{-1}=G(i,j;-c)$.
+  \item\provelater*{H}
+    $H(i,j)^{-1}=H(i,j)$.
+  \end{enumerate}
+\end{prop}
+
+
+\begin{remark}
+  \Cref{lem:fundamental}から,
+  $A$に行基本変形を行うことは,
+  $A$に基本行列を左からかけることであり,
+  逆に
+  $A$に基本行列を左からかけることは,
+  $A$に行基本変形を行うことであることがわかる.
+
+  また, 基本行列は正則行列であり, その逆行列もまた基本行列である.
+  このことは, $A$に行基本変形を行って$B$が得られたときには,
+  $B$行基本変形を行って$A$にすることもできるということを意味する.
+\end{remark}
+
+\section{階段行列}
+行基本変形を行うことで`$0$の多い行列'に変形できる.
+その端的なものとして,
+階段行列がある.
+\begin{definition}
+  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $0\leq r \leq m$とする.
+  $A$と$r$が次の条件を満たすとき, $A$は
+  \defit{階数$r$の階段行列}
+  \Defit{row echelon form of rank $r$}
+  \addindex{行列!階数$r$の階段---}%
+  \addindex{行列!階段---}%
+  \addindex{行列!行階段---}%
+  \addindex{階段行列!---}%
+  \addindex{階段行列!階数$r$の---}%
+  \addindex{階段!---行列}%
+  \addindex{階段!行---行列}%
+  \addindex{階段!階数$r$の---行列}%
+  \addindex{階段!階数$r$の行---行列}%
+  \addindex{階数!---$r$の階段行列}%
+  \addindex{階数!---$r$の行階段行列}%
+  \addindex{form!row echelon --- of rank $r$}%
+  \addindex{form!row echelon ---}%
+  \addindex{echelon form!row --- of rank $r$}%
+  \addindex{echelon form!row ---}%
+  \addindex{row echelon form!--- of rank $r$}%
+  \addindex{row echelon form!---}%
+  \addindex{of rank $r$!row echelon form ---}%
+  \addindex{rank!row echelon form of --- $r$}%
+  であるという:
+  \begin{enumerate}
+  \item $r< i \leq m$ならば, $a_{i,j}=0$.
+  \item $1\leq i \leq r$ならば, 次の条件を満たす$j_i$がとれる:
+    \begin{enumerate}
+      \item $1\leq j < j_i$ならば$a_{i,j}=0$.
+      \item $a_{i,j_i}\neq 0$.
+    \end{enumerate}
+  \item $j_1,\ldots,j_r$は次を満たす:
+    \begin{align*}
+      1\leq j_1<\cdots<j_r \leq n
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+階段行列の定義に現れる$j_i$は,
+\begin{align*}
+j_i = \min\Set{k|a_{i,k}\neq 0}
+\end{align*}
+と書くこともできる.
+これを
+\defit{$i$行目のピボット}
+\Defit{pivot in $i$-th row}
+\addindex{ピボット!$i$行目の---}%
+と呼ぶこともある.
+
+階段行列のうち特別な形のものを被約行階段行列と呼ぶ.
+\begin{definition}
+  \label{def:redechelonmat}
+  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
+  $A$が次の条件を満たすとき, $A$は
+  \defit{階数$r$の被約行階段行列}
+  \Defit{階数$r$の簡約行階段行列}
+  \Defit{reduced row echelon form of rank $r$}
+  \addindex{階数!被約行階段行列の---}%
+  \addindex{階数!被約階段行列の---}%
+  \addindex{階数!---$r$の被約行階段行列}%
+  \addindex{階数!---$r$の被約階段行列}%
+  \addindex{行列!階数$r$の被約行階段---}%
+  \addindex{行列!階数$r$の被約階段---}%
+  \addindex{行列!被約行階段---}%
+  \addindex{行列!被約階段---}%
+  \addindex{階段行列!階数$r$の被約行---}%
+  \addindex{階段行列!階数$r$の被約---}%
+  \addindex{階段行列!被約行---}%
+  \addindex{階段行列!被約---}%
+  \addindex{階段!階数$r$の被約行---行列}%
+  \addindex{階段!階数$r$の被約---行列}%
+  \addindex{階段!被約行---行列}%
+  \addindex{階段!被約---行列}%
+  \addindex{被約!階数$r$の---行階段行列}%
+  \addindex{被約!階数$r$の---階段行列}%
+  \addindex{被約!---行階段行列}%
+  \addindex{被約!---階段行列}%
+  \addindex{被約行階段行列!階数$r$の---}%
+  \addindex{被約階段行列!階数$r$の---}%
+  \addindex{被約行階段行列!---}%
+  \addindex{被約階段行列!---}%
+  \addindex{階数!簡約行階段行列の---}%
+  \addindex{階数!簡約階段行列の---}%
+  \addindex{階数!---$r$の簡約行階段行列}%
+  \addindex{階数!---$r$の簡約階段行列}%
+  \addindex{行列!階数$r$の簡約行階段---}%
+  \addindex{行列!階数$r$の簡約階段---}%
+  \addindex{行列!簡約行階段---}%
+  \addindex{行列!簡約階段---}%
+  \addindex{階段行列!階数$r$の簡約行---}%
+  \addindex{階段行列!階数$r$の簡約---}%
+  \addindex{階段行列!簡約行---}%
+  \addindex{階段行列!簡約---}%
+  \addindex{階段!階数$r$の簡約行---行列}%
+  \addindex{階段!階数$r$の簡約---行列}%
+  \addindex{階段!簡約行---行列}%
+  \addindex{階段!簡約---行列}%
+  \addindex{簡約!階数$r$の---行階段行列}%
+  \addindex{簡約!階数$r$の---階段行列}%
+  \addindex{簡約!---行階段行列}%
+  \addindex{簡約!---階段行列}%
+  \addindex{簡約行階段行列!階数$r$の---}%
+  \addindex{簡約階段行列!階数$r$の---}%
+  \addindex{簡約行階段行列!---}%
+  \addindex{簡約階段行列!---}%
+  \addindex{form!reduced row echelon --- of rank $r$}%
+  \addindex{form!reduced row echelon ---}%
+  \addindex{echelon form!reduced row --- of rank $r$}%
+  \addindex{echelon form!reduced row ---}%
+  \addindex{row echelon form!reduced --- of rank $r$}%
+  \addindex{row echelon form!reduced ---}%
+  \addindex{reduced row echelon form!--- of rank $r$}%
+  \addindex{reduced row echelon form!---}%
+  \addindex{reduced!--- row echelon form of rank $r$}%
+  \addindex{reduced!--- row echelon form}%
+  \addindex{of rank $r$!reduced row echelon form ---}%
+  \addindex{rank!reduced row echelon form of --- $r$}%
+ であるという:
+  \begin{enumerate}
+  \item $A$は階数$r$の階段行列である.
+  \item $1\leq i \leq r$に対し$j_i = \min\Set{k|a_{i,k}\neq 0}$とおく.
+    このとき次が成り立つ.
+    \begin{enumerate}
+      \item $a_{i,j_i}=1$
+      \item $l\neq $ $a_{l,j_i}=0$
+    \end{enumerate}
+  \end{enumerate}
+  被約行階段行列のことを単に被約階段行列と呼ぶことにする.
+\end{definition}
+被約階段行列は,
+pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみたす
+階段行列である.
+
+サイズが小さいときに被約階段行列の例を見る.
+\begin{example}
+  $(2,2)$-行列の場合について考える.
+  
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$ということなので, すべて$0$である
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  階数が$1$の被約階段行列は,
+  $2$行目が$0$ということなので,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a$をつかって
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる行列の$2$種類があり,
+  これらで全てである.
+
+  階数が$2$の被約階段行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  
+\end{example}
+\begin{example}
+  $(2,3)$-行列の場合について考える.
+
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$でないといけないので,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&0\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+  
+  階数が$1$の被約階段行列は,
+  $2$行目の成分は$0$でないといけない.
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&1\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a$をつかって
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&a\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる行列と, 数$a,b$を使って
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&b\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  と表せる$3$種類の行列がある.
+  これらで全てである.
+
+  階数が$2$の被約階段行列は,
+  \begin{align*}
+    \begin{pmatrix}
+     0& 1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  と,
+  数$a$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a,b$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&a\\0&1&b
+    \end{pmatrix}
+  \end{align*}
+  の$3$種類がある. これらですべてである.
+\end{example}
+
+
+\begin{example}
+例えば
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  は階段行列ではない.
+  したがって被約階段行列でもない.
+
+例えば
+  \begin{align*}
+    \begin{pmatrix}
+      1&3\\0&1
+    \end{pmatrix}
+  \end{align*}
+  は階段行列ではあるが,
+  被約階段行列ではない.
+\end{example}
+
 \endinput
 \chapter{行列式と逆行列}
 \label{chap:inverse}
 ここでは,
 行列式および逆行列に関して説明をする.
+
+
 
 \cite{978-4-7806-0772-7}であれば,
 第6章, 第7章, 第8章が関連する.
@@ -2010,58 +2647,6 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 
 
 これらを踏まえて,
-以下のように定義する:
-\begin{definition}
-  \label{def:mat:reg}
-  $A$を正方行列とする.
-  $AB=BA=E$となる$B$が存在するとき,
-  $A$は
-  \defit{正則}
-  \Defit{非退化}
-  \Defit{非特異}
-  \Defit{可逆}
-  \Defit{invertible}
-  \Defit{nondegenerate}
-  \Defit{nonsingular}
-  \Defit{regular}
-  \addindex{行列!正則---}%
-  \addindex{行列!非退化---}%
-  \addindex{行列!非特異---}%
-  \addindex{行列!可逆---}%
-  \addindex{matrix!invertible ---}%
-  \addindex{matrix!nondegenerate ---}%
-  \addindex{matrix!nonsingular ---}%
-  \addindex{matrix!regular ---}%
-  であるといい,
-  $B$を
-  \defit{$A$の逆行列}
-  \Defit{inverse matrix of $A$}
-  \addindex{逆行列!行列の---}%
-  \addindex{行列の!---逆行列}%
-  \addindex{inverse matrix!--- of matrix}%
-  \addindex{inverse!--- matrix of matrix}%
-  \addindex{of matrix!inverse matrix ---}%
-  \addindex{$A^{-1}$}%
-  \addindex{${\square}^{-1}$}%
-  と呼び$A^{-1}$で表す.
-  正則な$n$次正方行列を,
-  \defit{$n$次正則行列}
-  \Defit{$n$-th invertible matrix}
-  \addindex{行列!$n$次正則---}%
-  と呼ぶ.
-\end{definition}
-\begin{definition}
-  $A$を正方行列とする.
-  $AB=BA=E$となる$B$が存在しないとき,
-  $A$は
-  \defit{非正則}
-  \Defit{degenerate}
-  \Defit{singular}
-  \addindex{行列!非正則---}%
-  \addindex{matrix!degenerate ---}%
-  \addindex{matrix!singular ---}%
-  であるという.
-\end{definition}
 
 冒頭での議論から$2$次正方行列のときには次が言える.
 \begin{theorem}
@@ -2083,51 +2668,6 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
   である.
 \end{theorem}
 
-つぎに,
-逆行列に関する性質を紹介する.
-\begin{proposition}
-  \provelater**{inverse}
-  \label{thm:inverse:operation}
-  $X$, $Y$を$n$次正則行列とする.
-  %$r\neq 0$とする.
-  $r$を逆数を持つ数(つまり $r\neq 0$)とする.
-  $l$を正の整数とする.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item\provelater*{inverse}
-    $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
-  \item\provelater*{trans}
-    $(\transposed X)^{-1}$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
-  \item\provelater*{scalar}
-    $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
-  \item\provelater*{prod}
-    $XY$も正則. $(XY)^{-1}=Y^{-1}X^{-1}$.
-  \item\provelater*{power}
-    $X^l$も正則. $(X^l)^{-1}=(X^{-1})^l$.
-  \end{enumerate}
-\end{proposition}
-
-
-正則行列に対しては,
-冪を整数全体に拡張する.
-\begin{definition}
-  $n$次正則行列$A$と$l>0$に対し,
-  $A^{-l}$で$(A^{-1})^l$を表す.
-  また$A^{0}=E_n$とする.
-\end{definition}
-このように拡張された冪に対しても,
-指数法則が成り立つ.
-\begin{prop}
-  \provelater**{negpower}
-  正則行列$A$と整数$l,k$に対し,
-  \begin{enumerate}
-  \item\provelater*{prod}
-    $A^{l+k}=A^lA^k$
-  \item\provelater*{power}
-    $A^{lk}=(A^l)^k$
-  \end{enumerate}
-が成り立つ.
-\end{prop}
 
 正方行列の冪は一般には複雑になるが,
 次のような場合には簡単に計算できる.
@@ -3500,283 +4040,7 @@ $\xx=A^{-1}\bbb$というただ一つの解をもつ.
 これらの操作を行基本変形と呼ぶ.
 行基本形をすることで, 連立一次方程式を解くことができる.
 
-\begin{definition}
-  \label{def:mat:fundtransformation}
-  $A$を$(m,n)$-行列とする.
-  以下に挙げた$A$に対する操作を
-  \defit{行基本変形}
-  \Defit{elementary row operation}
-  \addindex{基本!行---変形}%
-  \addindex{基本変形!行---}%
-  \addindex{変形!行基本---}%
-  \addindex{行!---基本変形}%
-  \addindex{elementary!row operation}%
-  \addindex{operation!elementary row ---}%
-  \addindex{row operation!elementary ---}%
-  \addindex{row!elementary --- operation}%
-  と呼ぶ:
-  \begin{enumerate}
-  \item $1\leq k \leq m$とし, $a \neq 0$とする.
-    $A$の$k$行目を$a$倍する.
-  \item $k\neq l$とし, $c$を数とする.
-    $A$の$k$行目に, $l$行目を$c$倍したものを足す.
-  \item $1\leq k<l \leq m$とする.
-    $A$の$k$行目と$l$行目を入れ替える.
-  \end{enumerate}
-\end{definition}
 
-行基本変形を行うことで`$0$の多い行列'に変形できる.
-その端的なものとして,
-階段行列がある.
-\begin{definition}
-  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
-  $0\leq r \leq m$とする.
-  $A$と$r$が次の条件を満たすとき, $A$は
-  \defit{階数$r$の階段行列}
-  \Defit{row echelon form of rank $r$}
-  \addindex{行列!階数$r$の階段---}%
-  \addindex{行列!階段---}%
-  \addindex{行列!行階段---}%
-  \addindex{階段行列!---}%
-  \addindex{階段行列!階数$r$の---}%
-  \addindex{階段!---行列}%
-  \addindex{階段!行---行列}%
-  \addindex{階段!階数$r$の---行列}%
-  \addindex{階段!階数$r$の行---行列}%
-  \addindex{階数!---$r$の階段行列}%
-  \addindex{階数!---$r$の行階段行列}%
-  \addindex{form!row echelon --- of rank $r$}%
-  \addindex{form!row echelon ---}%
-  \addindex{echelon form!row --- of rank $r$}%
-  \addindex{echelon form!row ---}%
-  \addindex{row echelon form!--- of rank $r$}%
-  \addindex{row echelon form!---}%
-  \addindex{of rank $r$!row echelon form ---}%
-  \addindex{rank!row echelon form of --- $r$}%
-  であるという:
-  \begin{enumerate}
-  \item $r< i \leq m$ならば, $a_{i,j}=0$.
-  \item $1\leq i \leq r$ならば, 次の条件を満たす$j_i$がとれる:
-    \begin{enumerate}
-      \item $1\leq j < j_i$ならば$a_{i,j}=0$.
-      \item $a_{i,j_i}\neq 0$.
-    \end{enumerate}
-  \item $j_1,\ldots,j_r$は次を満たす:
-    \begin{align*}
-      1\leq j_1<\cdots<j_r \leq n
-    \end{align*}
-  \end{enumerate}
-\end{definition}
-階段行列の定義に現れる$j_i$は,
-\begin{align*}
-j_i = \min\Set{k|a_{i,k}\neq 0}
-\end{align*}
-と書くこともできる.
-これを
-\defit{$i$行目のピボット}
-\Defit{pivot in $i$-th row}
-\addindex{ピボット!$i$行目の---}%
-と呼ぶこともある.
-
-階段行列のうち特別な形のものを被約行階段行列と呼ぶ.
-\begin{definition}
-  \label{def:redechelonmat}
-  $A$を$(i,j)$-成分が$a_{i,j}$である$(m,n)$-行列とする.
-  $A$が次の条件を満たすとき, $A$は
-  \defit{階数$r$の被約行階段行列}
-  \Defit{階数$r$の簡約行階段行列}
-  \Defit{reduced row echelon form of rank $r$}
-  \addindex{階数!被約行階段行列の---}%
-  \addindex{階数!被約階段行列の---}%
-  \addindex{階数!---$r$の被約行階段行列}%
-  \addindex{階数!---$r$の被約階段行列}%
-  \addindex{行列!階数$r$の被約行階段---}%
-  \addindex{行列!階数$r$の被約階段---}%
-  \addindex{行列!被約行階段---}%
-  \addindex{行列!被約階段---}%
-  \addindex{階段行列!階数$r$の被約行---}%
-  \addindex{階段行列!階数$r$の被約---}%
-  \addindex{階段行列!被約行---}%
-  \addindex{階段行列!被約---}%
-  \addindex{階段!階数$r$の被約行---行列}%
-  \addindex{階段!階数$r$の被約---行列}%
-  \addindex{階段!被約行---行列}%
-  \addindex{階段!被約---行列}%
-  \addindex{被約!階数$r$の---行階段行列}%
-  \addindex{被約!階数$r$の---階段行列}%
-  \addindex{被約!---行階段行列}%
-  \addindex{被約!---階段行列}%
-  \addindex{被約行階段行列!階数$r$の---}%
-  \addindex{被約階段行列!階数$r$の---}%
-  \addindex{被約行階段行列!---}%
-  \addindex{被約階段行列!---}%
-  \addindex{階数!簡約行階段行列の---}%
-  \addindex{階数!簡約階段行列の---}%
-  \addindex{階数!---$r$の簡約行階段行列}%
-  \addindex{階数!---$r$の簡約階段行列}%
-  \addindex{行列!階数$r$の簡約行階段---}%
-  \addindex{行列!階数$r$の簡約階段---}%
-  \addindex{行列!簡約行階段---}%
-  \addindex{行列!簡約階段---}%
-  \addindex{階段行列!階数$r$の簡約行---}%
-  \addindex{階段行列!階数$r$の簡約---}%
-  \addindex{階段行列!簡約行---}%
-  \addindex{階段行列!簡約---}%
-  \addindex{階段!階数$r$の簡約行---行列}%
-  \addindex{階段!階数$r$の簡約---行列}%
-  \addindex{階段!簡約行---行列}%
-  \addindex{階段!簡約---行列}%
-  \addindex{簡約!階数$r$の---行階段行列}%
-  \addindex{簡約!階数$r$の---階段行列}%
-  \addindex{簡約!---行階段行列}%
-  \addindex{簡約!---階段行列}%
-  \addindex{簡約行階段行列!階数$r$の---}%
-  \addindex{簡約階段行列!階数$r$の---}%
-  \addindex{簡約行階段行列!---}%
-  \addindex{簡約階段行列!---}%
-  \addindex{form!reduced row echelon --- of rank $r$}%
-  \addindex{form!reduced row echelon ---}%
-  \addindex{echelon form!reduced row --- of rank $r$}%
-  \addindex{echelon form!reduced row ---}%
-  \addindex{row echelon form!reduced --- of rank $r$}%
-  \addindex{row echelon form!reduced ---}%
-  \addindex{reduced row echelon form!--- of rank $r$}%
-  \addindex{reduced row echelon form!---}%
-  \addindex{reduced!--- row echelon form of rank $r$}%
-  \addindex{reduced!--- row echelon form}%
-  \addindex{of rank $r$!reduced row echelon form ---}%
-  \addindex{rank!reduced row echelon form of --- $r$}%
- であるという:
-  \begin{enumerate}
-  \item $A$は階数$r$の階段行列である.
-  \item $1\leq i \leq r$に対し$j_i = \min\Set{k|a_{i,k}\neq 0}$とおく.
-    このとき次が成り立つ.
-    \begin{enumerate}
-      \item $a_{i,j_i}=1$
-      \item $l\neq $ $a_{l,j_i}=0$
-    \end{enumerate}
-  \end{enumerate}
-  被約行階段行列のことを単に被約階段行列と呼ぶことにする.
-\end{definition}
-被約階段行列は,
-pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみたす
-階段行列である.
-
-サイズが小さいときに被約階段行列の例を見る.
-\begin{example}
-  $(2,2)$-行列の場合について考える.
-  
-  階数が$0$の被約階段行列は,
-  $1$行目と$2$行目の成分は$0$ということなので, すべて$0$である
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  のみである.
-
-  階数が$1$の被約階段行列は,
-  $2$行目が$0$ということなので,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1\\0&0
-    \end{pmatrix}
-  \end{align*}
-  と, 数$a$をつかって
-  \begin{align*}
-    \begin{pmatrix}
-      1&a\\0&0
-    \end{pmatrix}
-  \end{align*}
-  と表せる行列の$2$種類があり,
-  これらで全てである.
-
-  階数が$2$の被約階段行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&1
-    \end{pmatrix}
-  \end{align*}
-  のみである.
-
-  
-\end{example}
-\begin{example}
-  $(2,3)$-行列の場合について考える.
-
-  階数が$0$の被約階段行列は,
-  $1$行目と$2$行目の成分は$0$でないといけないので,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0&0\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  のみである.
-  
-  階数が$1$の被約階段行列は,
-  $2$行目の成分は$0$でないといけない.
-  \begin{align*}
-    \begin{pmatrix}
-      0&0&1\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  と, 数$a$をつかって
-  \begin{align*}
-    \begin{pmatrix}
-      0&1&a\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  と表せる行列と, 数$a,b$を使って
-  \begin{align*}
-    \begin{pmatrix}
-      1&a&b\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  と表せる$3$種類の行列がある.
-  これらで全てである.
-
-  階数が$2$の被約階段行列は,
-  \begin{align*}
-    \begin{pmatrix}
-     0& 1&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  と,
-  数$a$を使って表せる
-  \begin{align*}
-    \begin{pmatrix}
-      1&a&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  と, 数$a,b$を使って表せる
-  \begin{align*}
-    \begin{pmatrix}
-      1&0&a\\0&1&b
-    \end{pmatrix}
-  \end{align*}
-  の$3$種類がある. これらですべてである.
-\end{example}
-
-
-\begin{example}
-例えば
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&1
-    \end{pmatrix}
-  \end{align*}
-  は階段行列ではない.
-  したがって被約階段行列でもない.
-
-例えば
-  \begin{align*}
-    \begin{pmatrix}
-      1&3\\0&1
-    \end{pmatrix}
-  \end{align*}
-  は階段行列ではあるが,
-  被約階段行列ではない.
-\end{example}
 
 \begin{theorem}
   \label{thm:unique:reducedecheron}
