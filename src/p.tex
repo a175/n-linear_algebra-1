@@ -2523,7 +2523,352 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
   被約階段行列ではない.
 \end{example}
 
+\begin{example}
+  $E_n$は被役階段行列である.
+\end{example}
+
+\begin{example}
+  $O_{n,m}$は被役階段行列である.
+\end{example}
+
+
+\section{行基本変形により得られる被役階段行列}
+次の事実を示すことが,
+ここの目標である.
+\begin{theorem}
+  \label{thm:unique:reducedecheron}
+  $A$を行列とする.
+  $A$に行基本変形を(複数回)行って
+  被約階段行列にすることができる.
+  得られる
+  被約階段行列は$A$によって決まり,
+  変形の仕方には依らない.
+\end{theorem}
+%% \begin{example}
+%%   \begin{align*}
+%%     A=\begin{pmatrix}1&4\\2&2\end{pmatrix}
+%%   \end{align*}
+%%   とする.
+%%   例えば$A$の1行目を$-2$倍して2行目に足すと,
+%%   \begin{align*}
+%%     \begin{pmatrix}1&4\\0&-6\end{pmatrix}
+%%   \end{align*}
+%%   となる.
+%%   さらに, 2行目を$\frac{-1}{6}$倍すると
+%%   \begin{align*}
+%%     \begin{pmatrix}1&4\\0&1\end{pmatrix}
+%%   \end{align*}
+%%   となる.
+%%   さらに, 1行目に2行目の$-4$倍を加えることで,
+%%  \begin{align*}
+%%    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+%%   \end{align*}
+%%  という被約階段行列が得られる.
+
+%%  例えば,
+%%  $A$の1行目と2行目を入れ替えると,
+%%   \begin{align*}
+%%     \begin{pmatrix}2&2\\1&4\end{pmatrix}
+%%   \end{align*}
+%%   となる. 
+%%   さらに,
+%%   1行目を$\frac{1}{2}$倍すると
+%%   \begin{align*}
+%%     \begin{pmatrix}1&1\\1&4\end{pmatrix}
+%%   \end{align*}
+%%   となる.
+%%   さらに
+%%   2行目に1行目の$-1$倍を加えると
+%%   \begin{align*}
+%%     \begin{pmatrix}1&1\\0&3\end{pmatrix}
+%%   \end{align*}
+%%   となる.
+%%   さらに
+%%   2行目を$\frac{1}{3}$倍すると
+%%   \begin{align*}
+%%     \begin{pmatrix}1&1\\0&1\end{pmatrix}
+%%   \end{align*}
+%%   となる.
+%%   さらに
+%%   1行目に2行目の$-1$倍を加えると
+%%   \begin{align*}
+%%     \begin{pmatrix}1&0\\0&1\end{pmatrix}
+%%   \end{align*}
+%%   という被約階段行列が得られるが,
+%%   これは先程のものと同じである.
+%% \end{example}
+まずは,
+階段行列に変形できることを構成的に証明する.
+\begin{lemma}
+  \label{lem:reduction:f}
+  %\provelater{lemma:reduction:f}
+  $A$を零行列ではない$(m,n)$行列とする.
+  $A$の$1,\ldots,p$列目の成分はすべて$0$であるとする.
+  このとき, $A$を, 行基本変形を用いて,
+  $1,\ldots,p_0-1$列目の成分はすべて$0$であり,
+  $(1,p_0)$成分は$0$ではなく,
+  それ以外の$p_0$列目の成分は$0$
+  という行列に変形できる.
+  ただし, ここで, $p_0$は$p_0>p$を満たす.
+\end{lemma}
+\begin{proof}
+  構成法を与えることにより証明する.
+
+  $A\neq O_{mn}$であるので, どこかの行にはpivotが存在する.
+  \begin{align*}
+    p_0=\min\Set{p|\text{$(i,p)$は$A$のpivot}}
+  \end{align*}
+  とおき, $(i_0,p_0)$が$A$のpivotであるとする.
+  定義から明らかに, $p<p_0$である.
+
+  $A$の$i_0$行目と$1$行目を入れ替えた行列を$A'$とおく.
+  $A^{(1)}$の$(i,p_0)$-成分を$c_i$とする.
+  このとき,
+  $c_1\neq 0$であり, $A^{(1)}$の$1,\ldots,p_0-1$列目の成分はすべて$0$である.
+
+  $A^{(1)}$の$2$行目に$1$行目の$\frac{-c_2}{c_1}$倍を加えて得られる行列を,
+  $A^{(2)}$とおく. このとき, $(2,p_0)$成分は$0$である.
+  $A^{(2)}$の$3$行目に$1$行目の$\frac{-c_3}{c_1}$倍を加えて得られる行列を,
+  $A^{(3)}$とおく. このとき, $(3,p_0)$成分は$0$である.
+  以下同様に,
+  $A^{(i)}$の$i+1$行目に$1$行目の$\frac{-c_{i+1}}{c_1}$倍を加えて得られる行列を,
+  $A^{(i+1)}$とおく.
+  このとき, $(i+1,p_0)$成分は$0$である.
+  
+  したがって, $A^{(m)}$は,
+    $1,\ldots,p_0-1$列目の成分はすべて$0$であり,
+  $(1,p_0)$成分は$0$ではなく,
+  それ以外の$p_0$列目の成分は$0$
+  という行列である.
+\end{proof}
+
+
+\begin{theorem}
+  \label{thm:reduction:f}
+$(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
+\end{theorem}
+\begin{proof}
+  構成法を与えることで示す.
+
+  $A=O_{m,n}$なら$A$は階段行列なので何もしなくてよい.
+  そうでなければ, $A$に\Cref{lem:reduction:f}を使うことで, 
+  $1,\ldots,p_1-1$列目の成分はすべて$0$であり,
+  $p_1$列目の成分は最初の行以外は$0$であり,
+  $p_1$列目の最初の行の成分は$0$ではない
+  という行列$R^{(1)}$に変形できる.
+
+  $R^{(1)}$の2行目以降を$A^{(1)}$とする.
+  $A^{(1)}=O_{m-1,n}$なら$R^{(1)}$は階段行列なので何もしなくてよい.
+  そうでなければ, $A^{(1)}$に\Cref{lem:reduction:f}を使うことで, 
+  $1,\ldots,p_2-1$列目の成分はすべて$0$であり,
+  $p_2$列目の成分は最初の行以外は$0$であり,
+  $p_2$列目の最初の行の成分は$0$ではない行列に変形できる.
+  $p_1<p_2$である.
+  したがって,
+  同様の変形を$R^{(1)}$することで,
+  $2$行目まではpivotが$(1,p_1),(2,p_2)$である階段行列である
+  行列に$R^{(2)}$変形できる.
+  $R^{(2)}$の$3$行目以降を$A^{(2)}$とすると,
+  $1,\ldots,p_2$列目の成分はすべて$0$である.
+
+  $A^{(2)}=O_{m-2,n}$なら$R^{(2)}$は階段行列なので何もしなくてよい.
+  そうでなければ, $A^{(2)}$に\Cref{lem:reduction:f}を使うことで, 
+  $1,\ldots,p_3-1$列目の成分はすべて$0$であり,
+  $p_3$列目の成分は最初の行以外は$0$であり,
+  $p_3$列目の最初の行の成分は$0$ではない行列に変形できる.
+  $p_1<p_2<p_3$である.
+  したがって,
+  同様の変形を$R^{(2)}$することで,
+  $2$行目まではpivotが$(1,p_1),(2,p_2),(3,p_3)$である階段行列である
+  行列に$R^{(3)}$変形できる.
+  $R^{(3)}$の$4$行目以降を$A^{(3)}$とすると,
+  $1,\ldots,p_3$列目の成分はすべて$0$である.
+
+  
+  以下同様に,
+  $R^{(i)}$の$i+1$行目以降を$A^{(i)}$とし,
+  $A^{(i)}$が$O_{m-i,n}$でないなら,
+  \Cref{lem:reduction:f}を用いて,
+  $R^{(i+1)}$を得るということを繰り返す.
+
+  この方法で階段行列が得られる.
+  つまり,
+  ある$i$で$A^{(i)}$が零行列になれば,
+  $R^{(i)}$は階段行列である.
+  また, $A^{(1)},\ldots,A^{(m-1)}$が零行列でなければ
+  $R^{(m)}$が階段行列である.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:reduction:b}
+  $A$を$(m,n)$行列とする.
+  $t\in\Set{1,\ldots,m}$とする.
+  $(t,p)$が
+  $t$行目のpivotであるとする.
+  また$p<p_1<\ldots<p_l$とし,
+  $A$の$1,\ldots,t$行目における$p_1,\ldots,p_l$列目の成分は$0$であるとする.
+  このとき, $A$を, 行基本変形を用いて,
+  次の条件を満たす行列$A'$に変形できる.
+  \begin{enumerate}
+  \item $A'$の$t+1,\ldots,m$行目は$A$と等しい.
+  \item $A'$の$1,\ldots,p-1$列目は$A$と等しい.
+  \item $A'$の$(t,p)$成分は$1$.
+  \item $A'$の$(1,p),(2,p),\ldots,(t-1,p)$成分は$0$.
+  \item $i\in\Set{1,\ldots,t}, j\in\Set{1,\ldots,l}\implies (i,p_j)$成分は$0$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  構成法を与えることにより証明する.
+
+  $A$の$(i,p)$成分を$c_i$とおく.
+  $c_t\neq 0$であるので,
+  $A$の第$t$行を$\frac{1}{c_t}$倍した行列を$A^{(t)}$とおく.
+  このとき, $A^{(t)}$の$(t,p)$成分は$1$である.
+
+  $A^{(t)}$の$t-1$行目に$t$行目の$-c_{t-1}$倍を加えて得られる行列を,
+  $A^{(t-1)}$とおく.
+  このとき, $(t-1,p)$成分は$0$である.
+  $A^{(t-1)}$の$t-2$行目に$t$行目の$-c_{t-2}$倍を加えて得られる行列を,
+  $A^{(t-2)}$とおく. このとき, $(t-2,p)$成分は$0$である.
+  以下同様に,
+  $A^{(i)}$の$i-1$行目に$t$行目の$-c_{i-1}$倍を加えて得られる行列を,
+  $A^{(i-1)}$とおく.
+  このとき, $(i-1,p)$成分は$0$である.
+  
+  したがって, $A^{(1)}$は, 以下の条件を満たす:
+  \begin{enumerate}
+  \item $A'$の$t+1,\ldots,m$行目は$A$と等しい.
+  \item $A'$の$1,\ldots,p-1$列目は$A$と等しい.
+  \item $A'$の$(t,p)$成分は$1$.
+  \item $A'$の$(1,p),(2,p),\ldots,(t-1,p)$成分は$0$.
+  \item $i\in\Set{1,\ldots,t}, j\in\Set{1,\ldots,l}\implies (i,p_j)$成分は$0$.
+  \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+  \label{thm:reduction:b}
+階段行列$A$を, 行基本変形を用いて被役階段行列に変形できる.
+\end{theorem}
+
+\begin{proof}
+  構成法を与えることで示す.
+
+  $A$は$(m,n)$-行列で, そのpivotは$(1,p_1),\ldots,(r,p_r)$であるとする.
+
+  $A^{(r)}=A$とし, $t=r$として\Cref{lem:reduction:b}を使って得られる行列を
+  $A^{(r-1)}$とおく.
+  このとき, $A^{(r-1)}$の$p_r$列目は$r$行目を除いて$0$である.
+  また$r$行目以降は被役階段行列である.
+  つぎに,
+  $A^{(r-1)}$に対し, $t=r-1$として\Cref{lem:reduction:b}を使って得られる行列を
+  $A^{(r-2)}$とおく.
+  このとき, $A^{(r-2)}$の$p_{r-1}$列目は$r-1$行目を除いて$0$である.
+  また$r$行目以降は被役階段行列である.  
+  以下同様に繰り返し,
+  $A^{(i)}$に対して, 
+  $t=i$として\Cref{lem:reduction:b}を使って得られる行列を
+  $A^{(i-1)}$とおく.  
+  このとき, $A^{(1)}$は被役階段行列である.
+\end{proof}
+
+\begin{cor}
+行列$A$を, 行基本変形を用いて被役階段行列に変形できる.
+\end{cor}
+\begin{proof}
+    構成法を与えることで示す.
+  
+  $A$に対し,
+  \Cref{thm:reduction:f}を使い階段行列$A'$を得た後,
+  $A'$に対し, \Cref{thm:reduction:b}を使い被役階段行列$A$を得ることができる.
+\end{proof}
+\begin{remark}
+  行基本変形を用いて行列を被約階段行列に変形することを,
+  \defit{ガウスの消去法}
+  \Defit{Gaussian elimination}
+  \addindex{消去法!ガウスの---}%
+  \addindex{ガウス!---の消去法}%
+  \addindex{elimination!Gaussian ---}%
+  \addindex{Gaussian!--- elimination}%
+  \addindex{Gauss!---ian elimination}%
+  とか
+  \defit{掃き出し法}
+  \Defit{row reduction}
+  \addindex{reduction!row ---}%
+  \addindex{row!--- reduction}%
+  と呼ぶこともある.
+
+  特に,
+  行基本変形を用いて階段行列を得ること (\Cref{thm:reduction:f})
+  を
+  \defit{前進消去}
+  \Defit{forward elimination}
+  \addindex{前進!---消去}
+  \addindex{消去!前進---}
+  \addindex{forward!--- elimination}
+  \addindex{elimination!forward ---}
+  と呼び,
+  行基本変形を用いて階段行列から被役階段行列を得ること (\Cref{thm:reduction:b})
+  を
+  \defit{後退代入}
+  \Defit{backward substitution}
+  \addindex{後退!---代入}
+  \addindex{代入!後退---}
+  \addindex{backward!--- substitution}
+  \addindex{substitution!backward ---}
+  と呼ぶことがある.  
+\end{remark}
+
+
+
+\begin{remark}
+  $A$を$(m,n)$-行列とする.
+  $A$と$E_m$を並べた行列$\hconcat{A}{E_m}$を考える.
+  この行列に対し, 正則行列$P$を左からかけると
+  \begin{align*}
+    P\hconcat{A}{E_m}&=\hconcat{PA}{PE_m}\\
+    &=\hconcat{PA}{P}
+  \end{align*}
+  となる.
+  行基本変形は左から基本行列をかけることであったので,
+  $\hconcat{A}{E_m}$に行基本変形を繰り返して,
+  $\hconcat{A'}{P}$
+  となったときには, $PA=A'$となることがわかる.
+
+
+  この原理を用いると,
+  \begin{align*}
+    \hconcat{A}{E_m}
+  \end{align*}
+  に対し行基本変形を行い被役階段行列になるように変形をし.
+  \begin{align*}
+    \hconcat{S}{P}
+  \end{align*}
+  という形に変形できたとする.
+  ただし$P$は$m$次正方行列である.
+  このとき, $PA=S$は被役階段行列であり, $P$は正則行列であるという条件をみたす.
+
+  とくに, $A$が$n$次正方行列であり, $S=E_m$となるように変形できた場合について考える.
+  つまり,
+  \begin{align*}
+    \hconcat{A}{E_m}
+  \end{align*}
+  に対し行基本変形を行い被役階段行列になるように変形をし.
+  \begin{align*}
+    \hconcat{E_m}{P}
+  \end{align*}
+  という形に変形できたとする.
+  このとき, $P=A^{-1}$である.
+
+  このように行基本変形を用いて逆行列を求めることができる.
+\end{remark}
+
 \endinput
+
+
+
+
+
 \chapter{行列式と逆行列}
 \label{chap:inverse}
 ここでは,
@@ -4042,85 +4387,6 @@ $\xx=A^{-1}\bbb$というただ一つの解をもつ.
 
 
 
-\begin{theorem}
-  \label{thm:unique:reducedecheron}
-  $A$を行列とする.
-  $A$に行基本変形を(複数回)行って
-  被約階段行列にすることができる.
-  得られる
-  被約階段行列は$A$によって決まり,
-  変形の仕方には依らない.
-\end{theorem}
-\begin{example}
-  \begin{align*}
-    A=\begin{pmatrix}1&4\\2&2\end{pmatrix}
-  \end{align*}
-  とする.
-  例えば$A$の1行目を$-2$倍して2行目に足すと,
-  \begin{align*}
-    \begin{pmatrix}1&4\\0&-6\end{pmatrix}
-  \end{align*}
-  となる.
-  さらに, 2行目を$\frac{-1}{6}$倍すると
-  \begin{align*}
-    \begin{pmatrix}1&4\\0&1\end{pmatrix}
-  \end{align*}
-  となる.
-  さらに, 1行目に2行目の$-4$倍を加えることで,
- \begin{align*}
-   \begin{pmatrix}1&0\\0&1\end{pmatrix}
-  \end{align*}
- という被約階段行列が得られる.
-
- 例えば,
- $A$の1行目と2行目を入れ替えると,
-  \begin{align*}
-    \begin{pmatrix}2&2\\1&4\end{pmatrix}
-  \end{align*}
-  となる. 
-  さらに,
-  1行目を$\frac{1}{2}$倍すると
-  \begin{align*}
-    \begin{pmatrix}1&1\\1&4\end{pmatrix}
-  \end{align*}
-  となる.
-  さらに
-  2行目に1行目の$-1$倍を加えると
-  \begin{align*}
-    \begin{pmatrix}1&1\\0&3\end{pmatrix}
-  \end{align*}
-  となる.
-  さらに
-  2行目を$\frac{1}{3}$倍すると
-  \begin{align*}
-    \begin{pmatrix}1&1\\0&1\end{pmatrix}
-  \end{align*}
-  となる.
-  さらに
-  1行目に2行目の$-1$倍を加えると
-  \begin{align*}
-    \begin{pmatrix}1&0\\0&1\end{pmatrix}
-  \end{align*}
-  という被約階段行列が得られるが,
-  これは先程のものと同じである.
-\end{example}
-
-\begin{remark}
-  行基本変形を用いて行列を被約階段行列に変形することを,
-  \defit{ガウスの消去法}
-  \Defit{Gaussian elimination}
-  \addindex{消去法!ガウスの---}%
-  \addindex{ガウス!---の消去法}%
-  \addindex{elimination!Gaussian ---}%
-  \addindex{Gaussian!--- elimination}%
-  \addindex{Gauss!---ian elimination}%
-  とか
-  \defit{掃き出し法}
-  \Defit{row reduction}
-  \addindex{reduction!row ---}%
-  \addindex{row!--- reduction}%
-  と呼ぶこともある.
-\end{remark}
 拡大係数行列を
 被約階段行列に変形すると,
 解のすぐわかる形の連立方程式になる.
