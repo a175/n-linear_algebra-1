@@ -1,0 +1,565 @@
+\title{線形代数学I (沼田担当) 講義補足資料}
+\author{}
+\date{}
+\maketitle
+
+\begin{abstract}
+  この資料の目的は, 次の2つである
+  被役階段行列を係数行列とする連立一次方程式の解法について
+  補足説明をすること;
+  講義中に証明を省略した命題(\cref{thm:main})について,
+証明を与えること.
+\end{abstract}
+
+\section{被役階段行列を係数行列とする連立一次方程式の解法について}
+$A$を$(m,n)$行列とし, $\bbb$を$(m,1)$行列とする.
+このとき, $\xxx$に関する方程式
+$A\xxx=\bbb$
+を考えることができる.
+$A$が被約階段行列である場合に,
+解の集合を求める方法について,
+具体例で説明する.
+
+ここでは次の例を考える:
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    0&1&0&0&5&0&3\\
+    0&0&0&1&0&0&9\\
+    0&0&0&0&0&1&0
+  \end{pmatrix}
+  &
+  \bbb=
+  \begin{pmatrix}
+    4\\
+    6\\
+    8
+  \end{pmatrix}
+\end{align*}
+という場合を考える.
+$A$は$(3,7)$行列であり,
+$\bbb$は$(3,1)$行列である.
+また, $A$は被約階段行列である.
+
+$A\xxx=\bbb$という方程式を考える.
+このとき未知数$x_i$の個数は$A$の列数である$7$でないといけない.
+未知数の個数が$7$個であれば, $\xxx$は$(7,1)$行列であり,
+$A\xxx$という積が意味をもつ.
+$A\xxx=\bbb$を具体的に書き下すと,
+\begin{align*}
+  \begin{pmatrix}
+    0&1&0&0&5&0&3\\
+    0&0&0&1&0&0&9\\
+    0&0&0&0&0&1&0
+  \end{pmatrix}
+  \begin{pmatrix}
+    x_1\\x_2\\x_3\\x_4\\x_5\\x_6\\x_7
+  \end{pmatrix}
+  &
+  =
+  \begin{pmatrix}
+    4\\
+    6\\
+    8
+  \end{pmatrix}
+\end{align*}
+となる.
+$A$と$\bbb$の行数は揃っているが,
+$\xxx$はそうではないことを念頭に入れておいてほしい.
+さて, この右辺を具体的に計算すると以下のようになる.
+\begin{align*}
+  \begin{pmatrix}
+    0x_1+1x_2+0x_3+0x_4+5x_5+0x_6+3x_7\\
+    0x_1+0x_2+0x_3+1x_4+0x_5+0x_6+9x_7\\
+    0x_1+0x_2+0x_3+0x_4+0x_5+1x_6+0x_7
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    4\\
+    6\\
+    8
+  \end{pmatrix}
+\end{align*}
+左辺を整理すると, 以下のようになる.
+\begin{align*}
+  \begin{pmatrix}
+    x_2+5x_5+3x_7\\
+    x_4+9x_7\\
+    x_6
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    4\\
+    6\\
+    8
+  \end{pmatrix}
+\end{align*}
+行ごとの成分を比較することで次の連立方程式となる:
+\begin{align*}
+  \begin{cases}
+    x_2+5x_5+3x_7=4\\
+    x_4+9x_7=6\\
+    x_6=8
+  \end{cases}
+\end{align*}
+$A$が被約階段行列なので,
+各方程式に現れる未知数のうち番号の一番若いものに着目すると,
+その係数は1であり,
+また, 他の方程式には現れないという, とても良い状況になっている.
+
+そこで,
+各方程式に現れる未知数のうち番号の一番若いものを左辺に残し,
+それ以外を右辺に移項する.
+\begin{align*}
+  \begin{cases}
+    x_2=4-(5x_5+3x_7)\\
+    x_4=6-9x_7\\
+    x_6=8
+  \end{cases}
+\end{align*}
+いま,
+各方程式に現れる未知数のうち番号の一番若いものを左辺に残し,
+それ以外を右辺に移項した.\footnote{重要なので2回書いた.}
+この変形により左辺に現れる$x_2$, $x_4$, $x_6$は,
+右辺によって値が定まる.
+一方これ以外の未知数の値はどのような値でもよい.
+左辺に現れる$x_2$, $x_4$, $x_6$以外の未知数というのは,
+以下の4つである.
+\begin{align*}
+  x_1,x_3,x_5,x_7
+\end{align*}
+である.
+$x_1$の係数は$0$であったためどの方程式にも現れないが,
+もともとの$A\xxx=\bbb$という方程式にはあった未知数であるので,
+これも忘れてはいけないことに注意する.
+
+$x_7=c_1$,
+$x_5=c_2$,
+$x_3=c_3$, 
+$x_1=c_4$, 
+であるとき,
+$x_6=8$,
+$x_4=6-9c_1$,
+$x_2=3-(5c_2+3c_1)$
+となる.
+したがって$A\xxx=\bbb$の実数解の集合は,
+\begin{align*}
+  \Set{\begin{pmatrix}
+      c_4\\
+      3-(5c_2+3c_1)\\
+      c_3\\
+      6-9c_1\\
+      c_2\\
+      8\\
+      c_1
+    \end{pmatrix}|c_1,c_2,c_3,c_4\in\RR}
+\end{align*}
+となる.  これで解の集合は求められたことになる.
+
+加法とスカラー倍の定義から,
+\begin{align*}
+  \begin{pmatrix}
+      c_4\\
+      3-(5c_2+3c_1)\\
+      c_3\\
+      6-9c_1\\
+      c_2\\
+      8\\
+      c_1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+      0\\
+      3\\
+      0\\
+      6\\
+      0\\
+      8\\
+      0
+  \end{pmatrix}
+  +c_1
+  \begin{pmatrix}
+      0\\
+      -3\\
+      0\\
+      -9\\
+      0\\
+      0\\
+      1
+  \end{pmatrix}
+  +c_2
+  \begin{pmatrix}
+      0\\
+      -5\\
+      0\\
+      0\\
+      1\\
+      0\\
+      0
+  \end{pmatrix}
+  +c_3
+  \begin{pmatrix}
+      0\\
+      0\\
+      1\\
+      0\\
+      0\\
+      0\\
+      0
+  \end{pmatrix}
+  +c_4
+  \begin{pmatrix}
+      1\\
+      0\\
+      0\\
+      0\\
+      0\\
+      0\\
+      0
+  \end{pmatrix}
+\end{align*}
+であるので,
+$A\xxx=\bbb$の実数解の集合は,
+\begin{align*}
+  \Set{  \begin{pmatrix}
+      0\\
+      3\\
+      0\\
+      6\\
+      0\\
+      8\\
+      0
+  \end{pmatrix}
+  +c_1
+  \begin{pmatrix}
+      0\\
+      -3\\
+      0\\
+      -9\\
+      0\\
+      0\\
+      1
+  \end{pmatrix}
+  +c_2
+  \begin{pmatrix}
+      0\\
+      -5\\
+      0\\
+      0\\
+      1\\
+      0\\
+      0
+  \end{pmatrix}
+  +c_3
+  \begin{pmatrix}
+      0\\
+      0\\
+      1\\
+      0\\
+      0\\
+      0\\
+      0
+  \end{pmatrix}
+  +c_4
+  \begin{pmatrix}
+      1\\
+      0\\
+      0\\
+      0\\
+      0\\
+      0\\
+      0
+  \end{pmatrix}
+|c_1,c_2,c_3,c_4\in\RR}
+\end{align*}
+とも書ける.
+
+
+
+\section{被約階段行列について}
+講義で紹介したが,
+証明は与えていない次の命題について,
+証明を与える
+\begin{theorem}
+  \label{thm:main}
+  $A$, $B$を被約階段行列としサイズは$(m,n)$とする.
+  また, $P$を$m$次正則行列とする.
+  $PA=B$ならば$A=B$
+\end{theorem}
+この命題を証明するために, いくつか補題を用意する.
+
+
+
+
+
+
+$P$を$m$次正方行列とする.
+$\xxx$を$(m,1)$行列とする.
+$\zzero$を零行列$O_{m,1}$とする.
+このとき次が成り立つことは既に見た:
+\begin{lemma}
+  \label{lem:1}
+  $\xxx\neq\zzero$かつ$P\xxx=\zzero$ならば,
+  $P$は正則ではない.
+\end{lemma}
+
+
+
+$i=1,2,\ldots,m$に対し,
+  \begin{align*}
+    \eee_i=\begin{pmatrix}0\\\vdots\\0\\1\\0\\\vdots\\0\end{pmatrix}
+  \end{align*}
+という$i$行目だけ$1$で, 他は$0$である$(m,1)$行列とする.
+\begin{lemma}
+  \label{lem:2}
+  $k\geq 1$とする.
+  \begin{align*}
+    P\eee_1&=\eee_1,\\
+    P\eee_2&=\eee_2,\\
+    &\vdots\\
+    P\eee_{k-1}&=\eee_{k-1},\\
+    P\eee_k&=\alpha_1\eee_1+\alpha_2\eee_2+\cdots+\alpha_{k-1}\eee_{k-1}\\
+    &(\text{$k=1$のときには, $P\eee_1=P\eee_k=0$ という条件として読む})    
+  \end{align*}
+  ならば, $P$は正則ではない.
+\end{lemma}
+\begin{proof}
+$\eee_k-(\alpha_1\eee_1+\alpha_2\eee_2+\cdots+\alpha_{k-1}\eee_{k-1})$
+  は第$k$成分が1なので, $\zzero$ではない.
+  \begin{align*}
+    &\phantom{{}={}}P(\eee_k-(\alpha_1\eee_1+\alpha_2\eee_2+\cdots+\alpha_{k-1}\eee_{k-1}))\\
+    &=
+    P\eee_k-(\alpha_1P\eee_1+\alpha_2P\eee_2+\cdots+\alpha_{k-1}P\eee_{k-1}))\\
+    &=
+    P\eee_k-(\alpha_1\eee_1+\alpha_2\eee_2+\cdots+\alpha_{k-1}\eee_{k-1}))\\
+    &=
+    P\eee_k-P\eee_k\\
+    &=\zzero.
+  \end{align*}
+  したがって\cref{lem:1}より$P$は正則ではない.
+\end{proof}
+
+
+$A=(a_{i,j})_{\substack{i=1,\ldots,m\\j=1,\ldots,n}}$
+$(m,n)$行列とする.
+また,
+$A=(\aaa_1|\aaa_2|\cdots|\aaa_n)$
+と列ベクトル表示されているとする.
+つまり,
+\begin{align*}
+  \aaa_j=\begin{pmatrix}a_{j,1}\\a_{j,2}\\\vdots\\a_{j,m}\end{pmatrix}
+\end{align*}
+である. さらに, $A$は階数$r$の被約階段行列で,
+そのpivotsは$(1,p_1),(2,p_r),\ldots,(r,p_r)$であるとする.
+
+$A$か階数$r$の階段行列であることから次がわかる:
+\begin{lemma}
+  \label{lem:3}
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\eee_1+a_{2,j}\eee_2+\cdots+a_{r,j}\eee_r\\
+    &=\sum_{i=1}^r a_{i,j}\eee_i.
+  \end{align*}
+\end{lemma}
+また, $(l+1,p_{l+1})$がpivotであることから, 次がわかる:
+\begin{lemma}
+  \label{lem:4}
+  $j<p_{l+1}$ならば,
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\eee_1+a_{2,j}\eee_2+\cdots+a_{l,j}\eee_l\\
+    &=\sum_{i=1}^l a_{i,j}\eee_i.
+  \end{align*}
+\end{lemma}
+
+
+\begin{lemma}
+  \label{lem:5}
+    \begin{align*}
+    P\eee_1&=\eee_1,\\
+    P\eee_2&=\eee_2,\\
+    &\vdots\\
+    P\eee_{r}&=\eee_{r}
+  \end{align*}
+  ならば, $PA=A$.
+\end{lemma}
+\begin{proof}
+  \Cref{lem:3}より
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\eee_1+a_{2,j}\eee_2+\cdots+a_{r,j}\eee_r.
+  \end{align*}
+  であるので,
+  \begin{align*}
+    P\aaa_{j}
+    &=a_{1,j}P\eee_1+a_{2,j}P\eee_2+\cdots+a_{r,j}P\eee_r\\
+    &=a_{1,j}\eee_1+a_{2,j}\eee_2+\cdots+a_{r,j}\eee_r\\
+    &=\aaa_j
+  \end{align*}
+  したがって
+  \begin{align*}
+    PA&=P(\aaa_1|\aaa_2|\cdots|\aaa_n)\\
+    &=(P\aaa_1|P\aaa_2|\cdots|P\aaa_n)\\
+    &=(\aaa_1|\aaa_2|\cdots|\aaa_n)\\
+    &=A.
+  \end{align*}
+\end{proof}
+
+ 被約階段行列の定義から次がわかる:
+\begin{lemma}
+  \label{lem:6}
+  $A$が被約階段行列で,
+  $(i,p_i)$がpivotならば,
+  $\aaa_{p_i}=\eee_i$.
+\end{lemma}
+
+$X$, $Y$を$(m,n)$行列とし,
+$X=(\xxx_1|\xxx_2|\cdots|\xxx_n)$,
+$Y=(\yyy_1|\yyy_2|\cdots|\yyy_n)$
+と列ベクトル表示されているとする.
+さらに$X$も$Y$も
+被約階段行列であることを仮定する.
+
+\begin{lemma}
+  \label{lem:7}
+  $X$と$Y$のpivotが完全に一致するとする.
+  このとき$PX=Y$ならば$X=Y$.
+\end{lemma}
+\begin{proof}
+  $X$と$Y$のpivotsが
+  $(1,p_1),(2,p_r),\ldots,(r,p_r)$であるとする.
+  \begin{align*}
+    PX&=P(\xxx_1|\cdots|\xxx_n)=(P\xxx_1|\cdots|P\xxx_n)\\
+    Y&=(\yyy_1|\cdots|\yyy_n)
+  \end{align*}
+  であり, $PX=Y$であるので,
+  \begin{align*}
+    (P\xxx_1|\cdots|P\xxx_n)=(\yyy_1|\cdots|\yyy_n).
+  \end{align*}
+  Pivotである$p_i$列目について考えると,
+  \Cref{lem:6}より
+  \begin{align*}
+    P\xxx_i&=P\eee_i,\\
+    \yyy_i&=\eee_i
+  \end{align*}
+  であるので$P\eee_i=\eee_i$である.
+  $i\in\Set{1,\ldots,r}$に対し$P\eee_i=\eee_i$となるので,
+  \Cref{lem:5}より$X=PX=Y$.  
+\end{proof}
+
+\begin{lemma}
+  \label{lem:8}
+  $X$のpivotsは$(1,p_1),\ldots,(r,p_r)$,
+  $Y$のpivotsは$(1,p_1),\ldots,(l,q_l)$であるとする.
+  $k\leq r$とする.
+  次を仮定する.
+  \begin{align*}
+    i<k \implies p_i=q_i
+  \end{align*}
+  $PX=Y$をみたすとする.
+  $P$が正則行列ならば
+  $k\leq l$かつ$p_k\geq q_k$. 
+\end{lemma}
+\begin{proof}
+  対偶となる,
+  $k> l$または$p_k< q_k$ならば$P$は正則ではない
+  ということを示す.
+  
+  \begin{align*}
+    &PX=(P\xxx_1|\cdots|P\xxx_n)\\
+    ={}&Y=(\yyy_1|\cdots|\yyy_n)
+  \end{align*}
+  であるので, $\yyy_j=P\xxx_j$.
+  $j=p_t$のときには, \cref{lem:6}より,
+  \begin{align}
+    \yyy_{p_t}=P\xxx_{p_t}=P\eee_t.
+    \label{eq:x}
+  \end{align}
+
+  まず$t\in\Set{1,\ldots,k-1}$のときについて考えておく.
+  $p_t=q_t$であるので,
+  \cref{lem:6}より,
+  \begin{align}
+    \yyy_{p_t}=\yyy_{q_t}=\eee_t.
+    \label{eq:xx}
+  \end{align}
+  よって, \eqref{eq:x}と\eqref{eq:xx}より,
+  \begin{align*}
+    P\eee_t=\xxx_{q_t}=\eee_t.
+  \end{align*}
+
+
+  つぎに, $t=k$のときについて考える.
+  $k>l$ならば, \cref{lem:3}を使うと,
+  \begin{align*}
+    \yyy_{p_k}=\yyy_{1p_k}\eee_1+\cdots+y_{k-1,p_k}\eee_{k-1}
+  \end{align*}
+  と書ける.
+  また, $p_k<q_k$ならば, \cref{lem:4}を使うと,
+  \begin{align*}
+    \yyy_{p_k}=\yyy_{1p_k}\eee_1+\cdots+y_{k-1,p_k}\eee_{k-1}
+  \end{align*}
+  と書ける.
+  したがって,
+  次が成り立つ:
+  \begin{align*}
+    k>l \text{ or } p_k<q_k
+    \implies
+    \yyy_{p_k}=\yyy_{1p_k}\eee_1+\cdots+y_{k-1,p_k}\eee_{k-1}.
+  \end{align*}
+  $k>l$または$p_k<q_k$が成り立つとする.
+  このとき, \cref{eq:x}より,
+  \begin{align*}
+    P\eee_k
+    =\yyy_{p_k}
+    =\yyy_{1p_k}\eee_1+\cdots+y_{k-1,p_k}\eee_{k-1}
+  \end{align*}
+  となるが,
+  \cref{lem:2}より$P$は正則ではない.
+\end{proof}
+
+
+ここで一旦記号に対する前提を白紙に戻し,
+本来示したい主張について述べる.
+\begin{theorem}[\Cref{thm:main}]
+  $A$, $B$を被約階段行列としサイズは$(m,n)$とする.
+  また, $P$を$m$次正則行列とする.
+  $PA=B$ならば$A=B$
+\end{theorem}
+\begin{proof}
+  $PA=B$であるので, $B=P^{-1}A$でもある.
+  
+  $A$にpivotsがないとき:
+  このときは$A=O_{m,n}$である.
+  $B=PA=PO_{m,n}=O_{m,n}$
+  であるので, $A=B$.
+
+  $B$にpivotsがないとき:
+  このときは$B=O_{m,n}$である.
+  $A=P^{-1}B=PO_{m,n}=O_{m,n}$
+  であるので, $A=B$.
+
+  $A$にも$B$にもpivotsがあるとき:
+  $A$のpivotsは$(1,p_1),\ldots,(r,p_r)$,
+  $B$のpivotsは$(1,p_1),\ldots,(l,q_l)$であるとし,
+  まず, pivotsが一致することを示す.
+  
+  $k=1$として,
+  \cref{lem:8}を$PA=B$に使うと$p_1\geq q_1$.
+  \cref{lem:8}を$P^{-1}B=A$に使うと$q_1\geq p_1$.
+  よって$p_1=q_1$.
+
+  $k=2$として,
+  \cref{lem:8}を$PA=B$に使うと$p_2\geq q_2$.
+  \cref{lem:8}を$P^{-1}B=A$に使うと$q_2\geq p_2$.
+  よって$p_2=q_2$.
+
+  以下同様に繰り返すと,
+  \begin{align*}
+    r&=l\\
+    p_1&=q_1\\
+    p_2&=q_2\\
+    &\ \vdots\\
+    p_r&=q_r
+  \end{align*}
+  がわかる.
+  Pivotsが一致しているので,
+  \cref{lem:7}を使うことで$A=B$がわかる.
+\end{proof}

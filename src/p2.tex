@@ -1,0 +1,448 @@
+% !TeX root =./x2.tex
+% !TeX program = pdfLaTeX
+\section{行列式の求め方について}
+行列式を求めるには, 例えば次の様に,
+1行目で展開するというのが基本となる:
+\begin{align*}
+  \det
+  \begin{pmatrix}
+    a_{1,1} & a_{1,2} & a_{1,3} & a_{1,4}\\
+    a_{2,1} & a_{2,2} & a_{2,3} & a_{2,4}\\
+    a_{3,1} & a_{3,2} & a_{3,3} & a_{3,4}\\
+    a_{4,1} & a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}
+  &=
+    \underbrace{+}_{(-1)^{1+1}} a_{1,1}
+  \det
+  \underbrace{\begin{pmatrix}
+     a_{2,2} & a_{2,3} & a_{2,4}\\
+     a_{3,2} & a_{3,3} & a_{3,4}\\
+     a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}}_{\text{1行目と1列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{-}_{(-1)^{1+2}} a_{1,2}
+  \det
+  \underbrace{\begin{pmatrix}
+    a_{2,1}  & a_{2,3} & a_{2,4}\\
+    a_{3,1}  & a_{3,3} & a_{3,4}\\
+    a_{4,1}  & a_{4,3} & a_{4,4}
+  \end{pmatrix}}_{\text{1行目と2列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{+}_{(-1)^{1+3}} a_{1,3}
+  \det
+  \underbrace{\begin{pmatrix}
+    a_{2,1} & a_{2,2}  & a_{2,4}\\
+    a_{3,1} & a_{3,2}  & a_{3,4}\\
+    a_{4,1} & a_{4,2}  & a_{4,4}
+  \end{pmatrix}}_{\text{1行目と3列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{-}_{(-1)^{1+4}} a_{1,4}
+  \det
+  \underbrace{\begin{pmatrix}
+    a_{2,1} & a_{2,2} & a_{2,3} \\
+    a_{3,1} & a_{3,2} & a_{3,3}\\
+    a_{4,1} & a_{4,2} & a_{4,3} 
+  \end{pmatrix}}_{\text{1行目と4列目を抜いた}}.
+\end{align*}
+他の行で展開することもできるが,
+符号が変わってくる.
+とりあえず1行目で展開することだけは確実にできるようになるとよい.
+
+同様に1列目で展開するということもできる.  例えば次の様になる:
+\begin{align*}
+  \det
+  \begin{pmatrix}
+    a_{1,1} & a_{1,2} & a_{1,3} & a_{1,4}\\
+    a_{2,1} & a_{2,2} & a_{2,3} & a_{2,4}\\
+    a_{3,1} & a_{3,2} & a_{3,3} & a_{3,4}\\
+    a_{4,1} & a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}
+  &=
+    \underbrace{+}_{(-1)^{1+1}} a_{1,1}
+  \det
+  \underbrace{
+  \begin{pmatrix}
+    a_{2,2} & a_{2,3} & a_{2,4}\\
+    a_{3,2} & a_{3,3} & a_{3,4}\\
+    a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}
+  }_{\text{1行目と1列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{-}_{(-1)^{2+1}} a_{2,1}
+  \det
+  \underbrace{
+  \begin{pmatrix}
+    a_{1,2} & a_{1,3} & a_{1,4}\\
+    a_{3,2} & a_{3,3} & a_{3,4}\\
+    a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}
+  }_{\text{2行目と1列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{+}_{(-1)^{3+1}} a_{3,1}
+  \det
+  \underbrace{
+  \begin{pmatrix}
+    a_{1,2} & a_{1,3} & a_{1,4}\\
+    a_{2,2} & a_{2,3} & a_{2,4}\\
+    a_{4,2} & a_{4,3} & a_{4,4}
+  \end{pmatrix}
+  }_{\text{3行目と1列目を抜いた}}
+  \\
+  &\phantom{{}={}}
+    \underbrace{-}_{(-1)^{4+1}} a_{4,1}
+  \det
+  \underbrace{
+  \begin{pmatrix}
+    a_{1,2} & a_{1,3} & a_{1,4}\\
+    a_{2,2} & a_{2,3} & a_{2,4}\\
+    a_{3,2} & a_{3,3} & a_{3,4}
+  \end{pmatrix}
+  }_{\text{4行目と1列目を抜いた}}.
+\end{align*}
+
+これらを使って計算することになるが,
+展開する行(や列)に0が多ければ,
+この式は簡単になることがわかる.
+極端な場合を考えると,
+例えば, 次のような公式が (1列目で展開することで) 得られる:
+\begin{align*}
+  \left(
+  \begin{array}{c|cccc}
+a &b_2&b_3&\cdots&b_n\\\hline
+0 &   &   &      &   \\
+0 &   &   &      &   \\
+\vdots &   &   &D&   \\
+0 &   &   &      &   
+  \end{array}
+  \right)
+  =a\det(D).
+\end{align*}
+また, 同様に次の公式が, (1行目で展開することで) 得られる:
+\begin{align*}
+  \left(
+  \begin{array}{c|cccc}
+a &0&0&\cdots&0\\\hline
+c_2 &   &   &      &   \\
+c_3 &   &   &      &   \\
+\vdots &   &   &D&   \\
+c_n &   &   &      &   
+  \end{array}
+  \right)
+  =a\det(D).
+\end{align*}
+
+また, 行基本変形を行うと行列式がどう変化するかがわかっている.
+
+$A$の$i$行目に$j$行目の$c$倍を加えることで得られる行列を$A'$とすると,
+この2つの行列式は等しい:
+\begin{align*}
+  \det(A)=\det(A').
+\end{align*}
+
+
+$A$の$i$行目と$j$行目を入れ替えることで得られる行列を$A'$とすると,
+$A'$の行列式は$A$の行列式の(-1)倍に変化する. したがって次が成り立つ:
+\begin{align*}
+  \det(A)=-\det(A').
+\end{align*}
+
+また,
+列基本変形でも同様で, 例えば,
+$A$の$i$列目と$j$列目を入れ替えることで得られる行列を$A'$とすると,
+$A'$の行列式は$A$の行列式の(-1)倍に変化する. したがって次が成り立つ:
+\begin{align*}
+  \det(A)=-\det(A').
+\end{align*}
+
+
+
+
+これらを利用して,
+ある行に別の行を加えて0が多くなるように変形したり,
+0の多い行を1行目に持っていくなどして,
+展開が楽になる形に持っていってから,
+展開すると計算が楽にできる.
+
+\begin{remark}
+  $A$の$i$行目を$c$倍することで得られる行列を$A'$とすると,
+  $A'$の行列式はもとの行列式$\det(A)$の$c$倍になる.
+  つまり,
+  \begin{align*}
+    c\det(A)=\det(A').
+  \end{align*}
+  したがって,
+  \begin{align*}
+    \det(A)=\frac{1}{c}\det(A')
+  \end{align*}
+  となる.
+  これを使って行列を簡単にすることもできるが,
+  $c$倍するのか$\frac{1}{c}$倍するのか混乱をし間違う可能性があるので,
+  行列式の計算のときには, これは使わず, 他の行基本変形だけで県警をするとよいと,
+  個人的には思う.
+\end{remark}
+
+次の行列式
+\begin{align*}
+  \det(A)=
+  \det
+  \begin{pmatrix}
+  0&0&0&9&0\\
+  2&4&6&2&2\\
+  2&2&4&3&6\\
+  1&0&0&4&0\\
+  0&1&2&5&4
+  \end{pmatrix}
+\end{align*}
+を計算するには
+いろいろな方法が考えられるが,
+例えば, 次のように1列目と4列目の入れ替えをすると
+\begin{align*}
+  \det(A)=
+  \det
+  \begin{pmatrix}
+  0&0&0&9&0\\
+  2&4&6&2&2\\
+  2&2&4&3&6\\
+  1&0&0&4&0\\
+  0&1&2&5&4
+  \end{pmatrix}
+  =
+  -\det
+  \begin{pmatrix}
+  9&0&0&0&0\\
+  2&4&6&2&2\\
+  3&2&4&2&6\\
+  4&0&0&1&0\\
+  5&1&2&0&4
+  \end{pmatrix}
+\end{align*}
+とできる.
+1列目で展開すると,
+\begin{align*}
+  \det(A)
+  =
+  -\det
+  \begin{pmatrix}
+  9&0&0&0&0\\
+  2&4&6&2&2\\
+  3&2&4&2&6\\
+  4&0&0&1&0\\
+  5&1&2&0&4
+  \end{pmatrix}
+  =
+  -9\det
+  \begin{pmatrix}
+  4&6&2&2\\
+  2&4&2&6\\
+  0&0&1&0\\
+  1&2&0&4
+  \end{pmatrix}
+\end{align*}
+となる.
+1行目と3行目を入れ替えると
+\begin{align*}
+  \det(A)
+  =
+  -9\det
+  \begin{pmatrix}
+  4&6&2&2\\
+  2&4&2&6\\
+  0&0&1&0\\
+  1&2&0&4
+  \end{pmatrix}
+  =
+  9\det
+  \begin{pmatrix}
+  0&0&1&0\\
+  2&4&2&6\\
+  4&6&2&2\\
+  1&2&0&4
+  \end{pmatrix}
+\end{align*}
+となる.
+3列目と1列目を入れ替えると,
+\begin{align*}
+  \det(A)
+  =
+  -9\det
+  \begin{pmatrix}
+  4&6&2&2\\
+  2&4&2&6\\
+  0&0&1&0\\
+  1&2&0&4
+  \end{pmatrix}
+  =
+  -9\det
+  \begin{pmatrix}
+  1&0&0&0\\
+  2&4&2&6\\
+  2&6&4&2\\
+  0&2&1&4
+  \end{pmatrix}
+\end{align*}
+となる. 1行目で展開すると,
+\begin{align*}
+  \det(A)
+  =
+  -9\det
+  \begin{pmatrix}
+  4&6&2&2\\
+  2&4&2&6\\
+  0&0&1&0\\
+  1&2&0&4
+  \end{pmatrix}
+  =
+  -9\det
+  \begin{pmatrix}
+  4&2&6\\
+  6&4&2\\
+  2&1&4
+  \end{pmatrix}
+\end{align*}
+となる.
+1行目と3行目を入れ替えると,
+\begin{align*}
+  \det(A)
+  =
+  -9\det
+  \begin{pmatrix}
+  4&2&6\\
+  6&4&2\\
+  2&1&4
+  \end{pmatrix}
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    6&4&2\\
+    4&2&6
+  \end{pmatrix}
+\end{align*}
+となる.
+1行目の$-3$倍を2行目に加えると,
+\begin{align*}
+  \det(A)
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    6&4&2\\
+    4&2&6
+  \end{pmatrix}
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    0&1&-10\\
+    4&2&6
+  \end{pmatrix}
+\end{align*}
+となる.
+1行目の$-2$倍を3行目に加えると,
+\begin{align*}
+  \det(A)
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    0&1&-10\\
+    4&2&6
+  \end{pmatrix}
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    0&1&-10\\
+    0&0&-2
+  \end{pmatrix}
+\end{align*}
+となる.
+三角行列の行列式は対角をかけたものなので,
+\begin{align*}
+  \det(A)
+  =
+  9\det
+  \begin{pmatrix}
+    2&1&4\\
+    0&1&-10\\
+    0&0&-2
+  \end{pmatrix}
+  =9\cdot 2\cdot 1\cdot(-2)=-36.
+\end{align*}
+
+
+
+\section{逆行列の求め方}
+逆行列を行列式を使って求める方法がある.
+この公式を使って逆行列をもとめようとすると,
+$n^2$個の行列式を求めないといけない.
+具体的な行列の行列式を,
+この公式を使って計算しようと非常に大変な計算をしないといけない.
+
+正則行列$A$の逆行列を求めるには次のように計算するのがよい.
+まず$A$と単位行列$E_n$を横に並べた行列$(A|E_n)$を考える.
+この行列に行基本変形を行って$(E_n|P)$の形に変形する.
+このように変形できたら$P$が$A$の逆行列である.
+
+例えば,
+\begin{align*}
+  \begin{pmatrix}
+    1&0&2\\
+    1&1&2\\
+    2&0&3
+  \end{pmatrix}
+\end{align*}
+の逆行列を求めるには, つぎの様にやればよい:
+\begin{align*}
+  \begin{pmatrix}
+    1&0&2&1&0&0\\
+    1&1&2&0&1&0\\
+    2&0&3&0&0&1
+  \end{pmatrix}
+\end{align*}
+の2行目に1行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&0&2&1&0&0\\
+    0&1&0&-1&1&0\\
+    2&0&3&0&0&1
+  \end{pmatrix}.
+\end{align*}
+さらに3行目に1行目の$-2$倍を足すと
+\begin{align*}
+  \begin{pmatrix}
+    1&0&2&1&0&0\\
+    0&1&0&-1&1&0\\
+    0&0&-1&-2&0&1
+  \end{pmatrix}.
+\end{align*}
+3行目を$-1$倍すると
+\begin{align*}
+  \begin{pmatrix}
+    1&0&2&1&0&0\\
+    0&1&0&-1&1&0\\
+    0&0&1&2&0&-1
+  \end{pmatrix}.
+\end{align*}
+1行目に3行目の$-2$倍を加えると
+\begin{align*}
+  \begin{pmatrix}
+    1&0&0&-3&0&2\\
+    0&1&0&-1&1&0\\
+    0&0&1&2&0&-1
+  \end{pmatrix}.
+\end{align*}
+したがって,
+\begin{align*}
+  A^{-1}=
+  \begin{pmatrix}
+    -3&0&2\\
+    -1&1&0\\
+    2&0&-1
+  \end{pmatrix}.
+\end{align*}
