@@ -1029,6 +1029,546 @@
 
 
 
+\subsection{行基本変形によって得られる被約階段行列の一意性に関する命題の証明}
+行基本変形を用いて得られる被約階段行列が,
+変形の手順によらず一意に定まることを示す.
+そのために, いくつか補題を用意する.
+
+
+$P$を$m$次正方行列とする.
+$\xx$を$(m,1)$行列とする.
+$\zzero$を零行列$O_{m,1}$とする.
+このとき次が成り立つことは既に見た:
+\begin{lemma}
+  \label{lem:1}
+  $\xx\neq\zzero$かつ$P\xx=\zzero$ならば,
+  $P$は正則ではない.
+\end{lemma}
+
+
+
+$i=1,2,\ldots,m$に対し,
+  \begin{align*}
+    \ee_i=\begin{pmatrix}0\\\vdots\\0\\1\\0\\\vdots\\0\end{pmatrix}
+  \end{align*}
+という$i$行目だけ$1$で, 他は$0$である$(m,1)$行列とする.
+\begin{lemma}
+  \label{lem:2}
+  $k\geq 1$とする.
+  \begin{align*}
+    P\ee_1&=\ee_1,\\
+    P\ee_2&=\ee_2,\\
+    &\vdots\\
+    P\ee_{k-1}&=\ee_{k-1},\\
+    P\ee_k&=\alpha_1\ee_1+\alpha_2\ee_2+\cdots+\alpha_{k-1}\ee_{k-1}\\
+    &(\text{$k=1$のときには, $P\ee_1=P\ee_k=0$ という条件として読む})    
+  \end{align*}
+  ならば, $P$は正則ではない.
+\end{lemma}
+\begin{proof}
+$\ee_k-(\alpha_1\ee_1+\alpha_2\ee_2+\cdots+\alpha_{k-1}\ee_{k-1})$
+  は第$k$成分が1なので, $\zzero$ではない.
+  \begin{align*}
+    &\phantom{{}={}}P(\ee_k-(\alpha_1\ee_1+\alpha_2\ee_2+\cdots+\alpha_{k-1}\ee_{k-1}))\\
+    &=
+    P\ee_k-(\alpha_1P\ee_1+\alpha_2P\ee_2+\cdots+\alpha_{k-1}P\ee_{k-1}))\\
+    &=
+    P\ee_k-(\alpha_1\ee_1+\alpha_2\ee_2+\cdots+\alpha_{k-1}\ee_{k-1}))\\
+    &=
+    P\ee_k-P\ee_k\\
+    &=\zzero.
+  \end{align*}
+  したがって\cref{lem:1}より$P$は正則ではない.
+\end{proof}
+
+
+$A=(a_{i,j})_{\substack{i=1,\ldots,m\\j=1,\ldots,n}}$
+$(m,n)$行列とする.
+また,
+$A=(\aaa_1|\aaa_2|\cdots|\aaa_n)$
+と列ベクトル表示されているとする.
+つまり,
+\begin{align*}
+  \aaa_j=\begin{pmatrix}a_{j,1}\\a_{j,2}\\\vdots\\a_{j,m}\end{pmatrix}
+\end{align*}
+である. さらに, $A$は階数$r$の被約階段行列で,
+そのpivotsは$(1,p_1),(2,p_r),\ldots,(r,p_r)$であるとする.
+
+$A$か階数$r$の階段行列であることから次がわかる:
+\begin{lemma}
+  \label{lem:3}
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\ee_1+a_{2,j}\ee_2+\cdots+a_{r,j}\ee_r\\
+    &=\sum_{i=1}^r a_{i,j}\ee_i.
+  \end{align*}
+\end{lemma}
+また, $(l+1,p_{l+1})$がpivotであることから, 次がわかる:
+\begin{lemma}
+  \label{lem:4}
+  $j<p_{l+1}$ならば,
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\ee_1+a_{2,j}\ee_2+\cdots+a_{l,j}\ee_l\\
+    &=\sum_{i=1}^l a_{i,j}\ee_i.
+  \end{align*}
+\end{lemma}
+
+
+\begin{lemma}
+  \label{lem:5}
+    \begin{align*}
+    P\ee_1&=\ee_1,\\
+    P\ee_2&=\ee_2,\\
+    &\vdots\\
+    P\ee_{r}&=\ee_{r}
+  \end{align*}
+  ならば, $PA=A$.
+\end{lemma}
+\begin{proof}
+  \Cref{lem:3}より
+  \begin{align*}
+    \aaa_{j}&=a_{1,j}\ee_1+a_{2,j}\ee_2+\cdots+a_{r,j}\ee_r.
+  \end{align*}
+  であるので,
+  \begin{align*}
+    P\aaa_{j}
+    &=a_{1,j}P\ee_1+a_{2,j}P\ee_2+\cdots+a_{r,j}P\ee_r\\
+    &=a_{1,j}\ee_1+a_{2,j}\ee_2+\cdots+a_{r,j}\ee_r\\
+    &=\aaa_j
+  \end{align*}
+  したがって
+  \begin{align*}
+    PA&=P(\aaa_1|\aaa_2|\cdots|\aaa_n)\\
+    &=(P\aaa_1|P\aaa_2|\cdots|P\aaa_n)\\
+    &=(\aaa_1|\aaa_2|\cdots|\aaa_n)\\
+    &=A.
+  \end{align*}
+\end{proof}
+
+ 被約階段行列の定義から次がわかる:
+\begin{lemma}
+  \label{lem:6}
+  $A$が被約階段行列で,
+  $(i,p_i)$がpivotならば,
+  $\aaa_{p_i}=\ee_i$.
+\end{lemma}
+
+$X$, $Y$を$(m,n)$行列とし,
+$X=(\xx_1|\xx_2|\cdots|\xx_n)$,
+$Y=(\yy_1|\yy_2|\cdots|\yy_n)$
+と列ベクトル表示されているとする.
+さらに$X$も$Y$も
+被約階段行列であることを仮定する.
+
+\begin{lemma}
+  \label{lem:7}
+  $X$と$Y$のpivotが完全に一致するとする.
+  このとき$PX=Y$ならば$X=Y$.
+\end{lemma}
+\begin{proof}
+  $X$と$Y$のpivotsが
+  $(1,p_1),(2,p_r),\ldots,(r,p_r)$であるとする.
+  \begin{align*}
+    PX&=P(\xx_1|\cdots|\xx_n)=(P\xx_1|\cdots|P\xx_n)\\
+    Y&=(\yy_1|\cdots|\yy_n)
+  \end{align*}
+  であり, $PX=Y$であるので,
+  \begin{align*}
+    (P\xx_1|\cdots|P\xx_n)=(\yy_1|\cdots|\yy_n).
+  \end{align*}
+  Pivotである$p_i$列目について考えると,
+  \Cref{lem:6}より
+  \begin{align*}
+    P\xx_i&=P\ee_i,\\
+    \yy_i&=\ee_i
+  \end{align*}
+  であるので$P\ee_i=\ee_i$である.
+  $i\in\Set{1,\ldots,r}$に対し$P\ee_i=\ee_i$となるので,
+  \Cref{lem:5}より$X=PX=Y$.  
+\end{proof}
+
+\begin{lemma}
+  \label{lem:8}
+  $X$のpivotsは$(1,p_1),\ldots,(r,p_r)$,
+  $Y$のpivotsは$(1,p_1),\ldots,(l,q_l)$であるとする.
+  $k\leq r$とする.
+  次を仮定する.
+  \begin{align*}
+    i<k \implies p_i=q_i
+  \end{align*}
+  $PX=Y$をみたすとする.
+  $P$が正則行列ならば
+  $k\leq l$かつ$p_k\geq q_k$. 
+\end{lemma}
+\begin{proof}
+  対偶となる,
+  $k> l$または$p_k< q_k$ならば$P$は正則ではない
+  ということを示す.
+  
+  \begin{align*}
+    &PX=(P\xx_1|\cdots|P\xx_n)\\
+    ={}&Y=(\yy_1|\cdots|\yy_n)
+  \end{align*}
+  であるので, $\yy_j=P\xx_j$.
+  $j=p_t$のときには, \cref{lem:6}より,
+  \begin{align}
+    \yy_{p_t}=P\xx_{p_t}=P\ee_t.
+    \label{eq:x}
+  \end{align}
+
+  まず$t\in\Set{1,\ldots,k-1}$のときについて考えておく.
+  $p_t=q_t$であるので,
+  \cref{lem:6}より,
+  \begin{align}
+    \yy_{p_t}=\yy_{q_t}=\ee_t.
+    \label{eq:xx}
+  \end{align}
+  よって, \eqref{eq:x}と\eqref{eq:xx}より,
+  \begin{align*}
+    P\ee_t=\xx_{q_t}=\ee_t.
+  \end{align*}
+
+
+  つぎに, $t=k$のときについて考える.
+  $k>l$ならば, \cref{lem:3}を使うと,
+  \begin{align*}
+    \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
+  \end{align*}
+  と書ける.
+  また, $p_k<q_k$ならば, \cref{lem:4}を使うと,
+  \begin{align*}
+    \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
+  \end{align*}
+  と書ける.
+  したがって,
+  次が成り立つ:
+  \begin{align*}
+    k>l \text{ or } p_k<q_k
+    \implies
+    \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}.
+  \end{align*}
+  $k>l$または$p_k<q_k$が成り立つとする.
+  このとき, \cref{eq:x}より,
+  \begin{align*}
+    P\ee_k
+    =\yy_{p_k}
+    =\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
+  \end{align*}
+  となるが,
+  \cref{lem:2}より$P$は正則ではない.
+\end{proof}
+
+\begin{proofof}{key:for:uniqueness}
+  $PA=B$であるので, $B=P^{-1}A$でもある.
+  
+  $A$にpivotsがないとき:
+  このときは$A=O_{m,n}$である.
+  $B=PA=PO_{m,n}=O_{m,n}$
+  であるので, $A=B$.
+
+  $B$にpivotsがないとき:
+  このときは$B=O_{m,n}$である.
+  $A=P^{-1}B=PO_{m,n}=O_{m,n}$
+  であるので, $A=B$.
+
+  $A$にも$B$にもpivotsがあるとき:
+  $A$のpivotsは$(1,p_1),\ldots,(r,p_r)$,
+  $B$のpivotsは$(1,p_1),\ldots,(l,q_l)$であるとし,
+  まず, pivotsが一致することを示す.
+  
+  $k=1$として,
+  \cref{lem:8}を$PA=B$に使うと$p_1\geq q_1$.
+  \cref{lem:8}を$P^{-1}B=A$に使うと$q_1\geq p_1$.
+  よって$p_1=q_1$.
+
+  $k=2$として,
+  \cref{lem:8}を$PA=B$に使うと$p_2\geq q_2$.
+  \cref{lem:8}を$P^{-1}B=A$に使うと$q_2\geq p_2$.
+  よって$p_2=q_2$.
+
+  以下同様に繰り返すと,
+  \begin{align*}
+    r&=l\\
+    p_1&=q_1\\
+    p_2&=q_2\\
+    &\ \vdots\\
+    p_r&=q_r
+  \end{align*}
+  がわかる.
+  Pivotsが一致しているので,
+  \cref{lem:7}を使うことで$A=B$がわかる.
+\end{proofof}
+
+\begin{proofof}{reg:for:uniqueness}
+  $A=PX$, $B=QX$とおくと
+  $A$, $B$は被約階段行列である.
+  $P'=QP^{-1}$とおけば.
+  $P'$は正則である.
+  また,
+  \begin{align*}
+    P'A=QP^{-1}A=QP^{-1}P=QX=B
+  \end{align*}
+  であるので$P'A$は被約階段行列.
+  よって,
+  \Cref{lem:key:PX=Y:X=Y}
+  より,
+  $A=B$.
+\end{proofof}
+\begin{proofof}{reg:can:be:e}
+\paragraph{\Cref{cor:reg:e:item:reg}$\implies$\Cref{cor:reg:e:item:e}}
+\Cref{thm:FB}により,
+$A$に対し行基本変形を行うことで被約階段行列が得られる.
+これを$S$とする.
+行基本変形は基本行列を左からかけることであったので,
+$PA=S$を満たす正方行列$P$が存在する.
+基本行列は正則であり, 正則行列の積もまた正則であったから,
+$P$は正則である.
+一方,
+$A$は正則なので,
+その逆行列を$Q$とおく.
+このとき$Q$は正則で$QA=E_n$を満たす.
+$E_n$は被約階段行列であったから,
+\Cref{prop:reduced:PX=QX}より,
+$PA=QA$である.
+よって,
+$S=E_n$.
+
+\paragraph{\Cref{cor:reg:e:item:e}$\implies$\Cref{cor:reg:e:item:reg}}
+行基本変形を用いて$A$を$E_n$に変形できたとする.
+行基本変形は基本行列を左からかけることであったので,
+$PA=E_n$を満たす正方行列$P$が存在する.
+基本行列は正則であり, 正則行列の積もまた正則であったから,
+$P$は正則である.
+$PA=E_n$であるので,
+両辺に左から$P^{-1}$, 右から$P$をかけることで,
+次を得る.
+\begin{align*}
+  P^{-1}PAP&=P^{-1}P.\\
+  AP&=E_n.
+\end{align*}
+$PA=E_n$, $AP=E_n$であるので,
+$P$は$A$の逆行列であり,
+$A$は正則である.
+\end{proofof}
+
+
+\begin{proofof}{fundmatisgenofgl}
+  $A$を$n$次正則行列とする.
+  $A$は行基本変形で$E_n$に変形できる.
+  このことは基本行列$P_1,\ldots,P_k$を用いて,
+  $P_1\cdots P_k A=E_n$と表せることを意味する.
+  基本行列は正則なので,
+  $A=P_k^{-1}\cdots P_1^{-1}$
+  と書けるが, 基本行列の逆行列も基本行列であったから,
+  各$P_i^{-1}$も基本行列である.
+\end{proofof}
+
+\subsection{階数に関する命題の証明}
+\begin{proofof}{thm:rank:regular}
+  $A$を$n$次正方行列であるとする.
+  \paragraph{\Cref{thm:rank:regular:reg}$\implies$\Cref{thm:rank:regular:rank}}
+  $A$を正則とする.
+  \Cref{thm:reg:criterion:rowtrans}
+  より,
+  行基本変形により$A$を$E_n$に変形できる.
+  したがって$\rank(A)=\rank(E_n)=n$.
+  \paragraph{\Cref{thm:rank:regular:rank}$\implies$\Cref{thm:rank:regular:reg}}
+  $\rank(A)=n$とする.
+  階数の定義から
+  $A$に行基本変形を行って階数$n$の被約階段に変形できる.
+  $A$が$n$次正方行列であるので得られる被約階段も$n$次正方行列である.
+  $n$次正方行列で被約階段であるものは$E_n$のみであるから,
+  得られる被約階段は$E_n$である.
+  したがって,
+  \Cref{thm:reg:criterion:rowtrans}
+  より,
+  $A$は正則である.
+\end{proofof}
+
+\begin{proofof*}{thm:rank:prop}{fund}
+  $A$に行基本変形を行って被約階段行列$S$が得られたとする.
+  また, $A$に行基本変形を行って$A'$が得られたとする.
+  このとき,
+  \cref{lem:fund:is:invertible}から, 
+  $A'$行基本変形を行って$A$にできる.
+  したがって更に行基本変形を行って$S$にすることもできる.
+  つまり
+  $A'$に対し行基本変形を行って得られる被約階段行列も$S$である.
+  したがって, $\rank(A)=\rank(S)=\rank(A')$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{row}
+  被約階段行列$S$の階数は$0$以外の成分もある行の総数であるから$S$の行数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の行数と$A'$の行数は等しいので, $A$の階数は$A$の行数を超えることはない.
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{col}
+  被約階段行列$S$の階数はpivotの総数であるが,
+  pivotは各列に高々1つであるので, 階数は$S$の列数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の列数と$A'$の列数は等しいので, $A$の階数は$A$の列数を超えることはない.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerorows}
+  $(m,n)$-行列$A$の$r+1$行目から$m$行目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq r$である.
+\end{lemma}
+\begin{proof}
+  $A'$を$(r,n)$-行列とし,
+  $A'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:row}
+  より, $\rank(S')\leq r$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq r$である.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerocols}
+  $(m,n)$-行列$A$の$c+1$列目から$n$列目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq c$
+\end{lemma}
+\begin{proof}
+  $A'$を$(m,c)$-行列とし,
+  $A'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:col}
+  より, $\rank(S')\leq c$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq c$である.
+\end{proof}
+
+
+\begin{proofof*}{thm:rank:prop}{left}
+  $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
+  このとき,
+  \cref{lem:fundamental}
+  から,
+  $P_kP_{k-1}\cdots P_1A=S$をみたす
+  基本行列$P_1,\ldots, P_k$が存在する.
+  $P_kP_{k-1}\cdots P_1A=S$であるので
+  $P_kP_{k-1}\cdots P_1AB=SB$であるので
+  つまり$AB$に行基本変形を用いて$SB$に変形できることがわかる.
+  したがって,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:fund}
+  より, $\rank(AB)=\rank(SB)$である.
+  
+  一方$S$は階数が$r$の被約階段行列であるので,
+  $r+1$行目から$n$行目までの成分はすべて$0$である.
+  したがって,
+  $SB$を計算すると,
+  $SB$の$r+1$行目から$n$行目までの成分もすべて$0$であることがわかる.
+  したがって, \cref{lem:rank:rnonzerorows}より,
+  $\rank(SB)\leq r$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularright}
+   $\rank(A)=\rank(AQ)$
+  を示すために,
+   $\rank(A)\leq\rank(AQ)$
+  と
+   $\rank(A)\geq\rank(AQ)$
+  を示す.
+  
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(AQ)\leq \rank(A)$である.
+  
+  一方, 
+  $X=AQ$, $Y=Q^{-1}$とすると,
+  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(XY)\leq \rank(X)$である.
+  $XY=AQQ^{-1}=A$であるので,
+  $\rank(A)\leq\rank(AQ)$である.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:ineq:transrank}
+  $X$を$(m,n)$-行列とする.
+  このとき, $\rank(X)\leq \rank(\transposed{X})$.
+\end{lemma}
+\begin{proof}
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたとする.
+  このとき, $\rank(X)=r$である.
+  $\rank(X)\leq r$を示す.
+
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたので,
+  \cref{lem:fundamental}
+  から,
+  $PA=S$をみたす
+  正則行列$P$が存在する.
+  $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
+  である.
+  $\transposed{P}$は正則であるので,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
+  一方
+  $S$は階数$r$の被約階段行列であるので,
+  $r+1$行目から$m$行目までの成分は$0$である.
+  したがって,
+  $\transposed{S}$の
+  $r+1$列目から$m$列目までの成分は$0$である.
+  したがって,
+  \Cref{lem:rank:rnonzerocols}より,
+  $\transposed{S}\leq r$である.
+  まとめると,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})=\rank(\transposed{S})\leq r$である.
+\end{proof}
+\begin{proofof*}{thm:rank:prop}{trans}
+  $A$を$(m,n)$-行列とする.
+  $\rank(A)=\rank(\transposed{A})$を示すために,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  と
+  $\rank(\transposed{A})\leq \rank(A)$.
+  を示す.
+  
+  $X=A$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  である.
+
+  一方,
+  $X=\transposed{A}$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\transposed{X}=A$であるので,
+  $\rank(\transposed{A})\leq \rank(A)$.
+  である.
+  
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{right}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(AB)=\rank(\transposed{(AB)})$
+  であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
+  $\rank(AB)=\rank(\transposed{B}\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
+  より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
+  $\rank(AB)\leq\rank(\transposed{B})$.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{B})=\rank(B)$であるので,
+  $\rank(AB)\leq \rank(B)$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularleft}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(PA)=\rank(\transposed{(PA)})$
+  であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
+  $\rank(PA)=\rank(\transposed{A}\transposed{P})$
+  である.
+  $P$は正則であるので$\transposed{P}$も正則である.
+  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
+  $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
+  であるので,
+  $\rank(PA)=\rank(\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{A})=\rank(A)$であるので,
+  $\rank(PA)= \rank(A)$である.
+\end{proofof*}
+
 
 \endinput
 
@@ -1269,234 +1809,22 @@ $2$-次正方行列の場合のみについて証明をしている.
   したがって, $H(i,j)^{-1}=H(i,j)$である.
 \end{proof}
 
-\begin{remark}
-  \label{lem:fund:is:invertible}
-  \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
-  を基本行列と呼ぶ.
-  \Cref{lem:fundamental}から,
-  $A$に行基本変形を行うことは,
-  $A$に基本行列を左からかけることであり,
-  逆に
-  $A$に基本行列を左からかけることは,
-  $A$に行基本変形を行うことであることがわかる.
+%% \begin{remark}
+%%   \label{lem:fund:is:invertible}
+%%   \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
+%%   を基本行列と呼ぶ.
+%%   \Cref{lem:fundamental}から,
+%%   $A$に行基本変形を行うことは,
+%%   $A$に基本行列を左からかけることであり,
+%%   逆に
+%%   $A$に基本行列を左からかけることは,
+%%   $A$に行基本変形を行うことであることがわかる.
 
-  また, 基本行列は正則行列であり, その逆行列もまた基本行列である.
-  このことは, $A$に行基本変形を行って$B$が得られたときには,
-  $B$行基本変形を行って$A$にすることもできるということを意味する.
-\end{remark}
+%%   また, 基本行列は正則行列であり, その逆行列もまた基本行列である.
+%%   このことは, $A$に行基本変形を行って$B$が得られたときには,
+%%   $B$行基本変形を行って$A$にすることもできるということを意味する.
+%% \end{remark}
 
-\begin{proofof*}{thm:rank:prop}{fund}
-  $A$に行基本変形を行って被約階段行列$S$が得られたとする.
-  また, $A$に行基本変形を行って$A'$が得られたとする.
-  このとき,
-  \cref{lem:fund:is:invertible}から, 
-  $A'$行基本変形を行って$A$にできる.
-  したがって更に行基本変形を行って$S$にすることもできる.
-  つまり
-  $A'$に対し行基本変形を行って得られる被約階段行列も$S$である.
-  したがって, $\rank(A)=\rank(S)=\rank(A')$である.
-\end{proofof*}
-
-\begin{proofof*}{thm:rank:prop}{row}
-  被約階段行列$S$の階数は$0$以外の成分もある行の総数であるから$S$の行数を超えることはない.
-  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
-  $A$の行数と$A'$の行数は等しいので, $A$の階数は$A$の行数を超えることはない.
-\end{proofof*}
-\begin{proofof*}{thm:rank:prop}{col}
-  被約階段行列$S$の階数はpivotの総数であるが,
-  pivotは各列に高々1つであるので, 階数は$S$の列数を超えることはない.
-  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
-  $A$の列数と$A'$の列数は等しいので, $A$の階数は$A$の列数を超えることはない.
-\end{proofof*}
-
-\begin{lemma}
-  \label{lem:rank:rnonzerorows}
-  $(m,n)$-行列$A$の$r+1$行目から$m$行目までの成分がすべて$0$であるなら,
-  $\rank(A)\leq r$である.
-\end{lemma}
-\begin{proof}
-  $A'$を$(r,n)$-行列とし,
-  $A'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列を$A$とする.
-  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
-  $A$に対し同じ手順で行基本変形をすることで,
-  $S'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列$S$が得られる.
-  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
-  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:row}
-  より, $\rank(S')\leq r$である.
-  したがって, $\rank(A)=\rank(S)=\rank(S')\leq r$である.
-\end{proof}
-
-\begin{lemma}
-  \label{lem:rank:rnonzerocols}
-  $(m,n)$-行列$A$の$c+1$列目から$n$列目までの成分がすべて$0$であるなら,
-  $\rank(A)\leq c$
-\end{lemma}
-\begin{proof}
-  $A'$を$(m,c)$-行列とし,
-  $A'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列を$A$とする.
-  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
-  $A$に対し同じ手順で行基本変形をすることで,
-  $S'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列$S$が得られる.
-  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
-  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:col}
-  より, $\rank(S')\leq c$である.
-  したがって, $\rank(A)=\rank(S)=\rank(S')\leq c$である.
-\end{proof}
-
-
-\begin{proofof*}{thm:rank:prop}{left}
-  $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
-  このとき,
-  \cref{lem:fundamental}
-  から,
-  $P_kP_{k-1}\cdots P_1A=S$をみたす
-  基本行列$P_1,\ldots, P_k$が存在する.
-  $P_kP_{k-1}\cdots P_1A=S$であるので
-  $P_kP_{k-1}\cdots P_1AB=SB$であるので
-  つまり$AB$に行基本変形を用いて$SB$に変形できることがわかる.
-  したがって,
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:fund}
-  より, $\rank(AB)=\rank(SB)$である.
-  
-  一方$S$は階数が$r$の被約階段行列であるので,
-  $r+1$行目から$n$行目までの成分はすべて$0$である.
-  したがって,
-  $SB$を計算すると,
-  $SB$の$r+1$行目から$n$行目までの成分もすべて$0$であることがわかる.
-  したがって, \cref{lem:rank:rnonzerorows}より,
-  $\rank(SB)\leq r$である.
-\end{proofof*}
-
-\begin{proofof*}{thm:rank:prop}{regularright}
-   $\rank(A)=\rank(AQ)$
-  を示すために,
-   $\rank(A)\leq\rank(AQ)$
-  と
-   $\rank(A)\geq\rank(AQ)$
-  を示す.
-  
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
-  より, $\rank(AQ)\leq \rank(A)$である.
-  
-  一方, 
-  $X=AQ$, $Y=Q^{-1}$とすると,
-  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
-  より, $\rank(XY)\leq \rank(X)$である.
-  $XY=AQQ^{-1}=A$であるので,
-  $\rank(A)\leq\rank(AQ)$である.
-\end{proofof*}
-
-\begin{lemma}
-  \label{lem:ineq:transrank}
-  $X$を$(m,n)$-行列とする.
-  このとき, $\rank(X)\leq \rank(\transposed{X})$.
-\end{lemma}
-\begin{proof}
-  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたとする.
-  このとき, $\rank(X)=r$である.
-  $\rank(X)\leq r$を示す.
-
-  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたので,
-  \cref{lem:fundamental}
-  から,
-  $PA=S$をみたす
-  正則行列$P$が存在する.
-  $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
-  である.
-  $\transposed{P}$は正則であるので,
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
-  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
-  一方
-  $S$は階数$r$の被約階段行列であるので,
-  $r+1$行目から$m$行目までの成分は$0$である.
-  したがって,
-  $\transposed{S}$の
-  $r+1$列目から$m$列目までの成分は$0$である.
-  したがって,
-  \Cref{lem:rank:rnonzerocols}より,
-  $\transposed{S}\leq r$である.
-  まとめると,
-  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})=\rank(\transposed{S})\leq r$である.
-\end{proof}
-\begin{proofof*}{thm:rank:prop}{trans}
-  $A$を$(m,n)$-行列とする.
-  $\rank(A)=\rank(\transposed{A})$を示すために,
-  $\rank(A)\leq\rank(\transposed{A})$.
-  と
-  $\rank(\transposed{A})\leq \rank(A)$.
-  を示す.
-  
-  $X=A$として
-  \Cref{lem:ineq:transrank}を使うと,
-  $\rank(A)\leq\rank(\transposed{A})$.
-  である.
-
-  一方,
-  $X=\transposed{A}$として
-  \Cref{lem:ineq:transrank}を使うと,
-  $\transposed{X}=A$であるので,
-  $\rank(\transposed{A})\leq \rank(A)$.
-  である.
-  
-\end{proofof*}
-\begin{proofof*}{thm:rank:prop}{right}
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
-  $\rank(AB)=\rank(\transposed{(AB)})$
-  であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
-  $\rank(AB)=\rank(\transposed{B}\transposed{A})$
-  である.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
-  より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
-  $\rank(AB)\leq\rank(\transposed{B})$.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
-  $\rank(\transposed{B})=\rank(B)$であるので,
-  $\rank(AB)\leq \rank(B)$である.
-\end{proofof*}
-
-\begin{proofof*}{thm:rank:prop}{regularleft}
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
-  $\rank(PA)=\rank(\transposed{(PA)})$
-  であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
-  $\rank(PA)=\rank(\transposed{A}\transposed{P})$
-  である.
-  $P$は正則であるので$\transposed{P}$も正則である.
-  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
-  $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
-  であるので,
-  $\rank(PA)=\rank(\transposed{A})$
-  である.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
-  $\rank(\transposed{A})=\rank(A)$であるので,
-  $\rank(PA)= \rank(A)$である.
-\end{proofof*}
-
-\begin{proofof}{thm:rank:regular}
-  $A$を$n$次正方行列であるとする.
-  \paragraph{\Cref{thm:rank:regular:reg}$\implies$\Cref{thm:rank:regular:rank}}
-  $A$を正則とする.
-  \Cref{thm:rank:prop}
-  より, 正則行列を左からかけても階数は変わらないので,
-  $\rank(AE_n)=\rank(E_n)$.
-  $E_n$は階数$n$の被約階段であるので,
-  $\rank(A)=n$である.
-  \paragraph{\Cref{thm:rank:regular:rank}$\implies$\Cref{thm:rank:regular:step}}
-  $\rank(A)=n$とする.
-  階数の定義から
-  $A$に行基本変形を行って階数$n$の被約階段に変形できる.
-  $A$が$n$次正方行列であるので得られる被約階段も$n$次正方行列である.
-  $n$次正方行列で被約階段であるものは$E_n$のみであるから,
-  得られる被約階段は$E_n$である.
-  \paragraph{\Cref{thm:rank:regular:step}$\implies$\Cref{thm:rank:regular:reg}}
-  $A$に行基本変形を行って$E_n$に変形できる.
-  \Cref{lem:fundamental}
-  より, 基本変形は基本行列を左からかけることに相当するので,
-  $F_kF_{k-1}\cdots F_1 A=E_n$を満たす
-  基本行列$F_i$がとれる.  $F_i$は正則であるから,
-  $P=F_kF_{k-1}\cdots F_1$
-  とおくと$P$も正則である.
-  $PA=E_n$であるので, $A=P^{-1}$であり, $AP=E_n$である.
-  $PA=E_n$かつ$AP=E_n$であるので, $A$は正則である.
-\end{proofof}
 
 \section{平面に関する命題の証明}
 ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.

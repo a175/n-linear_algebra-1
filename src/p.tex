@@ -2244,6 +2244,7 @@ $\transposed X^{-1}$
 
 \begin{prop}
   \provelater**{fundamentalmat:invertible}
+  \label{lem:fund:is:invertible}
   基本行列は正則である.
   \begin{enumerate}
   \item\provelater*{F}
@@ -2524,15 +2525,15 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 \end{example}
 
 \begin{example}
-  $E_n$は被役階段行列である.
+  $E_n$は被約階段行列である.
 \end{example}
 
 \begin{example}
-  $O_{n,m}$は被役階段行列である.
+  $O_{n,m}$は被約階段行列である.
 \end{example}
 
 
-\section{行基本変形により得られる被役階段行列}
+\section{行基本変形により得られる被約階段行列}
 次の事実を示すことが,
 ここの目標である.
 \begin{theorem}
@@ -2748,8 +2749,10 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
 
 \begin{theorem}
   \label{thm:reduction:b}
-階段行列$A$を, 行基本変形を用いて被役階段行列に変形できる.
+階段行列$A$を, 行基本変形を用いて被約階段行列に変形できる.
 \end{theorem}
+
+
 
 \begin{proof}
   構成法を与えることで示す.
@@ -2759,28 +2762,29 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
   $A^{(r)}=A$とし, $t=r$として\Cref{lem:reduction:b}を使って得られる行列を
   $A^{(r-1)}$とおく.
   このとき, $A^{(r-1)}$の$p_r$列目は$r$行目を除いて$0$である.
-  また$r$行目以降は被役階段行列である.
+  また$r$行目以降は被約階段行列である.
   つぎに,
   $A^{(r-1)}$に対し, $t=r-1$として\Cref{lem:reduction:b}を使って得られる行列を
   $A^{(r-2)}$とおく.
   このとき, $A^{(r-2)}$の$p_{r-1}$列目は$r-1$行目を除いて$0$である.
-  また$r$行目以降は被役階段行列である.  
+  また$r$行目以降は被約階段行列である.  
   以下同様に繰り返し,
   $A^{(i)}$に対して, 
   $t=i$として\Cref{lem:reduction:b}を使って得られる行列を
   $A^{(i-1)}$とおく.  
-  このとき, $A^{(1)}$は被役階段行列である.
+  このとき, $A^{(1)}$は被約階段行列である.
 \end{proof}
 
 \begin{cor}
-行列$A$を, 行基本変形を用いて被役階段行列に変形できる.
+  \label{thm:FB}
+行列$A$を, 行基本変形を用いて被約階段行列に変形できる.
 \end{cor}
 \begin{proof}
     構成法を与えることで示す.
   
   $A$に対し,
   \Cref{thm:reduction:f}を使い階段行列$A'$を得た後,
-  $A'$に対し, \Cref{thm:reduction:b}を使い被役階段行列$A$を得ることができる.
+  $A'$に対し, \Cref{thm:reduction:b}を使い被約階段行列$A$を得ることができる.
 \end{proof}
 \begin{remark}
   行基本変形を用いて行列を被約階段行列に変形することを,
@@ -2808,7 +2812,7 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
   \addindex{forward!--- elimination}
   \addindex{elimination!forward ---}
   と呼び,
-  行基本変形を用いて階段行列から被役階段行列を得ること (\Cref{thm:reduction:b})
+  行基本変形を用いて階段行列から被約階段行列を得ること (\Cref{thm:reduction:b})
   を
   \defit{後退代入}
   \Defit{backward substitution}
@@ -2819,6 +2823,52 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
   と呼ぶことがある.  
 \end{remark}
 
+
+
+
+行基本変形を用いて得られる被約階段行列が,
+変形の手順によらず一意に定まることを示す.
+次の補題が鍵となる.
+\begin{lemma}
+  \provelater{key:for:uniqueness}
+  \label{lem:key:PX=Y:X=Y}
+  $A$, $B$を被約階段行列としサイズは$(m,n)$とする.
+  また, $P$を$m$次正則行列とする.
+  $PA=B$ならば$A=B$.
+\end{lemma}
+これは次の様に言い換えることができる.
+\begin{cor}
+  \provelater{reg:for:uniqueness}
+  \label{prop:reduced:PX=QX}
+  $X$を$(m,n)$-行列とし,
+  $P$, $Q$を$m$次正則行列とする.
+  $PX$も$QX$も被約階段行列なら$PX=QX$.
+\end{cor}
+行基本変形は左から基本行列をかけることであったであったので,
+次が得られる.
+\begin{cor}
+  %proved already
+  行列$A$から,
+  行基本変形で得られる被約階段行列は
+  その変形手順によらず
+  $A$のみによって決まる.
+\end{cor}
+単位行列は被約階段行列であったので
+次が得られる.
+\begin{cor}
+  \provelater{reg:can:be:e}
+  \label{thm:reg:criterion:rowtrans}
+  \indexforcriterionofregularity%
+  行列$A$に対し以下は同値:
+  \begin{enumerate}
+  \item
+    \label{cor:reg:e:item:reg}
+    $A$は$n$次正則行列である.
+  \item
+    \label{cor:reg:e:item:e}
+    行基本変形を用いて$A$を$E_n$に変形できる.
+  \end{enumerate}
+\end{cor}
 
 
 \begin{remark}
@@ -2840,20 +2890,20 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
   \begin{align*}
     \hconcat{A}{E_m}
   \end{align*}
-  に対し行基本変形を行い被役階段行列になるように変形をし.
+  に対し行基本変形を行い被約階段行列になるように変形をし.
   \begin{align*}
     \hconcat{S}{P}
   \end{align*}
   という形に変形できたとする.
   ただし$P$は$m$次正方行列である.
-  このとき, $PA=S$は被役階段行列であり, $P$は正則行列であるという条件をみたす.
+  このとき, $PA=S$は被約階段行列であり, $P$は正則行列であるという条件をみたす.
 
   とくに, $A$が$n$次正方行列であり, $S=E_m$となるように変形できた場合について考える.
   つまり,
   \begin{align*}
     \hconcat{A}{E_m}
   \end{align*}
-  に対し行基本変形を行い被役階段行列になるように変形をし.
+  に対し行基本変形を行い被約階段行列になるように変形をし.
   \begin{align*}
     \hconcat{E_m}{P}
   \end{align*}
@@ -2863,7 +2913,404 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
   このように行基本変形を用いて逆行列を求めることができる.
 \end{remark}
 
+逆行列を基本変形で求められることから,
+次がわかる.
+\begin{cor}
+  \provelater{fundmatisgenofgl}
+  $n$次正則行列は,
+  基本行列の($0$個以上の)積として書ける.
+  (ただし, $0$個の基本行列の積は,
+  $n$次単位行列であるとする.
+\end{cor}
+
+
+\section{階数の性質}
+ここでは,
+行列の階数というものを定義し,
+その性質について紹介する.
+
+\begin{definition}
+  \label{def:rank}
+  $A$を行列とする.
+  $A$に行基本変形をし,
+  階数$r$の被約階段行列が得られたとする.
+  このとき, 
+  \defit{$A$の階数}
+  \Defit{rank of $A$}
+  \addindex{階数!行列の---}%
+  \addindex{行列の!---階数}%
+  \addindex{rank!--- of matrix}%
+  \addindex{of matrix!rank ---}%
+  は$r$であるといい,
+  $\rank(A)=r$とする.
+\end{definition}
+
+階数$n$の被役階段行列で$n$次正方行列であるものは,
+$n$次単位行列のみであるので,
+正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
+\begin{theorem}
+  \provelater{thm:rank:regular}
+  \label{thm:rank:regular}
+  \indexforcriterionofregularity%
+  $A$が$n$次正方行列であるとする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item\label{thm:rank:regular:reg}
+    $A$が正則
+  \item\label{thm:rank:regular:rank}
+    $\rank(A)=n$
+  \end{enumerate}
+\end{theorem}
+
+
+階数について, 次の性質が知られている.
+
+
+\begin{theorem}
+  \provelater**{thm:rank:prop}
+  \label{thm:rank:prop}
+  $A$を$(m,n)$-行列とする.
+  $B$を$(n,k)$-行列とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item
+    \label{thm:rank:prop:trans}
+    \provelater*{trans}
+    $\rank(A)=\rank(\transposed{A})$.
+  \item
+    \label{thm:rank:prop:left}
+    \provelater*{left}
+    $\rank(AB)\leq\rank(A)$.
+  \item
+    \label{thm:rank:prop:right}
+    \provelater*{right}
+    $\rank(AB)\leq\rank(B)$.
+  \item
+    \label{thm:rank:prop:row}
+    \provelater*{row}
+    $\rank(A)\leq m$.
+  \item
+    \label{thm:rank:prop:col}
+    \provelater*{col}
+    $\rank(A)\leq n$.
+  \item
+    \provelater*{regularleft}
+    $P$が$m$次正則行列なら$\rank(PA)=\rank(A)$.
+  \item
+    \label{thm:rank:prop:regularright}
+    \provelater*{regularright}
+    $Q$が$n$次正則行列なら$\rank(AQ)=\rank(A)$.
+  \item
+    \provelater*{fund}
+    \label{thm:rank:prop:fund}
+    $A$に行基本変形を用いて$A'$が得られるなら$\rank(A)=\rank(A')$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+  $(m,n)$-行列$A$に対し,
+  行基本変形と列基本変形を用いることで,
+  \begin{align*}
+    \begin{array}{c|c}
+      E_r&O_{r,n-r}\\
+      O_{m-r,r}&O_{m-r,n-r}
+    \end{array}
+  \end{align*}
+  という形に変形できる.
+  このとき, $r=\rank(A)$となる.
+  これを
+  \defit{$A$の階数標準形}
+  \addindex{階数標準形}%
+  \addindex{階数!---標準形}%
+  \addindex{標準形!階数---}%
+とか,
+  (体上の)
+  \defit{$A$のスミス標準形}
+  \Defit{Smith normal form}
+  \addindex{スミス標準形!$(m,n)$-@$(m,n)$---}%
+  \addindex{スミス!---標準形}%
+  \addindex{標準形!スミス---}%
+  \addindex{Smith!--- normal form}%
+  \addindex{normal form!Smith ---}%
+  と呼ぶことがある.
+\end{remark}
+
 \endinput
+\section{階数の性質}
+階数を使って解がどのくらいあるか調べることができる.
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a&b\\
+    c&d
+  \end{pmatrix}\\
+  \bbb&=
+  \begin{pmatrix}
+    p\\
+    q
+  \end{pmatrix}\\
+  C&=
+  \begin{pmatrix}
+    a&b&p\\
+    c&d&q
+  \end{pmatrix}
+\end{align*}
+とする. 2個のの未知数
+\begin{align*}
+  \xx&=
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}
+\end{align*}
+に関する方程式 $A\xx=\bbb$について考える.
+つまり, $A$を係数行列, $C$を拡大係数行列とする,
+$2$個の未知数に関する方程式を考える.
+このとき, \cref{eg:eq:reduced:1,eg:eq:reduced:2,eg:eq:reduced:3,eg:eq:reduced:4,eg:eq:reduced:5,eg:eq:reduced:6,eg:eq:reduced:7}で計算したことから,
+次がわかる:
+\begin{enumerate}
+  \item $\rank(A)<\rank(C)$ならば,
+  $\xx$に関する方程式$A\xx=\bbb$は解を持たない
+  \item $\rank(A)=\rank(C)=2$ならば,
+  $\xx$に関する方程式$A\xx=\bbb$はただ一つの解をもつ.
+  \item $\rank(A)=\rank(C)=1$ならば,
+    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
+    また, その解を$1$個の変数を用いて表すことができる.
+  \item $\rank(A)=\rank(C)=0$ならば,
+    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
+    また, その解を$2$個の変数を用いて表すことができる.
+\end{enumerate}
+より一般には次が成り立つ:
+\begin{theorem}
+  \label{thm:solution:syslineq}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\bbb$という方程式について考える.
+  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
+  つまり拡大係数行列とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item $\rank(A)<\rank(C)$のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$は解を持たない
+    \end{enumerate}
+  \item $\rank(A)=\rank(C)=n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$の解はただ一つ存在する.
+    \end{enumerate}
+  \item $\rank(A)=\rank(C)<n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\bbb$の解は無数に存在する.
+    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+
+$\xx$に関する
+$A\xx=\bbb$という方程式を考えたが,
+\begin{align*}
+  \bbb&=\zzero
+\end{align*}
+のときには,
+拡大係数行列の
+最後の列には$0$しか現れない.\footnote{$A\xx=\zzero$という形の方程式を斉次(せいじ)1次方程式と呼ぶことがある. 方程式に現れる項がすべて未知数の一次式である (定数項がない) という意味である.}
+行基本変形を行っても, 
+最後の列には$0$しか現れないことは変わらないので,
+係数行列の階数と拡大係数行列の階数は常に一致する.
+したがって, 
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a&b\\
+    c&d
+  \end{pmatrix}
+\end{align*}
+とし, 2個のの未知数
+\begin{align*}
+  \xx&=
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}
+\end{align*}
+に関する方程式 $A\xx=\zzero$について考えると,
+この方程式は常に解をもつ.
+$A\zzero=\zzero$がなりたつので, $\zzero$はいつでも,
+$A\xx=\zzero$の解である.
+
+$A\vv=\zzero$とすると$c$による$\vv$のスカラー倍$c\vv$は,
+\begin{align*}
+A(c\vv)=cA\vv=c\zzero=\zzero
+\end{align*}
+となり,
+$c\vv$は$\xx$に関する方程式
+$A\xx=\zzero$の解である.
+また,
+$A\vv=\zzero$, $A\ww=\zzero$とすると
+\begin{align*}
+A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero
+\end{align*}
+となり,
+$\vv+\ww$も
+$\xx$に関する方程式
+$A\xx=\zzero$の解である.
+
+$\rank(A)=0$のときには, $A$から得られる被約階段行列は
+零行列$O_{2,2}$であるので,
+$A\xx=\zzero$の解の空間は, $O_{2,2}\xx=\zzero$の解の空間に一致する.
+どのような$\vv$をとっても
+$O_{2,2}\vv=\zzero$をみたすので,
+$A\xx=\zzero$の解は,
+\begin{align*}
+  \begin{pmatrix}
+    t\\s
+    \end{pmatrix} 
+\end{align*}
+のように$t$と$s$の2つの変数を使って表すことができる.
+また, これは, 
+\begin{align*}
+  t
+  \begin{pmatrix}
+    1\\0
+    \end{pmatrix} 
+  +
+    s
+  \begin{pmatrix}
+    0\\1
+    \end{pmatrix} 
+\end{align*}
+のように書くこともできる.
+
+$\rank(A)=1$のときには,
+$A\vv=\zzero$かつ$\vv\neq \zzero$をみたす$\vv$を見つけられれば,
+$\xx$に関する方程式$A\xx=\zzero$の解は
+変数$c$を使って$c\vv$と表すことができる.
+
+$\rank(A)=2$のときには,
+$A\xx=\zzero$は解をただ一つしかもたないが,
+$\zzero$がその解である.
+
+これらをまとめると,
+次のようになる:
+\begin{enumerate}
+  \item $\rank(A)=2$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$はただ一つの解をもつ.
+    解は$\Set{\zzero}$である.
+  \item $\rank(A)=1$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
+    また, その解を$1$個の変数を用いて表すことができる.
+    $\vv$が
+    $A\vv=\zzero$かつ$\vv\neq \zzero$をみたすとすると,
+    $\xx$に関する方程式$A\xx=\zzero$の解は,
+    変数$c$を用いて, $c\vv$と表すことができる.
+  \item $\rank(A)=0$ならば,
+    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
+    また, その解を$2$個の変数$t,s$を用いて,
+    \begin{align*}
+      t
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+      +s
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+    \end{align*}
+    表すことができる.
+\end{enumerate}
+
+より一般には,
+$\bbb=\zzero$のときについて
+\Cref{thm:solution:syslineq}を考えることにより
+次がわかる:
+\begin{theorem}
+  %proved
+  \label{thm:solution:homoge}
+  
+$A$を$(m,n)$-行列とする.
+$n$個の未知数$\xx$に関する
+$A\xx=\zzero$という方程式について考える.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item $\rank(A)=n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\zzero$の解は$\zzero$のみである.
+    \end{enumerate}
+  \item $\rank(A)<n$ (未知数の総数)のとき, 次が成り立つ:
+    \begin{enumerate}
+    \item $\xx$に関する方程式$A\xx=\zzero$の解は無数に存在する.
+    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
+    \item $d=n-\rank(A)$とすると,
+      $d$個の$(n,1)$-行列
+      $\vv_1,\ldots,\vv_d$をうまく選ぶことで,
+      $A\xx=\zzero$の解は, $d$個の変数$c_1,\ldots,c_d$を使い
+      \begin{align*}
+        c_1\vv_1+\cdots+c_d\vv_d
+      \end{align*}
+      と表せる.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+
+\begin{prop}
+  \provelater**{thm:ker:vec}
+  \label{thm:ker:vec}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\zzero$という方程式について考える.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{sum}
+    $\vv,\ww$を$A\xx=\zzero$の解とすると $\vv+\ww$も$A\xx=\zzero$の解である.
+  \item\provelater*{scalar}
+    $c$を数とし, $\vv$を$A\xx=\zzero$の解とすると $c\vv$も$A\xx=\zzero$の解である.
+  \end{enumerate}
+\end{prop}
+
+
+
+
+\begin{remark}
+  \label{rem:syslineq:rank:gen}
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\bbb$という方程式について考える.
+  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
+  つまり拡大係数行列とする.
+  このとき, $\rank(A)\leq \rank(C)\leq m$である.
+
+  $\rank(A)=m$であるとする.
+  このとき,
+  $\rank(A)=\rank(C)=m$となるので,  
+  \Cref{thm:solution:syslineq}から,
+  どんな$\bbb$に対しても, 
+  方程式$A\xx=\bbb$は解をもつ.
+
+  $\rank(A)=r<m$であるなら,
+  $A$に行基本変形をすることで階数$r$の被約階段行列$S$
+  が得られる.
+  \Cref{thm:fund:inverse}を認めると,
+  $PA=S$となる
+  正則行列$P$がとれる.
+  $\ee_{r+1}$を$r+1$行目が$1$で他は$0$ある$(m,1)$行列とし,
+  $\bbb=P^{-1}\ee_{r+1}$とする.
+  このとき,
+  $A\xx=\bbb$という連立方程式を考える.
+  この連立方程式の拡大係数行列は$A$と$\bbb$をならべた行列である.
+  この行列に行基本変形をすることで得られる被約階段行列は
+  $PA=S$と
+  $P\bbb=\ee_{r+1}$を並べた行列であり,
+  階数は$r+1$になる.  したがって,
+  \Cref{thm:solution:syslineq}から,
+  この場合は解を持たない.
+
+  まとめると, 以下の様になる:
+$\rank(A)=m$なら,
+  どんな$\bbb$に対しても, 
+  方程式$A\xx=\bbb$は解をもつ.
+$\rank(A)<m$なら,
+  方程式$A\xx=\bbb$が解をもたないような
+  $\bbb$が存在する.
+\end{remark}
+
 
 
 
@@ -4756,396 +5203,6 @@ $\xx=A^{-1}\bbb$というただ一つの解をもつ.
   \end{align*}
   のように解を書くこともできる.
 \end{example}
-
-\section{階数の性質}
-ここでは,
-行列の階数というものを定義し,
-その性質について紹介する.
-
-\begin{definition}
-  \label{def:rank}
-  $A$を行列とする.
-  $A$に行基本変形をし,
-  階数$r$の被約階段行列が得られたとする.
-  このとき, 
-  \defit{$A$の階数}
-  \Defit{rank of $A$}
-  \addindex{階数!行列の---}%
-  \addindex{行列の!---階数}%
-  \addindex{rank!--- of matrix}%
-  \addindex{of matrix!rank ---}%
-  は$r$であるといい,
-  $\rank(A)=r$とする.
-\end{definition}
-階数を使って解がどのくらいあるか調べることができる.
-\begin{align*}
-  A&=
-  \begin{pmatrix}
-    a&b\\
-    c&d
-  \end{pmatrix}\\
-  \bbb&=
-  \begin{pmatrix}
-    p\\
-    q
-  \end{pmatrix}\\
-  C&=
-  \begin{pmatrix}
-    a&b&p\\
-    c&d&q
-  \end{pmatrix}
-\end{align*}
-とする. 2個のの未知数
-\begin{align*}
-  \xx&=
-  \begin{pmatrix}
-    x\\y
-  \end{pmatrix}
-\end{align*}
-に関する方程式 $A\xx=\bbb$について考える.
-つまり, $A$を係数行列, $C$を拡大係数行列とする,
-$2$個の未知数に関する方程式を考える.
-このとき, \cref{eg:eq:reduced:1,eg:eq:reduced:2,eg:eq:reduced:3,eg:eq:reduced:4,eg:eq:reduced:5,eg:eq:reduced:6,eg:eq:reduced:7}で計算したことから,
-次がわかる:
-\begin{enumerate}
-  \item $\rank(A)<\rank(C)$ならば,
-  $\xx$に関する方程式$A\xx=\bbb$は解を持たない
-  \item $\rank(A)=\rank(C)=2$ならば,
-  $\xx$に関する方程式$A\xx=\bbb$はただ一つの解をもつ.
-  \item $\rank(A)=\rank(C)=1$ならば,
-    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
-    また, その解を$1$個の変数を用いて表すことができる.
-  \item $\rank(A)=\rank(C)=0$ならば,
-    $\xx$に関する方程式$A\xx=\bbb$は無数の解を持つ.
-    また, その解を$2$個の変数を用いて表すことができる.
-\end{enumerate}
-より一般には次が成り立つ:
-\begin{theorem}
-  \label{thm:solution:syslineq}
-  $A$を$(m,n)$-行列とする.
-  $n$個の未知数$\xx$に関する
-  $A\xx=\bbb$という方程式について考える.
-  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
-  つまり拡大係数行列とする.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item $\rank(A)<\rank(C)$のとき, 次が成り立つ:
-    \begin{enumerate}
-    \item $\xx$に関する方程式$A\xx=\bbb$は解を持たない
-    \end{enumerate}
-  \item $\rank(A)=\rank(C)=n$ (未知数の総数)のとき, 次が成り立つ:
-    \begin{enumerate}
-    \item $\xx$に関する方程式$A\xx=\bbb$の解はただ一つ存在する.
-    \end{enumerate}
-  \item $\rank(A)=\rank(C)<n$ (未知数の総数)のとき, 次が成り立つ:
-    \begin{enumerate}
-    \item $\xx$に関する方程式$A\xx=\bbb$の解は無数に存在する.
-    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
-    \end{enumerate}
-  \end{enumerate}
-\end{theorem}
-
-$\xx$に関する
-$A\xx=\bbb$という方程式を考えたが,
-\begin{align*}
-  \bbb&=\zzero
-\end{align*}
-のときには,
-拡大係数行列の
-最後の列には$0$しか現れない.\footnote{$A\xx=\zzero$という形の方程式を斉次(せいじ)1次方程式と呼ぶことがある. 方程式に現れる項がすべて未知数の一次式である (定数項がない) という意味である.}
-行基本変形を行っても, 
-最後の列には$0$しか現れないことは変わらないので,
-係数行列の階数と拡大係数行列の階数は常に一致する.
-したがって, 
-\begin{align*}
-  A&=
-  \begin{pmatrix}
-    a&b\\
-    c&d
-  \end{pmatrix}
-\end{align*}
-とし, 2個のの未知数
-\begin{align*}
-  \xx&=
-  \begin{pmatrix}
-    x\\y
-  \end{pmatrix}
-\end{align*}
-に関する方程式 $A\xx=\zzero$について考えると,
-この方程式は常に解をもつ.
-$A\zzero=\zzero$がなりたつので, $\zzero$はいつでも,
-$A\xx=\zzero$の解である.
-
-$A\vv=\zzero$とすると$c$による$\vv$のスカラー倍$c\vv$は,
-\begin{align*}
-A(c\vv)=cA\vv=c\zzero=\zzero
-\end{align*}
-となり,
-$c\vv$は$\xx$に関する方程式
-$A\xx=\zzero$の解である.
-また,
-$A\vv=\zzero$, $A\ww=\zzero$とすると
-\begin{align*}
-A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero
-\end{align*}
-となり,
-$\vv+\ww$も
-$\xx$に関する方程式
-$A\xx=\zzero$の解である.
-
-$\rank(A)=0$のときには, $A$から得られる被約階段行列は
-零行列$O_{2,2}$であるので,
-$A\xx=\zzero$の解の空間は, $O_{2,2}\xx=\zzero$の解の空間に一致する.
-どのような$\vv$をとっても
-$O_{2,2}\vv=\zzero$をみたすので,
-$A\xx=\zzero$の解は,
-\begin{align*}
-  \begin{pmatrix}
-    t\\s
-    \end{pmatrix} 
-\end{align*}
-のように$t$と$s$の2つの変数を使って表すことができる.
-また, これは, 
-\begin{align*}
-  t
-  \begin{pmatrix}
-    1\\0
-    \end{pmatrix} 
-  +
-    s
-  \begin{pmatrix}
-    0\\1
-    \end{pmatrix} 
-\end{align*}
-のように書くこともできる.
-
-$\rank(A)=1$のときには,
-$A\vv=\zzero$かつ$\vv\neq \zzero$をみたす$\vv$を見つけられれば,
-$\xx$に関する方程式$A\xx=\zzero$の解は
-変数$c$を使って$c\vv$と表すことができる.
-
-$\rank(A)=2$のときには,
-$A\xx=\zzero$は解をただ一つしかもたないが,
-$\zzero$がその解である.
-
-これらをまとめると,
-次のようになる:
-\begin{enumerate}
-  \item $\rank(A)=2$ならば,
-    $\xx$に関する方程式$A\xx=\zzero$はただ一つの解をもつ.
-    解は$\Set{\zzero}$である.
-  \item $\rank(A)=1$ならば,
-    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
-    また, その解を$1$個の変数を用いて表すことができる.
-    $\vv$が
-    $A\vv=\zzero$かつ$\vv\neq \zzero$をみたすとすると,
-    $\xx$に関する方程式$A\xx=\zzero$の解は,
-    変数$c$を用いて, $c\vv$と表すことができる.
-  \item $\rank(A)=0$ならば,
-    $\xx$に関する方程式$A\xx=\zzero$は無数の解を持つ.
-    また, その解を$2$個の変数$t,s$を用いて,
-    \begin{align*}
-      t
-      \begin{pmatrix}
-        1\\0
-      \end{pmatrix}
-      +s
-      \begin{pmatrix}
-        1\\0
-      \end{pmatrix}
-    \end{align*}
-    表すことができる.
-\end{enumerate}
-
-より一般には,
-$\bbb=\zzero$のときについて
-\Cref{thm:solution:syslineq}を考えることにより
-次がわかる:
-\begin{theorem}
-  %proved
-  \label{thm:solution:homoge}
-  
-$A$を$(m,n)$-行列とする.
-$n$個の未知数$\xx$に関する
-$A\xx=\zzero$という方程式について考える.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item $\rank(A)=n$ (未知数の総数)のとき, 次が成り立つ:
-    \begin{enumerate}
-    \item $\xx$に関する方程式$A\xx=\zzero$の解は$\zzero$のみである.
-    \end{enumerate}
-  \item $\rank(A)<n$ (未知数の総数)のとき, 次が成り立つ:
-    \begin{enumerate}
-    \item $\xx$に関する方程式$A\xx=\zzero$の解は無数に存在する.
-    \item 解を表すのに, $(n-\rank(A))$個の変数が必要になる.
-    \item $d=n-\rank(A)$とすると,
-      $d$個の$(n,1)$-行列
-      $\vv_1,\ldots,\vv_d$をうまく選ぶことで,
-      $A\xx=\zzero$の解は, $d$個の変数$c_1,\ldots,c_d$を使い
-      \begin{align*}
-        c_1\vv_1+\cdots+c_d\vv_d
-      \end{align*}
-      と表せる.
-    \end{enumerate}
-  \end{enumerate}
-\end{theorem}
-
-\begin{prop}
-  \provelater**{thm:ker:vec}
-  \label{thm:ker:vec}
-  $A$を$(m,n)$-行列とする.
-  $n$個の未知数$\xx$に関する
-  $A\xx=\zzero$という方程式について考える.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item\provelater*{sum}
-    $\vv,\ww$を$A\xx=\zzero$の解とすると $\vv+\ww$も$A\xx=\zzero$の解である.
-  \item\provelater*{scalar}
-    $c$を数とし, $\vv$を$A\xx=\zzero$の解とすると $c\vv$も$A\xx=\zzero$の解である.
-  \end{enumerate}
-\end{prop}
-
-
-
-階数について, 次の性質が知られている.
-\begin{theorem}
-  \provelater**{thm:rank:prop}
-  \label{thm:rank:prop}
-  $A$を$(m,n)$-行列とする.
-  $B$を$(n,k)$-行列とする.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item
-    \label{thm:rank:prop:trans}
-    \provelater*{trans}
-    $\rank(A)=\rank(\transposed{A})$.
-  \item
-    \label{thm:rank:prop:left}
-    \provelater*{left}
-    $\rank(AB)\leq\rank(A)$.
-  \item
-    \label{thm:rank:prop:right}
-    \provelater*{right}
-    $\rank(AB)\leq\rank(B)$.
-  \item
-    \label{thm:rank:prop:row}
-    \provelater*{row}
-    $\rank(A)\leq m$.
-  \item
-    \label{thm:rank:prop:col}
-    \provelater*{col}
-    $\rank(A)\leq n$.
-  \item
-    \provelater*{regularleft}
-    $P$が$m$次正則行列なら$\rank(PA)=\rank(A)$.
-  \item
-    \label{thm:rank:prop:regularright}
-    \provelater*{regularright}
-    $Q$が$n$次正則行列なら$\rank(AQ)=\rank(A)$.
-  \item
-    \provelater*{fund}
-    \label{thm:rank:prop:fund}
-    $A$に行基本変形を用いて$A'$が得られるなら$\rank(A)=\rank(A')$.
-  \end{enumerate}
-\end{theorem}
-
-正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
-\begin{theorem}
-  \provelater{thm:rank:regular}
-  \label{thm:rank:regular}
-  $A$が$n$次正方行列であるとする.
-  このとき, 次は同値:
-  \begin{enumerate}
-  \item\label{thm:rank:regular:reg}
-    $A$が正則
-  \item\label{thm:rank:regular:rank}
-    $\rank(A)=n$
-  \item\label{thm:rank:regular:step}
-    $A$に行基本変形を行って単位行列に変形できる.
-  \end{enumerate}
-\end{theorem}
-
-\begin{remark}
-  \label{thm:fund:inverse}
-  \Provelater
-  $A$を$n$次正方行列とする.
-  $B$を$A$と$E_n$を並べて得られる$(n,2n)$-行列とする.
-  このような場合に
-  \begin{align*}
-    B=(A|E_n)
-  \end{align*}
-  とかくことにする.
-  $B$に行基本変形を行って,
-  \begin{align*}
-    (A'|P)
-  \end{align*}
-  という形の行列が得られたとする.
-  ただし, $A'$も$P$も$n$次正方行列とする.
-  このとき,
-  $P$は正則行列であり,
-  \begin{align*}
-    PA=A'
-  \end{align*}
-  となることが知られている.
-  $B$に行基本変形を行って得られた
-  被約階段行列が
-  \begin{align*}
-    (E_n|P)
-  \end{align*}
-  という形なら,
-  $A$は正則であり,
-  $A^{-1}=P$である.
-  また, 得られた
-  被約階段行列の左半分が単位行列でないときには,
-  $A$は非正則である.
-  サイズの大きな正則行列の逆行列は,
-  この方法でもとめるとよい.
-\end{remark}
-
-\begin{remark}
-  \label{rem:syslineq:rank:gen}
-  $A$を$(m,n)$-行列とする.
-  $n$個の未知数$\xx$に関する
-  $A\xx=\bbb$という方程式について考える.
-  $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
-  つまり拡大係数行列とする.
-  このとき, $\rank(A)\leq \rank(C)\leq m$である.
-
-  $\rank(A)=m$であるとする.
-  このとき,
-  $\rank(A)=\rank(C)=m$となるので,  
-  \Cref{thm:solution:syslineq}から,
-  どんな$\bbb$に対しても, 
-  方程式$A\xx=\bbb$は解をもつ.
-
-  $\rank(A)=r<m$であるなら,
-  $A$に行基本変形をすることで階数$r$の被約階段行列$S$
-  が得られる.
-  \Cref{thm:fund:inverse}を認めると,
-  $PA=S$となる
-  正則行列$P$がとれる.
-  $\ee_{r+1}$を$r+1$行目が$1$で他は$0$ある$(m,1)$行列とし,
-  $\bbb=P^{-1}\ee_{r+1}$とする.
-  このとき,
-  $A\xx=\bbb$という連立方程式を考える.
-  この連立方程式の拡大係数行列は$A$と$\bbb$をならべた行列である.
-  この行列に行基本変形をすることで得られる被約階段行列は
-  $PA=S$と
-  $P\bbb=\ee_{r+1}$を並べた行列であり,
-  階数は$r+1$になる.  したがって,
-  \Cref{thm:solution:syslineq}から,
-  この場合は解を持たない.
-
-  まとめると, 以下の様になる:
-$\rank(A)=m$なら,
-  どんな$\bbb$に対しても, 
-  方程式$A\xx=\bbb$は解をもつ.
-$\rank(A)<m$なら,
-  方程式$A\xx=\bbb$が解をもたないような
-  $\bbb$が存在する.
-  
-  
-\end{remark}
 
 \section{係数行列が正則行列であるときの解の公式}
 \label{thm:cramer}

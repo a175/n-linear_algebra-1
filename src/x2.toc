@@ -27,21 +27,28 @@
 \contentsline {section}{\numberline {4.1}正則行列}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}基本変形と基本行列}{27}{section.4.2}%
 \contentsline {section}{\numberline {4.3}階段行列}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4}行基本変形により得られる被役階段行列}{31}{section.4.4}%
-\contentsline {chapter}{参考文献}{35}{chapter*.4}%
-\contentsline {chapter}{\numberline {付録A}命題の証明}{37}{appendix.A}%
-\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{37}{section.A.1}%
-\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{38}{section.A.2}%
-\contentsline {paragraph}{Base case}{42}{section*.5}%
-\contentsline {paragraph}{Induction Step}{42}{section*.6}%
-\contentsline {paragraph}{Base case}{42}{section*.7}%
-\contentsline {paragraph}{Induction Step}{43}{section*.8}%
-\contentsline {paragraph}{Base case}{43}{section*.9}%
-\contentsline {paragraph}{Induction Step}{43}{section*.10}%
-\contentsline {section}{\numberline {A.3}正則行列に関する命題の証明}{43}{section.A.3}%
-\contentsline {paragraph}{Base case}{45}{section*.11}%
-\contentsline {paragraph}{Induction Step}{45}{section*.12}%
-\contentsline {chapter}{\numberline {付録B}章末問題の略解}{49}{appendix.B}%
-\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{49}{section.B.1}%
-\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{49}{section.B.2}%
-\contentsline {chapter}{索引}{57}{appendix*.13}%
+\contentsline {section}{\numberline {4.4}行基本変形により得られる被約階段行列}{31}{section.4.4}%
+\contentsline {section}{\numberline {4.5}階数の性質}{34}{section.4.5}%
+\contentsline {chapter}{参考文献}{37}{chapter*.4}%
+\contentsline {chapter}{\numberline {付録A}命題の証明}{39}{appendix.A}%
+\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{39}{section.A.1}%
+\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{40}{section.A.2}%
+\contentsline {paragraph}{Base case}{44}{section*.5}%
+\contentsline {paragraph}{Induction Step}{44}{section*.6}%
+\contentsline {paragraph}{Base case}{44}{section*.7}%
+\contentsline {paragraph}{Induction Step}{45}{section*.8}%
+\contentsline {paragraph}{Base case}{45}{section*.9}%
+\contentsline {paragraph}{Induction Step}{45}{section*.10}%
+\contentsline {section}{\numberline {A.3}正則行列に関する命題の証明}{45}{section.A.3}%
+\contentsline {paragraph}{Base case}{47}{section*.11}%
+\contentsline {paragraph}{Induction Step}{47}{section*.12}%
+\contentsline {subsection}{\numberline {A.3.1}行基本変形によって得られる被約階段行列の一意性に関する命題の証明}{50}{subsection.A.3.1}%
+\contentsline {paragraph}{\Cref {cor:reg:e:item:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:e}}{54}{section*.13}%
+\contentsline {paragraph}{\Cref {cor:reg:e:item:e}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:reg}}{54}{section*.14}%
+\contentsline {subsection}{\numberline {A.3.2}階数に関する命題の証明}{55}{subsection.A.3.2}%
+\contentsline {paragraph}{\Cref {thm:rank:regular:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:rank}}{55}{section*.15}%
+\contentsline {paragraph}{\Cref {thm:rank:regular:rank}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:reg}}{55}{section*.16}%
+\contentsline {chapter}{\numberline {付録B}章末問題の略解}{59}{appendix.B}%
+\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{59}{section.B.1}%
+\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{59}{section.B.2}%
+\contentsline {chapter}{索引}{67}{appendix*.17}%
