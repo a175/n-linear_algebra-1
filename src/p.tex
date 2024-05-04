@@ -4409,6 +4409,191 @@ $\Set{\zzero_n}\subsetneq\KKK$であるとき,
 \end{quiz}
 
 
+
+\chapter{行列式}
+\label{chap:det}
+ここでは,
+行列式に関して説明をする.
+
+%% \cite{978-4-7806-0772-7}であれば,
+%% 第6章, 第7章, 第8章が関連する.
+%% とくに, 6.1が関連する.
+%% \cite{978-4-7806-0164-0}であれば,
+%% 1.4, 3.1が関連する.
+
+\section{行列式の定義}
+
+$n$次正方行列
+ \begin{align*}
+  A=
+  \begin{pmatrix}
+    a_{1,1}&a_{1,2}&\cdots&a_{1,n}\\
+    a_{2,1}&a_{2,2}&\cdots&a_{2,n}\\
+    \vdots\\
+    a_{n,1}&a_{n,2}&\cdots&a_{n,n}
+  \end{pmatrix}
+  \end{align*}
+  に対し,
+  $(n-1)$-次正方行列$\pi_{l,k}(A)$\footnote{この記法ここだけの記法.}を
+  \begin{align*}
+    \pi_{l,k}(A)=
+    \left(
+  \begin{array}{cccc|cccc}
+    a_{1,1}&a_{1,2}&\cdots&a_{1,k-1}&a_{1,k+1}&a_{1,k+2}&\cdots&a_{1,n}\\
+    a_{2,1}&a_{2,2}&\cdots&a_{2,k-1}&a_{2,k+1}&a_{2,k+2}&\cdots&a_{2,n}\\
+    \vdots&\vdots&&\vdots&\vdots&\vdots&&\vdots\\
+    a_{l-1,1}&a_{l-1,2}&\cdots&a_{l-1,k-1}&a_{l-1,k+1}&a_{l-1,k+2}&\cdots&a_{l-1,n}\\\hline
+    a_{l+1,1}&a_{l+1,2}&\cdots&a_{l+1,k-1}&a_{l+1,k+1}&a_{l+1,k+2}&\cdots&a_{l+1,n}\\
+    a_{l+2,1}&a_{l+2,2}&\cdots&a_{l+2,k-1}&a_{l+2,k+1}&a_{l+2,k+2}&\cdots&a_{l+2,n}\\
+    \vdots&\vdots&&\vdots&\vdots&\vdots&&\vdots\\
+    a_{n,1}&a_{n,2}&\cdots&a_{n,k-1}&a_{n,k+1}&a_{n,k+2}&\cdots&a_{n,n}
+  \end{array}
+  \right)
+\end{align*}
+  で定義する.
+  つまり$l$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行列が$\pi_{l,k}(A)$である.
+
+
+  \begin{definition}
+    $a_{i,j}$が$(i,j)$-成分である
+    $n$次正方行列$A$に対し,
+    $\det(A)$を以下のように定義する:
+    $n=1$のとき,
+    \begin{align*}
+      \det(A)=\det(\begin{pmatrix}a_{1,1}\end{pmatrix})a_{1,1}
+    \end{align*}
+    とする.
+    $n>1$のとき,
+    $1$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行列を$\pi_{1,k}(A)$とし,
+    \begin{align*}
+      \det(A)&=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))
+    \end{align*}
+    で定義する.
+    $\det(A)$を
+      $\det(A)$を
+  \defit{$A$の行列式}
+  \Defit{determinant of $A$}
+  \addindex{行列式!行列の---}%
+  \addindex{行列!---式}%
+  \addindex{行列の!---行列式}%
+  \addindex{determinant!--- of a matrix}%
+  \addindex{of matrix!determinant ---}%
+  と呼ぶ.
+  \end{definition}
+
+
+
+\begin{example}
+  %\label{def:det:2}
+  \begin{align*}
+    A=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \end{align*}
+  とする.  このとき,
+  \begin{align*}
+    \det(A)=ad-bc
+  \end{align*}
+  である.
+  
+  例えば,
+  \begin{align*}
+    A=\begin{pmatrix}1&2\\3&4\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \det(A)=1\cdot 4 -2\cdot 3=-2
+  \end{align*}
+  となる.
+  このように, 行列式は負の値も取りうる.
+\end{example}
+
+
+
+
+
+\begin{example}
+  %\label{def:det:generic}
+  $3$次正方行列のときには次のように計算する:
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b&c\\
+      d&e&f\\
+      g&h&i      
+    \end{pmatrix}
+    )
+    &=a
+    \det(
+    \begin{pmatrix}
+      e&f\\
+      h&i      
+    \end{pmatrix}
+    )-b
+    \det(
+    \begin{pmatrix}
+      d&f\\
+      g&i      
+    \end{pmatrix}
+    )
+    +c
+    \det(
+    \begin{pmatrix}
+      d&e\\
+      g&h      
+    \end{pmatrix}
+    )\\
+    &=a(ei-fh)
+    -b(di-fg)
+    +c(dh-eg)\\
+    &=aei-afh
+    -bdi+bfg
+    +cdh-ceg
+    .
+  \end{align*}
+\end{example}
+
+\begin{example}
+  $n$次正方行列
+  $A$の$1$行目の成分は全て$0$であるとする.
+  このとき,
+  \begin{align*}
+    \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
+    &=\sum_{j=1}^{n}a_{1,j}0(A)
+  \end{align*}
+  であるので,
+  $\det(A)=0$である.
+
+  とくに, $\det(O_{n,n})=0$である.
+\end{example}
+
+\begin{example}
+  $n$次正方行列
+  $A$の$1$列目の成分は全て$0$であるとする.
+  このとき,
+  $\det(A)=0$である.
+
+  とくに, $\det(O_{n,n})=0$である.
+\end{example}
+
+
+
+\begin{example}
+  $\alpha$を数とする.
+  \begin{align*}
+    A=\begin{pmatrix}\alpha &0\\0&\alpha\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \det(A)=\alpha\cdot\alpha-0\cdot0=\alpha^2
+  \end{align*}
+  となる. $A=\alpha E_2$であるから,
+  $\det(\alpha E_2)=\alpha^2$
+  である.
+\end{example}
+
 \endinput
 \section{行基本変形}
 ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
@@ -5186,54 +5371,6 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 \section{行列式の定義と性質}
 ここでは, $2$次正方行列の行列式を定義し,
 その性質について説明をする.
-\begin{definition}
-  \label{def:det:2}
-  \begin{align*}
-    A=
-  \begin{pmatrix}
-    a&b\\c&d
-  \end{pmatrix}
-  \end{align*}
-  とする.  このとき,
-  \begin{align*}
-    \det(A)=ad-bc
-  \end{align*}
-  とおく.
-  $\det(A)$を
-  \defit{$A$の行列式}
-  \Defit{determinant of $A$}
-  \addindex{行列式!行列の---}%
-  \addindex{行列!---式}%
-  \addindex{行列の!---行列式}%
-  \addindex{determinant!--- of a matrix}%
-  \addindex{of matrix!determinant ---}%
-  と呼ぶ.
-\end{definition}
-\begin{example}
-  \begin{align*}
-    A=\begin{pmatrix}1&2\\3&4\end{pmatrix}
-  \end{align*}
-  とすると,
-  \begin{align*}
-    \det(A)=1\cdot 4 -2\cdot 3=-2
-  \end{align*}
-  となる.
-  このように, 行列式は負の値も取りうる.
-\end{example}
-
-\begin{example}
-  $\alpha$を数とする.
-  \begin{align*}
-    A=\begin{pmatrix}\alpha &0\\0&\alpha\end{pmatrix}
-  \end{align*}
-  とすると,
-  \begin{align*}
-    \det(A)=\alpha\cdot\alpha-0\cdot0=\alpha^2
-  \end{align*}
-  となる. $A=\alpha E_2$であるから,
-  $\det(\alpha E_2)=\alpha^2$
-  である.
-\end{example}
 
 \Cref{sec:regular}の冒頭の議論から次がわかる.
 \begin{theorem}
@@ -5846,60 +5983,6 @@ $2$次正方行列においては,
   したがって,
   $A$が正則のときには, 連立方程式の解はただ一つであり,
   逆行列を使って求めることができる.
-\end{remark}
-\begin{remark}
-  \label{def:det:generic}
-  $A$を
-  $(i,j)$成分が
-  $a_{i,j}$である$n$次正方行列とする.
-  ただし, $n>2$とする.
-  $A$の$1$行目と$j$列目を削ってできる$n-1$次正方行列を$A^{(j)}$と書くことにする.
-  このとき, 
-  \begin{align*}
-    \det(A)=&a_{1,1}\det(A^{(1)})-a_{1,2}\det(A^{(2)})+a_{1,3}\det(A^{(3)})-a_{1,4}\det(A^{(4)})+\cdots\\
-    \\&\cdots +(-1)^n a_{1,n}\det(A^{(n)})
-  \end{align*}
-  で計算できる値を$A$の行列式と呼ぶ.
-  例えば,
-  $3$次正方行列のときには次のように計算する, 
-  \begin{align*}
-    \det(
-    \begin{pmatrix}
-      a&b&c\\
-      d&e&f\\
-      g&h&i      
-    \end{pmatrix}
-    )
-    &=a
-    \det(
-    \begin{pmatrix}
-      e&f\\
-      h&i      
-    \end{pmatrix}
-    )-b
-    \det(
-    \begin{pmatrix}
-      d&f\\
-      g&i      
-    \end{pmatrix}
-    )
-    +c
-    \det(
-    \begin{pmatrix}
-      d&e\\
-      g&h      
-    \end{pmatrix}
-    )\\
-    &=a(ei-fh)
-    -b(di-fg)
-    +c(dh-eg).
-  \end{align*}
-  $\det(A)$の定義の中にある
-  $\det(A^{(1)})$などは$(n-1)$次正方行列なので, $n-1>2$のときは,
-  同様にサイズが小さいときに帰着させて計算する.
-  このように定義された行列式に関しても\cref{thm:det:reg,thm:det:hom,thm:det:transpose,thm:det:alt:row,thm:det:alt:col,thm:multlin:row:add,thm:multlin:row:prod,thm:multlin:col:add,thm:multlin:col:prod}
-  が成り立つ.
-  また, \cref{thm:det:scalar}は$2$を$n$と読み替えることで同様の等式が成り立つ.
 \end{remark}
 
 \sectionX{章末問題}
