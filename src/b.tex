@@ -865,46 +865,7 @@
   となる.
 \end{answerof}
 
-
-
-\endinput
-\section{行列式と逆行列に関する問題}
-
-\begin{answerof}{quiz:2:1}
-  \begin{align*}
-    \det(\begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7.
-\\
-    \det(\begin{pmatrix}
-      -5&1\\5&-1
-    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
-\end{align*}
-\end{answerof}
-
-
-\begin{answerof}{quiz:2:2}
-  \begin{align*}
-    \det(
-    \begin{pmatrix}
-      -4-x&1\\5&-x
-    \end{pmatrix})=
-    (-4-x)\cdot (-x) -1\cdot 5=x^2+4x-5=(x+5)(x-1)
-  \end{align*}
-  であるので
-  \begin{align*}
-    \det(\begin{pmatrix}
-      -4-x&1\\5&-x
-    \end{pmatrix})=0
-  \end{align*}
-  とすると,
-  \begin{align*}
-    (x+5)(x-1)&=0
-  \end{align*}
-  である.
-  よって, $x\in \Set{-5,1}$.
-\end{answerof}
-
+\section{逆行列に関する問題}
 
 \begin{answerof}{quiz:2:3}
   \begin{align*}
@@ -934,197 +895,6 @@
   である.
 \end{answerof}
 
-
-\begin{answerof}{quiz:2:reg:1}
-  \begin{align*}
-    \det(\begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}
-  \end{align*}
-  は正則である.
-
-  これについては, 次のように検算をできる:
-  正則であるので逆行列が存在する.
-  \begin{align*}
-     \begin{pmatrix}
-      2&1\\5&6
-     \end{pmatrix}^{-1}=
-     \frac{1}{7}
-     \begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-  \end{align*}
-  である.
-  したがって,
-  \begin{align*}
-     \begin{pmatrix}
-      2&1\\5&6
-     \end{pmatrix}^{-1}
-     \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}
-    & =
-     \frac{1}{7}
-     \begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}\\
-   & =
-    \frac{1}{7}
-     \begin{pmatrix}
-       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
-       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
-    \end{pmatrix}
-    =
-    \frac{1}{7}
-     \begin{pmatrix}
-       7&0\\
-       0&7
-    \end{pmatrix}
-    =
-     \begin{pmatrix}
-       1&0\\
-       0&1
-    \end{pmatrix}.
-  \end{align*}
-  
-  \begin{align*}
-    \det(\begin{pmatrix}
-      -5&1\\5&-1
-    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
-  \end{align*}
-  であるので
-  \begin{align*}
-    \begin{pmatrix}
-      -5&1\\5&-1
-    \end{pmatrix}
-  \end{align*}
-  は正則ではない.
-\end{answerof}
-
-
-\begin{answerof}{quiz:2:4}
-  \begin{align*}
-    A&=\begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix},&
-    \bbb&=\begin{pmatrix}
-      4\\8
-    \end{pmatrix}.   
-  \end{align*}
-  とする.
-\begin{enumerate}
-\item
-  \begin{align*}
-    \det(A)=
-    \det(\begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
-  \end{align*}
-  であるので,
-  $A$は正則であり,
-  \begin{align*}
-     A^{-1}=
-     \frac{1}{7}
-     \begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-  \end{align*}
-  である.
-
-  
-  これは次のように検算できる.
-  もとの行列と求めた行列をかけると
-  \begin{align*}
-    A^{-1}A
-     &=
-     \frac{1}{7}
-     \begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}\\
-    &=
-    \frac{1}{7}
-     \begin{pmatrix}
-       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
-       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
-    \end{pmatrix}
-    =
-    \frac{1}{7}
-     \begin{pmatrix}
-       7&0\\
-       0&7
-    \end{pmatrix}
-    =
-     \begin{pmatrix}
-       1&0\\
-       0&1
-    \end{pmatrix}.
-  \end{align*}
-  となり, $E_2$となる.
-
-\item
-  $A$が正則なので解は$A^{-1}\bbb$である.
-  したがって,
-  \begin{align*}
-    \frac{1}{7}\begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-    \begin{pmatrix}
-      4\\8
-    \end{pmatrix}
-    =
-    \frac{1}{7}\begin{pmatrix}
-      6\cdot 4 -1\cdot 8\\
-      -5\cdot 4 +2\cdot 8\\
-    \end{pmatrix}
-    =
-    \frac{1}{7}\begin{pmatrix}
-      16\\-4
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \frac{16}{7}\\-\frac{4}{7}
-    \end{pmatrix}
-  \end{align*}
-
-  これは次のように検算できる.
-  \begin{align*}
-    A\xx=
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}
-    \begin{pmatrix}
-      \frac{16}{7}\\-\frac{4}{7}
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      2\frac{16}{7}+1\frac{-4}{7}\\5\frac{16}{7}+6\frac{-4}{10}
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \frac{28}{7}\\\frac{56}{7}
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      4\\8
-    \end{pmatrix}
-  \end{align*}
-  となり$\bbb$となる.
-\end{enumerate}
-\end{answerof}
-
-
 \begin{answerof}{quiz:2:11}
   $A^3+A^2+A+E_2=O_{2,2}$を満たすとすると,
   \begin{align*}
@@ -1142,7 +912,7 @@
   したがって, $A$は正則である.
 \end{answerof}
 
-\section{行列と連立方程式に関する問題}
+
 \begin{answerof}{quiz:3:1}
   \begin{align*}
     \begin{pmatrix}
@@ -1298,7 +1068,7 @@
   である.
 \end{answerof}
 
-
+\section{連立一次方程式に関する問題}
 \begin{answerof}{quiz:3:2}
   \begin{align*}
     \begin{cases}
@@ -1575,7 +1345,6 @@
   この連立方程式は解を持たない.
 \end{answerof}
 
-
 \begin{answerof}{quiz:3:4}
   係数行列は,
   \begin{align*}
@@ -1734,6 +1503,355 @@
   この場合は
   考えている方程式は解を持たない.
 \end{answerof}
+
+\begin{answerof}{quiz:3:8} 
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+     \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx=
+      \begin{pmatrix}0&1\\0&0\end{pmatrix}
+        \begin{pmatrix}x\\y\end{pmatrix}
+      = \begin{pmatrix}y\\0\end{pmatrix}  
+  \end{align*}
+  したがって,
+  \begin{align*}
+     \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx&=\zzero\\
+     \begin{pmatrix}y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}  
+  \end{align*}
+  であるので, $y=0$であれば$x$はどのような値でも良い.
+  したがって,
+  実数解は
+  \begin{align*}
+    \xx=\begin{pmatrix}t\\0\end{pmatrix}=t\ee_1&&(t\in\RR)
+  \end{align*}
+  と書くことができる.
+\end{answerof}
+
+\begin{answerof}{quiz:3:9} 
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}-5&1\\0&0\end{pmatrix}.
+  \end{align*}
+ $1$行目を$\frac{-1}{5}$倍すると
+ \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
+    \xx=\zzero
+  \end{align*}
+  を解けば良い.
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
+      \xx
+      =
+    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく. $x-\frac{1}{5}y=0$であるので,
+  $x=\frac{1}{5}y$であるから,
+  $y=t$とすると, $x=\frac{t}{5}$である.
+  よって, 実数解は,
+  \begin{align*}
+    \xx=\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix} && (t\in\RR)
+  \end{align*}
+  と書くことができる.  
+\end{answerof}
+
+\begin{answerof}{quiz:3:10} 
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-5$倍を足すと,
+ \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}.
+  \end{align*}
+ したがって,
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}
+    \xx=\zzero
+  \end{align*}
+  を解けば良い.
+  \begin{align*}
+    \xx=
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&0\end{pmatrix}
+      \xx
+      =
+    \begin{pmatrix}x+y\\0\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}x+y\\0\end{pmatrix}=
+      \begin{pmatrix}0\\0\end{pmatrix}
+  \end{align*}
+  をとく. $x+y=0$であるので,
+  $x=-y$であるから,
+  $y=t$とすると, $x=-t$である.
+  よって, 実数解は,
+  \begin{align*}
+    \xx=\begin{pmatrix}-t\\t\end{pmatrix} && (t\in\RR)
+  \end{align*}
+  と書くことができる.  
+\end{answerof}
+
+\endinput
+\section{行列式と逆行列に関する問題}
+
+\begin{answerof}{quiz:2:1}
+  \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7.
+\\
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+\end{align*}
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:2}
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=
+    (-4-x)\cdot (-x) -1\cdot 5=x^2+4x-5=(x+5)(x-1)
+  \end{align*}
+  であるので
+  \begin{align*}
+    \det(\begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=0
+  \end{align*}
+  とすると,
+  \begin{align*}
+    (x+5)(x-1)&=0
+  \end{align*}
+  である.
+  よって, $x\in \Set{-5,1}$.
+\end{answerof}
+
+
+
+
+\begin{answerof}{quiz:2:reg:1}
+  \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+
+  これについては, 次のように検算をできる:
+  正則であるので逆行列が存在する.
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}
+     \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    & =
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}\\
+   & =
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
+    \end{pmatrix}
+    =
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
+  \end{align*}
+  
+  \begin{align*}
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+  \end{align*}
+  であるので
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+  \end{align*}
+  は正則ではない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:2:4}
+  \begin{align*}
+    A&=\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix},&
+    \bbb&=\begin{pmatrix}
+      4\\8
+    \end{pmatrix}.   
+  \end{align*}
+  とする.
+\begin{enumerate}
+\item
+  \begin{align*}
+    \det(A)=
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+  \end{align*}
+  であるので,
+  $A$は正則であり,
+  \begin{align*}
+     A^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+
+  
+  これは次のように検算できる.
+  もとの行列と求めた行列をかけると
+  \begin{align*}
+    A^{-1}A
+     &=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}\\
+    &=
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
+    \end{pmatrix}
+    =
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
+  \end{align*}
+  となり, $E_2$となる.
+
+\item
+  $A$が正則なので解は$A^{-1}\bbb$である.
+  したがって,
+  \begin{align*}
+    \frac{1}{7}\begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+    =
+    \frac{1}{7}\begin{pmatrix}
+      6\cdot 4 -1\cdot 8\\
+      -5\cdot 4 +2\cdot 8\\
+    \end{pmatrix}
+    =
+    \frac{1}{7}\begin{pmatrix}
+      16\\-4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+
+  これは次のように検算できる.
+  \begin{align*}
+    A\xx=
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      2\frac{16}{7}+1\frac{-4}{7}\\5\frac{16}{7}+6\frac{-4}{10}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \frac{28}{7}\\\frac{56}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\8
+    \end{pmatrix}
+  \end{align*}
+  となり$\bbb$となる.
+\end{enumerate}
+\end{answerof}
+
+
+
+\section{行列と連立方程式に関する問題}
+
+
+
 
 \begin{answerof}{quiz:3:6}
   \seealsoquiz{quiz:2:2}
@@ -1932,117 +2050,6 @@
   であり, これは第2成分が$0$ではないので, $\zzero$ではない.  
 \end{answerof}
 
-\begin{answerof}{quiz:3:8} 
-  \begin{align*}
-    \xx=
-    \begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とすると,
-  \begin{align*}
-     \begin{pmatrix}0&1\\0&0\end{pmatrix}
-      \xx=
-      \begin{pmatrix}0&1\\0&0\end{pmatrix}
-        \begin{pmatrix}x\\y\end{pmatrix}
-      = \begin{pmatrix}y\\0\end{pmatrix}  
-  \end{align*}
-  したがって,
-  \begin{align*}
-     \begin{pmatrix}0&1\\0&0\end{pmatrix}
-      \xx&=\zzero\\
-     \begin{pmatrix}y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}  
-  \end{align*}
-  であるので, $y=0$であれば$x$はどのような値でも良い.
-  したがって,
-  実数解は
-  \begin{align*}
-    \xx=\begin{pmatrix}t\\0\end{pmatrix}=t\ee_1&&(t\in\RR)
-  \end{align*}
-  と書くことができる.
-\end{answerof}
-
-\begin{answerof}{quiz:3:9} 
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-  \end{align*}
-  の$2$行目に$1$行目の$1$倍を足すと,
- \begin{align*}
-    \begin{pmatrix}-5&1\\0&0\end{pmatrix}.
-  \end{align*}
- $1$行目を$\frac{-1}{5}$倍すると
- \begin{align*}
-    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}.
-  \end{align*}
- したがって,
-  \begin{align*}
-    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
-    \xx=\zzero
-  \end{align*}
-  を解けば良い.
-  \begin{align*}
-    \xx=
-    \begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とすると,
-  \begin{align*}
-    \begin{pmatrix}1&\frac{-1}{5}\\0&0\end{pmatrix}
-      \xx
-      =
-    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}x+\frac{-1}{5}y\\0\end{pmatrix}=
-      \begin{pmatrix}0\\0\end{pmatrix}
-  \end{align*}
-  をとく. $x-\frac{1}{5}y=0$であるので,
-  $x=\frac{1}{5}y$であるから,
-  $y=t$とすると, $x=\frac{t}{5}$である.
-  よって, 実数解は,
-  \begin{align*}
-    \xx=\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix} && (t\in\RR)
-  \end{align*}
-  と書くことができる.  
-\end{answerof}
-
-\begin{answerof}{quiz:3:10} 
-  \begin{align*}
-    \begin{pmatrix}1&1\\5&5\end{pmatrix}
-  \end{align*}
-  の$2$行目に$1$行目の$-5$倍を足すと,
- \begin{align*}
-    \begin{pmatrix}1&1\\0&0\end{pmatrix}.
-  \end{align*}
- したがって,
-  \begin{align*}
-    \begin{pmatrix}1&1\\0&0\end{pmatrix}
-    \xx=\zzero
-  \end{align*}
-  を解けば良い.
-  \begin{align*}
-    \xx=
-    \begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とすると,
-  \begin{align*}
-    \begin{pmatrix}1&1\\0&0\end{pmatrix}
-      \xx
-      =
-    \begin{pmatrix}x+y\\0\end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}x+y\\0\end{pmatrix}=
-      \begin{pmatrix}0\\0\end{pmatrix}
-  \end{align*}
-  をとく. $x+y=0$であるので,
-  $x=-y$であるから,
-  $y=t$とすると, $x=-t$である.
-  よって, 実数解は,
-  \begin{align*}
-    \xx=\begin{pmatrix}-t\\t\end{pmatrix} && (t\in\RR)
-  \end{align*}
-  と書くことができる.  
-\end{answerof}
 
 \section{平面の線形変換に関する問題}
 \begin{answerof}{quiz:5:1}

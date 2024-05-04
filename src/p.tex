@@ -3037,7 +3037,1623 @@ $n$次単位行列のみであるので,
   と呼ぶことがある.
 \end{remark}
 
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:2:3}
+  次の行列の逆行列を求めよ:
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:2:11}
+  次の等式を満たす正方行列$A$は正則であることを示せ:
+  \begin{align*}
+    A^3+A^2+A+E_2=O_{2,2}
+  \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:1}
+  \label{quiz:3:1}
+  \Seealsoquiz{quiz:3:2,quiz:3:3,quiz:3:3x}
+
+  以下の行列$A$に対し,
+   $A$から行基本変形で得られる被約階段行列を求めよ.
+  また, $A$の階数を求めよ.
+  \begin{enumerate}
+    \item
+      $A=\begin{pmatrix}1&3&1\\2&6&5\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}-5&1&2\\5&-1&-2\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}-5&1&2\\5&-1&2\end{pmatrix}$.
+    \item
+      $A=\begin{pmatrix}2&1&4\\5&6&8\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+
+%\endinput
+
+
+
+
+
+
+\chapter{行列と連立一次方程式}
+\label{chap:systemoflineq}
+ここでは多元連立一次方程式と行列の階数について説明する.
+まず連立方程式に関連する用語を定義した後,
+行列の行基本変形について紹介する.
+また, 階段行列および階数について定義をし,
+その性質について紹介をする.
+
+\cite{978-4-7806-0772-7}であれば,
+第4章, 第5章, 第7章が関連する.
+\cite{978-4-7806-0164-0}であれば,
+第2章が関連する.
+
+
+\section{連立方程式に関する用語の定義}
+ここでは連立方程式に関連する用語を定義し,
+連立方程式の解の様子について具体例で説明をする.
+
+$i\in\Set{1,\ldots,m}$, $j\in\Set{1,\ldots,n}$
+に対し,
+数$a_{i,j},b_j$が与えられているとする.
+$n$個の未知数$x_1,\ldots,x_n$
+に関する次の方程式
+(つまり,
+これら$m$個の等式を全て満たす
+$n$個の数の組$x_1,\ldots,x_n$を求める問題のこと)
+を
+\defit{$n$元連立一次方程式}
+\Defit{system of linear equations for $n$ unknowns}
+\Defit{simultaneous linear equations for $n$ unknowns}
+\addindex{方程式!$n$元連立一次---}%
+\addindex{一次方程式!$n$元連立---}%
+\addindex{連立一次方程式!$n$元---}%
+\addindex{連立方程式!---}%
+\addindex{連立方程式!$n$元---}%
+\addindex{一次!$n$元連立---方程式}%
+\addindex{連立!$n$元---一次方程式}%
+\addindex{方程式!連立一次---}%
+\addindex{一次方程式!連立---}%
+\addindex{一次!連立---方程式}%
+\addindex{連立!---一次方程式}%
+\addindex{equation!system of linear ---s for $n$ unknowns}%
+\addindex{linear equation!system of ---s for $n$ unknowns}%
+\addindex{ststem!--- of linear equations for $n$ unknowns}%
+\addindex{equation!system of linear ---s}%
+\addindex{linear equation!system of ---s}%
+\addindex{ststem!--- of linear equations}%
+\addindex{equation!simultaneous linear ---s for $n$ unknowns}%
+\addindex{linear equation!simultaneous ---s for $n$ unknowns}%
+\addindex{simultaneous!--- linear equations for $n$ unknowns}%
+\addindex{simultaneous linear equations!--- for $n$ unknowns}%
+\addindex{equation!simultaneous linear ---s}%
+\addindex{linear equation!simultaneous ---s}%
+\addindex{simultaneous!--- linear equations}%
+と呼ぶ:
+\begin{align*}
+      \begin{cases}
+        a_{1,1}x_1+a_{1,2}x_2+\cdots+a_{1,n}x_n=b_1\\
+        a_{2,1}x_1+a_{2,2}x_2+\cdots+a_{2,n}x_n=b_2\\
+        \vdots\\
+        a_{m,1}x_1+a_{m,2}x_2+\cdots+a_{m,n}x_n=b_m.
+    \end{cases}
+\end{align*}
+特に,
+$b_1=b_2=\cdots=b_m=0$
+であるとき,
+この方程式は
+\defit{斉次}
+\Defit{homogeneous}
+\addindex{斉次!---$n$元連立一次方程式}%
+\addindex{$n$元連立一次方程式!斉次---}%
+\addindex{homogeneous!--- simultaneous linear equations for $n$ unknowns}%
+\addindex{system of linear equations for $n$ unknowns!homogeneous ---}%
+\addindex{simultaneous linear equations for $n$ unknowns!homogeneous ---}%
+\addindex{方程式!斉次$n$元連立一次---}%
+\addindex{一次方程式!斉次$n$元連立---}%
+\addindex{連立一次方程式!斉次$n$元---}%
+\addindex{連立方程式!斉次---}%
+\addindex{連立方程式!斉次$n$元---}%
+\addindex{一次!斉次$n$元連立---方程式}%
+\addindex{連立!斉次$n$元---一次方程式}%
+\addindex{方程式!斉次連立一次---}%
+\addindex{一次方程式!斉次連立---}%
+\addindex{一次!斉次連立---方程式}%
+\addindex{連立!斉次---一次方程式}%
+\addindex{equation!homogeneous system of linear ---s for $n$ unknowns}%
+\addindex{linear equation!homogeneous system of ---s for $n$ unknowns}%
+\addindex{ststem!homogeneous --- of linear equations for $n$ unknowns}%
+\addindex{equation!homogeneous system of linear ---s}%
+\addindex{linear equation!homogeneous system of ---s}%
+\addindex{ststem!homogeneous --- of linear equations}%
+\addindex{equation!homogeneous simultaneous linear ---s for $n$ unknowns}%
+\addindex{linear equation!homogeneous simultaneous ---s for $n$ unknowns}%
+\addindex{simultaneous!homogeneous --- linear equations for $n$ unknowns}%
+\addindex{simultaneous linear equations!homogeneous --- for $n$ unknowns}%
+\addindex{equation!homogeneous simultaneous linear ---s}%
+\addindex{linear equation!homogeneous simultaneous ---s}%
+\addindex{simultaneous!homogeneous --- linear equations}%
+であるという.
+
+
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a_{1,1}&a_{1,2}&a_{1,3}&\cdots & a_{1,n}\\
+    a_{2,1}&a_{2,2}&a_{1,3}&\cdots & a_{2,n}\\
+    \vdots&\\
+    a_{m,1}&a_{m,2}&a_{1,3}&\cdots & a_{m,n}
+  \end{pmatrix},
+  &
+  \bbb
+  &=
+  \begin{pmatrix}
+    b_1\\b_2\\\vdots\\b_m
+  \end{pmatrix},
+  &
+  \xx
+  &=
+  \begin{pmatrix}
+    x_1\\x_2\\x_3\\\vdots\\x_n
+  \end{pmatrix}
+\end{align*}
+とおく\footnote{$\bbb$や$\xx$はボールド体である.  通常のイタリック$b$や$x$とは区別して使っているので気をつけること.   $\bbb\neq b$であり$\xx\neq x$であるので読み間違えないこと.  また自分で書くとには書き分け, 読み間違えないようにすること.}と,
+連立方程式
+\begin{align*}
+      \begin{cases}
+        a_{1,1}x_1+a_{1,2}x_2+\cdots+a_{1,n}x_n=b_1\\
+        a_{2,1}x_1+a_{2,2}x_2+\cdots+a_{2,n}x_n=b_2\\
+        \vdots\\
+        a_{m,1}x_1+a_{m,2}x_2+\cdots+a_{m,n}x_n=b_m.
+    \end{cases}
+\end{align*}
+は,
+\begin{align*}
+  A\xx=\bbb
+\end{align*}
+と書くことができる.
+このとき,
+$A$を,
+\defit{$\xx$に関する方程式$A\xx=\bbb$の係数行列}
+\Defit{coefficient matrix of the system of equations $A\xx=\bbb$}
+\addindex{行列!方程式の係数---}%
+\addindex{行列!連立方程式の係数---}%
+\addindex{行列!係数---}%
+\addindex{係数行列!---}%
+\addindex{係数行列!方程式の---}%
+\addindex{係数行列!連立方程式の---}%
+\addindex{係数!---行列}%
+\addindex{係数!方程式の---行列}%
+\addindex{係数!連立方程式の---行列}%
+\addindex{方程式!---の係数行列}%
+\addindex{連立方程式!---の係数行列}%
+\addindex{方程式の!---係数行列}%
+\addindex{連立方程式の!---係数行列}%
+\addindex{matrix!coefficient ---}%
+\addindex{coefficient!--- matrix}%
+\addindex{coefficient matrix!--- of a system of equations}%
+\addindex{coefficient matrix!--- of simultaneous equations}%
+\addindex{of system of equations!coefficient matrix ---}%
+\addindex{of simultaneous equations!coefficient matrix ---}%
+と呼ぶ.
+また, $A$と$\bbb$を並べた$\hconcat{A}{\bbb}$を$C$とするとき,
+$C$を,
+\defit{$\xx$に関する方程式$A\xx=\bbb$の拡大係数行列}
+\Defit{augmented matrix of the system of equations $A\xx=\bbb$}
+\addindex{行列!拡大係数---}%
+\addindex{行列!方程式の拡大係数---}%
+\addindex{行列!連立方程式の拡大係数---}%
+\addindex{係数行列!拡大---}%
+\addindex{係数行列!方程式の拡大---}%
+\addindex{係数行列!連立方程式の拡大---}%
+\addindex{拡大係数行列!---}%
+\addindex{拡大係数行列!方程式の---}%
+\addindex{拡大係数行列!連立方程式の---}%
+\addindex{係数!拡大---行列}%
+\addindex{係数!方程式の拡大---行列}%
+\addindex{係数!連立方程式の拡大---行列}%
+\addindex{拡大係数!---行列}%
+\addindex{拡大係数!方程式の---行列}%
+\addindex{拡大係数!連立方程式の---行列}%
+\addindex{拡大!---係数行列}%
+\addindex{拡大!方程式の---係数行列}%
+\addindex{拡大!連立方程式の---係数行列}%
+\addindex{方程式の!---拡大係数行列}%
+\addindex{連立方程式の!---拡大係数行列}%
+\addindex{方程式!---の拡大係数行列}%
+\addindex{連立方程式!---の拡大係数行列}%
+\addindex{augmented!--- matrix}%
+\addindex{matrix!augmented ---}%
+\addindex{augmented matrix!--- of a system of equations}%
+\addindex{augmented matrix!--- of simultaneous equations}%
+\addindex{of system of equations!augmented matrix ---}%
+\addindex{of simultaneous equations!augmented matrix ---}%
+と呼ぶ.  
+$A\xx=\bbb$を満たす$\xx$を集めた集合を
+\defit{$\xx$に関する方程式$A\xx=\bbb$の解の空間}
+\Defit{space of solutions of the system of equations $A\xx=\bbb$}
+\addindex{空間!解の---}%
+\addindex{空間!方程式の解の---}%
+\addindex{空間!連立方程式の解の---}%
+\addindex{解!---の空間}%
+\addindex{解!方程式の---の空間}%
+\addindex{解!連立方程式の---の空間}%
+\addindex{解の空間!---}%
+\addindex{解の空間!方程式の---}%
+\addindex{解の空間!連立方程式の---}%
+\addindex{方程式の!---解の空間}%
+\addindex{連立方程式の!---解の空間}%
+\addindex{方程式!---の解の空間}%
+\addindex{連立方程式!---の解の空間}%
+\addindex{space!--- of solutions}%
+\addindex{space!--- of solutions of a system of equations}%
+\addindex{space of solutions!--- of a system of equations}%
+\addindex{solution!space of ---s of a system of equations}%
+\addindex{of system of equations!space of solutions}%
+\addindex{space!--- of solutions of simultaneous equations}%
+\addindex{space of solutions!--- of simultaneous equations}%
+\addindex{solution!space of ---s of simultaneous equations}%
+\addindex{of simultaneous equations!space of solutions}%
+と呼ぶ.
+つまり,
+\begin{align*}
+  \FFF=\Set{\vv|A\vv=\bbb}
+\end{align*}
+とおくと, $\FFF$が
+$\xx$に関する方程式$A\xx=\bbb$の解の空間である.
+解の空間の元を
+\defit{$\xx$に関する方程式$A\xx=\bbb$の特殊解}
+\defit{$\xx$に関する方程式$A\xx=\bbb$の根}
+\Defit{particular solution of the system of equations $A\xx=\bbb$}と呼ぶ.
+\addindex{解!特殊---}%
+\addindex{解!方程式の特殊---}%
+\addindex{解!連立方程式の特殊---}%
+\addindex{特殊解!方程式の---}%
+\addindex{特殊解!連立方程式の---}%
+\addindex{根!方程式の---}%
+\addindex{根!連立方程式の---}%
+\addindex{方程式の!---根}%
+\addindex{連立方程式の!---根}%
+\addindex{方程式の!---特殊解}%
+\addindex{連立方程式の!---特殊解}%
+\addindex{solution!particular --- of a system of equations}%
+\addindex{particular solution!--- of a system of equations}%
+\addindex{particular!--- solution of a system of equations}%
+\addindex{of system of equations!particular solution ---}%
+\addindex{solution!particular --- of simultaneous equations}%
+\addindex{particular solution!--- of simultaneous equations}%
+\addindex{particular!--- solution of simultaneous equations}%
+\addindex{of simultaneous equations!particular solution ---}%
+解を考える際に数として実数のみを考えるときには,
+解の空間を
+\defit{実数解の空間}
+\Defit{space of real solutions}
+\addindex{空間!実数解の---}%
+\addindex{解の空間!実数---}%
+\addindex{実数解!---の空間}%
+\addindex{解!実数---の空間}%
+\addindex{実数!---解の空間}%
+\addindex{実数!---解}%
+\addindex{space!--- of real solutions}%
+\addindex{real solution!space of ---s}%
+\addindex{solution!space of real ---s}%
+と呼ぶ.
+解を考える際に数として複素数を考えるときには,
+解の空間を
+\defit{複素数解の空間}
+\Defit{space of complex solutions}
+\addindex{空間!複素数解の---}%
+\addindex{解の空間!複素数---}%
+\addindex{複素数解!---の空間}%
+\addindex{解!複素数---の空間}%
+\addindex{複素数!---解の空間}%
+\addindex{複素数!---解}%
+\addindex{space!--- of complex solutions}%
+\addindex{solution!space of complex ---s}%
+\addindex{complex solution!space of ---s}%
+と呼ぶ.
+\begin{remark}
+  連立方程式$A\xx=\bbb$の解の空間$\FFF$は空集合でないときについて考える.
+  つまり
+  連立方程式$A\xx=\bbb$が解を持つときについて考える.
+  このとき,
+  $\FFF$は1元集合とは限らず,
+  無限集合となることもある.
+  $\FFF$に含まれる全ての元を,
+  ($0$個以上の) パラメータを使って表した式のことを,
+  \defit{一般解}
+  \Defit{general solution}
+  \addindex{一般!---解}%
+  \addindex{解!---一般}%
+  \addindex{解!方程式の一般---}%
+  \addindex{解!連立方程式の一般---}%
+  \addindex{一般解!方程式の---}%
+  \addindex{一般解!連立方程式の---}%
+  \addindex{方程式の!---一般解}%
+  \addindex{連立方程式の!---一般解}%
+  \addindex{general!--- solution}%
+  \addindex{solution!general ---}%
+  \addindex{solution!general --- of a system of equations}%
+  \addindex{general solution!--- of a system of equations}%
+  \addindex{general!--- solution of a system of equations}%
+  \addindex{of system of equations!general solution ---}%
+  \addindex{solution!general --- of simultaneous equations}%
+  \addindex{general solution!--- of simultaneous equations}%
+  \addindex{general!--- solution of simultaneous equations}%
+  \addindex{of simultaneous equations!general solution ---}%
+  と呼ぶことがある.
+  全ての解を表すために必要となるパラメータの個数(の最小値)を
+  \defit{解の自由度}
+  \Defit{degree of freedom of solutions}
+  \addindex{自由度!解の---}%
+  \addindex{解!---の自由度}%
+  \addindex{解の!---自由度}%
+  \addindex{解の!degree of freedom of solutions}%
+  \addindex{degree!--- of freedom of solutions}%
+  \addindex{degree of freedom!of solutions}%
+  \addindex{of freedom!degree ---}%
+  \addindex{of solutions!degree of freedom ---}%
+  と呼ぶ.
+  解の自由度が$0$であることは,
+  解の空間が一元集合\footnote{ただ一つの要素からなる集合を一元集合と呼ぶ.}であることと同値である.
+  解の空間が一元集合であるときには,
+  特殊解と一般解はまったく同じとなる.
+\end{remark}
+
+
+連立方程式$A\xx=\bbb$の解の空間と,
+連立方程式$A'\xx=\bbb'$の解の空間が等しいとき,
+この2つの連立方程式は
+\defit{方程式として同値}
+\Defit{equivalent as equations}
+\addindex{同値!方程式として---}%
+\addindex{同値!連立方程式が---}%
+\addindex{方程式が!---同値}%
+\addindex{連立方程式が!---同値}%
+であるという.
+連立方程式$A\xx=\bbb$を
+同値な連立方程式$A'\xx=\bbb'$に変形することを,
+\defit{方程式の同値変形}
+\Defit{equivalence transformation of equations}
+\addindex{同値変形!方程式の---}%
+\addindex{同値変形!連立方程式の---}%
+\addindex{方程式の!---同値変形}%
+\addindex{連立方程式の!---同値変形}%
+と呼ぶ.
+
+
+連立方程式の解の空間の例をいくつか見る.
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&1\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}5\\6\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x_1\\x_2\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の解の空間を$\FFF$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+      \begin{pmatrix}x_1\\x_2\end{pmatrix}=&
+        \begin{pmatrix}5\\6\end{pmatrix}\\
+          \begin{pmatrix}x_1\\x_2\end{pmatrix}=&
+            \begin{pmatrix}5\\6\end{pmatrix}\\
+  \end{align*}
+  となるので,
+  \begin{align*}
+    \FFF=\Set{\begin{pmatrix}5\\6\end{pmatrix}}
+  \end{align*}
+  と表せる.
+  この場合, 解の空間$\FFF$は1元のみからなる集合である.
+
+  この方程式の一般解は,
+  \begin{align*}
+    \begin{pmatrix}5\\6\end{pmatrix}
+  \end{align*}
+  であり, この方程式の解の自由度は$0$である.
+  また, この方程式の特殊解は,
+  \begin{align*}
+    \begin{pmatrix}5\\6\end{pmatrix}
+  \end{align*}
+  のみである.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}5\\0\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x_1\\x_2\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の実数解の空間を$\FFF$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&0\end{pmatrix}
+      \begin{pmatrix}x_1\\x_2\end{pmatrix}=&
+        \begin{pmatrix}5\\0\end{pmatrix}\\
+          \begin{pmatrix}x_1\\0\end{pmatrix}=&
+            \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  となる.
+  $x_1=5$を満たせば$x_2$の値は何でもよい.
+  \begin{align*}
+    \FFF=\Set{\begin{pmatrix}5\\t\end{pmatrix} | t\in \RR}
+  \end{align*}
+  と表せる.
+  解の空間は無限集合である.
+  \begin{align*}
+          \begin{pmatrix}x_1\\0\end{pmatrix}=&
+            \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  は通常の連立方程式の形で書き直すと以下のようになる:
+  \begin{align*}
+    \begin{cases}
+      x_1=5\\
+      0=0
+    \end{cases}
+  \end{align*}
+  $0=0$は常に成り立つので, 取り除いても連立方程式の解は変化しないので,
+  この連立方程式を次のように書き換えることができる:
+  \begin{align*}
+    \begin{cases}
+      x_1=5
+    \end{cases}
+  \end{align*}
+  この(連立)方程式には, $x_2$という未知数が現れていないが,
+  もともとの設定を考えると, これは$x_1$と$x_2$に関する方程式である.
+
+  この方程式の一般解は,
+  パラメータ$c\in\RR$を用いて,
+  \begin{align*}
+    \begin{pmatrix}5\\c\end{pmatrix}
+  \end{align*}
+  と書ける.
+  この方程式の解の自由度は$1$である.
+  また, 
+  \begin{align*}
+    \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  や,
+  \begin{align*}
+    \begin{pmatrix}5\\4\end{pmatrix}
+  \end{align*}
+  など, 第1成分が$5$であるようなものは,
+  この方程式の特殊解である.
+\end{example}
+
+
+\begin{example}
+  \begin{align*}
+    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}0\\1\end{pmatrix}\\
+    \xx&=\begin{pmatrix}x_1\\x_2\end{pmatrix}
+  \end{align*}
+  とし,
+  $\xx$に関する方程式$A\xx=\bbb$の解の空間を$\FFF$とする.
+  このとき
+  \begin{align*}
+    \begin{pmatrix}1&0\\0&0\end{pmatrix}
+      \begin{pmatrix}x_1\\x_2\end{pmatrix}=&
+        \begin{pmatrix}0\\1\end{pmatrix}\\
+          \begin{pmatrix}x_1\\0\end{pmatrix}=&
+            \begin{pmatrix}0\\1\end{pmatrix}\\
+  \end{align*}
+  となる.
+  通常の連立方程式の形に書き直すと
+  \begin{align*}
+    \begin{cases}
+      x_1=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  となる.
+  $x_1,x_2$をどんな値にしても, $0=1$が成り立つことはないので,
+  \begin{align*}
+    \FFF=\emptyset
+  \end{align*}
+  である. つまり, 解の空間は空集合である.
+
+  この場合, この方程式の解はない.
+  解がない場合は, 解の自由度を考えることはしない.
+\end{example}
+\begin{remark}
+連立方程式の解は次の3つのケースが考えられる:
+\begin{enumerate}
+  \item 解の空間が空集合となる場合. つまり, 解がない場合.
+  \item 解の空間が1元からなる集合となる場合.  つまり, ただ1つの解をもつ場合.
+  \item 解の空間が無数集合になる場合.
+\end{enumerate}
+\end{remark}
+
+\section{係数行列が被約階段行列である連立一次方程式}
+係数行列が被約階段行列である連立方程式$A\xx=\bbb$の解の空間について,
+ここでは考える.
+\begin{align*}
+  A&=
+  \begin{pmatrix}
+    a_{1,1}&a_{1,2}&a_{1,3}&\cdots & a_{1,n}\\
+    a_{2,1}&a_{2,2}&a_{1,3}&\cdots & a_{2,n}\\
+    \vdots&\\
+    a_{m,1}&a_{m,2}&a_{1,3}&\cdots & a_{m,n}
+  \end{pmatrix},
+  &
+  \bbb
+  &=
+  \begin{pmatrix}
+    b_1\\b_2\\\vdots\\b_m
+  \end{pmatrix},
+  &
+  \xx
+  &=
+  \begin{pmatrix}
+    x_1\\x_2\\x_3\\\vdots\\x_n
+  \end{pmatrix}
+\end{align*}
+とし,
+$A$が階数$r$の被約階段行列であるとする.
+さらに,
+\begin{align*}
+  (1,p(1)),\ldots,(r,p(r))
+\end{align*}
+  が
+$A$のpivotsであるとし,
+\begin{align*}
+  \Set{p(1),\ldots,p(r)}\cup\Set{q(1),\ldots,q(n-r)}=\Set{1,\ldots,n}
+\end{align*}
+とおく.
+つまり$A$のpivotが現れない列を$q(1),\ldots,q(l)$とおく.
+このとき,
+$A\xx=\bbb$
+の$k$行目に着目する.
+
+$1\leq k \leq r$のとき,
+$k$行目は次の方程式である:
+\begin{align*}
+  x_{p(k)}+\sum_{j=p(k)+1}^{n}a_{k,j}x_j=b_k.
+\end{align*}
+したがって,
+\begin{align}
+  x_{p(k)}=b_k-\sum_{j=p(k)+1}^{n}a_{k,j}x_j
+\end{align}
+とかける.
+また, 被約階段行列において, pivotのある列は,
+pivot以外の成分は$0$であることを思い出すと,
+\begin{align}
+  x_{p(k)}=b_k-\sum_{l=1}^{n-r}a_{k,q(l)}x_{q(l)}
+  \label{eq:step:eq:1}
+\end{align}
+と書き換えられる.
+
+$r+1\leq k $のとき,
+$k$行目は次の方程式である:
+\begin{align}
+  0=b_k.
+  \label{eq:step:eq:2}
+\end{align}
+
+したがって, \Cref{eq:step:eq:1,eq:step:eq:2}を満たす
+$\xx$を集めた集合が$A\xx=\bbb$の解の空間である.
+$A\xx=\bbb$の解の空間を$\FFF$とおき,
+$\FFF$を求める.
+
+最初に,
+次の条件を満たす$k$が存在するときを考える:
+\begin{enumerate}
+\item $b_k\neq 0$.
+\item $r<k\leq m$.
+\end{enumerate}
+このとき, \Cref{eq:step:eq:2}は
+\begin{align*}
+  0=b_k\neq 0
+\end{align*}
+という方程式であり,
+$\xx$をどんな値にしても成り立つことはない.
+したがって,
+この場合は
+\begin{align*}
+\FFF=\emptyset
+\end{align*}
+である.
+
+次に
+次の条件を満たすときを考える:
+\begin{enumerate}
+\item $r<k\leq m\implies b_k=0$.
+\end{enumerate}
+このとき, \Cref{eq:step:eq:2}は
+\begin{align*}
+  0=b_k= 0
+\end{align*}
+という方程式であり,
+$\xx$をどんな値にしても常に成り立つ.
+\Cref{eq:step:eq:1}があるので,
+$x_{p(l)}$は, $x_{p(l)+1},x_{p(l)+2},\ldots,x_{n}$の値できまる.
+それ以外の$x_{q(l)}$は自由に値をとれる.
+したがって, 解の空間$\FFF$は以下のように求めることができる.
+$i\in \Set{1,\ldots,m}$に対し,
+$(n-r)$変数の関数
+$f_i(t_1,\ldots,t_{n-r})$を
+以下で定義する:
+\begin{align*}
+  f_{q(l)}(t_1,\ldots,t_{n-r})&=t_l.\\
+  f_{p(l)}(t_1,\ldots,t_{n-r})&=b_l-\sum_{k=1}^{n-r}a_{l,q(k)}t_k.
+\end{align*}
+とおく.
+また, 考えている数の集合を$K$とおく.
+このとき, 
+\begin{align}
+  \FFF=
+  \Set{
+    \begin{pmatrix}
+      f_1(c_1,\ldots,c_{n-r})\\
+      f_2(c_1,\ldots,c_{n-r})\\
+      \vdots\\
+      f_{n}(c_1,\ldots,c_{n-r})
+    \end{pmatrix}
+    |c_1,\ldots,c_{n-r}\in K
+  }
+\end{align}
+と表すことができる.
+このとき,
+  \defit{解の自由度}
+  \Defit{degree of freedom of solutions}
+は$n-r$であるという.
+つまり,
+この場合の解の自由度は$n-\rank(A)$である.
+以上の方法により,
+係数行列が被約階段行列であるときには,
+連立一次方程式の解の空間はすぐ求められる.
+
+
+以下では,
+係数行列が$(2,2)$-行列であるときについて,
+具体的に見ていくことにする:
+次の例は,
+拡大係数行列が階数$2$の被約階段行列であり,
+係数行列も階数$2$の被約階段行列である場合である.
+この場合は,
+解の空間は一元集合である.
+\begin{example}
+  \label{eg:eq:reduced:1}
+  $p,q$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&p\\0&1&q
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  であるので, この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\q
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x_1=p\\
+      x_2=q
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  したがって, 解の空間$\FFF$は
+  \begin{align*}
+    \FFF=\Set{\begin{pmatrix}p\\q\end{pmatrix}}
+  \end{align*}
+  この方程式の自由度は$0$である.
+\end{example}
+
+拡大係数行列が階数$2$の被約階段行列であり,
+係数行列は階数$1$の被約階段行列である場合は,
+以下の2つの例である
+いずれの場合も解の空間は空集合である.
+\begin{example}
+    \label{eg:eq:reduced:3}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\1
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x_2=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解の空間は空集合である.
+\end{example}
+\begin{example}
+    \label{eg:eq:reduced:2}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\1
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x_1+ax_2=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解はない.
+\end{example}
+
+拡大係数行列が階数$1$の被約階段行列であり,
+係数行列も階数$1$の被約階段行列である場合は,
+以下の2つの例である.
+いずれの場合も解の空間は無限集合となる.
+また, 解の自由度は1である.
+\begin{example}
+  \label{eg:eq:reduced:4}
+  $a,p$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&p\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x_1+ax_2=p\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  これは
+  \begin{align*}
+    \begin{cases}
+      x_1=p-ax_2\\
+      0=0
+    \end{cases}
+  \end{align*}
+  と変形できる.
+  つまり, $x_2$の値が$t$であるときには,
+  $x_1$は$p-at$と自動的に値がきまる.
+  したがって, 実数解の集合$\FFF$は
+  \begin{align*}
+    \FFF
+    &=
+    \Set{
+      \begin{pmatrix}p-at\\t\end{pmatrix}
+        |t\in\RR
+    }
+  \end{align*}
+  と書ける.  
+  すこし変形して,
+  \begin{align*}
+    \FFF
+    &=
+    \Set{
+      \begin{pmatrix}p\\0\end{pmatrix}
+        +
+        t\begin{pmatrix}-a\\1\end{pmatrix}
+    |t\in\RR}
+  \end{align*}
+  のように書くこともできる.
+  この方程式の解の自由度は1である.
+\end{example}
+
+\begin{example}
+      \label{eg:eq:reduced:5}
+  $p$が与えられているとする.
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1&p\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        p\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x_2=p\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $x_2$の値が$p$であれば, $x_1$の値は何でも良い.
+  したがって, 実数解の集合$\FFF$は
+  \begin{align*}
+    \FFF=
+    \Set{
+      \begin{pmatrix}t\\p\end{pmatrix}
+        |
+        t\in\RR
+    }
+  \end{align*}
+  と書ける.  
+  すこし変形して,
+  \begin{align*}
+    \FFF=
+    \Set{
+      \begin{pmatrix}0\\p\end{pmatrix}
+        +
+        t\begin{pmatrix}1\\0\end{pmatrix}
+        |
+        t\in\RR
+    }
+  \end{align*}
+  のように書くこともできる.
+  この方程式の解の自由度は$1$である.
+\end{example}
+
+次の例は,
+拡大係数行列が階数$1$の被約階段行列であり,
+係数行列が階数$0$の被約階段行列である場合である.
+この場合は解の空間は空集合である.
+\begin{example}
+  \label{eg:eq:reduced:6}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&1\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        1\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      0=1\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解の空間は空集合である.
+\end{example}
+
+次の例は,
+拡大係数行列が階数$0$の被約階段行列であり,
+係数行列も階数$0$の被約階段行列である場合である.
+この場合は解の空間は無限集合である.
+また, 解の自由度は$2$である.
+\begin{example}
+      \label{eg:eq:reduced:7}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&0\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\0
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      0=0\\
+      0=0
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $x$と$y$の値が何であれ$0=0$は成り立つ.
+  したがって, 実数解の空間$\FFF$は
+  \begin{align*}
+    \FFF=
+    \Set{
+      \begin{pmatrix}t\\s\end{pmatrix}
+        |t,s\in\RR
+    }
+  \end{align*}
+  と書ける. 
+  すこし変形して,
+  \begin{align*}
+    \FFF=\Set{
+      t\begin{pmatrix}1\\0\end{pmatrix}
+        +
+        s\begin{pmatrix}0\\1\end{pmatrix}
+        |t,s\in\RR
+        }
+  \end{align*}
+  のように書くこともできる.
+  $x_1$の値とは独立に$x_2$の値を決められるので,
+  パラメータは$t,s$の2つが必要になる.
+  この方程式の解の集合は$2$である.
+\end{example}
+
+
+
+
+
+\section{一般の多元連立一次方程式の解の空間}
+
+\begin{lemma}
+  \provelater{lem:subsol}
+  \label{lem:subsol}
+  $A$を$(m,n)$-行列,
+  $\bbb$を$(m,1)$-行列,
+  $C$を$(k,m)$-行列とし,
+  $A'=CA$, $\bbb'=C\bbb$
+  とする.
+  $\FFF$を$A\xx=\bbb$の解の空間,
+  $\FFF'$を$A'\xx=\bbb'$の解の空間とする.
+  このとき,
+  $\FFF\subset \FFF'$.
+\end{lemma}
+
+\begin{theorem}
+  \provelater{thm:subsol}
+  \label{thm:subsol}
+  $A$を$(m,n)$-行列,
+  $\bbb$を$(m,1)$-行列,
+  $P$を$m$-次正則行列とし,
+  $A'=CA$, $\bbb'=C\bbb$
+  とする.
+  方程式$A\xx=\bbb$と
+  方程式$A'\xx=\bbb'$は方程式として同値.
+\end{theorem}
+\begin{cor}
+  \provelater{thm:equivequation}
+  拡大係数行列に対する行基本変形は,
+  方程式の同値変形である.
+  つまり, 次が成り立つ:
+  $\hconcat{A}{\bbb}$に行基本変形をし,
+  $\hconcat{A'}{\bbb'}$が得られたとする.
+  このとき,
+  $A\xx=\bbb$の解の集合$\FFF$,
+  $A'\xx=\bbb'$の解の集合$\FFF'$とすると, $\FFF=\FFF'$.
+\end{cor}
+
+\begin{remark}
+  一般に連立一次方程式は拡大係数行列を行基本変形で被約階段行列に変形することで,
+  簡単に解ける形になるので,
+  それを解くと良い.
+\end{remark}
+\begin{remark}
+  行基本変形を方程式の同値変形だと思ったとき,
+  行基本変形を用いて階段行列を得る変形 (\Cref{thm:reduction:f})
+  は未知数を``加減法''により消去していることに他ならない.
+  \index{前進消去}%
+  また,
+  行基本変形を用いて階段行列から被約階段行列を得る変形は
+  (\Cref{thm:reduction:b})
+  未知数を``代入法''により減らしていることに他ならない.
+  \index{後退代入}%
+\end{remark}
+
+$A$を$(m,n)$-行列, $\bbb$を$(m,1)$-行列とし,
+$\tilde A=\hconcat{A}{\bbb}$とする.
+このとき,
+$\rank(\tilde A)$は$\rank(A)$または$\rank(A)+1$である.
+$\tilde A$から行基本変形で得られる被役階段行列を$S$とする.
+$S$の$(n+1)$-列目にpivotがあるとき,
+$\tilde A=\hconcat{A}{\bbb}+1$である.
+また,
+$S$の$(n+1)$-列目にpivotがないとき,
+$\tilde A=\hconcat{A}{\bbb}$である.
+したがって次が得られる.
+\begin{theorem}
+  $A$を$(m,n)$-行列, $\bbb$を$(m,1)$-行列とし,
+  $\tilde A=\hconcat{A}{\bbb}$とおく.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\rank(\tilde A)=\rank(A)+1$.
+  \item $A\xx=\bbb$の解の空間は空集合.
+  \end{enumerate} 
+\end{theorem}
+\begin{theorem}
+  $A$を$(m,n)$-行列, $\bbb$を$(m,1)$-行列とし,
+  $\tilde A=\hconcat{A}{\bbb}$とおく.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\rank(\tilde A)=\rank(A)$.
+  \item $A\xx=\bbb$の解の空間は空集合ではない.
+  \end{enumerate}
+  また,
+  $A\xx=\bbb$の解の空間が空集合ではないとき,
+  この方程式の解の自由度は$n-\rank(A)$.
+\end{theorem}
+
+\begin{cor}
+  $A$を$(m,n)$-行列, $\bbb$を$(m,1)$-行列とし,
+  $\tilde A=\hconcat{A}{\bbb}$とおく.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\rank(\tilde A)=\rank(A)=n$.
+  \item $A\xx=\bbb$の解の空間は一元集合である.
+  \end{enumerate}
+\end{cor}
+
+
+\begin{cor}
+  $A$を$n$-次正則行列, $\bbb$を$(n,1)$-行列とする.
+  このとき, $A\xx=\bbb$の解の空間は$\Set{A^{-1}\bbb}$という
+  一元集合である.
+\end{cor}
+
+\begin{theorem}
+\provelater{thm:ortho:eq}
+  $A$を$(m,n)$-行列, $\bbb$を$(m,1)$-行列とし,
+  $\tilde A=\hconcat{A}{\bbb}$とおく.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item
+    \label{thm:ortho:eq:item:sol}
+    $A\xx=\bbb$の解の空間が空集合ではない.
+  \item
+    \label{thm:ortho:eq:item:ortho}
+    $Y$が
+    $YA=O_{n,1}$
+    を満たす$(1,m)$-行列なら,
+    $Y\bbb=O_{1,1}$.
+  \end{enumerate}  
+\end{theorem}
+
+\section{斉次連立一次方程式}
+$A$を$(m,n)$行列とし,
+$\zzero_m=O_{m,1}$とする.
+このとき,
+\begin{align*}
+  A\xx=\zzero_m
+\end{align*}
+を
+斉次連立一次方程式
+と呼んだ.
+$\zzero_n=O_{n,1}$は
+$A\zzero_n=\zzero_m$を満たすので,
+$\zzero_n$は$A\xx=\zzero_m$の解空間に必ず含まれる.
+$\zzero_n$を
+\defit{斉次連立一次方程式$A\xx=\zzero_m$の自明な解}
+\Defit{trivial solution for $A\xx=\zzero_m$}
+\addindex{斉次連立一次方程式の自明な解}%
+\addindex{解!斉次連立一次方程式の自明な---}%
+\addindex{自明な解!斉次連立一次方程式の---}%
+\addindex{斉次連立一次方程式の!---自明な解}%
+\addindex{trivial solution for homogeneous system of linear equations}%
+\addindex{trivial solution!--- for homogeneous system of linear equations}%
+\addindex{trivial!--- solution for homogeneous system of linear equations}%
+\addindex{solution!trivial --- for homogeneous system of linear equations}%
+\addindex{for homogeneous system of linear equations!trivial solution ---}%
+と呼ぶ.
+斉次連立一次方程式$A\xx=\zzero_m$の解の空間$\KKK$が,
+自明な解のみからなる一元集合であるとき,
+斉次連立一次方程式$A\xx=\zzero_m$は自明な解のみをもつという.
+つまり,
+$\Set{\zzero_n}=\KKK$であるとき,
+斉次連立一次方程式$A\xx=\zzero_m$は自明な解のみをもつという.
+また,
+自明な解以外の解をもつとき,
+斉次連立一次方程式$A\xx=\zzero_m$の非自明な解を持つという.
+つまり,
+$\Set{\zzero_n}\subsetneq\KKK$であるとき,
+斉次連立一次方程式$A\xx=\zzero_m$は自明な解のみをもつという.
+
+\begin{prop}
+  Aを$(m,n)$-行列とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\rank(A)=n$
+  \item $A\xx=\zzero_m$が自明な解しか持たない.
+    つまり, 解の集合が$\Set{\zzero_n}$となる.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  Aを$(m,n)$-行列とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\rank(A)=n$
+  \item $A\xx=\zzero_m$が非自明な解をもつ.
+  \end{enumerate}
+\end{prop}
+
+\begin{cor}
+  Aを$(m,n)$-行列とする.
+  $m<n$ならば,
+  $A\xx=\zzero_m$は非自明な解をもつ.
+\end{cor}
+
+\begin{prop}
+  \provelater**{thm:solspace:vec}
+  $A\xx=\zzero_m$の解の空間を$\KKK$とする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item
+    \provelater*{sum}
+    $\uu,\vv\in \KKK\implies \uu+\vv\in\KKK$.
+  \item
+    \provelater*{prod}
+    $a$を数とする. $\uu\in \KKK\implies a\uu\in\KKK$.
+  \end{enumerate}
+\end{prop}
+
+\begin{theorem}
+  \provelater{thm:solspace:withkerspace}
+  $A$を$(m,n)$-行列,
+  $\bbb$を$(m,1)$-行列とし,
+  $\zzero_m=O_{m,1}$とする.
+  $A\xx=\bbb$の解の集合を$\FFF$とし,
+  $A\xx=\zzero_m$の解の集合を$\KKK$とする.
+  $\vv\in \FFF$とする.
+  このとき,
+  \begin{align*}
+    \FFF=\Set{\uu+\vv|\uu\in \KKK}.
+  \end{align*}
+\end{theorem}
+
+\sectionX{章末問題}
+
+\begin{quiz}
+  \solvelater{quiz:3:2}
+  \label{quiz:3:2}
+  \seealsoQuiz{quiz:2:4,quiz:3:1}
+  \Seealsoquiz{quiz:3:4x}
+  次の連立一次方程式
+  \begin{align*}
+    \begin{cases}
+      2x+y=4\\
+      5x+6y=8
+      \end{cases}
+  \end{align*}
+  について考える.
+  \begin{enumerate}
+    \item この連立一次方程式の係数行列を答えよ.
+    \item この連立一次方程式の拡大係数行列を答えよ.
+    \item この連立一次方程式を解け.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:3}
+  \label{quiz:3:3}
+  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
+  \Seealsoquiz{quiz:3:4}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\-2\end{pmatrix}
+  \end{align*}
+  の実数解を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:3x}
+  \label{quiz:3:3x}
+  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
+  \Seealsoquiz{quiz:3:4}
+
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\2\end{pmatrix}
+  \end{align*}
+  の実数解を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:4}
+  \seealsoQuiz{quiz:3:3,quiz:3:3x}
+  \Seealsoquiz{quiz:5:2}
+  \label{quiz:3:4}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:4x}
+  \seealsoQuiz{quiz:3:2}
+  \Seealsoquiz{quiz:5:2}
+  \label{quiz:3:4x}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}2&1\\5&6\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:5}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}2\\b\end{pmatrix}
+  \end{align*}
+  が解を持つための$a,b$に対する条件を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:8}
+  \label{quiz:3:8}
+  \Seealsoquiz{quiz:6:3}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:9}
+  \label{quiz:3:9}
+  \Seealsoquiz{quiz:6:4}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:3:10}
+  \label{quiz:3:10}
+  \Seealsoquiz{quiz:6:4}
+  $\xx$に関する連立方程式
+  \begin{align*}
+    \begin{pmatrix}1&1\\5&5\end{pmatrix}
+      \xx
+      =\zzero
+  \end{align*}
+  の
+  実数解をもとめよ.
+\end{quiz}
+
+
 \endinput
+\section{行基本変形}
+ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
+また, 階段行列と呼ばれる行列を定義し,
+拡大係数行列が階段行列であるような連立一次方程式の解の様子を調べる.
+
+まず, 連立方程式をどのように解いていたかを復習する.
+\begin{align*}
+  \begin{cases}
+    3x+4y=1\\
+    x+2y=3
+  \end{cases}
+\end{align*}
+という連立方程式について考える.
+拡大係数行列も併記することにする.
+\begin{align*}
+  \begin{cases}
+    3x+4y=1\\
+    x+2y=3
+  \end{cases}&&
+  \begin{pmatrix}
+    3&4&1\\
+    1&2&3    
+  \end{pmatrix}
+\end{align*}
+の1行目と2行目を入れ替えると次を得る.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+    3x+4y=1
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    3&4&1
+  \end{pmatrix}
+\end{align*}
+さらに,
+1行目の-3倍を2行目に加えると次となる.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+     -2y=-8
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    0&-2&-8
+  \end{pmatrix}
+\end{align*}
+さらに,
+2行目を$-\frac{1}{2}$倍すると次となる.
+\begin{align*}
+  \begin{cases}
+    x+2y=3\\
+     y=4
+  \end{cases}&&
+  \begin{pmatrix}
+    1&2&3\\    
+    0&1&4
+  \end{pmatrix}
+\end{align*}
+さらに,
+2行目の-2倍を1行目に加えると次となる.
+\begin{align*}
+  \begin{cases}
+    x=-5\\
+     y=4
+  \end{cases}&&
+  \begin{pmatrix}
+    1&0&-5\\    
+    0&1&4
+  \end{pmatrix}
+\end{align*}
+よって,
+この連立方程式の解は,
+\begin{align*}
+  \begin{pmatrix}
+    x\\y
+  \end{pmatrix}  
+  =
+  \begin{pmatrix}
+    -5\\4
+  \end{pmatrix}  
+\end{align*}
+である.
+
+連立方程式を解くにあたり以下の操作を行った:
+\begin{enumerate}
+  \item ある行を$0$以外で定数倍する.
+  \item ある行に別の行の定数倍を加える.
+  \item ある行と別の行を入れ替える.
+\end{enumerate}
+これらの操作で連立一次方程式の解の空間は変化しない.
+これらの操作を行基本変形と呼ぶ.
+行基本形をすることで, 連立一次方程式を解くことができる.
+
+
+
+拡大係数行列を
+
+\section{係数行列が正則行列であるときの解の公式}
+\label{thm:cramer}
+係数行列$A$が正則であるとき,
+未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
+$\xx=A^{-1}\bbb$のみであった.
+$A$が$2$次正則行列であるときに,
+もう少し詳しくしらべる.
+\begin{align*}
+  A=\begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
+\end{align*}
+とすると, $A$が正則であることと,
+\begin{align*}
+  a_1b_2-b_1a_2\neq 0
+\end{align*}
+は同値であった.
+さらに, $A$の逆行列は,
+\begin{align*}
+  A^{-1}=\frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
+\end{align*}
+と具体的に書き下すことができる.
+したがって,
+\begin{align*}
+  \begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+    =\begin{pmatrix}p_1\\p_2\end{pmatrix}
+\end{align*}
+の解は
+\begin{align*}
+  \begin{pmatrix}x\\y\end{pmatrix}
+    &=
+    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
+      \begin{pmatrix}p_1\\p_2\end{pmatrix}
+        \\
+    &=
+    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2p_1-a_1p_2\\-b_1p_1+a_1p_2\end{pmatrix}
+\end{align*}
+とかける.
+\begin{align*}
+  \det(\begin{pmatrix}a&b\\c&d\end{pmatrix})=ad-bc
+\end{align*}
+であるので,
+\begin{align*}
+  A^{(1)}&=\begin{pmatrix}p_1&b_1\\p_2&b_2\end{pmatrix}\\
+  A^{(2)}&=\begin{pmatrix}a_1&p_1\\a_2&p_2\end{pmatrix}
+\end{align*}
+とおくと,
+\begin{align*}
+  \det(A^{(1)})&=p_1b_2-b_1p_2\\
+  \det(A^{(2)})&=a_1p_2-a_2p_1\\
+  \det(A)&=a_1b_2-b_1a_2
+\end{align*}
+となるので, 方程式の解を
+\begin{align*}
+  \begin{pmatrix}x\\y\end{pmatrix}
+    &=
+  \begin{pmatrix}\frac{\det(A^{(1)})}{\det(A)}\\\frac{\det(A^{(2)})}{\det(A)}\end{pmatrix}.
+\end{align*}
+と書くこともできる.
+
+もっと一般に,
+$n$次正則行列が係数行列である場合の方程式の解の公式が
+知られている.
+例えば, $3$次正則行列の場合には,
+次のように計算する.
+\begin{align*}
+  A&=
+  \begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}\\
+    \bbb&=
+  \begin{pmatrix}p_1\\p_2\\p_3\end{pmatrix}
+\end{align*}
+の場合について考える.
+ただし$A$は正則であることを仮定する.
+このとき, $\det(A)\neq 0$である.
+\begin{align*}
+  A^{(1)}&=
+  \begin{pmatrix}p_1&b_1&c_1\\p_2&b_2&c_2\\p_3&b_3&c_3\end{pmatrix}\\
+  A^{(2)}&=
+  \begin{pmatrix}a_1&p_1&c_1\\a_2&p_2&c_2\\a_3&p_3&c_3\end{pmatrix}\\
+  A^{(3)}&=
+  \begin{pmatrix}a_1&b_1&p_1\\a_2&b_2&p_2\\a_3&b_3&p_3\end{pmatrix}
+\end{align*}
+とする. つまり$A^{(k)}$は$A$の$k$列目を$\bbb$に置き換えた行列である.
+\begin{align*}
+  t_1&=\frac{\det(A^{(1)})}{\det(A)}\\
+  t_2&=\frac{\det(A^{(2)})}{\det(A)}\\
+  t_3&=\frac{\det(A^{(3)})}{\det(A)}
+\end{align*}
+とおくと, 未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
+\begin{align*}
+  \xx=
+  \begin{pmatrix}
+    t_1\\t_2\\t_3
+  \end{pmatrix}
+\end{align*}
+と書ける.
+
+この解の公式は
+\addindex{クラメルの公式}%
+\index{Cramer's rule}
+クラメルの公式(Cramer's rule)と呼ばれる.
+閉じた公式を与えるという意味では意味があるが,
+係数行列が正則でないと使えないことや,
+そもそも行列式の計算が大変であることから,
+具体的な問題にはこの公式よりも,
+行基本変形を用いて解くほうが有効な場合が多い.
+
 \section{階数の性質}
 階数を使って解がどのくらいあるか調べることができる.
 \begin{align*}
@@ -3313,6 +4929,43 @@ $\rank(A)<m$なら,
   $\bbb$が存在する.
 \end{remark}
 
+
+\sectionX{章末問題}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:6}
+  \seealsoQuiz{quiz:2:2}
+  \Seealsoquiz{quiz:3:7}
+  \label{quiz:3:6}
+  連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}-4-a&1\\5&-a\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \zzero
+  \end{align*}
+  が$\zzero$
+  以外の
+  解を持つための$a$に対する条件を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:3:7}
+  \label{quiz:3:7}
+  \seealsoQuiz{quiz:3:6}
+  \Seealsoquiz{quiz:6:1}
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      a\begin{pmatrix}x\\y\end{pmatrix}\\
+      \begin{pmatrix}x\\y\end{pmatrix}\neq \zzero
+  \end{align*}
+  を満たす$x,y$が存在するための
+  $a$に対する条件を求めよ.
+\end{quiz}
 
 
 
@@ -4276,15 +5929,6 @@ $2$次正方行列においては,
   を満たす$x$を求めよ.
 \end{quiz}
 
-\begin{quiz}
-  \solvelater{quiz:2:3}
-  次の行列の逆行列を求めよ:
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&1
-    \end{pmatrix}
-  \end{align*}
-\end{quiz}
 
 \begin{quiz}
   \solvelater{quiz:2:reg:1}
@@ -4320,1193 +5964,9 @@ $2$次正方行列においては,
   \end{enumerate}
 \end{quiz}
 
-\begin{quiz}
-  \solvelater{quiz:2:11}
-  次の等式を満たす正方行列$A$は正則であることを示せ:
-  \begin{align*}
-    A^3+A^2+A+E_2=O_{2,2}
-  \end{align*}
-\end{quiz}
 
 
 
-\chapter{行列と連立一次方程式}
-\label{chap:systemoflineq}
-ここでは多元連立一次方程式と行列の階数について説明する.
-まず連立方程式に関連する用語を定義した後,
-行列の行基本変形について紹介する.
-また, 階段行列および階数について定義をし,
-その性質について紹介をする.
-
-\cite{978-4-7806-0772-7}であれば,
-第4章, 第5章, 第7章が関連する.
-\cite{978-4-7806-0164-0}であれば,
-第2章が関連する.
-
-
-\section{連立方程式に関する用語の定義}
-ここでは連立方程式に関連する用語を定義し,
-連立方程式の解の様子について具体例で説明をする.
-
-数$a,b,c,d,p,q$が与えられているとする.
-$x$, $y$を未知数とする.
-$x$と$y$に関する次の方程式
-を
-\defit{2元連立一次方程式}
-\Defit{system of linear equations for two unknowns}
-\Defit{simultaneous linear equations for two unknowns}
-\addindex{方程式!2元連立一次---}%
-\addindex{一次方程式!2元連立---}%
-\addindex{連立一次方程式!2元---}%
-\addindex{連立方程式!---}%
-\addindex{連立方程式!2元---}%
-\addindex{一次!2元連立---方程式}%
-\addindex{連立!2元---一次方程式}%
-\addindex{方程式!連立一次---}%
-\addindex{一次方程式!連立---}%
-\addindex{一次!連立---方程式}%
-\addindex{連立!---一次方程式}%
-\addindex{equation!system of linear ---s for two unknowns}%
-\addindex{linear equation!system of ---s for two unknowns}%
-\addindex{ststem!--- of linear equations for two unknowns}%
-\addindex{equation!system of linear ---s}%
-\addindex{linear equation!system of ---s}%
-\addindex{ststem!--- of linear equations}%
-\addindex{equation!simultaneous linear ---s for two unknowns}%
-\addindex{linear equation!simultaneous ---s for two unknowns}%
-\addindex{simultaneous!--- linear equations for two unknowns}%
-\addindex{simultaneous linear equations!--- for two unknowns}%
-\addindex{equation!simultaneous linear ---s}%
-\addindex{linear equation!simultaneous ---s}%
-\addindex{simultaneous!--- linear equations}%
-と呼ぶ:
-\begin{align*}
-      \begin{cases}
-      ax+by=p\\
-      cx+dy=q
-    \end{cases}
-\end{align*}
-$ax+by=p$と$cx+dy=q$の両方の条件を満たす$x$と$y$の組が,
-この連立方程式の解である.
-\begin{align*}
-  A&=\begin{pmatrix}a&b\\c&d\end{pmatrix}\\
-  \bbb&=\begin{pmatrix}p\\q\end{pmatrix}\\
-  \xx&=\begin{pmatrix}x\\y\end{pmatrix}
-\end{align*}
-とおく\footnote{$\bbb$や$\xx$はボールド体である.  通常のイタリック$b$や$x$とは区別して使っているので気をつけること.   $\bbb\neq b$であり$\xx\neq x$であるので読み間違えないこと.  また自分で書くとには書き分け, 読み間違えないようにすること.}と,
-この連立方程式は, 次のように書くこともできる:
-\begin{align*}
-  A\xx=\bbb
-\end{align*}
-\begin{definition}
-  \label{def:eq:extededcoef}
-数$a,b,c,d,p,q$が与えられているとする.
-$x$, $y$を未知数とする.
-\begin{align*}
-  A&=\begin{pmatrix}a&b\\c&d\end{pmatrix}\\
-  \bbb&=\begin{pmatrix}p\\q\end{pmatrix}\\
-  \xx&=\begin{pmatrix}x\\y\end{pmatrix}\\
-  C&=\begin{pmatrix}a&b&p\\c&d&q\end{pmatrix}\\
-\end{align*}
-とする.
-このとき,
-$A$を,
-\defit{$\xx$に関する方程式$A\xx=\bbb$の係数行列}
-\Defit{coefficient matrix of the system of equations $A\xx=\bbb$}
-\addindex{行列!方程式の係数---}%
-\addindex{行列!連立方程式の係数---}%
-\addindex{行列!係数---}%
-\addindex{係数行列!---}%
-\addindex{係数行列!方程式の---}%
-\addindex{係数行列!連立方程式の---}%
-\addindex{係数!---行列}%
-\addindex{係数!方程式の---行列}%
-\addindex{係数!連立方程式の---行列}%
-\addindex{方程式!---の係数行列}%
-\addindex{連立方程式!---の係数行列}%
-\addindex{方程式の!---係数行列}%
-\addindex{連立方程式の!---係数行列}%
-\addindex{matrix!coefficient ---}%
-\addindex{coefficient!--- matrix}%
-\addindex{coefficient matrix!--- of a system of equations}%
-\addindex{coefficient matrix!--- of simultaneous equations}%
-\addindex{of system of equations!coefficient matrix ---}%
-\addindex{of simultaneous equations!coefficient matrix ---}%
-と呼ぶ.
-$C$を,
-\defit{$\xx$に関する方程式$A\xx=\bbb$の拡大係数行列}
-\Defit{augmented matrix of the system of equations $A\xx=\bbb$}
-\addindex{行列!拡大係数---}%
-\addindex{行列!方程式の拡大係数---}%
-\addindex{行列!連立方程式の拡大係数---}%
-\addindex{係数行列!拡大---}%
-\addindex{係数行列!方程式の拡大---}%
-\addindex{係数行列!連立方程式の拡大---}%
-\addindex{拡大係数行列!---}%
-\addindex{拡大係数行列!方程式の---}%
-\addindex{拡大係数行列!連立方程式の---}%
-\addindex{係数!拡大---行列}%
-\addindex{係数!方程式の拡大---行列}%
-\addindex{係数!連立方程式の拡大---行列}%
-\addindex{拡大係数!---行列}%
-\addindex{拡大係数!方程式の---行列}%
-\addindex{拡大係数!連立方程式の---行列}%
-\addindex{拡大!---係数行列}%
-\addindex{拡大!方程式の---係数行列}%
-\addindex{拡大!連立方程式の---係数行列}%
-\addindex{方程式の!---拡大係数行列}%
-\addindex{連立方程式の!---拡大係数行列}%
-\addindex{方程式!---の拡大係数行列}%
-\addindex{連立方程式!---の拡大係数行列}%
-\addindex{augmented!--- matrix}%
-\addindex{matrix!augmented ---}%
-\addindex{augmented matrix!--- of a system of equations}%
-\addindex{augmented matrix!--- of simultaneous equations}%
-\addindex{of system of equations!augmented matrix ---}%
-\addindex{of simultaneous equations!augmented matrix ---}%
-と呼ぶ.  
-$A\xx=\bbb$を満たす$\xx$を集めた集合を
-\defit{$\xx$に関する方程式$A\xx=\bbb$の解の空間}
-\Defit{space of solutions of the system of equations $A\xx=\bbb$}
-\addindex{空間!解の---}%
-\addindex{空間!方程式の解の---}%
-\addindex{空間!連立方程式の解の---}%
-\addindex{解!---の空間}%
-\addindex{解!方程式の---の空間}%
-\addindex{解!連立方程式の---の空間}%
-\addindex{解の空間!---}%
-\addindex{解の空間!方程式の---}%
-\addindex{解の空間!連立方程式の---}%
-\addindex{方程式の!---解の空間}%
-\addindex{連立方程式の!---解の空間}%
-\addindex{方程式!---の解の空間}%
-\addindex{連立方程式!---の解の空間}%
-\addindex{space!--- of solutions}%
-\addindex{space!--- of solutions of a system of equations}%
-\addindex{space of solutions!--- of a system of equations}%
-\addindex{solution!space of ---s of a system of equations}%
-\addindex{of system of equations!space of solutions}%
-\addindex{space!--- of solutions of simultaneous equations}%
-\addindex{space of solutions!--- of simultaneous equations}%
-\addindex{solution!space of ---s of simultaneous equations}%
-\addindex{of simultaneous equations!space of solutions}%
-と呼ぶ.
-つまり,
-\begin{align*}
-  F=\Set{\vv|A\vv=\bbb}
-\end{align*}
-とおくと, $F$が
-$\xx$に関する方程式$A\xx=\bbb$の解の空間である.
-解の空間の元を
-\defit{$\xx$に関する方程式$A\xx=\bbb$の特殊解}
-\defit{$\xx$に関する方程式$A\xx=\bbb$の根}
-\Defit{particular solution of the system of equations $A\xx=\bbb$}と呼ぶ.
-\addindex{解!特殊---}%
-\addindex{解!方程式の特殊---}%
-\addindex{解!連立方程式の特殊---}%
-\addindex{特殊解!方程式の---}%
-\addindex{特殊解!連立方程式の---}%
-\addindex{根!方程式の---}%
-\addindex{根!連立方程式の---}%
-\addindex{方程式の!---根}%
-\addindex{連立方程式の!---根}%
-\addindex{方程式の!---特殊解}%
-\addindex{連立方程式の!---特殊解}%
-\addindex{solution!particular --- of a system of equations}%
-\addindex{particular solution!--- of a system of equations}%
-\addindex{particular!--- solution of a system of equations}%
-\addindex{of system of equations!particular solution ---}%
-\addindex{solution!particular --- of simultaneous equations}%
-\addindex{particular solution!--- of simultaneous equations}%
-\addindex{particular!--- solution of simultaneous equations}%
-\addindex{of simultaneous equations!particular solution ---}%
-解を考える際に数として実数のみを考えるときには,
-解の空間を
-\defit{実数解の空間}
-\Defit{space of real solutions}
-\addindex{空間!実数解の---}%
-\addindex{解の空間!実数---}%
-\addindex{実数解!---の空間}%
-\addindex{解!実数---の空間}%
-\addindex{実数!---解の空間}%
-\addindex{実数!---解}%
-\addindex{space!--- of real solutions}%
-\addindex{real solution!space of ---s}%
-\addindex{solution!space of real ---s}%
-と呼ぶ.
-解を考える際に数として複素数を考えるときには,
-解の空間を
-\defit{複素数解の空間}
-\Defit{space of complex solutions}
-\addindex{空間!複素数解の---}%
-\addindex{解の空間!複素数---}%
-\addindex{複素数解!---の空間}%
-\addindex{解!複素数---の空間}%
-\addindex{複素数!---解の空間}%
-\addindex{複素数!---解}%
-\addindex{space!--- of complex solutions}%
-\addindex{solution!space of complex ---s}%
-\addindex{complex solution!space of ---s}%
-と呼ぶ.
-\end{definition}
-
-
-
-\begin{remark}
-未知数が$2$個, 方程式の数が$2$本の場合について考えたが,
-より一般の場合も考えることができる.
-$(m,n)$-行列$A$と$(m,1)$-行列$\bbb$が与えられているとする.
-$x_1,\ldots,x_n$を$n$個の未知数とし,
-\begin{align*}
-  \xx=\begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
-\end{align*}
-とする.
-このとき, $\xx$に関する方程式
-\begin{align*}
-  A\xx=\bbb
-\end{align*}
-を,
-\defit{$n$元連立一次方程式}
-\Defit{system of linear equations for $n$ unknowns}
-\Defit{simultaneous linear equations for $n$ unknowns}
-\addindex{方程式!$n$元連立一次---}%
-\addindex{一次方程式!$n$元連立---}%
-\addindex{連立一次方程式!$n$元---}%
-\addindex{連立方程式!---}%
-\addindex{連立方程式!$n$元---}%
-\addindex{一次!$n$元連立---方程式}%
-\addindex{連立!$n$元---一次方程式}%
-\addindex{方程式!連立一次---}%
-\addindex{一次方程式!連立---}%
-\addindex{一次!連立---方程式}%
-\addindex{連立!---一次方程式}%
-\addindex{equation!system of linear ---s for $n$ unknowns}%
-\addindex{linear equation!system of ---s for $n$ unknowns}%
-\addindex{ststem!--- of linear equations for $n$ unknowns}%
-\addindex{equation!system of linear ---s}%
-\addindex{linear equation!system of ---s}%
-\addindex{ststem!--- of linear equations}%
-\addindex{equation!simultaneous linear ---s for $n$ unknowns}%
-\addindex{linear equation!simultaneous ---s for $n$ unknowns}%
-\addindex{simultaneous!--- linear equations for $n$ unknowns}%
-\addindex{simultaneous linear equations!--- for $n$ unknowns}%
-\addindex{equation!simultaneous linear ---s}%
-\addindex{linear equation!simultaneous ---s}%
-\addindex{simultaneous!--- linear equations}%
-と呼ぶ.
-$A$のことを, この連立方程式の係数行列と呼ぶ.
-$A$と$\bbb$をならべてできる$(m,n+1)$-行列を,
-この連立方程式の拡大係数行列と呼ぶ.
-$\Set{\vv|A\vv=\bbb}$を,
-この連立方程式の解の空間と呼び,
-解の空間の元を特殊解とか根などと呼ぶ.
-\end{remark}
-
-
-連立方程式の解の空間の例をいくつか見る.
-\begin{example}
-  \begin{align*}
-    A&=\begin{pmatrix}1&0\\0&1\end{pmatrix}\\
-    \bbb&=\begin{pmatrix}5\\6\end{pmatrix}\\
-    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とし,
-  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
-  このとき
-  \begin{align*}
-    \begin{pmatrix}1&0\\0&1\end{pmatrix}
-      \begin{pmatrix}x\\y\end{pmatrix}=&
-        \begin{pmatrix}5\\6\end{pmatrix}\\
-          \begin{pmatrix}x\\y\end{pmatrix}=&
-            \begin{pmatrix}5\\6\end{pmatrix}\\
-  \end{align*}
-  となるので,
-  \begin{align*}
-    F=\Set{\begin{pmatrix}5\\6\end{pmatrix}}
-  \end{align*}
-  と表せ, 解は
-  \begin{align*}
-    \xx=\begin{pmatrix}5\\6\end{pmatrix}\\
-  \end{align*}
-  で全てである.
-  この場合, 解は一通りしかない.
-\end{example}
-
-\begin{example}
-  \begin{align*}
-    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
-    \bbb&=\begin{pmatrix}5\\0\end{pmatrix}\\
-    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とし,
-  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
-  このとき
-  \begin{align*}
-    \begin{pmatrix}1&0\\0&0\end{pmatrix}
-      \begin{pmatrix}x\\y\end{pmatrix}=&
-        \begin{pmatrix}5\\0\end{pmatrix}\\
-          \begin{pmatrix}x\\0\end{pmatrix}=&
-            \begin{pmatrix}5\\0\end{pmatrix}
-  \end{align*}
-  となる.
-  $x=5$を満たせば$y$の値は何でもよい.
-  \begin{align*}
-    F=\Set{\begin{pmatrix}5\\t\end{pmatrix} | t\in \RR}
-  \end{align*}
-  と表せる. 解は
-  \begin{align*}
-    \xx=\begin{pmatrix}5\\t\end{pmatrix}\quad (t\in\RR)
-  \end{align*}
-  という形で表すことができる. 
-  この場合, 解は無数にある.
-  \begin{align*}
-          \begin{pmatrix}x\\0\end{pmatrix}=&
-            \begin{pmatrix}5\\0\end{pmatrix}
-  \end{align*}
-  は通常の連立方程式の形で書き直すと以下のようになる:
-  \begin{align*}
-    \begin{cases}
-      x=5\\
-      0=0
-    \end{cases}
-  \end{align*}
-  $0=0$は常に成り立つので, 取り除いても連立方程式の解は変化しないので,
-  この連立方程式を次のように書き換えることができる:
-  \begin{align*}
-    \begin{cases}
-      x=5
-    \end{cases}
-  \end{align*}
-  この(連立)方程式には, $y$という未知数が現れていないが, もともとの設定を考えると, これは$x$と$y$に関する方程式である.
-  したがって, この方程式の解は, $x$のみに言及した
-  \begin{align*}
-    x=5
-  \end{align*}
-  ではなく
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}5\\t\end{pmatrix}\quad (t\in\RR)
-  \end{align*}
-  のように$y$の値も考えたものになる.
-\end{example}
-
-
-\begin{example}
-  \begin{align*}
-    A&=\begin{pmatrix}1&0\\0&0\end{pmatrix}\\
-    \bbb&=\begin{pmatrix}0\\6\end{pmatrix}\\
-    \xx&=\begin{pmatrix}x\\y\end{pmatrix}
-  \end{align*}
-  とし,
-  $\xx$に関する方程式$A\xx=\bbb$の解の集合を$F$とする.
-  このとき
-  \begin{align*}
-    \begin{pmatrix}1&0\\0&0\end{pmatrix}
-      \begin{pmatrix}x\\y\end{pmatrix}=&
-        \begin{pmatrix}0\\6\end{pmatrix}\\
-          \begin{pmatrix}x\\0\end{pmatrix}=&
-            \begin{pmatrix}0\\6\end{pmatrix}\\
-  \end{align*}
-  となる.
-  通常の連立方程式の形に書き直すと
-  \begin{align*}
-    \begin{cases}
-      x=0\\
-      0=6
-    \end{cases}
-  \end{align*}
-  となる.
-  $x,y$をどんな値にしても, $0=6$が成り立つことはないので,
-  \begin{align*}
-    F=\emptyset
-  \end{align*}
-  である. つまり, 解の空間は空集合である.
-  この場合, 解はない.
-\end{example}
-
-連立方程式の解は次の3つのケースが考えられる:
-\begin{enumerate}
-  \item 解がない場合.
-  \item ただ1つの解をもつ場合.
-  \item 解が無数にある場合.
-\end{enumerate}
-
-係数行列が正則であるときには,
-\cref{ex:sle:regcase}で見たように,
-$\xx$に関する方程式
-$A\xx=\bbb$は
-$\xx=A^{-1}\bbb$というただ一つの解をもつ.
-
-他の場合も含めて,
-一般に解の空間がどのケースに当てはまるのかについて,
-以下で見ていく.
-
-\section{行基本変形}
-ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
-また, 階段行列と呼ばれる行列を定義し,
-拡大係数行列が階段行列であるような連立一次方程式の解の様子を調べる.
-
-まず, 連立方程式をどのように解いていたかを復習する.
-\begin{align*}
-  \begin{cases}
-    3x+4y=1\\
-    x+2y=3
-  \end{cases}
-\end{align*}
-という連立方程式について考える.
-拡大係数行列も併記することにする.
-\begin{align*}
-  \begin{cases}
-    3x+4y=1\\
-    x+2y=3
-  \end{cases}&&
-  \begin{pmatrix}
-    3&4&1\\
-    1&2&3    
-  \end{pmatrix}
-\end{align*}
-の1行目と2行目を入れ替えると次を得る.
-\begin{align*}
-  \begin{cases}
-    x+2y=3\\
-    3x+4y=1
-  \end{cases}&&
-  \begin{pmatrix}
-    1&2&3\\    
-    3&4&1
-  \end{pmatrix}
-\end{align*}
-さらに,
-1行目の-3倍を2行目に加えると次となる.
-\begin{align*}
-  \begin{cases}
-    x+2y=3\\
-     -2y=-8
-  \end{cases}&&
-  \begin{pmatrix}
-    1&2&3\\    
-    0&-2&-8
-  \end{pmatrix}
-\end{align*}
-さらに,
-2行目を$-\frac{1}{2}$倍すると次となる.
-\begin{align*}
-  \begin{cases}
-    x+2y=3\\
-     y=4
-  \end{cases}&&
-  \begin{pmatrix}
-    1&2&3\\    
-    0&1&4
-  \end{pmatrix}
-\end{align*}
-さらに,
-2行目の-2倍を1行目に加えると次となる.
-\begin{align*}
-  \begin{cases}
-    x=-5\\
-     y=4
-  \end{cases}&&
-  \begin{pmatrix}
-    1&0&-5\\    
-    0&1&4
-  \end{pmatrix}
-\end{align*}
-よって,
-この連立方程式の解は,
-\begin{align*}
-  \begin{pmatrix}
-    x\\y
-  \end{pmatrix}  
-  =
-  \begin{pmatrix}
-    -5\\4
-  \end{pmatrix}  
-\end{align*}
-である.
-
-連立方程式を解くにあたり以下の操作を行った:
-\begin{enumerate}
-  \item ある行を$0$以外で定数倍する.
-  \item ある行に別の行の定数倍を加える.
-  \item ある行と別の行を入れ替える.
-\end{enumerate}
-これらの操作で連立一次方程式の解の空間は変化しない.
-これらの操作を行基本変形と呼ぶ.
-行基本形をすることで, 連立一次方程式を解くことができる.
-
-
-
-拡大係数行列を
-被約階段行列に変形すると,
-解のすぐわかる形の連立方程式になる.
-係数行列が$(2,2)$-行列であるときに具体的に見ていく.
-
-以下の例は,
-拡大係数行列が階数$2$の被約階段行列であり,
-係数行列も階数$2$の被約階段行列である場合である.
-この場合は,
-解がただ一つに定まる.
-\begin{example}
-  \label{eg:eq:reduced:1}
-  $p,q$が与えられているとする.
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0&p\\0&1&q
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&1
-    \end{pmatrix}
-  \end{align*}
-  であるので, この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&1
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        p\\q
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      x=p\\
-      y=q
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}p\\q\end{pmatrix}
-  \end{align*}
-  のみが解である.
-\end{example}
-
-拡大係数行列が階数$2$の被約階段行列であり,
-係数行列は階数$1$の被約階段行列である場合は,
-以下の2つの例である
-いずれの場合も解が存在しない.
-\begin{example}
-    \label{eg:eq:reduced:3}
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        0\\1
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      y=0\\
-      0=1
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $0=1$が成り立つことはないので,
-  解はない.
-\end{example}
-\begin{example}
-    \label{eg:eq:reduced:2}
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        0\\1
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      x+ay=0\\
-      0=1
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $0=1$が成り立つことはないので,
-  解はない.
-\end{example}
-
-
-
-拡大係数行列が階数$1$の被約階段行列であり,
-係数行列も階数$1$の被約階段行列である場合は,
-以下の2つの例である.
-いずれの場合も解は無数に存在する.
-また, その解は一つの変数を使って書き表すことができる.
-\begin{example}
-  \label{eg:eq:reduced:4}
-  $a,p$が与えられているとする.
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a&p\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&a\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        p\\0
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      x+ay=p\\
-      0=0
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  これは
-  \begin{align*}
-    \begin{cases}
-      x=p-ay\\
-      0=0
-    \end{cases}
-  \end{align*}
-  と変形できる.
-  つまり, $y$の値が$t$であるときには,
-  $x$は$p-at$と自動的に値がきまる.
-  したがって, 実数解は
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}p-at\\t\end{pmatrix}
-        \quad (t\in\RR)
-  \end{align*}
-  と書ける.  また, 実数解は必ずこの形をしている.
-  すこし変形して,
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}p\\0\end{pmatrix}
-        +
-        t\begin{pmatrix}-a\\1\end{pmatrix}
-        \quad (t\in\RR)
-  \end{align*}
-  のように解を書くこともできる.
-\end{example}
-
-\begin{example}
-      \label{eg:eq:reduced:5}
-  $p$が与えられているとする.
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1&p\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&1\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        p\\0
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      y=p\\
-      0=0
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $y$の値が$p$であれば, $x$の値は何でも良い.
-  したがって, 実数解は
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}t\\p\end{pmatrix}
-        \quad (t\in\RR)
-  \end{align*}
-  と書ける.  また, 実数解は必ずこの形をしている.
-  すこし変形して,
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}0\\p\end{pmatrix}
-        +
-        t\begin{pmatrix}1\\0\end{pmatrix}
-        \quad (t\in\RR)
-  \end{align*}
-  のように解を書くこともできる.
-\end{example}
-
-次の例は,
-拡大係数行列が階数$1$の被約階段行列であり,
-係数行列が階数$0$の被約階段行列である場合である.
-この場合は解がない.
-\begin{example}
-      \label{eg:eq:reduced:6}
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0&1\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        1\\0
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      0=1\\
-      0=0
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $0=1$が成り立つことはないので,
-  解はない.
-\end{example}
-
-次の例は,
-拡大係数行列が階数$0$の被約階段行列であり,
-係数行列も階数$0$の被約階段行列である場合である.
-この場合は解が無数に存在する.
-解は$2$つの変数を用いることで書き表すことができる.
-\begin{example}
-      \label{eg:eq:reduced:7}
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0&0\\0&0&0
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        0\\0
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      0=0\\
-      0=0
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $x$と$y$の値が何であれ$0=0$は成り立つ.
-  したがって, 実数解は
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}t\\s\end{pmatrix}
-        \quad (t,s\in\RR)
-  \end{align*}
-  と書ける.  また, 実数解は必ずこの形をしている.
-  $x$の値とは独立に$y$の値を決められるので,
-  変数は$t,s$の2つが必要になる.
-  すこし変形して,
-  \begin{align*}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      t\begin{pmatrix}1\\0\end{pmatrix}
-        +
-        s\begin{pmatrix}0\\1\end{pmatrix}
-        \quad (t,s\in\RR)
-  \end{align*}
-  のように解を書くこともできる.
-\end{example}
-
-\section{係数行列が正則行列であるときの解の公式}
-\label{thm:cramer}
-係数行列$A$が正則であるとき,
-未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
-$\xx=A^{-1}\bbb$のみであった.
-$A$が$2$次正則行列であるときに,
-もう少し詳しくしらべる.
-\begin{align*}
-  A=\begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
-\end{align*}
-とすると, $A$が正則であることと,
-\begin{align*}
-  a_1b_2-b_1a_2\neq 0
-\end{align*}
-は同値であった.
-さらに, $A$の逆行列は,
-\begin{align*}
-  A^{-1}=\frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
-\end{align*}
-と具体的に書き下すことができる.
-したがって,
-\begin{align*}
-  \begin{pmatrix}a_1&b_1\\a_2&b_2\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-    =\begin{pmatrix}p_1\\p_2\end{pmatrix}
-\end{align*}
-の解は
-\begin{align*}
-  \begin{pmatrix}x\\y\end{pmatrix}
-    &=
-    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2&-a_1\\-b_1&a_1\end{pmatrix}
-      \begin{pmatrix}p_1\\p_2\end{pmatrix}
-        \\
-    &=
-    \frac{1}{a_1b_2-b_1a_2}\begin{pmatrix}b_2p_1-a_1p_2\\-b_1p_1+a_1p_2\end{pmatrix}
-\end{align*}
-とかける.
-\begin{align*}
-  \det(\begin{pmatrix}a&b\\c&d\end{pmatrix})=ad-bc
-\end{align*}
-であるので,
-\begin{align*}
-  A^{(1)}&=\begin{pmatrix}p_1&b_1\\p_2&b_2\end{pmatrix}\\
-  A^{(2)}&=\begin{pmatrix}a_1&p_1\\a_2&p_2\end{pmatrix}
-\end{align*}
-とおくと,
-\begin{align*}
-  \det(A^{(1)})&=p_1b_2-b_1p_2\\
-  \det(A^{(2)})&=a_1p_2-a_2p_1\\
-  \det(A)&=a_1b_2-b_1a_2
-\end{align*}
-となるので, 方程式の解を
-\begin{align*}
-  \begin{pmatrix}x\\y\end{pmatrix}
-    &=
-  \begin{pmatrix}\frac{\det(A^{(1)})}{\det(A)}\\\frac{\det(A^{(2)})}{\det(A)}\end{pmatrix}.
-\end{align*}
-と書くこともできる.
-
-もっと一般に,
-$n$次正則行列が係数行列である場合の方程式の解の公式が
-知られている.
-例えば, $3$次正則行列の場合には,
-次のように計算する.
-\begin{align*}
-  A&=
-  \begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}\\
-    \bbb&=
-  \begin{pmatrix}p_1\\p_2\\p_3\end{pmatrix}
-\end{align*}
-の場合について考える.
-ただし$A$は正則であることを仮定する.
-このとき, $\det(A)\neq 0$である.
-\begin{align*}
-  A^{(1)}&=
-  \begin{pmatrix}p_1&b_1&c_1\\p_2&b_2&c_2\\p_3&b_3&c_3\end{pmatrix}\\
-  A^{(2)}&=
-  \begin{pmatrix}a_1&p_1&c_1\\a_2&p_2&c_2\\a_3&p_3&c_3\end{pmatrix}\\
-  A^{(3)}&=
-  \begin{pmatrix}a_1&b_1&p_1\\a_2&b_2&p_2\\a_3&b_3&p_3\end{pmatrix}
-\end{align*}
-とする. つまり$A^{(k)}$は$A$の$k$列目を$\bbb$に置き換えた行列である.
-\begin{align*}
-  t_1&=\frac{\det(A^{(1)})}{\det(A)}\\
-  t_2&=\frac{\det(A^{(2)})}{\det(A)}\\
-  t_3&=\frac{\det(A^{(3)})}{\det(A)}
-\end{align*}
-とおくと, 未知数$\xx$に関する方程式$A\xx=\bbb$の解は,
-\begin{align*}
-  \xx=
-  \begin{pmatrix}
-    t_1\\t_2\\t_3
-  \end{pmatrix}
-\end{align*}
-と書ける.
-
-この解の公式は
-\addindex{クラメルの公式}%
-\index{Cramer's rule}
-クラメルの公式(Cramer's rule)と呼ばれる.
-閉じた公式を与えるという意味では意味があるが,
-係数行列が正則でないと使えないことや,
-そもそも行列式の計算が大変であることから,
-具体的な問題にはこの公式よりも,
-行基本変形を用いて解くほうが有効な場合が多い.
-
-\sectionX{章末問題}
-\begin{quiz}
-  \solvelater{quiz:3:1}
-  \label{quiz:3:1}
-  \Seealsoquiz{quiz:3:2,quiz:3:3,quiz:3:3x}
-
-  以下の行列$A$に対し,
-   $A$から行基本変形で得られる被約階段行列を求めよ.
-  また, $A$の階数を求めよ.
-  \begin{enumerate}
-    \item
-      $A=\begin{pmatrix}1&3&1\\2&6&5\end{pmatrix}$.
-    \item
-      $A=\begin{pmatrix}-5&1&2\\5&-1&-2\end{pmatrix}$.
-    \item
-      $A=\begin{pmatrix}-5&1&2\\5&-1&2\end{pmatrix}$.
-    \item
-      $A=\begin{pmatrix}2&1&4\\5&6&8\end{pmatrix}$.
-  \end{enumerate}
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:2}
-  \label{quiz:3:2}
-  \seealsoQuiz{quiz:2:4,quiz:3:1}
-  \Seealsoquiz{quiz:3:4x}
-  次の連立一次方程式
-  \begin{align*}
-    \begin{cases}
-      2x+y=4\\
-      5x+6y=8
-      \end{cases}
-  \end{align*}
-  について考える.
-  \begin{enumerate}
-    \item この連立一次方程式の係数行列を答えよ.
-    \item この連立一次方程式の拡大係数行列を答えよ.
-    \item この連立一次方程式を解け.
-  \end{enumerate}
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:3}
-  \label{quiz:3:3}
-  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
-  \Seealsoquiz{quiz:3:4}
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}2\\-2\end{pmatrix}
-  \end{align*}
-  の実数解を求めよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:3x}
-  \label{quiz:3:3x}
-  \seealsoQuiz{quiz:3:1,quiz:2:reg:1}
-  \Seealsoquiz{quiz:3:4}
-
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}2\\2\end{pmatrix}
-  \end{align*}
-  の実数解を求めよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:4}
-  \seealsoQuiz{quiz:3:3,quiz:3:3x}
-  \Seealsoquiz{quiz:5:2}
-  \label{quiz:3:4}
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}a\\b\end{pmatrix}
-  \end{align*}
-  が解を持つための$a,b$に対する条件を求めよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:4x}
-  \seealsoQuiz{quiz:3:2}
-  \Seealsoquiz{quiz:5:2}
-  \label{quiz:3:4x}
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}2&1\\5&6\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}a\\b\end{pmatrix}
-  \end{align*}
-  が解を持つための$a,b$に対する条件を求めよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:5}
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&a\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}2\\b\end{pmatrix}
-  \end{align*}
-  が解を持つための$a,b$に対する条件を求めよ.
-\end{quiz}
-
-
-\begin{quiz}
-  \solvelater{quiz:3:6}
-  \seealsoQuiz{quiz:2:2}
-  \Seealsoquiz{quiz:3:7}
-  \label{quiz:3:6}
-  連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}-4-a&1\\5&-a\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \zzero
-  \end{align*}
-  が$\zzero$
-  以外の
-  解を持つための$a$に対する条件を求めよ.
-\end{quiz}
-
-
-\begin{quiz}
-  \solvelater{quiz:3:7}
-  \label{quiz:3:7}
-  \seealsoQuiz{quiz:3:6}
-  \Seealsoquiz{quiz:6:1}
-  \begin{align*}
-    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      a\begin{pmatrix}x\\y\end{pmatrix}\\
-      \begin{pmatrix}x\\y\end{pmatrix}\neq \zzero
-  \end{align*}
-  を満たす$x,y$が存在するための
-  $a$に対する条件を求めよ.
-\end{quiz}
-
-
-\begin{quiz}
-  \solvelater{quiz:3:8}
-  \label{quiz:3:8}
-  \Seealsoquiz{quiz:6:3}
-  $\xx$に関する連立方程式
-  \begin{align*}
-    \begin{pmatrix}0&1\\0&0\end{pmatrix}
-      \xx
-      =\zzero
-  \end{align*}
-  の
-  実数解をもとめよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:9}
-  \label{quiz:3:9}
-  \Seealsoquiz{quiz:6:4}
-  $\xx$に関する連立方程式
-  \begin{align*}
-    \begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-      \xx
-      =\zzero
-  \end{align*}
-  の
-  実数解をもとめよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:3:10}
-  \label{quiz:3:10}
-  \Seealsoquiz{quiz:6:4}
-  $\xx$に関する連立方程式
-  \begin{align*}
-    \begin{pmatrix}1&1\\5&5\end{pmatrix}
-      \xx
-      =\zzero
-  \end{align*}
-  の
-  実数解をもとめよ.
-\end{quiz}
-
-
-
-  
 \chapter{平面の線形変換}
 \label{chap:lintrans}
 この章では,

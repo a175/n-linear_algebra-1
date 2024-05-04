@@ -1570,6 +1570,139 @@ $A$は正則である.
 \end{proofof*}
 
 
+\section{連立一次方程式に関する命題の証明}
+\begin{proofof}{lem:subsol}
+$A'=CA$, $\bbb'=C\bbb$とし,
+  \begin{align*}
+  \FFF=\Set{\vv|A\vv=\bbb},\\
+  \FFF'=\Set{\vv|A'\vv=\bbb'}
+\end{align*}
+  とおく.
+  $\vv\in \FFF$とする.
+  このとき, $\vv\in\FFF'$を示す.
+  つまり, $A'\vv=\bbb'$
+  となることを示す.
+  今$\vv\in \FFF$であるので,
+  $A\vv=\bbb$である.
+  両辺に左から$C$をかけることで,
+  $CA\vv=C\bbb$を得る.
+  したがって,
+  $A'\vv=\bbb'$である. 
+\end{proofof}
+
+\begin{proofof}{thm:subsol}
+  \begin{align*}
+  \FFF=\Set{\vv|A\vv=\bbb},\\
+  \FFF'=\Set{\vv|A'\vv=\bbb'}
+  \end{align*}
+  とおく.
+$A'=PA$, $\bbb'=P\bbb$であるので,
+  \Cref{lem:subsol}
+  より$\FFF\subset\FFF'$.
+  また,
+  $P$は正則であるので,
+  $A=P^{-1}A'$,
+  $\bbb=P^{-1}\bbb'$であるから,
+  \Cref{lem:subsol}
+  より$\FFF'\subset\FFF$.
+  したがって, $\FFF'=\FFF$.
+\end{proofof}
+\begin{proofof}{thm:equivequation}
+  $\hconcat{A}{\bbb}$に行基本変形をし
+  $\hconcat{A'}{\bbb'}$が得られたとすると,
+  $P\hconcat{A}{\bbb}=\hconcat{A'}{\bbb'}$.
+  を満たす正則行列$P$が存在する.
+  このとき,
+  $\hconcat{PA}{P\bbb}=\hconcat{A'}{\bbb'}$.
+  であるので,
+  \begin{align*}
+    PA&=A'\\
+    P\bbb&=\bbb'
+  \end{align*}
+  である.
+  よって, \Cref{thm:subsol}より,
+  $\FFF=\FFF'$
+\end{proofof}
+
+\begin{proofof}{thm:ortho:eq}
+  \paragraph{\Cref{thm:ortho:eq:item:sol}$\implies$\Cref{thm:ortho:eq:item:ortho}}
+  $YA=O_{m,1}$, $A\xx=\bbb$
+  とする.
+  このとき, $Y\bbb=YA\xx=O_{m,1}\xx=O_{1,1}$.
+  \paragraph{\Cref{thm:ortho:eq:item:ortho}$\implies$\Cref{thm:ortho:eq:item:sol}}
+  対偶を示す.
+  $A\xx=\bbb$が解を持たないとすると,
+  \begin{align*}
+    P\hconcat{A}{\bbb}=
+    \left(
+    \begin{array}{c|c}
+      S&O_{r,1}\\\hline
+      O_{1,n}&1\\\hline
+      O_{m-r-1,n}&O_{m-r-1,1}
+    \end{array}
+    \right)
+  \end{align*}
+  とできる.
+  つまり,
+  \begin{align*}
+    PA&=\vconcat{S}{O_{m-r,n}}&
+    P\bbb&=
+    \left(
+    \begin{array}{c}
+      O_{r,1}\\\hline
+      1\\\hline
+      O_{m-r-1,1}
+    \end{array}
+    \right).
+  \end{align*}
+  このとき,
+  $Y'= \left(\begin{array}{c|c|c}O_{1,r}&1&O_{1,n-r-1}\end{array}\right)$
+  とおき, $Y=Y'P$とおけば,
+  \begin{align*}
+    YA&=Y'PA=Y'\vconcat{S}{O_{m-r,n}}=O_{1,n}\\
+    Y\bbb&=Y'P\bbb=(1).
+  \end{align*}
+  これは,
+  \begin{align*}
+    YA=O_{n,1}\implies
+    Y\bbb=O_{1,1}
+  \end{align*}
+  の反例.
+\end{proofof}
+\begin{proofof*}{thm:solspace:vec}{sum}
+  $\uu,\vv\in\KKK$とすると, $A\uu=\zzero_m$, $A\vv=\zzero_m$である.
+  したがって$A(\uu+\vv)=A\uu+A\vv=\zzero_m+\zzero_m=\zzero_m$.
+\end{proofof*}
+\begin{proofof*}{thm:solspace:vec}{prod}
+  $\uu\in\KKK$とすると, $A\uu=\zzero_m$である.
+  数$a$に対し,
+  $A(a\uu)=aA\uu=a\zzero_m=\zzero_m$.
+\end{proofof*}
+\begin{proofof}{thm:solspace:withkerspace}
+$\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
+  とおき,
+  $\FFF=\FFF'$を示す.
+  \paragraph{$\FFF\subset\FFF'$}
+  $\ww\in \FFF$とする.
+  このとき,   $\ww\in\FFF'$を示す.
+  $\uu=\ww-\vv$とおく.
+  このとき,
+  \begin{align*}
+    A\uu=A(\ww-\vv)=A\ww-A\vv=\bbb-\bbb=\zzero_m/
+  \end{align*}
+  したがって, $\uu\in\KKK$.
+  また, $w=\uu-(-\vv)=\uu+\vv$であるので,
+  $\ww\in\FFF'$.
+
+  \paragraph{$\FFF'\subset\FFF$}
+  $\uu\in\KKK$とする.
+  このとき,
+  \begin{align*}
+    A(\vv+\uu)=A\vv+A\uu=\bbb+\zzero_m=\bbb.
+  \end{align*}
+  したがって$\vv+\uu\in\FFF$
+\end{proofof}
+
 \endinput
 
 \section{逆行列や正則に関する命題の証明}
