@@ -1102,49 +1102,7 @@
       2&1&4\\5&6&8
     \end{pmatrix}.
   \end{align*}
-  また,
-  \begin{align*}
-    \det(
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix})=2\cot 6-1\cdot 5=7
-  \end{align*}
-  となるので,
-  係数行列は正則である.
-  したがって解は,
-  \begin{align*}
-    \begin{pmatrix}
-      2&1\\5&6
-    \end{pmatrix}^{-1}
-    \begin{pmatrix}
-      4\\8
-    \end{pmatrix}
-    =
-    \frac{1}{7}
-    \begin{pmatrix}
-      6&-1\\-5&2
-    \end{pmatrix}
-    \begin{pmatrix}
-      4\\8
-    \end{pmatrix}
-    =
-    \frac{1}{7}
-    \begin{pmatrix}
-      6\cdot 4-1\cdot 8\\-5\cdot 4+2\cdot 8
-    \end{pmatrix}
-    =
-    \frac{1}{7}
-    \begin{pmatrix}
-      16\\-4
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \frac{16}{7}\\-\frac{4}{7}
-    \end{pmatrix}.
-  \end{align*}
 
-
-  またこの連立方程式は次の方法でも解ける:
   この連立方程式の拡大係数行列
   \begin{align*}
     \begin{pmatrix}
@@ -1187,15 +1145,16 @@
     \end{cases}
   \end{align*}
   である. したがって,
-  解は
+  解の空間$\FFF$は
   \begin{align*}
-        \begin{pmatrix}
+    \FFF=\Set{
+    \begin{pmatrix}
       \frac{16}{7}\\-\frac{4}{7}
     \end{pmatrix}
+    }
   \end{align*}
-  のみである.
+  である.
 
-  いずれの方法で求めたにせよ,
   解は, 次のように検算できる.
   \begin{align*}
     \begin{pmatrix}
@@ -1221,12 +1180,6 @@
 
 
 \begin{answerof}{quiz:3:3}
-
-  \begin{align*}
-    \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
-  \end{align*}
-  であるので, 係数行列の逆行列を用いて解く方法は使えない.
-  拡大係数行列を行基本変形で階段行列に変形することでとくことにする.
 
   拡大係数行列
   \begin{align*}
@@ -1259,13 +1212,15 @@
   1つ目の式から, $y=t$のとき
   $x=\frac{1}{5}t+\frac{-2}{5}$
   となるので,
-  解は,
+  解の空間$\FFF$は,
   \begin{align*}
-      \begin{pmatrix}x\\y\end{pmatrix}
-        &=\begin{pmatrix}\frac{1}{5}t+\frac{-2}{5}\\t\end{pmatrix}
-        &(t\in \RR)
+    \FFF=
+    \Set{
+     \begin{pmatrix}\frac{1}{5}t+\frac{-2}{5}\\t\end{pmatrix}
+        |t\in \RR
+        }.
   \end{align*}
-  と表せられる.
+
 
   これは次の様に検算できる.
   $t=0$のとき,
@@ -1303,12 +1258,6 @@
 \end{answerof}
 
 \begin{answerof}{quiz:3:3x}
-  \begin{align*}
-    \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
-  \end{align*}
-  であるので, 係数行列の逆行列を用いて解く方法は使えない.
-  拡大係数行列を行基本変形で階段行列に変形することでとくことにする.
-
   拡大係数行列
   \begin{align*}
     \begin{pmatrix}-5&1&2\\5&-1&2\end{pmatrix}
@@ -1342,167 +1291,12 @@
   \end{align*}
   である.
   2つ目の式は$x$, $y$をどの様な値にしても成り立つことはないので,
-  この連立方程式は解を持たない.
-\end{answerof}
-
-\begin{answerof}{quiz:3:4}
-  係数行列は,
-  \begin{align*}
-    A=\begin{pmatrix}-5&1\\5&-1\end{pmatrix}
-  \end{align*}
-  であり,
-  拡大係数行列は
-  \begin{align*}
-    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
-  \end{align*}
-  である.
-  \begin{align*}
-    \det(A)=\det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-15\cdot(-1)-1\cdot 5 =0
-  \end{align*}
-  であるので, 係数行列の逆行列を用いて解く方法は使えない.
-  拡大係数行列を行基本変形で階段行列に変形することを考える.
-
-
-  拡大係数行列
-  \begin{align*}
-    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
-  \end{align*}
-  の2行目に1行目の1倍を足すと,
-  \begin{align*}
-    \begin{pmatrix}-5&1&a\\0&0&a+b\end{pmatrix}
-  \end{align*}
-  となる. 1行目を$\frac{-1}{5}$倍すると
-  \begin{align*}
-    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&a+b\end{pmatrix}
-  \end{align*}
-  となる.
-  係数行列$A$の階数は1であるが,
-  拡大係数行列$B$の階数を求めるには,
-  $a+b$の値によって場合分けをする必要がある.
-
-  $a+b=0$のとき,
-  $C$は,
-  \begin{align*}
-    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&0\end{pmatrix}
-  \end{align*}
-  となるので, 拡大係数行列の階数は1となる.
-  係数行列の階数と拡大係数行列の階数が等しいので,
-  このとき, 考えている連立方程式は解をもつ.
-
-  $a+b\neq 0$のとき,
-    $C$の2行目を$\frac{1}{a+b}$倍すると,
-  \begin{align*}
-    \begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&1\end{pmatrix}
-  \end{align*}
-  である.
-  1行目に2行目の$\frac{a}{5}$倍を足すことで,
-  \begin{align*}
-    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&1\end{pmatrix}
-  \end{align*}
-  という被約階段行列を得ることができる.
-  したがって拡大係数行列の階数は2であり,
-  $\rank(A)<\rank(B)$であるので,
-  このときは解を持たない.
+  この連立方程式は解の空間は空集合である.
+  つまり,
+  \begin{align*}\FFF=\emptyset\end{align*}
 \end{answerof}
 
 
-\begin{answerof}{quiz:3:4x}
-  係数行列は,
-  \begin{align*}
-    A=\begin{pmatrix}2&1\\5&6\end{pmatrix}
-  \end{align*}
-  である.
-  \begin{align*}
-    \det(A)=\det(\begin{pmatrix}2&1\\5&6\end{pmatrix})=2\cdot6-1\cdot 5=7\neq 0
-  \end{align*}
-  であるので, $A$は正則である.
-  したがって,
-  \begin{align*}
-      A^{-1}\begin{pmatrix}a\\b\end{pmatrix}
-  \end{align*}
-  は連立一次方程式
-  \begin{align*}
-    \begin{pmatrix}2&1\\5&6\end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}a\\b\end{pmatrix}
-  \end{align*}
-  の階である.
-  したがって,
-  いつでも,
-  この連立方程式は解を持つ.
-\end{answerof}
-
- 
-
-\begin{answerof}{quiz:3:5}
-  係数行列は,
-  \begin{align*}
-    A=\begin{pmatrix}-5&1\\5&a\end{pmatrix}
-  \end{align*}
-  であり,
-  拡大係数行列は
-  \begin{align*}
-    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
-  \end{align*}
-  である.
-
-  拡大係数行列
-  \begin{align*}
-    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
-  \end{align*}
-  の2行目に1行目の1倍を足すと,
-  \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
-  \end{align*}
-  となる.
-  $a+1$の値で場合分けをする必要がある.
-
-  $a+1\neq 0$のとき,
-  \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
-  \end{align*}
-  2行目に$\frac{1}{a+1}$をかけると,
-  \begin{align*}
-    \begin{pmatrix}-5&1&2\\0&1&\frac{b+2}{a+1}\end{pmatrix}
-  \end{align*}
-  となる.
-  1行目に2行目の$-1$倍を加えると
-  \begin{align*}
-    \begin{pmatrix}-5&0&2-\frac{b+2}{a+1}\\0&1&\frac{b+2}{a+1}\end{pmatrix}
-  \end{align*}
-  となる.
-  したがって, この場合は$\rank(A)=\rank(B)$であるので,
-  考えている方程式は解をもつ.
-
-
-  $a+1=0$のとき,
-  \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&0&b+2\end{pmatrix}
-  \end{align*}
-  であるので, $\rank(A)=1$である.
-  $\rank(B)$を求めるには, $b+2$の値で更に場合分けをする必要がある.
-  $b+2=0$であれば,
-  \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
-  \end{align*}
-  であるので, $\rank(B)=1$であり, $\rank(A)=\rank(B)$であるから,
-  考えている方程式は解をもつ.
-  $b+2\neq 0$であれば,
-  $C$の2行目を$\frac{1}{b+2}$倍することで,
-  \begin{align*}
-    \begin{pmatrix}-5&1&2\\0&0&1\end{pmatrix}
-  \end{align*}
-  を得る. さらに1行目に2行目の$-1$倍を加え
-  \begin{align*}
-    \begin{pmatrix}-5&1&0\\0&0&1\end{pmatrix}
-  \end{align*}
-  という被約階段行列を得る.
-  したがって, $\rank(B)=2$である.
-  $\rank(A)<\rank(B)$であるので,
-  この場合は
-  考えている方程式は解を持たない.
-\end{answerof}
 
 \begin{answerof}{quiz:3:8} 
   \begin{align*}
@@ -1525,11 +1319,11 @@
   \end{align*}
   であるので, $y=0$であれば$x$はどのような値でも良い.
   したがって,
-  実数解は
+  実数解の空間$\FFF$は
   \begin{align*}
-    \xx=\begin{pmatrix}t\\0\end{pmatrix}=t\ee_1&&(t\in\RR)
+    \FFF=
+    \Set{\begin{pmatrix}t\\0\end{pmatrix}|t\in\RR}.
   \end{align*}
-  と書くことができる.
 \end{answerof}
 
 \begin{answerof}{quiz:3:9} 
@@ -1569,9 +1363,10 @@
   をとく. $x-\frac{1}{5}y=0$であるので,
   $x=\frac{1}{5}y$であるから,
   $y=t$とすると, $x=\frac{t}{5}$である.
-  よって, 実数解は,
+  よって, 実数解の空間$\FFF$は,
   \begin{align*}
-    \xx=\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix} && (t\in\RR)
+    \FFF=
+    \Set{\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}|t\in\RR}
   \end{align*}
   と書くことができる.  
 \end{answerof}
@@ -1609,9 +1404,10 @@
   をとく. $x+y=0$であるので,
   $x=-y$であるから,
   $y=t$とすると, $x=-t$である.
-  よって, 実数解は,
+  よって, 実数解の空間$\FFF$は,
   \begin{align*}
-    \xx=\begin{pmatrix}-t\\t\end{pmatrix} && (t\in\RR)
+    \FFF=
+    \Set{\begin{pmatrix}-t\\t\end{pmatrix}|t\in\RR}
   \end{align*}
   と書くことができる.  
 \end{answerof}
@@ -1851,7 +1647,157 @@
 \section{行列と連立方程式に関する問題}
 
 
+\begin{answerof}{quiz:3:4}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}-5&1\\5&-1\end{pmatrix}
+  \end{align*}
+  であり,
+  拡大係数行列は
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
+  \end{align*}
+  である.
+  拡大係数行列
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    \begin{pmatrix}-5&1&a\\0&0&a+b\end{pmatrix}
+  \end{align*}
+  となる. 1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&a+b\end{pmatrix}
+  \end{align*}
+  となる.
+  係数行列$A$の階数は1であるが,
+  拡大係数行列$B$の階数を求めるには,
+  $a+b$の値によって場合分けをする必要がある.
 
+  $a+b=0$のとき,
+  $C$は,
+  \begin{align*}
+    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&0\end{pmatrix}
+  \end{align*}
+  となるので, 拡大係数行列の階数は1となる.
+  係数行列の階数と拡大係数行列の階数が等しいので,
+  このとき, 考えている連立方程式は解をもつ.
+
+  $a+b\neq 0$のとき,
+    $C$の2行目を$\frac{1}{a+b}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&1\end{pmatrix}
+  \end{align*}
+  である.
+  1行目に2行目の$\frac{a}{5}$倍を足すことで,
+  \begin{align*}
+    \begin{pmatrix}1&\frac{-1}{5}&0\\0&0&1\end{pmatrix}
+  \end{align*}
+  という被約階段行列を得ることができる.
+  したがって拡大係数行列の階数は2であり,
+  $\rank(A)<\rank(B)$であるので,
+  このときは解を持たない.
+\end{answerof}
+
+
+\begin{answerof}{quiz:3:4x}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}2&1\\5&6\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \det(A)=\det(\begin{pmatrix}2&1\\5&6\end{pmatrix})=2\cdot6-1\cdot 5=7\neq 0
+  \end{align*}
+  であるので, $A$は正則である.
+  したがって,
+  \begin{align*}
+      A^{-1}\begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  は連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}2&1\\5&6\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  の解である.
+  したがって,
+  いつでも,
+  この連立方程式は解を持つ.
+\end{answerof}
+
+ 
+
+\begin{answerof}{quiz:3:5}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}-5&1\\5&a\end{pmatrix}
+  \end{align*}
+  であり,
+  拡大係数行列は
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
+  \end{align*}
+  である.
+
+  拡大係数行列
+  \begin{align*}
+    B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
+  \end{align*}
+  の2行目に1行目の1倍を足すと,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
+  \end{align*}
+  となる.
+  $a+1$の値で場合分けをする必要がある.
+
+  $a+1\neq 0$のとき,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
+  \end{align*}
+  2行目に$\frac{1}{a+1}$をかけると,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&1&\frac{b+2}{a+1}\end{pmatrix}
+  \end{align*}
+  となる.
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}-5&0&2-\frac{b+2}{a+1}\\0&1&\frac{b+2}{a+1}\end{pmatrix}
+  \end{align*}
+  となる.
+  したがって, この場合は$\rank(A)=\rank(B)$であるので,
+  考えている方程式は解をもつ.
+
+
+  $a+1=0$のとき,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&0&b+2\end{pmatrix}
+  \end{align*}
+  であるので, $\rank(A)=1$である.
+  $\rank(B)$を求めるには, $b+2$の値で更に場合分けをする必要がある.
+  $b+2=0$であれば,
+  \begin{align*}
+    C=\begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
+  \end{align*}
+  であるので, $\rank(B)=1$であり, $\rank(A)=\rank(B)$であるから,
+  考えている方程式は解をもつ.
+  $b+2\neq 0$であれば,
+  $C$の2行目を$\frac{1}{b+2}$倍することで,
+  \begin{align*}
+    \begin{pmatrix}-5&1&2\\0&0&1\end{pmatrix}
+  \end{align*}
+  を得る. さらに1行目に2行目の$-1$倍を加え
+  \begin{align*}
+    \begin{pmatrix}-5&1&0\\0&0&1\end{pmatrix}
+  \end{align*}
+  という被約階段行列を得る.
+  したがって, $\rank(B)=2$である.
+  $\rank(A)<\rank(B)$であるので,
+  この場合は
+  考えている方程式は解を持たない.
+\end{answerof}
 
 \begin{answerof}{quiz:3:6}
   \seealsoquiz{quiz:2:2}
