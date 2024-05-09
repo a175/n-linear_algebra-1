@@ -2392,7 +2392,10 @@ j_i = \min\Set{k|a_{i,k}\neq 0}
   \addindex{reduced!--- row echelon form}%
   \addindex{of rank $r$!reduced row echelon form ---}%
   \addindex{rank!reduced row echelon form of --- $r$}%
- であるという:
+  \addindex{階数!被約階段行列の---}%
+  \addindex{被約階段行列の!---階数}%
+  \addindex{行列の!被約階段---階数}%
+  であるという:
   \begin{enumerate}
   \item $A$は階数$r$の階段行列である.
   \item $1\leq i \leq r$に対し$j_i = \min\Set{k|a_{i,k}\neq 0}$とおく.
@@ -2929,6 +2932,19 @@ $(m,n)$-行列$A$を, 行基本変形を用いて階段行列に変形できる.
 行列の階数というものを定義し,
 その性質について紹介する.
 
+
+\begin{definition}
+  \label{def:rank:eche}
+  $A$を被約階段行列とする.
+  このとき,
+  $A$のpivotsの総数を
+  \defit{被約階段行列$A$の階数}
+  \addindex{階数!被約階段行列の---}%
+  \addindex{被約階段行列の!---階数}%
+  \addindex{行列の!被約階段---階数}%
+  と呼ぶ.
+\end{definition}
+
 \begin{definition}
   \label{def:rank}
   $A$を行列とする.
@@ -3078,8 +3094,7 @@ $n$次単位行列のみであるので,
 \end{quiz}
 
 
-%\endinput
-
+\endinput
 
 
 
@@ -4460,7 +4475,7 @@ $n$次正方行列
     $\det(A)$を以下のように定義する:
     $n=1$のとき,
     \begin{align*}
-      \det(A)=\det(\begin{pmatrix}a_{1,1}\end{pmatrix})a_{1,1}
+      \det(A)=\det(\begin{pmatrix}a_{1,1}\end{pmatrix})=a_{1,1}
     \end{align*}
     とする.
     $n>1$のとき,
@@ -4561,7 +4576,7 @@ $n$次正方行列
   このとき,
   \begin{align*}
     \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
-    &=\sum_{j=1}^{n}a_{1,j}0(A)
+    &=\sum_{j=1}^{n}0\pi_{1,j}(A)
   \end{align*}
   であるので,
   $\det(A)=0$である.
