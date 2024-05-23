@@ -1700,8 +1700,148 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   \begin{align*}
     A(\vv+\uu)=A\vv+A\uu=\bbb+\zzero_m=\bbb.
   \end{align*}
-  したがって$\vv+\uu\in\FFF$
+  したがって$\vv+\uu\in\FFF$.
 \end{proofof}
+
+
+\section{行列式に関する命題の証明}
+\begin{proofof}{det:tiangular:lower}
+  行列のサイズ$n$に関する数学的帰納法で証明する.
+  \paragraph{Base case}
+  $n=1$のときは,
+  $\det(\begin{pmatrix}a_1\end{pmatrix})=a_1$.
+    \paragraph{Induction step}
+    $n>1$とし, $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+    $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を$\pi_{1,k}(A)$とおく.
+    $A$の$1$行目は, $1$列目の成分は$a_1$であるが, それ以外は$0$である.
+    つまり,
+    $a_{1,1}=a_1$,  $a_{1,2}=\cdots=a_{1,n}=0$であるので
+    \begin{align*}
+      \det(A)&=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &=a_{1}\det(\pi_{1,1}(A)).
+    \end{align*}
+    $\pi_{1,1}(A)$は下半三角行列であり,
+    $\pi_{1,1}(A)$の対角成分は$a_2,\ldots,a_n$であるので,
+    帰納法の仮定から$\det(\pi_{1,1}(A))=a_2\cdots a_n$である.
+    よって, $\det(A)=a_1a_2\cdots a_n$.    
+\end{proofof}
+
+\begin{proofof}{det:tiangular:upper}
+  行列のサイズ$n$に関する数学的帰納法で証明する.
+  \paragraph{Base case}
+  $n=1$のときは, $\det(\begin{pmatrix}a_1\end{pmatrix})=a_1$.
+    \paragraph{Induction step}
+    $n>1$とし, $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+    $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
+    $\pi_{1,k}(A)$とおく.
+    $A$が上半三角行列であるので,
+    $\pi_{1,k}(A)$は上半三角行列である.
+    また, $k>1$のとき,
+    $\pi_{1,k}(A)$の$(1,1)$-成分は,
+    $\pi_{1,1}(A)$の$(2,1)$-成分であり$0$となる.
+    したがって,
+    $k>1$ならば,
+    対角成分に$0$が含まれるので,
+    帰納法の仮定から,
+    $\det(\pi_{1,k}(A))=0$となる.
+    一方
+    $\pi_{1,1}(A)$の対角成分は$a_2,\ldots,a_n$であるので,
+    帰納法の仮定から,
+    $\det(\pi_{1,1}(A))=a_2\cdots a_n$となる.
+    よって, $a_{1,1}=a_1$であるから,
+    \begin{align*}
+      \det(A)&=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &=a_{1,1}\det(\pi_{1,1}(A))\\
+      &=a_{1}\det(\pi_{1,1}(A))\\
+      &=a_{1}a_2\cdots a_n.
+    \end{align*}
+\end{proofof}
+
+
+
+\begin{proofof}{det:zero:row}
+  行列のサイズ$n$に関する数学的帰納法で証明する.
+  \paragraph{Base case}
+  $n=1$のときは,
+  $t=1$である. つまり$1$行目の成分が$0$であるということであるので,
+  $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$.
+    \paragraph{Induction step}
+    $n>1$とし,
+    $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+
+    \subparagraph{$t=1$のとき.}
+    $a_{1,k}=0$であるので,
+    \begin{align*}
+      \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
+      &=\sum_{j=1}^{n}0\pi_{1,j}(A)\\
+      &=0.
+    \end{align*}
+
+    \subparagraph{$t>1$のとき.}
+    $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
+    $\pi_{1,k}(A)$とおく.
+    このとき,
+    $A$の$t$行目の成分はすべて$0$であるから,
+    $\pi_{1,k}(A)$の$t-1$行目の成分はすべて$0$である.
+    したがって, 帰納法の仮定から,
+    $\det(\pi_{1,k}(A))=0$である.
+    よって,
+    \begin{align*}
+      \det(A)
+      &=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}0\\
+      &=0.      
+    \end{align*}
+\end{proofof}
+
+\begin{proofof}{det:zero:col}
+  行列のサイズ$n$に関する数学的帰納法で証明する.
+  \paragraph{Base case}
+  $n=1$のときは,
+  $t=1$である. つまり$1$列目の成分が$0$であるということであるので,
+  $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$.
+    \paragraph{Induction step}
+    $n>1$とし,
+    $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+
+    $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
+    $\pi_{1,k}(A)$とおく.
+    $A$の$t$列目の成分がすべて$0$であることから, 以下がわかる:
+    $k<t$なら,
+    $\pi_{1,k}(A)$の$t-1$列目の成分はすべて$0$であるので,
+    帰納法の仮定から,
+    $\det(\pi_{1,k}(A))=0$.
+    $k>t$なら,
+    $\pi_{1,k}(A)$の$t$列目の成分はすべて$0$であるので,
+    帰納法の仮定から,
+    $\det(\pi_{1,k}(A))=0$.
+    $k=t$なら, $a_{1,k}=a_{1,t}=0$.
+    よって,
+    \begin{align*}
+      \det(A)
+      &=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &=
+      \sum_{j=1}^{t-1}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &\quad +a_{1,t}\det(\pi_{1,j}(A)\\
+      &\quad +\sum_{j=t+1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+      &=
+      \sum_{j=1}^{t-1}
+      (-1)^{j+1}a_{1,j}0\\
+      &\quad +0\det(\pi_{1,j}(A)\\
+      &\quad +\sum_{j=t+1}^{n}
+      (-1)^{j+1}a_{1,j}0\\
+      &=0.      
+    \end{align*}
+\end{proofof}
+
+
 
 \endinput
 

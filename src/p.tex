@@ -4570,44 +4570,161 @@ $n$次正方行列
   \end{align*}
 \end{example}
 
-\begin{example}
-  $n$次正方行列
-  $A$の$1$行目の成分は全て$0$であるとする.
+
+定義から簡単に得られる等式を紹介する.
+\begin{prop}
+  \provelater{det:tiangular:lower}
+  $A$を$n$次正方行列とする.
+  $A$を下半三角行列とし,
+  その対角成分が$a_1,a_2,\ldots,a_n$であるとする.
   このとき,
-  \begin{align*}
-    \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
-    &=\sum_{j=1}^{n}0\pi_{1,j}(A)
-  \end{align*}
-  であるので,
-  $\det(A)=0$である.
+  $\det(A)=a_1a_2\cdots a_n$.
+\end{prop}
 
-  とくに, $\det(O_{n,n})=0$である.
-\end{example}
-
-\begin{example}
-  $n$次正方行列
-  $A$の$1$列目の成分は全て$0$であるとする.
+\begin{prop}
+  \provelater{det:tiangular:upper}
+  $A$を$n$次正方行列とする.
+  $A$を上半三角行列とし,
+  その対角成分が$a_1,a_2,\ldots,a_n$であるとする.
   このとき,
+  $\det(A)=a_1a_2\cdots a_n$.
+\end{prop}
+
+\begin{cor}
+  $A$を$n$次正方行列とする.
+  $A$を対角行列とし,
+  その対角成分が$a_1,a_2,\ldots,a_n$であるとする.
+  このとき,
+  $\det(A)=a_1a_2\cdots a_n$.
+\end{cor}
+
+\begin{prop}
+  \provelater{det:zero:row}
+  $A$を$n$次正方行列とし,
+  $1\leq t \leq n$とする.
+  $A$の$t$行目の成分が全て$0$であるならば,
   $\det(A)=0$である.
+\end{prop}
 
-  とくに, $\det(O_{n,n})=0$である.
-\end{example}
+\begin{prop}
+  \provelater{det:zero:col}
+  $A$を$n$次正方行列とし,
+  $1\leq t \leq n$とする.
+  $A$の$t$列目の成分が全て$0$であるならば,
+  $\det(A)=0$である.
+\end{prop}
 
-
-
+これらのことから以下が計算できる.
 \begin{example}
-  $\alpha$を数とする.
+  $\alpha$を数とすると,
   \begin{align*}
-    A=\begin{pmatrix}\alpha &0\\0&\alpha\end{pmatrix}
+    \det(\alpha E_{n})&=\alpha^n.
   \end{align*}
-  とすると,
-  \begin{align*}
-    \det(A)=\alpha\cdot\alpha-0\cdot0=\alpha^2
-  \end{align*}
-  となる. $A=\alpha E_2$であるから,
-  $\det(\alpha E_2)=\alpha^2$
-  である.
 \end{example}
+\begin{example}
+  $\det(E_{n})=1$.
+\end{example}
+\begin{example}
+   $\det(O_{n,n})=0$.
+\end{example}
+
+基本行列
+$F(i;c)$,
+$G(i,j;c)$は三角行列であるので,
+同様に計算できる.
+
+\begin{lemma}
+  基本行列$F(i;c)$に対し,
+   $\det(F(i;c))=c$.
+\end{lemma}
+
+\begin{lemma}
+  $i\neq j$とする.
+  基本行列$G(i,j;c)$に対し,
+   $\det(G(i,j;c))=1$.
+\end{lemma}
+
+
+\subsection{行列式の閉じた式よる表示}
+
+ここでは, 再帰的に定義されている行列式の定義を展開し,
+閉じた式による表示を与えることを目標とする.
+そのために, まずは順列に関する用語を定義する.
+
+数の列を数列と呼ぶが,
+とくに有限の長さの数列のときには,
+\begin{align*}
+[\sigma(1),\sigma(2),\ldots,\sigma(n)]
+\end{align*}
+のように初項から順番に並べて表記することにする.
+\begin{definition}
+$1,2,\ldots,n$がちょうど1度ずつ現れる数列を
+$\Set{1,2,\ldots,n}$の
+\defit{順列}
+\Defit{permutation}
+と呼ぶ.
+$\Set{1,2,\ldots,n}$上の
+\defit{置換}
+と呼ぶこともある.
+
+$\Set{1,2,\ldots,n}$の順列をすべて集めた集合を$S_n$とおき,
+\defit{$n$次対称群}
+\Defit{$n$-th symmetric group}
+\addindex{対称群!$n$次---}%
+\addindex{symmetric group!$n$-th ---}%
+と呼ぶ.
+\end{definition}
+\begin{example}
+  $S_n$には, $n!$個の順列が属する:
+  \begin{align*}
+    S_1&=\Set{[1]}.\\
+    S_2&=\Set{[1,2],[2,1]}.\\
+    S_3&=\Set{[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]}.
+ \end{align*}
+\end{example}
+\begin{definition}
+順列$\sigma=[\sigma(1),\ldots,\sigma(n)]\in\S_n$
+に対し,
+\begin{align*}
+  I(\sigma)=\Set{(i,j)|\text{$i<j$かつ$\sigma(i)>\sigma(j)$}}
+\end{align*}
+とおき,
+$I$に属する組の総数$\#I(\sigma)$を$\sigma$の
+\defit{転倒数}
+\Defit{Inversion}
+と呼ぶ.
+
+転倒数が偶数である順列を
+\defit{偶置換}
+\Defit{even permutation}
+と呼び,
+転倒数が奇数である順列を
+\defit{奇置換}
+\Defit{odd permutation}
+と呼ぶ.
+\end{definition}
+
+\begin{definition}
+
+  順列$\sigma\in\S_n$に対し,
+  \begin{align*}
+    \sgn(\sigma)
+    =
+    \begin{cases}
+      1&(\text{$\sigma$は偶置換})\\
+      -1&(\text{$\sigma$は奇置換})
+    \end{cases}
+  \end{align*}
+  と定義し,
+  $\sigma$の
+  \defit{符号}
+  \Defit{sign}
+  と呼ぶ.
+\end{definition}
+
+\subsection{行列式と行基本変形}
+
+\subsection{行列式の線型性と交代性}
 
 \endinput
 \section{行基本変形}
