@@ -1869,6 +1869,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
     (-1)^{i+1}a_{i,1}\det(\pi_{i,1}(A))\\
     &=
     a_{1,1}\det(\pi_{1,1}(A))
+    +
     \sum_{i=2}^{n}
     (-1)^{i+1}a_{i,1}\det(\pi_{i,1}(A))
   \end{align*}
@@ -1893,16 +1894,19 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
     D
     &=
     a_{1,1}\det(\pi_{1,1}(A))
+    +
     \sum_{i=2}^{n}
     (-1)^{i+1}a_{i,1}\det(\pi_{i,1}(A))\\
     &=
     a_{1,1}\det(\pi_{1,1}(A))
+    +
     \sum_{i=2}^{n}
     (-1)^{i+1}a_{i,1}\sum_{j=2}^{n}
     (-1)^{j}a_{1,j}\det(\pi_{\Set{1,i},\Set{1,j}}(A))
   \\
   &=
-    a_{1,1}\det(\pi_{1,1}(A))
+  a_{1,1}\det(\pi_{1,1}(A))
+  +
     \sum_{i=2}^{n}\sum_{j=2}^{n}
     (-1)^{i+j+1}
     a_{i,1}a_{1,j}\det(\pi_{\Set{1,i},\Set{1,j}}(A)).
@@ -1952,8 +1956,187 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
     (-1)^{i+j+1}
     a_{i,1}a_{1,j}\det(\pi_{\Set{1,i},\Set{1,j}}(A)).
   \end{align*}
-  したがって, $A=D$である.
+  したがって, $\det(A)=D$である.
 \end{proofof}
+
+\begin{proofof}{det:col:expansion}
+  行列のサイズ$n$に関する数学的帰納法で証明する.
+  \paragraph{Base case}
+  $n=1$のときは$\det(A)=a_{1,1}$であるので成り立つ.
+  $n=2$のときは$\det(A)=a_{1,1}a_{2,2}-a_{1,2}a_{2,1}=a_{1,1}a_{2,2}-a_{2,1}a_{1,2}$であるので成り立つ.
+
+  \paragraph{Induction step}
+  $n>2$とする.
+  $\pi_{\Set{1,i},\Set{k,j}}(A)$で, $A$の1行目, $i$行目, $k$列目, $j$列目を
+  取り除いて得られる$(n-2)$-次正方行列を表すことにする.
+  \begin{align*}
+    D&=\sum_{i=1}^{n}
+    (-1)^{i+t}a_{i,t}\det(\pi_{i,t}(A))\\
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +
+    \sum_{i=2}^{n}
+    (-1)^{i+t}a_{i,t}
+    \det(\pi_{i,t}(A))
+  \end{align*}
+  とおく.
+  $i>1$のとき,
+  $\pi_{i,t}(A)$が$A$の$i$行目と$t$列目を取り除いて得られる行列である.
+  したがって,
+  $j<t$なら,
+  $\pi_{i,t}(A)$の$(1,j)$成分は
+  $a_{1,j}$であり,
+  $\pi_{1,j}(\pi_{i,t}(A))=\pi_{\Set{1,i},\Set{t,j}}(A)$である.
+  また,
+  $j\geq t$なら,
+  $\pi_{i,t}(A)$の$(1,j)$成分は
+  $a_{1,j+1}$であり,
+  $\pi_{1,j}(\pi_{i,t}(A))=\pi_{\Set{1,i},\Set{t,j+1}}(A)$である.
+  したがって, 
+  $\det(\pi_{i,t}(A))$を定義に従って展開すると,
+  \begin{align*}
+    \det(\pi_{i,t}(A)))
+    &=
+    \sum_{j=1}^{t-1}
+    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(\pi_{i,t}(A)))
+    +
+    \sum_{j=t}^{n-1}
+    (-1)^{j+1}a_{1,j+1}\det(\pi_{1,j}(\pi_{i,t}(A)))
+    \\
+    &=
+    \sum_{j=1}^{t-1}
+    (-1)^{j+1}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A))
+    +
+    \sum_{j=t}^{n-1}
+    (-1)^{j+1}a_{1,j+1}\det(\pi_{\Set{1,i},\Set{t,j+1}}(A))
+    \\
+    &=
+    \sum_{j=1}^{t-1}
+    (-1)^{j+1}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A))
+    +
+    \sum_{j=t+1}^{n}
+    (-1)^{j}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A)).
+  \end{align*}
+  したがって,
+  \begin{align*}
+    D
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +
+    \sum_{i=2}^{n}
+    (-1)^{i+t}a_{i,t}
+    \sum_{j=1}^{t-1}
+    (-1)^{j+1}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A))
+    +
+    \sum_{i=2}^{n}
+    (-1)^{i+t}a_{i,t}
+    \sum_{j=t+1}^{n}
+    (-1)^{j}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A))\\
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +
+    \sum_{i=2}^{n}
+    \sum_{j=1}^{t-1}
+    (-1)^{i+j+t+1}a_{i,t}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A))
+    +
+    \sum_{i=2}^{n}
+    \sum_{j=t+1}^{n}
+    (-1)^{i+j+t}a_{i,t}a_{1,j}\det(\pi_{\Set{1,i},\Set{t,j}}(A)).
+  \end{align*}
+  
+  一方$\det(A)$を定義に従って展開すると
+  \begin{align*}
+    \det(A)
+    &=\sum_{j=1}^{n}
+      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +\sum_{j=1}^{t-1}(-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))
+    +\sum_{j=t+1}^{n}(-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A)).
+  \end{align*}
+  である.
+  $j<t$のとき,
+  $\pi_{1,j}(A)$が$A$の$1$行目と$j$列目を取り除いて得られる行列であるので,
+  $\pi_{1,j}(A)$の$(i,t-1)$成分は$a_{i+1,t}$であり,
+  $\pi_{i,t-1}(\pi_{1,j}(A))=\pi_{\Set{1,i+1},\Set{j,t}}(A)$である.
+  したがって, $j<t$のときには,
+  帰納法の仮定を使い$\det(\pi_{1,j}(A))$を$t-1$列目で展開すると,
+  \begin{align*}
+    \det(\pi_{1,j}(A))
+    &=
+    \sum_{i=1}^{n-1}
+    (-1)^{i+t-1}a_{i+1,t}\det(\pi_{i,t-1}(\pi_{1,j}(A)))\\
+    &=
+    \sum_{i=1}^{n-1}
+    (-1)^{i+t-1}a_{i+1,t}\det(\pi_{\Set{1,i+1},\Set{j,t}}(A))\\
+    &=
+    \sum_{i=2}^{n}
+    (-1)^{i+t-2}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))\\
+    &=
+    \sum_{i=2}^{n}
+    (-1)^{i+t}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A)).
+  \end{align*}
+  また,
+  $j>t$のとき,
+  $\pi_{1,j}(A)$が$A$の$1$行目と$j$列目を取り除いて得られる行列であるので,
+  $\pi_{1,j}(A)$の$(i,t)$成分は$a_{i+1,t}$であり,
+  $\pi_{i,t}(\pi_{1,j}(A))=\pi_{\Set{1,i+1},\Set{j,t}}(A)$である.
+  したがって, $j<t$のときには,
+  帰納法の仮定を使い$\det(\pi_{1,j}(A))$を$t$列目で展開すると,
+  \begin{align*}
+    \det(\pi_{1,j}(A))
+    &=
+    \sum_{i=1}^{n-1}
+    (-1)^{i+t}a_{i+1,t}\det(\pi_{i,t}(\pi_{1,j}(A)))\\
+    &=
+    \sum_{i=1}^{n-1}
+    (-1)^{i+t}a_{i+1,t}\det(\pi_{\Set{1,i+1},\Set{j,t}}(A))\\
+    &=
+    \sum_{i=2}^{n}
+    (-1)^{i+t-1}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A)).
+  \end{align*}  
+  したがって,
+  \begin{align*}
+    \det(A)
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +\sum_{j=1}^{t-1}(-1)^{j+1}a_{1,j}
+    \sum_{i=2}^{n}
+    (-1)^{i+t}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))
+    +\sum_{j=t+1}^{n}(-1)^{j+1}a_{1,j}
+    \sum_{i=2}^{n}
+    (-1)^{i+t-1}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))\\
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +
+    \sum_{i=2}^{n}
+    \sum_{j=1}^{t-1}
+    (-1)^{i+t+j+1}a_{1,j}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))    
+    +
+    \sum_{i=2}^{n}
+    \sum_{j=t+1}^{n}
+    (-1)^{i+j+t}a_{1,j}
+    a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))\\
+    &=
+    (-1)^{1+t}a_{1,t}\det(\pi_{1,t}(A))
+    +
+    \sum_{j=1}^{t-1}
+    \sum_{i=2}^{n}
+    (-1)^{i+t+j+1}a_{1,j}a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A))    
+    +
+    \sum_{j=t+1}^{n}
+    \sum_{i=2}^{n}
+    (-1)^{i+j+t}a_{1,j}
+    a_{i,t}\det(\pi_{\Set{1,i},\Set{j,t}}(A)).
+  \end{align*}
+  したがって, $\det(A)=D$である.
+\end{proofof}
+
+\begin{proofof}{det:row:expansion}
+\Cref{thm:det:col:expansion,thm:det:transpose}
+から得られる.
+\end{proofof}
+
 
 \begin{proofof}{det:closedformula}
   $\det(A)$を計算するため,

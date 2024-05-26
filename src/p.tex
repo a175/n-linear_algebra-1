@@ -4664,6 +4664,32 @@ $G(i,j;c)$は三角行列であるので,
 $n$次正方行列$A$に対し, $\det(A)=\det(\transposed{A})$.
 \end{theorem}
 
+
+\begin{theorem}
+  \provelater{det:row:expansion}
+  \label{thm:det:row:expansion}
+  $a_{i,j}$が$(i,j)$-成分である
+    $n$次正方行列$A$に対し,
+    \begin{align*}
+      \det(A)&=
+      \sum_{j=1}^{n}
+      (-1)^{t+j}a_{t,j}\det(\pi_{t,j}(A)).
+    \end{align*}
+\end{theorem}
+\begin{theorem}
+  \provelater{det:col:expansion}
+  \label{thm:det:col:expansion}
+  $a_{i,j}$が$(i,j)$-成分である
+    $n$次正方行列$A$に対し,
+    \begin{align*}
+      \det(A)&=\sum_{i=1}^{n}
+      (-1)^{i+t}a_{i,t}\det(\pi_{i,t}(A)).
+    \end{align*}
+\end{theorem}
+
+
+
+
 \section{行列式の閉じた式よる表示}
 
 ここでは, 再帰的に定義されている行列式の定義を展開し,
@@ -4702,7 +4728,7 @@ $\Set{1,2,\ldots,n}$の順列をすべて集めた集合を$S_n$とおき,
  \end{align*}
 \end{example}
 \begin{definition}
-順列$\sigma=[\sigma(1),\ldots,\sigma(n)]\in\S_n$
+順列$\sigma=[\sigma(1),\ldots,\sigma(n)]\in S_n$
 に対し,
 \begin{align*}
   I(\sigma)=\Set{(i,j)|\text{$i<j$かつ$\sigma(i)>\sigma(j)$}}
