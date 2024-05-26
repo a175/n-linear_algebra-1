@@ -38,47 +38,55 @@
 \contentsline {section}{章末問題}{49}{section*.5}%
 \contentsline {chapter}{\numberline {第6章}行列式}{51}{chapter.6}%
 \contentsline {section}{\numberline {6.1}行列式の定義}{51}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}行列式の閉じた式よる表示}{53}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}行列式と行基本変形}{53}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}行列式の線型性と交代性}{53}{subsection.6.1.3}%
-\contentsline {chapter}{参考文献}{55}{chapter*.6}%
-\contentsline {chapter}{\numberline {付録A}命題の証明}{57}{appendix.A}%
-\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{57}{section.A.1}%
-\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{58}{section.A.2}%
-\contentsline {paragraph}{Base case}{62}{section*.7}%
-\contentsline {paragraph}{Induction Step}{62}{section*.8}%
-\contentsline {paragraph}{Base case}{62}{section*.9}%
-\contentsline {paragraph}{Induction Step}{63}{section*.10}%
-\contentsline {paragraph}{Base case}{63}{section*.11}%
-\contentsline {paragraph}{Induction Step}{63}{section*.12}%
-\contentsline {section}{\numberline {A.3}正則行列に関する命題の証明}{63}{section.A.3}%
-\contentsline {paragraph}{Base case}{65}{section*.13}%
-\contentsline {paragraph}{Induction Step}{65}{section*.14}%
-\contentsline {subsection}{\numberline {A.3.1}行基本変形によって得られる被約階段行列の一意性に関する命題の証明}{68}{subsection.A.3.1}%
-\contentsline {paragraph}{\Cref {cor:reg:e:item:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:e}}{72}{section*.15}%
-\contentsline {paragraph}{\Cref {cor:reg:e:item:e}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:reg}}{72}{section*.16}%
-\contentsline {subsection}{\numberline {A.3.2}階数に関する命題の証明}{73}{subsection.A.3.2}%
-\contentsline {paragraph}{\Cref {thm:rank:regular:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:rank}}{73}{section*.17}%
-\contentsline {paragraph}{\Cref {thm:rank:regular:rank}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:reg}}{73}{section*.18}%
-\contentsline {section}{\numberline {A.4}連立一次方程式に関する命題の証明}{75}{section.A.4}%
-\contentsline {paragraph}{\Cref {thm:ortho:eq:item:sol}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:ortho:eq:item:ortho}}{75}{section*.19}%
-\contentsline {paragraph}{\Cref {thm:ortho:eq:item:ortho}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:ortho:eq:item:sol}}{75}{section*.20}%
-\contentsline {paragraph}{$\mathcal {F}\subset \mathcal {F}'$}{76}{section*.21}%
-\contentsline {paragraph}{$\mathcal {F}'\subset \mathcal {F}$}{76}{section*.22}%
-\contentsline {section}{\numberline {A.5}行列式に関する命題の証明}{76}{section.A.5}%
-\contentsline {paragraph}{Base case}{76}{section*.23}%
-\contentsline {paragraph}{Induction step}{76}{section*.24}%
-\contentsline {paragraph}{Base case}{76}{section*.25}%
-\contentsline {paragraph}{Induction step}{77}{section*.26}%
-\contentsline {paragraph}{Base case}{77}{section*.27}%
-\contentsline {paragraph}{Induction step}{77}{section*.28}%
-\contentsline {subparagraph}{$t=1$のとき.}{77}{section*.29}%
-\contentsline {subparagraph}{$t>1$のとき.}{77}{section*.30}%
-\contentsline {paragraph}{Base case}{77}{section*.31}%
-\contentsline {paragraph}{Induction step}{77}{section*.32}%
-\contentsline {chapter}{\numberline {付録B}章末問題の略解}{79}{appendix.B}%
-\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{79}{section.B.1}%
-\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{79}{section.B.2}%
-\contentsline {section}{\numberline {B.3}逆行列に関する問題}{86}{section.B.3}%
-\contentsline {section}{\numberline {B.4}連立一次方程式に関する問題}{88}{section.B.4}%
-\contentsline {chapter}{索引}{89}{appendix*.33}%
+\contentsline {section}{\numberline {6.2}行列式の閉じた式よる表示}{53}{section.6.2}%
+\contentsline {section}{\numberline {6.3}行列式の多重線型性と交代性}{54}{section.6.3}%
+\contentsline {section}{\numberline {6.4}行列式と行基本変形}{56}{section.6.4}%
+\contentsline {chapter}{参考文献}{57}{chapter*.6}%
+\contentsline {chapter}{\numberline {付録A}命題の証明}{59}{appendix.A}%
+\contentsline {section}{\numberline {A.1}証明に必要となる基本的な事実}{59}{section.A.1}%
+\contentsline {section}{\numberline {A.2}行列の演算に関する命題の証明}{60}{section.A.2}%
+\contentsline {paragraph}{Base case}{64}{section*.7}%
+\contentsline {paragraph}{Induction Step}{64}{section*.8}%
+\contentsline {paragraph}{Base case}{64}{section*.9}%
+\contentsline {paragraph}{Induction Step}{65}{section*.10}%
+\contentsline {paragraph}{Base case}{65}{section*.11}%
+\contentsline {paragraph}{Induction Step}{65}{section*.12}%
+\contentsline {section}{\numberline {A.3}正則行列に関する命題の証明}{65}{section.A.3}%
+\contentsline {paragraph}{Base case}{67}{section*.13}%
+\contentsline {paragraph}{Induction Step}{67}{section*.14}%
+\contentsline {subsection}{\numberline {A.3.1}行基本変形によって得られる被約階段行列の一意性に関する命題の証明}{70}{subsection.A.3.1}%
+\contentsline {paragraph}{\Cref {cor:reg:e:item:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:e}}{74}{section*.15}%
+\contentsline {paragraph}{\Cref {cor:reg:e:item:e}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {cor:reg:e:item:reg}}{74}{section*.16}%
+\contentsline {subsection}{\numberline {A.3.2}階数に関する命題の証明}{75}{subsection.A.3.2}%
+\contentsline {paragraph}{\Cref {thm:rank:regular:reg}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:rank}}{75}{section*.17}%
+\contentsline {paragraph}{\Cref {thm:rank:regular:rank}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:rank:regular:reg}}{75}{section*.18}%
+\contentsline {section}{\numberline {A.4}連立一次方程式に関する命題の証明}{77}{section.A.4}%
+\contentsline {paragraph}{\Cref {thm:ortho:eq:item:sol}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:ortho:eq:item:ortho}}{77}{section*.19}%
+\contentsline {paragraph}{\Cref {thm:ortho:eq:item:ortho}$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$\Cref {thm:ortho:eq:item:sol}}{77}{section*.20}%
+\contentsline {paragraph}{$\mathcal {F}\subset \mathcal {F}'$}{78}{section*.21}%
+\contentsline {paragraph}{$\mathcal {F}'\subset \mathcal {F}$}{78}{section*.22}%
+\contentsline {section}{\numberline {A.5}行列式に関する命題の証明}{78}{section.A.5}%
+\contentsline {paragraph}{Base case}{78}{section*.23}%
+\contentsline {paragraph}{Induction step}{78}{section*.24}%
+\contentsline {paragraph}{Base case}{78}{section*.25}%
+\contentsline {paragraph}{Induction step}{79}{section*.26}%
+\contentsline {paragraph}{Base case}{79}{section*.27}%
+\contentsline {paragraph}{Induction step}{79}{section*.28}%
+\contentsline {paragraph}{Base case}{80}{section*.29}%
+\contentsline {paragraph}{Induction step}{80}{section*.30}%
+\contentsline {paragraph}{Base case}{80}{section*.31}%
+\contentsline {paragraph}{Induction step}{80}{section*.32}%
+\contentsline {paragraph}{Base case}{85}{section*.33}%
+\contentsline {paragraph}{Induction step}{85}{section*.34}%
+\contentsline {paragraph}{Base case}{86}{section*.35}%
+\contentsline {paragraph}{Induction step}{86}{section*.36}%
+\contentsline {paragraph}{Base case}{87}{section*.37}%
+\contentsline {paragraph}{Induction step}{87}{section*.38}%
+\contentsline {paragraph}{Base case}{87}{section*.39}%
+\contentsline {paragraph}{Induction step}{87}{section*.40}%
+\contentsline {chapter}{\numberline {付録B}章末問題の略解}{91}{appendix.B}%
+\contentsline {section}{\numberline {B.1}実数の絶対値や平方根に関する問題}{91}{section.B.1}%
+\contentsline {section}{\numberline {B.2}行列の定義と演算に関する問題}{91}{section.B.2}%
+\contentsline {section}{\numberline {B.3}逆行列に関する問題}{98}{section.B.3}%
+\contentsline {section}{\numberline {B.4}連立一次方程式に関する問題}{100}{section.B.4}%
+\contentsline {chapter}{索引}{89}{appendix*.41}%
