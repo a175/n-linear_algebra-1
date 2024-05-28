@@ -1760,99 +1760,99 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 \end{proofof}
 
 
-\begin{lemma}
-  \label{lem:det:zero:row:1}
-  $A$を$n$次正方行列とし,
-  $A$の$1$行目の成分が全て$0$であるとする.
-  このとき$\det(A)=0$である.
-\end{lemma}
-\begin{proof}
-  $n=1$のとき,
-  $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$であるので,
-    $n>1$のときについて考える.
-    このとき,
-    $a_{1,k}=0$であるので,
-    \begin{align*}
-      \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
-      &=\sum_{j=1}^{n}0\pi_{1,j}(A)\\
-      &=0.
-    \end{align*}
-\end{proof}
-\begin{proofof}{det:zero:row}
-  行列のサイズ$n$に関する数学的帰納法で証明する.
-  \paragraph{Base case}
-  $n=1$のときは,
-  $t=1$である. つまり$1$行目の成分が$0$であるということであるので,
-  \cref{lem:det:zero:row:1}より,
-  $\det(A)=0$.
-  \paragraph{Induction step}
-  $n>1$とし,
-  $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+%% \begin{lemma}
+%%   \label{lem:det:zero:row:1}
+%%   $A$を$n$次正方行列とし,
+%%   $A$の$1$行目の成分が全て$0$であるとする.
+%%   このとき$\det(A)=0$である.
+%% \end{lemma}
+%% \begin{proof}
+%%   $n=1$のとき,
+%%   $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$であるので,
+%%     $n>1$のときについて考える.
+%%     このとき,
+%%     $a_{1,k}=0$であるので,
+%%     \begin{align*}
+%%       \det(A)&=\sum_{j=1}^{n}a_{1,j}\pi_{1,j}(A)\\
+%%       &=\sum_{j=1}^{n}0\pi_{1,j}(A)\\
+%%       &=0.
+%%     \end{align*}
+%% \end{proof}
+%% \begin{proofof}{det:zero:row}
+%%   行列のサイズ$n$に関する数学的帰納法で証明する.
+%%   \paragraph{Base case}
+%%   $n=1$のときは,
+%%   $t=1$である. つまり$1$行目の成分が$0$であるということであるので,
+%%   \cref{lem:det:zero:row:1}より,
+%%   $\det(A)=0$.
+%%   \paragraph{Induction step}
+%%   $n>1$とし,
+%%   $A$の$(i,j)$-成分を$a_{i,j}$とおく.
 
-  $t=1$のときは, 
-  \cref{lem:det:zero:row:1}より,
-  $\det(A)=0$であるので,
-  $t>1$のときについて考える.
-  $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
-  $\pi_{1,k}(A)$とおく.
-  このとき,
-  $A$の$t$行目の成分はすべて$0$であるから,
-  $\pi_{1,k}(A)$の$t-1$行目の成分はすべて$0$である.
-  したがって, 帰納法の仮定から,
-  $\det(\pi_{1,k}(A))=0$である.
-  よって,
-  \begin{align*}
-    \det(A)
-    &=\sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=\sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}0\\
-    &=0.      
-  \end{align*}
-\end{proofof}
+%%   $t=1$のときは, 
+%%   \cref{lem:det:zero:row:1}より,
+%%   $\det(A)=0$であるので,
+%%   $t>1$のときについて考える.
+%%   $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
+%%   $\pi_{1,k}(A)$とおく.
+%%   このとき,
+%%   $A$の$t$行目の成分はすべて$0$であるから,
+%%   $\pi_{1,k}(A)$の$t-1$行目の成分はすべて$0$である.
+%%   したがって, 帰納法の仮定から,
+%%   $\det(\pi_{1,k}(A))=0$である.
+%%   よって,
+%%   \begin{align*}
+%%     \det(A)
+%%     &=\sum_{j=1}^{n}
+%%     (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+%%     &=\sum_{j=1}^{n}
+%%     (-1)^{j+1}a_{1,j}0\\
+%%     &=0.      
+%%   \end{align*}
+%% \end{proofof}
 
-\begin{proofof}{det:zero:col}
-  行列のサイズ$n$に関する数学的帰納法で証明する.
-  \paragraph{Base case}
-  $n=1$のときは,
-  $t=1$である. つまり$1$列目の成分が$0$であるということであるので,
-  $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$.
-    \paragraph{Induction step}
-    $n>1$とし,
-    $A$の$(i,j)$-成分を$a_{i,j}$とおく.
+%% \begin{proofof}{det:zero:col}
+%%   行列のサイズ$n$に関する数学的帰納法で証明する.
+%%   \paragraph{Base case}
+%%   $n=1$のときは,
+%%   $t=1$である. つまり$1$列目の成分が$0$であるということであるので,
+%%   $\det(A)=\det(\begin{pmatrix}0\end{pmatrix})=0$.
+%%     \paragraph{Induction step}
+%%     $n>1$とし,
+%%     $A$の$(i,j)$-成分を$a_{i,j}$とおく.
 
-    $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
-    $\pi_{1,k}(A)$とおく.
-    $A$の$t$列目の成分がすべて$0$であることから, 以下がわかる:
-    $k<t$なら,
-    $\pi_{1,k}(A)$の$t-1$列目の成分はすべて$0$であるので,
-    帰納法の仮定から,
-    $\det(\pi_{1,k}(A))=0$.
-    $k>t$なら,
-    $\pi_{1,k}(A)$の$t$列目の成分はすべて$0$であるので,
-    帰納法の仮定から,
-    $\det(\pi_{1,k}(A))=0$.
-    $k=t$なら, $a_{1,k}=a_{1,t}=0$.
-    よって,
-    \begin{align*}
-      \det(A)
-      &=\sum_{j=1}^{n}
-      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-      &=
-      \sum_{j=1}^{t-1}
-      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-      &\quad +a_{1,t}\det(\pi_{1,j}(A)\\
-      &\quad +\sum_{j=t+1}^{n}
-      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-      &=
-      \sum_{j=1}^{t-1}
-      (-1)^{j+1}a_{1,j}0\\
-      &\quad +0\det(\pi_{1,j}(A)\\
-      &\quad +\sum_{j=t+1}^{n}
-      (-1)^{j+1}a_{1,j}0\\
-      &=0.      
-    \end{align*}
-\end{proofof}
+%%     $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
+%%     $\pi_{1,k}(A)$とおく.
+%%     $A$の$t$列目の成分がすべて$0$であることから, 以下がわかる:
+%%     $k<t$なら,
+%%     $\pi_{1,k}(A)$の$t-1$列目の成分はすべて$0$であるので,
+%%     帰納法の仮定から,
+%%     $\det(\pi_{1,k}(A))=0$.
+%%     $k>t$なら,
+%%     $\pi_{1,k}(A)$の$t$列目の成分はすべて$0$であるので,
+%%     帰納法の仮定から,
+%%     $\det(\pi_{1,k}(A))=0$.
+%%     $k=t$なら, $a_{1,k}=a_{1,t}=0$.
+%%     よって,
+%%     \begin{align*}
+%%       \det(A)
+%%       &=\sum_{j=1}^{n}
+%%       (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+%%       &=
+%%       \sum_{j=1}^{t-1}
+%%       (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+%%       &\quad +a_{1,t}\det(\pi_{1,j}(A)\\
+%%       &\quad +\sum_{j=t+1}^{n}
+%%       (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
+%%       &=
+%%       \sum_{j=1}^{t-1}
+%%       (-1)^{j+1}a_{1,j}0\\
+%%       &\quad +0\det(\pi_{1,j}(A)\\
+%%       &\quad +\sum_{j=t+1}^{n}
+%%       (-1)^{j+1}a_{1,j}0\\
+%%       &=0.      
+%%     \end{align*}
+%% \end{proofof}
 
 \begin{proofof}{det:col:expansion:1}
   行列のサイズ$n$に関する数学的帰納法で証明する.

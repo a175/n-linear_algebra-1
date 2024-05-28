@@ -4598,21 +4598,6 @@ $n$次正方行列
   $\det(A)=a_1a_2\cdots a_n$.
 \end{cor}
 
-\begin{prop}
-  \provelater{det:zero:row}
-  $A$を$n$次正方行列とし,
-  $1\leq t \leq n$とする.
-  $A$の$t$行目の成分が全て$0$であるならば,
-  $\det(A)=0$である.
-\end{prop}
-
-\begin{prop}
-  \provelater{det:zero:col}
-  $A$を$n$次正方行列とし,
-  $1\leq t \leq n$とする.
-  $A$の$t$列目の成分が全て$0$であるならば,
-  $\det(A)=0$である.
-\end{prop}
 
 これらのことから以下が計算できる.
 \begin{example}
@@ -4687,7 +4672,25 @@ $1$行目や$1$列目以外の行や列で展開することもできる.
     \end{align*}
 \end{theorem}
 
+特定の行や列の成分が全て0なら,
+\Cref{thm:det:row:expansion,det:col:expansion}
+にしたがって展開すれば,
+行列式が0になることが示せる.
+\begin{prop}
+  %\provelater{det:zero:row}
+  $A$を$n$次正方行列とし,
+  $1\leq t \leq n$とする.
+  $A$の$t$行目の成分が全て$0$であるならば,
+  $\det(A)=0$である.
+\end{prop}
 
+\begin{prop}
+  %\provelater{det:zero:col}
+  $A$を$n$次正方行列とし,
+  $1\leq t \leq n$とする.
+  $A$の$t$列目の成分が全て$0$であるならば,
+  $\det(A)=0$である.
+\end{prop}
 
 
 \section{行列式の閉じた式よる表示}
@@ -4790,6 +4793,7 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
 
 \begin{theorem}
   \provelater{det:closedformula}
+  \label{thm:det:closedformula}
   $a_{i,j}$を$(i,j)$-成分とする$n$次正方行列$A$に対し,
   \begin{align*}
     \det(A)=\sum_{\sigma=[\sigma(1),\sigma(2),\ldots,\sigma(n)]\in S_n}
@@ -4798,6 +4802,31 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   \end{align*}
 \end{theorem}
 
+基本行列$H(i,j)$の行列式を計算する.
+\begin{example}
+  $i<j$とし,
+  $1$から$n$を順に並べたものを$i$と$j$だけ入れ替えた順列を$\tau$とする.
+  つまり
+  \begin{align*}
+    \tau=[1,2,\ldots,i-1,j,i+1,i+2,\ldots,j-1,i,j+1,j+2,\ldots,n]
+  \end{align*}
+  とする.
+  \begin{align*}
+    I(\tau)=\Set{(i,i+1),(i,i+2),\ldots,(i,j-1)}\cup\Set{(i+1,j),(i+2,j),\ldots,(j-1,)}\cup\Set{(i,j)}
+  \end{align*}
+  である.  したがって, $\sgn(\tau)=-1$である.
+  
+  基本行列$H(i,j)$の$(i,j)$-成分を$a_{i,j}$とし,
+  \Cref{thm:det:closedformula}を使って展開する.
+  $\sigma\neq \tau$ならば
+  $a_{1,\sigma()},\ldots,a_{n.\sigma(n)}$
+  のいずれかは$0$であるので, その積は$0$である.
+  したがって,
+  \begin{align*}
+    \det(H(i,j))=\sgn(\tau)a_{1,\tau(1)}\cdots a_{n,\tau(n)}=\sgn(\tau)=-1
+  \end{align*}
+  である.
+\end{example}
 
 \section{行列式の多重線型性と交代性}
 
@@ -4990,12 +5019,6 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   \end{align*}
 \end{theorem}
 
-基本行列$H(i,j)$の行列式を計算する.
-\begin{example}
-  基本行列$H(i,j)$は,
-  単位行列$E_n$の$i$行目と$j$行目を入れ替えたものである.
-  従って$\det(H(i,j))=-\det(E_n)=-1$.
-\end{example}
 \section{行列式と行基本変形}
 
 
