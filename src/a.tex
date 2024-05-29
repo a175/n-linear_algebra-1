@@ -1965,7 +1965,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   $n=1$のときは$\det(A)=a_{1,1}$であるので成り立つ.
   $n=2$のときは$\det(A)=a_{1,1}a_{2,2}-a_{1,2}a_{2,1}=a_{1,1}a_{2,2}-a_{2,1}a_{1,2}$であるので成り立つ.
 
-  \paragraph{Induction step}
+ \paragraph{Induction step}
   $n>2$とする.
   $\pi_{\Set{1,i},\Set{k,j}}(A)$で, $A$の1行目, $i$行目, $k$列目, $j$列目を
   取り除いて得られる$(n-2)$-次正方行列を表すことにする.
@@ -2348,145 +2348,221 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   \end{align*}
 \end{proofof}
 
-\begin{lemma}
-  \label{lem:det:multilinear:row:scalar:1}
-  $n>1$とし,
-  $A$を$a_{i,j}$を$(i,j)$-成分とする$n$次正方行列,
-  $A'$を$a'_{i,j}$を$(i,j)$-成分とする$n$次正方行列
-  とする.
-  $\alpha$を数とする.
-  $A$, $A'$が
-  \begin{align*}
-    \begin{cases}
-      a_{i,j}=a'_{i,j} & (i\neq 1)\\
-      a_{i,j}=\alpha a'_{i,j} & (i = 1)
-    \end{cases}
-  \end{align*}
-  をみたすなら,
-  \begin{align*}
-    \det(A)=\alpha\det(A').
-  \end{align*}
-\end{lemma}
-\begin{proof}
-  $A$と$A'$は$1$行目以外は対応する成分が等しいので,
-  $\pi_{1,j}(A)=\pi_{1,j}(A')$である.
+\subsection{}
+\begin{proofof*}{det:rowtrans}{F}
+  行列のサイズ$n$に関する帰納法で示す.
+  \paragraph{Base case}
+  $n=1$のときは,
+  $t=1$である.
   したがって,
-  $\det(A')$を定義に従い展開すると,
-  \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}\alpha a'_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A'))
-  \end{align*}
-  となるが, $\det(A')$は定義から,
+  $\det(\begin{pmatrix}\alpha a\end{pmatrix})=\alpha a=\alpha \det(\begin{pmatrix}a\end{pmatrix})$.
+  \paragraph{Induction step}
+  $n>1$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k\neq t$とする.
+  このとき,
+  $\pi_{k,j}(A')$には$A'$の$t$行目が含まれるので,
+  帰納法の仮定から,
+  $\det(\pi_{k,j}(A'))=\alpha\det(\pi_{k,j}(A))$
+  である.
+  また, $a'_{k,j}=a_{k,j}$であるから,
+  $\det(A')$を$k$行目で展開すると,
   \begin{align*}
     \det(A')
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}\alpha a'_{1,j}\det(\pi_{1,j}(A'))
+    &=\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} \alpha a_{k,j}\det(\pi_{k,j}(A)).
   \end{align*}
+  一方, $\det(A)$を$k$行目で展開すると,
+  \begin{align*}
+    \alpha \det(A)
+    &=\alpha \sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} \alpha a_{k,j}\det(\pi_{k,j}(A)).
+  \end{align*}  
+    
+%%   $A$の$(i,j)$-成分を$a_{i,j}$,
+%%   $A$の$(i,j)$-成分を$a'_{i,j}$
+%%   とする.
+%%   このとき,
+%%   $i\neq t$なら$a_{i,j}=a'_{i,j}$であり,
+%%   $\pi_{t,j}(A')=\pi_{t,j}(A)$である.
+%%   また$\alpha a_{i,j}=a'_{i,j}$であるので,
+%%   $\det(A')$を$t$行目で展開すると,
+%%   \begin{align*}
+%%     \det(A')
+%%     &=\sum_{j=1}^{n} (-1)^{t+j} a'_{t,j}\det(\pi_{t,j}(A'))\\
+%%     &=\sum_{j=1}^{n} (-1)^{t+j} \alpha a_{t,j}\det(\pi_{t,j}(A)).
+%%   \end{align*}
+%%   一方, $\det(A)$を$t$行目で展開すると,
+%%   \begin{align*}
+%%     \alpha \det(A)
+%%     &=\alpha \sum_{j=1}^{n} (-1)^{t+j} a_{t,j}\det(\pi_{t,j}(A))\\
+%%     &=\sum_{j=1}^{n} (-1)^{t+j} \alpha a_{t,j}\det(\pi_{t,j}(A)).
+%%   \end{align*}  
+\end{proofof*}
+
+\begin{proofof*}{det:rowtrans}{G}
+  行列のサイズ$n$に関する帰納法で示す.
+  \paragraph{Base case}
+  $n=2$のときについて考える.
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b\\
+      c&d
+    \end{pmatrix}
+    )==ad-bc\\
+    \det(
+    \begin{pmatrix}
+      a+\alpha c& b+\alpha d\\
+      c&d
+    \end{pmatrix}
+    )=(a+\alpha c)d-(b+\alpha d)c=ad-bc\\
+    \det(
+    \begin{pmatrix}
+      a& b\\
+      c+\alpha a&d+\alpha b
+    \end{pmatrix}
+    )=a(d+\alpha b)-b(c+\alpha a)=ad-bc.
+  \end{align*}
+  \paragraph{Induction step}
+  $n>2$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k$は$t$でも$s$でもないとする.
+  このとき,
+  $\pi_{k,j}(A')$には$A'$の$t$行目と$s$行目が含まれるので,
+  帰納法の仮定から,
+  $\det(\pi_{k,j}(A'))=\det(\pi_{k,j}(A))$
   である.
-\end{proof}
+  また, $a'_{k,j}=a_{k,j}$であるから,
+  $\det(A')$を$k$行目で展開すると,
+  \begin{align*}
+    \det(A')
+    &=\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A)).
+  \end{align*}
+  一方, $\det(A)$を$k$行目で展開すると,
+  \begin{align*}
+    \det(A)
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A)).
+  \end{align*}  
+\end{proofof*}
+
+
+\begin{proofof*}{det:rowtrans}{H}
+  行列のサイズ$n$に関する帰納法で示す.
+  \paragraph{Base case}
+  $n=2$のときについて考える.
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b\\
+      c&d
+    \end{pmatrix}
+    )=ad-bc\\
+    -\det(
+    \begin{pmatrix}
+      c&d\\
+      a&b
+    \end{pmatrix}
+    )=-(cb-da)=ad-bc.
+  \end{align*}
+  \paragraph{Induction step}
+  $n>2$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k$は$t$でも$s$でもないとする.
+  このとき,
+  $\pi_{k,j}(A')$には$A'$の$t$行目と$s$行目が含まれるので,
+  帰納法の仮定から,
+  $\det(\pi_{k,j}(A'))=-\det(\pi_{k,j}(A))$
+  である.
+  また, $a'_{k,j}=a_{k,j}$であるから,
+  $\det(A')$を$k$行目で展開すると,
+  \begin{align*}
+    \det(A')
+    &=\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} -(-1)^{k+j} a_{t,j}\det(\pi_{k,j}(A)).
+  \end{align*}
+  一方, $-\det(A)$を$k$行目で展開すると,
+  \begin{align*}
+    -\det(A)
+    &=-\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\sum_{j=1}^{n} -(-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A)).
+  \end{align*}  
+\end{proofof*}
+
+
+\begin{proofof*}{lem:det:hom:reg}{nonzero}
+  $P$は正則行列なので, $P=P_1P_2P_3\cdot P_l$を満たす基本行列$P_i$が取れる.
+  このとき
+  \begin{align*}
+    \det(P)
+    &=\det(P_1P_2P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2)\det(P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2)\det(P_3)\cdot \det(P_l)
+  \end{align*}
+  となるが, 基本行列行列式は$0$ではないので, その積も$0$ではない.
+\end{proofof*}
+
+\begin{proofof*}{lem:det:hom:reg}{prod}
+  $P$は正則行列なので, $P=P_1P_2P_3\cdot P_l$を満たす基本行列$P_i$が取れる.
+  このとき
+  \begin{align*}
+    \det(P)
+    &=\det(P_1P_2P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2)\det(P_3\cdot P_l)\\
+    &=\det(P_1)\det(P_2)\det(P_3)\cdot \det(P_l)
+  \end{align*}
+  である.  したがって
+  \begin{align*}
+    \det(PA)
+    &=\det(P_1P_2P_3\cdot P_l A)\\
+    &=\det(P_1)\det(P_2P_3\cdot P_lA)\\
+    &=\det(P_1)\det(P_2)\det(P_3\cdot P_l A)\\
+    &=\det(P_1)\det(P_2)\det(P_3)\cdot \det(P_l A)\\
+    &=\det(P_1)\det(P_2)\det(P_3)\cdot \det(P_l)\det(A)\\
+    &=\det(P)\det(A).
+  \end{align*}
+\end{proofof*}
+
+\subsection{}
+
 \begin{proofof*}{det:multilinear:row}{scalar}
   行列のサイズ$n$に関する帰納法で示す.
   \paragraph{Base case}
-  $n=1$とする.
-  このとき, $\det(\begin{pmatrix}a_{1,1}\end{pmatrix})=a_{1,1}=\alpha a'_{1,1}=\alpha\det(\begin{pmatrix}a'_{1,1}\end{pmatrix})$.
-  \paragraph{Induction step}
-  $n>1$とする.
-  $t=1$のときは,
-  すでに
-  \cref{lem:det:multilinear:row:scalar:1}
-  で示した.
-  $t>1$とする.
-  このとき, $\pi_{1,j}(A)$と$\pi_{1,j}(A')$は
-  $t-1$行目以外は等しく,
-  $\pi_{1,j}(A')$の$t-1$行目を$\alpha$倍したものと
-  $\pi_{1,j}(A)$の$t-1$行目が等しいので,
-  帰納法の仮定から, $\det(\pi_{1,j}(A))=\alpha \pi_{1,j}(A')$である.
+  $n=1$のときは,
+  $t=1$である.
   したがって,
+  $\det(\begin{pmatrix}\alpha a\end{pmatrix})=\alpha a=\alpha \det(\begin{pmatrix}a\end{pmatrix})$.
+  \paragraph{Induction step}
+  $n>1$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k\neq t$とする.
+  このとき,
+  $\pi_{k,j}(A')$には$A'$の$t$行目が含まれるので,
+  帰納法の仮定から,
+  $\alpha\det(\pi_{k,j}(A'))=\det(\pi_{k,j}(A))$
+  である.
+  また, $a'_{k,j}=a_{k,j}$であるから,
+  $\det(A')$を$k$行目で展開すると,
   \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\alpha\det(\pi_{1,j}(A'))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\alpha\det(\pi_{1,j}(A))\\
-    &=
-    \alpha\sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=
-    \alpha\det(A').
+    \alpha\det(A')
+    &=\alpha\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\alpha\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} \alpha a_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{t+j} a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\det(A).
   \end{align*}
 \end{proofof*}
-\begin{lemma}
-  \label{lem:det:multilinear:row:sum:1}
-  $n>1$とし,
-  $A$を$a_{i,j}$を$(i,j)$-成分とする$n$次正方行列,
-  $A'$を$a'_{i,j}$を$(i,j)$-成分とする$n$次正方行列,
-  $A''$を$a''_{i,j}$を$(i,j)$-成分とする$n$次正方行列
-  とする.
-  $A$, $A'$, $A''$が
-  \begin{align*}
-    \begin{cases}
-      a_{i,j}=a'_{i,j} = a''_{i,j} & (i\neq 1)\\
-      a_{i,j}=a'_{i,j} + a''_{i,j} & (i = 1)
-    \end{cases}
-  \end{align*}
-  をみたすなら,
-  \begin{align*}
-    \det(A)=\det(A')+\alpha(A'').
-  \end{align*}
-\end{lemma}
-\begin{proof}
-  $A$, $A'$, $A''$は$1$行目以外は対応する成分が等しいので,
-  $\pi_{1,j}(A)=\pi_{1,j}(A')=\pi_{1,j}(A'')$である.
-  したがって,
-  $\det(A')$を定義に従い展開すると,
-  \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}(a'_{1,j}+a''_{1,j})\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A))
-    +
-    \sum_{j=1}^{n}
-    a''_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    +
-    \sum_{j=1}^{n}
-    a''_{1,j}\det(\pi_{1,j}(A''))
-  \end{align*}
-  となるが, $\det(A')+\det(A'')$は定義から,
-  \begin{align*}
-    \det(A')+\det(A'')
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    +
-    \sum_{j=1}^{n}
-    a''_{1,j}\det(\pi_{1,j}(A''))
-  \end{align*}
-  である.
-\end{proof}
-
 
 \begin{proofof*}{det:multilinear:row}{sum}
   行列のサイズ$n$に関する帰納法で示す.
@@ -2496,242 +2572,101 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   $\det(\begin{pmatrix}a_{1,1}\end{pmatrix})=a_{1,1}=a'_{1,1}+a''_{1,1}=\det(\begin{pmatrix}a'_{1,1}\end{pmatrix})+\det(\begin{pmatrix}a''_{1,1}\end{pmatrix})$.
   \paragraph{Induction step}
   $n>1$とする.
-  $t=1$のときは,
-  すでに
-  \cref{lem:det:multilinear:row:sum:1}
-  で示した.
-  $t>1$とする.
-  このとき, $\pi_{1,j}(A)$, $\pi_{1,j}(A')$, $\pi_{1,j}(A'')$は
-  $t-1$行目以外は等しく,
-  $\pi_{1,j}(A')$の$t-1$行目と
-  $\pi_{1,j}(A'')$の$t-1$行目と
-  を足したものと
-  $\pi_{1,j}(A)$の$t-1$行目は等しいので,
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k\neq t$とする.
+  このとき,
+  $\pi_{k,j}(A')$には$A'$の$t$行目が含まれるので,
   帰納法の仮定から,
-  $\det(\pi_{1,j}(A))=\pi_{1,j}(A')+\pi_{1,j}(A'')$である.
-  したがって,
+  $\det(\pi_{k,j}(A'))+\det(\pi_{k,j}(A''))=\det(\pi_{k,j}(A))$
+  である.
+  また, $a'_{k,j}=a''_{k,j}=a_{k,j}$であるから,
+  $\det(A')$, $\det(A'')$を$k$行目で展開すると,
   \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}(\det(\pi_{1,j}(A'))+\det(\pi_{1,j}(A'')))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A'))
-    +
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A'')))\\
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    +
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a''_{1,j}\det(\pi_{1,j}(A'')))\\
-    &=
-    \alpha\det(A')+\alpha\det(A'').
+    \det(A')+\det(A'')
+    &=\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))
+    +\sum_{j=1}^{n} (-1)^{k+j} a''_{k,j}\det(\pi_{k,j}(A''))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A'))
+    +\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A''))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}(\det(\pi_{k,j}(A'))+\det(\pi_{k,j}(A'')))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\det(A).
   \end{align*}
 \end{proofof*}
 
-
-\begin{lemma}
-  \label{lem:det:alt:row:zero}
-  $n>1$とし, $1\leq t< n$とする.
-  $n$次正方行列$A$の$t$列目と$t+1$列目が等しいならば,
-  $\det(A)=0$.
-\end{lemma}
-\begin{proof}
-  行列のサイズ$n$に関する帰納法で示す.
-  \paragraph{Base case}
-  $n=2$のとき,
-  \begin{align*}
-    \det(\begin{pmatrix}a&a\\b&b\end{pmatrix})=ab-ba=0.
-  \end{align*}
-  \paragraph{Induction step}
-  $\pi_{1,j}(A)$
-  は, $j<t$なら, $t-1$列目と$t$列目が等しい.
-  また, $t+1<j$なら, $t$列目と$t+1$列目が等しい.
-  従って帰納法の仮定から,
-  $j<t$または$j>t+1$ならば$\det(\pi_{1,j}(A))=0$である.
-  また, $\pi_{1,t}(A)=\pi_{1,t+1}(A)$,
-  $a_{1,t}=a_{1,t+1}$である.
-  従って$A$を定義に従って展開すると,
-  \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{t-1}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &\quad +
-    (-1)^{t+1}a_{1,t}\det(\pi_{1,t}(A))
-    +
-    (-1)^{t+2}a_{1,t+1}\det(\pi_{1,t+1}(A))\\
-    &\quad+
-    \sum_{j=t+2}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    (-1)^{t+1}a_{1,t}\det(\pi_{1,t}(A))
-    +
-    (-1)^{t+2}a_{1,t+1}\det(\pi_{1,t+1}(A)\\
-    &=
-    ((-1)^{t+1}
-    +
-    (-1)^{t+2})a_{1,t}\det(\pi_{1,t}(A))\\
-    &=0.
-  \end{align*}
-\end{proof}
-
-
-\begin{lemma}
-  \label{lem:det:alt:row:neg}
-  $n>1$とし, $1\leq t< n$とする.
-  $n$次正方行列$A$の$t$列目と$t+1$列目を入れ替えた行列を$A'$とすると
-  $\det(A)=-\det(A')$.
-\end{lemma}
-\begin{proof}
-  行列のサイズ$n$に関する帰納法で示す.
-  \paragraph{Base case}
-  $n=2$のとき,
-  \begin{align*}
-    \det(\begin{pmatrix}a&b\\c&d\end{pmatrix})&=ad-bc,\\
-    \det(\begin{pmatrix}b&a\\d&c\end{pmatrix})&=bc-ad=-(ad-bc),
-  \end{align*}
-  \paragraph{Induction step}
-  $\pi_{1,j}(A)$
-  は, $j<t$なら, $t-1$列目と$t$列目を入れ替えると$\pi_{1,j}(A')$となる.
-  また, $t+1<j$なら, $t$列目と$t+1$列目を入れ替えると$\pi_{1,j}(A')$となる.
-  従って帰納法の仮定から,
-  $j<t$または$j>t+1$ならば$\det(\pi_{1,j}(A))=-\det(\pi_{1,j}(A'))$である.
-  また,
-  $j<t$または$j>t+1$ならば$a_{1,j}=a'_{1,j}$である.
-  それ以外の$j$に関しては,
-  $\pi_{1,t}(A)=\pi_{1,t+1}(A')$,
-  $\pi_{1,t+1}(A)=\pi_{1,t}(A')$,
-  $a_{1,t}=a'_{1,t+1}$,
-  $a_{1,t+1}=a'_{1,t}$
-  が成り立っている.
-  従って$A$を定義に従って展開すると,
-  \begin{align*}
-    \det(A)
-    &=
-    \sum_{j=1}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{t-1}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))
-    \\&\quad
-    +
-    (-1)^{t+1}a_{1,t}\det(\pi_{1,t}(A))
-    +
-    (-1)^{t+2}a_{1,t+1}\det(\pi_{1,t+1}(A))
-    \\&\quad
-    +
-    \sum_{j=t+2}^{n}
-    (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))\\
-    &=
-    \sum_{j=1}^{t-1}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    \\&\quad
-    +
-    (-1)^{t+1}a'_{1,t+1}\det(\pi_{1,t+1}(A'))
-    +
-    (-1)^{t+2}a'_{1,t}\det(\pi_{1,t}(A'))
-    \\&\quad
-    +
-    \sum_{j=t+2}^{n}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=
-    \sum_{j=1}^{t-1}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    \\&\quad
-    +
-    (-1)^{t+2}a'_{1,t}\det(\pi_{1,t}(A'))
-    +
-    (-1)^{t+1}a'_{1,t+1}\det(\pi_{1,t+1}(A'))
-    \\&\quad
-    +
-    \sum_{j=t+2}^{n}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=
-    \sum_{j=1}^{t-1}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))
-    \\&\quad
-    -
-    (-1)^{t+1}a'_{1,t}\det(\pi_{1,t}(A'))
-    -
-    (-1)^{t+2}a'_{1,t+1}\det(\pi_{1,t+1}(A'))
-    \\&\quad
-    +
-    \sum_{j=t+2}^{n}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=
-    \sum_{j=1}^{n}
-    -(-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=
-    -\sum_{j=1}^{n}
-    (-1)^{j+1}a'_{1,j}\det(\pi_{1,j}(A'))\\
-    &=-\det(A').
-  \end{align*}
-\end{proof}
 \begin{proofof}{det:alt:row:neg}
-  $s=t+1$のときは,
-  \Cref{lem:det:alt:row:neg,thm:det:transpose}
-  から, $\det(A)=-\det(A')$となることがわかる.
+  行列のサイズ$n$に関する帰納法で示す.
+  \paragraph{Base case}
+  $n=2$のときは,
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b\\
+      c&d
+    \end{pmatrix}
+    )=ad-bc\\
+    -\det(
+    \begin{pmatrix}
+      c&d\\
+      a&b
+    \end{pmatrix}
+    )=-(cb-ad)=ad-bc.
+  \end{align*}
 
-  $s>t+1$のときについて考える.
-  隣り合う2行を入れ替えると行列式は$-1$倍されることは,
-  すでに示した.
-  $A^{(t)}=A$とする.
-  $A^{(t)}$の$t$行目と$t+1$行目を入れ替えた行列を
-  $A^{(t+1)}$とする.
-  $A^{(t+1)}$の$t+1$行目と$t+2$行目を入れ替えた行列を
-  $A^{(t+2)}$とする.
-  以下同様に
-  $A^{(k)}$の$k$行目と$k+1$行目を入れ替え$A^{(k+1)}$とすることを
-  繰り返し,
-  $A^{(s-1)}$をえる.
-  $B=A^{(s-1)}$とおく.
-  このとき, $A$の$t$行目は$B$の$s-1$行目に移動している.
-  行を入れ替える操作を$(s-1-t)$回行っているので,
-  $\det(A)=(-1)^{s-1-t}\det(B)$である.
-  $B$の$s-1$行目と$s$行目を入れ替えたものを$C$とおく.
+    \paragraph{Induction step}
+  $n>2$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  $A'$の$(i,j)$-成分を$a'_{i,j}$
+  とする.
+  $k$は$t$でも$s$でもないとする.
   このとき,
-  $\det(B)=-\det(C)$である.
-  また, $A$の$t$行目は$C$の$s$行目に移動しており,
-  $A$の$s$行目は$C$の$s-1$行目に移動している.
-  $C^{(s-1)}=C$とする.
-  $C^{(s-1)}$の$s-2$行目と$s-1$行目を入れ替えた行列を
-  $C^{(s-2)}$とする.
-  以下同様に
-  $C^{(k)}$の$k-1$行目と$k$行目を入れ替え$C^{(k-1)}$とすることを
-  繰り返し,
-  $C^{(t)}$をえる.
-  このとき, $A$の$s$行目は$C^{(t)}$の$t$行目へ移動しており,
-  $A$の$t$行目は$C^{(t)}$の$s$行目へ移動している.
-  他の行には変化はないので, $C^{(t)}=A'$である.
-  また$C^{(s-1)}$から$C^{(t)}=A'$を得る操作において,
-  行を入れ替える操作は$(s-1-t)$回行ったので,
-  $\det(C)=(-1)^{s-1-t}\det(A')$である.
-  したがって,
-  $\det(A)=(-1)^{s-1-t}(-1)(-1)^{s-1-t}\det(C)=-\det(C)$.
+  $\pi_{k,j}(A')$には$A'$の$t$行目, $s$行目がどちらも含まれるので,
+  帰納法の仮定から,
+  $-\det(\pi_{k,j}(A'))=\det(\pi_{k,j}(A))$
+  である.
+  また, $a'_{k,j}=a_{k,j}$であるから,
+  $\det(A')$を$k$行目で展開すると,
+  \begin{align*}
+    -\det(A')
+    &=-\sum_{j=1}^{n} (-1)^{k+j} a'_{k,j}\det(\pi_{k,j}(A'))\\
+    &=-\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} (-1) a_{k,j}\det(\pi_{k,j}(A'))\\
+    &=\sum_{j=1}^{n} (-1)^{t+j}a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\det(A).
+  \end{align*}
 \end{proofof}
 
 \begin{proofof}{det:alt:row:zero}
-  $s=t+1$のときは,
-  \Cref{lem:det:alt:row:zero,thm:det:transpose}
-  から, $\det(A)=0$となることがわかる.
+  行列のサイズ$n$に関する帰納法で示す.
+  \paragraph{Base case}
+  $n=2$のときは,
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      a&b\\
+      a&b
+    \end{pmatrix}
+    )=ab-ba=.
+  \end{align*}
 
-  $s>t+1$のときについて考える.
-  $A$の$s$行目と$t+1$行目を入れ替えた行列を$A'$とおくと,
-  $A'$の$t$行目と$s$行目は等しいので,
-  $\det(A')=0$である.
-  また
-  \Cref{det:alt:row:neg}から,
-  $\det(A)=-\det(A')$であるので, $\det(A)=0$である.
+  \paragraph{Induction step}
+  $n>2$のときについて考える.
+  $A$の$(i,j)$-成分を$a_{i,j}$,
+  とする.
+  $k$は$t$でも$s$でもないとする.
+  このとき,
+  $\pi_{k,j}(A)$には$A$の$t$行目, $s$行目がどちらも含まれるので,
+  帰納法の仮定から,
+  $-\det(\pi_{k,j}(A))=0$
+  である.
+  $\det(A)$を$k$行目で展開すると,
+  \begin{align*}
+    \det(A)
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}\det(\pi_{k,j}(A))\\
+    &=\sum_{j=1}^{n} (-1)^{k+j} a_{k,j}0\\
+    &=0.
+  \end{align*}
 \end{proofof}
 \begin{remark}
   $1+1\neq 0$のときには,
@@ -2804,6 +2739,15 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   $t$行目に関する線型性から,
   $D(A)=-D(A''')=-D(A')$.
 \end{proofof*}
+
+\begin{proofof}{lem:mul:alt:nonreg}
+  $A$の$t$行目をすべて$0$倍した行列を$A'$とおくと,
+  $\det(A')=0\det(A)=0$
+  であるが,
+  $A$の$t$行目の成分はもともと$0$であったので, $A=A'$である.
+  よって$\det(A)=\det(A')=0$.
+\end{proofof}
+
 
 
 \endinput

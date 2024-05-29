@@ -4482,7 +4482,7 @@ $n$次正方行列
     $1$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行列を$\pi_{1,k}(A)$とし,
     \begin{align*}
       \det(A)&=\sum_{j=1}^{n}
-      (-1)^{j+1}a_{1,j}\det(\pi_{1,j}(A))
+      (-1)^{1+j}a_{1,j}\det(\pi_{1,j}(A))
     \end{align*}
     で定義する.
     $\det(A)$を
@@ -4828,6 +4828,192 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   である.
 \end{example}
 
+\section{行列式と行基本変形}
+行基本変形をすると
+行列式がどのように変化するかについて見る.
+\begin{theorem}
+  \provelater**{det:rowtrans}
+  $A$を$n$次正方行列とする.
+  \begin{enumerate}
+  \item 
+    \provelater*{F}
+    $A$の$t$行目を$\alpha$倍して得られる行列を$A'$とすると,
+    $\det(A')=\alpha \det(A)$.
+  \item 
+    \provelater*{G}
+    $A$の$t$行目に$s$行目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+    $\det(A')=\det(A)$.
+  \item 
+    \provelater*{H}    
+    $A$の$t$行目と$s$行目を入れ替えて得られる行列を$A'$とすると,
+    $\det(A')=-\det(A)$.
+  \end{enumerate}
+\end{theorem}
+
+
+行基本変形は, 基本行列を左からかけることであったのでこれは次のように言い換えられる.
+\begin{lemma}
+  $A$を$n$次正方行列とする.
+  \begin{enumerate}
+  \item 
+    $\det(F(i;\alpha)A)=\alpha \det(A)$.
+  \item 
+    $\det(G(i,j;\alpha)A)=\det(A)$.
+  \item 
+    $\det(H(i,j)A)=-\det(A)$.
+  \end{enumerate}
+\end{lemma}
+いま,
+$\det(F(i;\alpha))=\alpha$,
+$\det(G(i,j;\alpha))=1$,
+$\det(H(i,j))=-1$であるので,
+次のように書くこともできる.
+\begin{lemma}
+  \label{lem:det:hom:fund}
+  $A$を$n$次正方行列とする.
+  \begin{enumerate}
+  \item 
+    $\det(F(i;\alpha)A)=\det(F(i;\alpha)) \det(A)$.
+  \item 
+    $\det(G(i,j;\alpha)A)=\det(G(i,j;\alpha)) \det(A)$.
+  \item 
+    $\det(H(i,j)A)=\det(H(i,j))\det(A)$.
+  \end{enumerate}
+\end{lemma}
+正則行列は基本行列の積でかけるので,
+\Cref{lem:det:hom:fund}から, 次がわかる.
+\begin{lemma}
+  \provelater**{det:hom:reg}
+  \label{lem:det:hom:reg}
+  $P$を正則行列とする.
+  \begin{enumerate}
+  \item
+    \provelater**{nonzero}
+    $\det(P)\neq 0$.
+  \item
+    \provelater**{prod}
+    $n$次正方行列$A$に対し, $\det(PA)=\det(P)\det(A)$.
+  \end{enumerate}
+\end{lemma}
+
+
+$A$を$n$次正方行列とし,
+行基本変形で$S$に変形できたとする.
+このとき$PA=S$を満たす正則行列が存在する.
+$A=P^{-1}S$となるが,
+$P^{-1}$も正則であるから次が成り立つ.
+\begin{lemma}
+  $A$を$n$次正方行列とし,
+  $PA=S$を満たす正則行列$P$と被役階段行列$S$を考える.
+  このとき,
+  $\det(A)=\det(P^{-1})\det(S)$
+\end{lemma}
+被役階段行列$S$は,
+階数が$n$未満なら
+$n$行目の成分はすべて$0$であるので,
+$\det(S)=0$である.
+従って次がわかる.
+\begin{lemma}
+  \label{lem:det:nonreg}
+  $A$を$n$次正方行列とする.
+  $\rank(A)<n$ならば$\det(A)=0$.
+\end{lemma}
+$\det(AB)$について考える.
+$A$が正則のときは,
+\Cref{lem:det:hom:reg}を使えば,
+$\det(A)\det(B)$に等しいことがわかる.
+$A$が正則でないときは, $AB$も正則ではないので,
+\Cref{lem:det:nonreg}を使えば,
+$\det(AB)$も$\det(A)$も$0$であるので
+$\det(AB)$と$\det(A)\det(B)$は等しく共に0である.
+したがって次がわかる.
+\begin{theorem}
+  \label{thm:det:hom}
+  $n$次正方行列
+  $A$, $B$に対し,
+  $\det(AB)=\det(A)\det(B)$.
+\end{theorem}
+$P$を
+正則行列とすると,
+$P^{-1}P=E_n$であるので,
+$\det(P^{-1})\det(P)=\det(E_n)=1$である.
+\begin{theorem}
+  $A$を正則行列とする.
+  このとき,
+  $\det(A^{-1})=\frac{1}{\det(A)}$.
+\end{theorem}
+\Cref{lem:det:hom:reg,lem:det:nonreg}
+は次のようにまとめることができる.
+\begin{theorem}
+  $A$を$n$次正方行列とする.
+  このとき, 以下の2つは同値:
+  \begin{enumerate}
+  \item $\rank(A)<n$.
+  \item $\det(A)=0$.
+  \end{enumerate}
+  また, 以下の2つは同値:
+  \begin{enumerate}
+  \item $\rank(A)=n$.
+  \item $\det(A)\neq 0$.
+  \end{enumerate}
+\end{theorem}
+
+
+ここまでは行列式について調べてきたが,
+以下では, (行列式とは限らない),
+$n$次正方行列$A$に対して,
+数$D(A)$を対応させる
+関数$D$について考える.
+関数$D$が,
+行基本変形に対して以下を満たしているとする.
+\begin{enumerate}
+\item 
+  $A$の$t$行目を$\alpha$倍して得られる行列を$A'$とすると,
+  $D(A')=\alpha D(A)$.
+\item 
+  $A$の$t$行目に$s$行目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+  $D(A')=D(A)$.
+\item 
+  $A$の$t$行目と$s$行目を入れ替えて得られる行列を$A'$とすると,
+  $D(A')=-D(A)$.
+\end{enumerate}
+行基本変形に対して, 行列式と同じふるまいをするので,
+正方行列$A$と
+正則行列$P$に対して,
+$D(PA)=\det(P)D(A)$を満たすことがわかる.
+したがって, 被役階段行列$S$に対して$\det(S)=D(S)$を満たすなら,
+$D(A)=\det(A)$が成り立つことがわかる.
+つまり, 次が成り立つ.
+\begin{prop}
+  \label{det:rowtransdef}
+$n$次正方行列$A$に対して,
+数$D(A)$を対応させる
+関数$D$が,
+以下を満たしているとする.
+\begin{enumerate}
+  \item $n$次正方行列$A$に対し,
+  \begin{enumerate}
+  \item 
+    $A$の$t$行目を$\alpha$倍して得られる行列を$A'$とすると,
+    $D(A')=\alpha D(A)$.
+  \item 
+    $A$の$t$行目に$s$行目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+    $D(A')=D(A)$.
+  \item 
+    $A$の$t$行目と$s$行目を入れ替えて得られる行列を$A'$とすると,
+    $D(A')=-D(A)$.
+  \end{enumerate}
+  \item 被役階段行列$S$に対し,
+  \begin{enumerate}
+  \item $\rank(S)=n$ならば$D(S)=1$.
+  \item $\rank(S)<n$ならば$D(S)=0$.
+  \end{enumerate}
+\end{enumerate}
+このとき, 任意の$n$次正方行列$A$に対し,
+$D(A)=\det(A)$.
+つまり, $D$と$\det$は関数として一致する.
+\end{prop}
+
 \section{行列式の多重線型性と交代性}
 
 \begin{theorem}
@@ -4918,7 +5104,7 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   とする.
   $t, s\in\Set{1,\ldots,n}$, $t<s$とする. 
   \begin{align*}
-    j\in\Set{1,\ldots,n}\implies a_{s,j}=a'_{t,j}
+    j\in\Set{1,\ldots,n}\implies a_{s,j}=a_{t,j}
   \end{align*}
   をみたすなら,
   \begin{align*}
@@ -5038,7 +5224,7 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   とする.
   $t, s\in\Set{1,\ldots,n}$, $t<s$とする. 
   \begin{align*}
-    i\in\Set{1,\ldots,n}\implies a_{i,s}=a'_{i,t}
+    i\in\Set{1,\ldots,n}\implies a_{i,s}=a_{i,t}
   \end{align*}
   をみたすなら,
   \begin{align*}
@@ -5064,6 +5250,7 @@ $D$は行に関して多重線型かつ交代的であるとする.
   $n$次正方行列
   $A$の$s$行目と$t$行目が等しいなら$\det(A)=0$.
 \end{enumerate}
+このような関数$D$は, 行基本変形に対して次を満たす.
 \begin{lemma}
   \provelater**{lem:mul:alt:rowfun}
 $n$次正方行列$A$に対し
@@ -5085,13 +5272,95 @@ $D$は行に関して多重線型かつ交代的であるとする.
   $D(A)=-D(A')$.
 \end{enumerate}
 \end{lemma}
+また, 多重線型性から, 次が成り立つ:
+\begin{lemma}
+  \provelater{lem:mul:alt:nonreg}
+  $n$次正方行列$A$に対し
+  数$D(A)$を対応させる関数$D$が,
+  $D$はある$t$行目に関して線型であるとする.
+  このとき, $A$の$k$行目の成分がすべて$0$ならば$D(A)=0$.
+\end{lemma}
+よって, $\rank(S)<n$である被役階段行列$S$に対して, $D(S)=0$となることがわかる.
+従って, $D(E_n)=1$を仮定すれば, この関数$D$は
+以下を満たしている:
+\begin{enumerate}
+  \item $n$次正方行列$A$に対し,
+  \begin{enumerate}
+  \item 
+    $A$の$t$行目を$\alpha$倍して得られる行列を$A'$とすると,
+    $D(A')=\alpha D(A)$.
+  \item 
+    $A$の$t$行目に$s$行目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+    $D(A')=D(A)$.
+  \item 
+    $A$の$t$行目と$s$行目を入れ替えて得られる行列を$A'$とすると,
+    $D(A')=-D(A)$.
+  \end{enumerate}
+  \item 被役階段行列$S$に対し,
+  \begin{enumerate}
+  \item $\rank(S)=n$ならば$D(S)=1$.
+  \item $\rank(S)<n$ならば$D(S)=0$.
+  \end{enumerate}
+\end{enumerate}
+したがって,
+\cref{det:rowtransdef}
+から, $D(A)=\det(A)$となることがわかる.
+\begin{theorem}
+  $n$次正方行列$A$に対し
+  数$D(A)$を対応させる関数$D$が行に関して多重線型かつ交代的であり,
+  $D(E_n)$を満たすとする.
+  このとき,
+  $n$正方行列$A$に対し, $D(A)=\det(A)$.
+  つまり, $D$と$\det$は関数として一致する.
+\end{theorem}
 
+\section{小行列と小行列式}
 
+$(i,j)$-成分が$a_{i,j}$である
+$(m,n)$-行列$A$について考える.
+$1\leq i_1<i_2<\cdots<i_{m'}\leq m$,
+$1\leq j_1<j_2<\cdots<j_{n'}\leq m$
+とする.
+$a_{i_k,j_l}$を$(k,l)$-成分とする$(m',n')$-行列を
+$A$の
+$\Set{i_1,i_2,\ldots,i_{m'}}$-行,
+$\Set{j_1,j_2,\ldots,j_{n'}}$-列
+に関する
+\defit{小行列}
+\Defit{submatrix}
+と呼ぶ.
 
+特に, 行と列を$n'$個ずつ選んで,
+$\Set{i_1,i_2,\ldots,i_{n'}}$-行,
+$\Set{j_1,j_2,\ldots,j_{n'}}$-列
+に関する小行列$A'$を考えると,
+$A'$は$n'$次正方行列である.
+$\det(A')$を$n'$次の
+\defit{小行列式}
+\Defit{minor}
+と呼ぶ.
 
-\section{行列式と行基本変形}
-
-
+\begin{example}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+    11 & 2 & 13&5\\
+    21 & 3 & 23&4\\
+    31 & 32 & 33& 34
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  $\Set{1,2}$-行
+  $\Set{2,4}$-列
+  に関する小行列は
+  \begin{align*}
+    \begin{pmatrix}
+    2 &5\\
+    3 &4
+    \end{pmatrix}
+  \end{align*}
+  であり, 小行列式は$2\cdot 4-5\cdot 3=-7$.
+\end{example}
 
 \endinput
 \section{行基本変形}
