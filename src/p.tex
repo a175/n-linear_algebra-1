@@ -4842,7 +4842,8 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   \begin{enumerate}
   \item
     \provelater*{scalar}
-    $A'$の$t$行目を$\alpha$倍したもを$A$とすると,
+    \label{thm:det:multilinear:row:scalar}
+    $A'$の$t$行目を$\alpha$倍したものを$A$とすると,
     $\det(A)=\alpha\det(A')$.
 
     つまり,
@@ -4859,6 +4860,7 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
     \end{align*}
   \item
     \provelater*{sum}
+    \label{thm:det:multilinear:row:sum}
     $A$, $A'$, $A''$は$t$行目以外は等しいとし,
     $A$の$t$行目は$A'$の$t$行目と$A''$の$t$行目の和であるとすると,
     $\det(A)=\det(A')+\alpha(A'')$.
@@ -4924,10 +4926,35 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   \end{align*}
 \end{theorem}
 
+\begin{remark}
+  \Cref{thm:det:multilinear:row}に挙げた性質
+  \Cref{thm:det:multilinear:row:scalar,thm:det:multilinear:row:sum}
+  を行列式が満たしていることを,
+  行列式は
+  $t$行目に関して線型性をもつという.
+  また,
+  行列式が
+  全ての行に関して線型性をもつということを,
+  行列式は行に関して多重線型性を持つという.
+
+  \Cref{thm:det:alt:row:zero}に挙げた性質を
+  行列式が満たしていることを,
+  行列式は$t$行目と$s$行目に関して交代的であるという.
+  また, 行列式が全ての行に関して交代的であることを,
+  行列式は行に関して交代的であるという.
+
+  $1+1\neq 0$のとき\footnote{実数や複素数を考えているときには成り立つので通常は気にする必要はない.},
+  \cref{thm:det:alt:row:neg}に挙げた性質から
+  \cref{thm:det:alt:row:zero}に挙げた性質が導かれる.
+  \Cref{thm:det:alt:row:neg}に挙げた性質を
+  行列式が満たしていることを,
+  行列式は行に関して交代的であるということも多い.
+\end{remark}
 
 \Cref{thm:det:transpose}を使うと,
 \cref{thm:det:multilinear:row,thm:det:alt:row:neg,thm:det:alt:row:zero}
-から以下が導かれる:
+から,
+行列式が列に関して多重線形かつ交代的であることがわかる.
 
 \begin{theorem}
   $A$を$a_{i,j}$を$(i,j)$-成分とする$n$次正方行列,
@@ -4958,7 +4985,7 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
     \provelater**{sum}
     $A$, $A'$, $A''$は$t$列目以外は等しいとし,
     $A$の$t$列目は$A'$の$t$列目と$A''$の$t$列目の和であるとすると,
-    $\det(A)=\det(A')+\alpha(A'')$.
+    $\det(A)=\det(A')+\det(A'')$.
 
     つまり,
     $A$, $A'$, $A''$が
@@ -5019,7 +5046,51 @@ $I$に属する組の総数$\#I(\sigma)$を$\sigma$の
   \end{align*}
 \end{theorem}
 
+
+$n$次正方行列$A$に対し
+数$D(A)$を対応させる関数$D$について考える.
+$D$は行に関して多重線型かつ交代的であるとする.
+つまり, 以下を満たすとする:
+\begin{enumerate}
+\item
+  $A'$の$t$行目を$\alpha$倍したものを$A$とすると,
+  $\det(A)=\alpha\det(A')$.
+\item
+  $A$, $A'$, $A''$は$t$行目以外は等しいとし,
+  $A$の$t$行目は$A'$の$t$行目と$A''$の$t$行目の和であるとすると,
+  $\det(A)=\det(A')+\alpha(A'')$.
+\item
+  $n>1$とし, $t<s\leq n$とする. 
+  $n$次正方行列
+  $A$の$s$行目と$t$行目が等しいなら$\det(A)=0$.
+\end{enumerate}
+\begin{lemma}
+  \provelater**{lem:mul:alt:rowfun}
+$n$次正方行列$A$に対し
+  数$D(A)$を対応させる関数$D$が,
+$D$は行に関して多重線型かつ交代的であるとする.
+このとき, 以下が成り立つ:
+\begin{enumerate}
+\item
+  \provelater*{mul}
+  $A'$のある行を$\alpha$倍して得られる行列を$A$とすると
+  $D(A)=\alpha D(A')$.
+\item
+  \provelater*{sum}
+  $A'$のある行に別の行の$\alpha$倍を加えて得られる行列を$A$とすると
+  $D(A)=D(A')$.
+\item
+  \provelater*{alt}
+  $A'$のある行と別の行とを入れ替えた行列を$A$とすると
+  $D(A)=-D(A')$.
+\end{enumerate}
+\end{lemma}
+
+
+
+
 \section{行列式と行基本変形}
+
 
 
 \endinput
