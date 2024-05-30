@@ -1705,6 +1705,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 
 
 \section{行列式に関する命題の証明}
+\subsection{ラプラス展開に関すること}
 \begin{proofof}{det:tiangular:lower}
   行列のサイズ$n$に関する数学的帰納法で証明する.
   \paragraph{Base case}
@@ -2137,7 +2138,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 から得られる.
 \end{proofof}
 
-
+\subsection{順列を用いた展開に関すること}
 \begin{proofof}{det:closedformula}
   $\det(A)$を計算するため,
   定義に従って展開することを繰り返すと,
@@ -2348,7 +2349,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   \end{align*}
 \end{proofof}
 
-\subsection{}
+\subsection{行基本変形に関すること}
 \begin{proofof*}{det:rowtrans}{F}
   行列のサイズ$n$に関する帰納法で示す.
   \paragraph{Base case}
@@ -2532,7 +2533,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   \end{align*}
 \end{proofof*}
 
-\subsection{}
+\subsection{多重線形性, 交代性に関すること}
 
 \begin{proofof*}{det:multilinear:row}{scalar}
   行列のサイズ$n$に関する帰納法で示す.
@@ -2672,7 +2673,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   $1+1\neq 0$のときには,
   以下のように証明することもできる:
   $A$の$t$行目と$s$行目を入れ替えた行列を$A'$とすると,
-  \Cref{det:alt:row:neg}から, $\det(A')=-\det(A)$
+  \Cref{thm:det:alt:row:neg}から, $\det(A')=-\det(A)$
   である.
   また$A$の$t$行目と$s$行目が等しいので, $A=A'$である.
   従って, $\det(A)=-\det(A)$である.
@@ -2683,27 +2684,10 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 
 
 \begin{proofof*}{lem:mul:alt:rowfun}{mul}
-  多重線型性から明らか.
+  多重線型性から明らかである.
 \end{proofof*}
 \begin{proofof*}{lem:mul:alt:rowfun}{sum}
-  $t$行目以外は
-  $A'$と等しく,
-  $t$行目は
-  $A'$の
-  $s$行目と等しいような
-  $n$次正方行列$A''$を考える.
-  このとき, 交代性から$D(A'')=0$である.
-  また, $A''$の$t$行目を$\alpha$倍をした行列を$A'''$とすると,
-  $t$行目に関する線型性から
-  $D(A''')=\alpha D(A'')=\alpha 0=0$
-  である.
-  一方$A'$の$t$行目に$s$行目の$\alpha$倍を加えたものを$A$とすると,
-  $t$行目に関する線型性から,
-  $D(A)=D(A')+D(A''')$である.
-  したがって$D(A)=D(A')+D(A''')=D(A')+0=D(A')$.
-\end{proofof*}
-\begin{proofof*}{lem:mul:alt:rowfun}{alt}
-  $A'$の$t$行目に$s$行目を加えた行列を$A$とする.
+  $A'$の$t$行目に$s$行目の$\alpha$倍を加えた行列を$A$とする.
   このとき, 
   $D(A)=D(A')$を示す.
   

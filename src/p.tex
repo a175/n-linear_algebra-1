@@ -4673,7 +4673,7 @@ $1$行目や$1$列目以外の行や列で展開することもできる.
 \end{theorem}
 
 特定の行や列の成分が全て0なら,
-\Cref{thm:det:row:expansion,det:col:expansion}
+\Cref{thm:det:row:expansion,thm:det:col:expansion}
 にしたがって展開すれば,
 行列式が0になることが示せる.
 \begin{prop}
@@ -4883,15 +4883,15 @@ $\det(H(i,j))=-1$であるので,
 正則行列は基本行列の積でかけるので,
 \Cref{lem:det:hom:fund}から, 次がわかる.
 \begin{lemma}
-  \provelater**{det:hom:reg}
+  \provelater**{lem:det:hom:reg}
   \label{lem:det:hom:reg}
   $P$を正則行列とする.
   \begin{enumerate}
   \item
-    \provelater**{nonzero}
+    \provelater*{nonzero}
     $\det(P)\neq 0$.
   \item
-    \provelater**{prod}
+    \provelater*{prod}
     $n$次正方行列$A$に対し, $\det(PA)=\det(P)\det(A)$.
   \end{enumerate}
 \end{lemma}
@@ -5213,8 +5213,6 @@ $D(A)=\det(A)$.
 \end{theorem}
 
 \begin{theorem}
-  \provelater{det:alt:row:zero}
-  \label{thm:det:alt:row:zero}
   $n>1$とし, $t<s\leq n$とする. 
   $n$次正方行列
   $A$の$s$列目と$t$列目が等しいなら$\det(A)=0$.
