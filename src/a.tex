@@ -2733,6 +2733,38 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 \end{proofof}
 
 
+\subsection{余因子に関すること}
+\begin{proofof*}{lem:cofac:expand}{row}
+  $s=t$のときには, $\det(A)$を$t$行目で展開したものが左辺である.
+
+  $s\neq t$のときには,
+  次のような$n$次正方行列$A'$を考える:
+  $A'$は$s$行目を除き$A$と等しい.
+  $A'$の$s$行目は$A$の$t$行目と等しい.
+  このとき, $A'$の$t$行目と$s$行目は等しいので,
+  $\det(A')=0$である.
+  一方$\det(A')$を展開したものが,
+  左辺である.
+\end{proofof*}
+\begin{proofof*}{lem:cofac:expand}{col}
+  $\det(A)=\det(\transposed{A})$であるので,
+  行の場合に帰着できる.
+\end{proofof*}
+
+\begin{proofof}{adj:prod}
+  $AA'$を直接計算すると,
+  $(s,t)$成分は,
+  \Cref{lem:cofac:expand}の
+  \cref{lem:cofac:expand:item:row}の
+  左辺である.
+  よって, $\det(A)E_n$に等しいことがわかる.
+
+  また, $A'A$は
+  \Cref{lem:cofac:expand}の
+  \cref{lem:cofac:expand:item:col}に帰着できる.
+  左辺である.
+\end{proofof}
+
 
 \endinput
 

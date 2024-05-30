@@ -5312,6 +5312,131 @@ $D$は行に関して多重線型かつ交代的であるとする.
   つまり, $D$と$\det$は関数として一致する.
 \end{theorem}
 
+\section{余因子と余因子行列}
+
+\begin{definition}
+  $n$次正方行列$A$に対し,
+  $(-1)^{i+j}\det(\pi_{i,j}(A))$を,
+  $A$の
+  \defit{$(i,j)$-余因子}
+  \Defit{$(i,j)$-cofactor}
+  \addindex{余因子!$(i,j)$-{}---}%
+  \addindex{cofactor!$(i,j)$-{}---}%
+  と呼ぶ.
+  ただし,
+  $A$から$i$行目と$j$行目を取り除いて得られる$(n-1)$次
+  正方行列を, $\pi_{i,j}(A)$で表している.
+\end{definition}
+\Cref{thm:det:row:expansion,thm:det:col:expansion}
+を余因子をつかって言い換えると以下のようになる:
+\begin{theorem}
+  $A$を,
+  $a_{i,j}$が$(i,j)$-成分である
+  $n$次正方行列$A$とし,
+  $\Delta_{i,j}$を
+  $A$の余因子とする.
+   このとき以下が成り立つ:
+  \begin{enumerate}
+  \item
+  $1\leq t\leq n$に対し,
+    \begin{align*}
+      \det(A)&=
+      \sum_{j=1}^{n} a_{t,j}\Delta_{t,j}\\
+    \end{align*}
+  \item
+  $1\leq t\leq n$に対し,
+    \begin{align*}
+      \det(A)&=
+      \sum_{i=1}^{n} a_{i,t}\Delta_{i,t}.
+    \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+これらの, 右辺は$a_{t,j}\Delta_{t,j}$の様に, 添字が完全に揃っている.
+そうでない場合も考えると次のようになる.
+\begin{lemma}
+  \provelater**{lem:cofac:expand}
+  \label{lem:cofac:expand}
+  $A$を,
+  $a_{i,j}$が$(i,j)$-成分である
+  $n$次正方行列$A$とし,
+  $\Delta_{i,j}$を
+  $A$の余因子とする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item
+  \label{lem:cofac:expand:item:row}    
+    \provelater*{row}
+    $s,t\in\Set{1,\ldots,n}$に対し,
+    \begin{align*}
+      \sum_{j=1}^{n} a_{s,j}\Delta_{t,j}
+      &=
+      \begin{cases}
+        \det(A) & (s=t)\\
+        0 & (s\neq t).
+      \end{cases}
+    \end{align*}
+  \item
+    \provelater*{col}
+    \label{lem:cofac:expand:item:col}    
+    $s,t\in\Set{1,\ldots,n}$に対し,
+    \begin{align*}
+      \sum_{i=1}^{n} a_{i,s}\Delta_{i,t}
+      &=
+      \begin{cases}
+        \det(A) & (s=t)\\
+        0 & (s\neq t).
+      \end{cases}
+    \end{align*}
+  \end{enumerate}
+\end{lemma}
+
+
+
+\begin{definition}
+  $A$を
+  $n$次正方行列$A$とし,
+  $\Delta_{i,j}$を
+  $A$の余因子とする.
+  このとき,
+  $\Delta_{j,i}$を$(i,j)$-成分とする$n$次正方行列を,
+  $\adj(A)$で表し,
+  $A$の
+  \defit{余因子行列}
+  \Defit{adjacency matrix}
+  と呼ぶ.
+\end{definition}
+\begin{remark}
+  $A$の余因子行列は,
+  $(i,j)$-余因子
+  $\Delta_{i,j}$
+  を
+  $(i,j)$-成分とする
+  $n$次正方行列の転置である.
+\end{remark}
+\begin{prop}
+  \provelater{adj:prod}
+  \label{lem:adj:prod}
+  $A$を$n$次正方行列とし,
+  $A' = \adj(A)$とする.
+  このとき,
+  \begin{align*}
+    A' A = A A' =\det(A)E_n.
+  \end{align*}
+\end{prop}
+また,
+\Cref{lem:adj:prod}から,
+次がすぐわかる.
+\begin{prop}
+  $A$を$n$次正方行列とし,
+  $A' = \adj(A)$とする.
+  $\det(A)\neq 0$ならば,
+  \begin{align*}
+    A^{-1}=\frac{1}{\det(A)}A'
+  \end{align*}
+\end{prop}
+
+
 \section{小行列と小行列式}
 
 $(i,j)$-成分が$a_{i,j}$である
