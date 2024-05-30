@@ -5403,7 +5403,10 @@ $D$は行に関して多重線型かつ交代的であるとする.
   $\adj(A)$で表し,
   $A$の
   \defit{余因子行列}
-  \Defit{adjacency matrix}
+  \Defit{adjugate matrix}
+  とか
+  \defit{古典随伴行列}
+  \Defit{classical adjoint matrix}
   と呼ぶ.
 \end{definition}
 \begin{remark}
@@ -5418,10 +5421,10 @@ $D$は行に関して多重線型かつ交代的であるとする.
   \provelater{adj:prod}
   \label{lem:adj:prod}
   $A$を$n$次正方行列とし,
-  $A' = \adj(A)$とする.
+  $\tilde A = \adj(A)$とする.
   このとき,
   \begin{align*}
-    A' A = A A' =\det(A)E_n.
+    \tilde A A = A \tilde A =\det(A)E_n.
   \end{align*}
 \end{prop}
 また,
@@ -5429,10 +5432,10 @@ $D$は行に関して多重線型かつ交代的であるとする.
 次がすぐわかる.
 \begin{prop}
   $A$を$n$次正方行列とし,
-  $A' = \adj(A)$とする.
+  $\tilde A = \adj(A)$とする.
   $\det(A)\neq 0$ならば,
   \begin{align*}
-    A^{-1}=\frac{1}{\det(A)}A'
+    A^{-1}=\frac{1}{\det(A)}\tilde A.
   \end{align*}
 \end{prop}
 
