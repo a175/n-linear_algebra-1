@@ -5439,6 +5439,126 @@ $D$は行に関して多重線型かつ交代的であるとする.
   \end{align*}
 \end{prop}
 
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+  \end{align*}
+  とし,
+  $\Delta_{i,j}$を$A$の$(i,j)$-余因子とする.
+  このとき,
+  \begin{align*}
+    \adj(A)
+    &=\transposed{
+      \begin{pmatrix}
+        \Delta_{1,1}&\Delta_{1,2}\\
+        \Delta_{2,1}&\Delta_{2,2}
+      \end{pmatrix}}\\
+    &=\transposed{
+      \begin{pmatrix}
+        (-1)^{1+1}\det(d)&(-1)^{1+2}\det(c)\\
+        (-1)^{2+1}\det(b)&(-1)^{2+2}\det(a)
+      \end{pmatrix}}\\
+    &=\transposed{
+      \begin{pmatrix}
+        d&-c\\
+        -b&a
+      \end{pmatrix}}\\
+    &=
+      \begin{pmatrix}
+        d&-b\\
+        -c&a
+      \end{pmatrix}
+  \end{align*}
+  である. したがって, $\det(A)=ad-bc\neq 0$のときには,
+  \begin{align*}
+    A^{-1}=\frac{1}{ad-bc}
+    \begin{pmatrix}
+        d&-b\\
+        -c&a
+      \end{pmatrix}.
+  \end{align*}
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}
+  \end{align*}
+  とし,
+  $\Delta_{i,j}$を$A$の$(i,j)$-余因子とする.
+  このとき,
+  \begin{align*}
+    \adj(A)
+    &=\transposed{
+      \begin{pmatrix}
+        \Delta_{1,1}&\Delta_{1,2}&\Delta_{1,3}\\
+        \Delta_{2,1}&\Delta_{2,2}&\Delta_{2,3}\\
+        \Delta_{3,1}&\Delta_{3,2}&\Delta_{3,3}
+      \end{pmatrix}}\\
+    &=\transposed{
+      \begin{pmatrix}
+        \det\begin{pmatrix}e&f\\h&i\end{pmatrix}&
+        -\det\begin{pmatrix}d&f\\g&i\end{pmatrix}&
+        \det\begin{pmatrix}d&e\\g&h\end{pmatrix}\\            
+        -\det\begin{pmatrix}b&c\\h&i\end{pmatrix}&
+        \det\begin{pmatrix}a&c\\g&i\end{pmatrix}&
+        -\det\begin{pmatrix}a&b\\g&h\end{pmatrix}\\            
+        \det\begin{pmatrix}b&c\\e&f\end{pmatrix}&
+        -\det\begin{pmatrix}a&c\\d&f\end{pmatrix}&
+        \det\begin{pmatrix}a&b\\d&e\end{pmatrix}            
+      \end{pmatrix}}\\
+    &=
+      \begin{pmatrix}
+        ei-fh&
+        -(di-fg)&
+        dh-eg\\
+        -(bi-ch)&
+        ai-cg&
+        -(ah-bg)\\
+        bf-ce&
+        -(af-cd)&
+        ae-bd
+      \end{pmatrix}
+  \end{align*}
+  である. したがって, $\det(A)=aei+bfg+cdh-afh-bdi-ceg\neq 0$のときには,
+  \begin{align*}
+    A^{-1}=\frac{1}{aei+bfg+cdh-afh-bdi-ceg}
+      \begin{pmatrix}
+        ei-fh&
+        -(di-fg)&
+        dh-eg\\
+        -(bi-ch)&
+        ai-cg&
+        -(ah-bg)\\
+        bf-ce&
+        -(af-cd)&
+        ae-bd
+      \end{pmatrix}.
+  \end{align*}
+\end{example}
+
+\begin{remark}
+  余因子行列によって, 逆行列の表示が得られるが,
+  多数の行列式を計算する必要があり,
+  計算は非常に大変である.
+  一般には行基本変形により逆行列を求める方法が,
+  具体的な例の計算には有効である場合が多い.
+\end{remark}
+
+\begin{cor}
+  \provelater**{det:adj}
+  $A$を$n$次正方行列とし, $\tilde A$を$A$の余因子行列とする.
+  \begin{enumerate}
+  \item
+    \provelater*{pow}
+    $\det(A)^{n-1}=\det(\tilde A)$.
+  \item 次は同値:
+    \provelater*{zero}
+    \begin{enumerate}
+    \item $\det(A)=0$.
+    \item $\det(\tilde A)=0$.
+    \end{enumerate}
+  \end{enumerate}
+\end{cor}
 
 \section{小行列と小行列式}
 

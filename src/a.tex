@@ -2765,7 +2765,55 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   左辺である.
 \end{proofof}
 
+\begin{proofof*}{det:adj}{zero}
+  \Cref{lem:adj:prod}より,
+  \begin{align*}
+    A \tilde A =\det(A)E_n
+  \end{align*}
+  である.
 
+  $\det(A)=0$とすると,
+  $A \tilde A =O_{n,n}$
+  となる.
+  $A=O_{n,n}$のとき, $\tilde A=O_{n,n}$であるから,
+  $\det(\tilde A)=0$.
+  $A\neq O_{n,n}$のとき,
+  零行列ではない行列をかけて零行列となったので,
+  $\tilde A$は正則ではない.
+  よって, $\det(\tilde A)=0$.
+  
+  一方$\det(A)\neq 0$とすると,
+  $A$は正則で,
+  $\tilde A=\det(A)A^{-1}$である.
+  したがって$\tilde A$も正則であり,
+  $\det(\tilde A)\neq 0$.
+
+
+\end{proofof*}
+\begin{proofof*}{det:adj}{pow}
+\Cref{lem:adj:prod}より,
+\begin{align*}
+  A \tilde A =\det(A)E_n.
+\end{align*}
+行列式を考えると,
+$\det(\alpha E_n)=\alpha^n$であるので,
+\begin{align*}
+  \det(A) \det(\tilde A) =\det(A)^n
+\end{align*}
+となる.
+$\det(A)\neq 0$ならば,
+$\det(A)$でわることで,
+\begin{align*}
+  \det(\tilde A) =\det(A)^{n-1}
+\end{align*}
+
+$\det(A)=0$ならば, 
+$\det(\tilde A)=0$なので,
+\begin{align*}
+  \det(\tilde A)=0 =\det(A)^{n-1}.
+\end{align*}
+
+\end{proofof*}
 \endinput
 
 \section{逆行列や正則に関する命題の証明}
