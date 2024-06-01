@@ -1372,7 +1372,7 @@ $2$次正方行列のときについて考える.
       a_{1,1}&a_{1,2}&\cdots&a_{1,k}&b_{1,1}&b_{1,2}&\cdots&b_{1,n}\\
       a_{2,1}&a_{2,2}&\cdots&a_{2,k}&b_{2,1}&b_{2,2}&\cdots&b_{2,n}\\
       \vdots&\vdots&&\vdots&\vdots&\vdots&&\vdots\\
-      a_{m,1}&a_{m,2}&\cdots&a_{m,k}&b_{m,1}&b_{m,2}&\cdots&b_{m,n}\\
+      a_{m,1}&a_{m,2}&\cdots&a_{m,k}&b_{m,1}&b_{m,2}&\cdots&b_{m,n}
     \end{pmatrix}
   \end{align*}
   となるので,
@@ -5608,7 +5608,120 @@ $\det(A')$を$n'$次の
   であり, 小行列式は$2\cdot 4-5\cdot 3=-7$.
 \end{example}
 
+
+連立一次方程式について考える.
+$A$を$n$次正方行列, $\bbb$を$(n,1)$行列 ($n$項数ベクトル)とし,
+$\xx$に関する方程式
+\begin{align*}
+A\xx=\bbb
+\end{align*}
+について考える.
+$A$が正則であるときには,
+解はただ一つ存在し,
+$\xx=A^{-1}\bbb$が解である.
+$A^{-1}\bbb$は次のように表すことができる.
+\begin{theorem}
+  \provelater{cramer}
+  $A$を
+  $(i,j)$-成分が$a_{i,j}$である$n$次正方行列,
+  $\bbb$を
+  第$i$成分が$b_i$である$n$項数ベクトル,
+  $\xx$を
+  第$i$成分が$x_i$である$n$項数ベクトルとする.
+  $\det(A)\neq 0$のとき, $A\xx=\bbb$の解は,
+  \begin{align*}
+    x_j=\frac{1}{\det(A)}
+    \det(\begin{pmatrix}
+      a_{1,1}&\cdots&a_{1,j-1}&b_1&a_{1,j+1}&\cdots&a_{1,n}\\
+      a_{1,2}&\cdots&a_{1,j-2}&b_2&a_{2,j+1}&\cdots&a_{2,n}\\
+      \vdots&&\vdots&\vdots&\vdots&&\vdots\\
+      a_{n,1}&\cdots&a_{n,j-1}&b_1&a_{n,j+1}&\cdots&a_{n,n}
+      \end{pmatrix})
+  \end{align*}
+  で与えられる.
+  つまり,
+  $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$
+  と列ベクトル表示されているとき.
+  \begin{align*}
+    x_j=\frac{1}{\det(A)}
+    \det(
+    \left(\begin{array}{c|c|c|c|c|c|c}
+      \aaa_1&\cdots&\aaa_{j-1}&\bbb&\aaa_{j-1}&\cdots&\aaa_n
+    \end{array}\right))
+  \end{align*}
+  で与えられる.
+\end{theorem}
+
+\begin{example}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      2&0&2\\
+      4&3&0\\
+      0&5&6
+    \end{pmatrix}\\
+    \bbb
+    &=
+    \begin{pmatrix}
+      0\\
+      -1\\
+      0
+    \end{pmatrix}
+  \end{align*}
+  とおく.
+  \begin{align*}
+    \det(A)&=\det(
+    \begin{pmatrix}
+      2&0&2\\
+      4&3&0\\
+      0&5&6
+    \end{pmatrix})=76\\
+    x_1&=\frac{1}{76}\det(
+    \begin{pmatrix}
+      0&0&2\\
+      -1&3&0\\
+      0&5&6
+    \end{pmatrix})=\frac{-10}{76}\\
+    x_2&=\frac{1}{76}\det(
+    \begin{pmatrix}
+      2&0&2\\
+      4&-1&0\\
+      0&0&6
+    \end{pmatrix})=\frac{-12}{76}\\
+    x_1&=\frac{1}{76}\det(
+    \begin{pmatrix}
+      2&0&0\\
+      4&3&-1\\
+      0&5&0
+    \end{pmatrix})=\frac{10}{76}
+  \end{align*}
+  である, したがって
+  $A\xx=\bbb$
+  の解は,
+  \begin{align*}
+    \frac{1}{76}
+    \begin{pmatrix}
+-10\\=12\\10
+    \end{pmatrix}
+  \end{align*}
+\end{example}
+\begin{remark}
+  \Cref{thm:cramer}
+  の解の公式は,
+  \defit{クラメルの公式}
+  \Defit{Cramer's formula}
+  と呼ばれる.
+  行列のサイズが大きくなると,
+  大きなサイズの行列式を複数計算することになる.
+
+  一般には, 吐き出し法で解くほうが簡単であることが多い.
+\end{remark}
+
+
 \endinput
+\chapter{固有ベクトルと固有値}
+
+
 \section{行基本変形}
 ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
 また, 階段行列と呼ばれる行列を定義し,

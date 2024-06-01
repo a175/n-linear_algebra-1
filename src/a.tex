@@ -2814,6 +2814,65 @@ $\det(\tilde A)=0$なので,
 \end{align*}
 
 \end{proofof*}
+
+
+\begin{proofof}{cramer}
+  \label{thm:cramer}
+  $A$が正則なので,
+  $\xx=A^{-1}\bbb$である.
+  $A^{-1}=\frac{1}{\det(A)}\adj(A)$であるので,
+  $\Delta_{i,j}$を$A$の$(i,j)$-余因子とすると,
+  \begin{align*}
+    A^{-1}\bbb
+    &=\frac{1}{\det(A)}\adj(A)\bbb\\
+    &=\frac{1}{\det(A)}\transposed{
+      \begin{pmatrix}
+        \Delta_{1,1}&\Delta_{1,2}&\cdots&\Delta_{1,n}\\
+        \Delta_{2,1}&\Delta_{2,2}&\cdots&\Delta_{2,n}\\
+        \vdots\\
+        \Delta_{n,1}&\Delta_{n,2}&\cdots&\Delta_{n,n}
+      \end{pmatrix}
+      }\bbb\\
+    &=\frac{1}{\det(A)}
+      \begin{pmatrix}
+        \Delta_{1,1}&\Delta_{2,1}&\cdots&\Delta_{n,1}\\
+        \Delta_{1,2}&\Delta_{2,2}&\cdots&\Delta_{n,2}\\
+        \vdots\\
+        \Delta_{1,n}&\Delta_{2,n}&\cdots&\Delta_{n,n}
+      \end{pmatrix}
+      \bbb\\
+    &=\frac{1}{\det(A)}
+      \begin{pmatrix}
+        \Delta_{1,1}b_1+\Delta_{2,1}b_2+\cdots+\Delta_{n,1}b_n\\
+        \Delta_{1,2}b_1+\Delta_{2,2}b_2+\cdots+\Delta_{n,2}b_n\\
+        \vdots\\
+        \Delta_{1,n}b_1+\Delta_{2,n}b_2+\cdots+\Delta_{n,n}b_n
+      \end{pmatrix}.
+  \end{align*}
+  よって,
+  \begin{align*}
+    x_j=
+    \frac{1}{\det(A)}
+    \Delta_{1,j}b_j+\Delta_{2,j}b_2+\cdots+\Delta_{n,j}b_n
+  \end{align*}
+  一方,
+  \begin{align*}
+    A'&=
+    \left(\begin{array}{c|c|c|c|c|c|c}
+      \aaa_1&\cdots&\aaa_{j-1}&\bbb&\aaa_{j-1}&\cdots&\aaa_n
+    \end{array}\right)
+  \end{align*}
+  とおき, $\det(A')$を$j$列目で展開すると,
+  \begin{align*}
+    \det(A')&=
+    \Delta_{1,j}b_j+\Delta_{2,j}b_2+\cdots+\Delta_{n,j}b_n.
+  \end{align*}
+  よって,
+  \begin{align*}
+    x_j &= \frac{1}{\det(A)}\det(A').
+  \end{align*}
+\end{proofof}
+
 \endinput
 
 \section{逆行列や正則に関する命題の証明}
