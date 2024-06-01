@@ -2873,8 +2873,348 @@ $\det(\tilde A)=0$なので,
   \end{align*}
 \end{proofof}
 
-\endinput
+%%\endinput
+\section{固有値に関連する命題の証明}
+\subsection{一次独立性}
+\begin{proofof}{lem:lindep:lessrank}
+  一次従属であるので
+  $\alpha_1\aaa_1+\cdots+\alpha_n\aaa_n=\zzero$
+  かつ$(\alpha_1,\ldots,\alpha_n)\neq (0,\ldots,0)$
+  を満たす数
+  $\alpha_1,\ldots,\alpha_n$がとれる.
+  $\alpha_k\neq 0$とする.
+  このとき,
+  \begin{align*}
+    \aaa_k=\sum_{i=1}^{k-1}\frac{-\alpha_i}{\alpha_k}\aaa_i
+    +\sum_{i=k+1}^{n}\frac{-\alpha_i}{\alpha_k}\aaa_i
+  \end{align*}
+  である.
+  $\transposed{A}$を考え,
+  $k$行目に$i$行目の$\frac{-\alpha_i}{\alpha_k}$倍を加えるという
+  ことを行うと, $k$行目の成分はすべて$0$となる.
+  さらに$k$行目と$n$行目を交換した行列を$A'$とする.
+  $A'$は$n$行目がすべて0である$(n,m)$行列であるから, $\rank(A')<n$である.
+  よって$\rank(A)<n$
+\end{proofof}
+\begin{proofof}{lem:lineq:lessrank}
+  \begin{align*}
+    \xx=\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}\neq
+    \begin{pmatrix}0\\\vdots\\0\end{pmatrix}
+  \end{align*}
+  を$A\xx=\zzero$の解とする.
+  このとき,
+  \begin{align*}
+    A\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}
+    =
+    \left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)
+      \begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}
+        =
+        c_1\aaa_1+c_2\aaa_2+\cdots+c_n\aaa_n
+  \end{align*}
+  であるので,
+  \begin{align*}
+    c_1\aaa_1+c_2\aaa_2+\cdots+c_n\aaa_n=\zzero
+  \end{align*}
+  であり, $(c_1,\ldots,c_n)\neq (0,\ldots,0)$.
+  したがって,
+  $(\aaa_1,\ldots,\aaa_n)$は一次従属.
+\end{proofof}
 
+\subsection{}
+\begin{proofof}{thm:diagonizablity}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \paragraph{\Cref{thm:diagonizablity:item:diagonalizable}$\implies$\Cref{thm:diagonizablity:item:eigen}}
+  正則行列$P$で,
+  \begin{align*}
+    P^{-1}AP=
+    \begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  とできるとする.
+  このとき,
+  \begin{align*}
+    AP=
+    P\begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    P
+    \begin{pmatrix}
+      \lambda &0\\0&\mu
+    \end{pmatrix}=
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  また,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  である.
+  $P$が正則であるので\cref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトル,
+  である.
+  
+  \paragraph{\Cref{thm:diagonizablity:item:eigen}$\implies$\Cref{thm:diagonizablity:item:diagonalizable}}
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトルとし,
+  $(\aaa,\bbb)$は一次独立とする.
+  \begin{align*}
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}\\
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \cref{thm:det:reg}より,
+  $P$は正則である.
+
+  また,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  であるので,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p &\mu q\\\lambda p'&\mu q'
+    \end{pmatrix}
+    =
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}.
+  \end{align*}
+  $P$は正則なので, $P^{-1}$を左からかけると,
+  \begin{align*}
+    AP&=
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}\\
+    P^{-1}AP&=
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof}{thm:diferenteigen:linindep}
+  $A$を$2$次正方行列とする.
+  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
+  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
+  \begin{align*}
+    \vv&=
+    \begin{pmatrix}
+      v\\v' 
+    \end{pmatrix}\\
+    \ww&=
+    \begin{pmatrix}
+      w\\w' 
+    \end{pmatrix}
+  \end{align*}
+  とおく.
+  $x\vv+y\ww=\zzero$とする.
+  このとき, $x=y=0$を示す.
+
+  $x\vv+y\ww=\zzero$であるので,
+  \begin{align*}
+    x\vv+y\ww&=\zzero\\
+    A(x\vv+y\ww)&=A\zzero\\
+    xA\vv+yA\ww&=\zzero\\
+    x\lambda \vv+y\mu \ww&=\zzero
+  \end{align*}
+  である.
+  $x\vv+y\ww=\zzero$, $x\lambda \vv+y\mu \ww=\zzero$
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      xv+yw&\lambda xv+\mu yw\\xv'+xv'&\lambda xv'+\mu yw' 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix})
+    =\mu-\lambda\neq 0
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  よって,
+  \begin{align*}
+    x\vv&=
+    \begin{pmatrix}
+      xv\\xv' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero\\
+    y\ww&=
+    \begin{pmatrix}
+      yw\\yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero
+  \end{align*}
+  である. $\vv\neq\zzero$であるから, $x=0$である.
+  また, $\ww\neq\zzero$であるから, $y=0$である.
+\end{proofof}
+
+\endinput
 \section{逆行列や正則に関する命題の証明}
 ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
 逆行列や正則行列に関する命題については,
@@ -3604,297 +3944,4 @@ $\ker(f)\neq \Set{\zzero}$である.
   $f\circ g=\id_{\RR^2}$である.
   したがって$g$は$f$の逆変換である.
   
-\end{proofof}
-\section{固有値に関連する命題の証明}
-\begin{proofof}{thm:diagonizablity}
-  \begin{align*}
-    A=
-    \begin{pmatrix}
-      a &b\\c&d
-    \end{pmatrix}
-  \end{align*}
-  とする.
-  \paragraph{\Cref{thm:diagonizablity:item:diagonalizable}$\implies$\Cref{thm:diagonizablity:item:eigen}}
-  正則行列$P$で,
-  \begin{align*}
-    P^{-1}AP=
-    \begin{pmatrix}
-      \lambda&0\\0&\mu
-    \end{pmatrix}
-  \end{align*}
-  とできるとする.
-  このとき,
-  \begin{align*}
-    AP=
-    P\begin{pmatrix}
-      \lambda&0\\0&\mu
-    \end{pmatrix}
-  \end{align*}
-  である.
-  \begin{align*}
-    P&=
-    \begin{pmatrix}
-      p&q\\p'&q'
-    \end{pmatrix}\\
-    \aaa&=
-    \begin{pmatrix}
-      p\\p'
-    \end{pmatrix}\\
-    \bbb&=
-    \begin{pmatrix}
-      q\\q'
-    \end{pmatrix}
-  \end{align*}
-  とすると
-  \begin{align*}
-    P
-    \begin{pmatrix}
-      \lambda &0\\0&\mu
-    \end{pmatrix}=
-    \begin{pmatrix}
-      \lambda p&\mu q\\ \lambda p'&\mu q'
-    \end{pmatrix}
-  \end{align*}
-  である.
-  また,
-  \begin{align*}
-    AP&=
-    \begin{pmatrix}
-      a &b\\c&d
-    \end{pmatrix}
-    \begin{pmatrix}
-      p&q\\p'&q'
-    \end{pmatrix}=
-    \begin{pmatrix}
-      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
-    \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}
-      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \lambda p&\mu q\\ \lambda p'&\mu q'
-    \end{pmatrix}
-  \end{align*}
-  である.
-  したがって,
-  \begin{align*}
-    A\aaa&=
-        \begin{pmatrix}
-      ap+bp' \\cp+dp'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \lambda p\\ \lambda p'
-    \end{pmatrix}
-    =
-    \lambda \aaa\\
-    A\bbb&=
-    \begin{pmatrix}
-      aq+bq'\\cq+dq'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \mu q\\\mu q'
-    \end{pmatrix}
-    =
-    \mu \bbb
-  \end{align*}
-  である.
-  $P$が正則であるので\cref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
-  $\aaa$は固有値$\lambda$に属する固有ベクトル,
-  $\bbb$は固有値$\mu$に属する固有ベクトル,
-  である.
-  
-  \paragraph{\Cref{thm:diagonizablity:item:eigen}$\implies$\Cref{thm:diagonizablity:item:diagonalizable}}
-  $\aaa$は固有値$\lambda$に属する固有ベクトル,
-  $\bbb$は固有値$\mu$に属する固有ベクトルとし,
-  $(\aaa,\bbb)$は一次独立とする.
-  \begin{align*}
-    \aaa&=
-    \begin{pmatrix}
-      p\\p'
-    \end{pmatrix}\\
-    \bbb&=
-    \begin{pmatrix}
-      q\\q'
-    \end{pmatrix}\\
-    P&=
-    \begin{pmatrix}
-      p&q\\p'&q'
-    \end{pmatrix}
-  \end{align*}
-  とすると
-  \cref{thm:det:reg}より,
-  $P$は正則である.
-
-  また,
-  \begin{align*}
-    A\aaa&=
-        \begin{pmatrix}
-      ap+bp' \\cp+dp'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \lambda p\\ \lambda p'
-    \end{pmatrix}
-    =
-    \lambda \aaa\\
-    A\bbb&=
-    \begin{pmatrix}
-      aq+bq'\\cq+dq'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \mu q\\\mu q'
-    \end{pmatrix}
-    =
-    \mu \bbb
-  \end{align*}
-  であるので,
-  \begin{align*}
-    AP&=
-    \begin{pmatrix}
-      a &b\\c&d
-    \end{pmatrix}
-    \begin{pmatrix}
-      p&q\\p'&q'
-    \end{pmatrix}=
-    \begin{pmatrix}
-      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \lambda p &\mu q\\\lambda p'&\mu q'
-    \end{pmatrix}
-    =
-    P
-    \begin{pmatrix}
-      \lambda  &0\\0&\mu 
-    \end{pmatrix}.
-  \end{align*}
-  $P$は正則なので, $P^{-1}$を左からかけると,
-  \begin{align*}
-    AP&=
-    P
-    \begin{pmatrix}
-      \lambda  &0\\0&\mu 
-    \end{pmatrix}\\
-    P^{-1}AP&=
-    \begin{pmatrix}
-      \lambda  &0\\0&\mu 
-    \end{pmatrix}
-  \end{align*}
-  である.
-\end{proofof}
-
-\begin{proofof}{thm:diferenteigen:linindep}
-  $A$を$2$次正方行列とする.
-  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
-  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
-  \begin{align*}
-    \vv&=
-    \begin{pmatrix}
-      v\\v' 
-    \end{pmatrix}\\
-    \ww&=
-    \begin{pmatrix}
-      w\\w' 
-    \end{pmatrix}
-  \end{align*}
-  とおく.
-  $x\vv+y\ww=\zzero$とする.
-  このとき, $x=y=0$を示す.
-
-  $x\vv+y\ww=\zzero$であるので,
-  \begin{align*}
-    x\vv+y\ww&=\zzero\\
-    A(x\vv+y\ww)&=A\zzero\\
-    xA\vv+yA\ww&=\zzero\\
-    x\lambda \vv+y\mu \ww&=\zzero
-  \end{align*}
-  である.
-  $x\vv+y\ww=\zzero$, $x\lambda \vv+y\mu \ww=\zzero$
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}
-      xv&yw\\xv'&yw' 
-    \end{pmatrix}
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      xv+yw&\lambda xv+\mu yw\\xv'+xv'&\lambda xv'+\mu yw' 
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  となる.
-  \begin{align*}
-    \det(
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix})
-    =\mu-\lambda\neq 0
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix}
-  \end{align*}
-  は正則である.
-  \begin{align*}
-    \begin{pmatrix}
-      xv&yw\\xv'&yw' 
-    \end{pmatrix}=
-    \begin{pmatrix}
-      xv&yw\\xv'&yw' 
-    \end{pmatrix}
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix}
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix}^{-1}
-    =
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}
-      1&\lambda\\1&\mu 
-    \end{pmatrix}^{-1}
-    =
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  よって,
-  \begin{align*}
-    x\vv&=
-    \begin{pmatrix}
-      xv\\xv' 
-    \end{pmatrix}=
-    \begin{pmatrix}
-      0\\0
-    \end{pmatrix}
-    =\zzero\\
-    y\ww&=
-    \begin{pmatrix}
-      yw\\yw' 
-    \end{pmatrix}=
-    \begin{pmatrix}
-      0\\0
-    \end{pmatrix}
-    =\zzero
-  \end{align*}
-  である. $\vv\neq\zzero$であるから, $x=0$である.
-  また, $\ww\neq\zzero$であるから, $y=0$である.
 \end{proofof}

@@ -5560,55 +5560,6 @@ $D$は行に関して多重線型かつ交代的であるとする.
   \end{enumerate}
 \end{cor}
 
-\section{小行列と小行列式}
-
-$(i,j)$-成分が$a_{i,j}$である
-$(m,n)$-行列$A$について考える.
-$1\leq i_1<i_2<\cdots<i_{m'}\leq m$,
-$1\leq j_1<j_2<\cdots<j_{n'}\leq m$
-とする.
-$a_{i_k,j_l}$を$(k,l)$-成分とする$(m',n')$-行列を
-$A$の
-$\Set{i_1,i_2,\ldots,i_{m'}}$-行,
-$\Set{j_1,j_2,\ldots,j_{n'}}$-列
-に関する
-\defit{小行列}
-\Defit{submatrix}
-と呼ぶ.
-
-特に, 行と列を$n'$個ずつ選んで,
-$\Set{i_1,i_2,\ldots,i_{n'}}$-行,
-$\Set{j_1,j_2,\ldots,j_{n'}}$-列
-に関する小行列$A'$を考えると,
-$A'$は$n'$次正方行列である.
-$\det(A')$を$n'$次の
-\defit{小行列式}
-\Defit{minor}
-と呼ぶ.
-
-\begin{example}
-  \begin{align*}
-    A=
-    \begin{pmatrix}
-    11 & 2 & 13&5\\
-    21 & 3 & 23&4\\
-    31 & 32 & 33& 34
-    \end{pmatrix}
-  \end{align*}
-  とする.
-  $\Set{1,2}$-行
-  $\Set{2,4}$-列
-  に関する小行列は
-  \begin{align*}
-    \begin{pmatrix}
-    2 &5\\
-    3 &4
-    \end{pmatrix}
-  \end{align*}
-  であり, 小行列式は$2\cdot 4-5\cdot 3=-7$.
-\end{example}
-
-
 連立一次方程式について考える.
 $A$を$n$次正方行列, $\bbb$を$(n,1)$行列 ($n$項数ベクトル)とし,
 $\xx$に関する方程式
@@ -5641,7 +5592,7 @@ $A^{-1}\bbb$は次のように表すことができる.
   で与えられる.
   つまり,
   $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$
-  と列ベクトル表示されているとき.
+  と列ベクトル表示されているとき,
   \begin{align*}
     x_j=\frac{1}{\det(A)}
     \det(
@@ -5718,10 +5669,1089 @@ $A^{-1}\bbb$は次のように表すことができる.
 \end{remark}
 
 
+%%\endinput
+\chapter{固有値と固有ベクトル}
+\label{chap:eigen}
+
+この章では, 固有値と固有ベクトルについて定義し,
+行列の対角化について説明する.
+
+\cite{978-4-7806-0772-7}であれば,
+第3章が関連する.
+また, 第18--21章には,
+関連する内容について, 難しいことも含めて, 詳しく書かれている.
+\cite{978-4-7806-0164-0}であれば,
+第6章が関連する.
+特に, 6.1, 6.2, 6.3 が関連する.
+
+\section{一次独立性}
+
+$(m,1)$-行列のことを$m$項数ベクトルと呼んだ.
+$\zzero=O_{m,1}$とおく.
+\begin{definition}
+  $\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとし,
+  $\alpha_1,\ldots,\alpha_n$を数とする.
+  $\alpha_1\aaa_1+\cdots+\alpha_n\aaa_n$を$\aaa_1,\ldots,\aaa_n$の
+  \defit{一次結合}
+  \Defit{linear combination}
+  \addindex{一次!---結合}%
+  \addindex{結合!一次---}%
+  \addindex{linear!--- combination}%
+  \addindex{combination!linear ---}%
+  と呼ぶ.
+\end{definition}
+\begin{definition}
+  $\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとする.
+  $\alpha_1\aaa_1+\cdots+\alpha_n\aaa_n=\zzero$
+  かつ$(\alpha_1,\ldots,\alpha_n)\neq (0,\ldots,0)$
+  を満たす数
+  $\alpha_1,\ldots,\alpha_n$があるとき,
+  $(\aaa_1,\ldots,\aaa_n)$は一次従属であるという.
+  また,
+  $(\aaa_1,\ldots,\aaa_n)$は一次従属でないとき,
+  $(\aaa_1,\ldots,\aaa_n)$は一次独立であるという.
+\end{definition}
+\begin{lemma}
+  \provelater{lem:lindep:lessrank}
+  \label{lem:lindep:lessrank}
+  $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$と
+    列ベクトル表示されているとする.
+    $(\aaa_1,\ldots,\aaa_n)$が一次従属であるなら,
+    $\rank(A)<n$.
+\end{lemma}
+\begin{lemma}
+  \provelater{lem:lineq:lessrank}
+  \label{lem:lineq:lessrank}
+  $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$と
+    列ベクトル表示されているとする.
+    $A\xx=\zzero$が非自明な解をもつならば,
+    $(\aaa_1,\ldots,\aaa_n)$は一次従属.
+\end{lemma}
+正方行列のときには,
+  \Cref{lem:lindep:lessrank,lem:lineq:lessrank}
+  から次がわかる.
+\begin{prop}
+  $A$を$n$次正方行列とし,
+  $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$と列ベクトル表示されているとする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $A$が非正則.
+  \item $(\aaa_1,\ldots,\aaa_n)$が一次従属.
+  \end{enumerate}
+  また, 以下は同値:
+  \begin{enumerate}
+  \item $A$が正則である.
+  \item $(\aaa_1,\ldots,\aaa_n)$は一次独立.
+  \end{enumerate}
+\end{prop}
+
+$(i,j)$-成分が$a_{i,j}$である
+$(m,n)$-行列$A$について考える.
+$1\leq i_1<i_2<\cdots<i_{m'}\leq m$,
+$1\leq j_1<j_2<\cdots<j_{n'}\leq m$
+とする.
+$a_{i_k,j_l}$を$(k,l)$-成分とする$(m',n')$-行列を
+$A$の
+$\Set{i_1,i_2,\ldots,i_{m'}}$-行,
+$\Set{j_1,j_2,\ldots,j_{n'}}$-列
+に関する
+\defit{小行列}
+\Defit{submatrix}
+と呼ぶ.
+
+特に, 行と列を$n'$個ずつ選んで,
+$\Set{i_1,i_2,\ldots,i_{n'}}$-行,
+$\Set{j_1,j_2,\ldots,j_{n'}}$-列
+に関する小行列$A'$を考えると,
+$A'$は$n'$次正方行列である.
+$\det(A')$を$n'$次の
+\defit{小行列式}
+\Defit{minor}
+と呼ぶ.
+
+\begin{example}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+    11 & 2 & 13&5\\
+    21 & 3 & 23&4\\
+    31 & 32 & 33& 34
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  $\Set{1,2}$-行
+  $\Set{2,4}$-列
+  に関する小行列は
+  \begin{align*}
+    \begin{pmatrix}
+    2 &5\\
+    3 &4
+    \end{pmatrix}
+  \end{align*}
+  であり, 小行列式は$2\cdot 4-5\cdot 3=-7$.
+\end{example}
+
+\begin{prop}
+$\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとする.
+$A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$
+と列ベクトル表示されているとする.
+$A$の$n$次小行列式で$0$でないものがあるなら,
+$\aaa_1,\ldots,\aaa_n$は一次独立.
+\end{prop}
 \endinput
-\chapter{固有ベクトルと固有値}
+\section{固有値と固有ベクトルの定義}
+ここでは, 固有値や固有ベクトルに関連する用語を定義し,
+その性質について紹介する.
+\begin{definition}
+  \label{def:eigen}
+  $A$を$2$次正方行列とする.
+  $\lambda$を数とする.
+  $\vv$を$\zzero$ではない$2$項ベクトルとする.
+  次の条件を満たすとき$\vv$は
+  \defit{固有値$\lambda$に属する$A$の固有ベクトル}
+  \Defit{eigenvector belonging to the eigenvalue $\lambda$}
+  \addindex{固有値!---に属する固有ベクトル}%
+  \addindex{固有ベクトル!固有値に属する---}%
+  \addindex{属する!固有値に---固有ベクトル}%
+  \addindex{eigenvector!--- belonging to an eigenvalue}%
+  \addindex{eigenvalue!eigenvector belonging to ---}%
+  であるという:
+  \begin{align*}
+    A\vv=\lambda\vv.
+  \end{align*}
+  固有値$\lambda$に属する$A$の固有ベクトルが存在するとき,
+  $\lambda$は
+  \defit{$A$の固有値}
+  \Defit{eigenvlue of $A$}
+  \addindex{固有値!行列の---}%
+  \addindex{of matrix!eigenvalue ---}%
+  \addindex{eigenvalue!--- of a matrix}%
+  であるという.
+\end{definition}
 
 
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}5\\0\end{pmatrix}=\begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  であるから,
+  \begin{align*}
+    \begin{pmatrix}5\\0\end{pmatrix}
+  \end{align*}
+  は固有値$1$に属する$A$の固有ベクトル.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}=0\begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  であるから,
+  \begin{align*}
+    \begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  は固有値$0$に属する$A$の固有ベクトル.
+\end{example}
+
+
+\begin{example}
+  \begin{align*}
+    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    A\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \lambda\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}\lambda\\\lambda\end{pmatrix}
+  \end{align*}
+  となるが,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  は第1成分と第2成分の値が異なるので等しくなることはない.
+  したがって,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  は$A$の固有ベクトルにはなりえない.
+\end{example}
+
+$\vv$が固有値$\lambda$に属する$A$の固有ベクトルであるための条件は
+\begin{align*}
+  A\vv=\lambda\vv
+\end{align*}
+であるが,
+これを書き換えると,
+\begin{align*}
+  A\vv-\lambda\vv&=\zzero\\
+  A\vv-\lambda E_2 \vv&=\zzero\\
+  (A-\lambda E_2) \vv&=\zzero
+\end{align*}
+である.
+どのような$\lambda$が$A$の固有値になるかがわかれば,
+その$\lambda$に対し,
+$\xx$に関する方程式
+$(A-\lambda E_2) \xx=\zzero$
+の解の空間を求めることで,
+$A$の固有ベクトルがすべてわかる.
+したがって,
+どのような$\lambda$が$A$の固有値になるかがわかれば固有ベクトルがすべて求められることになる.
+$\lambda$が$A$の固有値として現れるということは,
+$(A-\lambda E_2) \xx=\zzero$
+が$\zzero$以外の解をもつということであるので,
+これは, $(A-\lambda E_2)$が正則であるかそうでないかを調べればわかる.
+このことは以下のようにまとめることができる.
+\begin{definition}
+  \label{def:charpoly}
+  $A$を$2$次正方行列とする.
+  $x$に関する多項式
+  \begin{align*}
+  \det(A-xE_2)
+  \end{align*}
+  を
+  \defit{$A$の固有多項式}
+  \Defit{$A$の特性多項式}
+  \Defit{characteristic polynomial of $A$}
+  \addindex{多項式!行列の固有---}%
+  \addindex{固有多項式!行列の---}%
+  \addindex{行列の!---固有多項式}%
+  \addindex{行列の!---特性多項式}%
+  \addindex{多項式!行列の特性---}%
+  \addindex{特性多項式!行列の---}%
+  \addindex{特性!行列の---多項式}%
+  \addindex{polynomial!characteristic --- of a matrix}%
+  \addindex{characteristic polynomial!--- of a matrix}%
+  \addindex{of matrix!characteristic polynomial ---}%
+  と呼ぶ.
+\end{definition}
+\begin{prop}
+  %proved
+  $A$を$2$次正方行列とする.
+  $f(x)$を$A$の固有多項式とする.
+  つまり $f(x)=\det(A-xE_2)$とする.
+  このとき 次は同値:
+  \begin{enumerate}
+  \item $\lambda$が$A$の固有値.
+  \item $\lambda$は$f(x)=0$の根 (つまり$f(\lambda)$=0を満たす).
+  \end{enumerate}
+\end{prop}
+
+\begin{remark}
+  $A$を$2$次正方行列とすると, $A$の固有多項式$f(x)$は$2$次式である.
+  よって$f(x)=0$は$2$次方程式である.
+  したがって, $A$の成分が実数であっても,
+  $A$の固有値が実数になるとは限らない.
+\end{remark}
+
+\begin{definition}
+  $\lambda$を$A$の固有値であるとする.
+  このとき,
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$の解の空間
+  \begin{align*}
+    \Set{\vv | (A-\lambda E_2)\vv=\zzero}
+  \end{align*}
+  を
+  \defit{固有値$\lambda$に属する$A$の固有空間}
+  \Defit{eigenspace associated with $\lambda$}
+  \addindex{固有空間!固有値に属する---}%
+  \addindex{属する!固有値に---固有空間}%
+  \addindex{固有空間!固有値に属する---}%
+  \addindex{空間!固有値に属する固有---}%
+  \addindex{空間!固有---}%
+  \addindex{eigenspace!---}%
+  \addindex{space!eigen---}%
+ と呼ぶ.
+\end{definition}
+\begin{remark}
+  $\lambda$を$A$の固有値であるとし,
+  $V$を固有値$\lambda$に属する$A$の固有空間とする.
+  $V$は,
+  $\zzero$と固有値$\lambda$に属する$A$の固有ベクトル全体からなる集合である.
+\end{remark}
+固有空間は
+$\xx$に関する方程式
+$(A-\lambda E_2)\xx=\zzero$の解空間であるので,
+\Cref{thm:ker:vec}から次がわかる.
+\begin{prop}
+  %proved
+  $A$を$2$次正方行列とし,
+  $\lambda$を$A$の固有値とする.
+  $V$を固有値$\lambda$に属する$A$の固有空間とする.
+  このとき, 次が成り立つ:
+  \begin{enumerate}
+  \item $\vv\in V$とし, $c$を数とするとすると, $c\vv\in V$.
+  \item $\vv,\ww\in V$とすると, $\vv+\ww\in V$.
+  \end{enumerate}
+\end{prop}
+また, $\vv\neq\zzero$に対し, $\bar\vv=\frac{1}{\|\vv\|}\vv$とおけば,
+$\|\bar\vv\|=1$であるので次がわかる.
+\begin{cor}
+  %proved
+  $A$を$2$次正方行列とし,
+  $\lambda$を$A$の固有値とする.
+  このとき, 
+  固有値$\lambda$に属する$A$の固有ベクトル$\vv$で$\|\vv\|=1$となるものが存在する.
+\end{cor}
+
+\begin{remark}
+  \label{thm:cht:general}
+  $A$を$n$次正方行列とする.
+  このとき,
+  $x$に関する多項式
+  $\det(A-xE_n)$
+  のことを$A$の固有多項式と呼ぶ.
+  $f(x)$を$A$の固有多項式とする.
+  つまり $f(x)=\det(A-xE_n)$とする.
+  このとき,
+  \begin{align*}
+    f(A)=O_{n,n}
+  \end{align*}
+  が成り立つ.
+  この定理はケーリー--ハミルトンの定理と呼ばれる.
+\end{remark}
+\begin{remark}
+    2次正方行列の場合は次の様にかける:
+  \provelater{thm:cht:2dim}
+  \label{thm:cht:2dim}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    f_A(t)=t^2-(a+d)t+(ad-bc)
+  \end{align*}
+  とおく. このとき,
+  \begin{align*}
+    f_A(A)=O_{2,2}
+  \end{align*}
+  である. つまり
+  \begin{align*}
+    A^2-(a+d)A+(ad-bc)E_2=O_{2,2}
+  \end{align*}
+\end{remark}
+
+\section{行列の対角化}
+ここでは,
+行列の対角化に関連する用語を定義し,
+対角化可能性に関する必要十分条件を紹介する.
+
+$A$を$2$次正方行列とする.
+  \begin{align*}
+    \vv&=\begin{pmatrix}v\\v'\end{pmatrix}
+  \end{align*}
+  を固有値$\lambda$に属する$A$の固有ベクトルとする.
+  \begin{align*}
+    \ww&=\begin{pmatrix}w\\w'\end{pmatrix}
+  \end{align*}
+  を固有値$\mu$に属する$A$の固有ベクトルとする.
+  $\vv$と$\ww$が一次独立であるとする.
+`<  このとき,
+  \begin{align*}
+    P&=\begin{pmatrix}v&w\\v'&w'\end{pmatrix}
+  \end{align*}
+  とおくと, $P$は正則である.
+  さらに,
+  \begin{align*}
+    P^{-1}AP&=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}
+  \end{align*}
+  となる.
+\begin{remark}
+  正方行列$A$に対し,
+  $P^{-1}AP$が対角行列になるような正則行列$P$が存在するとき,
+  \defit{$A$は$P$によって対角化できる}
+  \Defit{$A$ is diagonalizable with $P$}
+  \addindex{対角化!---}%
+  \addindex{対角化!---可能}%
+  \addindex{diagonalizable!---}%
+  という.
+  $P$および$P^{-1}AP$を求めることを,
+  $A$を対角化するという.
+\end{remark}
+\begin{remark}
+  正方行列がいつでも対角化できるわけではない.
+  例えば
+  \begin{align*}
+    \begin{pmatrix}1&1\\0&1\end{pmatrix}
+  \end{align*}
+  は対角化できない. 対角化出来ない理由は\Cref{rem:jordan}で述べる.
+\end{remark}
+
+
+\begin{theorem}
+  \provelater{thm:diagonizablity}
+  \label{thm:diagonizablity}
+  $A$を$2$次正方行列とする.
+  このとき, 次は同値:
+  \begin{enumerate}
+  \item\label{thm:diagonizablity:item:diagonalizable}
+    $A$が対角化可能である.
+  \item\label{thm:diagonizablity:item:eigen}
+    次を満たす$\vv_1,\vv_2$がとれる:
+    \begin{enumerate}
+      \item $(\vv_1,\vv_2)$は一次独立.
+      \item $\vv_i$は固有値$\lambda_i$に属する$A$の固有ベクトル.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+また, 次が知られている.
+\begin{theorem}
+  \provelater{thm:diferenteigen:linindep}
+  \label{thm:diferenteigen:linindep}
+  $A$を$2$次正方行列とする.
+  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
+  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
+  $\lambda\neq\mu$ならば$(\vv,\ww)$は一次独立.
+\end{theorem}
+
+\begin{remark}
+  \label{rem:jordan}
+  $A$を$2$次正方行列とする.
+  $x$に関する方程式
+  $\det(A-xE_2)=0$
+  は, $2$次方程式である.
+  
+  $\det(A-xE_2)=0$
+  が異なる解を持つときには,
+  異なる固有値$2$つ取れる.
+  それぞれの固有値に属する固有ベクトルを一つずつ選んでくれば,
+  \cref{thm:diferenteigen:linindep}から,
+  それらは一次独立であることがわかる.
+  したがって,
+  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
+
+  $\det(A-xE_2)=0$
+  が重根を持つときには,
+  固有値は一つしかない.
+  $\lambda$をその固有値とする.
+  $\xx$に関する方程式
+  $(A-\lambda E_2)\xx=\zzero$
+  の解の空間を$V$とおく.
+  つまり$V$は$\lambda$に属する$A$の固有空間である.
+
+  $\det(A-xE_2)=0$
+  が重根$\lambda$をもっても,
+  $\rank(A-\lambda E_2)=0$ならば
+  $V$から一次独立な$2$つのベクトル$\vv$, $\ww$が取れる.
+  したがって,
+  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
+
+  $\det(A-xE_2)=0$
+  が重根$\lambda$をもっているときに,
+  $\rank(A-\lambda E_2)=1$である場合を考える.
+  $\vv$を固有値$\lambda$に属する$A$の固有ベクトルとする.
+  このとき, $\vv$は
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
+  の解であり, $\vv\neq \zzero$である.
+  $\rank(A-\lambda E_2)=1$が$1$であるので,
+  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
+  の解は, 変数$c$を使って, $c\vv$と書くことができる.
+  つまり, $\ww$も固有値$\lambda$に属する$A$の固有ベクトルとすると,
+  $\vv$のスカラー倍として書ける.
+  よって, $(\vv,\ww)$は一次独立ではない.
+  したがって,
+  一次独立である2つの固有ベクトルが取れないことがわかる.
+  したがって,
+  \cref{thm:diagonizablity}から
+  $A$は対角化可能ではないことがわかる.
+  実は, この場合には, 対角化はできないものの,
+  \begin{align*}
+    P^{-1}AP=\begin{pmatrix}\lambda&1\\0&\lambda \end{pmatrix}
+  \end{align*}
+  のように上三角行列に変形できる正則行列$P$が取れることが知られている.
+\end{remark}
+
+
+
+\section{対角化の計算例}
+\label{ex:diagonalization}
+行列の対角化の応用の一つに, 冪の計算がある.
+一般の正方行列の冪の計算は複雑であるが,
+対角行列の冪の計算は簡単であるため,
+そこに帰着するというものである.
+以下では,
+その計算方法
+\begin{align*}
+A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
+\end{align*}
+の場合で説明する.
+
+まず$A$の固有値を求める.
+\begin{align*}
+  A-xE_2=\begin{pmatrix}1&6\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
+=\begin{pmatrix}1-x&6\\1&-x\end{pmatrix}
+\end{align*}
+であるので,
+\begin{align*}
+  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&6\\1&-x\end{pmatrix})\\
+    &=-(1-x)x-6
+    =x^2-x-6
+    =(x-3)(x+2)
+\end{align*}
+である.
+したがって, $x$に関する方程式
+\begin{align*}
+  \det(A-xE_2)&=0
+\end{align*}
+は,
+\begin{align*}
+  (x-3)(x+2)=0
+\end{align*}
+と書けるので,
+解は,
+$3$と
+$-2$
+の$2$つである.
+したがって,
+$A$の固有値も,
+$3$と
+$-2$
+の$2$つである.
+
+
+まず,
+固有値$3$に属する固有ベクトルを求める.
+$\lambda=3$とするとき
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\lambda=3$に属する固有ベクトルである.
+\begin{align*}
+  A-\lambda E_2
+  & =
+  \begin{pmatrix}1-\lambda&6\\1&-\lambda\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}1-3&6\\1&-3\end{pmatrix}\\
+    & =
+  \begin{pmatrix}-2&6\\1&-3\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+    -2&6&0\\
+    1&-3&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{-2}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&-3&0\\
+    1&-3&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&-3&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}3\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+したがって, 例えば
+\begin{align*}
+  \begin{pmatrix}3\\1\end{pmatrix}
+\end{align*}
+は固有値$3$に属する固有ベクトルである.
+
+
+次に,
+固有値$-2$に属する固有ベクトルを求める.
+$\lambda=-2$とするとき
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の$\zzero$以外の解を求めれば,
+それが$\lambda=-2$に属する固有ベクトルである.
+\begin{align*}
+  A-\lambda E_2
+  & =
+  \begin{pmatrix}1-\lambda&1\\6&-\lambda\end{pmatrix}  \\
+  & =
+    \begin{pmatrix}1+2&6\\1&2\end{pmatrix}\\
+    & =
+  \begin{pmatrix}3&6\\1&2\end{pmatrix}
+\end{align*}
+である. したがって, $\xx$に関する方程式
+\begin{align*}
+  (A-\lambda E_2) \xx=\zzero 
+\end{align*}
+の拡大係数行列は,
+\begin{align*}
+  \begin{pmatrix}
+    3&6&0\\
+    1&2&0
+  \end{pmatrix}
+\end{align*}
+である. $1$行目を$\frac{1}{3}$倍すると,
+\begin{align*}
+  \begin{pmatrix}
+    1&2&0\\
+    1&2&0
+  \end{pmatrix}
+\end{align*}
+となる.
+$2$行目に$1$行目の$-1$倍を足すと,
+\begin{align*}
+  \begin{pmatrix}
+    1&2&0\\
+    0&0&0
+  \end{pmatrix}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  A-\lambda E_2 \xx=\zzero 
+\end{align*}
+の解の空間は,
+\begin{align*}
+\Set{t\begin{pmatrix}-2\\1\end{pmatrix}|t\text{は数}}
+\end{align*}
+と書ける.
+例えば
+\begin{align*}
+  \begin{pmatrix}-2\\1\end{pmatrix}
+\end{align*}
+は固有値$-2$に属する固有ベクトルである.
+
+
+固有ベクトルが求められたので対角化をする.
+\begin{align*}
+  P=
+  \begin{pmatrix}
+    3&-2\\
+    1&1    
+  \end{pmatrix}
+\end{align*}
+とすると
+\begin{align*}
+  \det(P)=
+  \det(
+  \begin{pmatrix}
+    3&-2\\
+    1&1    
+  \end{pmatrix})
+  =3-(-2)=5\neq 0
+\end{align*}
+であるので$P$は正則であり,
+\begin{align*}
+  P^{-1}=
+  \frac{1}{5}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+\end{align*}
+である.
+
+このとき,
+\begin{align*}
+  P^{-1}AP=
+  \begin{pmatrix}
+    3&0\\
+    0&-2
+  \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  (P^{-1}AP)^n=
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+\end{align*}
+である. 一方, \cref{ex:diagonalizedpow}でみたように,
+\begin{align*}
+  (P^{-1}AP)^n
+  &=P^{-1}A^nP
+\end{align*}
+であるので,
+\begin{align*}
+P^{-1}A^nP&=
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+\\
+A^n&=
+P
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  P^{-1}
+\end{align*}
+とできる.
+したがって,
+\begin{align*}
+  A^n
+  &=
+P
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  P^{-1}\\
+&=
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+(  \frac{1}{5}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+)\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&0\\
+    0&(-2)^n
+  \end{pmatrix}
+  \begin{pmatrix}
+    1&2\\
+    -1&3    
+  \end{pmatrix}
+\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3&-2\\
+    1&1    
+  \end{pmatrix}
+  \begin{pmatrix}
+    3^n&3^n2\\
+    -(-2)^n&(-2)^n3
+  \end{pmatrix}
+\\
+  &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n+1}-(-2)^{n+1}&3^{n+1}2+(-2)^{n+1}3\\
+    3^n-(-2)^n&3^n2+(-2)^n3    
+  \end{pmatrix}
+\end{align*}
+
+このような行列の冪の一つの応用として, 数列の一般項の計算について見てみる.
+\begin{example}
+\begin{align*}
+  \begin{cases}
+    a_{n+2}=a_{n+1}+6a_n&(n=0,1,2,\ldots)\\
+    a_{1}=1\\
+    a_{0}=0
+ \end{cases}
+\end{align*}
+で定義される数列を考え,
+その一般項を求める.
+この数列の一般項を求める.
+\begin{align*}
+  \vv_n=\begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
+\end{align*}
+とおく.
+このとき,
+\begin{align*}
+  \vv_{n+2}
+  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}a_{n+1}6+a_n\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\vv_{n+1}
+\end{align*}
+とできる.
+\begin{align*}
+A
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}
+\end{align*}
+であったから,
+\begin{align*}
+  \vv_{n+2}
+  &=A\vv_{n+1}
+\end{align*}
+となる.
+この式は$n\leq 0$であれば成り立つ. つまり,
+\begin{align*}
+  \vv_{k}
+  &=A\vv_{k-1} &(k=2,3,\ldots)
+\end{align*}
+である.
+よって
+\begin{align*}
+  &\vv_{n}\\
+  &=A\vv_{n-1}\\
+  &=A(A\vv_{n-2})=A^2\vv_{n-2}\\
+  &=A^2(A\vv_{n-3})=A^3\vv_{n-3}\\
+  &=A^3(A\vv_{n-4})=A^4\vv_{n-4}\\
+  &=\cdots=A^{n-1}\vv_1
+\end{align*}
+である.
+先ほど求めた$A^n$の計算結果を使うと,
+\begin{align*}
+  A^{n-1}
+    &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
+  \end{pmatrix}
+\end{align*}
+であり,
+\begin{align*}
+  \vv_1=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+\end{align*}
+であるから,
+\begin{align*}
+  \begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
+    &=
+    \vv_n\\
+    &=
+    A^{n-1}\vv_0\\
+    &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
+  \end{pmatrix}
+  \begin{pmatrix}1\\0\end{pmatrix}\\
+    &=
+    \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}\\
+    3^{n-1}-(-2)^{n-1}
+  \end{pmatrix}
+\end{align*}
+である.
+したがって,
+\begin{align*}
+  a_n=
+  \frac{3^{n}-(-2)^{n}}{5}
+\end{align*}
+である.
+\end{example}
+
+
+\section{実対称行列の固有値}
+
+ここでは, 実数を成分とする対称行列を考え, その固有値について調べる.
+\begin{align*}
+  A=\begin{pmatrix}s&t\\t&u\end{pmatrix}
+\end{align*}
+とする.
+このとき,
+\begin{align*}
+  \det(A-xE_2)
+  &=\det(\begin{pmatrix}s-x&t\\t&u-x\end{pmatrix})\\
+  &=(s-x)(u-x)-t^2\\
+  &=x^2-(s+u)x+su-t^2
+\end{align*}
+となる. $x$に関する方程式
+\begin{align*}
+  \det(A-xE_2)=0
+\end{align*}
+の解を調べたいので判別式$D$を計算すると,
+\begin{align*}
+  D&=(-(s+u))^2-4(su-t^2)\\
+  &=s^2+2us+u^2-4su+4t^2\\
+  &=s^2-2us+u^2+4t^2\\
+  &=(s-u)^2+4t^2.
+\end{align*}
+となる.  $D\geq 0$なので,
+複素数解を持つことはなく, 常に実数解をもつ.
+
+$D>0$のときについて考える.
+このときには, 実数解が2つ存在するので,
+$\lambda,\mu$とする.
+$\lambda\neq\mu$である.
+$\vv$を$\|\vv\|=1$である固有値$\lambda$に属する$A$の固有ベクトルでとする.
+$\ww$を$\|\ww\|=1$である固有値$\mu$に属する$A$の固有ベクトルとする.
+このとき,
+\begin{align*}
+  \Braket{A\vv,\ww}&=\Braket{\lambda\vv,\ww}=\lambda\Braket{\vv,\ww}
+\end{align*}
+であるが, $\Braket{A\vv,\ww}$は$\transposed{(A\vv)}\ww$の$(1,1)$-成分と等しい.
+また,
+\begin{align*}
+  \Braket{\vv,A\ww}&=\Braket{\vv,\mu\ww}=\mu\Braket{\vv,\ww}
+\end{align*}
+であるが, $\Braket{\vv,A\ww}$は$\transposed{\vv}A\ww$の$(1,1)$-成分と等しい.
+いま$A$は対称行列であるので$\transposed{A}=A$であるから,
+\begin{align*}
+  \transposed{(A\vv)}\ww=\transposed{\vv}\transposed{A}\ww=
+  \transposed{\vv}A\ww
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+  \lambda\Braket{\vv,\ww}=\mu\Braket{\vv,\ww}
+\end{align*}
+となるが,
+\begin{align*}
+  (\lambda-\mu)\Braket{\vv,\ww}=0
+\end{align*}
+となる. $\lambda\neq\mu$であるので,
+\begin{align*}
+  \Braket{\vv,\ww}=0
+\end{align*}
+であり, $\vv$と$\ww$は直交する.
+したがって, $\vv$と$\ww$を並べてできる行列は直交行列であるから,
+$A$は対角化可能であることがわかる.
+
+
+
+また,
+重根となるのは,
+$t=0$かつ$s=u$のときであるので,
+\begin{align*}
+  A=\begin{pmatrix}s&0\\0&s\end{pmatrix}=sE_2
+\end{align*}
+のときである.
+$A=sE_2$のときは,
+すでに対角行列である.
+つまり単位行列$E_2$により$A$は対角化できるが,
+$E_2$も直交行列である.
+
+これらの事実をまとめると以下のようになる.
+\begin{theorem}
+  %proved
+  \label{thm:symmat:eigen}
+  $A$を実対称行列とする.
+  このとき, $A$の固有値は実数である.
+  また, $\lambda,\mu$が相異なる$A$の固有値ならば,
+  $\lambda$に属する$A$の固有ベクトルと,
+  $\mu$に属する$A$の固有ベクトルとは直交する.
+\end{theorem}
+\begin{theorem}
+  %proved
+  \label{thm:symmat:diag}
+  $A$を実対称行列とする.
+  このとき, $P^{-1}AP$が対角行列となる直交行列$P$が存在する.
+\end{theorem}
+
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:6:1}
+  \label{quiz:6:1}
+\seealsoQuiz{quiz:3:7}
+\Seealsoquiz{quiz:6:2,quiz:6:4}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  とする.
+  $A$の固有多項式を求めよ. また, $A$の固有値をすべて求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:2}
+  \label{quiz:6:2}
+  \seealsoQuiz{quiz:6:1}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  は対角化可能か判定せよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:3}
+  \label{quiz:6:3}
+  \seealsoQuiz{quiz:3:8}
+  \begin{align*}
+    A=\begin{pmatrix}2&1\\0&2\end{pmatrix}
+  \end{align*}
+  は対角化可能か判定せよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:4}
+  \label{quiz:6:4}
+  \seealsoQuiz{quiz:3:9,quiz:3:10,quiz:6:1}
+  \begin{align*}
+    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  とする.
+  このとき次に答えよ:
+  \begin{enumerate}
+  \item 固有ベクトルをすべて求めよ.
+  \item $A$を対角化せよ.
+  \item $A^n$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:5}
+  \label{quiz:6:5}
+  \Seealsoquiz{quiz:6:6}
+  次の行列$A$は直交行列か判定せよ. 
+  \begin{align*}
+   A=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:6:6}
+  \label{quiz:6:6}
+  \seealsoQuiz{quiz:6:5}
+  次の行列を
+  直交行列により対角化せよ:
+  \begin{align*}
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:6:7}
+  次で定義される数列(Fibonacci数列)の一般項を求めよ:
+  \begin{align*}
+    \begin{cases}
+      a_{n+2}=a_{n+1}+a_n&(n=1,2,3,\ldots)\\
+      a_{2}=a_{1}=1
+    \end{cases}
+  \end{align*}
+\end{quiz}
+
+\endinput
+\chapter{補遺}
 \section{行基本変形}
 ここでは, 行基本変形と呼ばれる行列に対する操作を紹介する.
 また, 階段行列と呼ばれる行列を定義し,
@@ -9631,966 +10661,3 @@ $\aaa$と$L$の距離を求めよ.
 
 
 
-\chapter{固有値と固有ベクトル}
-\label{chap:eigen}
-
-この章では, 固有値と固有ベクトルについて定義し,
-行列の対角化について説明する.
-
-\cite{978-4-7806-0772-7}であれば,
-第3章が関連する.
-また, 第18--21章には,
-関連する内容について, 難しいことも含めて, 詳しく書かれている.
-\cite{978-4-7806-0164-0}であれば,
-第6章が関連する.
-特に, 6.1, 6.2, 6.3 が関連する.
-
-\section{固有値と固有ベクトルの定義}
-ここでは, 固有値や固有ベクトルに関連する用語を定義し,
-その性質について紹介する.
-\begin{definition}
-  \label{def:eigen}
-  $A$を$2$次正方行列とする.
-  $\lambda$を数とする.
-  $\vv$を$\zzero$ではない$2$項ベクトルとする.
-  次の条件を満たすとき$\vv$は
-  \defit{固有値$\lambda$に属する$A$の固有ベクトル}
-  \Defit{eigenvector belonging to the eigenvalue $\lambda$}
-  \addindex{固有値!---に属する固有ベクトル}%
-  \addindex{固有ベクトル!固有値に属する---}%
-  \addindex{属する!固有値に---固有ベクトル}%
-  \addindex{eigenvector!--- belonging to an eigenvalue}%
-  \addindex{eigenvalue!eigenvector belonging to ---}%
-  であるという:
-  \begin{align*}
-    A\vv=\lambda\vv.
-  \end{align*}
-  固有値$\lambda$に属する$A$の固有ベクトルが存在するとき,
-  $\lambda$は
-  \defit{$A$の固有値}
-  \Defit{eigenvlue of $A$}
-  \addindex{固有値!行列の---}%
-  \addindex{of matrix!eigenvalue ---}%
-  \addindex{eigenvalue!--- of a matrix}%
-  であるという.
-\end{definition}
-
-
-
-\begin{example}
-  \begin{align*}
-    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
-  \end{align*}
-  とする.
-  \begin{align*}
-    A\begin{pmatrix}5\\0\end{pmatrix}=\begin{pmatrix}5\\0\end{pmatrix}
-  \end{align*}
-  であるから,
-  \begin{align*}
-    \begin{pmatrix}5\\0\end{pmatrix}
-  \end{align*}
-  は固有値$1$に属する$A$の固有ベクトル.
-\end{example}
-
-\begin{example}
-  \begin{align*}
-    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
-  \end{align*}
-  とする.
-  \begin{align*}
-    A\begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}=0\begin{pmatrix}0\\1\end{pmatrix}
-  \end{align*}
-  であるから,
-  \begin{align*}
-    \begin{pmatrix}0\\1\end{pmatrix}
-  \end{align*}
-  は固有値$0$に属する$A$の固有ベクトル.
-\end{example}
-
-
-\begin{example}
-  \begin{align*}
-    A=\begin{pmatrix}1&0\\0&0\end{pmatrix}
-  \end{align*}
-  とする.
-  \begin{align*}
-    A\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
-  \end{align*}
-  である.
-  \begin{align*}
-    \lambda\begin{pmatrix}1\\1\end{pmatrix}=\begin{pmatrix}\lambda\\\lambda\end{pmatrix}
-  \end{align*}
-  となるが,
-  \begin{align*}
-    \begin{pmatrix}1\\0\end{pmatrix}
-  \end{align*}
-  は第1成分と第2成分の値が異なるので等しくなることはない.
-  したがって,
-  \begin{align*}
-    \begin{pmatrix}1\\0\end{pmatrix}
-  \end{align*}
-  は$A$の固有ベクトルにはなりえない.
-\end{example}
-
-$\vv$が固有値$\lambda$に属する$A$の固有ベクトルであるための条件は
-\begin{align*}
-  A\vv=\lambda\vv
-\end{align*}
-であるが,
-これを書き換えると,
-\begin{align*}
-  A\vv-\lambda\vv&=\zzero\\
-  A\vv-\lambda E_2 \vv&=\zzero\\
-  (A-\lambda E_2) \vv&=\zzero
-\end{align*}
-である.
-どのような$\lambda$が$A$の固有値になるかがわかれば,
-その$\lambda$に対し,
-$\xx$に関する方程式
-$(A-\lambda E_2) \xx=\zzero$
-の解の空間を求めることで,
-$A$の固有ベクトルがすべてわかる.
-したがって,
-どのような$\lambda$が$A$の固有値になるかがわかれば固有ベクトルがすべて求められることになる.
-$\lambda$が$A$の固有値として現れるということは,
-$(A-\lambda E_2) \xx=\zzero$
-が$\zzero$以外の解をもつということであるので,
-これは, $(A-\lambda E_2)$が正則であるかそうでないかを調べればわかる.
-このことは以下のようにまとめることができる.
-\begin{definition}
-  \label{def:charpoly}
-  $A$を$2$次正方行列とする.
-  $x$に関する多項式
-  \begin{align*}
-  \det(A-xE_2)
-  \end{align*}
-  を
-  \defit{$A$の固有多項式}
-  \Defit{$A$の特性多項式}
-  \Defit{characteristic polynomial of $A$}
-  \addindex{多項式!行列の固有---}%
-  \addindex{固有多項式!行列の---}%
-  \addindex{行列の!---固有多項式}%
-  \addindex{行列の!---特性多項式}%
-  \addindex{多項式!行列の特性---}%
-  \addindex{特性多項式!行列の---}%
-  \addindex{特性!行列の---多項式}%
-  \addindex{polynomial!characteristic --- of a matrix}%
-  \addindex{characteristic polynomial!--- of a matrix}%
-  \addindex{of matrix!characteristic polynomial ---}%
-  と呼ぶ.
-\end{definition}
-\begin{prop}
-  %proved
-  $A$を$2$次正方行列とする.
-  $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_2)$とする.
-  このとき 次は同値:
-  \begin{enumerate}
-  \item $\lambda$が$A$の固有値.
-  \item $\lambda$は$f(x)=0$の根 (つまり$f(\lambda)$=0を満たす).
-  \end{enumerate}
-\end{prop}
-
-\begin{remark}
-  $A$を$2$次正方行列とすると, $A$の固有多項式$f(x)$は$2$次式である.
-  よって$f(x)=0$は$2$次方程式である.
-  したがって, $A$の成分が実数であっても,
-  $A$の固有値が実数になるとは限らない.
-\end{remark}
-
-\begin{definition}
-  $\lambda$を$A$の固有値であるとする.
-  このとき,
-  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$の解の空間
-  \begin{align*}
-    \Set{\vv | (A-\lambda E_2)\vv=\zzero}
-  \end{align*}
-  を
-  \defit{固有値$\lambda$に属する$A$の固有空間}
-  \Defit{eigenspace associated with $\lambda$}
-  \addindex{固有空間!固有値に属する---}%
-  \addindex{属する!固有値に---固有空間}%
-  \addindex{固有空間!固有値に属する---}%
-  \addindex{空間!固有値に属する固有---}%
-  \addindex{空間!固有---}%
-  \addindex{eigenspace!---}%
-  \addindex{space!eigen---}%
- と呼ぶ.
-\end{definition}
-\begin{remark}
-  $\lambda$を$A$の固有値であるとし,
-  $V$を固有値$\lambda$に属する$A$の固有空間とする.
-  $V$は,
-  $\zzero$と固有値$\lambda$に属する$A$の固有ベクトル全体からなる集合である.
-\end{remark}
-固有空間は
-$\xx$に関する方程式
-$(A-\lambda E_2)\xx=\zzero$の解空間であるので,
-\Cref{thm:ker:vec}から次がわかる.
-\begin{prop}
-  %proved
-  $A$を$2$次正方行列とし,
-  $\lambda$を$A$の固有値とする.
-  $V$を固有値$\lambda$に属する$A$の固有空間とする.
-  このとき, 次が成り立つ:
-  \begin{enumerate}
-  \item $\vv\in V$とし, $c$を数とするとすると, $c\vv\in V$.
-  \item $\vv,\ww\in V$とすると, $\vv+\ww\in V$.
-  \end{enumerate}
-\end{prop}
-また, $\vv\neq\zzero$に対し, $\bar\vv=\frac{1}{\|\vv\|}\vv$とおけば,
-$\|\bar\vv\|=1$であるので次がわかる.
-\begin{cor}
-  %proved
-  $A$を$2$次正方行列とし,
-  $\lambda$を$A$の固有値とする.
-  このとき, 
-  固有値$\lambda$に属する$A$の固有ベクトル$\vv$で$\|\vv\|=1$となるものが存在する.
-\end{cor}
-
-\begin{remark}
-  \label{thm:cht:general}
-  $A$を$n$次正方行列とする.
-  このとき,
-  $x$に関する多項式
-  $\det(A-xE_n)$
-  のことを$A$の固有多項式と呼ぶ.
-  $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_n)$とする.
-  このとき,
-  \begin{align*}
-    f(A)=O_{n,n}
-  \end{align*}
-  が成り立つ.
-  この定理はケーリー--ハミルトンの定理と呼ばれる.
-\end{remark}
-\begin{remark}
-    2次正方行列の場合は次の様にかける:
-  \provelater{thm:cht:2dim}
-  \label{thm:cht:2dim}
-  \begin{align*}
-    A=
-    \begin{pmatrix}
-      a&b\\c&d
-    \end{pmatrix}
-  \end{align*}
-  とする.
-  \begin{align*}
-    f_A(t)=t^2-(a+d)t+(ad-bc)
-  \end{align*}
-  とおく. このとき,
-  \begin{align*}
-    f_A(A)=O_{2,2}
-  \end{align*}
-  である. つまり
-  \begin{align*}
-    A^2-(a+d)A+(ad-bc)E_2=O_{2,2}
-  \end{align*}
-\end{remark}
-
-\section{行列の対角化}
-ここでは,
-行列の対角化に関連する用語を定義し,
-対角化可能性に関する必要十分条件を紹介する.
-
-$A$を$2$次正方行列とする.
-  \begin{align*}
-    \vv&=\begin{pmatrix}v\\v'\end{pmatrix}
-  \end{align*}
-  を固有値$\lambda$に属する$A$の固有ベクトルとする.
-  \begin{align*}
-    \ww&=\begin{pmatrix}w\\w'\end{pmatrix}
-  \end{align*}
-  を固有値$\mu$に属する$A$の固有ベクトルとする.
-  $\vv$と$\ww$が一次独立であるとする.
-  このとき,
-  \begin{align*}
-    P&=\begin{pmatrix}v&w\\v'&w'\end{pmatrix}
-  \end{align*}
-  とおくと, $P$は正則である.
-  さらに,
-  \begin{align*}
-    P^{-1}AP&=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}
-  \end{align*}
-  となる.
-\begin{remark}
-  正方行列$A$に対し,
-  $P^{-1}AP$が対角行列になるような正則行列$P$が存在するとき,
-  \defit{$A$は$P$によって対角化できる}
-  \Defit{$A$ is diagonalizable with $P$}
-  \addindex{対角化!---}%
-  \addindex{対角化!---可能}%
-  \addindex{diagonalizable!---}%
-  という.
-  $P$および$P^{-1}AP$を求めることを,
-  $A$を対角化するという.
-\end{remark}
-\begin{remark}
-  正方行列がいつでも対角化できるわけではない.
-  例えば
-  \begin{align*}
-    \begin{pmatrix}1&1\\0&1\end{pmatrix}
-  \end{align*}
-  は対角化できない. 対角化出来ない理由は\Cref{rem:jordan}で述べる.
-\end{remark}
-
-
-\begin{theorem}
-  \provelater{thm:diagonizablity}
-  \label{thm:diagonizablity}
-  $A$を$2$次正方行列とする.
-  このとき, 次は同値:
-  \begin{enumerate}
-  \item\label{thm:diagonizablity:item:diagonalizable}
-    $A$が対角化可能である.
-  \item\label{thm:diagonizablity:item:eigen}
-    次を満たす$\vv_1,\vv_2$がとれる:
-    \begin{enumerate}
-      \item $(\vv_1,\vv_2)$は一次独立.
-      \item $\vv_i$は固有値$\lambda_i$に属する$A$の固有ベクトル.
-    \end{enumerate}
-  \end{enumerate}
-\end{theorem}
-また, 次が知られている.
-\begin{theorem}
-  \provelater{thm:diferenteigen:linindep}
-  \label{thm:diferenteigen:linindep}
-  $A$を$2$次正方行列とする.
-  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
-  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
-  $\lambda\neq\mu$ならば$(\vv,\ww)$は一次独立.
-\end{theorem}
-
-\begin{remark}
-  \label{rem:jordan}
-  $A$を$2$次正方行列とする.
-  $x$に関する方程式
-  $\det(A-xE_2)=0$
-  は, $2$次方程式である.
-  
-  $\det(A-xE_2)=0$
-  が異なる解を持つときには,
-  異なる固有値$2$つ取れる.
-  それぞれの固有値に属する固有ベクトルを一つずつ選んでくれば,
-  \cref{thm:diferenteigen:linindep}から,
-  それらは一次独立であることがわかる.
-  したがって,
-  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
-
-  $\det(A-xE_2)=0$
-  が重根を持つときには,
-  固有値は一つしかない.
-  $\lambda$をその固有値とする.
-  $\xx$に関する方程式
-  $(A-\lambda E_2)\xx=\zzero$
-  の解の空間を$V$とおく.
-  つまり$V$は$\lambda$に属する$A$の固有空間である.
-
-  $\det(A-xE_2)=0$
-  が重根$\lambda$をもっても,
-  $\rank(A-\lambda E_2)=0$ならば
-  $V$から一次独立な$2$つのベクトル$\vv$, $\ww$が取れる.
-  したがって,
-  \cref{thm:diagonizablity}から$A$は対角化可能であることがわかる.
-
-  $\det(A-xE_2)=0$
-  が重根$\lambda$をもっているときに,
-  $\rank(A-\lambda E_2)=1$である場合を考える.
-  $\vv$を固有値$\lambda$に属する$A$の固有ベクトルとする.
-  このとき, $\vv$は
-  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
-  の解であり, $\vv\neq \zzero$である.
-  $\rank(A-\lambda E_2)=1$が$1$であるので,
-  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$
-  の解は, 変数$c$を使って, $c\vv$と書くことができる.
-  つまり, $\ww$も固有値$\lambda$に属する$A$の固有ベクトルとすると,
-  $\vv$のスカラー倍として書ける.
-  よって, $(\vv,\ww)$は一次独立ではない.
-  したがって,
-  一次独立である2つの固有ベクトルが取れないことがわかる.
-  したがって,
-  \cref{thm:diagonizablity}から
-  $A$は対角化可能ではないことがわかる.
-  実は, この場合には, 対角化はできないものの,
-  \begin{align*}
-    P^{-1}AP=\begin{pmatrix}\lambda&1\\0&\lambda \end{pmatrix}
-  \end{align*}
-  のように上三角行列に変形できる正則行列$P$が取れることが知られている.
-\end{remark}
-
-
-\section{対角化の計算例}
-\label{ex:diagonalization}
-行列の対角化の応用の一つに, 冪の計算がある.
-一般の正方行列の冪の計算は複雑であるが,
-対角行列の冪の計算は簡単であるため,
-そこに帰着するというものである.
-以下では,
-その計算方法
-\begin{align*}
-A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
-\end{align*}
-の場合で説明する.
-
-まず$A$の固有値を求める.
-\begin{align*}
-  A-xE_2=\begin{pmatrix}1&6\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
-=\begin{pmatrix}1-x&6\\1&-x\end{pmatrix}
-\end{align*}
-であるので,
-\begin{align*}
-  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&6\\1&-x\end{pmatrix})\\
-    &=-(1-x)x-6
-    =x^2-x-6
-    =(x-3)(x+2)
-\end{align*}
-である.
-したがって, $x$に関する方程式
-\begin{align*}
-  \det(A-xE_2)&=0
-\end{align*}
-は,
-\begin{align*}
-  (x-3)(x+2)=0
-\end{align*}
-と書けるので,
-解は,
-$3$と
-$-2$
-の$2$つである.
-したがって,
-$A$の固有値も,
-$3$と
-$-2$
-の$2$つである.
-
-
-まず,
-固有値$3$に属する固有ベクトルを求める.
-$\lambda=3$とするとき
-\begin{align*}
-  (A-\lambda E_2) \xx=\zzero 
-\end{align*}
-の$\zzero$以外の解を求めれば,
-それが$\lambda=3$に属する固有ベクトルである.
-\begin{align*}
-  A-\lambda E_2
-  & =
-  \begin{pmatrix}1-\lambda&6\\1&-\lambda\end{pmatrix}  \\
-  & =
-    \begin{pmatrix}1-3&6\\1&-3\end{pmatrix}\\
-    & =
-  \begin{pmatrix}-2&6\\1&-3\end{pmatrix}
-\end{align*}
-である. したがって, $\xx$に関する方程式
-\begin{align*}
-  A-\lambda E_2 \xx=\zzero 
-\end{align*}
-の拡大係数行列は,
-\begin{align*}
-  \begin{pmatrix}
-    -2&6&0\\
-    1&-3&0
-  \end{pmatrix}
-\end{align*}
-である. $1$行目を$\frac{1}{-2}$倍すると,
-\begin{align*}
-  \begin{pmatrix}
-    1&-3&0\\
-    1&-3&0
-  \end{pmatrix}
-\end{align*}
-となる.
-$2$行目に$1$行目の$-1$倍を足すと,
-\begin{align*}
-  \begin{pmatrix}
-    1&-3&0\\
-    0&0&0
-  \end{pmatrix}
-\end{align*}
-となる.
-したがって,
-\begin{align*}
-  (A-\lambda E_2) \xx=\zzero 
-\end{align*}
-の解の空間は,
-\begin{align*}
-\Set{t\begin{pmatrix}3\\1\end{pmatrix}|t\text{は数}}
-\end{align*}
-と書ける.
-したがって, 例えば
-\begin{align*}
-  \begin{pmatrix}3\\1\end{pmatrix}
-\end{align*}
-は固有値$3$に属する固有ベクトルである.
-
-
-次に,
-固有値$-2$に属する固有ベクトルを求める.
-$\lambda=-2$とするとき
-\begin{align*}
-  A-\lambda E_2 \xx=\zzero 
-\end{align*}
-の$\zzero$以外の解を求めれば,
-それが$\lambda=-2$に属する固有ベクトルである.
-\begin{align*}
-  A-\lambda E_2
-  & =
-  \begin{pmatrix}1-\lambda&1\\6&-\lambda\end{pmatrix}  \\
-  & =
-    \begin{pmatrix}1+2&6\\1&2\end{pmatrix}\\
-    & =
-  \begin{pmatrix}3&6\\1&2\end{pmatrix}
-\end{align*}
-である. したがって, $\xx$に関する方程式
-\begin{align*}
-  (A-\lambda E_2) \xx=\zzero 
-\end{align*}
-の拡大係数行列は,
-\begin{align*}
-  \begin{pmatrix}
-    3&6&0\\
-    1&2&0
-  \end{pmatrix}
-\end{align*}
-である. $1$行目を$\frac{1}{3}$倍すると,
-\begin{align*}
-  \begin{pmatrix}
-    1&2&0\\
-    1&2&0
-  \end{pmatrix}
-\end{align*}
-となる.
-$2$行目に$1$行目の$-1$倍を足すと,
-\begin{align*}
-  \begin{pmatrix}
-    1&2&0\\
-    0&0&0
-  \end{pmatrix}
-\end{align*}
-となる.
-したがって,
-\begin{align*}
-  A-\lambda E_2 \xx=\zzero 
-\end{align*}
-の解の空間は,
-\begin{align*}
-\Set{t\begin{pmatrix}-2\\1\end{pmatrix}|t\text{は数}}
-\end{align*}
-と書ける.
-例えば
-\begin{align*}
-  \begin{pmatrix}-2\\1\end{pmatrix}
-\end{align*}
-は固有値$-2$に属する固有ベクトルである.
-
-
-固有ベクトルが求められたので対角化をする.
-\begin{align*}
-  P=
-  \begin{pmatrix}
-    3&-2\\
-    1&1    
-  \end{pmatrix}
-\end{align*}
-とすると
-\begin{align*}
-  \det(P)=
-  \det(
-  \begin{pmatrix}
-    3&-2\\
-    1&1    
-  \end{pmatrix})
-  =3-(-2)=5\neq 0
-\end{align*}
-であるので$P$は正則であり,
-\begin{align*}
-  P^{-1}=
-  \frac{1}{5}
-  \begin{pmatrix}
-    1&2\\
-    -1&3    
-  \end{pmatrix}
-\end{align*}
-である.
-
-このとき,
-\begin{align*}
-  P^{-1}AP=
-  \begin{pmatrix}
-    3&0\\
-    0&-2
-  \end{pmatrix}
-\end{align*}
-である.
-したがって,
-\begin{align*}
-  (P^{-1}AP)^n=
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-\end{align*}
-である. 一方, \cref{ex:diagonalizedpow}でみたように,
-\begin{align*}
-  (P^{-1}AP)^n
-  &=P^{-1}A^nP
-\end{align*}
-であるので,
-\begin{align*}
-P^{-1}A^nP&=
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-\\
-A^n&=
-P
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-  P^{-1}
-\end{align*}
-とできる.
-したがって,
-\begin{align*}
-  A^n
-  &=
-P
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-  P^{-1}\\
-&=
-  \begin{pmatrix}
-   3&-2\\
-    1&1    
-  \end{pmatrix}
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-(  \frac{1}{5}
-  \begin{pmatrix}
-    1&2\\
-    -1&3    
-  \end{pmatrix}
-)\\
-  &=
-  \frac{1}{5}
-  \begin{pmatrix}
-   3&-2\\
-    1&1    
-  \end{pmatrix}
-  \begin{pmatrix}
-    3^n&0\\
-    0&(-2)^n
-  \end{pmatrix}
-  \begin{pmatrix}
-    1&2\\
-    -1&3    
-  \end{pmatrix}
-\\
-  &=
-  \frac{1}{5}
-  \begin{pmatrix}
-   3&-2\\
-    1&1    
-  \end{pmatrix}
-  \begin{pmatrix}
-    3^n&3^n2\\
-    -(-2)^n&(-2)^n3
-  \end{pmatrix}
-\\
-  &=
-  \frac{1}{5}
-  \begin{pmatrix}
-   3^{n+1}-(-2)^{n+1}&3^{n+1}2+(-2)^{n+1}3\\
-    3^n-(-2)^n&3^n2+(-2)^n3    
-  \end{pmatrix}
-\end{align*}
-
-このような行列の冪の一つの応用として, 数列の一般項の計算について見てみる.
-\begin{example}
-\begin{align*}
-  \begin{cases}
-    a_{n+2}=a_{n+1}+6a_n&(n=0,1,2,\ldots)\\
-    a_{1}=1\\
-    a_{0}=0
- \end{cases}
-\end{align*}
-で定義される数列を考え,
-その一般項を求める.
-この数列の一般項を求める.
-\begin{align*}
-  \vv_n=\begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
-\end{align*}
-とおく.
-このとき,
-\begin{align*}
-  \vv_{n+2}
-  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}a_{n+1}6+a_n\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
-  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\vv_{n+1}
-\end{align*}
-とできる.
-\begin{align*}
-A
-  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}
-\end{align*}
-であったから,
-\begin{align*}
-  \vv_{n+2}
-  &=A\vv_{n+1}
-\end{align*}
-となる.
-この式は$n\leq 0$であれば成り立つ. つまり,
-\begin{align*}
-  \vv_{k}
-  &=A\vv_{k-1} &(k=2,3,\ldots)
-\end{align*}
-である.
-よって
-\begin{align*}
-  &\vv_{n}\\
-  &=A\vv_{n-1}\\
-  &=A(A\vv_{n-2})=A^2\vv_{n-2}\\
-  &=A^2(A\vv_{n-3})=A^3\vv_{n-3}\\
-  &=A^3(A\vv_{n-4})=A^4\vv_{n-4}\\
-  &=\cdots=A^{n-1}\vv_1
-\end{align*}
-である.
-先ほど求めた$A^n$の計算結果を使うと,
-\begin{align*}
-  A^{n-1}
-    &=
-  \frac{1}{5}
-  \begin{pmatrix}
-   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
-    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
-  \end{pmatrix}
-\end{align*}
-であり,
-\begin{align*}
-  \vv_1=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
-\end{align*}
-であるから,
-\begin{align*}
-  \begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
-    &=
-    \vv_n\\
-    &=
-    A^{n-1}\vv_0\\
-    &=
-  \frac{1}{5}
-  \begin{pmatrix}
-   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
-    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
-  \end{pmatrix}
-  \begin{pmatrix}1\\0\end{pmatrix}\\
-    &=
-    \frac{1}{5}
-  \begin{pmatrix}
-   3^{n}-(-2)^{n}\\
-    3^{n-1}-(-2)^{n-1}
-  \end{pmatrix}
-\end{align*}
-である.
-したがって,
-\begin{align*}
-  a_n=
-  \frac{3^{n}-(-2)^{n}}{5}
-\end{align*}
-である.
-\end{example}
-
-
-\section{実対称行列の固有値}
-
-ここでは, 実数を成分とする対称行列を考え, その固有値について調べる.
-\begin{align*}
-  A=\begin{pmatrix}s&t\\t&u\end{pmatrix}
-\end{align*}
-とする.
-このとき,
-\begin{align*}
-  \det(A-xE_2)
-  &=\det(\begin{pmatrix}s-x&t\\t&u-x\end{pmatrix})\\
-  &=(s-x)(u-x)-t^2\\
-  &=x^2-(s+u)x+su-t^2
-\end{align*}
-となる. $x$に関する方程式
-\begin{align*}
-  \det(A-xE_2)=0
-\end{align*}
-の解を調べたいので判別式$D$を計算すると,
-\begin{align*}
-  D&=(-(s+u))^2-4(su-t^2)\\
-  &=s^2+2us+u^2-4su+4t^2\\
-  &=s^2-2us+u^2+4t^2\\
-  &=(s-u)^2+4t^2.
-\end{align*}
-となる.  $D\geq 0$なので,
-複素数解を持つことはなく, 常に実数解をもつ.
-
-$D>0$のときについて考える.
-このときには, 実数解が2つ存在するので,
-$\lambda,\mu$とする.
-$\lambda\neq\mu$である.
-$\vv$を$\|\vv\|=1$である固有値$\lambda$に属する$A$の固有ベクトルでとする.
-$\ww$を$\|\ww\|=1$である固有値$\mu$に属する$A$の固有ベクトルとする.
-このとき,
-\begin{align*}
-  \Braket{A\vv,\ww}&=\Braket{\lambda\vv,\ww}=\lambda\Braket{\vv,\ww}
-\end{align*}
-であるが, $\Braket{A\vv,\ww}$は$\transposed{(A\vv)}\ww$の$(1,1)$-成分と等しい.
-また,
-\begin{align*}
-  \Braket{\vv,A\ww}&=\Braket{\vv,\mu\ww}=\mu\Braket{\vv,\ww}
-\end{align*}
-であるが, $\Braket{\vv,A\ww}$は$\transposed{\vv}A\ww$の$(1,1)$-成分と等しい.
-いま$A$は対称行列であるので$\transposed{A}=A$であるから,
-\begin{align*}
-  \transposed{(A\vv)}\ww=\transposed{\vv}\transposed{A}\ww=
-  \transposed{\vv}A\ww
-\end{align*}
-となる.
-したがって,
-\begin{align*}
-  \lambda\Braket{\vv,\ww}=\mu\Braket{\vv,\ww}
-\end{align*}
-となるが,
-\begin{align*}
-  (\lambda-\mu)\Braket{\vv,\ww}=0
-\end{align*}
-となる. $\lambda\neq\mu$であるので,
-\begin{align*}
-  \Braket{\vv,\ww}=0
-\end{align*}
-であり, $\vv$と$\ww$は直交する.
-したがって, $\vv$と$\ww$を並べてできる行列は直交行列であるから,
-$A$は対角化可能であることがわかる.
-
-
-
-また,
-重根となるのは,
-$t=0$かつ$s=u$のときであるので,
-\begin{align*}
-  A=\begin{pmatrix}s&0\\0&s\end{pmatrix}=sE_2
-\end{align*}
-のときである.
-$A=sE_2$のときは,
-すでに対角行列である.
-つまり単位行列$E_2$により$A$は対角化できるが,
-$E_2$も直交行列である.
-
-これらの事実をまとめると以下のようになる.
-\begin{theorem}
-  %proved
-  \label{thm:symmat:eigen}
-  $A$を実対称行列とする.
-  このとき, $A$の固有値は実数である.
-  また, $\lambda,\mu$が相異なる$A$の固有値ならば,
-  $\lambda$に属する$A$の固有ベクトルと,
-  $\mu$に属する$A$の固有ベクトルとは直交する.
-\end{theorem}
-\begin{theorem}
-  %proved
-  \label{thm:symmat:diag}
-  $A$を実対称行列とする.
-  このとき, $P^{-1}AP$が対角行列となる直交行列$P$が存在する.
-\end{theorem}
-
-
-\sectionX{章末問題}
-\begin{quiz}
-  \solvelater{quiz:6:1}
-  \label{quiz:6:1}
-\seealsoQuiz{quiz:3:7}
-\Seealsoquiz{quiz:6:2,quiz:6:4}
-  \begin{align*}
-    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
-  \end{align*}
-  とする.
-  $A$の固有多項式を求めよ. また, $A$の固有値をすべて求めよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:6:2}
-  \label{quiz:6:2}
-  \seealsoQuiz{quiz:6:1}
-  \begin{align*}
-    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
-  \end{align*}
-  は対角化可能か判定せよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:6:3}
-  \label{quiz:6:3}
-  \seealsoQuiz{quiz:3:8}
-  \begin{align*}
-    A=\begin{pmatrix}2&1\\0&2\end{pmatrix}
-  \end{align*}
-  は対角化可能か判定せよ.
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:6:4}
-  \label{quiz:6:4}
-  \seealsoQuiz{quiz:3:9,quiz:3:10,quiz:6:1}
-  \begin{align*}
-    A=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
-  \end{align*}
-  とする.
-  このとき次に答えよ:
-  \begin{enumerate}
-  \item 固有ベクトルをすべて求めよ.
-  \item $A$を対角化せよ.
-  \item $A^n$を求めよ.
-  \end{enumerate}
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:6:5}
-  \label{quiz:6:5}
-  \Seealsoquiz{quiz:6:6}
-  次の行列$A$は直交行列か判定せよ. 
-  \begin{align*}
-   A=\frac{1}{\sqrt{5}}
-    \begin{pmatrix}
-      2&-1\\
-      1&2
-    \end{pmatrix}.
-  \end{align*}
-\end{quiz}
-
-\begin{quiz}
-  \solvelater{quiz:6:6}
-  \label{quiz:6:6}
-  \seealsoQuiz{quiz:6:5}
-  次の行列を
-  直交行列により対角化せよ:
-  \begin{align*}
-    \begin{pmatrix}
-      2&2\\2&-1
-    \end{pmatrix}.
-  \end{align*}
-\end{quiz}
-
-
-\begin{quiz}
-  \solvelater{quiz:6:7}
-  次で定義される数列(Fibonacci数列)の一般項を求めよ:
-  \begin{align*}
-    \begin{cases}
-      a_{n+2}=a_{n+1}+a_n&(n=1,2,3,\ldots)\\
-      a_{2}=a_{1}=1
-    \end{cases}
-  \end{align*}
-\end{quiz}
