@@ -1020,6 +1020,34 @@ $2$次正方行列の場合について紹介したあと,
   \addindex{結合!行列の一次---}%
  と呼ぶことがある.
 \end{remark}
+\begin{definition}
+  $A_1,\ldots, A_n$を行列とする.
+  $\alpha_1A_1+\cdots+\alpha_n A_n$が零行列となるような
+  $(\alpha_1,\ldots,\alpha_n)\neq (0,\ldots,0)$
+  を満たす数
+  $\alpha_1,\ldots,\alpha_n$があるとき,
+  $(A_1,\ldots,A_n)$は
+  \defit{一次従属}
+  \Defit{linearly dependent}
+  \addindex{従属!一次---}%
+  \addindex{一次!---従属}%
+  \addindex{dependent!linearly ---}%
+  \addindex{linearly!--- dependent}%
+  \addindex{linear!---ly dependent}%
+  一次従属であるという.
+  また,
+  $(A_1,\ldots,A_n)$は一次従属でないとき,
+  $(A_1,\ldots,A_n)$は
+  \defit{一次独立}
+  \Defit{linearly independent}
+  \addindex{独立!一次---}%
+  \addindex{一次!---独立}%
+  \addindex{independent!linearly ---}%
+  \addindex{linearly!--- independent}%
+  \addindex{linear!---ly independent}%
+  であるという.
+\end{definition}
+
 
 \subsection{積}
 ここでは, 行列の積と呼ばれる演算について考える.
@@ -5688,17 +5716,22 @@ $A^{-1}\bbb$は次のように表すことができる.
 
 $(m,1)$-行列のことを$m$項数ベクトルと呼んだ.
 $\zzero=O_{m,1}$とおく.
-\begin{definition}
-  $\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとする.
-  $\alpha_1\aaa_1+\cdots+\alpha_n\aaa_n=\zzero$
-  かつ$(\alpha_1,\ldots,\alpha_n)\neq (0,\ldots,0)$
-  を満たす数
-  $\alpha_1,\ldots,\alpha_n$があるとき,
-  $(\aaa_1,\ldots,\aaa_n)$は一次従属であるという.
-  また,
-  $(\aaa_1,\ldots,\aaa_n)$は一次従属でないとき,
-  $(\aaa_1,\ldots,\aaa_n)$は一次独立であるという.
-\end{definition}
+$\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとする.
+$\alpha_1\aaa_1+\cdots+\alpha_n\aaa_n=\zzero$
+かつ$(\alpha_1,\ldots,\alpha_n)\neq (0,\ldots,0)$
+を満たす数
+$\alpha_1,\ldots,\alpha_n$があるとき,
+$(\aaa_1,\ldots,\aaa_n)$は
+一次従属
+一次従属であるといい,
+また,
+$(\aaa_1,\ldots,\aaa_n)$は一次従属でないとき,
+$(\aaa_1,\ldots,\aaa_n)$は
+一次独立
+であるといった.
+
+
+
 \begin{lemma}
   \provelater{lem:lindep:lessrank}
   \label{lem:lindep:lessrank}
