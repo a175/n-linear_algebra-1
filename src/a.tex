@@ -3214,6 +3214,39 @@ $\det(\tilde A)=0$なので,
   また, $\ww\neq\zzero$であるから, $y=0$である.
 \end{proofof}
 
+\begin{proofof}{lem:linindep:minor}
+\paragraph{$\Cref{lem:linindep:minor:item:1}\implies\Cref{lem:linindep:minor:item:2}$}
+適宜行を入れ替えて,
+$\Set{1,\ldots,n}$-行, $\Set{1,\ldots,n}$-列の小行列式が$0$でないとする.
+$\Set{1,\ldots,n}$-行, $\Set{1,\ldots,n}$-列の小行列を$B$とし,
+$\Set{n+1,n+2,\ldots, m}$-行, $\Set{1,\ldots,n}$-列の小行列を$C$とする.
+このとき,
+$A=\vconcat{B}{C}$
+である.
+$B$は正則であるので,
+ 行基本形で,
+$\vconcat{E_n}{C}$とできる.
+ さらに行基本変形で, $\vconcat{E_n}{O_{m-n,n}}$という形に変形できるので,
+ $\rank(A)=n$であることがわかる.
+ よって,
+ \Cref{lem:lindep:lessrank}
+ より,
+ $(\aaa_1,\ldots,\aaa_n)$は一次独立.
+
+\paragraph{$\Cref{lem:linindep:minor:item:2}\implies\Cref{lem:linindep:minor:item:1}$}
+
+$(\aaa_1,\ldots,\aaa_n)$は一次独立とすると,
+\Cref{lem:lineq:lessrank}より,
+$A\xx=\zzero$は, 非自明な解をもつ.
+$\vv\neq\zzero$かつ$A\vv=\zzero$とする.
+$A\vv$の$i$行目は$A$の$i$行目と%\vv%の積なので,
+$A$の,
+$\Set{i_1,\ldots,i_n}$-行,
+$\Set{1,\ldots,n}$-列の小行列を$B$とすると,
+$B\vv=\zzero$である.
+よって$\det(B)=0$である.
+\end{proofof}
+
 \endinput
 \section{逆行列や正則に関する命題の証明}
 ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.

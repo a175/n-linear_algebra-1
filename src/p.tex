@@ -4300,6 +4300,7 @@ $\Set{\zzero_n}\subsetneq\KKK$であるとき,
 
 \begin{prop}
   \provelater**{thm:solspace:vec}
+  \label{thm:ker:vec}
   $A\xx=\zzero_m$の解の空間を$\KKK$とする.
   このとき, 以下が成り立つ:
   \begin{enumerate}
@@ -5780,21 +5781,41 @@ $\det(A')$を$n'$次の
 \end{example}
 
 \begin{prop}
+  \provelater{lem:linindep:minor}
+  $n\leq m $とし,
 $\aaa_1,\ldots,\aaa_n$を$m$項数ベクトルとする.
 $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$
 と列ベクトル表示されているとする.
-$A$の$n$次小行列式で$0$でないものがあるなら,
-$\aaa_1,\ldots,\aaa_n$は一次独立.
+このとき次は同値:
+\begin{enumerate}
+\item
+  \label{lem:linindep:minor:item:1}
+  $A$の$n$次小行列式で$0$でないものがある.
+\item
+  \label{lem:linindep:minor:item:2}
+  $(\aaa_1,\ldots,\aaa_n)$は一次独立.
+\end{enumerate}
 \end{prop}
-\endinput
+このことから, 以下がわかる.
+\begin{cor}
+  $A=\left(\begin{array}{c|c|c|c}\aaa_1&\aaa_2&\cdots&\aaa_n\end{array}\right)$と列ベクトル表示されているとする.
+\begin{align*}
+  I&=\Set{(i_1,\ldots,i_k)|\text{$(\aaa_{i_1},\ldots,\aaa_{i_k})$が一次独立.}}\\
+  r&=\max\Set{k|(i_1,\ldots,i_k)\in I}\\
+  r'&=\max\Set{k|\text{$k$次小行列式で$0$でないものがある.}}
+\end{align*}
+とすると, $r=r'=\rank(A)$.
+\end{cor}
+
+%% \endinput
 \section{固有値と固有ベクトルの定義}
 ここでは, 固有値や固有ベクトルに関連する用語を定義し,
 その性質について紹介する.
 \begin{definition}
   \label{def:eigen}
-  $A$を$2$次正方行列とする.
+  $A$を$n$次正方行列とする.
   $\lambda$を数とする.
-  $\vv$を$\zzero$ではない$2$項ベクトルとする.
+  $\vv$を$\zzero$ではない$n$項ベクトルとする.
   次の条件を満たすとき$\vv$は
   \defit{固有値$\lambda$に属する$A$の固有ベクトル}
   \Defit{eigenvector belonging to the eigenvalue $\lambda$}
@@ -5882,26 +5903,26 @@ $\vv$が固有値$\lambda$に属する$A$の固有ベクトルであるための
 これを書き換えると,
 \begin{align*}
   A\vv-\lambda\vv&=\zzero\\
-  A\vv-\lambda E_2 \vv&=\zzero\\
-  (A-\lambda E_2) \vv&=\zzero
+  A\vv-\lambda E_n \vv&=\zzero\\
+  (A-\lambda E_n) \vv&=\zzero
 \end{align*}
 である.
 どのような$\lambda$が$A$の固有値になるかがわかれば,
 その$\lambda$に対し,
 $\xx$に関する方程式
-$(A-\lambda E_2) \xx=\zzero$
+$(A-\lambda E_n) \xx=\zzero$
 の解の空間を求めることで,
 $A$の固有ベクトルがすべてわかる.
 したがって,
 どのような$\lambda$が$A$の固有値になるかがわかれば固有ベクトルがすべて求められることになる.
 $\lambda$が$A$の固有値として現れるということは,
-$(A-\lambda E_2) \xx=\zzero$
+$(A-\lambda E_n) \xx=\zzero$
 が$\zzero$以外の解をもつということであるので,
-これは, $(A-\lambda E_2)$が正則であるかそうでないかを調べればわかる.
+これは, $(A-\lambda E_n)$が正則であるかそうでないかを調べればわかる.
 このことは以下のようにまとめることができる.
 \begin{definition}
   \label{def:charpoly}
-  $A$を$2$次正方行列とする.
+  $A$を$n$次正方行列とする.
   $x$に関する多項式
   \begin{align*}
   \det(A-xE_2)
@@ -5924,9 +5945,9 @@ $(A-\lambda E_2) \xx=\zzero$
 \end{definition}
 \begin{prop}
   %proved
-  $A$を$2$次正方行列とする.
+  $A$を$n$次正方行列とする.
   $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_2)$とする.
+  つまり $f(x)=\det(A-xE_n)$とする.
   このとき 次は同値:
   \begin{enumerate}
   \item $\lambda$が$A$の固有値.
@@ -5944,9 +5965,9 @@ $(A-\lambda E_2) \xx=\zzero$
 \begin{definition}
   $\lambda$を$A$の固有値であるとする.
   このとき,
-  $\xx$に関する方程式$(A-\lambda E_2)\xx=\zzero$の解の空間
+  $\xx$に関する方程式$(A-\lambda E_n)\xx=\zzero$の解の空間
   \begin{align*}
-    \Set{\vv | (A-\lambda E_2)\vv=\zzero}
+    \Set{\vv | (A-\lambda E_n)\vv=\zzero}
   \end{align*}
   を
   \defit{固有値$\lambda$に属する$A$の固有空間}
@@ -5968,11 +5989,11 @@ $(A-\lambda E_2) \xx=\zzero$
 \end{remark}
 固有空間は
 $\xx$に関する方程式
-$(A-\lambda E_2)\xx=\zzero$の解空間であるので,
+$(A-\lambda E_n)\xx=\zzero$の解空間であるので,
 \Cref{thm:ker:vec}から次がわかる.
 \begin{prop}
   %proved
-  $A$を$2$次正方行列とし,
+  $A$を$n$次正方行列とし,
   $\lambda$を$A$の固有値とする.
   $V$を固有値$\lambda$に属する$A$の固有空間とする.
   このとき, 次が成り立つ:
@@ -5985,7 +6006,7 @@ $(A-\lambda E_2)\xx=\zzero$の解空間であるので,
 $\|\bar\vv\|=1$であるので次がわかる.
 \begin{cor}
   %proved
-  $A$を$2$次正方行列とし,
+  $A$を$n$次正方行列とし,
   $\lambda$を$A$の固有値とする.
   このとき, 
   固有値$\lambda$に属する$A$の固有ベクトル$\vv$で$\|\vv\|=1$となるものが存在する.
@@ -5993,11 +6014,6 @@ $\|\bar\vv\|=1$であるので次がわかる.
 
 \begin{remark}
   \label{thm:cht:general}
-  $A$を$n$次正方行列とする.
-  このとき,
-  $x$に関する多項式
-  $\det(A-xE_n)$
-  のことを$A$の固有多項式と呼ぶ.
   $f(x)$を$A$の固有多項式とする.
   つまり $f(x)=\det(A-xE_n)$とする.
   このとき,
@@ -6009,7 +6025,6 @@ $\|\bar\vv\|=1$であるので次がわかる.
 \end{remark}
 \begin{remark}
     2次正方行列の場合は次の様にかける:
-  \provelater{thm:cht:2dim}
   \label{thm:cht:2dim}
   \begin{align*}
     A=
@@ -6046,7 +6061,7 @@ $A$を$2$次正方行列とする.
   \end{align*}
   を固有値$\mu$に属する$A$の固有ベクトルとする.
   $\vv$と$\ww$が一次独立であるとする.
-`<  このとき,
+  このとき,
   \begin{align*}
     P&=\begin{pmatrix}v&w\\v'&w'\end{pmatrix}
   \end{align*}
