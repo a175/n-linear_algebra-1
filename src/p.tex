@@ -6047,11 +6047,12 @@ $\|\bar\vv\|=1$であるので次がわかる.
 
 \begin{remark}
   \label{thm:cht:general}
-  $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_n)$とする.
+  $a_0+a_1x+a_2x^2+\cdots+a_nx^n$を
+  $n$次正方行列$A$の固有多項式とする.
+  つまり $a_0+a_1x+a_2x^2+\cdots+a_nx^n=\det(A-xE_n)$とする.
   このとき,
   \begin{align*}
-    f(A)=O_{n,n}
+    a_0E+a_1A+a_2A^2+\cdots+a_nA^n=O_{n,n}
   \end{align*}
   が成り立つ.
   この定理はケーリー--ハミルトンの定理と呼ばれる.
@@ -6066,17 +6067,25 @@ $\|\bar\vv\|=1$であるので次がわかる.
     \end{pmatrix}
   \end{align*}
   とする.
+  固有多項式は,
   \begin{align*}
-    f_A(t)=t^2-(a+d)t+(ad-bc)
+    t^2-(a+d)t+(ad-bc)
   \end{align*}
-  とおく. このとき,
-  \begin{align*}
-    f_A(A)=O_{2,2}
-  \end{align*}
-  である. つまり
+  である. このとき,
   \begin{align*}
     A^2-(a+d)A+(ad-bc)E_2=O_{2,2}
   \end{align*}
+  が成り立つ.
+  実際,
+  \begin{align*}
+    A^2=\begin{pmatrix}a^2+bc&ac+bd\\ca+dc&cb+d^2\end{pmatrix}
+  \end{align*}
+  であるから,
+  \begin{align*}
+    A^2-(a+d)A+(ad-bc)E_2=\begin{pmatrix}a^2+bc&ac+bd\\ca+dc&cb+d^2\end{pmatrix}+\begin{pmatrix}-(a+d)a&-(a+d)b\\-(a+d)c&-(a+d)d\end{pmatrix}
+    +\begin{pmatrix}ad-bc&0\\0&ad-bc\end{pmatrix}=O_{2,2}
+  \end{align*}
+である.  
 \end{remark}
 
 \section{行列の対角化}
