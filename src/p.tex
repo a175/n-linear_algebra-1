@@ -989,7 +989,8 @@ $2$次正方行列の場合について紹介したあと,
   対角成分が$\alpha$であるスカラー行列は, $\alpha E_n$と表せる.
 \end{remark}
 
-\begin{remark}
+和とスカラー倍で書けるものを一次結合と呼ぶ.
+\begin{definition}
   $k$個の
   $(m,n)$-行列$A_1,\ldots,A_k$
   と数$\alpha_1,\ldots,\alpha_k$
@@ -1019,7 +1020,26 @@ $2$次正方行列の場合について紹介したあと,
   \addindex{結合!一次---}%
   \addindex{結合!行列の一次---}%
  と呼ぶことがある.
-\end{remark}
+\end{definition}
+\begin{example}
+  例えば,
+  \begin{align*}
+    E&=\begin{pmatrix}1&0\\0&1\end{pmatrix},\\
+    J&=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    A&=\begin{pmatrix}2&1\\1&2\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    A=2E+J
+  \end{align*}
+  である.
+  このことを,
+  $A$は$E$と$J$の線型結合として表せると言い表す.
+\end{example}
+
 \begin{definition}
   $A_1,\ldots, A_n$を行列とする.
   $\alpha_1A_1+\cdots+\alpha_n A_n$が零行列となるような
@@ -1047,6 +1067,13 @@ $2$次正方行列の場合について紹介したあと,
   \addindex{linear!---ly independent}%
   であるという.
 \end{definition}
+
+
+\begin{remark}
+  一次独立性については,
+  一般の行列よりも, ベクトルに対して考えることが多い.
+\end{remark}
+
 
 
 \subsection{積}
@@ -1366,7 +1393,7 @@ $2$次正方行列のときについて考える.
   $1+1\neq 0$とする.
   $A$を正方行列とする.
   \begin{align*}
-    A'&=\frac{1}{2}(A+\transposed{A})
+    A'&=\frac{1}{2}(A+\transposed{A}),&
     A''&=\frac{1}{2}(A-\transposed{A})
   \end{align*}
   とすると, 次が成り立つ:
