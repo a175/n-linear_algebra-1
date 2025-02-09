@@ -3203,17 +3203,17 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
 \section{固有値と固有ベクトルに関する問題}
 
 \begin{answerof}{quiz:6:1}
-固有多項式とは$\det(A-xE_2)$のことである.
+固有多項式とは$\det(xE_2-A)$のことである.
   \begin{align*}
-    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
-    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+    xE_2-A&=\begin{pmatrix}4+x&-1\\-5&x\end{pmatrix}\\
+    \det(xE_2-A)&=(4+x)x-(-1)\cdot (-5)=x^2+4x-5=(x-1)(x+5)
   \end{align*}
   であるので, $A$の固有多項式は$x^2+4x-5$である.
 
   $A$の固有値とは, $A\xx=\lambda\xx$をみたす$\xx\neq\zzero$が存在するような$\lambda$のことである.
   したがって, $\lambda$が$A$の固有値であることと, 
   $\lambda$が$x$に関する方程式$\det(A-xE_2)=0$の解であることは同値である.
-  したがって, $\det(A-xE_2)=(x-1)(x+5)$であるので,
+  したがって, $\det(xE_2-A)=(x-1)(x+5)$であるので,
   \begin{align*}
     (x-1)(x+5)=0
   \end{align*}
@@ -3227,10 +3227,10 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   また, 相異なる固有値に属する固有ベクトルの組は一次独立であった.
   
   まず$A$の固有値を求める.
-  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  そのために, $\det(xE_2-A)=0$という$x$に関する方程式をとく.
   \begin{align*}
-    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
-    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+    xE_2-A&=\begin{pmatrix}4+x&-1\\-5&x\end{pmatrix}\\
+    \det(xE_2-A)&=(4+x)x-(-1)\cdot(- 5)=x^2+4x-5=(x-1)(x+5)
   \end{align*}
   であるので, $(x-1)(x+5)=0$を解けばよく,
   $1$と$-5$が固有値である.
@@ -3246,10 +3246,10 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   一次独立な固有ベクトルの組が存在することは同値であった.
 
   まず$A$の固有値を求める.
-  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  そのために, $\det(xE_2-A)=0$という$x$に関する方程式をとく.
   \begin{align*}
-    A-xE_2&=\begin{pmatrix}2-x&1\\0&2-x\end{pmatrix}\\
-    \det(A-xE_2)&=(2-x)^2-1\cdot 0=(2-x)^2
+    xE_2-A&=\begin{pmatrix}-2+x&-1\\0&-2+x\end{pmatrix}\\
+    \det(xE_2-A)&=(-2+x)^2-(-1)\cdot 0=(2-x)^2
   \end{align*}
   であるので, $(2-x)^2=0$を解けばよく,
   固有値は$2$のみであることがわかる.
@@ -3302,10 +3302,10 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
 
 \begin{answerof}{quiz:6:4}
   まず$A$の固有値を求める.
-  そのために, $\det(A-xE_2)=0$という$x$に関する方程式をとく.
+  そのために, $\det(xE_2-A)=0$という$x$に関する方程式をとく.
   \begin{align*}
-    A-xE_2&=\begin{pmatrix}-4-x&1\\5&-x\end{pmatrix}\\
-    \det(A-xE_2)&=(-4-x)(-x)-1\cdot 5=x^2+4x-5=(x-1)(x+5)
+    xE_2-A&=\begin{pmatrix}4+x&-1\\-5&+x\end{pmatrix}\\
+    \det(xE_2-A)&=(4+x)x-(-1)\cdot (-5)=x^2+4x-5=(x-1)(x+5)
   \end{align*}
   であるので, $(x-1)(x+5)=0$を解けばよく,
   $1$と$-5$が固有値である.

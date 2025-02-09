@@ -6009,15 +6009,18 @@ $A$の固有ベクトルがすべてわかる.
 どのような$\lambda$が$A$の固有値になるかがわかれば固有ベクトルがすべて求められることになる.
 $\lambda$が$A$の固有値として現れるということは,
 $(A-\lambda E_n) \xx=\zzero$
-が$\zzero$以外の解をもつということであるので,
-これは, $(A-\lambda E_n)$が正則であるかそうでないかを調べればわかる.
+が$\zzero$以外の解をもつということであるが,
+この方程式は
+$(\lambda E_n-A) \xx=\zzero$
+と同じであり, 
+この方程式が解を持つかは, $(\lambda E_n-A)$が正則であるかそうでないかを調べればわかる.
 このことは以下のようにまとめることができる.
 \begin{definition}
   \label{def:charpoly}
   $A$を$n$次正方行列とする.
   $x$に関する多項式
   \begin{align*}
-  \det(A-xE_n)
+  \det(xE_n-A)
   \end{align*}
   を
   \defit{$A$の固有多項式}
@@ -6039,13 +6042,24 @@ $(A-\lambda E_n) \xx=\zzero$
   %proved
   $A$を$n$次正方行列とする.
   $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_n)$とする.
+  つまり $f(x)=\det(xE_n-A)$とする.
   このとき 次は同値:
   \begin{enumerate}
   \item $\lambda$が$A$の固有値.
-  \item $\lambda$は$f(x)=0$の根 (つまり$f(\lambda)$=0を満たす).
+  \item $\lambda$は$f(x)=0$の解 (つまり$f(\lambda)$=0を満たす).
   \end{enumerate}
 \end{prop}
+\begin{remark}
+  $A$を$n$次正方行列とする.
+  このとき, $\lambda$が$A$の固有値であるかを調べるには,
+  $\lambda$が
+  $\det(A-xE_n)=0$の解であるかを調べても,
+  $\det(xE_n-A)=0$の解であるかを調べてもよい.
+  $\det(A-xE_n)$ではなく,
+  $\det(xE_n-A)$を$A$の固有多項式としたのは,
+  $\det(xE_n-A)$の場合は$x^n$の係数が$1$となっているからというだけで,
+  深い意味はない.
+\end{remark}
 
 \begin{remark}
   $A$を$2$次正方行列とすると, $A$の固有多項式$f(x)$は$2$次式である.
@@ -6108,7 +6122,7 @@ $\|\bar\vv\|=1$であるので次がわかる.
   \label{thm:cht:general}
   $a_0+a_1x+a_2x^2+\cdots+a_nx^n$を
   $n$次正方行列$A$の固有多項式とする.
-  つまり $a_0+a_1x+a_2x^2+\cdots+a_nx^n=\det(A-xE_n)$とする.
+  つまり $a_0+a_1x+a_2x^2+\cdots+a_nx^n=\det(xE_n-A)$とする.
   このとき,
   \begin{align*}
     a_0E+a_1A+a_2A^2+\cdots+a_nA^n=O_{n,n}
