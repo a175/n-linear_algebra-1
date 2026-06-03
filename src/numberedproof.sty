@@ -59,17 +59,26 @@
 %
 %
 \newcommand{\nu@numberedproof@varname@prooflabellist}[1]{nu@list@prooflabel@#1}
-\newcommand{\nu@numberedproof@create@new@prooflabellist}[1]{\expandafter\def\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{}}
+\newcommand{\nu@numberedproof@create@new@prooflabellist}[2]{\global\expandafter\edef\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{#2}}
+%% \newcommand{\nu@numberedproof@append@prooflabellist}[2]{%
+%%   \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}{\nu@numberedproof@create@new@prooflabellist{#1}}{}
+%%   \def\nu@list@prooflabel@oldlist{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}\let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist\global\expandafter\edef\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{\nu@list@prooflabel@temp,#2}}
 \newcommand{\nu@numberedproof@append@prooflabellist}[2]{%
-  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}{\nu@numberedproof@create@new@prooflabellist{#1}}{}
-  \def\nu@list@prooflabel@oldlist{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}\let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist\global\expandafter\edef\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{\nu@list@prooflabel@temp,#2}}
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}
+               {\nu@numberedproof@create@new@prooflabellist{#1}{#2}}
+               {%
+                 \def\nu@list@prooflabel@oldlist{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}
+                 \let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist
+                 \global\expandafter\edef\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{\nu@list@prooflabel@temp,#2}
+               }
+  }
 \newcommand{\nu@numberedproof@prooflabellist}[1]{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}
 
 \newcommand{\nu@numberedproof@label@S}[2]{%
   \makebox{}%
   \label{nu@statement@#2}%
   \def\nu@numberedproof@statementlabel{#2}%
-  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#2}}{}{#1{\nu@numberedproof@prooflabellist{#2}}}%
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#2}}{}{#1{\expandafter\nu@numberedproof@prooflabellist{#2}}}%
 %   \immediate\write\@auxout{\string\nu@numberedproof@create@new@prooflabellist{#1}}%
 }
 \newcommand{\nu@numberedproof@prove@this@later}[2]{%\makebox{}%
