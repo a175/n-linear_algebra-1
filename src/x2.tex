@@ -7,7 +7,8 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{url}
 \usepackage{hyperref}
-\usepackage{cleveref}
+\usepackage{zref-clever}
+\zcsetup{ lang = english , capfirst = true}
 \usepackage{braket}
 %\usepackage{showkeys}
 \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
@@ -69,78 +70,243 @@
 %\newtheorem*{numberedanswer}{解説}
 
 \newcommand{\announceProveLater}[1]{%
-  \marginpar{\footnotesize 証明は\cref{#1}.}%
+  \marginpar{\footnotesize 証明は\zcref{#1}.}%
 }
 \newcommand{\announceProveEachItemLater}[1]{%
-  \marginpar{\footnotesize \Cref{#1}.}%
+  \marginpar{\footnotesize \zcref{#1}.}%
 }
 \newprovelater{\provelater}{\announceProveLater}{\announceProveEachItemLater}{\announceProveLater}
 \newcommand{\announceSolveLater}[1]{%
-  \marginpar{\footnotesize 略解は\cref{#1}.}%
+  \marginpar{\footnotesize 略解は\zcref{#1}.}%
 }
 \newcommand{\announceSolveEachItemLater}[1]{%
-  \marginpar{\footnotesize \Cref{#1}.}%
+  \marginpar{\footnotesize \zcref{#1}.}%
 }
 \newprovelater{\solvelater}{\announceSolveLater}{\announceSolveEachItemLater}{\announceSolveLater}
 
 \newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 \newnumberedproof{answerof}{numberedanswer}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 
-\newcommand{\seealsoquiz}[1]{\marginpar{\footnotesize\Cref{#1}は関連する問題である.}}
-%\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize\Cref{#1}$\gets$}}
-\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize 躓いたら\Cref{#1}も確認.}}
-%\newcommand{\Seealsoquiz}[1]{\marginpar{\footnotesize$\to$\Cref{#1}}}
+\newcommand{\seealsoquiz}[1]{\marginpar{\footnotesize\zcref{#1}は関連する問題である.}}
+%\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize\zcref{#1}$\gets$}}
+\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize 躓いたら\zcref{#1}も確認.}}
+%\newcommand{\Seealsoquiz}[1]{\marginpar{\footnotesize$\to$\zcref{#1}}}
 \newcommand{\Seealsoquiz}[1]{}
 
 % Cref
-\crefname{section}{Section}{Sections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% zref
 
-\crefname{thm}{Theorem}{Theorems}
-\Crefname{thm}{Theorem}{Theorems}
-\crefname{theorem}{Theorem}{Theorems}
-\Crefname{theorem}{Theorem}{Theorems}
-\crefname{lemma}{Lemma}{Lemmas}
-\Crefname{lemma}{Lemma}{Lemmas}
-\crefname{corollary}{Corollary}{Corollaries}
-\Crefname{corollary}{Corollary}{Corollaries}
-\crefname{cor}{Corollary}{Corollaries}
-\Crefname{cor}{Corollary}{Corollaries}
-\crefname{proposition}{Proposition}{Propositions}
-\Crefname{proposition}{Proposition}{Propositions}
-\crefname{prop}{Proposition}{Propositions}
-\Crefname{prop}{Proposition}{Propositions}
-\crefname{remark}{Remark}{Remarks}
-\Crefname{remark}{Remark}{Remarks}
-\crefname{rem}{Remark}{Remarks}
-\Crefname{rem}{Remark}{Remarks}
-\crefname{example}{Example}{Examples}
-\Crefname{Example}{Example}{Examples}
-\crefname{exercise}{Exercise}{Exercises}
-\Crefname{exercise}{Exercise}{Exercises}
-\crefname{definition}{Definition}{Definitions}
-\Crefname{definition}{Definition}{Definitions}
-\crefname{dfn}{Definition}{Definitions}
-\Crefname{dfn}{Definition}{Definitions}
-\crefname{algorithm}{Algorithm}{Algorithms}
-\Crefname{algorithm}{Algorithm}{Algorithms}
-\crefname{question}{Question}{Questions}
-\Crefname{question}{Question}{Questions}
-\crefname{problem}{Problem}{Problems}
-\Crefname{problem}{Problem}{Problems}
-\crefname{notation}{Notation}{Notations}
-\Crefname{notation}{Notation}{Notations}
-\crefname{conjecture}{Conjecture}{Conjectures}
-\Crefname{conjecture}{Conjecture}{Conjectures}
-\crefname{conj}{Conjecture}{Conjectures}
-\Crefname{conj}{Conjecture}{Conjectures}
-\crefname{condition}{Condition}{Conditions}
-\Crefname{condition}{Condition}{Conditions}
-\crefname{numberedproof}{Proof}{Proofs}
-\Crefname{numberedproof}{Proof}{Proofs}
-\crefname{numberedanswer}{解説}{解説}
-\Crefname{numberedanswer}{解説}{解説}
-\crefname{quiz}{問題}{問題}
-\Crefname{quiz}{問題}{問題}
+
+%\crefname{thm}{Theorem}{Theorems}
+%\Crefname{thm}{Theorem}{Theorems}
+%\crefname{theorem}{Theorem}{Theorems}
+%\Crefname{theorem}{Theorem}{Theorems}
+\zcRefTypeSetup{thm}{
+ Name-sg=Theorem,
+ name-sg=Theorem,
+ Name-pl=Theorems,
+ name-pl=Theorems,
+}
+
+\AddToHook{env/theorem/begin}{\zcsetup{countertype={thm=theorem}}}
+\zcRefTypeSetup{theorem}{
+ Name-sg=Theorem,
+ name-sg=Theorem,
+ Name-pl=Theorems,
+ name-pl=Theorems,
+}
+
+%% \crefname{question}{Question}{Questions}
+%% \Crefname{question}{Question}{Questions}
+\AddToHook{env/question/begin}{\zcsetup{countertype={thm=question}}}
+\zcRefTypeSetup{question}{
+ Name-sg=Question,
+ name-sg=Question,
+ Name-pl=Questions,
+ name-pl=Questions,
+}
+
+%\crefname{lemma}{Lemma}{Lemmas}
+%\Crefname{lemma}{Lemma}{Lemmas}
+\AddToHook{env/lemma/begin}{\zcsetup{countertype={thm=lemma}}}
+\zcRefTypeSetup{lemma}{
+ Name-sg=Lemma,
+ name-sg=Lemma,
+ Name-pl=Lemmas,
+ name-pl=Lemmas,
+}
+
+%\crefname{corollary}{Corollary}{Corollaries}
+%\Crefname{corollary}{Corollary}{Corollaries}
+%\crefname{cor}{Corollary}{Corollaries}
+%\Crefname{cor}{Corollary}{Corollaries}
+\AddToHook{env/corollary/begin}{\zcsetup{countertype={thm=corollary}}}
+\AddToHook{env/cor/begin}{\zcsetup{countertype={thm=corollary}}}
+\zcRefTypeSetup{corollary}{
+ Name-sg=Corollary,
+ name-sg=Corollary,
+ Name-pl=Corollaries,
+ name-pl=Corollaries,
+}
+
+%\crefname{proposition}{Proposition}{Propositions}
+%\Crefname{proposition}{Proposition}{Propositions}
+%\crefname{prop}{Proposition}{Propositions}
+%\Crefname{prop}{Proposition}{Propositions}
+\AddToHook{env/proposition/begin}{\zcsetup{countertype={thm=proposition}}}
+\AddToHook{env/prop/begin}{\zcsetup{countertype={thm=proposition}}}
+\zcRefTypeSetup{proposition}{
+ Name-sg=Proposition,
+ name-sg=Proposition,
+ Name-pl=Propositions,
+ name-pl=Propositions,
+}
+
+
+%% \crefname{conjecture}{Conjecture}{Conjectures}
+%% \Crefname{conjecture}{Conjecture}{Conjectures}
+%% \crefname{conj}{Conjecture}{Conjectures}
+%% \Crefname{conj}{Conjecture}{Conjectures}
+\AddToHook{env/conj/begin}{\zcsetup{countertype={thm=conjecture}}}
+\AddToHook{env/conjecture/begin}{\zcsetup{countertype={thm=conjecture}}}
+\zcRefTypeSetup{conjecture}{
+ Name-sg=Conjecture,
+ name-sg=Conjecture,
+ Name-pl=Conjectures,
+ name-pl=Conjectures,
+}
+
+%\crefname{remark}{Remark}{Remarks}
+%\Crefname{remark}{Remark}{Remarks}
+%\crefname{rem}{Remark}{Remarks}
+%\Crefname{rem}{Remark}{Remarks}
+\AddToHook{env/remark/begin}{\zcsetup{countertype={thm=remark}}}
+\AddToHook{env/rem/begin}{\zcsetup{countertype={thm=remark}}}
+\zcRefTypeSetup{remark}{
+ Name-sg=Remark,
+ name-sg=Remark,
+ Name-pl=Remarks,
+ name-pl=Remarks,
+}
+
+%\crefname{example}{Example}{Examples}
+%\Crefname{Example}{Example}{Examples}
+\AddToHook{env/example/begin}{\zcsetup{countertype={thm=example}}}
+\zcRefTypeSetup{example}{
+ Name-sg=Example,
+ name-sg=Example,
+ Name-pl=Examples,
+ name-pl=Examples,
+}
+
+%% \crefname{definition}{Definition}{Definitions}
+%% \Crefname{definition}{Definition}{Definitions}
+%% \crefname{dfn}{Definition}{Definitions}
+%% \Crefname{dfn}{Definition}{Definitions}
+\AddToHook{env/dfn/begin}{\zcsetup{countertype={thm=definition}}}
+\AddToHook{env/definition/begin}{\zcsetup{countertype={thm=definition}}}
+\zcRefTypeSetup{definition}{
+ Name-sg=Definition,
+ name-sg=Definition,
+ Name-pl=Definitions,
+ name-pl=Definitions,
+}
+
+%% \crefname{algorithm}{Algorithm}{Algorithms}
+%% \Crefname{algorithm}{Algorithm}{Algorithms}
+\AddToHook{env/algorithm/begin}{\zcsetup{countertype={thm=algorithm}}}
+\zcRefTypeSetup{algorithm}{
+ Name-sg=Algorithm,
+ name-sg=Algorithm,
+ Name-pl=Algorithms,
+ name-pl=Algorithms,
+}
+
+%% \crefname{problem}{Problem}{Problems}
+%% \Crefname{problem}{Problem}{Problems}
+\AddToHook{env/problem/begin}{\zcsetup{countertype={thm=problem}}}
+\zcRefTypeSetup{problem}{
+ Name-sg=Problem,
+ name-sg=Problem,
+ Name-pl=Problems,
+ name-pl=Problems,
+}
+
+
+%% \crefname{exercise}{Exercise}{Exercises}
+%% \Crefname{exercise}{Exercise}{Exercises}
+\AddToHook{env/exercise/begin}{\zcsetup{countertype={thm=exercise}}}
+\zcRefTypeSetup{exercise}{
+ Name-sg=Exercise,
+ name-sg=Exercise,
+ Name-pl=Exercises,
+ name-pl=Exercises,
+}
+
+%% \crefname{notation}{Notation}{Notations}
+%% \Crefname{notation}{Notation}{Notations}
+\AddToHook{env/notation/begin}{\zcsetup{countertype={thm=notation}}}
+\zcRefTypeSetup{notation}{
+ Name-sg=Notation,
+ name-sg=Notation,
+ Name-pl=Notation,
+ name-pl=Notation,
+}
+
+%% \crefname{condition}{Condition}{Conditions}
+%% \Crefname{condition}{Condition}{Conditions}
+\AddToHook{env/condition/begin}{\zcsetup{countertype={thm=condition}}}
+\AddToHook{env/definition/begin}{\zcsetup{countertype={enumi=condition,enumii=condition,enumiii=condition,enumiv=condition}}}
+\zcRefTypeSetup{condition}{
+ Name-sg=Condition,
+ name-sg=Condition,
+ Name-pl=Conditions,
+ name-pl=Conditions,
+}
+
+\AddToHook{env/algorithm/begin}{\zcsetup{countertype={enumi=step,enumii=step,enumiii=step,enumiv=step}}}
+\zcRefTypeSetup{step}{
+ Name-sg=Step,
+ name-sg=Step,
+ Name-pl=Steps,
+ name-pl=Steps,
+}
+
+
+%\crefname{section}{Section}{Sections}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \crefname{numberedproof}{Proof}{Proofs}
+%% \Crefname{numberedproof}{Proof}{Proofs}
+\AddToHook{env/numberedproof/begin}{\zcsetup{countertype={thm=numberedproof}}}
+\zcRefTypeSetup{numberedproof}{
+ Name-sg=Proof,
+ name-sg=Proof,
+ Name-pl=Proofs,
+ name-pl=Proofs,
+}
+
+%% \crefname{numberedanswer}{解説}{解説}
+%% \Crefname{numberedanswer}{解説}{解説}
+\AddToHook{env/numberedanswer/begin}{\zcsetup{countertype={thm=numberedanswer}}}
+\zcRefTypeSetup{numberedanswer}{
+ Name-sg=解説,
+ name-sg=解説,
+ Name-pl=解説,
+ name-pl=解説,
+}
+
+%% \crefname{quiz}{問題}{問題}
+%% \Crefname{quiz}{問題}{問題}
+\AddToHook{env/quiz/begin}{\zcsetup{countertype={thm=quiz}}}
+\zcRefTypeSetup{quiz}{
+ Name-sg=問題,
+ name-sg=問題,
+ Name-pl=問題,
+ name-pl=問題,
+}
 
 % theorems 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

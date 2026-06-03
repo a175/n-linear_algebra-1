@@ -53,7 +53,7 @@
 \end{lemma}
 
 \section{行列の演算に関する命題の証明}
-ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
+ここでは, \zcref{chap:mat}に現れる命題の証明を行う.
 
 \begin{proofof*}{transpose}{involutive}
   $A$を$(m,n)$-行列とし, 
@@ -141,7 +141,7 @@
   $(A+B)+C$の$(i,j)$-成分は$(a_{i,j}+b_{i,j})+c_{i,j}$である.
   $B+C$の$(i,j)$成分は$b_{i,j}+c_{i,j}$であるので,
   $A+(B+C)$の$(i,j)$-成分は$a_{i,j}+(b_{i,j}+c_{i,j})$である.
-  したがって, \cref{lem:numbers:field}より,
+  したがって, \zcref{lem:numbers:field}より,
   $(A+B)+C$の$(i,j)$-成分と
   $A+(B+C)$の$(i,j)$-成分が等しい.
   
@@ -155,7 +155,7 @@
   $A$の$(i,j)$-成分が等しいことを示す.
 
   $A+O_{m,n}$の$(i,j)$-成分は, $a_{i,j}+0$であるが,
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $a_{i,j}+0=a_{i,j}$である.
 \end{proofof*}
 
@@ -166,7 +166,7 @@
 
   $-A$の$(i,j)$-成分は, $-a_{i,j}$である.
   $A+(-A)$の$(i,j)$-成分は, $a_{i,j}-a_{i,j}$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $a_{i,j}-a_{i,j}=0$である.
 \end{proofof*}
 
@@ -180,7 +180,7 @@
   
   $A+B$の$(i,j)$-成分は, $a_{i,j}+b_{i,j}$である.
   $B+A$の$(i,j)$-成分は, $b_{i,j}+a_{i,j}$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $a_{i,j}+b_{i,j}=a_{i,j}+b_{i,j}$である.
 \end{proofof*}
 \begin{proofof*}{matspace_is_vectorspace}{action:ass}
@@ -194,7 +194,7 @@
   $(\alpha\beta)A$の$(i,j)$-成分は, $(\alpha\beta)a_{i,j}$である.
   $\beta A$の$(i,j)$-成分は, $(\beta a_{i,j}$であるので,
   $\alpha(\beta A)$の$(i,j)$-成分は, $\alpha(\beta a_{i,j})$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $(\alpha\beta)a_{i,j}=\alpha(\beta a_{i,j})$である.
 \end{proofof*}
 
@@ -206,7 +206,7 @@
   等しいことを示す.
 
   $1A$の$(i,j)$-成分は, $1a_{i,j}$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $1a_{i,j}=a_{i,j}$である.
 \end{proofof*}
 
@@ -220,7 +220,7 @@
   
 
   $(\alpha+\beta)A$の$(i,j)$-成分は, $(\alpha+\beta)a_{i,j}$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $(\alpha+\beta)a_{i,j}=\alpha a_{i,j}+\beta a_{i,j}$である.
   $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$であり,
   $\beta A$の$(i,j)$-成分は, $\beta a_{i,j}$である.
@@ -240,7 +240,7 @@
 
   $A+B$の$(i,j)$-成分は$a_{i,j}+b_{i,j}$であるので,
   $\alpha(A+B)$の$(i,j)$-成分は$\alpha(a_{i,j}+b_{i,j})$である.
-  \cref{lem:numbers:field}より,
+  \zcref{lem:numbers:field}より,
   $\alpha(a_{i,j}+b_{i,j})=\alpha a_{i,j}+ \alpha b_{i,j}$である.
   $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$であり,
   $\alpha B$の$(i,j)$-成分は, $\alpha b_{i,j}$である.
@@ -769,7 +769,7 @@
   $k$も$k'$も$0$ではない場合について考える.
   $p$, $p'$を正の整数とする.
   $k=p$も$k'=p'$である場合は,
-  \Cref{thm:mat:posipower}である.
+  \zcref{thm:mat:posipower}である.
   $k=-p$も$k'=-p'$である場合は,
   \begin{align*}
     A^{-p}A^{-p'}&=(A^{-1})^{p}(A^{-1})^{p'}=(A^{-1})^{p+p'}=A^{-(p+p')}=A^{(-p)+(-p')}.
@@ -837,13 +837,13 @@
   したがって$(X^{k})^{-1}=X^{-k}=X^{k\cdot -1}$である.
 
   $p'$を正の整数とすると,
-  \Cref{thm:inverse:operation}より,
+  \zcref{thm:inverse:operation}より,
   $(X^{-1})^{p'}$は$X^{p'}$の逆行列である.
   したがって$(X^{-1})^{p'}=(X^{p'})^{-1}=X^{-p'}=X^{-1\cdot p'}$である.
 
   $p$, $p'$を正の整数とすると,
   $k=p$, $k'=p'$のときは,
-  \Cref{thm:mat:posipower}より,
+  \zcref{thm:mat:posipower}より,
   $(X^{k})^{k'}=X^{kk'}$である.
 
   $k=p$, $k'=-p'$のときは,
@@ -890,16 +890,16 @@
 
 
 \begin{proofof}{prop:zerodivsquare}
-  \Cref{prop:zerodiv:left}から,
+  \zcref{prop:zerodiv:left}から,
   $A$が正則でないことがわかる.
-  また, \Cref{prop:zerodiv:left}から,
+  また, \zcref{prop:zerodiv:left}から,
   $B$が正則でないことがわかる.
 \end{proofof}
 
 \begin{proofof}{prop:matwithzerovec}
   例えば, $Y=\begin{pmatrix}0&\cdots0&1\end{pmatrix}$とすると,
   $YA=O_{1,n}$であるので,
-  \Cref{prop:zerodiv}から,
+  \zcref{prop:zerodiv}から,
   $A$が正則ではないことがわかる.
 \end{proofof}
 
@@ -931,7 +931,7 @@
 \begin{proofof*}{fundamentalmat:rowtrans}{F}
   $F(i;c)A=(E_n-E_{i,i}+cE_{i,i})A=A+(c-1)E_{i,i}A$である.
   したがって,
-  \Cref{lemma:matrixunit:rightprod}から,
+  \zcref{lemma:matrixunit:rightprod}から,
   $F(i;c)A$の$i$行目は$A$の$i$行目に$A$の$i$行目の$c-1$倍を加えたものであるので,
   $A$の$i$行目の$c$倍である.
   また$i$行目以外は$F(i;c)A$と$A$は等しい.
@@ -941,7 +941,7 @@
 \begin{proofof*}{fundamentalmat:rowtrans}{G}
   $G(i,j;c)A=(E_n+cE_{i,j})A=A+cE_{i,j}A$である.
   したがって,
-  \Cref{lemma:matrixunit:rightprod}から,
+  \zcref{lemma:matrixunit:rightprod}から,
   $G(i,j;c)A$の$i$行目は$A$の$i$行目に$A$の$j$行目の$c$倍を加えたものである.
   また$i$行目以外は$G(i,j;c)A$と$A$は等しい.
   つまり, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
@@ -950,7 +950,7 @@
   $H(i,j)A=(E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{i,j})A=A-E_{i,i}A+E_{i,j}A-E_{j,j}A+E_{j,i}A$
   である.
   したがって,
-  \Cref{lemma:matrixunit:rightprod}から,
+  \zcref{lemma:matrixunit:rightprod}から,
   $H(i,j)A$の$i$行目は,
   $A$の$i$行めに$A$の$i$行目の$-1$倍と$A$の$j$行目の$1$倍を加えたものであるので,
   $A$の$j$行目である.
@@ -964,7 +964,7 @@
 \begin{proofof*}{fundamentalmat:coltrans}{F}
   $\transposed{(AF(i;c))}=\transposed{F(i;c)}\transposed{A}=F(i;c)\transposed{A}$
   である.
-  \Cref{lem:fundamental}
+  \zcref{lem:fundamental}
   をつかうと,
   $\transposed{(AF(i;c))}$は,
   $\transposed{A}$の$i$行目を$c$倍した行列であることがわかる.
@@ -976,7 +976,7 @@
 \begin{proofof*}{fundamentalmat:coltrans}{G}
   $\transposed{(AG(i,j;c))}=\transposed{G(i,j;c)}\transposed{A}=G(j,i;c)\transposed{A}$
   である.
-  \Cref{lem:fundamental}
+  \zcref{lem:fundamental}
   をつかうと,
   $\transposed{(AG(i,j;c))}$は,
   $\transposed{A}$の$j$行目に$i$行目の$c$倍を加えた行列であることがわかる.
@@ -988,7 +988,7 @@
 \begin{proofof*}{fundamentalmat:coltrans}{H}
   $\transposed{(AH(i,j))}=\transposed{H(i,j)}\transposed{A}=H(j,i)\transposed{A}$
   である.
-  \Cref{lem:fundamental}
+  \zcref{lem:fundamental}
   をつかうと,
   $\transposed{(AH(i,j))}$は,
   $\transposed{A}$の$j$行目と$i$行目を入れ替えた行列であることがわかる.
@@ -1078,7 +1078,7 @@ $\ee_k-(\alpha_1\ee_1+\alpha_2\ee_2+\cdots+\alpha_{k-1}\ee_{k-1})$
     P\ee_k-P\ee_k\\
     &=\zzero.
   \end{align*}
-  したがって\cref{lem:1}より$P$は正則ではない.
+  したがって\zcref{lem:1}より$P$は正則ではない.
 \end{proof}
 
 
@@ -1124,7 +1124,7 @@ $A$か階数$r$の階段行列であることから次がわかる:
   ならば, $PA=A$.
 \end{lemma}
 \begin{proof}
-  \Cref{lem:3}より
+  \zcref{lem:3}より
   \begin{align*}
     \aaa_{j}&=a_{1,j}\ee_1+a_{2,j}\ee_2+\cdots+a_{r,j}\ee_r.
   \end{align*}
@@ -1176,14 +1176,14 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
     (P\xx_1|\cdots|P\xx_n)=(\yy_1|\cdots|\yy_n).
   \end{align*}
   Pivotである$p_i$列目について考えると,
-  \Cref{lem:6}より
+  \zcref{lem:6}より
   \begin{align*}
     P\xx_i&=P\ee_i,\\
     \yy_i&=\ee_i
   \end{align*}
   であるので$P\ee_i=\ee_i$である.
   $i\in\Set{1,\ldots,r}$に対し$P\ee_i=\ee_i$となるので,
-  \Cref{lem:5}より$X=PX=Y$.  
+  \zcref{lem:5}より$X=PX=Y$.  
 \end{proof}
 
 \begin{lemma}
@@ -1209,7 +1209,7 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
     ={}&Y=(\yy_1|\cdots|\yy_n)
   \end{align*}
   であるので, $\yy_j=P\xx_j$.
-  $j=p_t$のときには, \cref{lem:6}より,
+  $j=p_t$のときには, \zcref{lem:6}より,
   \begin{align}
     \yy_{p_t}=P\xx_{p_t}=P\ee_t.
     \label{eq:x}
@@ -1217,7 +1217,7 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
 
   まず$t\in\Set{1,\ldots,k-1}$のときについて考えておく.
   $p_t=q_t$であるので,
-  \cref{lem:6}より,
+  \zcref{lem:6}より,
   \begin{align}
     \yy_{p_t}=\yy_{q_t}=\ee_t.
     \label{eq:xx}
@@ -1229,12 +1229,12 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
 
 
   つぎに, $t=k$のときについて考える.
-  $k>l$ならば, \cref{lem:3}を使うと,
+  $k>l$ならば, \zcref{lem:3}を使うと,
   \begin{align*}
     \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
   \end{align*}
   と書ける.
-  また, $p_k<q_k$ならば, \cref{lem:4}を使うと,
+  また, $p_k<q_k$ならば, \zcref{lem:4}を使うと,
   \begin{align*}
     \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
   \end{align*}
@@ -1247,14 +1247,14 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
     \yy_{p_k}=\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}.
   \end{align*}
   $k>l$または$p_k<q_k$が成り立つとする.
-  このとき, \cref{eq:x}より,
+  このとき, \zcref{eq:x}より,
   \begin{align*}
     P\ee_k
     =\yy_{p_k}
     =\yy_{1p_k}\ee_1+\cdots+y_{k-1,p_k}\ee_{k-1}
   \end{align*}
   となるが,
-  \cref{lem:2}より$P$は正則ではない.
+  \zcref{lem:2}より$P$は正則ではない.
 \end{proof}
 
 \begin{proofof}{key:for:uniqueness}
@@ -1276,13 +1276,13 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
   まず, pivotsが一致することを示す.
   
   $k=1$として,
-  \cref{lem:8}を$PA=B$に使うと$p_1\geq q_1$.
-  \cref{lem:8}を$P^{-1}B=A$に使うと$q_1\geq p_1$.
+  \zcref{lem:8}を$PA=B$に使うと$p_1\geq q_1$.
+  \zcref{lem:8}を$P^{-1}B=A$に使うと$q_1\geq p_1$.
   よって$p_1=q_1$.
 
   $k=2$として,
-  \cref{lem:8}を$PA=B$に使うと$p_2\geq q_2$.
-  \cref{lem:8}を$P^{-1}B=A$に使うと$q_2\geq p_2$.
+  \zcref{lem:8}を$PA=B$に使うと$p_2\geq q_2$.
+  \zcref{lem:8}を$P^{-1}B=A$に使うと$q_2\geq p_2$.
   よって$p_2=q_2$.
 
   以下同様に繰り返すと,
@@ -1295,7 +1295,7 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
   \end{align*}
   がわかる.
   Pivotsが一致しているので,
-  \cref{lem:7}を使うことで$A=B$がわかる.
+  \zcref{lem:7}を使うことで$A=B$がわかる.
 \end{proofof}
 
 \begin{proofof}{reg:for:uniqueness}
@@ -1309,13 +1309,13 @@ $Y=(\yy_1|\yy_2|\cdots|\yy_n)$
   \end{align*}
   であるので$P'A$は被約階段行列.
   よって,
-  \Cref{lem:key:PX=Y:X=Y}
+  \zcref{lem:key:PX=Y:X=Y}
   より,
   $A=B$.
 \end{proofof}
 \begin{proofof}{reg:can:be:e}
-\paragraph{\Cref{cor:reg:e:item:reg}$\implies$\Cref{cor:reg:e:item:e}}
-\Cref{thm:FB}により,
+\paragraph{\zcref{cor:reg:e:item:reg}$\implies$\zcref{cor:reg:e:item:e}}
+\zcref{thm:FB}により,
 $A$に対し行基本変形を行うことで被約階段行列が得られる.
 これを$S$とする.
 行基本変形は基本行列を左からかけることであったので,
@@ -1327,12 +1327,12 @@ $A$は正則なので,
 その逆行列を$Q$とおく.
 このとき$Q$は正則で$QA=E_n$を満たす.
 $E_n$は被約階段行列であったから,
-\Cref{prop:reduced:PX=QX}より,
+\zcref{prop:reduced:PX=QX}より,
 $PA=QA$である.
 よって,
 $S=E_n$.
 
-\paragraph{\Cref{cor:reg:e:item:e}$\implies$\Cref{cor:reg:e:item:reg}}
+\paragraph{\zcref{cor:reg:e:item:e}$\implies$\zcref{cor:reg:e:item:reg}}
 行基本変形を用いて$A$を$E_n$に変形できたとする.
 行基本変形は基本行列を左からかけることであったので,
 $PA=E_n$を満たす正方行列$P$が存在する.
@@ -1365,13 +1365,13 @@ $A$は正則である.
 \subsection{階数に関する命題の証明}
 \begin{proofof}{thm:rank:regular}
   $A$を$n$次正方行列であるとする.
-  \paragraph{\Cref{thm:rank:regular:reg}$\implies$\Cref{thm:rank:regular:rank}}
+  \paragraph{\zcref{thm:rank:regular:reg}$\implies$\zcref{thm:rank:regular:rank}}
   $A$を正則とする.
-  \Cref{thm:reg:criterion:rowtrans}
+  \zcref{thm:reg:criterion:rowtrans}
   より,
   行基本変形により$A$を$E_n$に変形できる.
   したがって$\rank(A)=\rank(E_n)=n$.
-  \paragraph{\Cref{thm:rank:regular:rank}$\implies$\Cref{thm:rank:regular:reg}}
+  \paragraph{\zcref{thm:rank:regular:rank}$\implies$\zcref{thm:rank:regular:reg}}
   $\rank(A)=n$とする.
   階数の定義から
   $A$に行基本変形を行って階数$n$の被約階段に変形できる.
@@ -1379,7 +1379,7 @@ $A$は正則である.
   $n$次正方行列で被約階段であるものは$E_n$のみであるから,
   得られる被約階段は$E_n$である.
   したがって,
-  \Cref{thm:reg:criterion:rowtrans}
+  \zcref{thm:reg:criterion:rowtrans}
   より,
   $A$は正則である.
 \end{proofof}
@@ -1388,7 +1388,7 @@ $A$は正則である.
   $A$に行基本変形を行って被約階段行列$S$が得られたとする.
   また, $A$に行基本変形を行って$A'$が得られたとする.
   このとき,
-  \cref{lem:fund:is:invertible}から, 
+  \zcref{lem:fund:is:invertible}から, 
   $A'$行基本変形を行って$A$にできる.
   したがって更に行基本変形を行って$S$にすることもできる.
   つまり
@@ -1420,7 +1420,7 @@ $A$は正則である.
   $A$に対し同じ手順で行基本変形をすることで,
   $S'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列$S$が得られる.
   $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
-  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:row}
+  また\zcref{thm:rank:prop}の\zcref{thm:rank:prop:row}
   より, $\rank(S')\leq r$である.
   したがって, $\rank(A)=\rank(S)=\rank(S')\leq r$である.
 \end{proof}
@@ -1437,7 +1437,7 @@ $A$は正則である.
   $A$に対し同じ手順で行基本変形をすることで,
   $S'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列$S$が得られる.
   $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
-  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:col}
+  また\zcref{thm:rank:prop}の\zcref{thm:rank:prop:col}
   より, $\rank(S')\leq c$である.
   したがって, $\rank(A)=\rank(S)=\rank(S')\leq c$である.
 \end{proof}
@@ -1446,7 +1446,7 @@ $A$は正則である.
 \begin{proofof*}{thm:rank:prop}{left}
   $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
   このとき,
-  \cref{lem:fundamental}
+  \zcref{lem:fundamental}
   から,
   $P_kP_{k-1}\cdots P_1A=S$をみたす
   基本行列$P_1,\ldots, P_k$が存在する.
@@ -1454,7 +1454,7 @@ $A$は正則である.
   $P_kP_{k-1}\cdots P_1AB=SB$であるので
   つまり$AB$に行基本変形を用いて$SB$に変形できることがわかる.
   したがって,
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:fund}
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:fund}
   より, $\rank(AB)=\rank(SB)$である.
   
   一方$S$は階数が$r$の被約階段行列であるので,
@@ -1462,7 +1462,7 @@ $A$は正則である.
   したがって,
   $SB$を計算すると,
   $SB$の$r+1$行目から$n$行目までの成分もすべて$0$であることがわかる.
-  したがって, \cref{lem:rank:rnonzerorows}より,
+  したがって, \zcref{lem:rank:rnonzerorows}より,
   $\rank(SB)\leq r$である.
 \end{proofof*}
 
@@ -1474,12 +1474,12 @@ $A$は正則である.
    $\rank(A)\geq\rank(AQ)$
   を示す.
   
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:left}
   より, $\rank(AQ)\leq \rank(A)$である.
   
   一方, 
   $X=AQ$, $Y=Q^{-1}$とすると,
-  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:left}
   より, $\rank(XY)\leq \rank(X)$である.
   $XY=AQQ^{-1}=A$であるので,
   $\rank(A)\leq\rank(AQ)$である.
@@ -1496,14 +1496,14 @@ $A$は正則である.
   $\rank(X)\leq r$を示す.
 
   $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたので,
-  \cref{lem:fundamental}
+  \zcref{lem:fundamental}
   から,
   $PA=S$をみたす
   正則行列$P$が存在する.
   $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
   である.
   $\transposed{P}$は正則であるので,
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:regularright}より,
   $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
   一方
   $S$は階数$r$の被約階段行列であるので,
@@ -1512,7 +1512,7 @@ $A$は正則である.
   $\transposed{S}$の
   $r+1$列目から$m$列目までの成分は$0$である.
   したがって,
-  \Cref{lem:rank:rnonzerocols}より,
+  \zcref{lem:rank:rnonzerocols}より,
   $\transposed{S}\leq r$である.
   まとめると,
   $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})=\rank(\transposed{S})\leq r$である.
@@ -1526,45 +1526,45 @@ $A$は正則である.
   を示す.
   
   $X=A$として
-  \Cref{lem:ineq:transrank}を使うと,
+  \zcref{lem:ineq:transrank}を使うと,
   $\rank(A)\leq\rank(\transposed{A})$.
   である.
 
   一方,
   $X=\transposed{A}$として
-  \Cref{lem:ineq:transrank}を使うと,
+  \zcref{lem:ineq:transrank}を使うと,
   $\transposed{X}=A$であるので,
   $\rank(\transposed{A})\leq \rank(A)$.
   である.
   
 \end{proofof*}
 \begin{proofof*}{thm:rank:prop}{right}
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:trans}より,
   $\rank(AB)=\rank(\transposed{(AB)})$
   であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
   $\rank(AB)=\rank(\transposed{B}\transposed{A})$
   である.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:left}
   より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
   $\rank(AB)\leq\rank(\transposed{B})$.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:trans}より,
   $\rank(\transposed{B})=\rank(B)$であるので,
   $\rank(AB)\leq \rank(B)$である.
 \end{proofof*}
 
 \begin{proofof*}{thm:rank:prop}{regularleft}
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:trans}より,
   $\rank(PA)=\rank(\transposed{(PA)})$
   であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
   $\rank(PA)=\rank(\transposed{A}\transposed{P})$
   である.
   $P$は正則であるので$\transposed{P}$も正則である.
-  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
+  よって, \zcref{thm:rank:prop}の\zcref{thm:rank:prop:regularright}より
   $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
   であるので,
   $\rank(PA)=\rank(\transposed{A})$
   である.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  \zcref{thm:rank:prop}の\zcref{thm:rank:prop:trans}より,
   $\rank(\transposed{A})=\rank(A)$であるので,
   $\rank(PA)= \rank(A)$である.
 \end{proofof*}
@@ -1597,13 +1597,13 @@ $A'=CA$, $\bbb'=C\bbb$とし,
   \end{align*}
   とおく.
 $A'=PA$, $\bbb'=P\bbb$であるので,
-  \Cref{lem:subsol}
+  \zcref{lem:subsol}
   より$\FFF\subset\FFF'$.
   また,
   $P$は正則であるので,
   $A=P^{-1}A'$,
   $\bbb=P^{-1}\bbb'$であるから,
-  \Cref{lem:subsol}
+  \zcref{lem:subsol}
   より$\FFF'\subset\FFF$.
   したがって, $\FFF'=\FFF$.
 \end{proofof}
@@ -1620,16 +1620,16 @@ $A'=PA$, $\bbb'=P\bbb$であるので,
     P\bbb&=\bbb'
   \end{align*}
   である.
-  よって, \Cref{thm:subsol}より,
+  よって, \zcref{thm:subsol}より,
   $\FFF=\FFF'$
 \end{proofof}
 
 \begin{proofof}{thm:ortho:eq}
-  \paragraph{\Cref{thm:ortho:eq:item:sol}$\implies$\Cref{thm:ortho:eq:item:ortho}}
+  \paragraph{\zcref{thm:ortho:eq:item:sol}$\implies$\zcref{thm:ortho:eq:item:ortho}}
   $YA=O_{m,1}$, $A\xx=\bbb$
   とする.
   このとき, $Y\bbb=YA\xx=O_{m,1}\xx=O_{1,1}$.
-  \paragraph{\Cref{thm:ortho:eq:item:ortho}$\implies$\Cref{thm:ortho:eq:item:sol}}
+  \paragraph{\zcref{thm:ortho:eq:item:ortho}$\implies$\zcref{thm:ortho:eq:item:sol}}
   対偶を示す.
   $A\xx=\bbb$が解を持たないとすると,
   \begin{align*}
@@ -1784,14 +1784,14 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 %%   \paragraph{Base case}
 %%   $n=1$のときは,
 %%   $t=1$である. つまり$1$行目の成分が$0$であるということであるので,
-%%   \cref{lem:det:zero:row:1}より,
+%%   \zcref{lem:det:zero:row:1}より,
 %%   $\det(A)=0$.
 %%   \paragraph{Induction step}
 %%   $n>1$とし,
 %%   $A$の$(i,j)$-成分を$a_{i,j}$とおく.
 
 %%   $t=1$のときは, 
-%%   \cref{lem:det:zero:row:1}より,
+%%   \zcref{lem:det:zero:row:1}より,
 %%   $\det(A)=0$であるので,
 %%   $t>1$のときについて考える.
 %%   $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を
@@ -2134,7 +2134,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 \end{proofof}
 
 \begin{proofof}{det:row:expansion}
-\Cref{thm:det:col:expansion,thm:det:transpose}
+\zcref{thm:det:col:expansion,thm:det:transpose}
 から得られる.
 \end{proofof}
 
@@ -2673,7 +2673,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
   $1+1\neq 0$のときには,
   以下のように証明することもできる:
   $A$の$t$行目と$s$行目を入れ替えた行列を$A'$とすると,
-  \Cref{thm:det:alt:row:neg}から, $\det(A')=-\det(A)$
+  \zcref{thm:det:alt:row:neg}から, $\det(A')=-\det(A)$
   である.
   また$A$の$t$行目と$s$行目が等しいので, $A=A'$である.
   従って, $\det(A)=-\det(A)$である.
@@ -2754,19 +2754,19 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 \begin{proofof}{adj:prod}
   $A\tilde A$を直接計算すると,
   $(s,t)$成分は,
-  \Cref{lem:cofac:expand}の
-  \cref{lem:cofac:expand:item:row}の
+  \zcref{lem:cofac:expand}の
+  \zcref{lem:cofac:expand:item:row}の
   左辺である.
   よって, $\det(A)E_n$に等しいことがわかる.
 
   また, $\tilde A A$は
-  \Cref{lem:cofac:expand}の
-  \cref{lem:cofac:expand:item:col}に帰着できる.
+  \zcref{lem:cofac:expand}の
+  \zcref{lem:cofac:expand:item:col}に帰着できる.
   左辺である.
 \end{proofof}
 
 \begin{proofof*}{det:adj}{zero}
-  \Cref{lem:adj:prod}より,
+  \zcref{lem:adj:prod}より,
   \begin{align*}
     A \tilde A =\det(A)E_n
   \end{align*}
@@ -2791,7 +2791,7 @@ $\FFF'=\Set{\uu+\vv|\uu\in\KKK}$
 
 \end{proofof*}
 \begin{proofof*}{det:adj}{pow}
-\Cref{lem:adj:prod}より,
+\zcref{lem:adj:prod}より,
 \begin{align*}
   A \tilde A =\det(A)E_n.
 \end{align*}
@@ -2929,7 +2929,7 @@ $\det(\tilde A)=0$なので,
     \end{pmatrix}
   \end{align*}
   とする.
-  \paragraph{\Cref{thm:diagonizablity:item:diagonalizable}$\implies$\Cref{thm:diagonizablity:item:eigen}}
+  \paragraph{\zcref{thm:diagonizablity:item:diagonalizable}$\implies$\zcref{thm:diagonizablity:item:eigen}}
   正則行列$P$で,
   \begin{align*}
     P^{-1}AP=
@@ -3019,12 +3019,12 @@ $\det(\tilde A)=0$なので,
     \mu \bbb
   \end{align*}
   である.
-  $P$が正則であるので\cref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
+  $P$が正則であるので\zcref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
   $\aaa$は固有値$\lambda$に属する固有ベクトル,
   $\bbb$は固有値$\mu$に属する固有ベクトル,
   である.
   
-  \paragraph{\Cref{thm:diagonizablity:item:eigen}$\implies$\Cref{thm:diagonizablity:item:diagonalizable}}
+  \paragraph{\zcref{thm:diagonizablity:item:eigen}$\implies$\zcref{thm:diagonizablity:item:diagonalizable}}
   $\aaa$は固有値$\lambda$に属する固有ベクトル,
   $\bbb$は固有値$\mu$に属する固有ベクトルとし,
   $(\aaa,\bbb)$は一次独立とする.
@@ -3043,7 +3043,7 @@ $\det(\tilde A)=0$なので,
     \end{pmatrix}
   \end{align*}
   とすると
-  \cref{thm:det:reg}より,
+  \zcref{thm:det:reg}より,
   $P$は正則である.
 
   また,
@@ -3215,7 +3215,7 @@ $\det(\tilde A)=0$なので,
 \end{proofof}
 
 \begin{proofof}{lem:linindep:minor}
-\paragraph{$\Cref{lem:linindep:minor:item:1}\implies\Cref{lem:linindep:minor:item:2}$}
+\paragraph{$\zcref{lem:linindep:minor:item:1}\implies\zcref{lem:linindep:minor:item:2}$}
 適宜行を入れ替えて,
 $\Set{1,\ldots,n}$-行, $\Set{1,\ldots,n}$-列の小行列式が$0$でないとする.
 $\Set{1,\ldots,n}$-行, $\Set{1,\ldots,n}$-列の小行列を$B$とし,
@@ -3229,14 +3229,14 @@ $\vconcat{E_n}{C}$とできる.
  さらに行基本変形で, $\vconcat{E_n}{O_{m-n,n}}$という形に変形できるので,
  $\rank(A)=n$であることがわかる.
  よって,
- \Cref{lem:lindep:lessrank}
+ \zcref{lem:lindep:lessrank}
  より,
  $(\aaa_1,\ldots,\aaa_n)$は一次独立.
 
-\paragraph{$\Cref{lem:linindep:minor:item:2}\implies\Cref{lem:linindep:minor:item:1}$}
+\paragraph{$\zcref{lem:linindep:minor:item:2}\implies\zcref{lem:linindep:minor:item:1}$}
 
 $(\aaa_1,\ldots,\aaa_n)$は一次独立とすると,
-\Cref{lem:lineq:lessrank}より,
+\zcref{lem:lineq:lessrank}より,
 $A\xx=\zzero$は, 非自明な解をもつ.
 $\vv\neq\zzero$かつ$A\vv=\zzero$とする.
 $A\vv$の$i$行目は$A$の$i$行目と%\vv%の積なので,
@@ -3249,7 +3249,7 @@ $B\vv=\zzero$である.
 
 \endinput
 \section{逆行列や正則に関する命題の証明}
-ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
+ここでは, \zcref{chap:inverse}に現れる命題の証明を行う.
 逆行列や正則行列に関する命題については,
 一般の正方行列の場合について証明をしているので,
 煩雑になっている部分がある.
@@ -3380,7 +3380,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 \end{proofof}
 
 \section{階数に関する命題の証明}
-ここでは, \Cref{chap:systemoflineq}に現れる命題の証明を行う.
+ここでは, \zcref{chap:systemoflineq}に現れる命題の証明を行う.
 
 
 \begin{proofof*}{thm:ker:vec}{sum}
@@ -3430,7 +3430,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   また,
   $E_{i,j}A$は, $i$行目が$A$の$j$行目と等しく, それ以外の成分は$0$であることも
   計算できる.
-  \paragraph{\Cref{lem:fundamental:item:sc}}
+  \paragraph{\zcref{lem:fundamental:item:sc}}
   $F(i;c)$は$(i,i)$-成分のみ$c$で
   他の対角成分は$c$である対角行列である.
 
@@ -3448,7 +3448,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   $E_n$である.
   よって$F(i;c)^{-1}=F(i;\frac{1}{c})$である.
 
-  \paragraph{\Cref{lem:fundamental:item:sum}}
+  \paragraph{\zcref{lem:fundamental:item:sum}}
   $i\neq j$とする. $G(i,j;c)=E_n+cE_{i,j}$とする.
   $G(i,j;c)$は, 対角成分は全て$1$, $(i,j)$-成分は$c$, 他の成分は全て$0$である.
 
@@ -3465,7 +3465,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   したがって, $G(i,j;-c)G(i,j;c)=E_n$である.
   よって, $G(i,j;c)^{-1}=G(i,j;-c)$である.
   
-  \paragraph{\Cref{lem:fundamental:item:trans}}
+  \paragraph{\zcref{lem:fundamental:item:trans}}
   $H(i,j)$は$(i,i)$-成分と$(j,j)$-成分は$0$, それ以外の対角成分は$1$,
   $(i,j)$-成分と$(j,i)$-成分は$1$, それ以外の成分は$0$である.
 
@@ -3487,9 +3487,9 @@ $2$-次正方行列の場合のみについて証明をしている.
 
 %% \begin{remark}
 %%   \label{lem:fund:is:invertible}
-%%   \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
+%%   \zcref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
 %%   を基本行列と呼ぶ.
-%%   \Cref{lem:fundamental}から,
+%%   \zcref{lem:fundamental}から,
 %%   $A$に行基本変形を行うことは,
 %%   $A$に基本行列を左からかけることであり,
 %%   逆に
@@ -3503,7 +3503,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 
 
 \section{平面に関する命題の証明}
-ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
+ここでは, \zcref{chap:lintrans}に現れる命題の証明を行う.
 
 \begin{proofof}{thm:linindep:coef}
   $\aaa$, $\bbb$を$2$項実ベクトルとし,
@@ -3532,7 +3532,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   \end{align*}
   である.
 
-  \paragraph{\Cref{thm:linindep:det:item:det}$\implies$\Cref{thm:linindep:det:item:linindep}}
+  \paragraph{\zcref{thm:linindep:det:item:det}$\implies$\zcref{thm:linindep:det:item:linindep}}
   $\det(A)\neq 0$を仮定する.
   $x\aaa+y\bbb=\zzero$とする.
   このとき, $x=y=0$となることを示す.
@@ -3550,7 +3550,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   である.
   
   
-  \paragraph{\Cref{thm:linindep:det:item:linindep}$\implies$\Cref{thm:linindep:det:item:det}}
+  \paragraph{\zcref{thm:linindep:det:item:linindep}$\implies$\zcref{thm:linindep:det:item:det}}
   対偶を示す.
   $\det A=0$を仮定する.
   $x\aaa+y\bbb=\zzero$を満たす
@@ -3561,9 +3561,9 @@ $2$-次正方行列の場合のみについて証明をしている.
   
     
   $\det(A)\neq 0$であるので,
-  \cref{thm:rank:regular}より,
+  \zcref{thm:rank:regular}より,
   $\rank(A)<2$である.
-  したがって, \Cref{thm:solution:homoge}より, 
+  したがって, \zcref{thm:solution:homoge}より, 
   \begin{align*}
     A\begin{pmatrix}x\\y\end{pmatrix}&=\zzero,
     \begin{pmatrix}x\\y\end{pmatrix}&\neq\zzero
@@ -3666,7 +3666,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 \end{proofof*}
 
 \begin{proofof*}{norm:is:norm}{positive}
-  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}\geq 0$である.
+  \zcref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}\geq 0$である.
   したがって,
   $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}\geq 0$である.
 \end{proofof*}
@@ -3675,10 +3675,10 @@ $2$-次正方行列の場合のみについて証明をしている.
   \paragraph{$\|\aaa\|=0\implies\aaa=\zzero$.}
   $\|\aaa\|=0$とする.
   このとき, $\Braket{\aaa,\aaa}=\|\aaa\|^2=0$である.
-  \Cref{thm:innerprod:is:innerprod}より, $\aaa=\zzero$である.
+  \zcref{thm:innerprod:is:innerprod}より, $\aaa=\zzero$である.
   \paragraph{$\aaa=\zzero\implies\|\aaa\|=0$.}
   $\aaa=\zzero$とする.
-  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}=0$である.
+  \zcref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}=0$である.
   よって, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt0=0$である.
 \end{proofof*}
 
@@ -3720,7 +3720,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   \end{align*}
   が成り立っている.
   $\bbb\neq\zzero$より$a\neq 0$であるので,
-  \cref{lem:numbers:quad}より,
+  \zcref{lem:numbers:quad}より,
   判別式を考えるとその値は$0$以下である.
   よって,
   \begin{align*}
@@ -3751,7 +3751,7 @@ $2$-次正方行列の場合のみについて証明をしている.
     &=(\|\aaa\|^2+2\|\aaa\|\|\bbb\|+\|\bbb\|^2)\\
   \end{align*}
   である.
-  \Cref{lem:csi}より,
+  \zcref{lem:csi}より,
   $\Braket{\aaa,\bbb}\leq \|\aaa\|\|\bbb\| $
   であるので,
   $\|\aaa+\bbb\|^2 \leq (\|\aaa\|+\|\bbb\|)^2$
@@ -3760,7 +3760,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 
 
 \begin{proofof*}{norm:is:norm}{scalar}
-  \Cref{thm:innerprod:is:innerprod}より,
+  \zcref{thm:innerprod:is:innerprod}より,
   \begin{align*}
     \Braket{r\aaa,r\aaa}=r\Braket{\aaa,r\aaa}=r\Braket{r\aaa,\aaa}=r^2\Braket{\aaa,\aaa}
   \end{align*}
@@ -3831,37 +3831,37 @@ $2$-次正方行列の場合のみについて証明をしている.
   \end{align*}
   である.
   
-  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  \paragraph{\zcref{thm:ortho:char:item:transposeisinverse}$\implies$\zcref{thm:ortho:char:item:ortho}}
   $A$が正則であり,
   $A^{-1}=\transposed{A}$とする.
   このとき,
   $\transposed{A}A=A^{-1}A=E_n$
 
-  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho2}}
+  \paragraph{\zcref{thm:ortho:char:item:transposeisinverse}$\implies$\zcref{thm:ortho:char:item:ortho2}}
   $A$が正則であり,
   $A^{-1}=\transposed{A}$とする.
   このとき,
   $A\transposed{A}=AA^{-1}=E_n$
 
-  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  \paragraph{\zcref{thm:ortho:char:item:ortho}$\implies$\zcref{thm:ortho:char:item:transposeisinverse}}
   $\transposed{A}A=E_n$とする.
-  このとき, \cref{lem:ortho:det}より,
+  このとき, \zcref{lem:ortho:det}より,
   $\det(A)\neq 0$である.
   したがって, $A$は正則である.
   $\transposed{A}A=E_n$の
   両辺に右から$A^{-1}$をかけることで
   $\transposed{A}=A^{-1}$が得られる.
 
-  \paragraph{\Cref{thm:ortho:char:item:ortho2}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  \paragraph{\zcref{thm:ortho:char:item:ortho2}$\implies$\zcref{thm:ortho:char:item:transposeisinverse}}
   $A\transposed{A}=E_n$とする.
-  このとき, \cref{lem:ortho:det}より,
+  このとき, \zcref{lem:ortho:det}より,
   $\det(A)\neq 0$である.
   したがって, $A$は正則である.
   $A\transposed{A}=E_n$の
   両辺に左から$A^{-1}$をかけることで
   $\transposed{A}=A^{-1}$が得られる.
 
-  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:orthonormalbasis}}
+  \paragraph{\zcref{thm:ortho:char:item:ortho}$\implies$\zcref{thm:ortho:char:item:orthonormalbasis}}
   $\transposed{A}A=E_n$とする.
   \begin{align*}
     \begin{pmatrix}
@@ -3876,7 +3876,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   であるので, 
   $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt{1}=1$,
   $\|\bbb\|=\sqrt{\Braket{\bbb,\bbb}}=\sqrt{1}=1$である.
-  \paragraph{\Cref{thm:ortho:char:item:orthonormalbasis}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  \paragraph{\zcref{thm:ortho:char:item:orthonormalbasis}$\implies$\zcref{thm:ortho:char:item:ortho}}
   $(\aaa,\bbb)$が正規直交基底であるとする.
   このとき,
   $\Braket{\aaa,\bbb}=0$,
@@ -3886,7 +3886,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   
 
 
-  \paragraph{\Cref{thm:ortho:char:item:preserve}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  \paragraph{\zcref{thm:ortho:char:item:preserve}$\implies$\zcref{thm:ortho:char:item:ortho}}
   $\ee_i$を基本ベクトルとする.
   $S$を正方行列に対し,
   $\transposed{\ee_{i}}S\ee_{j}$は,
@@ -3907,7 +3907,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   $\transposed{A}A$の$(i,j)$-成分も, $i=j$のとき$1$, $i\neq j$のとき$0$である.
   したがって,
   
-  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:preserve}}
+  \paragraph{\zcref{thm:ortho:char:item:ortho}$\implies$\zcref{thm:ortho:char:item:preserve}}
 
   $\transposed{A}A=E_n$とする.
   $\xx,\yy\in\RR^n$とする.
@@ -3921,16 +3921,16 @@ $2$-次正方行列の場合のみについて証明をしている.
 
 \begin{proofof}{kernel:inj}
 $f$が線形変換であるとする.
-\paragraph{\Cref{thm:kernel:ing:item:inj}$\implies$\Cref{thm:kernel:ing:item:ker}}
+\paragraph{\zcref{thm:kernel:ing:item:inj}$\implies$\zcref{thm:kernel:ing:item:ker}}
 対偶を示す.
 $\ker(f)\neq \Set{\zzero}$とする.
-\Cref{thm:linmap:zero}から, $f(\zzero)=\zzero$であるので
+\zcref{thm:linmap:zero}から, $f(\zzero)=\zzero$であるので
 $\zzero\in \Ker(f)$である.
 よって, $\zzero\neq \aaa$かつ$ \aaa\in\Ker(f)$
 となる$\aaa$が存在する.
 $\aaa\neq\zzero$かつ$f(\aaa)=f(\zzero)$であるので, $f$は単射ではない.
 
-\paragraph{\Cref{thm:kernel:ing:item:ker}$\implies$\Cref{thm:kernel:ing:item:inj}}
+\paragraph{\zcref{thm:kernel:ing:item:ker}$\implies$\zcref{thm:kernel:ing:item:inj}}
 対偶を示す.
 $f$が単射ではないとする.
 このとき,
